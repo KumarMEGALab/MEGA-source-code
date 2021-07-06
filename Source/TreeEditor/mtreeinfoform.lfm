@@ -1,0 +1,60 @@
+object TreeInfoForm: TTreeInfoForm
+  Left = 736
+  Height = 316
+  Top = 273
+  Width = 524
+  Caption = 'Information'
+  ClientHeight = 316
+  ClientWidth = 524
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnResize = FormResize
+  OnShow = FormShow
+  PopupMenu = myPopupMenu
+  SessionProperties = 'FontDialog1.Font;FontDialog1.MaxFontSize;FontDialog1.MinFontSize;FontDialog1.Options;Height;PixelsPerInch;Width'
+  LCLVersion = '2.0.2.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 33
+    Top = 0
+    Width = 524
+    Align = alTop
+    ClientHeight = 33
+    ClientWidth = 524
+    TabOrder = 0
+    object StayOnTopChkBx: TCheckBox
+      Left = 15
+      Height = 19
+      Top = 4
+      Width = 102
+      Caption = 'STAY IN FRONT'
+      Checked = True
+      OnClick = StayOnTopChkBxClick
+      State = cbChecked
+      TabOrder = 0
+    end
+  end
+  object myPopupMenu: TPopupMenu
+    OnPopup = myPopupMenuPopup
+    left = 360
+    top = 96
+    object CopyItem: TMenuItem
+      Caption = '&Copy'
+      ShortCut = 16451
+      OnClick = CopyItemClick
+    end
+  end
+  object FontDialog1: TFontDialog
+    MinFontSize = 0
+    MaxFontSize = 0
+    left = 288
+    top = 112
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    IniSection = 'TTreeInfoForm'
+    left = 376
+    top = 192
+  end
+end

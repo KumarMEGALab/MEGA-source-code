@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Input Data</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--JQuery 3.2.1 Fallback-->
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <!--JQuery 3.4.1-->
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>       
+        <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+        <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+        <!--Bootstrap 3 Fallback-->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!--Bootstrap 4-->
+        <link href="css/bs4/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/default.css" rel="stylesheet" type="text/css" /> 
+
+        <script>
+            var saved_link = '';
+            $(document).ready(function () {
+                $.validator.addMethod("dna_alphabet", function(value, element) {
+                    return this.optional(element) || /^[A-IK-NP-TVWYZ?.-]+$/i.test(value);
+                }, "Invalid symbol");
+                $.validator.addMethod("protein_alphabet", function(value, element) {
+                    return this.optional(element) || /^[EFIJLNOPQXZ?.-]+$/i.test(value);
+                }, "Invalid symbol");
+                $.validator.addMethod("notEqualTo",
+                function(value, element, param) {
+                    var notEqual = true;
+                    value = $.trim(value);
+                    for (i = 0; i < param.length; i++) {
+                        if (value == $.trim($(param[i]).val())) { notEqual = false; }
+                    }
+                    return this.optional(element) || notEqual;
+                },
+                "The symbols must be different"
+                );
+                $('#mainform').validate({
+                    rules: {
+                        dna_missing_data: {
+                            required: true,
+                            dna_alphabet: true,
+                            minlength: 1,
+                            maxlength: 1,
+                            notEqualTo: ["#dna_alignment_gap", "#dna_identical_symbol"]
+                        },
+                        dna_alignment_gap: {
+                            required: true,
+                            dna_alphabet: true,
+                            minlength: 1,
+                            maxlength: 1,
+                            notEqualTo: ["#dna_missing_data", "#dna_identical_symbol"]
+                        },
+                        dna_identical_symbol: {
+                            required: true,
+                            dna_alphabet: true,
+                            minlength: 1,
+                            maxlength: 1,
+                            notEqualTo: ["#dna_missing_data", "#dna_alignment_gap"]
+                        },
+                        protein_missing_data: {
+                            required: true,
+                            protein_alphabet: true,
+                            minlength: 1,
+                            maxlength: 1,
+                            notEqualTo: ["#protein_alignment_gap", "#protein_identical_symbol"]
+                        },
+                        protein_alignment_gap: {
+                            required: true,
+                            protein_alphabet: true,
+                            minlength: 1,
+                            maxlength: 1,
+                            notEqualTo: ["#protein_missing_data", "#protein_identical_symbol"]
+                        },
+                        protein_identical_symbol: {
+                            required: true,
+                            protein_alphabet: true,
+                            minlength: 1,
+                            maxlength: 1,
+                            notEqualTo: ["#protein_missing_data", "#protein_alignment_gap"]
+                        },
+                        pairwise_missing_data: {
+                            required: true,
+                            minlength: 1,
+                            maxlength: 1
+                        }
+                    },
+                    submitHandler: function (form) {
+                        $('#is_validated').attr("value", "true");
+                    }
+                });
+                $('.checkbox').checkboxradio({
+                    icon: false
+                });
+                $('.checkbox').change(function () {
+                    var checkbox = $(this);
+                    if (this.checked) {
+                        $(this).attr('ischecked', true);
+                    } else {
+                        $(this).attr('ischecked', false);
+                    }
+                });
+                $("#data_type_list li a").click(function () {
+                    $('#nucleotide_sequence_li').attr('isselected', 'false');
+                    $('#protein_sequence_li').attr('isselected', 'false');
+                    $('#pairwise_distance_li').attr('isselected', 'false');
+                    $(".dloop_container").hide();
+                    $("#data_type_list li").removeClass('ui-state-active');
+					$(this).parent().attr('isselected', 'true');
+                    $(this).parent().addClass('ui-state-active');
+                    var myDiv = $(this).attr("href");
+                    $(myDiv).show();
+                });
+                $(".nucleotide_sequence").show();
+                $('li').click(function () {
+                    $('.content:visible').hide(); // hides the visible content before 
+                    $('.content').eq($(this).index()).show(); // shows the corresponding content
+                });
+                //MEGA_JS_TEMPLATE_PLACEHOLDER
+                if (saved_link != '') {
+		    $(saved_link).trigger("click");
+	        }
+                $.validator.methods.range = function (value, element, param) {
+                    var globalizedValue = value.replace(",", ".");
+                    return this.optional(element) || (globalizedValue >= param[0] && globalizedValue <= param[1]);
+                };
+                $.validator.methods.number = function (value, element) {
+                    return this.optional(element) || /^-?(?:\d+|\d{1,3}(?:[\s\.,]\d{3})+)(?:[\.,]\d+)?$/.test(value);
+                };
+            });
+        </script>
+
+
+    </head>
+    <body>
+        <input type="hidden" name="is_validated" id="is_validated" value="false"/>
+        <div class="container">
+            <div id="tab-holder">
+              <div class="row">
+                <div class="col-6">
+                  <div class="dloop_data_type my-2 mx-0">
+                    <ul id="data_type_list">
+                      <li id="nucleotide_sequence_li" isselected="true" class="mt-0">
+                        <a href="#nucleotide_sequence" class="tabLink nucleotide_sequence">Nucleotide Sequences</a>
+                      </li>
+                      <li id="protein_sequence_li" isselected="false">
+                        <a href="#protein_sequence" class="tabLink protein_sequence ">Protein Sequences</a>
+                      </li>
+                      <li id="pairwise_distance_li" isselected="false">
+                        <a href="#pairwise_distance" class="tabLink pairwise_distance">Pairwise Distance</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <form id="mainform">
+                    <div id="nucleotide_sequence" class="dloop_container nucleotide_sequence content">
+                      <div class="dloop_boxed border-0">                                   
+                        <div class="row">
+                          <div class="grid-col-1">
+                            <div class="grid-col-2 input-data-options my-1">
+                              <label for="dna_missing_data">Missing Data</label> 
+                              <input class="dloop_input p-0" id="dna_missing_data" name="dna_missing_data" value="?">
+                            </div>
+                          </div>
+                          <div class="grid-col-1">
+                            <div class="grid-col-2 input-data-options my-1">
+                              <label for="dna_alignment_gap">Alignment Gap</label> 
+                              <input class="dloop_input p-0" id="dna_alignment_gap" name="dna_alignment_gap" value="-">
+                            </div>
+                          </div>
+                          <div class="grid-col-1">
+                            <div class="grid-col-2 input-data-options my-1">
+                              <label for="dna_identical_symbol">Identical Symbol</label>  
+                              <input class="dloop_input p-0" id="dna_identical_symbol" name="dna_identical_symbol" value=".">        
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="protein_sequence" class="dloop_container protein_sequence content">
+                      <div class="dloop_boxed border-0">  
+                        <div class="row">
+                          <div class="grid-col-1">
+                            <div class="grid-col-2 input-data-options my-1">
+                              <label for="protein_missing_data">Missing Data</label>
+                              <input class="dloop_input p-0" id="protein_missing_data" name="protein_missing_data" value="?">
+                            </div>
+                          </div>
+                          <div class="grid-col-1">
+                            <div class="grid-col-2 input-data-options my-1">
+                              <label for="protein_alignment_gap">Alignment Gap</label>
+                              <input class="dloop_input p-0" id="protein_alignment_gap" name="protein_alignment_gap" value="-">
+                            </div>
+                          </div>
+                          <div class="grid-col-1">
+                            <div class="grid-col-2 input-data-options my-1">
+                              <label for="protein_identical_symbol">Identical Symbol</label>
+                              <input class="dloop_input p-0" id="protein_identical_symbol" name="protein_identical_symbol" value=".">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="pairwise_distance" class="dloop_container pairwise_distance content">
+                      <div class="dloop_boxed border-0">                            
+                        <div class="row">
+                          <div class="grid-col-1">
+                            <div class="grid-col-2 input-data-options my-1">
+                              <label for="pairwise_missing_data">Missing Data</label> 
+                              <input class="dloop_input p-0" id="pairwise_missing_data" name="pairwise_missing_data" value="?">
+                            </div>
+                          </div>
+                          <div class="">Matrix Format</div>
+                            <div class="grid-col-2-aside">
+                              <input type="radio" name="select_option" value="lower_left_matrix" class="m-0" id="lower_left_matrix" ischecked="true" checked />
+                              <label for="lower_left_matrix" class="d-flex align-items-center">Lower Left Matrix</label>
+                            </div>
+                            <div class="grid-col-2-aside">
+                              <input type="radio" name="select_option" value="upper_right_matrix" class="m-0" id="upper_right_matrix" ischecked="false" />
+                              <label for="upper_right_matrix" class="d-flex align-items-center">Upper Right Matrix</label>
+                            </div>   
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+        </div>
+    </body>
+</html>

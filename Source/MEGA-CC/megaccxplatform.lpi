@@ -1,0 +1,1148 @@
+{
+	Copyright 1992-2021 Sudhir Kumar and Koichiro Tamura
+
+	This file is part of the MEGA (Molecular Evolutionary Genetics Analyis) software.
+
+	MEGA (Molecular Evolutionary Genetics Analysis) is free software:
+	you can redistribute it and/or modify it under the terms of the
+	GNU General Public License as published by the Free Software
+	Foundation, either version 3 of the License, or (at your option)
+	any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+   Contributor(s):   The MEGA source code and software is made available in the hopes that it will be useful. 
+   In keeping with the spirit and intent that the MEGA project is developed under, the authors of MEGA request that before
+   distributing any significant changes to the MEGA source code (or derivatives thereof), you share
+   those changes with the MEGA authors so that they may have the opportunity to test that
+   the changes do not introduce errors into the code or otherwise negatively impact the correctness
+   or performance of the MEGA software.
+   
+	Please email inqiries to s.kumar@temple.edu
+}
+
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <General>
+      <Flags>
+        <MainUnitHasCreateFormStatements Value="False"/>
+      </Flags>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <AutoCreateForms Value="False"/>
+      <Title Value="MEGA-CC"/>
+      <UseAppBundle Value="False"/>
+      <ResourceType Value="res"/>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <MajorVersionNr Value="10"/>
+      <MinorVersionNr Value="1"/>
+      <BuildNr Value="1"/>
+    </VersionInfo>
+    <MacroValues Count="1">
+      <Macro1 Name="LCLWidgetType" Value="nogui"/>
+    </MacroValues>
+    <BuildModes Count="9">
+      <Item1 Name="Debug" Default="True"/>
+      <Item2 Name="Release-win64">
+        <MacroValues Count="1">
+          <Macro1 Name="LCLWidgetType" Value="nogui"/>
+        </MacroValues>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="..\WIN64\megacc"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value=".;..\Alignment;..\AlignmentEditor;..\Common;..\TextEditor;..\UsageStatistics;..\InputData;..\Compute;..\TamuraFuncs;..\reltime;..\MegaVcl;..\Process;..\RuntimeProgress;..\DataOutput;..\TreeEditor;..\ResultsForms;..\InputData\nexus;..\PatristicDist;..\Private\Help;..\Helpers;..\Captions;..\CalibrationTester;..\Applinker;..\Web;..\MegaDlgs;..\BEAM;..\CloneFinder\compute;..\CloneFinder\data;..\CloneFinder\options;..\CloneFinder\parsers;..\CloneFinder\process;..\CloneFinder\renderers;..\ImageForm;..\UnitTests\CloneFinder\common;..\Workflow;..\Workflow\common;..\Workflow\compute;..\Workflow\data;..\AnalysisWizard"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+              <DebugInfoType Value="dsDwarf2Set"/>
+              <UseValgrind Value="True"/>
+              <StripSymbols Value="True"/>
+              <UseExternalDbgSyms Value="True"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <WriteFPCLogo Value="False"/>
+            <CompilerMessages>
+              <IgnoredMessages idx3123="True"/>
+            </CompilerMessages>
+            <CustomOptions Value="-dNO_BROWSER"/>
+            <OtherDefines Count="1">
+              <Define0 Value="NO_BROWSER"/>
+            </OtherDefines>
+          </Other>
+        </CompilerOptions>
+      </Item2>
+      <Item3 Name="VarianceDebug">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="..\..\megacc"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value=".;..\Alignment;..\AlignmentEditor;..\Common;..\TextEditor;..\UsageStatistics;..\InputData;..\Compute;..\TamuraFuncs;..\RelTime;..\MegaVcl;..\Process;..\RuntimeProgress;..\DataOutput;..\TreeEditor;..\ResultsForms;..\InputData\nexus;..\PatristicDist;..\mega-tt;..\BEAM;..\UnitTests\CloneFinder\common"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <DebugInfoType Value="dsDwarf2Set"/>
+            </Debugging>
+          </Linking>
+          <Other>
+            <CustomOptions Value="-dVARIANCE_DEBUG
+-dSAMPLE_TIMES
+-dDEBUG"/>
+          </Other>
+        </CompilerOptions>
+      </Item3>
+      <Item4 Name="mega_tt">
+        <MacroValues Count="1">
+          <Macro3 Name="LCLWidgetType" Value="gtk2"/>
+        </MacroValues>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="..\..\LINUX64\megacc"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value=".;..\Alignment;..\AlignmentEditor;..\Common;..\TextEditor;..\UsageStatistics;..\InputData;..\Compute;..\TamuraFuncs;..\RelTime;..\MegaVcl;..\Process;..\RuntimeProgress;..\DataOutput;..\TreeEditor;..\ResultsForms;..\InputData\nexus;..\PatristicDist;..\MegaDlgs;..\mega-tt;..\BEAM;..\UnitTests\CloneFinder\common"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <DebugInfoType Value="dsDwarf2Set"/>
+            </Debugging>
+          </Linking>
+          <Other>
+            <CustomOptions Value="-dMEGA_TT
+-dDEBUG"/>
+          </Other>
+        </CompilerOptions>
+      </Item4>
+      <Item5 Name="mega_tt_release">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="..\..\LINUX64\megacc"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value=".;..\Alignment;..\AlignmentEditor;..\Common;..\TextEditor;..\UsageStatistics;..\InputData;..\Compute;..\TamuraFuncs;..\RelTime;..\MegaVcl;..\Process;..\RuntimeProgress;..\DataOutput;..\TreeEditor;..\ResultsForms;..\InputData\nexus;..\PatristicDist;..\MegaDlgs;..\mega-tt;..\BEAM;..\UnitTests\CloneFinder\common"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+              <DebugInfoType Value="dsDwarf2Set"/>
+            </Debugging>
+          </Linking>
+          <Other>
+            <CustomOptions Value="-dMEGA_TT"/>
+          </Other>
+        </CompilerOptions>
+      </Item5>
+      <Item6 Name="release-Linux">
+        <MacroValues Count="1">
+          <Macro1 Name="LCLWidgetType" Value="nogui"/>
+        </MacroValues>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="..\megacc"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value=".;..\Alignment;..\AlignmentEditor;..\Common;..\UsageStatistics;..\InputData;..\Compute;..\TamuraFuncs;..\MegaVcl;..\Process;..\RuntimeProgress;..\DataOutput;..\TreeEditor;..\ResultsForms;..\InputData\nexus;..\PatristicDist;..\MegaDlgs;..\TextEditor;..\Captions;..\CalibrationTester;..\Applinker;..\Helpers;..\Private\Help;..\reltime;..\Web;..\BEAM;..\CloneFinder;..\CloneFinder\data;..\CloneFinder\compute;..\CloneFinder\dialogs;..\CloneFinder\parsers;..\CloneFinder\renderers;..\CloneFinder\process;..\CloneFinder\options;..\UnitTests\CloneFinder\common;..\Workflow;..\Workflow\common;..\Workflow\compute;..\Workflow\data;..\AnalysisWizard"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+              <DebugInfoType Value="dsDwarf2Set"/>
+            </Debugging>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowUsedFiles Value="True"/>
+              <ShowTriedFiles Value="True"/>
+            </Verbosity>
+            <CustomOptions Value="-dNO_BROWSER"/>
+            <OtherDefines Count="2">
+              <Define0 Value="DEBUG"/>
+              <Define1 Value="NO_BROWSER"/>
+            </OtherDefines>
+            <ExecuteAfter>
+              <Command Value=".\test_cc_dependencies.sh"/>
+            </ExecuteAfter>
+          </Other>
+        </CompilerOptions>
+      </Item6>
+      <Item7 Name="Release-win32">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="..\WIN32\megacc"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value=".;..\Alignment;..\AlignmentEditor;..\Common;..\TextEditor;..\UsageStatistics;..\InputData;..\Compute;..\TamuraFuncs;..\RelTime;..\MegaVcl;..\Process;..\RuntimeProgress;..\DataOutput;..\TreeEditor;..\ResultsForms;..\InputData\nexus;..\PatristicDist;..\Private\Help;..\Helpers;..\Captions;..\CalibrationTester;..\AppLinker;..\Web;..\BEAM;..\CloneFinder\compute;..\CloneFinder\data;..\CloneFinder\options;..\CloneFinder\parsers;..\CloneFinder\process;..\UnitTests\CloneFinder\common;..\Workflow\data;..\Workflow\gui;..\Workflow;..\AnalysisWizard"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <TargetCPU Value="i386"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+              <DebugInfoType Value="dsDwarf2Set"/>
+              <UseValgrind Value="True"/>
+              <StripSymbols Value="True"/>
+              <UseExternalDbgSyms Value="True"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowUsedFiles Value="True"/>
+              <ShowTriedFiles Value="True"/>
+            </Verbosity>
+            <CustomOptions Value="-dNO_BROWSER"/>
+            <OtherDefines Count="1">
+              <Define0 Value="NO_BROWSER"/>
+            </OtherDefines>
+          </Other>
+        </CompilerOptions>
+      </Item7>
+      <Item8 Name="release-macos">
+        <MacroValues Count="1">
+          <Macro1 Name="LCLWidgetType" Value="nogui"/>
+        </MacroValues>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="..\megacc"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value=".;..\Alignment;..\AlignmentEditor;..\Common;..\UsageStatistics;..\InputData;..\Compute;..\TamuraFuncs;..\MegaVcl;..\Process;..\RuntimeProgress;..\DataOutput;..\TreeEditor;..\ResultsForms;..\InputData\nexus;..\PatristicDist;..\MegaDlgs;..\TextEditor;..\Captions;..\CalibrationTester;..\Applinker;..\Helpers;..\Private\Help;..\reltime;..\Web;..\BEAM;..\UnitTests\CloneFinder\common;..\Workflow\data;..\Workflow\gui;..\CloneFinder\compute;..\CloneFinder\data;..\CloneFinder\options;..\CloneFinder\parsers;..\CloneFinder\process;..\AnalysisWizard"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+              <DebugInfoType Value="dsDwarf2Set"/>
+            </Debugging>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowUsedFiles Value="True"/>
+              <ShowTriedFiles Value="True"/>
+            </Verbosity>
+            <CustomOptions Value="-dNO_BROWSER"/>
+            <OtherDefines Count="2">
+              <Define0 Value="DEBUG"/>
+              <Define1 Value="NO_BROWSER"/>
+            </OtherDefines>
+            <ExecuteAfter>
+              <Command Value=".\post_compile.sh"/>
+            </ExecuteAfter>
+          </Other>
+        </CompilerOptions>
+      </Item8>
+      <Item9 Name="test-build-Linux">
+        <MacroValues Count="2">
+          <Macro1 Name="LCLWidgetType" Value="nogui"/>
+          <Macro2 Name="LCLWidgetType" Value="nogui"/>
+        </MacroValues>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="..\megacc"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value=".;..\Alignment;..\AlignmentEditor;..\Common;..\TextEditor;..\UsageStatistics;..\InputData;..\Compute;..\TamuraFuncs;..\reltime;..\MegaVcl;..\Process;..\RuntimeProgress;..\DataOutput;..\TreeEditor;..\ResultsForms;..\InputData\nexus;..\PatristicDist;..\Private\Help;..\Helpers;..\Captions;..\CalibrationTester;..\Applinker;..\Web;..\MegaDlgs;..\BEAM;..\CloneFinder\compute;..\CloneFinder\data;..\CloneFinder\options;..\CloneFinder\parsers;..\CloneFinder\process;..\CloneFinder\renderers;..\ImageForm;..\UnitTests\CloneFinder\common"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+              <DebugInfoType Value="dsDwarf2Set"/>
+              <UseValgrind Value="True"/>
+              <StripSymbols Value="True"/>
+              <UseExternalDbgSyms Value="True"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowUsedFiles Value="True"/>
+              <ShowTriedFiles Value="True"/>
+            </Verbosity>
+            <CustomOptions Value="-dNO_BROWSER"/>
+            <OtherDefines Count="1">
+              <Define0 Value="NO_BROWSER"/>
+            </OtherDefines>
+          </Other>
+        </CompilerOptions>
+      </Item9>
+      <SharedMatrixOptions Count="3">
+        <Item1 ID="740673248759" Modes="Release-win64,Debug,release-Linux,release-macos,test-build-Linux" Type="IDEMacro" MacroName="LCLWidgetType" Value="nogui"/>
+        <Item2 ID="478755905496" Modes="test-build-Linux" Type="IDEMacro" MacroName="LCLWidgetType" Value="nogui"/>
+        <Item3 ID="457257325351" Modes="mega_tt" Type="IDEMacro" MacroName="LCLWidgetType" Value="gtk2"/>
+      </SharedMatrixOptions>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <CommandLineParams Value="-a analyze_user_tree_ML_nucleotide.mao -d Crab_rRNA.meg -t Crab_rRNA.nwk -bns 3 -bnsr 3 -bssf 0.9"/>
+        <WorkingDirectory Value="C:\Users\gstecher\mydata\Documents\iGEM\MEGA\testing\sandbox\MegaMultiTest\src"/>
+        <Display Use="True"/>
+      </local>
+      <FormatVersion Value="2"/>
+      <Modes Count="1">
+        <Mode0 Name="default">
+          <local>
+            <CommandLineParams Value="-a analyze_user_tree_ML_nucleotide.mao -d Crab_rRNA.meg -t Crab_rRNA.nwk -bns 3 -bnsr 3 -bssf 0.9"/>
+            <WorkingDirectory Value="C:\Users\gstecher\mydata\Documents\iGEM\MEGA\testing\sandbox\MegaMultiTest\src"/>
+            <Display Use="True"/>
+          </local>
+        </Mode0>
+      </Modes>
+    </RunParams>
+    <RequiredPackages Count="4">
+      <Item1>
+        <PackageName Value="laz_fpspreadsheet"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="LCL"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="FCL"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="LCLBase"/>
+      </Item4>
+    </RequiredPackages>
+    <Units Count="151">
+      <Unit0>
+        <Filename Value="megaccxplatform.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="MD_MegaMain.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="..\Alignment\md_sequences.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MD_Sequences"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="..\AlignmentEditor\md_align.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MD_Align"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="..\Common\distanceutils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="DistanceUtils"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="..\Common\keywordconsts.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="KeywordConsts"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="..\Common\levenshtein.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Levenshtein"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="..\Common\manalysisinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MAnalysisInfo"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="..\Common\MD5.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="..\Common\mdistpack.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="..\Common\mdomaininfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MDomainInfo"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="..\Common\megaanalysisprefstrings.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MegaAnalysisPrefStrings"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="..\Common\megaconsts.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MegaConsts"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="..\Common\megaerrutils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MegaErrUtils"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="..\Common\megaprivatefiles.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MegaPrivateFiles"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="..\Common\megautils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MegaUtils"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="..\Common\megautils_nv.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MegaUtils_NV"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="..\Common\megaverconsts.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MegaVerConsts"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="..\Common\MFileUtils.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="..\Common\mglobalsettings.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="..\Common\MLocusInfo.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="..\Common\mlongintlist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MLongintList"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="..\Common\MMutationInfo.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="..\Common\motuinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MOtuInfo"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="..\Common\MPartitionData.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="..\Common\mprocesspack.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MProcessPack"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="..\Common\msinglelist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MSingleList"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="..\Common\msubstitutionmodelutils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MSubstitutionModelUtils"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="..\Common\mtreepack.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="..\Common\stringutils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="StringUtils"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="..\Common\Webtop.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="..\TextEditor\mformatconverttomega.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MFormatConvertToMega"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="..\UsageStatistics\musagestatistics.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MUsageStatistics"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="..\InputData\md_inputseqdata.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MD_InputSeqData"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="..\InputData\md_inputdistdata.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MD_InputDistData"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="..\InputData\mdatafileinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MDataFileInfo"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="..\InputData\MLexDist.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="..\InputData\mlexmutations.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MLexMutations"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="..\InputData\mlexseq.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MLexSeq"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="..\InputData\mtokenizer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MTokenizer"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="..\Compute\MCodons.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit40>
+      <Unit41>
+        <Filename Value="..\Compute\maminodist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MAminoDist"/>
+      </Unit41>
+      <Unit42>
+        <Filename Value="..\Compute\MAminoMatrix.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit42>
+      <Unit43>
+        <Filename Value="..\Compute\mcomputeparsiminfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MComputeParsimInfo"/>
+      </Unit43>
+      <Unit44>
+        <Filename Value="..\Compute\mnucdist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MNucDist"/>
+      </Unit44>
+      <Unit45>
+        <Filename Value="..\Compute\mseqdistbase.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MSeqDistBase"/>
+      </Unit45>
+      <Unit46>
+        <Filename Value="..\Compute\msynnonsyndist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MSynNonsynDist"/>
+      </Unit46>
+      <Unit47>
+        <Filename Value="..\Common\excelwrite.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ExcelWrite"/>
+      </Unit47>
+      <Unit48>
+        <Filename Value="..\Common\ExcelWriteLinux.inc"/>
+        <IsPartOfProject Value="True"/>
+      </Unit48>
+      <Unit49>
+        <Filename Value="..\TamuraFuncs\mltree.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MLTree"/>
+      </Unit49>
+      <Unit50>
+        <Filename Value="..\TamuraFuncs\gammafuncs.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="GammaFuncs"/>
+      </Unit50>
+      <Unit51>
+        <Filename Value="..\TamuraFuncs\matrixconsts.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MatrixConsts"/>
+      </Unit51>
+      <Unit52>
+        <Filename Value="..\TamuraFuncs\matrixfuncs.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MatrixFuncs"/>
+      </Unit52>
+      <Unit53>
+        <Filename Value="..\TamuraFuncs\MLFuncs.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit53>
+      <Unit54>
+        <Filename Value="..\TamuraFuncs\mlmodels.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MLModels"/>
+      </Unit54>
+      <Unit55>
+        <Filename Value="..\TamuraFuncs\mlsearchthread.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MLSearchThread"/>
+      </Unit55>
+      <Unit56>
+        <Filename Value="..\TamuraFuncs\mtreeestfunc.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MTreeEstFunc"/>
+      </Unit56>
+      <Unit57>
+        <Filename Value="..\TamuraFuncs\mtreelist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MTreeList"/>
+      </Unit57>
+      <Unit58>
+        <Filename Value="..\TamuraFuncs\mtreeproc.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MTreeProc"/>
+      </Unit58>
+      <Unit59>
+        <Filename Value="..\TamuraFuncs\mtreesearchthread.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MTreeSearchThread"/>
+      </Unit59>
+      <Unit60>
+        <Filename Value="..\TamuraFuncs\parsimsearchthreads.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ParsimSearchThreads"/>
+      </Unit60>
+      <Unit61>
+        <Filename Value="..\TamuraFuncs\showtrees.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ShowTrees"/>
+      </Unit61>
+      <Unit62>
+        <Filename Value="..\reltime\mcalibrationdata.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MCalibrationData"/>
+      </Unit62>
+      <Unit63>
+        <Filename Value="..\reltime\mreltimethreads.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit63>
+      <Unit64>
+        <Filename Value="..\MegaVcl\megamainpreferences.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MegaMainPreferences"/>
+      </Unit64>
+      <Unit65>
+        <Filename Value="..\Process\processinputdata.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ProcessInputData"/>
+      </Unit65>
+      <Unit66>
+        <Filename Value="..\Process\processcodonomegacmds.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ProcessCodonOmegaCmds"/>
+      </Unit66>
+      <Unit67>
+        <Filename Value="..\Process\processdistcmds.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ProcessDistCmds"/>
+      </Unit67>
+      <Unit68>
+        <Filename Value="..\Process\processmltreecmds.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ProcessMLTreeCmds"/>
+      </Unit68>
+      <Unit69>
+        <Filename Value="..\Process\processparsimtreecmds.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ProcessParsimTreeCmds"/>
+      </Unit69>
+      <Unit70>
+        <Filename Value="..\Process\processtestcmds.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ProcessTestCmds"/>
+      </Unit70>
+      <Unit71>
+        <Filename Value="..\Process\processtreecmds.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ProcessTreeCmds"/>
+      </Unit71>
+      <Unit72>
+        <Filename Value="..\Process\wpsCsvParser.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit72>
+      <Unit73>
+        <Filename Value="..\RuntimeProgress\mpleasewait.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MPleaseWait"/>
+      </Unit73>
+      <Unit74>
+        <Filename Value="..\RuntimeProgress\mruntimeprogressdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="RuntimeProgressDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit74>
+      <Unit75>
+        <Filename Value="..\DataOutput\manalysissummary.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MAnalysisSummary"/>
+      </Unit75>
+      <Unit76>
+        <Filename Value="..\TreeEditor\mmatrixexport.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MMatrixExport"/>
+      </Unit76>
+      <Unit77>
+        <Filename Value="..\ResultsForms\mdisplaymatrixdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MDisplayMatrixDlg"/>
+      </Unit77>
+      <Unit78>
+        <Filename Value="..\Common\mcustominifile.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit78>
+      <Unit79>
+        <Filename Value="..\TamuraFuncs\mtreedataadapter.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MTreeDataAdapter"/>
+      </Unit79>
+      <Unit80>
+        <Filename Value="..\TamuraFuncs\msitecoverage.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit80>
+      <Unit81>
+        <Filename Value="..\reltime\mtimetreevalidation.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MTimeTreeValidation"/>
+      </Unit81>
+      <Unit82>
+        <Filename Value="..\MegaVcl\mtreebox.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MTreeBox"/>
+      </Unit82>
+      <Unit83>
+        <Filename Value="..\Common\mtimelimit.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit83>
+      <Unit84>
+        <Filename Value="..\InputData\nexus\gfileutils.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit84>
+      <Unit85>
+        <Filename Value="..\InputData\nexus\gtokenizer.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit85>
+      <Unit86>
+        <Filename Value="..\InputData\nexus\gutilities.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit86>
+      <Unit87>
+        <Filename Value="..\InputData\nexus\nexustokens.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit87>
+      <Unit88>
+        <Filename Value="..\InputData\nexus\nexusblock.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit88>
+      <Unit89>
+        <Filename Value="..\InputData\nexus\nexustokenizer.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit89>
+      <Unit90>
+        <Filename Value="..\InputData\nexus\nexusfile.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit90>
+      <Unit91>
+        <Filename Value="..\PatristicDist\mpatristicdist.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit91>
+      <Unit92>
+        <Filename Value="..\TamuraFuncs\mptree.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MPTree"/>
+      </Unit92>
+      <Unit93>
+        <Filename Value="..\MegaDlgs\mtreeboxform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TreeBoxForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit93>
+      <Unit94>
+        <Filename Value="..\reltime\mreltimecomputer.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit94>
+      <Unit95>
+        <Filename Value="..\DataOutput\mancestralstatesexportheader.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit95>
+      <Unit96>
+        <Filename Value="..\DataOutput\mancestralstatesexporter.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit96>
+      <Unit97>
+        <Filename Value="..\TamuraFuncs\mltreeanalyzer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MLTreeAnalyzer"/>
+      </Unit97>
+      <Unit98>
+        <Filename Value="..\DataOutput\nexus\mnexuswriter.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit98>
+      <Unit99>
+        <Filename Value="..\TamuraFuncs\mpartitionlist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MPartitionList"/>
+      </Unit99>
+      <Unit100>
+        <Filename Value="..\reltime\mcorrelationtest.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit100>
+      <Unit101>
+        <Filename Value="..\Applinker\applinker.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="AppLinker"/>
+      </Unit101>
+      <Unit102>
+        <Filename Value="..\TamuraFuncs\mepthreads.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit102>
+      <Unit103>
+        <Filename Value="..\TamuraFuncs\mtajimaneutralitytestthread.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit103>
+      <Unit104>
+        <Filename Value="..\TamuraFuncs\mtajimaclocktestthread.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit104>
+      <Unit105>
+        <Filename Value="..\reltime\mcalibrationsampler.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit105>
+      <Unit106>
+        <Filename Value="..\reltime\mcalibrationdensity.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit106>
+      <Unit107>
+        <Filename Value="..\BEAM\mbeamtypes.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit107>
+      <Unit108>
+        <Filename Value="..\BEAM\mbeamthread.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit108>
+      <Unit109>
+        <Filename Value="..\TamuraFuncs\mbaby_bootstrap_calculator.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit109>
+      <Unit110>
+        <Filename Value="..\Common\mbootstrap_sampler.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit110>
+      <Unit111>
+        <Filename Value="..\Common\mpartitions_blens_list.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit111>
+      <Unit112>
+        <Filename Value="..\Common\mpartitions_blens_summary.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit112>
+      <Unit113>
+        <Filename Value="..\Common\mextendedlist.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit113>
+      <Unit114>
+        <Filename Value="..\TamuraFuncs\mmlcalculatedvalues.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit114>
+      <Unit115>
+        <Filename Value="..\TamuraFuncs\mtreedata.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MTreeData"/>
+      </Unit115>
+      <Unit116>
+        <Filename Value="..\Common\mhistogram.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit116>
+      <Unit117>
+        <Filename Value="..\CloneFinder\process\mprocessclonefindercmds.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit117>
+      <Unit118>
+        <Filename Value="..\CloneFinder\compute\mclonefinderthreads.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit118>
+      <Unit119>
+        <Filename Value="..\CloneFinder\data\mclonefindersequences.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit119>
+      <Unit120>
+        <Filename Value="..\CloneFinder\data\mtumorinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit120>
+      <Unit121>
+        <Filename Value="..\CloneFinder\data\mcandidate_clones.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit121>
+      <Unit122>
+        <Filename Value="..\CloneFinder\data\mclonefinderalignment.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit122>
+      <Unit123>
+        <Filename Value="..\CloneFinder\data\mclone_data_filters.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit123>
+      <Unit124>
+        <Filename Value="..\CloneFinder\compute\mclone_frequency_computer.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit124>
+      <Unit125>
+        <Filename Value="..\reltime\mcheck_abort_reltime.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit125>
+      <Unit126>
+        <Filename Value="..\Common\strhashmap.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="StrHashMap"/>
+      </Unit126>
+      <Unit127>
+        <Filename Value="..\CloneFinder\options\mclonefinderoptions.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit127>
+      <Unit128>
+        <Filename Value="..\CloneFinder\compute\msnp_cluster_generator.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit128>
+      <Unit129>
+        <Filename Value="..\CloneFinder\data\mclone_finder_cluster.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit129>
+      <Unit130>
+        <Filename Value="..\CloneFinder\data\mclone_finder_estimated_snvs.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit130>
+      <Unit131>
+        <Filename Value="..\CloneFinder\data\mtumorsampleprofile.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit131>
+      <Unit132>
+        <Filename Value="..\CloneFinder\compute\msnp_group_combiner.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit132>
+      <Unit133>
+        <Filename Value="..\UnitTests\CloneFinder\common\clone_finder_test_utils.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit133>
+      <Unit134>
+        <Filename Value="..\Workflow\data\mworkflow_tree_search_element.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit134>
+      <Unit135>
+        <Filename Value="..\Workflow\data\mworkflow_input_data_element.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit135>
+      <Unit136>
+        <Filename Value="..\Common\mparse_mao_file.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit136>
+      <Unit137>
+        <Filename Value="..\Workflow\data\mworkflow_output_data_element.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit137>
+      <Unit138>
+        <Filename Value="..\Workflow\data\mnative_calculation.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit138>
+      <Unit139>
+        <Filename Value="..\Workflow\data\mworkflow.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit139>
+      <Unit140>
+        <Filename Value="..\Workflow\data\mworkflow_element.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit140>
+      <Unit141>
+        <Filename Value="..\Workflow\data\mworkflow_interfaces.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit141>
+      <Unit142>
+        <Filename Value="..\TreeEditor\mtree_display_setup.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit142>
+      <Unit143>
+        <Filename Value="..\Process\mdist_command_finalize.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit143>
+      <Unit144>
+        <Filename Value="..\Process\mdist_command_threads.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit144>
+      <Unit145>
+        <Filename Value="..\reltime\mtipdatesfinder.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit145>
+      <Unit146>
+        <Filename Value="..\Common\mgeographical_info.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit146>
+      <Unit147>
+        <Filename Value="..\AnalysisWizard\manalysiswizard.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MAnalysisWizard"/>
+      </Unit147>
+      <Unit148>
+        <Filename Value="..\Helpers\mega_citation.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit148>
+      <Unit149>
+        <Filename Value="..\TamuraFuncs\mcompare_bootstrap_trees.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit149>
+      <Unit150>
+        <Filename Value="..\TamuraFuncs\mtabular_tree_export.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit150>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="..\megacc"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value=".;..\Alignment;..\AlignmentEditor;..\Common;..\UsageStatistics;..\InputData;..\Compute;..\TamuraFuncs;..\MegaVcl;..\Process;..\RuntimeProgress;..\DataOutput;..\TreeEditor;..\ResultsForms;..\InputData\nexus;..\PatristicDist;..\MegaDlgs;..\TextEditor;..\Captions;..\CalibrationTester;..\Applinker;..\Helpers;..\Private\Help;..\reltime;..\Web;..\BEAM;..\CloneFinder;..\CloneFinder\compute;..\CloneFinder\data;..\CloneFinder\dialogs;..\CloneFinder\parsers;..\CloneFinder\options;..\CloneFinder\process;..\CloneFinder\renderers;..\UnitTests\CloneFinder\common;..\Workflow;..\Workflow\common;..\Workflow\compute;..\Workflow\data;..\ImageForm;..\AnalysisWizard"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Parsing>
+      <SyntaxOptions>
+        <IncludeAssertionCode Value="True"/>
+      </SyntaxOptions>
+    </Parsing>
+    <CodeGeneration>
+      <Checks>
+        <IOChecks Value="True"/>
+        <RangeChecks Value="True"/>
+        <OverflowChecks Value="True"/>
+        <StackChecks Value="True"/>
+      </Checks>
+      <VerifyObjMethodCallValidity Value="True"/>
+    </CodeGeneration>
+    <Other>
+      <Verbosity>
+        <ShowDebugInfo Value="True"/>
+        <ShowTriedFiles Value="True"/>
+      </Verbosity>
+      <CustomOptions Value="-dDEBUG
+-dNO_BROWSER"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+        <Enabled Value="False"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

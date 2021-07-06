@@ -1,0 +1,40 @@
+{if TAnalysisInfo.HasDistPack = True}
+  {if TAnalysisInfo.isAminoAcid = True} 
+    This analysis involved {TAnalysisInfo.NoOfSeqs} amino acid sequences.
+  {else}
+    This analysis involved {TAnalysisInfo.NoOfSeqs} nucleotide sequences.
+  {endif}
+
+  {if TAnalysisInfo.isAminoAcid = True}
+    {if TAnalysisInfo.IsCoding = True}
+      The coding data was translated assuming a {TDistPack.GeneticCode} genetic code table.
+    {endif}
+  {endif}
+
+  {if TAnalysisInfo.CodonPositions    ! ''}
+    Codon positions included were {TAnalysisInfo.CodonPositions}.
+  {endif}
+
+  {if TAnalysisInfo.SiteLabelsCaption ! ''}
+    Only sites with user-specified labels ({TAnalysisInfo.SiteLabelsCaption}) were included.
+  {endif}
+
+  {if TAnalysisInfo.IsCompleteDeletion    = True}
+    All positions containing gaps and missing data were eliminated (complete deletion option).
+  {elseif TAnalysisInfo.IsPartialDeletion = True}
+    All positions with less than {TAnalysisInfo.SiteCoverage}% site coverage were eliminated, i.e.,
+    fewer than {TAnalysisInfo.SiteCoverageReverse}% alignment gaps, missing data, and ambiguous bases
+    were allowed at any position (partial deletion option).
+  {elseif TAnalysisInfo.IsPairwiseDeletion = True}
+    {if TAnalysisInfo.IsPairwiseStyleAnalysis = True}
+      All ambiguous positions were removed for each sequence pair (pairwise deletion option).
+    {endif}
+  {endif}
+{endif}
+
+{if TAnalysisInfo.NoOfSites > 0}
+  There were a total of {TAnalysisInfo.NoOfSites} positions in the final dataset.
+{endif}
+
+Evolutionary analyses were conducted in MEGA11 [{TLegendGenerator.MegaCitation:ExpandCitation}]{if TAnalysisInfo.OperatingSystem = 'macOS'} [{TLegendGenerator.MegaMacCitation:ExpandCitation}]{endif}.
+

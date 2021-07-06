@@ -1,0 +1,100 @@
+object UpdatesDlg: TUpdatesDlg
+  Left = 646
+  Height = 216
+  Top = 307
+  Width = 408
+  Caption = 'MEGA Update Wizard'
+  ClientHeight = 216
+  ClientWidth = 408
+  LCLVersion = '1.4.0.4'
+  object Panel1: TPanel
+    Left = 0
+    Height = 216
+    Top = 0
+    Width = 408
+    Align = alClient
+    ClientHeight = 216
+    ClientWidth = 408
+    TabOrder = 0
+    object Panel2: TPanel
+      Left = 1
+      Height = 39
+      Top = 1
+      Width = 406
+      Align = alTop
+      ClientHeight = 39
+      ClientWidth = 406
+      TabOrder = 0
+      object HeaderLbl: TLabel
+        Left = 1
+        Height = 37
+        Top = 1
+        Width = 404
+        Align = alClient
+        Alignment = taCenter
+        Caption = 'An Update (7.0.8) for MEGA is Available'
+        Font.Color = clNavy
+        Font.Height = -16
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        Layout = tlCenter
+        ParentColor = False
+        ParentFont = False
+        WordWrap = True
+      end
+    end
+    object Panel3: TPanel
+      Left = 1
+      Height = 40
+      Top = 175
+      Width = 406
+      Align = alBottom
+      ClientHeight = 40
+      ClientWidth = 406
+      TabOrder = 1
+      object DownloadBtn: TButton
+        Left = 312
+        Height = 30
+        Top = 5
+        Width = 85
+        Caption = 'Download'
+        ModalResult = 1
+        OnClick = DownloadBtnClick
+        TabOrder = 0
+      end
+      object CancelBtn: TButton
+        Left = 216
+        Height = 30
+        Top = 5
+        Width = 85
+        Caption = '&Close'
+        ModalResult = 2
+        OnClick = CancelBtnClick
+        TabOrder = 1
+      end
+      object IgnoreUpdateCheckBox: TCheckBox
+        Left = 16
+        Height = 25
+        Top = 5
+        Width = 145
+        Caption = 'Ignore this update'
+        TabOrder = 2
+      end
+    end
+    object MessagesMemo: TMemo
+      Left = 1
+      Height = 135
+      Top = 40
+      Width = 406
+      Align = alClient
+      BorderStyle = bsNone
+      Lines.Strings = (
+        'Notes:'
+        'This version optimizes variance estimation for the reltime analysis and also includes some minor bug fixes.'
+      )
+      ParentColor = True
+      ScrollBars = ssAutoBoth
+      TabOrder = 2
+    end
+  end
+end

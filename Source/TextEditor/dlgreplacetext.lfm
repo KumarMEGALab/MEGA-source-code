@@ -1,0 +1,73 @@
+inherited TextReplaceDialog: TTextReplaceDialog
+  Left = 558
+  Height = 292
+  Top = 194
+  Width = 510
+  Caption = 'Replace Text'
+  ClientHeight = 292
+  ClientWidth = 510
+  OnClose = FormClose
+  inherited cbSearchText: TComboBox
+    Left = 120
+    Width = 376
+  end
+  inherited gbSearchOptions: TGroupBox
+    Height = 160
+    Top = 104
+    Width = 246
+    ClientHeight = 139
+    ClientWidth = 242
+    TabOrder = 2
+  end
+  inherited rgSearchDirection: TRadioGroup
+    Left = 306
+    Top = 104
+    TabOrder = 3
+  end
+  inherited btnOK: TButton
+    Left = 295
+    Top = 229
+    Caption = 'Replace'
+    OnClick = btnOKClick
+    TabOrder = 4
+  end
+  inherited btnCancel: TButton
+    Left = 403
+    Top = 229
+    ModalResult = 0
+    OnClick = btnCancelClick
+    TabOrder = 6
+  end
+  inherited CountStatusBar: TStatusBar
+    Top = 269
+    Width = 510
+  end
+  object Label2: TLabel[7]
+    Left = 10
+    Height = 16
+    Top = 56
+    Width = 80
+    Caption = '&Replace with:'
+    ParentColor = False
+  end
+  object cbReplaceText: TComboBox[8]
+    Left = 120
+    Height = 24
+    Top = 56
+    Width = 376
+    ItemHeight = 16
+    TabOrder = 1
+  end
+  object cbReplaceAll: TCheckBox[9]
+    Left = 22
+    Height = 20
+    Top = 232
+    Width = 90
+    Caption = 'Replace All'
+    TabOrder = 5
+  end
+  inherited IniPropStorage1: TIniPropStorage[10]
+    left = 440
+    top = 128
+  end
+end

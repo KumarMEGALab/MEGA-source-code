@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Genetic Code Output Format</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>       
+        <script type="text/javascript" src="js/jquery.validate.min.js"></script> 
+        <script type="text/javascript" src="js/select2.min.js"></script>    
+        <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+        <!--Bootstrap 3 Fallback-->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!--Bootstrap 4-->
+        <link href="css/bs4/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/default.css" rel="stylesheet" type="text/css" />
+
+        <script>
+            $(document).ready(function () {
+                $('#mainform').validate({
+                    rules: {
+                        genetic_code_output_filename: {
+                            required: true,
+                            minlength: 2
+                        }
+                    },
+                    submitHandler: function (form) {
+                        $('#is_validated').attr("value", "true");
+                    }
+                });
+                $("#genetic_code_output_option").select2({
+                     minimumResultsForSearch: Infinity
+                });
+                $('#genetic_code_output_upload_button').click(function() {
+                    $('#genetic_code_output_upload_file').click();
+                });
+                $('input[type="file"]').change(function(e) {
+                   var fileName = e.target.files[0].name;
+                   $("#genetic_code_upload_filename").val(fileName);
+                });
+                
+                function exportToCSV() {
+                    var csv = 'Abc, DEF, GHI, JKLM';
+                    csvData = 'data:application/csv;charset=utf-8,' + encodeURIComponent(csv);
+                    $(this)
+                    .attr({
+                    'href': csvData,
+                    'target': '_blank'
+                    });
+                }
+                $("#genetic_code_output_upload_button ").on('click', function (event) {
+                    exportToCSV.apply();
+                });
+                $('select').trigger("change");
+                $("#genetic_code_output_page").dialog({
+                    autoOpen: true,
+                    width: 400,
+                    height: 600,
+                    maxWidth: 400,
+                    title: 'Select Output Format',
+                    create: function(event, ui) { 
+                        var widget = $(this).dialog("widget");
+                        $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-arrowreturnthick-1-w");
+                        $(".ui-icon-arrowreturnthick-1-w").click(function() {
+                            window.location.href = "select_genetic_code.html";
+                        });
+                    }
+                });
+                $("ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable ui-resizable").css({
+                    "width": "400",
+                    "max-width": "400"
+                });
+                $('#genetic_code_output_page').css('overflow', 'hidden');
+                $("#genetic_code_output_option").change(function() {
+                    var str;
+                    $("select option:selected").each(function() {
+                        str = $(this).val();
+                    });
+                    if (str === 'xls') {
+                        $("#genetic_code_output_filename").val("Result.xls");
+                    }
+                    if (str === 'csv') {
+                        $("#genetic_code_output_filename").val("Result.csv");
+                    }
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+        <input type="hidden" name="is_validated" id="is_validated" value="false"/>
+        <div id="genetic_code_output_page">
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="main-heading subtract-left-margin">Select an Output Option</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <select class="genetic_code_output_option" id="genetic_code_output_option">
+                  <option value="xls">Microsoft Excel/Open Office (Display)</option>
+                  <option value="xls">Microsoft Excel/Open Office (Write to File)</option>
+                  <option value="csv">Comma-delimited File, CSV (Write to File)</option>
+                  <option value="csv">Text Editor (Display)</option>
+                </select>
+              </div>
+            </div>
+         
+            <div class="row">
+              <div class="col-12">
+                <div class="main-heading subtract-left-margin">Output Filename</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <form id="mainform">
+                <input type="text" id="genetic_code_output_filename" class="w-100 genetic_code_output_filename" name="genetic_code_output_filename" value="Result"/>
+                </form>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                  <div class="main-heading subtract-left-margin">Directory</div>
+                </div>
+                <div class="col-12">
+                  <input type="text" class="w-100" id="genetic_code_upload_filename">
+                  <div class="my-2">
+                    <a href="#" download="data.csv" id="btnExport">Export data into Excel</a>
+                    <input type="button" class="section-label" id="genetic_code_output_upload_button" value="...">
+                    <input type="file" name="genetic_code_output_upload_file" id="genetic_code_output_upload_file">
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

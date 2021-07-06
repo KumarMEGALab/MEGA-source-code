@@ -1,0 +1,554 @@
+object MutationExplorerForm: TMutationExplorerForm
+  Left = 437
+  Height = 664
+  Top = 150
+  Width = 1019
+  Caption = 'Mutation Explorer'
+  ClientHeight = 644
+  ClientWidth = 1019
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  OnDeactivate = FormDeactivate
+  OnDestroy = FormDestroy
+  OnHelp = FormHelp
+  OnHide = FormHide
+  OnMouseLeave = FormMouseLeave
+  OnShow = FormShow
+  SessionProperties = 'Height;PixelsPerInch;Width'
+  LCLVersion = '2.0.0.4'
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 26
+    Top = 0
+    Width = 1019
+    Caption = 'ToolBar1'
+    Color = clBtnFace
+    DisabledImages = MegaForm.DisabledIcons
+    Images = MegaForm.NewIcons
+    ParentColor = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 0
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 2
+      Action = ImportQueryDataFileAction
+    end
+    object ToolButton2: TToolButton
+      Left = 24
+      Top = 2
+      Action = ExportExcelAction
+    end
+    object ToolButton3: TToolButton
+      Left = 47
+      Top = 2
+      Action = ExportCsvAction
+    end
+    object ToolButton4: TToolButton
+      Left = 70
+      Height = 22
+      Top = 2
+      Caption = 'ToolButton4'
+      Style = tbsDivider
+    end
+    object ToolButton5: TToolButton
+      Left = 75
+      Top = 2
+      Action = CopyAction
+    end
+    object ToolButton6: TToolButton
+      Left = 98
+      Top = 2
+      Action = SelectAllAction
+    end
+    object ToolButton7: TToolButton
+      Left = 121
+      Height = 22
+      Top = 2
+      Caption = 'ToolButton7'
+      Style = tbsDivider
+    end
+    object ToolButton8: TToolButton
+      Left = 126
+      Top = 2
+      Action = IncreasePrecisionAction
+    end
+    object ToolButton9: TToolButton
+      Left = 149
+      Top = 2
+      Action = DecreasePrecisionAction
+    end
+    object ToolButton10: TToolButton
+      Left = 172
+      Top = 2
+      Action = ClearTableAction
+    end
+    object ToolButton11: TToolButton
+      Left = 195
+      Top = 2
+      Action = BestFitColsAction
+    end
+    object ToolButton12: TToolButton
+      Left = 218
+      Height = 22
+      Top = 2
+      Caption = 'ToolButton12'
+      Style = tbsDivider
+    end
+    object ToolButton13: TToolButton
+      Left = 223
+      Top = 2
+      Action = FindAction
+    end
+    object ToolButton14: TToolButton
+      Left = 246
+      Top = 2
+      Action = FindNextAction
+    end
+    object ToolButton15: TToolButton
+      Left = 269
+      Height = 22
+      Top = 2
+      Caption = 'ToolButton15'
+      Style = tbsDivider
+    end
+    object ToolButton16: TToolButton
+      Left = 274
+      Top = 2
+      Action = GeneSearchAction
+    end
+    object ToolButton17: TToolButton
+      Left = 297
+      Top = 2
+      Action = HelpAction
+    end
+    object ToolButton18: TToolButton
+      Left = 320
+      Height = 22
+      Top = 2
+      Caption = 'ToolButton18'
+      Style = tbsDivider
+    end
+    object ToolButton19: TToolButton
+      Left = 325
+      Top = 2
+      Action = ToggleDetailsOnTopAction
+    end
+    object ToolButton20: TToolButton
+      Left = 348
+      Top = 2
+      Action = ShowDetailViewAction
+    end
+    object ToolButton21: TToolButton
+      Left = 371
+      Top = 2
+      Action = ShowSDEAction
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 621
+    Width = 1019
+    Panels = <    
+      item
+        Text = 'Ready'
+        Width = 400
+      end    
+      item
+        Text = 'Displaying 0 Predictions'
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object PageControl: TPageControl
+    Left = 0
+    Height = 595
+    Top = 26
+    Width = 1019
+    ActivePage = PredictionDataPage
+    Align = alClient
+    TabIndex = 1
+    TabOrder = 2
+    OnChange = PageControlChange
+    object GeneSearchPage: TTabSheet
+      Caption = 'Gene Search'
+      ClientHeight = 552
+      ClientWidth = 1011
+      ImageIndex = 24
+      object Panel1: TPanel
+        Left = 0
+        Height = 57
+        Top = 0
+        Width = 1011
+        Align = alTop
+        ClientHeight = 57
+        ClientWidth = 1011
+        TabOrder = 0
+        object Edit1: TEdit
+          Left = 16
+          Height = 28
+          Top = 24
+          Width = 520
+          AutoSize = False
+          TabOrder = 0
+        end
+        object Label1: TLabel
+          Left = 16
+          Height = 20
+          Top = 3
+          Width = 521
+          Caption = 'Search By  Gene Name, Gene  Product, or RefSeq ID ( mRNA ID or  Peptide ID) '
+          ParentColor = False
+        end
+        object SearchBtn: TBitBtn
+          Left = 552
+          Height = 28
+          Top = 24
+          Width = 119
+          Caption = '&Search'
+          Default = True
+          Glyph.Data = {
+            36040000424D3604000000000000360000002800000010000000100000000100
+            2000000000000004000000000000000000000000000000000000FF00FF00FF00
+            FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+            FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00DCDC
+            DC2A85858584A4A4A45CFF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+            FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00A4A4
+            A474EADADAFF8A88889EBCBCBC44FF00FF00FF00FF00FF00FF00FF00FF00FF00
+            FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00C6C6
+            C64BA7A5A590DDD1D1FF85848496CCCCCC33FF00FF00FF00FF00FF00FF00FF00
+            FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+            FF00D4D4D438A4A3A386CCC4C4FF8585858CDADADA25FF00FF00FF00FF00FF00
+            FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+            FF00FF00FF00DEDEDE2AA5A5A57CBCB8B8FF87868683D5D5D52AAAAAAA568787
+            87797A7A7A8787878779AAAAAA56E9E9E916FF00FF00FF00FF00FF00FF00FF00
+            FF00FF00FF00FF00FF00E7E7E71FA7A7A773AFADADFF8E8D8D87BFBBB7A5F1ED
+            E9C4F9F4EFD6F2EEEAC5C2C0BEA99695957DD7D7D72AFF00FF00FF00FF00FF00
+            FF00FF00FF00FF00FF00FF00FF00E2E2E224A6A5A47BE6DCD3BEF5EBE0CBF7F0
+            E9CEF7F0E9CEF7F0E9CEF8F1EAD1E7E3DFB8A6A6A574EDEDED14FF00FF00FF00
+            FF00FF00FF00FF00FF00FF00FF00C4C4C449CBC4BF97EEDECEC3F7EDE5CBF7F0
+            E9CEF7F0E9CEF7F0E9CEF7F0E9CEF7EFE7CECCC8C39DC4C4C449FF00FF00FF00
+            FF00FF00FF00FF00FF00FF00FF00B0B0B065EADDD0B1EDDDCBC0F7F0E9CEF7F0
+            E9CEF7F0E9CEF7F0E9CEF7F0E9CEF7F0E9CEEDE2D8B8B0B0B065FF00FF00FF00
+            FF00FF00FF00FF00FF00FF00FF00AAAAAA6FEEDECEBEEDDDCBC0EDDDCBC0F7F0
+            E9CEF7F0E9CEF7F0E9CEF7F0E9CEF7F0E9CEF1E3D4C5AAAAAA6FFF00FF00FF00
+            FF00FF00FF00FF00FF00FF00FF00B8B8B860EADBCDACEDDDCBC0EDDDCBC0EDDD
+            CBC0EDDDCBC0EDDDCBC0EDDDCBC0EDDDCBC0ECE0D3B2B8B8B860FF00FF00FF00
+            FF00FF00FF00FF00FF00FF00FF00CFCFCF43D1C9C18EEDDDCBC0F4E9DEC8F7F0
+            E9CEF7F0E9CEF7F0E9CEF7F0E9CEF4E9DEC8D2CBC391CFCFCF43FF00FF00FF00
+            FF00FF00FF00FF00FF00FF00FF00F3F3F311C0BFBE64E4D7CBA1EFE1D2C2F7EF
+            E7CDF7F0E9CEF7F0E9CEF7EFE7CDE6DBD1A4C0BFBE64F3F3F311FF00FF00FF00
+            FF00FF00FF00FF00FF00FF00FF00FF00FF00E8E8E821C3C1C162D4CCC48BEDE2
+            D7AFF6EEE6C7F2EBE4B5D6D0CB8EC3C1C162E8E8E821FF00FF00FF00FF00FF00
+            FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00F3F3F311D4D4D440C3C3
+            C35ABBBBBB65C3C3C35AD4D4D440F3F3F311FF00FF00FF00FF00
+          }
+          OnClick = SearchBtnClick
+          TabOrder = 1
+        end
+      end
+      object GeneSearchDrawGrid: TDrawGrid
+        Left = 83
+        Height = 100
+        Top = 189
+        Width = 200
+        DefaultDrawing = False
+        ExtendedSelect = False
+        FixedCols = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goSmoothScroll]
+        TabOrder = 1
+        OnClick = GeneSearchDrawGridClick
+        OnDrawCell = GeneSearchDrawGridDrawCell
+        OnMouseDown = GeneSearchDrawGridMouseDown
+        OnMouseMove = GeneSearchDrawGridMouseMove
+        OnSelectCell = GeneSearchDrawGridSelectCell
+      end
+    end
+    object PredictionDataPage: TTabSheet
+      Caption = 'Predictions'
+      ClientHeight = 567
+      ClientWidth = 1011
+      ImageIndex = 7
+      object PredictionsDrawGrid: TDrawGrid
+        Left = 0
+        Height = 567
+        Top = 0
+        Width = 1011
+        Align = alClient
+        DefaultDrawing = False
+        ExtendedSelect = False
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goThumbTracking, goSmoothScroll]
+        TabOrder = 0
+        OnAfterSelection = PredictionsDrawGridAfterSelection
+        OnDblClick = PredictionsDrawGridDblClick
+        OnDrawCell = PredictionsDrawGridDrawCell
+        OnSelectCell = PredictionsDrawGridSelectCell
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Images = MegaForm.NewIcons
+    left = 238
+    top = 168
+    object DecreasePrecisionAction: TAction
+      Caption = '&Decrease Precision'
+      Hint = 'Decrease the number of decimals displayed'
+      ImageIndex = 82
+      OnExecute = DecreasePrecisionActionExecute
+    end
+    object IncreasePrecisionAction: TAction
+      Caption = '&Increase Precision'
+      Hint = 'Increase the number of decimals displayed'
+      ImageIndex = 83
+      OnExecute = IncreasePrecisionActionExecute
+    end
+    object ClearTableAction: TAction
+      Caption = '&Clear Table'
+      Hint = 'Clear all data from the table'
+      ImageIndex = 78
+      OnExecute = ClearTableActionExecute
+    end
+    object ToggleDetailsOnTopAction: TAction
+      Caption = '&Keep Detail View On Top'
+      Hint = 'Toggle between keeping the detail view always on top or not'
+      ImageIndex = 84
+      OnExecute = ToggleDetailsOnTopActionExecute
+    end
+    object ShowToolbarAction: TAction
+      Caption = '&Show Toolbar'
+      Hint = 'Toggle the display of the toolbar'
+      OnExecute = ShowToolbar1Click
+    end
+    object SelectAllAction: TAction
+      Caption = 'Select &All'
+      Hint = 'Select all data in the grid'
+      ImageIndex = 179
+      OnExecute = SelectAllActionExecute
+      ShortCut = 16449
+    end
+    object BestFitColsAction: TAction
+      Caption = '&Resize Columns to Best-fit'
+      Hint = 'Resize all columns for best fit'
+      ImageIndex = 67
+      OnExecute = BestFitColsActionExecute
+    end
+    object GeneSearchAction: TAction
+      Caption = '&Search for a Gene'
+      Hint = 'Display the gene search form'
+      ImageIndex = 57
+      OnExecute = GeneSearchActionExecute
+    end
+    object ShowDetailViewAction: TAction
+      Caption = 'ShowDetailViewAction'
+      Hint = 'Display the detail view window'
+      ImageIndex = 31
+      OnExecute = ShowDetailViewActionExecute
+    end
+    object ShowSDEAction: TAction
+      Caption = 'Sequence Data &Explorer'
+      Hint = 'Display the Sequence Data Explorer if a sequence alignment has been activated'
+      ImageIndex = 74
+      OnExecute = ShowSDEActionExecute
+    end
+    object ExportExcelAction: TAction
+      Caption = 'Export Table to &Excel File'
+      Hint = 'Export all records to an Excel file'
+      ImageIndex = 71
+      OnExecute = ExportExcelActionExecute
+    end
+    object ExportCsvAction: TAction
+      Caption = 'Export Table to a CSV File'
+      Hint = 'Export all records to a CSV file'
+      ImageIndex = 72
+      OnExecute = ExportCSVActionExecute
+    end
+    object FilterAction: TAction
+      Caption = '&Filter...'
+      Hint = 'Filter data in the grid'
+      ImageIndex = 58
+      OnExecute = FilterActionExecute
+    end
+    object ImportQueryDataFileAction: TAction
+      Caption = '&Import Query Data From File'
+      Hint = 'Import query mutation data from a text file'
+      ImageIndex = 69
+      OnExecute = ImportQueryDataFileActionExecute
+    end
+    object FindAction: TAction
+      Caption = '&Find...'
+      Hint = 'Search by keyword'
+      ImageIndex = 158
+      OnExecute = FindActionExecute
+      ShortCut = 16454
+    end
+    object FindNextAction: TAction
+      Caption = 'Find &Next'
+      Hint = 'Find the next item matching the current search query keyword'
+      ImageIndex = 156
+      OnExecute = FindNextActionExecute
+      ShortCut = 114
+    end
+    object CopyAction: TAction
+      Caption = '&Copy to Clipboard'
+      Hint = 'Copy selected data to the clipboard'
+      ImageIndex = 77
+      OnExecute = CopyActionExecute
+      ShortCut = 16451
+    end
+    object ReplaceNASymbolsAction: TAction
+      Caption = 'Set NA String'
+      Hint = 'Replace all NA symbols in the data with your own character(s)'
+      OnExecute = ReplaceNASymbolsActionExecute
+    end
+    object ToggleAutoWidthAction: TAction
+      Caption = '&Toggle Auto Column Widths'
+      OnExecute = ToggleAutoWidthActionExecute
+    end
+    object QuitAction: TAction
+      Caption = '&Quit'
+      Hint = 'Quit the mutation diagnosis'
+      ImageIndex = 59
+      OnExecute = QuitActionExecute
+    end
+    object HelpAction: TAction
+      Caption = '&Contents'
+      Hint = 'Display user documentation'
+      ImageIndex = 68
+      OnExecute = HelpActionExecute
+    end
+    object AboutAction: TAction
+      Caption = '&About'
+      Hint = 'Display the about window'
+      OnExecute = AboutItemClick
+    end
+  end
+  object MainMenu1: TMainMenu
+    Images = MegaForm.NewIcons
+    left = 336
+    top = 232
+    object MenuItem1: TMenuItem
+      Caption = '&File'
+      object MenuItem8: TMenuItem
+        Action = ImportQueryDataFileAction
+      end
+      object MenuItem9: TMenuItem
+        Action = GeneSearchAction
+      end
+      object MenuItem10: TMenuItem
+        Action = ExportExcelAction
+      end
+      object MenuItem11: TMenuItem
+        Action = ExportCsvAction
+      end
+      object MenuItem12: TMenuItem
+        Action = QuitAction
+      end
+    end
+    object MenuItem2: TMenuItem
+      Caption = '&Edit '
+      object MenuItem13: TMenuItem
+        Action = CopyAction
+      end
+      object MenuItem14: TMenuItem
+        Action = SelectAllAction
+      end
+      object MenuItem15: TMenuItem
+        Action = ClearTableAction
+      end
+    end
+    object MenuItem3: TMenuItem
+      Caption = '&Format'
+      object MenuItem16: TMenuItem
+        Action = IncreasePrecisionAction
+      end
+      object MenuItem17: TMenuItem
+        Action = DecreasePrecisionAction
+      end
+      object MenuItem18: TMenuItem
+        Action = BestFitColsAction
+      end
+    end
+    object MenuItem4: TMenuItem
+      Caption = '&Search'
+      object MenuItem19: TMenuItem
+        Action = FindAction
+      end
+      object MenuItem20: TMenuItem
+        Action = FindNextAction
+      end
+    end
+    object MenuItem5: TMenuItem
+      Caption = '&Options'
+      object MenuItem21: TMenuItem
+        Action = ToggleDetailsOnTopAction
+      end
+      object MenuItem22: TMenuItem
+        Action = ShowToolbarAction
+      end
+    end
+    object MenuItem6: TMenuItem
+      Caption = '&Windows'
+      object MenuItem23: TMenuItem
+        Action = ShowDetailViewAction
+        Caption = 'Show &Details View'
+      end
+      object MenuItem24: TMenuItem
+        Action = GeneSearchAction
+      end
+      object MenuItem25: TMenuItem
+        Action = ShowSDEAction
+      end
+    end
+    object MenuItem7: TMenuItem
+      Caption = '&Help '
+      object MenuItem26: TMenuItem
+        Action = HelpAction
+      end
+      object MenuItem27: TMenuItem
+        Action = AboutAction
+      end
+    end
+  end
+  object ProgressWheelTimer: TTimer
+    Enabled = False
+    Interval = 500
+    OnTimer = ProgressWheelTimerTimer
+    left = 426
+    top = 345
+  end
+  object ResponseQueueTimer: TTimer
+    Enabled = False
+    Interval = 250
+    OnTimer = ResponseQueueTimerTimer
+    left = 835
+    top = 413
+  end
+  object ResultsQueueTimeoutTimer: TTimer
+    Enabled = False
+    Interval = 20000
+    OnTimer = ResultsQueueTimeOutTimerTimer
+    left = 569
+    top = 375
+  end
+  object GeneSearchTimeoutTimer: TTimer
+    Enabled = False
+    Interval = 20000
+    OnTimer = GeneSearchTimeOutTimerTimer
+    left = 772
+    top = 310
+  end
+  object GeneSearchTimer: TTimer
+    Enabled = False
+    Interval = 250
+    OnTimer = GeneSearchTimerTimer
+    left = 862
+    top = 245
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    IniSection = 'TMutationExplorerForm'
+    left = 267
+    top = 168
+  end
+end

@@ -1,0 +1,17 @@
+<HTML>
+<HEAD type="PrimaryResultWindow">
+<TITLE>Find Best-Fit Substitution Model (ML)</TITLE>
+<STYLE>{TLegendGenerator.Style}</STYLE>
+</HEAD>
+
+<BODY>
+<span class="figureTitle">{if TAnalysisInfo.isAminoAcid = True} Table. Maximum Likelihood fits of 56 different amino acid substitution models{else} Table. Maximum Likelihood fits of 24 different nucleotide substitution models{endif} </span>
+{TLegendGenerator.MatrixTable}
+<div class="note">NOTE.-- Models with the lowest BIC scores (Bayesian Information Criterion) are considered to describe the substitution pattern the best. For each model, AICc value (Akaike Information Criterion, corrected), Maximum Likelihood value (<i>lnL</i>), and the number of parameters (including branch lengths) are also presented [{TLegendGenerator.MLCitation:ExpandCitation}]. Non-uniformity of evolutionary rates among sites may be modeled by using a discrete Gamma distribution (+<i>G</i>) with {TLegendGenerator.NoOfGammaCat} rate categories and by assuming that a certain fraction of sites are evolutionarily invariable (+<i>I</i>). Whenever applicable, estimates of gamma shape parameter and/or the estimated fraction of invariant sites are shown.{if TAnalysisInfo.isAminoAcid = True} They are followed by amino acid frequencies (<i>f</i>) and rates of amino acid substitutions (<i>r</i>) for each amino acid pair {else} Assumed or estimated values of transition/transversion bias (<i>R</i>) are shown for each model, as well. They are followed by nucleotide frequencies (<i>f</i>) and rates of base substitutions (<i>r</i>) for each nucleotide pair.{endif} Relative values of instantaneous <i>r</i> should be considered when evaluating them. For simplicity, sum of <i>r</i> values is made equal to 1 for each model.
+{TLegendGenerator.TreeUsedString}{if TTreePack.IsDoubleOptimized = True} Branch lengths were double optimized in the ML procedure.{endif}
+{IncludeExternalFile=Data_Subset_Template.htm}
+<br><br>  <i>Abbreviations:</i>
+{if TAnalysisInfo.isAminoAcid = True}GTR: General Time Reversible; JTT: Jones-Taylor-Thornton; rtREV: General Reverse Transcriptase; cpREV: General Reversible Chloroplast; mtREV24: General Reversible Mitochondrial.{else}GTR: General Time Reversible; HKY: Hasegawa-Kishino-Yano; TN93: Tamura-Nei; T92: Tamura 3-parameter; K2: Kimura 2-parameter; JC: Jukes-Cantor.{endif}</div>
+<br>
+</BODY>
+</HTML>

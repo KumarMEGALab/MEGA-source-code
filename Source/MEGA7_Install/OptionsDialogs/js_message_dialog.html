@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Message</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>       
+        <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+        <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+        <!--Bootstrap 3 Fallback-->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!--Bootstrap 4-->
+        <link href="css/bs4/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/default.css" rel="stylesheet" type="text/css">
+        
+        <script>
+           $(document).ready(function () {
+               $('#mainform').validate({
+                    submitHandler: function (form) {
+                        $('#is_validated').attr("value", "true");
+                    }
+                });
+             //MEGA_JS_TEMPLATE_PLACEHOLDER
+           });
+        </script>
+    </head>
+    <body>
+        <input type="hidden" name="is_validated" id="is_validated" value="true"/>
+        <div class="container" id="main-container">
+            <form id="mainform">
+                <div class="row add-top-margin"> </div>
+                    <div class="col-xs-12 boxed">
+                        <div>
+                            <p id="js_message"></p>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </body>
+</html>

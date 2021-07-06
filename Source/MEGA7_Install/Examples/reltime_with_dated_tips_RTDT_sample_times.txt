@@ -1,0 +1,183 @@
+{
+	Copyright 1992-2021 Sudhir Kumar and Koichiro Tamura
+
+	This file is part of the MEGA (Molecular Evolutionary Genetics Analyis) software.
+
+	MEGA (Molecular Evolutionary Genetics Analysis) is free software:
+	you can redistribute it and/or modify it under the terms of the
+	GNU General Public License as published by the Free Software
+	Foundation, either version 3 of the License, or (at your option)
+	any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+   Contributor(s):   The MEGA source code and software is made available in the hopes that it will be useful. 
+   In keeping with the spirit and intent that the MEGA project is developed under, the authors of MEGA request that before
+   distributing any significant changes to the MEGA source code (or derivatives thereof), you share
+   those changes with the MEGA authors so that they may have the opportunity to test that
+   the changes do not introduce errors into the code or otherwise negatively impact the correctness
+   or performance of the MEGA software.
+   
+	Please email inqiries to s.kumar@temple.edu
+}
+
+!Taxon='F1ROEU5532672007 2007-06-12' sampleTime=2007-06-12;
+!Taxon='F1ROEU5532092006 2006-11-07' sampleTime=2006-11-07;
+!Taxon='F1ROEU5530892004 2004-03-15' sampleTime=2004-03-15;
+!Taxon='F1ROEU5530832004 2004-09-03' sampleTime=2004-09-03;
+!Taxon='F1ROEU5532692007 2007-04-10' sampleTime=2007-04-10;
+!Taxon='F1ROEU5532502006 2006-11-03' sampleTime=2006-11-03;
+!Taxon='F1ROEU5529462003 2003-06-27' sampleTime=2003-06-27;
+!Taxon='F1ROEU5529482003 2003-10-13' sampleTime=2003-10-13;
+!Taxon='F1ROEU5530212003 2003-02-06' sampleTime=2003-02-06;
+!Taxon='F1ROEU5532662007 2007-03-24' sampleTime=2007-03-24;
+!Taxon='F1ROEU5530942004 2004-12-25' sampleTime=2004-12-25;
+!Taxon='F1ROEU5530562003 2003-09-06' sampleTime=2003-09-06;
+!Taxon='F1ROEU5530412003 2003-09-02' sampleTime=2003-09-02;
+!Taxon='F1ROEU5531452005 2005-09-17' sampleTime=2005-09-17;
+!Taxon='F1ROEU5532712005 2005-12-14' sampleTime=2005-12-14;
+!Taxon='F1ROEU5529352003 2003-12-26' sampleTime=2003-12-26;
+!Taxon='F1ROEU5530752004 2004-11-07' sampleTime=2004-11-07;
+!Taxon='F1ROEU5531312005 2005-03-01' sampleTime=2005-03-01;
+!Taxon='F1ROEU5532652007 2007-07-23' sampleTime=2007-07-23;
+!Taxon='F1ROEU5532552007 2007-12-09' sampleTime=2007-12-09;
+!Taxon='F1ROEU5532102006 2006-07-18' sampleTime=2006-07-18;
+!Taxon='F1ROEU5532272006 2006-06-07' sampleTime=2006-06-07;
+!Taxon='F1ROEU5531532005 2005-01-11' sampleTime=2005-01-11;
+!Taxon='F1ROEU5529472003 2003-04-08' sampleTime=2003-04-08;
+!Taxon='F1ROEU5532372006 2006-09-15' sampleTime=2006-09-15;
+!Taxon='F1USAY9017361994 1994-03-27' sampleTime=1994-03-27;
+!Taxon='F1ROAF2040391993 1993-12-14' sampleTime=1993-12-14;
+!Taxon='F1ROAF2040421993 1993-09-07' sampleTime=1993-09-07;
+!Taxon='F1ROAF2040411993 1993-11-27' sampleTime=1993-11-27;
+!Taxon='F1ROAF2040441996 1996-04-21' sampleTime=1996-04-21;
+!Taxon='F1ROAF2040451996 1996-02-02' sampleTime=1996-02-02;
+!Taxon='F1ROAB4856591996 1996-09-04' sampleTime=1996-09-04;
+!Taxon='F1ROAF2040431996 1996-09-27' sampleTime=1996-09-27;
+!Taxon='F1ROAF4478571994 1994-09-14' sampleTime=1994-09-14;
+!Taxon='F1ROAF2040401997 1997-10-29' sampleTime=1997-10-29;
+!Taxon='F1ROAF2040491997 1997-11-21' sampleTime=1997-11-21;
+!Taxon='F1FRAJ2492381996 1996-05-22' sampleTime=1996-05-22;
+!Taxon='F1ROEU5529402005 2005-08-06' sampleTime=2005-08-06;
+!Taxon='F1ROAF2040471997 1997-01-08' sampleTime=1997-01-08;
+!Taxon='F1ITEU7416682006 2006-02-07' sampleTime=2006-02-07;
+!Taxon='F1ITFJ2090602006 2006-08-30' sampleTime=2006-08-30;
+!Taxon='F1ROEU5530052003 2003-07-07' sampleTime=2003-07-07;
+!Taxon='F1AOEU0684122001 2001-08-01' sampleTime=2001-08-01;
+!Taxon='F1AOEU0684472001 2001-07-05' sampleTime=2001-07-05;
+!Taxon='F1AOEU0684072001 2001-02-07' sampleTime=2001-02-07;
+!Taxon='F1AOEU0683972001 2001-08-04' sampleTime=2001-08-04;
+!Taxon='F1AOFJ9002672006 2006-01-21' sampleTime=2006-01-21;
+!Taxon='F1AOEU0684492001 2001-09-25' sampleTime=2001-09-25;
+!Taxon='F1AOEU0684252001 2001-07-06' sampleTime=2001-07-06;
+!Taxon='F1AOFJ9002692006 2006-10-03' sampleTime=2006-10-03;
+!Taxon='F1AOFJ9002682006 2006-08-09' sampleTime=2006-08-09;
+!Taxon='F1AOFJ9002662006 2006-09-18' sampleTime=2006-09-18;
+!Taxon='F1AOEU0683612001 2001-04-16' sampleTime=2001-04-16;
+!Taxon='F1MZDQ6601312004 2004-04-29' sampleTime=2004-04-29;
+!Taxon='F1AOEU0684112001 2001-06-22' sampleTime=2001-06-22;
+!Taxon='F1AOEU0683962001 2001-05-26' sampleTime=2001-05-26;
+!Taxon='F1AOEU0683622001 2001-02-05' sampleTime=2001-02-05;
+!Taxon='F1CUAF4254591999 1999-09-03' sampleTime=1999-09-03;
+!Taxon='F1ROAF2040461997 1997-01-21' sampleTime=1997-01-21;
+!Taxon='F1ROEU5531202005 2005-08-08' sampleTime=2005-08-08;
+!Taxon='F1ROAF2040521997 1997-01-08' sampleTime=1997-01-08;
+!Taxon='F1BEDQ8777922003 2003-06-09' sampleTime=2003-06-09;
+!Taxon='F1ROAF2040481997 1997-03-06' sampleTime=1997-03-06;
+!Taxon='F1ROAF2040501997 1997-05-22' sampleTime=1997-05-22;
+!Taxon='F1SIAJ9711002002 2002-10-11' sampleTime=2002-10-11;
+!Taxon='F1ROEU5532642007 2007-03-14' sampleTime=2007-03-14;
+!Taxon='F1AOEU0683512001 2001-07-30' sampleTime=2001-07-30;
+!Taxon='F1HNEU3126682003 2003-09-26' sampleTime=2003-09-26;
+!Taxon='F1FRAJ2870421999 1999-09-17' sampleTime=1999-09-17;
+!Taxon='F1BGEF5174381998 1998-03-16' sampleTime=1998-03-16;
+!Taxon='F1BGEF5174351997 1997-12-21' sampleTime=1997-12-21;
+!Taxon='F1CUDQ1132122003 2003-05-14' sampleTime=2003-05-14;
+!Taxon='F1RUFJ0098142006 2006-11-10' sampleTime=2006-11-10;
+!Taxon='F1BREU1897232005 2005-01-16' sampleTime=2005-01-16;
+!Taxon='F1ITAF2952821998 1998-09-30' sampleTime=1998-09-30;
+!Taxon='F1ITAF2952811997 1997-02-02' sampleTime=1997-02-02;
+!Taxon='F1BRFJ4051532003 2003-08-23' sampleTime=2003-08-23;
+!Taxon='F1BRAF4478261989 1989-12-10' sampleTime=1989-12-10;
+!Taxon='F1BRAF4478221990 1990-04-07' sampleTime=1990-04-07;
+!Taxon='F1BRAF0054941993 1993-03-08' sampleTime=1993-03-08;
+!Taxon='F1BRFJ7710062002 2002-08-11' sampleTime=2002-08-11;
+!Taxon='F1BRAF4478151990 1990-02-27' sampleTime=1990-02-27;
+!Taxon='F1BREF3791972006 2006-08-05' sampleTime=2006-08-05;
+!Taxon='F1BRDQ8997042004 2004-01-26' sampleTime=2004-01-26;
+!Taxon='F1CHEF4499962004 2004-05-30' sampleTime=2004-05-30;
+!Taxon='F1BRAY4418512000 2000-10-04' sampleTime=2000-10-04;
+!Taxon='F1BREU1897042005 2005-11-23' sampleTime=2005-11-23;
+!Taxon='F1BRFJ4051682002 2002-03-15' sampleTime=2002-03-15;
+!Taxon='F1BRAY2757712002 2002-07-01' sampleTime=2002-07-01;
+!Taxon='F1BRFJ4051492003 2003-02-16' sampleTime=2003-02-16;
+!Taxon='F1BRFJ4051452003 2003-09-06' sampleTime=2003-09-06;
+!Taxon='F1BREU2580762004 2004-11-11' sampleTime=2004-11-11;
+!Taxon='F1BRDQ3588022001 2001-09-02' sampleTime=2001-09-02;
+!Taxon='F1BRAY4418722000 2000-11-10' sampleTime=2000-11-10;
+!Taxon='F1BREU1897092005 2005-06-29' sampleTime=2005-06-29;
+!Taxon='F1BREU1897182005 2005-02-14' sampleTime=2005-02-14;
+!Taxon='F1BREU2935062006 2006-04-18' sampleTime=2006-04-18;
+!Taxon='F1BREU1897302006 2006-09-28' sampleTime=2006-09-28;
+!Taxon='F1ARFJ5258192006 2006-05-28' sampleTime=2006-05-28;
+!Taxon='F1BRDQ3588012001 2001-09-26' sampleTime=2001-09-26;
+!Taxon='F1LUDQ8777502003 2003-10-29' sampleTime=2003-10-29;
+!Taxon='F1PTDQ8778852003 2003-12-26' sampleTime=2003-12-26;
+!Taxon='F1JPAB4802982004 2004-02-22' sampleTime=2004-02-22;
+!Taxon='F1BEDQ8777682003 2003-12-25' sampleTime=2003-12-25;
+!Taxon='F1CHDQ8779042003 2003-07-14' sampleTime=2003-07-14;
+!Taxon='F1ITDQ8787322003 2003-03-10' sampleTime=2003-03-10;
+!Taxon='F1BRAY8771722003 2003-06-01' sampleTime=2003-06-01;
+!Taxon='F1BRFJ4051742002 2002-09-30' sampleTime=2002-09-30;
+!Taxon='F1ITDQ8787502003 2003-12-25' sampleTime=2003-12-25;
+!Taxon='F1ITDQ8786222003 2003-02-28' sampleTime=2003-02-28;
+!Taxon='F1BRFJ4051792004 2004-03-02' sampleTime=2004-03-02;
+!Taxon='F1BRAY9014451999 1999-05-08' sampleTime=1999-05-08;
+!Taxon='F1BREU1897352006 2006-01-18' sampleTime=2006-01-18;
+!Taxon='F1BRAY6432332003 2003-02-01' sampleTime=2003-02-01;
+!Taxon='F1BRFJ7710102007 2007-04-06' sampleTime=2007-04-06;
+!Taxon='F1BRDQ8996972005 2005-03-19' sampleTime=2005-03-19;
+!Taxon='F1BRAY6432522003 2003-01-24' sampleTime=2003-01-24;
+!Taxon='F1BRFJ4051432002 2002-07-26' sampleTime=2002-07-26;
+!Taxon='F1BREF0426462004 2004-09-23' sampleTime=2004-09-23;
+!Taxon='F1ITAF2952991998 1998-02-25' sampleTime=1998-02-25;
+!Taxon='F1BRFJ7710082006 2006-04-08' sampleTime=2006-04-08;
+!Taxon='F1BRFJ4051712004 2004-06-20' sampleTime=2004-06-20;
+!Taxon='F1FIAF0757031993 1993-10-15' sampleTime=1993-10-15;
+!Taxon='F1BEAF0773361993 1993-07-23' sampleTime=1993-07-23;
+!Taxon='F1ITAF2952831998 1998-07-19' sampleTime=1998-07-19;
+!Taxon='F1AOEU0683722001 2001-11-19' sampleTime=2001-11-19;
+!Taxon='F1BEDQ1772191987 1987-10-03' sampleTime=1987-10-03;
+!Taxon='F1CDAM0410212002 2002-04-30' sampleTime=2002-04-30;
+!Taxon='F1FRDQ8781752003 2003-05-13' sampleTime=2003-05-13;
+!Taxon='F2CMAM2794472002 2002-03-22' sampleTime=2002-03-22;
+!Taxon='F2FRDQ8781712003 2003-11-08' sampleTime=2003-11-08;
+!Taxon='F2CMAM1817942001 2001-12-26' sampleTime=2001-12-26;
+!Taxon='F2CMDQ9904282004 2004-10-22' sampleTime=2004-10-22;
+!Taxon='F2CMDQ9904342004 2004-02-24' sampleTime=2004-02-24;
+!Taxon='F2DEDQ8785092003 2003-09-01' sampleTime=2003-09-01;
+!Taxon='F2CMGQ3449612006 2006-06-09' sampleTime=2006-06-09;
+!Taxon='F2CMAJ2492371995 1995-07-07' sampleTime=1995-07-07;
+!Taxon='F2FRAJ2705601997 1997-02-20' sampleTime=1997-02-20;
+!Taxon='F2CMAJ2869731997 1997-02-26' sampleTime=1997-02-26;
+!Taxon='F2CMDQ9904302004 2004-12-23' sampleTime=2004-12-23;
+!Taxon='F2FRAJ2705621997 1997-03-22' sampleTime=1997-03-22;
+!Taxon='F2CMAJ2869741997 1997-05-01' sampleTime=1997-05-01;
+!Taxon='F2CMAY3711582002 2002-06-27' sampleTime=2002-06-27;
+!Taxon='F2CMDQ9904362004 2004-06-20' sampleTime=2004-06-20;
+!Taxon='F2CMAF3779561997 1997-07-30' sampleTime=1997-07-30;
+!Taxon='F2MLEU3306532006 2006-07-02' sampleTime=2006-07-02;
+!Taxon='F2CMAJ2869771998 1998-11-05' sampleTime=1998-11-05;
+!Taxon='F2CMAJ2869711997 1997-03-28' sampleTime=1997-03-28;
+!Taxon='F2ESEU2553802006 2006-01-16' sampleTime=2006-01-16;
+!Taxon='F2ESEU5451912005 2005-10-02' sampleTime=2005-10-02;
+!Taxon='F2CMAJ2869761998 1998-12-25' sampleTime=1998-12-25;
+!Taxon='F2CMGQ3449662006 2006-06-11' sampleTime=2006-06-11;
+!Taxon='F2CMDQ9904472004 2004-04-18' sampleTime=2004-04-18;
+!Taxon='F2CMAJ2492361995 1995-09-20' sampleTime=1995-09-20;

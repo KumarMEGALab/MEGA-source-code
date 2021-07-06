@@ -1,0 +1,748 @@
+object EditorForm: TEditorForm
+  Left = 424
+  Height = 666
+  Top = 212
+  Width = 965
+  AllowDropFiles = True
+  Caption = 'Text File Editor and Format Converter'
+  ClientHeight = 646
+  ClientWidth = 965
+  Color = clBtnFace
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = 'Tahoma'
+  Menu = MainMenu1
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnDropFiles = FormDropFiles
+  OnHelp = FormHelp
+  Position = poScreenCenter
+  SessionProperties = 'FontDialog1.Font;FontDialog1.MaxFontSize;FontDialog1.MinFontSize;FontDialog1.Options;OpenDialog1.FileName;OpenDialog1.InitialDir;PrintDialog1.Name;PrintDialog1.Options;SaveDialog1.FileName;SaveDialog1.InitialDir;Height;PixelsPerInch;Width'
+  LCLVersion = '2.0.2.0'
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 623
+    Width = 965
+    Panels = <    
+      item
+        Alignment = taRightJustify
+        Width = 125
+      end    
+      item
+        Width = 125
+      end    
+      item
+        Width = 62
+      end>
+  end
+  object StandardToolBar: TToolBar
+    Left = 0
+    Height = 34
+    Top = 0
+    Width = 965
+    AutoSize = True
+    ButtonHeight = 30
+    ButtonWidth = 36
+    Caption = 'StandardToolBar'
+    Color = clWhite
+    DisabledImages = MegaForm.DisabledIcons
+    EdgeBorders = [ebLeft, ebTop, ebRight, ebBottom]
+    Images = MegaForm.NewIcons
+    Indent = 4
+    ParentColor = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 1
+    object OpenButton: TToolButton
+      Left = 6
+      Hint = 'Open a File'
+      Top = 2
+      Action = OpenAction
+    end
+    object SaveButton: TToolButton
+      Left = 42
+      Hint = 'Save a file'
+      Top = 2
+      Action = SaveAction
+    end
+    object PrintButton: TToolButton
+      Left = 78
+      Hint = 'Print a file'
+      Top = 2
+      Action = PrintAction
+    end
+    object ToolButton8: TToolButton
+      Left = 114
+      Height = 30
+      Top = 2
+      Caption = 'ToolButton4'
+      ImageIndex = 1
+      Style = tbsSeparator
+    end
+    object ConvertButton: TToolButton
+      Left = 122
+      Hint = 'Convert to MEGA format'
+      Top = 2
+      Action = ConvertAction
+    end
+    object ToolButton13: TToolButton
+      Left = 158
+      Hint = 'Go to a line'
+      Top = 2
+      Action = GoToLineAction
+    end
+    object ToolButton14: TToolButton
+      Left = 194
+      Height = 30
+      Top = 2
+      Caption = 'ToolButton14'
+      ImageIndex = 14
+      Style = tbsSeparator
+    end
+    object CutButton: TToolButton
+      Left = 202
+      Hint = 'Cut'
+      Top = 2
+      Action = CutAction
+    end
+    object CopyButton: TToolButton
+      Left = 238
+      Hint = 'Copy'
+      Top = 2
+      Action = CopyAction
+    end
+    object PasteButton: TToolButton
+      Left = 274
+      Hint = 'Paste'
+      Top = 2
+      Action = PasteAction
+    end
+    object ToolButton9: TToolButton
+      Left = 310
+      Height = 30
+      Top = 2
+      Caption = 'ToolButton9'
+      ImageIndex = 5
+      Style = tbsSeparator
+    end
+    object UndoButton: TToolButton
+      Left = 318
+      Hint = 'Undo'
+      Top = 2
+      Action = UndoAction
+    end
+    object ToolButton10: TToolButton
+      Left = 354
+      Hint = 'Redo'
+      Top = 2
+      Action = RedoAction
+    end
+    object ToolButton11: TToolButton
+      Left = 390
+      Height = 30
+      Top = 2
+      Caption = 'ToolButton11'
+      ImageIndex = 0
+      Style = tbsSeparator
+    end
+    object FindBtn: TToolButton
+      Left = 398
+      Hint = 'Find'
+      Top = 2
+      Action = FindAction
+    end
+    object ReplaceBtn: TToolButton
+      Left = 434
+      Hint = 'Replace'
+      Top = 2
+      Action = ReplaceAction
+    end
+    object ToolButton12: TToolButton
+      Left = 470
+      Height = 30
+      Top = 2
+      Caption = 'ToolButton12'
+      ImageIndex = 12
+      Style = tbsSeparator
+    end
+    object FontBtn: TToolButton
+      Left = 478
+      Top = 2
+      Action = SetFontAction
+    end
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 589
+    Top = 34
+    Width = 965
+    Align = alClient
+    TabOrder = 2
+  end
+  object CloseBtn: TBitBtn
+    Left = 935
+    Height = 19
+    Top = 40
+    Width = 20
+    Anchors = [akTop, akRight]
+    Cancel = True
+    Glyph.Data = {
+      42080000424D4208000000000000420000002800000020000000100000000100
+      20000300000000080000130B0000130B00000000000000000000000000FF0000
+      FF0000FF00000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000FF7C7CA2FF434388FF33337DFF33337DFF33
+      337DFF33337DFF33337DFF33337DFF33337DFF33337DFF434388FF7C7CA20000
+      0000000000000000000000000000FFC8C8D7FFB0B0CDFFA9A9C8FFA9A9C8FFA9
+      A9C8FFA9A9C8FFA9A9C8FFA9A9C8FFA9A9C8FFA9A9C8FFB0B0CDFFC8C8D70000
+      00000000000000000000FF8C8CBDFF2929A1FF1616CDFF1111D9FF1111D9FF11
+      11D9FF1111D9FF1111D9FF1111D9FF1111D9FF1111D9FF1515CDFF2828A1FF8C
+      8CBD0000000000000000FFCECEE3FFA5A5D7FF9D9DEAFF9B9BEFFF9B9BEFFF9B
+      9BEFFF9B9BEFFF9B9BEFFF9B9BEFFF9B9BEFFF9B9BEFFF9C9CEAFFA4A4D7FFCE
+      CEE30000000000000000FF4545A0FF1B1BCCFF1111D1FF1111D1FF1111B6FF11
+      11D1FF1111D1FF1111D1FF1111D1FF1111B6FF1111D1FF1111D1FF1515C9FF45
+      45A00000000000000000FFB0B0D7FF9F9FE9FF9B9BEBFF9B9BEBFF9B9BE0FF9B
+      9BEBFF9B9BEBFF9B9BEBFF9B9BEBFF9B9BE0FF9B9BEBFF9B9BEBFF9C9CE8FFB0
+      B0D70000000000000000FF33339DFF1C1CCEFF1111C8FF1111B2FFDCDCDCFF11
+      11B2FF1111C8FF1111C8FF1111B2FFEEEEEEFF1111B2FF1111C8FF1111C8FF33
+      339D0000000000000000FFA9A9D5FF9F9FEAFF9B9BE7FF9B9BDEFFF0F0F0FF9B
+      9BDEFF9B9BE7FF9B9BE7FF9B9BDEFFF7F7F7FF9B9BDEFF9B9BE7FF9B9BE7FFA9
+      A9D50000000000000000FF3333A1FF2222C8FF1111BEFFD1D1D1FFD6D6D6FFDC
+      DCDCFF1111ADFF1111ADFFEAEAEAFFEEEEEEFFEEEEEEFF1111BEFF1212BEFF33
+      33A10000000000000000FFA9A9D7FFA2A2E7FF9B9BE3FFEBEBEBFFEDEDEDFFF0
+      F0F0FF9B9BDCFF9B9BDCFFF6F6F6FFF7F7F7FFF7F7F7FF9B9BE3FF9B9BE3FFA9
+      A9D70000000000000000FF3333A4FF3434C7FF1212B4FF1111B4FFD1D1D1FFD6
+      D6D6FFDCDCDCFFE2E2E2FFE6E6E6FFEAEAEAFF1111B4FF1111B4FF1414B6FF33
+      33A40000000000000000FFA9A9D8FFA9A9E7FF9B9BDFFF9B9BDFFFEBEBEBFFED
+      EDEDFFF0F0F0FFF2F2F2FFF4F4F4FFF6F6F6FF9B9BDFFF9B9BDFFF9C9CE0FFA9
+      A9D80000000000000000FF3333A8FF4646CEFF2626B5FF1414ABFF1111AAFFD1
+      D1D1FFD6D6D6FFDCDCDCFFE2E2E2FF1111AAFF1111AAFF1111AAFF1818B0FF33
+      33A80000000000000000FFA9A9DAFFB1B1EAFFA3A3DFFF9C9CDBFF9B9BDBFFEB
+      EBEBFFEDEDEDFFF0F0F0FFF2F2F2FF9B9BDBFF9B9BDBFF9B9BDBFF9E9EDDFFA9
+      A9DA0000000000000000FF3333ABFF4A4AD2FF3333BBFF2E2EB8FF13139FFFCE
+      CECEFFD1D1D1FFD6D6D6FFDCDCDCFF11119EFF1111A1FF1111A1FF1D1DACFF33
+      33AB0000000000000000FFA9A9DBFFB3B3ECFFA9A9E2FFA7A7E1FF9B9BD6FFEA
+      EAEAFFEBEBEBFFEDEDEDFFF0F0F0FF9B9BD6FF9B9BD7FF9B9BD7FFA0A0DCFFA9
+      A9DB0000000000000000FF3333AEFF5050D8FF3737BFFF2323ABFFFFFFFFFFF7
+      F7F7FFE8E8E8FFDEDEDEFFDBDBDBFFDDDDDDFF11119BFF1616A0FF2B2BB5FF33
+      33AE0000000000000000FFA9A9DDFFB5B5EEFFABABE4FFA2A2DBFFFFFFFFFFFB
+      FBFBFFF5F5F5FFF1F1F1FFEFEFEFFFF0F0F0FF9B9BD5FF9D9DD7FFA6A6DFFFA9
+      A9DD0000000000000000FF3333B1FF5A5AE2FF4242CAFFFFFFFFFFFFFFFFFFFF
+      FFFFFF4242CAFF4242CAFFFFFFFFFFFFFFFFFFFFFFFFFF4242CAFF4E4ED6FF33
+      33B10000000000000000FFA9A9DEFFB9B9F2FFAFAFE8FFFFFFFFFFFFFFFFFFFF
+      FFFFFFAFAFE8FFAFAFE8FFFFFFFFFFFFFFFFFFFFFFFFFFAFAFE8FFB4B4EDFFA9
+      A9DE0000000000000000FF3333B5FF6262EAFF4F4FD7FF4F4FD7FFFFFFFFFF4F
+      4FD7FF4F4FD7FF4F4FD7FF4F4FD7FFFFFFFFFF4F4FD7FF4F4FD7FF5A5AE2FF33
+      33B50000000000000000FFA9A9DFFFBDBDF6FFB5B5EEFFB5B5EEFFFFFFFFFFB5
+      B5EEFFB5B5EEFFB5B5EEFFB5B5EEFFFFFFFFFFB5B5EEFFB5B5EEFFB9B9F2FFA9
+      A9DF0000000000000000FF4545BDFF6464ECFF5B5BE3FF5B5BE3FF5B5BE3FF5B
+      5BE3FF5B5BE3FF5B5BE3FF5B5BE3FF5B5BE3FF5B5BE3FF5B5BE3FF5F5FE8FF45
+      45BD0000000000000000FFB0B0E3FFBDBDF7FFBABAF3FFBABAF3FFBABAF3FFBA
+      BAF3FFBABAF3FFBABAF3FFBABAF3FFBABAF3FFBABAF3FFBABAF3FFBBBBF5FFB0
+      B0E30000000000000000FF8C8CD8FF4646CEFF6767EFFF6D6DF5FF6D6DF5FF6D
+      6DF5FF6D6DF5FF6D6DF5FF6D6DF5FF6D6DF5FF6C6CF4FF6666EEFF4646CDFF8C
+      8CD80000000000000000FFCECEEEFFB1B1EAFFBFBFF8FFC1C1FAFFC1C1FAFFC1
+      C1FAFFC1C1FAFFC1C1FAFFC1C1FAFFC1C1FAFFC1C1FAFFBEBEF7FFB1B1EAFFCE
+      CEEE000000000000000000000000FF8C8CD9FF4545C1FF3333BBFF3333BBFF33
+      33BBFF3333BBFF3333BBFF3333BBFF3333BBFF3333BBFF4545C1FF8C8CD90000
+      0000000000000000000000000000FFCECEEFFFB0B0E4FFA9A9E2FFA9A9E2FFA9
+      A9E2FFA9A9E2FFA9A9E2FFA9A9E2FFA9A9E2FFA9A9E2FFB0B0E4FFCECEEF0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000
+    }
+    ModalResult = 2
+    NumGlyphs = 2
+    OnClick = CloseBtnClick
+    Spacing = 2
+    TabOrder = 3
+  end
+  object MacCloseBtn: TBitBtn
+    Left = 912
+    Height = 19
+    Top = 40
+    Width = 20
+    Caption = 'x'
+    Color = clRed
+    OnClick = CloseBtnClick
+    TabOrder = 4
+  end
+  object MainMenu1: TMainMenu
+    Images = MegaForm.NewIcons
+    left = 145
+    top = 80
+    object FileMenu: TMenuItem
+      Caption = '&File'
+      object FileNewItem: TMenuItem
+        Action = NewAction
+      end
+      object FileOpenItem: TMenuItem
+        Action = OpenAction
+      end
+      object FileReopenItem: TMenuItem
+        Caption = 'Reopen'
+      end
+      object N6: TMenuItem
+        Caption = '-'
+      end
+      object FileCloseItem: TMenuItem
+        Action = CloseFileAction
+      end
+      object N7: TMenuItem
+        Caption = '-'
+      end
+      object FileSaveItem: TMenuItem
+        Action = SaveAction
+      end
+      object FileSaveAsItem: TMenuItem
+        Action = SaveAsAction
+      end
+      object N4: TMenuItem
+        Caption = '-'
+      end
+      object FilePrintItem: TMenuItem
+        Action = PrintAction
+      end
+      object N5: TMenuItem
+        Caption = '-'
+      end
+      object FileExit: TMenuItem
+        Action = ExitAction
+      end
+    end
+    object EditMenu: TMenuItem
+      Caption = '&Edit '
+      object EditUndoItem: TMenuItem
+        Action = UndoAction
+      end
+      object EditRedoItem: TMenuItem
+        Action = RedoAction
+      end
+      object N10: TMenuItem
+        Caption = '-'
+      end
+      object EditCutItem: TMenuItem
+        Action = CutAction
+      end
+      object EditCopyItem: TMenuItem
+        Action = CopyAction
+      end
+      object EditPasteItem: TMenuItem
+        Action = PasteAction
+      end
+      object FileDeleteItem: TMenuItem
+        Action = DeleteBlockAction
+      end
+      object EditSelectAllItem: TMenuItem
+        Action = SelectAllAction
+      end
+    end
+    object SearchMenu: TMenuItem
+      Caption = '&Search'
+      object SearchFindItem: TMenuItem
+        Action = FindAction
+      end
+      object SearchRelaceItem: TMenuItem
+        Action = ReplaceAction
+      end
+      object N2: TMenuItem
+        Caption = '-'
+      end
+      object SearchGotoLineItem: TMenuItem
+        Action = GoToLineAction
+      end
+    end
+    object DisplayMenu: TMenuItem
+      Caption = '&Display'
+      object DisplaySetFontItem: TMenuItem
+        Action = SetFontAction
+      end
+      object DisplayShowLineNumItem: TMenuItem
+        Action = ShowLineNumAction
+      end
+      object N3: TMenuItem
+        Caption = '-'
+        Visible = False
+      end
+      object DisplayWordWrapItem: TMenuItem
+        Action = WordWrapAction
+        Visible = False
+      end
+    end
+    object UtilitiesMenu: TMenuItem
+      Caption = '&Utilities'
+      object FileConvertItem: TMenuItem
+        Action = ConvertAction
+      end
+      object N13: TMenuItem
+        Caption = '-'
+      end
+      object FormatSeqSubmenu: TMenuItem
+        Caption = '&Format Selected Sequence'
+        object MergeLinesItem: TMenuItem
+          Caption = '&Merge Multiple Lines'
+          OnClick = MergeLinesItemClick
+        end
+        object CleanSequenceItem: TMenuItem
+          Caption = '&Remove Spaces/Digits'
+          OnClick = CleanSequenceItemClick
+        end
+        object N14: TMenuItem
+          Caption = '-'
+        end
+        object Formatby3Item: TMenuItem
+          Caption = 'Insert Spaces Every &3'
+          OnClick = Formatby3ItemClick
+        end
+        object Formatby10Item: TMenuItem
+          Caption = 'Insert Spaces Every &10'
+          OnClick = Formatby10ItemClick
+        end
+      end
+      object ReverseCompItem: TMenuItem
+        Caption = '&Reverse Complement'
+        OnClick = ReverseCompItemClick
+      end
+      object N15: TMenuItem
+        Caption = '-'
+      end
+      object CopyScreenShotSubmenu: TMenuItem
+        Caption = 'Copy &Screenshot To Clipboard'
+        Visible = False
+        object CopyBitmaptoClipboardItem: TMenuItem
+          Action = CopyBMPToClipAction
+        end
+        object CopyWinMetafiletoClipboardItem: TMenuItem
+          Action = CopyWMFToClipAction
+        end
+        object CopyEMFToClipboardItem: TMenuItem
+          Action = CopyEMFToClipAction
+        end
+      end
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Options = [ofExtensionDifferent, ofPathMustExist, ofFileMustExist, ofEnableSizing]
+    left = 35
+    top = 160
+  end
+  object SaveDialog1: TSaveDialog
+    left = 20
+    top = 80
+  end
+  object FontDialog1: TFontDialog
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    MinFontSize = 0
+    MaxFontSize = 0
+    Options = [fdEffects, fdFixedPitchOnly]
+    left = 480
+    top = 80
+  end
+  object ActionList1: TActionList
+    Images = MegaForm.NewIcons
+    OnUpdate = ActionList1Update
+    left = 395
+    top = 81
+    object CopyBMPToClipAction: TAction
+      Category = 'Edit'
+      Caption = 'Bitmap Format'
+      OnExecute = CopyBMPToClipActionExecute
+    end
+    object CopyEMFToClipAction: TAction
+      Category = 'Edit'
+      Caption = 'Enhanced Metafile Format'
+      OnExecute = CopyEMFToClipActionExecute
+    end
+    object NewAction: TAction
+      Category = 'File'
+      Caption = '&New'
+      OnExecute = NewActionExecute
+      ShortCut = 16462
+    end
+    object OpenAction: TAction
+      Category = 'File'
+      Caption = 'Open'
+      ImageIndex = 1
+      OnExecute = OpenActionExecute
+      ShortCut = 16463
+    end
+    object CopyWMFToClipAction: TAction
+      Category = 'Edit'
+      Caption = 'Windows Metafile Format'
+      OnExecute = CopyWMFToClipActionExecute
+    end
+    object SaveAction: TAction
+      Category = 'File'
+      Caption = '&Save'
+      ImageIndex = 35
+      OnExecute = SaveActionExecute
+      ShortCut = 16467
+    end
+    object SaveAsAction: TAction
+      Category = 'File'
+      Caption = 'Save &As...'
+      OnExecute = SaveAsActionExecute
+      ShortCut = 49235
+    end
+    object PrintAction: TAction
+      Category = 'File'
+      Caption = '&Print'
+      ImageIndex = 0
+      OnExecute = PrintActionExecute
+      ShortCut = 16464
+    end
+    object ExitAction: TAction
+      Category = 'File'
+      Caption = '&Exit Editor'
+      ImageIndex = 59
+      OnExecute = ExitActionExecute
+    end
+    object ConvertAction: TAction
+      Category = 'File'
+      Caption = 'Convert to MEGA Format'
+      ImageIndex = 73
+      OnExecute = ConvertActionExecute
+      ShortCut = 16461
+    end
+    object CutAction: TAction
+      Category = 'Edit'
+      Caption = 'Cut'
+      ImageIndex = 56
+      OnExecute = CutActionExecute
+      ShortCut = 16472
+    end
+    object CopyAction: TAction
+      Category = 'Edit'
+      Caption = '&Copy'
+      ImageIndex = 77
+      OnExecute = CopyActionExecute
+      ShortCut = 16451
+    end
+    object PasteAction: TAction
+      Category = 'Edit'
+      Caption = 'Paste'
+      HelpContext = -1
+      ImageIndex = 64
+      OnExecute = PasteActionExecute
+      ShortCut = 16470
+    end
+    object FindAction: TAction
+      Category = 'Search'
+      Caption = 'Find'
+      ImageIndex = 57
+      OnExecute = FindActionExecute
+      ShortCut = 16454
+    end
+    object ReplaceAction: TAction
+      Category = 'Search'
+      Caption = 'Replace'
+      ImageIndex = 53
+      OnExecute = ReplaceActionExecute
+      ShortCut = 16466
+    end
+    object SetFontAction: TAction
+      Category = 'Display'
+      Caption = 'Set Font...'
+      Hint = 'Select a Font for Display'
+      ImageIndex = 51
+      OnExecute = SetFontActionExecute
+    end
+    object GoToLineAction: TAction
+      Category = 'Search'
+      Caption = 'Go to Line #'
+      ImageIndex = 54
+      OnExecute = GoToLineActionExecute
+      ShortCut = 16460
+    end
+    object UndoAction: TAction
+      Category = 'Edit'
+      Caption = '&Undo'
+      ImageIndex = 45
+      OnExecute = UndoActionExecute
+      ShortCut = 16474
+    end
+    object RedoAction: TAction
+      Category = 'Edit'
+      Caption = '&Redo'
+      ImageIndex = 46
+      OnExecute = RedoActionExecute
+      ShortCut = 24666
+    end
+    object CloseFileAction: TAction
+      Category = 'File'
+      Caption = '&Close File'
+      ImageIndex = 59
+      OnExecute = CloseFileActionExecute
+      ShortCut = 16471
+    end
+    object DeleteBlockAction: TAction
+      Category = 'Edit'
+      Caption = '&Delete'
+      OnExecute = DeleteBlockActionExecute
+      ShortCut = 16430
+    end
+    object SelectAllAction: TAction
+      Category = 'Edit'
+      Caption = 'Select &All'
+      ImageIndex = 179
+      OnExecute = SelectAllActionExecute
+      ShortCut = 16449
+    end
+    object ShowLineNumAction: TAction
+      Category = 'Display'
+      Caption = 'Show Line Numbers'
+      Hint = 'Show line numbers'
+      OnExecute = ShowLineNumActionExecute
+    end
+    object WordWrapAction: TAction
+      Category = 'Display'
+      Caption = '&Word Wrap'
+      Hint = 'Word wrap'
+      OnExecute = WordWrapActionExecute
+    end
+  end
+  object PopupMenu1: TPopupMenu
+    left = 1000
+    top = 400
+    object GotoLine1: TMenuItem
+      Action = GoToLineAction
+    end
+    object ConverttoMEGAFormat1: TMenuItem
+      Action = ConvertAction
+    end
+    object Print1: TMenuItem
+      Action = PrintAction
+    end
+    object N12: TMenuItem
+      Caption = '-'
+    end
+    object CloseFile1: TMenuItem
+      Action = CloseFileAction
+    end
+    object CopyScreenshotToClipboard1: TMenuItem
+      Caption = 'Copy Screenshot To Clipboard'
+      object BitmapFormat1: TMenuItem
+        Action = CopyBMPToClipAction
+      end
+      object WindowsMetafileFormat1: TMenuItem
+        Action = CopyWMFToClipAction
+      end
+      object EnhancedMetafileFormat1: TMenuItem
+        Action = CopyEMFToClipAction
+      end
+    end
+    object N11: TMenuItem
+      Caption = '-'
+    end
+    object Cut1: TMenuItem
+      Action = CutAction
+    end
+    object Copy1: TMenuItem
+      Action = CopyAction
+    end
+    object Paste1: TMenuItem
+      Action = PasteAction
+    end
+    object N9: TMenuItem
+      Caption = '-'
+    end
+    object Find1: TMenuItem
+      Action = FindAction
+    end
+    object Replace1: TMenuItem
+      Action = ReplaceAction
+    end
+  end
+  object PrintDialog1: TPrintDialog
+    left = 914
+    top = 144
+  end
+  object CloseBtnImages: TImageList
+    left = 237
+    top = 173
+    Bitmap = {
+      4C69020000001000000010000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF0000000000000000008C8CD9FF4545C1FF3333
+      BBFF3333BBFF3333BBFF3333BBFF3333BBFF3333BBFF3333BBFF3333BBFF4545
+      C1FF8C8CD9FF0000000000000000000000008C8CD8FF4646CEFF6767EFFF6D6D
+      F5FF6D6DF5FF6D6DF5FF6D6DF5FF6D6DF5FF6D6DF5FF6D6DF5FF6C6CF4FF6666
+      EEFF4646CDFF8C8CD8FF00000000000000004545BDFF6464ECFF5B5BE3FF5B5B
+      E3FF5B5BE3FF5B5BE3FF5B5BE3FF5B5BE3FF5B5BE3FF5B5BE3FF5B5BE3FF5B5B
+      E3FF5F5FE8FF4545BDFF00000000000000003333B5FF6262EAFF4F4FD7FF4F4F
+      D7FFFFFFFFFF4F4FD7FF4F4FD7FF4F4FD7FF4F4FD7FFFFFFFFFF4F4FD7FF4F4F
+      D7FF5A5AE2FF3333B5FF00000000000000003333B1FF5A5AE2FF4242CAFFFFFF
+      FFFFFFFFFFFFFFFFFFFF4242CAFF4242CAFFFFFFFFFFFFFFFFFFFFFFFFFF4242
+      CAFF4E4ED6FF3333B1FF00000000000000003333AEFF5050D8FF3737BFFF2323
+      ABFFFFFFFFFFF7F7F7FFE8E8E8FFDEDEDEFFDBDBDBFFDDDDDDFF11119BFF1616
+      A0FF2B2BB5FF3333AEFF00000000000000003333ABFF4A4AD2FF3333BBFF2E2E
+      B8FF13139FFFCECECEFFD1D1D1FFD6D6D6FFDCDCDCFF11119EFF1111A1FF1111
+      A1FF1D1DACFF3333ABFF00000000000000003333A8FF4646CEFF2626B5FF1414
+      ABFF1111AAFFD1D1D1FFD6D6D6FFDCDCDCFFE2E2E2FF1111AAFF1111AAFF1111
+      AAFF1818B0FF3333A8FF00000000000000003333A4FF3434C7FF1212B4FF1111
+      B4FFD1D1D1FFD6D6D6FFDCDCDCFFE2E2E2FFE6E6E6FFEAEAEAFF1111B4FF1111
+      B4FF1414B6FF3333A4FF00000000000000003333A1FF2222C8FF1111BEFFD1D1
+      D1FFD6D6D6FFDCDCDCFF1111ADFF1111ADFFEAEAEAFFEEEEEEFFEEEEEEFF1111
+      BEFF1212BEFF3333A1FF000000000000000033339DFF1C1CCEFF1111C8FF1111
+      B2FFDCDCDCFF1111B2FF1111C8FF1111C8FF1111B2FFEEEEEEFF1111B2FF1111
+      C8FF1111C8FF33339DFF00000000000000004545A0FF1B1BCCFF1111D1FF1111
+      D1FF1111B6FF1111D1FF1111D1FF1111D1FF1111D1FF1111B6FF1111D1FF1111
+      D1FF1515C9FF4545A0FF00000000000000008C8CBDFF2929A1FF1616CDFF1111
+      D9FF1111D9FF1111D9FF1111D9FF1111D9FF1111D9FF1111D9FF1111D9FF1515
+      CDFF2828A1FF8C8CBDFF0000000000000000000000007C7CA2FF434388FF3333
+      7DFF33337DFF33337DFF33337DFF33337DFF33337DFF33337DFF33337DFF4343
+      88FF7C7CA2FF0000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000CECEEFFFB0B0E4FFA9A9
+      E2FFA9A9E2FFA9A9E2FFA9A9E2FFA9A9E2FFA9A9E2FFA9A9E2FFA9A9E2FFB0B0
+      E4FFCECEEFFF000000000000000000000000CECEEEFFB1B1EAFFBFBFF8FFC1C1
+      FAFFC1C1FAFFC1C1FAFFC1C1FAFFC1C1FAFFC1C1FAFFC1C1FAFFC1C1FAFFBEBE
+      F7FFB1B1EAFFCECEEEFF0000000000000000B0B0E3FFBDBDF7FFBABAF3FFBABA
+      F3FFBABAF3FFBABAF3FFBABAF3FFBABAF3FFBABAF3FFBABAF3FFBABAF3FFBABA
+      F3FFBBBBF5FFB0B0E3FF0000000000000000A9A9DFFFBDBDF6FFB5B5EEFFB5B5
+      EEFFFFFFFFFFB5B5EEFFB5B5EEFFB5B5EEFFB5B5EEFFFFFFFFFFB5B5EEFFB5B5
+      EEFFB9B9F2FFA9A9DFFF0000000000000000A9A9DEFFB9B9F2FFAFAFE8FFFFFF
+      FFFFFFFFFFFFFFFFFFFFAFAFE8FFAFAFE8FFFFFFFFFFFFFFFFFFFFFFFFFFAFAF
+      E8FFB4B4EDFFA9A9DEFF0000000000000000A9A9DDFFB5B5EEFFABABE4FFA2A2
+      DBFFFFFFFFFFFBFBFBFFF5F5F5FFF1F1F1FFEFEFEFFFF0F0F0FF9B9BD5FF9D9D
+      D7FFA6A6DFFFA9A9DDFF0000000000000000A9A9DBFFB3B3ECFFA9A9E2FFA7A7
+      E1FF9B9BD6FFEAEAEAFFEBEBEBFFEDEDEDFFF0F0F0FF9B9BD6FF9B9BD7FF9B9B
+      D7FFA0A0DCFFA9A9DBFF0000000000000000A9A9DAFFB1B1EAFFA3A3DFFF9C9C
+      DBFF9B9BDBFFEBEBEBFFEDEDEDFFF0F0F0FFF2F2F2FF9B9BDBFF9B9BDBFF9B9B
+      DBFF9E9EDDFFA9A9DAFF0000000000000000A9A9D8FFA9A9E7FF9B9BDFFF9B9B
+      DFFFEBEBEBFFEDEDEDFFF0F0F0FFF2F2F2FFF4F4F4FFF6F6F6FF9B9BDFFF9B9B
+      DFFF9C9CE0FFA9A9D8FF0000000000000000A9A9D7FFA2A2E7FF9B9BE3FFEBEB
+      EBFFEDEDEDFFF0F0F0FF9B9BDCFF9B9BDCFFF6F6F6FFF7F7F7FFF7F7F7FF9B9B
+      E3FF9B9BE3FFA9A9D7FF0000000000000000A9A9D5FF9F9FEAFF9B9BE7FF9B9B
+      DEFFF0F0F0FF9B9BDEFF9B9BE7FF9B9BE7FF9B9BDEFFF7F7F7FF9B9BDEFF9B9B
+      E7FF9B9BE7FFA9A9D5FF0000000000000000B0B0D7FF9F9FE9FF9B9BEBFF9B9B
+      EBFF9B9BE0FF9B9BEBFF9B9BEBFF9B9BEBFF9B9BEBFF9B9BE0FF9B9BEBFF9B9B
+      EBFF9C9CE8FFB0B0D7FF0000000000000000CECEE3FFA5A5D7FF9D9DEAFF9B9B
+      EFFF9B9BEFFF9B9BEFFF9B9BEFFF9B9BEFFF9B9BEFFF9B9BEFFF9B9BEFFF9C9C
+      EAFFA4A4D7FFCECEE3FF000000000000000000000000C8C8D7FFB0B0CDFFA9A9
+      C8FFA9A9C8FFA9A9C8FFA9A9C8FFA9A9C8FFA9A9C8FFA9A9C8FFA9A9C8FFB0B0
+      CDFFC8C8D7FF0000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000
+    }
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    IniSection = 'TEditorForm'
+    left = 608
+    top = 80
+  end
+end

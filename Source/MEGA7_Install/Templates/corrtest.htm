@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<TITLE>Rate Correlation Test</TITLE>
+<style>{TLegendGenerator.Style}</style>
+</HEAD>
+
+<BODY>
+  <SPAN class="figureTitle">
+    Rate Correlation Test for {TAnalysisInfo.NoOfTaxa} Taxa
+  </span>
+
+<br>
+
+<div id ="content">
+	{TLegendGenerator.CorrtestCaptionString} The Corrtest [{TLegendGenerator.CorrtestCitation:ExpandCitation}] analysis returned a score of {TLegendGenerator.CorrtestScore}.
+	{if TLegendGenerator.IsML = 'false'}
+	The Corrtest analysis was run using the branch lengths in the user-supplied tree to compute evolutionary rates.
+	{endif}
+	{if TLegendGenerator.IsML = 'true'}
+		The user-specified tree topology was analyzed
+		by using the {TTreePack.TreeMethodName} method based on
+		the {TAnalysisInfo.DistModelName} model [{TDistPack.MethodCitation:ExpandCitation}].
+		The log likelihood of the evaluated tree is ({TLegendGenerator.LogLikelihoodCE}).
+	
+		{if TLegendGenerator.GammaPara = 'N/A'}
+		{else}
+		 A discrete Gamma distribution was used to model evolutionary rate differences
+		 among sites ({TLegendGenerator.NoOfGCats} categories (+<i>G</i>,
+		 parameter = {TLegendGenerator.GammaPara})).
+		{endif}
+
+		{if TLegendGenerator.PropOfInvariant = 'N/A'}
+		{else}
+		The rate variation model allowed for some sites to be evolutionarily
+		invariable ([+<i>I</i>], {TLegendGenerator.PropOfInvariant}% sites).
+		{endif}
+	{endif}  
+
+	{if TAnalysisInfo.DistHeteroPatternCaption ! ''}
+		&#32 {TAnalysisInfo.DistHeteroPatternCaption} [{TLegendGenerator.HeteroPatternDistCitation:ExpandCitation}].
+	{endif}
+{IncludeExternalFile=Data_Subset_Template.htm}
+
+</div>
+<br><br>
+</body>
+</html>

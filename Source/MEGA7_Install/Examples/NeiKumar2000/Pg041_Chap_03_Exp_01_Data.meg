@@ -1,0 +1,57 @@
+#mega
+!Title Primate Cytb nucleotide data with all missing and indel sites removed;
+!Format 
+    DataType=Nucleotide   DataFormat=Interleaved
+    NTaxa=2 NSites=1125
+    Identical=. Missing=? Indel=-
+    CodeTable=Vertebrate_mitochondrial;
+
+[
+M. Nei and S. Kumar (2000) Molecular Evolution and Phylogenetics.  
+Oxford University Press. New York.
+Data for Example 3.1.
+]
+
+!Domain=Data Property=Coding;
+#Human         ACC CCA ATA CGC AAA ATT AAC CCC CTA ATA AAA TTA ATT AAC CAC TCA TTC ATC GAC CTC CCC ACC CCA TCC AAC ATC TCC
+#Rhesus_monkey .TA ... ... ... ... TCC ... ..A A.C ... ... A.. ... ..T .G. ..C ... ..T ..T T.A ... ... ... C.. ... C.. ...
+
+#Human         GCA TGA TGA AAC TTC GGC TCA CTC CTT GGC GCC TGC CTG ATC CTC CAA ATC ACC ACA GGA CTA TTC CTA GCC ATG CAC TAC
+#Rhesus_monkey ATG ... ... ... ..T ... ... ..T ... .CA ... ... ..A ..T T.A ... ... .T. ... ..C ... C.. ... ..A ..A ... ...
+
+#Human         TCA CCA GAC GCC TCA ACC GCC TTT TCA TCA ATC GCC CAC ATC ACT CGA GAC GTA AAT TAT GGC TGA ATC ATC CGC TAC CTT
+#Rhesus_monkey ... ... ... A.. ..C T.. ... ..C ..C ... ... ..A ..T ... ..C ... ..T ... ..G ..C ..T ... ... .CT ... ... ..C
+
+#Human         CAC GCC AAT GGC GCC TCA ATA TTC TTT ATC TGC CTC TTC CTA CAC ATC GGG CGA GGC CTA TAT TAC GGA TCA TTT CTC TAC
+#Rhesus_monkey ... ... ... ..T ... ..T ... C.. ... ... ... ..T ... ... ... ... ..T ... ... ..T ..C ... ..C ... .A. ... CT.
+
+#Human         TCA GAA ACC TGA AAC ATC GGC ATT ATC CTC CTG CTT GCA ACT ATA GCA ACA GCC TTC ATA GGC TAT GTC CTC CCG TGA GGC
+#Rhesus_monkey CT. ... ... ... ... ..T ... ... ..A ... ..T ... AT. ..C ... A.. ... ..T ... ..G ..T ... ..T ... ..A ... ...
+
+#Human         CAA ATA TCA TTC TGA GGG GCC ACA GTA ATT ACA AAC TTA CTA TCC GCC ATC CCA TAC ATT GGG ACA GAC CTA GTT CAA TGA
+#Rhesus_monkey ... ..G ... ... ..G ... ..A ... ... ..C ... ... C.. ..G ..A ..A ..T ..G ... ... ..A ..C A.T ... ..C ... ...
+
+#Human         ATC TGA GGA GGC TAC TCA GTA GAC AGT CCC ACC CTC ACA CGA TTC TTT ACC TTT CAC TTC ATC TTG CCC TTC ATT ATT GCA
+#Rhesus_monkey ... ... ... ..A ... G.C A.C .G. ..C ... ..T ... ... ... ... ..C ... ..A ... ..T ... C.A ... ... ... ..C ATC
+
+#Human         GCC CTA GCA ACA CTC CAC CTC CTA TTC TTG CAC GAA ACG GGA TCA AAC AAC CCC CTA GGA ATC ACC TCC CAT TCC GAT AAA
+#Rhesus_monkey ... ..C A.. ..T G.A ... ..G ... ... C.A ... ... ..A ... ... ... ... ..T TGC ... ... T.. ... G.C ..G ..C ...
+
+#Human         ATC ACC TTC CAC CCT TAC TAC ACA ATC AAA GAC GCC CTC GGC TTA CTT CTC TTC CTT CTC TCC TTA ATG ACA TTA ACA CTA
+#Rhesus_monkey ... G.. ... ... ..C ... ... ... ... ... ... AT. ..A ... C.. G.C ... C.T ..C T.T A.. C.. GCA ... C.. ... ...
+
+#Human         TTC CCA GAC CTC CTA GGC GAC CCA GAC AAT TAT ACC CTA GCC AAC CCC TTA AAC ACC CCT CCC CAC ATC AAG CCC GAA TGA
+#Rhesus_monkey C.. ..C A.. ... ... AA. ... ... ... ..C ..C .T. .CG ... G.. ..A C.. ... ..T ..C ..A ... ... ... ..A ... ...
+
+#Human         TAT TTC CTA TTC GCC TAC ACA ATT CTC CGA TCC GTC CCT AAC AAA CTA GGA GGC GTC CTT GCC CTA TTA CTA TCC ATC CTC
+#Rhesus_monkey ..C ... ... ..T ..A ... ... ..C ..A ... ... A.. ..C ... ... ..G ... ... ..A ..A ..A ..C ..C T.. ..A ... ...
+
+#Human         ATC CTA GCA ATA ATC CCC ATC CTC CAT ATA TCC AAA CAA CAA AGC ATA ATA TTT CGC CCA CTA AGC CAA TCA CTT TAT TGA
+#Rhesus_monkey ... ... ... GCC ... ... ..A ... ..C .A. ... ... ... ... ..T ... ... ..C ... ... ..C ... ... .TC ..G .TC ...
+
+#Human         CTC CTA GCC GCA GAC CTC CTC ATT CTA ACC TGA ATC GGA GGA CAA GTA AGC TAC CCT TTT ACC ATC ATT GGA CAA GTA GCA
+#Rhesus_monkey ... ... ATA A.. AT. ..A ..A .CC ..T ... ... ..T ... A.C G.. ... .CT C.A ..C C.. .T. .CT ..C ..C ... ... ...
+
+#Human         TCC GTA CTA TAC TTC ACA ACA ATC CTA ATC CTA ATA CCA ACT ATC TCC CTA ATT GAA AAC AAA ATA CTC AAA
+#Rhesus_monkey ... A.. A.. ... ... .TC ... ..T ... ... ... ... ... CTG GA. ... ... ..C ... ... ..C C.. ... ...
+

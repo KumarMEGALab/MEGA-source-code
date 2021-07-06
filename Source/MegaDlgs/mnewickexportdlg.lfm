@@ -1,0 +1,132 @@
+object NewickExportOptionsForm: TNewickExportOptionsForm
+  Left = 544
+  Height = 158
+  Top = 203
+  Width = 465
+  Caption = 'Newick Export Options'
+  ClientHeight = 158
+  ClientWidth = 465
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Tahoma'
+  OnCreate = FormCreate
+  LCLVersion = '1.8.4.0'
+  object Button2: TButton
+    Left = 368
+    Height = 25
+    Top = 127
+    Width = 75
+    Action = SaveAction
+    ModalResult = 1
+    TabOrder = 0
+  end
+  object CancelButton: TButton
+    Left = 260
+    Height = 25
+    Top = 127
+    Width = 75
+    Action = CancelAction
+    Cancel = True
+    TabOrder = 1
+  end
+  object TimetreeGroupBox: TRadioGroup
+    Left = 318
+    Height = 99
+    Top = 10
+    Width = 143
+    AutoFill = True
+    Caption = 'Timetree'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 78
+    ClientWidth = 139
+    ItemIndex = 0
+    Items.Strings = (
+      'Relative Times'
+      'Divergence Times'
+    )
+    TabOrder = 2
+  end
+  object GroupBox1: TGroupBox
+    Left = 9
+    Height = 122
+    Top = 10
+    Width = 144
+    Caption = 'General'
+    ClientHeight = 101
+    ClientWidth = 140
+    TabOrder = 3
+    object BranchLengthsCheckbox: TCheckBox
+      Left = 9
+      Height = 20
+      Top = 7
+      Width = 107
+      Caption = 'Branch &Lengths'
+      TabOrder = 0
+    end
+    object BootstrapValuesCheckbox: TCheckBox
+      Left = 9
+      Height = 20
+      Top = 39
+      Width = 116
+      Caption = 'Bootstrap &Values'
+      TabOrder = 1
+    end
+    object NodeLabelsCheckbox: TCheckBox
+      Left = 9
+      Height = 20
+      Top = 73
+      Width = 89
+      Caption = '&Node Labels'
+      TabOrder = 2
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 164
+    Height = 99
+    Top = 10
+    Width = 144
+    Caption = 'Gene Tree'
+    ClientHeight = 78
+    ClientWidth = 140
+    TabOrder = 4
+    object GeneDuplicationsCheckbox: TCheckBox
+      Left = 9
+      Height = 20
+      Top = 7
+      Width = 121
+      Caption = '&Gene Duplications'
+      TabOrder = 0
+    end
+    object SpeciationsCheckbox: TCheckBox
+      Left = 9
+      Height = 20
+      Top = 39
+      Width = 85
+      Caption = 'S&peciations'
+      TabOrder = 1
+    end
+  end
+  object ActionList1: TActionList
+    left = 120
+    top = 104
+    object SaveAction: TAction
+      Caption = '&Export'
+      Hint = 'Execute the save operation'
+      OnExecute = SaveActionExecute
+      ShortCut = 16467
+    end
+    object CancelAction: TAction
+      Caption = '&Cancel'
+      Hint = 'Close this window without exporting the newick file'
+      OnExecute = CancelActionExecute
+      ShortCut = 27
+    end
+  end
+end

@@ -1,0 +1,41 @@
+body { 
+	font-family: OpenSymbol; 
+	padding-top:2em;
+	background-color: white;
+	margin-left: 40px;
+	margin-right: 40px;	
+}
+#content { font-size: 14px; text-indent: 1em; } .reference { font-size: 12px; margin: 2px 0px 2px 0px; text-indent: -1em; padding-left: 1em; } table {
+        border-collapse: collapse;
+        width: 480px;
+	font-family: OpenSymbol;
+}
+th {
+        border-top:         2px solid black;
+        border-bottom:        1px solid black;
+}
+td {
+        padding: 5px;
+        text-align: center;
+}
+.rowHeader { font-weight: bold; }
+.lastRow td { border-bottom: 2px solid black; } .figureTitle {
+        font-weight: bold;
+        font-family: OpenSymbol;
+        font-size: 16px;
+        padding: 2px;
+        text-align: left;
+}
+.note {
+        font-size: 14px;
+        padding: 2px;
+        
+}
+.highlighted {
+ 	
+	font-weight:bold;
+}
+
+.preventwrap td {
+  white-space:nowrap;
+}

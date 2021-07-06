@@ -1,0 +1,72 @@
+<HTML>
+<HEAD type="PrimaryResultWindow">
+<TITLE>Molecular clock analysis using Maximum Likelihood</TITLE>
+<style> {TLegendGenerator.Style}</style>
+</HEAD>
+
+<BODY>
+  <span class="figureTitle">
+    Table. Results from a test of molecular clocks using the Maximum Likelihood method
+  </span>
+
+<div id ="content">
+  <TABLE class="preventwrap">
+  <TR>
+  <TH> </TH><TH></i>ln<i>L </TH><TH>Parameters </TH>
+  <TH>(+<i>G</i>) </TH><TH>(+<i>I</i>) </TH></TR>
+
+  <TR>
+  <td><strong>With Clock </strong></td>
+  <td> {TAnalysisInfo.LogLikelihoodWithClock} </td>
+  <td> {TLegendGenerator.NoOfParamsWClock} </td>
+  <td> {if TDistPack.ComputeGammaParameter = True} {TAnalysisInfo.GammaWithClock} {else} n/a {endif} </td>
+  <td> {if TDistPack.ComputeInvarParameter = True} {TAnalysisInfo.InvarWithClock} {else} n/a {endif} </td>
+  </TR>
+
+  <TR class="lastRow">
+  <td><strong>Without Clock </strong></td>
+  <td> {TAnalysisInfo.LogLikelihoodWithoutClock} </td>
+  <td> {TLegendGenerator.NoOfParamsWoClock} </td>
+  <td> {if TDistPack.ComputeGammaParameter = True} {TAnalysisInfo.GammaWithoutClock} {else} n/a {endif} </td>
+  <td> {if TDistPack.ComputeInvarParameter = True} {TAnalysisInfo.InvarWithoutClock} {else} n/a {endif} </td>
+  </TR>
+  </TABLE>
+</div>
+<br>
+
+<div class="note">
+  NOTE.-- The molecular clock test was performed by comparing the ML value for
+    the given topology with and without the molecular clock constraints under
+    {TAnalysisInfo.FullModelName} [{TDistPack.MethodCitation:ExpandCitation}].
+
+    {if TDistPack.ComputeGammaParameter = True}
+      Differences in evolutionary rates among sites were modeled using a discrete
+      Gamma (G) distribution (shape parameter shown)
+
+    {if TDistPack.ComputeInvarParameter = True}
+      and allowed for invariant (<i>I</i>) sites to exist (estimate of percent
+      invariant sites shown).
+    {else}
+      .
+    {endif}
+    {else}
+      {if TDistPack.ComputeInvarParameter = True}
+        A proportion of sites were allowed to remain invariant (<i>I</i>) in the
+        evolutionary rate model (estimate of percent invariant sites shown).
+      {endif}
+    {endif}
+
+    The null hypothesis of equal evolutionary rate throughout the tree was
+    {if TAnalysisInfo.MolecularClockTest < 0.05} rejected {else} not rejected {endif}
+    at a 5% significance level (<i>P</i> = {TAnalysisInfo.MolecularClockTest}).
+    {if TTreePack.IsDoubleOptimized = True}
+      The branch lengths were double optimized (Double Optimize Branch Lengths option).
+    {endif}
+
+   {IncludeExternalFile=Data_Subset_Template.htm}
+
+</div>
+<br>
+<br>
+</body>
+</html>

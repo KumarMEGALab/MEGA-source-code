@@ -1,0 +1,223 @@
+object OutputMatrixDlg: TOutputMatrixDlg
+  Left = 724
+  Height = 212
+  Top = 269
+  Width = 396
+  Caption = 'Output Matrix Dlg'
+  ClientHeight = 212
+  ClientWidth = 396
+  Color = clBtnFace
+  Constraints.MinHeight = 203
+  Constraints.MinWidth = 375
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Arial'
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poScreenCenter
+  ShowHint = True
+  LCLVersion = '1.6.2.0'
+  object MatrixSideLabel: TLabel
+    Left = 7
+    Height = 16
+    Top = 113
+    Width = 36
+    Caption = '&Matrix'
+    FocusControl = MatrixSideComboBx
+    ParentColor = False
+  end
+  object MatrixFormatLabel: TLabel
+    Left = 6
+    Height = 16
+    Top = 161
+    Width = 81
+    Caption = 'Matrix &Format'
+    FocusControl = MatrixFormatComboBx
+    ParentColor = False
+  end
+  object PrecisionLabel: TLabel
+    Left = 193
+    Height = 16
+    Top = 49
+    Width = 91
+    Caption = 'Decimal &Places'
+    ParentColor = False
+  end
+  object MaxEntriesLabel: TLabel
+    Left = 193
+    Height = 16
+    Top = 78
+    Width = 120
+    Caption = 'Max &Entries per Line'
+    ParentColor = False
+    Visible = False
+  end
+  object Label4: TLabel
+    Left = 12
+    Height = 16
+    Top = 9
+    Width = 84
+    Caption = '&Output Format'
+    FocusControl = MatrixSideComboBx
+    ParentColor = False
+  end
+  object MatrixFormatComboBx: TComboBox
+    Left = 17
+    Height = 24
+    Top = 178
+    Width = 168
+    DropDownCount = 3
+    ItemHeight = 16
+    ItemIndex = 0
+    Items.Strings = (
+      'Opposite sides'
+      'Distance [Std. Err.]'
+    )
+    Style = csDropDownList
+    TabOrder = 1
+    Text = 'Opposite sides'
+  end
+  object PrecisionSE: TSpinEdit
+    Left = 318
+    Height = 24
+    Top = 43
+    Width = 57
+    MaxValue = 20
+    TabOrder = 2
+  end
+  object OKBtn: TBitBtn
+    Left = 212
+    Height = 30
+    Top = 132
+    Width = 162
+    Caption = '&Print/Save Matrix'
+    Default = True
+    Kind = bkOK
+    ModalResult = 1
+    TabOrder = 3
+  end
+  object CancelBtn: TBitBtn
+    Left = 212
+    Height = 30
+    Top = 171
+    Width = 76
+    Cancel = True
+    Caption = '&Cancel'
+    Kind = bkCancel
+    ModalResult = 2
+    TabOrder = 4
+  end
+  object HelpBtn: TBitBtn
+    Left = 300
+    Height = 30
+    Top = 171
+    Width = 75
+    DefaultCaption = True
+    Kind = bkHelp
+    TabOrder = 5
+  end
+  object WriteRdGp: TRadioGroup
+    Left = 9
+    Height = 66
+    Top = 39
+    Width = 176
+    AutoFill = True
+    Caption = 'Information to &Write'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 45
+    ClientWidth = 172
+    ItemIndex = 0
+    Items.Strings = (
+      '&Distances'
+      'Distances and &Std. Err.'
+    )
+    OnClick = WriteRdGpClick
+    TabOrder = 6
+  end
+  object OutputFormatComboBox: TComboBox
+    Left = 105
+    Height = 24
+    Top = 6
+    Width = 272
+    DropDownCount = 5
+    ItemHeight = 16
+    ItemIndex = 0
+    Items.Strings = (
+      'XLSX: MS Excel workbook (2007+)'
+      'XLS: MS Excel Workbook (All Versions)'
+      'ODS: Open/Libre Office Workbook'
+      'CSV: Comma-Separated-Values'
+      'Unformatted text'
+      'MEGA format'
+    )
+    OnChange = OutputFormatComboBoxChange
+    Style = csDropDownList
+    TabOrder = 7
+    Text = 'XLSX: MS Excel workbook (2007+)'
+  end
+  object ExportType: TPanel
+    Left = 187
+    Height = 47
+    Top = 69
+    Width = 188
+    BevelOuter = bvNone
+    ClientHeight = 47
+    ClientWidth = 188
+    TabOrder = 8
+    object Label1: TLabel
+      Left = 7
+      Height = 16
+      Top = 0
+      Width = 69
+      Caption = 'Export Type'
+      ParentColor = False
+    end
+    object TypeCombo: TComboBox
+      Left = 20
+      Height = 24
+      Top = 20
+      Width = 168
+      ItemHeight = 16
+      ItemIndex = 0
+      Items.Strings = (
+        'Matrix [255 cols max]'
+        'Column'
+      )
+      OnChange = TypeComboChange
+      Style = csDropDownList
+      TabOrder = 0
+      Text = 'Matrix [255 cols max]'
+    end
+  end
+  object MatrixSideComboBx: TComboBox
+    Left = 17
+    Height = 24
+    Top = 130
+    Width = 168
+    DropDownCount = 3
+    ItemHeight = 16
+    ItemIndex = 0
+    Items.Strings = (
+      'Lower-left'
+      'Upper-right'
+    )
+    Style = csDropDownList
+    TabOrder = 0
+    Text = 'Lower-left'
+  end
+  object SaveDlg: TSaveDialog
+    DefaultExt = '.*.meg'
+    Filter = 'MEGA|(*.meg)|MEGA|*.meg|PAUP|(*.pup)|PAUP|*.pup|Text|(*.txt)|Text|*.txt'
+    Options = [ofOverwritePrompt, ofPathMustExist, ofShareAware]
+    left = 168
+    top = 48
+  end
+end

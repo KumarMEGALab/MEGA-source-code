@@ -1,0 +1,58 @@
+<HTML>
+<HEAD type="PrimaryResultWindow">
+<TITLE>Tajima&#39;s Rate Test</TITLE>
+<STYLE>{TLegendGenerator.Style}</STYLE>
+</HEAD>
+
+<BODY>
+  <span class="figureTitle">
+  Table. Results from the Tajima&#39;s test for 3 Sequences
+  </span>
+
+<TABLE width="550px">
+     <tr> <TH align="center">Configuration</TH>            <TH align="center">Count</TH></tr>
+
+     <TR> <TD>Identical sites in all three sequences</TD>  <TD align="center">{TLegendGenerator.m_iii}</TD></TR>
+     <TR> <TD>Divergent sites in all three sequences</TD>  <TD align="center">{TLegendGenerator.m_ijk}</TD></TR>
+
+  {if TLegendGenerator.ChangeType = 'gdNucTsOnly'}
+     <TR><TD>Unique transitions in Sequence A</TD>     	   <TD align="center">{TLegendGenerator.ts_ijj}</TD></TR>
+     <TR><TD>Unique transitions in Sequence B</TD>    	   <TD align="center">{TLegendGenerator.ts_iji}</TD></TR>
+     <TR class="lastRow">
+     <TD>Unique transitions in Sequence C</TD>             <TD align="center">{TLegendGenerator.ts_iij}</TD></TR>
+  {elseif TLegendGenerator.ChangeType = 'gdNucTvOnly'}
+     <TR><TD>Unique transversions in Sequence A</TD>       <TD align="center">{TLegendGenerator.tv_ijj}</TD></TR>
+     <TR><TD>Unique transversions in Sequence B</TD>       <TD align="center">{TLegendGenerator.tv_iji}</TD></TR>
+     <TR class="lastRow">
+     <TD>Unique transversions in Sequence C</TD> <TD align="center" class="lastRow">{TLegendGenerator.tv_iij}</TD></TR>
+  {elseif TLegendGenerator.ChangeType = 'gdNucSeparateTsTv'}
+     <TR><TD>Unique transitions in Sequence A</TD>     	   <TD align="center">{TLegendGenerator.ts_ijj}</TD></TR>
+     <TR><TD>Unique transitions in Sequence B</TD>    	   <TD align="center">{TLegendGenerator.ts_iji}</TD></TR>
+     <TR><TD>Unique transitions in Sequence C</TD>         <TD align="center">{TLegendGenerator.ts_iij}</TD></TR>
+     <TR><TD>Unique transversions in Sequence A</TD>       <TD align="center">{TLegendGenerator.tv_ijj}</TD></TR>
+     <TR><TD>Unique transversions in Sequence B</TD>       <TD align="center">{TLegendGenerator.tv_iji}</TD></TR>
+     <TR class="lastRow">
+     <TD>Unique transversions in Sequence C</TD>           <TD align="center" class="lastRow">{TLegendGenerator.tv_iij}</TD></TR>
+  {else}
+     <TR> <TD>Unique differences in Sequence A</TD> 	   <TD align="center">{TLegendGenerator.m_ijj}</TD></TR>
+     <TR> <TD>Unique differences in Sequence B</TD>        <TD align="center">{TLegendGenerator.m_iji}</TD></TR>
+     <TR class="lastRow">
+     <TD>Unique differences in Sequence C</TD>             <TD align="center" class="lastRow">{TLegendGenerator.m_iij}</TD> </TR>
+  {endif}
+</TABLE>
+
+<div class="note">
+  NOTE.-- The equality of evolutionary rate between sequences <b>A</b> (<i>{TLegendGenerator.SequenceA}</i>) and
+    <b>B</b> (<i>{TLegendGenerator.SequenceB}</i>), with sequence <b>C</b> (<i>{TLegendGenerator.SequenceC}</i>)
+    used as an outgroup in Tajima&#39s relative rate test [{TLegendGenerator.TajimaRelativeRate:ExpandCitation}].
+    The &chi;<sup>2</sup> test statistic was {TLegendGenerator.ChiSquare} (<i>P</i> = {TLegendGenerator.ChiSquareP}
+    with {TLegendGenerator.DegFreedom} degree[s] of freedom)
+    {if TLegendGenerator.ChangeType ! 'gdAll'). {else} ({TLegendGenerator.ChangesConsidered}). {endif}
+    <i>P</i>-value less than 0.05 is often used to reject the null
+    hypothesis of equal rates between lineages.
+
+    {IncludeExternalFile=Data_Subset_Template.htm}
+</div>
+<br>
+</BODY>
+</HTML>

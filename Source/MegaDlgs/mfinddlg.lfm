@@ -1,0 +1,88 @@
+object FindDlg: TFindDlg
+  Left = 835
+  Height = 100
+  Top = 214
+  Width = 499
+  Caption = 'Find Taxa Name'
+  ClientHeight = 100
+  ClientWidth = 499
+  Color = clBtnFace
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -14
+  Font.Name = 'MS Sans Serif'
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '1.6.2.0'
+  object SearchLbl: TLabel
+    Left = 10
+    Height = 19
+    Top = 12
+    Width = 88
+    Caption = 'Search For:'
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Arial'
+    ParentColor = False
+    ParentFont = False
+  end
+  object TaxaNameEdit: TEdit
+    Left = 98
+    Height = 24
+    Top = 10
+    Width = 386
+    TabOrder = 0
+  end
+  object GroupBox1: TGroupBox
+    Left = 10
+    Height = 49
+    Top = 39
+    Width = 262
+    ClientHeight = 28
+    ClientWidth = 258
+    TabOrder = 1
+    object ContainsTermBtn: TRadioButton
+      Left = 10
+      Height = 23
+      Top = 1
+      Width = 88
+      Caption = 'Contains ...'
+      TabOrder = 0
+    end
+    object StartsWithTermBtn: TRadioButton
+      Left = 128
+      Height = 23
+      Top = 1
+      Width = 95
+      Caption = 'Starts with ...'
+      Checked = True
+      TabOrder = 1
+      TabStop = True
+    end
+  end
+  object BitBtn1: TBitBtn
+    Left = 288
+    Height = 30
+    Top = 56
+    Width = 75
+    Cancel = True
+    DefaultCaption = True
+    Kind = bkCancel
+    ModalResult = 2
+    OnClick = BitBtn1Click
+    TabOrder = 2
+  end
+  object SearchBitBtn: TBitBtn
+    Left = 400
+    Height = 30
+    Top = 56
+    Width = 75
+    Caption = '&Search'
+    Default = True
+    Kind = bkOK
+    ModalResult = 1
+    OnClick = SearchBitBtnClick
+    TabOrder = 3
+  end
+end

@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+	<TITLE>{TTreeViewForm.AnalysisType}</TITLE>
+<style type="text/css">
+	{TLegendGenerator.Style}
+</style>
+</HEAD>
+<BODY>
+<span class="figureTitle" > 
+Inferred Ancestral Sequences
+{if TTreeBox.IsLinearized = True}
+        (linearized)
+{endif}
+</span>
+<br>
+<div id ="content">
+Ancestral states were inferred using the {TTreePack.TreeMethodName} method [{TTreePack.TreeMethodCitation:ExpandCitation}]
+
+{if TAnalysisInfo.DistModelName = ''}
+  {if TLegendGenerator.FullModelName ! ''}
+    and	{TLegendGenerator.FullModelName} evolutionary model [{TDistPack.MethodCitation:ExpandCitation}].
+  {else}
+  .
+  {endif}
+{else}
+   &#32 and {TAnalysisInfo.DistModelName} model [{TDistPack.MethodCitation:ExpandCitation}].
+{endif}
+
+The tree shows a set of possible 
+{if TAnalysisInfo.isAminoAcid = True}
+amino acids
+{else}
+nucleotides 
+{endif}
+(states) at each ancestral node {if TTreePack.NameAcronym = 'ML'} based on their inferred likelihood {endif} at site {TTreeBox.SiteIndexForCaption}.  
+{TTreeViewForm.AncStateCaption}
+
+   
+{if TAnalysisInfo.IsMyPegAnalysis = True}
+  The tree shown was obtained from the UCSC resource [{TTreePack.MyPegTreeMethodCitation:ExpandCitation}]. 
+{elseif TAnalysisInfo.UserTreeFile ! ''}
+  The initial tree was inferred using a pre-computed tree file ({TAnalysisInfo.UserTreeFileNameOnly}).
+{elseif TTreePack.NameAcronym = 'ML'}
+  {TLegendGenerator.InitialTree}  
+{elseif TTreePack.NameAcronym = 'MP'}
+  {if TTreePack.MPSearchName = 'SPR'}
+	The initial trees were obtained by the random addition of sequences ({TTreePack.RandomAddReps} replicates).
+  {elseif TTreePack.MPSearchName = 'TBR'}
+	The initial trees were obtained by the random addition of sequences ({TTreePack.RandomAddReps} replicates).
+  {elseif TTreePack.MPSearchName = 'CNI'}
+	The initial trees were obtained with 
+	{if TTreePack.MPInitialTreesMethod = MinMini}
+	  the Min-mini heuristic algorithm (search factor =  {TTreePack.SearchFactor}).
+	{else}
+	  the random addition of sequences ({TTreePack.RandomAddReps} replicates).
+	{endif}
+  {endif}
+{endif}
+
+{if TTreePack.NameAcronym = 'ML'}
+	The rates among sites
+	{if TDistPack.ComputeGammaParameter = True}
+		were treated as a Gamma distribution 
+	{endif}
+	{if TDistPack.ComputeInvarParameter = True}
+		{if TDistPack.ComputeGammaParameter = True}
+			with invariant sites
+		{else}
+			were treated as being invariant among sites (Invariant option).
+		{endif}
+	{endif}
+	{if TDistPack.ComputeGammaParameter = True}
+		using {TAnalysisInfo.NoOfGammaCat} Gamma Catagories 
+		{if TDistPack.ComputeInvarParameter = True}
+			(Gamma with invariant sites option).
+		{else}
+			(Gamma Distribution option).
+		{endif}
+	{endif}
+	{if TDistPack.ComputeGammaParameter = False}
+		{if TDistPack.ComputeInvarParameter = False}
+			were treated as being uniform among sites (Uniform rates option).
+		{endif}
+	{endif}
+{endif} 
+
+	
+
+{if TTreePack.IsDoubleOptimized = True}
+    &#32 The branch lengths were double optimized (Double Optimize Branch Lengths option).  
+{endif}
+
+
+ {IncludeExternalFile=Data_Subset_Template.htm}
+
+</div>
+<br/>
+</BODY>
+</HTML>

@@ -1,0 +1,14 @@
+#MEGA
+!Title :  HUMAN MTDNA FROM TAMURA-NEI (1993) PAPER;
+!Format
+   DataType=Nucleotide CodeTable=Standard
+   NSeqs=5 NSites=78
+   Identical=. Missing=? Indel=-;
+
+
+!Domain=Data property=Coding CodonStart=1;
+#W._Pygmy_(1)_{African}          TTC TTT CAT GGG GAA GCA GAT TTG GGT ACC ACC CAA GTA TTG ACT CAC CCA TCA ACA ACC GCT ATG TAT CTC GTA CAT
+#W._Pygmy_(6)_{African}          ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... T.. ... ...
+#Kung_(7)_{African}              ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... T.. ... ...
+#Kung_(9)_{African}              ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... T.. ... ...
+#Kung_(10)_{African}             ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... T.. ... ...

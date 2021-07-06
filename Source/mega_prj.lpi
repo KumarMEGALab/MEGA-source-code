@@ -1,0 +1,2551 @@
+{
+	Copyright 1992-2021 Sudhir Kumar and Koichiro Tamura
+
+	This file is part of the MEGA (Molecular Evolutionary Genetics Analyis) software.
+
+	MEGA (Molecular Evolutionary Genetics Analysis) is free software:
+	you can redistribute it and/or modify it under the terms of the
+	GNU General Public License as published by the Free Software
+	Foundation, either version 3 of the License, or (at your option)
+	any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+   Contributor(s):   The MEGA source code and software is made available in the hopes that it will be useful. 
+   In keeping with the spirit and intent that the MEGA project is developed under, the authors of MEGA request that before
+   distributing any significant changes to the MEGA source code (or derivatives thereof), you share
+   those changes with the MEGA authors so that they may have the opportunity to test that
+   the changes do not introduce errors into the code or otherwise negatively impact the correctness
+   or performance of the MEGA software.
+   
+	Please email inqiries to s.kumar@temple.edu
+}
+
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="11"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <AutoCreateForms Value="False"/>
+      <Title Value="MEGAX"/>
+      <Scaled Value="True"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <XPManifest>
+        <DpiAware Value="True"/>
+      </XPManifest>
+      <Icon Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <BuildModes Count="15">
+      <Item1 Name="Default" Default="True"/>
+      <Item2 Name="Debug">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="mega"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="MegaDlgs;MEGA7-Help;Common;TamuraFuncs;reltime;Alignment;InputData;Compute;RuntimeProgress;Webtop;Process;TreeEditor;TextEditor;MegaVcl;UsageStatistics;AlignmentEditor;Captions;DataOutput;GeneDuplication;Clinic;ResultsForms;Web;Applinker;PatristicDist;CalibrationTester;InputData/nexus;Private/Help;AnalysisWizard;BEAM;ImageForm;CloneFinder;CloneFinder/data;CloneFinder/parsers;CloneFinder/compute;CloneFinder/dialogs;CloneFinder/options;CloneFinder/process;CloneFinder/renderers;Workflow/data;Helpers;uniqueinstance;Workflow/gui;TreeEditor/frames"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <VerifyObjMethodCallValidity Value="True"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <DebugInfoType Value="dsDwarf2Set"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowDebugInfo Value="True"/>
+            </Verbosity>
+            <CustomOptions Value="-dVISUAL_BUILD
+-dDEBUG"/>
+            <OtherDefines Count="4">
+              <Define0 Value="VISUAL_BUILD"/>
+              <Define1 Value="PROTOTYPER"/>
+              <Define2 Value="NO_BROWSER"/>
+              <Define3 Value="DEBUG"/>
+            </OtherDefines>
+          </Other>
+        </CompilerOptions>
+      </Item2>
+      <Item3 Name="caltester-debug">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="megaproto"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="MegaDlgs;MEGA7-Help;Common;TamuraFuncs;reltime;Alignment;InputData;Compute;RuntimeProgress;Process;TreeEditor;TextEditor;MegaVcl;UsageStatistics;AlignmentEditor;Captions;DataOutput;GeneDuplication;Clinic;ResultsForms;Web;Applinker;PatristicDist;CalibrationTester;InputData/nexus;Private/Help;Analysis Wizard;BEAM;ImageForm;Workflow/gui;TreeEditor/frames"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <Optimizations>
+              <OptimizationLevel Value="0"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <DebugInfoType Value="dsDwarf2"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <CustomOptions Value="-dVISUAL_BUILD
+-dNO_BROWSER
+-dDEBUG
+-dCALTEST
+-dCALTESTER"/>
+          </Other>
+        </CompilerOptions>
+      </Item3>
+      <Item4 Name="CalTester-debug">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="mega7prj"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="MegaDlgs;MEGA7-Help;Common;TamuraFuncs;reltime;Alignment;InputData;Compute;RuntimeProgress;Webtop;Process;TreeEditor;TextEditor;MegaVcl;UsageStatistics;AlignmentEditor;Captions;DataOutput;GeneDuplication;Clinic;ResultsForms;Web;Applinker;PatristicDist;CalibrationTester;InputData/nexus;Helpers;CloneFinder;CloneFinder/data;CloneFinder/exec;CloneFinder/parsers;CloneFinder/process;CloneFinder/Results;CloneFinder/applinker;CloneFinder/dialogs;CloneFinder/options;CloneFinder/renderers;Analysis Wizard;BEAM;ImageForm;Workflow/gui;TreeEditor/frames"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <UseValgrind Value="True"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowDebugInfo Value="True"/>
+            </Verbosity>
+            <CustomOptions Value="-dVISUAL_BUILD
+-dNO_BROWSER
+-dCALTESTER
+-dCALTEST
+-dDEBUG"/>
+          </Other>
+        </CompilerOptions>
+      </Item4>
+      <Item5 Name="MEGA-release-win64">
+        <MacroValues Count="1">
+          <Macro1 Name="LCLWidgetType" Value="win32"/>
+        </MacroValues>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="./WIN64/MEGA_64"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="MegaDlgs;MEGA7-Help;Common;TamuraFuncs;reltime;Alignment;InputData;Compute;RuntimeProgress;Webtop;Process;TreeEditor;TextEditor;MegaVcl;UsageStatistics;AlignmentEditor;Captions;DataOutput;GeneDuplication;Clinic;ResultsForms;Web;Applinker;PatristicDist;CalibrationTester;InputData/nexus;Private/Help;Helpers;uniqueinstance;AnalysisWizard;BEAM;ImageForm;CloneFinder;CloneFinder/data;CloneFinder/parsers;CloneFinder/compute;CloneFinder/dialogs;CloneFinder/options;CloneFinder/process;CloneFinder/renderers;Workflow/data;Workflow/gui;TreeEditor/frames"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <TargetCPU Value="x86_64"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+              <DebugInfoType Value="dsDwarf2Set"/>
+              <UseExternalDbgSyms Value="True"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowDebugInfo Value="True"/>
+            </Verbosity>
+            <CustomOptions Value="-dVISUAL_BUILD"/>
+            <OtherDefines Count="1">
+              <Define0 Value="VISUAL_BUILD"/>
+            </OtherDefines>
+          </Other>
+        </CompilerOptions>
+      </Item5>
+      <Item6 Name="MEGA-debug">
+        <MacroValues Count="1">
+          <Macro1 Name="LCLWidgetType" Value="win32"/>
+        </MacroValues>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="./WIN64/MEGA_64"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="MegaDlgs;MEGA7-Help;Common;TamuraFuncs;reltime;Alignment;InputData;Compute;RuntimeProgress;Process;TreeEditor;TextEditor;MegaVcl;UsageStatistics;AlignmentEditor;Captions;DataOutput;GeneDuplication;Clinic;ResultsForms;Web;Applinker;PatristicDist;CalibrationTester;InputData/nexus;Private/Help;Helpers;uniqueinstance;AnalysisWizard;BEAM;ImageForm;CloneFinder;CloneFinder/data;CloneFinder/parsers;CloneFinder/compute;CloneFinder/dialogs;CloneFinder/options;CloneFinder/process;CloneFinder/renderers;Workflow/data;Workflow/gui;TreeEditor/frames"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <VerifyObjMethodCallValidity Value="True"/>
+            <TargetCPU Value="x86_64"/>
+            <TargetOS Value="win64"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <TrashVariables Value="True"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <CompilerMessages>
+              <IgnoredMessages idx5024="True"/>
+            </CompilerMessages>
+            <CustomOptions Value="-dVISUAL_BUILD
+-dDEBUG"/>
+            <OtherDefines Count="9">
+              <Define0 Value="VISUAL_BUILD"/>
+              <Define1 Value="PROTOTYPER"/>
+              <Define2 Value="NO_BROWSER"/>
+              <Define3 Value="DEBUG"/>
+              <Define4 Value="CALTEST"/>
+              <Define5 Value="CALTESTER"/>
+              <Define6 Value="VerboseFocus"/>
+              <Define7 Value="DisableWrapperFunctions"/>
+              <Define8 Value="PROTOTYPER_MODE"/>
+            </OtherDefines>
+          </Other>
+        </CompilerOptions>
+      </Item6>
+      <Item7 Name="Caltester-debug">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="mega7prj"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="MegaDlgs;MEGA7-Help;Common;TamuraFuncs;reltime;Alignment;InputData;Compute;RuntimeProgress;Webtop;Process;TreeEditor;TextEditor;MegaVcl;UsageStatistics;AlignmentEditor;Captions;DataOutput;GeneDuplication;Clinic;ResultsForms;Web;Applinker;PatristicDist;CalibrationTester;InputData/nexus;Analysis Wizard;BEAM;ImageForm;Workflow/gui;TreeEditor/frames"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <DebugInfoType Value="dsDwarf2Set"/>
+              <UseHeaptrc Value="True"/>
+              <UseExternalDbgSyms Value="True"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowDebugInfo Value="True"/>
+            </Verbosity>
+            <CustomOptions Value="-dVISUAL_BUILD
+-dNO_BROWSER
+-dCALTEST
+-dCALTESTER"/>
+            <OtherDefines Count="5">
+              <Define0 Value="VISUAL_BUILD"/>
+              <Define1 Value="PROTOTYPER"/>
+              <Define2 Value="NO_BROWSER"/>
+              <Define3 Value="CALTEST"/>
+              <Define4 Value="CALTESTER"/>
+            </OtherDefines>
+          </Other>
+        </CompilerOptions>
+      </Item7>
+      <Item8 Name="MEGA-release-Linux">
+        <MacroValues Count="1">
+          <Macro3 Name="LCLWidgetType" Value="gtk2"/>
+        </MacroValues>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="mega"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="MegaDlgs;MEGA7-Help;Common;TamuraFuncs;reltime;Alignment;InputData;Compute;RuntimeProgress;Process;TreeEditor;TextEditor;MegaVcl;UsageStatistics;AlignmentEditor;Captions;DataOutput;GeneDuplication;Clinic;ResultsForms;Web;Applinker;PatristicDist;CalibrationTester;InputData/nexus;Private/Help;Helpers;uniqueinstance;Menus;AnalysisWizard;BEAM;ImageForm;CloneFinder;CloneFinder/data;CloneFinder/parsers;CloneFinder/compute;CloneFinder/dialogs;CloneFinder/options;CloneFinder/process;CloneFinder/renderers;Workflow/data;Workflow/gui;TreeEditor/frames"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <CustomOptions Value="-dVISUAL_BUILD"/>
+            <OtherDefines Count="4">
+              <Define0 Value="VISUAL_BUILD"/>
+              <Define1 Value="PROTOTYPER"/>
+              <Define2 Value="NO_BROWSER"/>
+              <Define3 Value="CALTEST"/>
+            </OtherDefines>
+          </Other>
+        </CompilerOptions>
+      </Item8>
+      <Item9 Name="MEGA-MacOS-Debug">
+        <MacroValues Count="1">
+          <Macro2 Name="LCLWidgetType" Value="cocoa"/>
+        </MacroValues>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="MEGAX"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="MegaDlgs;MEGA7-Help;Common;TamuraFuncs;reltime;Alignment;InputData;Compute;RuntimeProgress;Process;TreeEditor;TextEditor;MegaVcl;UsageStatistics;AlignmentEditor;Captions;DataOutput;GeneDuplication;Clinic;ResultsForms;Web;Applinker;PatristicDist;CalibrationTester;InputData/nexus;Private/Help;Helpers;AnalysisWizard;BEAM;ImageForm;CloneFinder;CloneFinder/data;CloneFinder/parsers;CloneFinder/compute;CloneFinder/dialogs;CloneFinder/options;CloneFinder/process;CloneFinder/renderers;Workflow/data;Workflow/gui;TreeEditor/frames"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <TargetCPU Value="x86_64"/>
+            <TargetOS Value="darwin"/>
+            <Optimizations>
+              <OptimizationLevel Value="0"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <DebugInfoType Value="dsDwarf2Set"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <CustomOptions Value="-dVISUAL_BUILD
+-dDEBUG"/>
+            <OtherDefines Count="5">
+              <Define0 Value="VISUAL_BUILD"/>
+              <Define1 Value="PROTOTYPER"/>
+              <Define2 Value="NO_BROWSER"/>
+              <Define3 Value="CALTEST"/>
+              <Define4 Value="DEBUG"/>
+            </OtherDefines>
+            <ExecuteAfter>
+              <Command Value="/Users/gstecher/Documents/lazarusProjects/MEGA-Lazarus/post_compile.sh"/>
+            </ExecuteAfter>
+          </Other>
+        </CompilerOptions>
+      </Item9>
+      <Item10 Name="caltster-release">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="MEGA-Lazarus-Mac"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="MegaDlgs;MEGA7-Help;Common;TamuraFuncs;reltime;Alignment;InputData;Compute;RuntimeProgress;Process;TreeEditor;TextEditor;MegaVcl;UsageStatistics;AlignmentEditor;Captions;DataOutput;GeneDuplication;Clinic;ResultsForms;Web;Applinker;PatristicDist;CalibrationTester;InputData/nexus;Analysis Wizard;BEAM;ImageForm;Workflow/gui;TreeEditor/frames"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <CustomOptions Value="-dVISUAL_BUILD
+-dNO_BROWSER
+-dCALTEST
+-dCALTESTER"/>
+          </Other>
+        </CompilerOptions>
+      </Item10>
+      <Item11 Name="Caltester-debug">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="megaproto"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="MegaDlgs;MEGA7-Help;Common;TamuraFuncs;reltime;Alignment;InputData;Compute;RuntimeProgress;Process;TreeEditor;TextEditor;MegaVcl;UsageStatistics;AlignmentEditor;Captions;DataOutput;GeneDuplication;Clinic;ResultsForms;Web;Applinker;InputData/nexus;PatristicDist;CalibrationTester;Private/Help;RegExpr/Source;Analysis Wizard;BEAM;ImageForm;Workflow/gui;TreeEditor/frames"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <Optimizations>
+              <OptimizationLevel Value="2"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowDebugInfo Value="True"/>
+            </Verbosity>
+            <CustomOptions Value="-dVISUAL_BUILD
+-dNO_BROWSER
+-dDEBUG
+-dCALTESTER
+-dCALTEST"/>
+          </Other>
+        </CompilerOptions>
+      </Item11>
+      <Item12 Name="MEGA-CC-release-win32">
+        <MacroValues Count="1">
+          <Macro1 Name="LCLWidgetType" Value="win32"/>
+        </MacroValues>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="./WIN32/MEGA_32"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="MegaDlgs;MEGA7-Help;Common;TamuraFuncs;reltime;Alignment;InputData;Compute;RuntimeProgress;Process;TreeEditor;TextEditor;MegaVcl;UsageStatistics;AlignmentEditor;Captions;DataOutput;GeneDuplication;Clinic;ResultsForms;Web;Applinker;PatristicDist;CalibrationTester;InputData/nexus;Private/Help;Helpers;AnalysisWizard;BEAM;ImageForm;Workflow/data;CloneFinder;CloneFinder/compute;CloneFinder/data;CloneFinder/dialogs;CloneFinder/options;CloneFinder/parsers;CloneFinder/process;CloneFinder/renderers;Workflow/gui;TreeEditor/frames"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <CustomOptions Value="-dVISUAL_BUILD
+-dPROTOTYPER_MODE"/>
+            <OtherDefines Count="5">
+              <Define0 Value="VISUAL_BUILD"/>
+              <Define1 Value="PROTOTYPER"/>
+              <Define2 Value="NO_BROWSER"/>
+              <Define3 Value="CALTEST"/>
+              <Define4 Value="PROTOTYPER_MODE"/>
+            </OtherDefines>
+          </Other>
+        </CompilerOptions>
+      </Item12>
+      <Item13 Name="MEGA-CC-release-win64">
+        <MacroValues Count="1">
+          <Macro1 Name="LCLWidgetType" Value="win32"/>
+        </MacroValues>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="./WIN64/MEGA_64.exe"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="MegaDlgs;MEGA7-Help;Common;TamuraFuncs;reltime;Alignment;InputData;Compute;RuntimeProgress;Process;TreeEditor;TextEditor;MegaVcl;UsageStatistics;AlignmentEditor;Captions;DataOutput;GeneDuplication;Clinic;ResultsForms;Web;Applinker;PatristicDist;CalibrationTester;InputData/nexus;Private/Help;Helpers;BEAM;ImageForm;AnalysisWizard;Workflow/data;CloneFinder;CloneFinder/compute;CloneFinder/data;CloneFinder/dialogs;CloneFinder/options;CloneFinder/parsers;CloneFinder/process;CloneFinder/renderers;Workflow/gui;TreeEditor/frames"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <TargetCPU Value="x86_64"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <CustomOptions Value="-dVISUAL_BUILD
+-dPROTOTYPER_MODE"/>
+            <OtherDefines Count="5">
+              <Define0 Value="VISUAL_BUILD"/>
+              <Define1 Value="NO_BROWSER"/>
+              <Define2 Value="CALTEST"/>
+              <Define3 Value="DEBUG"/>
+              <Define4 Value="PROTOTYPER_MODE"/>
+            </OtherDefines>
+          </Other>
+        </CompilerOptions>
+      </Item13>
+      <Item14 Name="MEGA-release-win32">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="./WIN32/MEGA_32"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="MegaDlgs;MEGA7-Help;Common;TamuraFuncs;reltime;Alignment;InputData;Compute;RuntimeProgress;Process;TreeEditor;TextEditor;MegaVcl;UsageStatistics;AlignmentEditor;Captions;DataOutput;GeneDuplication;Clinic;ResultsForms;Web;Applinker;PatristicDist;CalibrationTester;InputData/nexus;Private/Help;Helpers;AnalysisWizard;BEAM;ImageForm;CloneFinder;CloneFinder/data;CloneFinder/parsers;CloneFinder/compute;CloneFinder/dialogs;CloneFinder/options;CloneFinder/process;CloneFinder/renderers;Workflow/data;Workflow/gui;TreeEditor/frames;uniqueinstance"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <TargetCPU Value="i386"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <CustomOptions Value="-dVISUAL_BUILD"/>
+            <OtherDefines Count="5">
+              <Define0 Value="VISUAL_BUILD"/>
+              <Define1 Value="PROTOTYPER"/>
+              <Define2 Value="NO_BROWSER"/>
+              <Define3 Value="CALTEST"/>
+              <Define4 Value="PROTOTYPER_MODE"/>
+            </OtherDefines>
+          </Other>
+        </CompilerOptions>
+      </Item14>
+      <Item15 Name="MEGA-CC-release-Linux">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="mega"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="MegaDlgs;MEGA7-Help;Common;TamuraFuncs;reltime;Alignment;InputData;Compute;RuntimeProgress;Process;TreeEditor;TextEditor;MegaVcl;UsageStatistics;AlignmentEditor;Captions;DataOutput;GeneDuplication;Clinic;ResultsForms;Web;Applinker;PatristicDist;CalibrationTester;InputData/nexus;Private/Help;Helpers;uniqueinstance;Menus;AnalysisWizard;BEAM;ImageForm;CloneFinder;CloneFinder/data;CloneFinder/parsers;CloneFinder/compute;CloneFinder/dialogs;CloneFinder/options;CloneFinder/process;CloneFinder/renderers;Workflow/data;Workflow/gui;TreeEditor/frames"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <CustomOptions Value="-dVISUAL_BUILD
+-dPROTOTYPER_MODE"/>
+            <OtherDefines Count="5">
+              <Define0 Value="VISUAL_BUILD"/>
+              <Define1 Value="PROTOTYPER"/>
+              <Define2 Value="NO_BROWSER"/>
+              <Define3 Value="CALTEST"/>
+              <Define4 Value="PROTOTYPER_MODE"/>
+            </OtherDefines>
+          </Other>
+        </CompilerOptions>
+      </Item15>
+      <SharedMatrixOptions Count="3">
+        <Item1 ID="284780405745" Modes="MEGA-debug,MEGA-release-win64,MEGA-CC-release-win64,MEGA-CC-release-win32" Type="IDEMacro" MacroName="LCLWidgetType" Value="win32"/>
+        <Item2 ID="363847130599" Modes="MEGA-MacOS-Debug" Type="IDEMacro" MacroName="LCLWidgetType" Value="cocoa"/>
+        <Item3 ID="569672659791" Modes="MEGA-release-Linux" Type="IDEMacro" MacroName="LCLWidgetType" Value="gtk2"/>
+      </SharedMatrixOptions>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0"/>
+    </RunParams>
+    <RequiredPackages Count="9">
+      <Item1>
+        <PackageName Value="dcpcrypt"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="FrameViewer09"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="lhelpcontrolpkg"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="laz_fpspreadsheet"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="CEF3"/>
+      </Item5>
+      <Item6>
+        <PackageName Value="Printer4Lazarus"/>
+      </Item6>
+      <Item7>
+        <PackageName Value="SynEdit"/>
+      </Item7>
+      <Item8>
+        <PackageName Value="TAChartLazarusPkg"/>
+      </Item8>
+      <Item9>
+        <PackageName Value="LCL"/>
+      </Item9>
+    </RequiredPackages>
+    <Units Count="336">
+      <Unit0>
+        <Filename Value="mega7prj.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="MegaDlgs/manalysisprefdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="AnalysisPrefDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="Common/mprocesspack.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MProcessPack"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="Common/mdistpack.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="Common/mtreepack.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="Common/mglobalsettings.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="Common/megaconsts.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MegaConsts"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="Common/megautils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MegaUtils"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="Common/msinglelist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MSingleList"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="Common/megaverconsts.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MegaVerConsts"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="Common/keywordconsts.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="KeywordConsts"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="TamuraFuncs/mltree.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MLTree"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="TamuraFuncs/gammafuncs.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="GammaFuncs"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="TamuraFuncs/matrixconsts.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MatrixConsts"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="TamuraFuncs/mtreedata.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MTreeData"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="TamuraFuncs/matrixfuncs.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MatrixFuncs"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="reltime/mcalibrationdata.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MCalibrationData"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="Common/stringutils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="StringUtils"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="TamuraFuncs/mlmodels.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MLModels"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="Alignment/md_sequences.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MD_Sequences"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="InputData/md_inputseqdata.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MD_InputSeqData"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="InputData/md_inputdistdata.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MD_InputDistData"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="Compute/mcodons.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MCodons"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="Common/excelwrite.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ExcelWrite"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="Common/megaprivatefiles.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MegaPrivateFiles"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="Common/megaanalysisprefstrings.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MegaAnalysisPrefStrings"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="Common/megaerrutils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MegaErrUtils"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="Common/megautils_nv.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MegaUtils_NV"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="RuntimeProgress/mruntimeprogressdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="RuntimeProgressDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="Common/manalysisinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MAnalysisInfo"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="MegaDlgs/mtaxagpsdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TaxaGpsDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MTaxaGpsDlg"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="RuntimeProgress/mmultistageprogress.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MultiStageProgressForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MMultiStageProgress"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="Common/mdomaininfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MDomainInfo"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="Common/motuinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MOtuInfo"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="Common/mpartitiondata.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MPartitionData"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="Common/mlocusinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MLocusInfo"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="Common/mlongintlist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MLongintList"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="Process/processinputdata.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ProcessInputData"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="InputData/mdatafileinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MDataFileInfo"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="MegaDlgs/minputdataoptionsdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="InputDataOptionsDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MInputDataOptionsDlg"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="MegaDlgs/mselectgeneticcodedlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SelectGeneticCodeDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MSelectGeneticCodeDlg"/>
+      </Unit40>
+      <Unit41>
+        <Filename Value="TreeEditor/mtreeviewform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TreeViewForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MTreeViewForm"/>
+      </Unit41>
+      <Unit42>
+        <Filename Value="InputData/mv_seqdataexplorer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="V_SeqDataExplorer"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MV_SeqDataExplorer"/>
+      </Unit42>
+      <Unit43>
+        <Filename Value="MegaDlgs/mgenedomaindlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="GeneDomainDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MGeneDomainDlg"/>
+      </Unit43>
+      <Unit44>
+        <Filename Value="TextEditor/meditorform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="EditorForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MEditorForm"/>
+      </Unit44>
+      <Unit45>
+        <Filename Value="InputData/mv_distdataexplorer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="V_DistDataExplorer"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MV_DistDataExplorer"/>
+      </Unit45>
+      <Unit46>
+        <Filename Value="InputData/mlexdist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MLexDist"/>
+      </Unit46>
+      <Unit47>
+        <Filename Value="InputData/mlexmutations.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MLexMutations"/>
+      </Unit47>
+      <Unit48>
+        <Filename Value="InputData/mlexseq.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MLexSeq"/>
+      </Unit48>
+      <Unit49>
+        <Filename Value="InputData/mtokenizer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MTokenizer"/>
+      </Unit49>
+      <Unit50>
+        <Filename Value="Common/mmutationinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit50>
+      <Unit51>
+        <Filename Value="InputData/mvs_distdataexplorer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MVS_DistDataExplorer"/>
+      </Unit51>
+      <Unit52>
+        <Filename Value="InputData/mvs_seqdataexplorer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MVS_SeqDataExplorer"/>
+      </Unit52>
+      <Unit53>
+        <Filename Value="RuntimeProgress/mpleasewaitdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="PleaseWaitDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MPleaseWaitDlg"/>
+      </Unit53>
+      <Unit54>
+        <Filename Value="RuntimeProgress/mpleasewait.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MPleaseWait"/>
+      </Unit54>
+      <Unit55>
+        <Filename Value="Common/mseqdatasearchthreads.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MSeqDataSearchThreads"/>
+      </Unit55>
+      <Unit56>
+        <Filename Value="InputData/mv_columns.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MV_Columns"/>
+      </Unit56>
+      <Unit57>
+        <Filename Value="Common/mfileutils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MFileUtils"/>
+      </Unit57>
+      <Unit58>
+        <Filename Value="Compute/mseqdistbase.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MSeqDistBase"/>
+      </Unit58>
+      <Unit59>
+        <Filename Value="TamuraFuncs/mtreelist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MTreeList"/>
+      </Unit59>
+      <Unit60>
+        <Filename Value="TamuraFuncs/mpartition.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MPartition"/>
+      </Unit60>
+      <Unit61>
+        <Filename Value="TamuraFuncs/mpartitionlist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MPartitionList"/>
+      </Unit61>
+      <Unit62>
+        <Filename Value="Common/distanceutils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="DistanceUtils"/>
+      </Unit62>
+      <Unit63>
+        <Filename Value="TamuraFuncs/mltreeanalyzer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MLTreeAnalyzer"/>
+      </Unit63>
+      <Unit64>
+        <Filename Value="TamuraFuncs/mtreeestfunc.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MTreeEstFunc"/>
+      </Unit64>
+      <Unit65>
+        <Filename Value="TamuraFuncs/mlfuncs.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MLFuncs"/>
+      </Unit65>
+      <Unit66>
+        <Filename Value="TamuraFuncs/mptree.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MPTree"/>
+      </Unit66>
+      <Unit67>
+        <Filename Value="TamuraFuncs/mtreesearchthread.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MTreeSearchThread"/>
+      </Unit67>
+      <Unit68>
+        <Filename Value="TamuraFuncs/msimpletreenode.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MSimpleTreeNode"/>
+      </Unit68>
+      <Unit69>
+        <Filename Value="TamuraFuncs/mtreeproc.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MTreeProc"/>
+      </Unit69>
+      <Unit70>
+        <Filename Value="MegaVcl/mtreebox.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MTreeBox"/>
+      </Unit70>
+      <Unit71>
+        <Filename Value="TamuraFuncs/mlsearchthread.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MLSearchThread"/>
+      </Unit71>
+      <Unit72>
+        <Filename Value="reltime/mreltimeanalyzer.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit72>
+      <Unit73>
+        <Filename Value="TamuraFuncs/mtreedataadapter.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MTreeDataAdapter"/>
+      </Unit73>
+      <Unit74>
+        <Filename Value="MegaDlgs/mtreeinputform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TreeInputForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MTreeInputForm"/>
+      </Unit74>
+      <Unit75>
+        <Filename Value="Compute/maminodist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MAminoDist"/>
+      </Unit75>
+      <Unit76>
+        <Filename Value="Compute/mnucdist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MNucDist"/>
+      </Unit76>
+      <Unit77>
+        <Filename Value="Compute/maminomatrix.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit77>
+      <Unit78>
+        <Filename Value="Compute/msynnonsyndist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MSynNonsynDist"/>
+      </Unit78>
+      <Unit79>
+        <Filename Value="UsageStatistics/musagestatistics.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MUsageStatistics"/>
+      </Unit79>
+      <Unit80>
+        <Filename Value="MegaVcl/megamainpreferences.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MegaMainPreferences"/>
+      </Unit80>
+      <Unit81>
+        <Filename Value="AlignmentEditor/maligneditmainform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="AlignEditMainForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MAlignEditMainForm"/>
+      </Unit81>
+      <Unit82>
+        <Filename Value="MegaVcl/maligngrid.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MAlignGrid"/>
+      </Unit82>
+      <Unit83>
+        <Filename Value="AlignmentEditor/md_align.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MD_Align"/>
+      </Unit83>
+      <Unit84>
+        <Filename Value="MegaVcl/mclustalw.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MClustalW"/>
+      </Unit84>
+      <Unit85>
+        <Filename Value="Alignment/malnprogress.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ClustalWProgressDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MAlnProgress"/>
+      </Unit85>
+      <Unit86>
+        <Filename Value="Alignment/malnthread.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MAlnThread"/>
+      </Unit86>
+      <Unit87>
+        <Filename Value="Alignment/matrices.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit87>
+      <Unit88>
+        <Filename Value="Applinker/applinker.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="AppLinker"/>
+      </Unit88>
+      <Unit89>
+        <Filename Value="MegaDlgs/appoptionsdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="AppOptions"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="AppOptionsDlg"/>
+      </Unit89>
+      <Unit90>
+        <Filename Value="Process/processcodonomegacmds.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ProcessCodonOmegaCmds"/>
+      </Unit90>
+      <Unit91>
+        <Filename Value="Process/wpscsvparser.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="wpsCsvParser"/>
+      </Unit91>
+      <Unit92>
+        <Filename Value="Captions/mlegendgenerator.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MLegendGenerator"/>
+      </Unit92>
+      <Unit93>
+        <Filename Value="MegaDlgs/mwriteoutputdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="WriteOutputDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MWriteOutputDlg"/>
+      </Unit93>
+      <Unit94>
+        <Filename Value="TamuraFuncs/showtrees.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ShowTrees"/>
+      </Unit94>
+      <Unit95>
+        <Filename Value="TreeEditor/mmatrixexport.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MMatrixExport"/>
+      </Unit95>
+      <Unit96>
+        <Filename Value="Compute/mcomputeparsiminfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MComputeParsimInfo"/>
+      </Unit96>
+      <Unit97>
+        <Filename Value="DataOutput/manalysissummary.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MAnalysisSummary"/>
+      </Unit97>
+      <Unit98>
+        <Filename Value="reltime/mreltime.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit98>
+      <Unit99>
+        <Filename Value="Compute/msitecoverage.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit99>
+      <Unit100>
+        <Filename Value="TreeEditor/mcalibrationdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CalibrationDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MCalibrationDlg"/>
+      </Unit100>
+      <Unit101>
+        <Filename Value="MegaDlgs/mparsimonyevopathsdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="EvoPathsDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MParsimonyEvoPathsDlg"/>
+      </Unit101>
+      <Unit102>
+        <Filename Value="TextEditor/mformatconverttomega.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MFormatConvertToMega"/>
+      </Unit102>
+      <Unit103>
+        <Filename Value="Process/processmltreecmds.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ProcessMLTreeCmds"/>
+      </Unit103>
+      <Unit104>
+        <Filename Value="Process/processtreecmds.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ProcessTreeCmds"/>
+      </Unit104>
+      <Unit105>
+        <Filename Value="GeneDuplication/mgeneduplicationwizard.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MGeneDuplicationWizard"/>
+      </Unit105>
+      <Unit106>
+        <Filename Value="Common/msubstitutionmodelutils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MSubstitutionModelUtils"/>
+      </Unit106>
+      <Unit107>
+        <Filename Value="Clinic/mutationdetailview.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MutationDetailViewForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MutationDetailView"/>
+      </Unit107>
+      <Unit108>
+        <Filename Value="Process/processparsimtreecmds.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ProcessParsimTreeCmds"/>
+      </Unit108>
+      <Unit109>
+        <Filename Value="TamuraFuncs/parsimsearchthreads.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ParsimSearchThreads"/>
+      </Unit109>
+      <Unit110>
+        <Filename Value="TamuraFuncs/mparsnode.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit110>
+      <Unit111>
+        <Filename Value="Process/processdistcmds.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ProcessDistCmds"/>
+      </Unit111>
+      <Unit112>
+        <Filename Value="ResultsForms/mdisplaymatrixdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DisplayMatrixDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MDisplayMatrixDlg"/>
+      </Unit112>
+      <Unit113>
+        <Filename Value="Process/processtestcmds.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ProcessTestCmds"/>
+      </Unit113>
+      <Unit114>
+        <Filename Value="Web/mwebbrowser.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ChromiumBrowser"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MWebBrowser"/>
+      </Unit114>
+      <Unit115>
+        <Filename Value="Common/manalysissettings.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit115>
+      <Unit116>
+        <Filename Value="Applinker/applinkeroptions.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit116>
+      <Unit117>
+        <Filename Value="AlignmentEditor/clustaloptionform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ClustalSetupDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ClustalOptionForm"/>
+      </Unit117>
+      <Unit118>
+        <Filename Value="PatristicDist/mpatristicdist.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit118>
+      <Unit119>
+        <Filename Value="CalibrationTester/caltesttreedata.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit119>
+      <Unit120>
+        <Filename Value="mega_main.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MegaForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit120>
+      <Unit121>
+        <Filename Value="InputData/nexus/gfileutils.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit121>
+      <Unit122>
+        <Filename Value="InputData/nexus/gtokenizer.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit122>
+      <Unit123>
+        <Filename Value="InputData/nexus/gutilities.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit123>
+      <Unit124>
+        <Filename Value="InputData/nexus/nexusblock.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit124>
+      <Unit125>
+        <Filename Value="InputData/nexus/nexusfile.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit125>
+      <Unit126>
+        <Filename Value="InputData/nexus/nexustokenizer.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit126>
+      <Unit127>
+        <Filename Value="InputData/nexus/nexustokens.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit127>
+      <Unit128>
+        <Filename Value="Common/mupdates.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit128>
+      <Unit129>
+        <Filename Value="MegaDlgs/mupdatesdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="UpdatesDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit129>
+      <Unit130>
+        <Filename Value="DataOutput/mnexuswriter.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit130>
+      <Unit131>
+        <Filename Value="TreeEditor/mvirtualscrollbox.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MVirtualScrollbox"/>
+      </Unit131>
+      <Unit132>
+        <Filename Value="Common/mcolorcodes.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit132>
+      <Unit133>
+        <Filename Value="Private/Help/AlnBuilder_HC.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit133>
+      <Unit134>
+        <Filename Value="Private/Help/BasicStatistics_RH.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit134>
+      <Unit135>
+        <Filename Value="Private/Help/CaptionExpert_HC.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit135>
+      <Unit136>
+        <Filename Value="Private/Help/CentralDialogBox_HC.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit136>
+      <Unit137>
+        <Filename Value="Private/Help/ContextHelp_HC.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit137>
+      <Unit138>
+        <Filename Value="Private/Help/DataExplorerHelp_HC.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit138>
+      <Unit139>
+        <Filename Value="Private/Help/DistanceMethods_HC.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit139>
+      <Unit140>
+        <Filename Value="Private/Help/ErrorMessages_HC.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit140>
+      <Unit141>
+        <Filename Value="Private/Help/FAQs_RH.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit141>
+      <Unit142>
+        <Filename Value="Private/Help/Glossary_RH.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit142>
+      <Unit143>
+        <Filename Value="Private/Help/InputData_RH.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit143>
+      <Unit144>
+        <Filename Value="Private/Help/Introduction_RH.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit144>
+      <Unit145>
+        <Filename Value="Private/Help/PhylogeneticTrees_RH.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit145>
+      <Unit146>
+        <Filename Value="Private/Help/popuprefs_RH.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit146>
+      <Unit147>
+        <Filename Value="Private/Help/TextEditorHelp_HC.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit147>
+      <Unit148>
+        <Filename Value="Private/Help/TreeExplorer_HC.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit148>
+      <Unit149>
+        <Filename Value="Private/Help/Walk_Through_MEGA.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit149>
+      <Unit150>
+        <Filename Value="AlignmentEditor/maligneditwelcomedlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="WelcomeForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit150>
+      <Unit151>
+        <Filename Value="Alignment/malignmentfileloader.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit151>
+      <Unit152>
+        <Filename Value="Alignment/mmegaalignmentfileloader.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit152>
+      <Unit153>
+        <Filename Value="MegaDlgs/mdatatypedlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="AlignmentDataTypeDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit153>
+      <Unit154>
+        <Filename Value="Common/MMegaWindowInfo.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit154>
+      <Unit155>
+        <Filename Value="MegaDlgs/mseqdataexportoptionsdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SeqDataExportOptionsDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit155>
+      <Unit156>
+        <Filename Value="Helpers/mtreeloaders.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit156>
+      <Unit157>
+        <Filename Value="Web/MBrowserImportController.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit157>
+      <Unit158>
+        <Filename Value="Web/mhtmltotext.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit158>
+      <Unit159>
+        <Filename Value="Web/MSeqNameOptionDlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SeqNameOptionDlgForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit159>
+      <Unit160>
+        <Filename Value="Web/ceferr.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit160>
+      <Unit161>
+        <Filename Value="Web/mrenderprocesshandler.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit161>
+      <Unit162>
+        <Filename Value="Web/ceffilescheme.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit162>
+      <Unit163>
+        <Filename Value="InputData/MExampleFiles.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit163>
+      <Unit164>
+        <Filename Value="RuntimeProgress/MProgressPanel.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit164>
+      <Unit165>
+        <Filename Value="Common/mstringcleaner.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MStringCleaner"/>
+      </Unit165>
+      <Unit166>
+        <Filename Value="DataOutput/mancestralstatesexporter.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit166>
+      <Unit167>
+        <Filename Value="DataOutput/mancestralstatesexportheader.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit167>
+      <Unit168>
+        <Filename Value="TreeEditor/MTreeRebuildProgress.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit168>
+      <Unit169>
+        <Filename Value="MegaDlgs/mfinddlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FindDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MFindDlg"/>
+      </Unit169>
+      <Unit170>
+        <Filename Value="Common/levenshtein.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Levenshtein"/>
+      </Unit170>
+      <Unit171>
+        <Filename Value="TextEditor/textsearchdialog.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TextSearchDialog"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit171>
+      <Unit172>
+        <Filename Value="TreeEditor/mtreeinfoform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TreeInfoForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit172>
+      <Unit173>
+        <Filename Value="MegaDlgs/mmypegmessageldg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MMyPegMessageDlg"/>
+      </Unit173>
+      <Unit174>
+        <Filename Value="TreeEditor/mformatdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormatDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit174>
+      <Unit175>
+        <Filename Value="Helpers/recentlyusedfiles.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit175>
+      <Unit176>
+        <Filename Value="reltime/mtimetreewizard.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MTimeTreeWizard"/>
+      </Unit176>
+      <Unit177>
+        <Filename Value="Captions/mcascadingstyles.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit177>
+      <Unit178>
+        <Filename Value="TreeEditor/msubtreedlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SubtreeDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit178>
+      <Unit179>
+        <Filename Value="Common/mcustominifile.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit179>
+      <Unit180>
+        <Filename Value="InputData/alignmentconcatenator.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit180>
+      <Unit181>
+        <Filename Value="InputData/mfastaparser.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit181>
+      <Unit182>
+        <Filename Value="Alignment/mfastaalignmentfileloader.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit182>
+      <Unit183>
+        <Filename Value="ResultsForms/moutputmatrixdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="OutputMatrixDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MOutputMatrixDlg"/>
+      </Unit183>
+      <Unit184>
+        <Filename Value="MegaDlgs/maboutbox.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="AboutBox"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit184>
+      <Unit185>
+        <Filename Value="MegaDlgs/genedomainpropertiesdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="GenesDomainsPropertiesEditor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit185>
+      <Unit186>
+        <Filename Value="MegaDlgs/msitepickform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SitePickForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit186>
+      <Unit187>
+        <Filename Value="MegaDlgs/mgridcolumnresizer.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit187>
+      <Unit188>
+        <Filename Value="TextEditor/icons.inc"/>
+        <IsPartOfProject Value="True"/>
+      </Unit188>
+      <Unit189>
+        <Filename Value="MegaVcl/mtraceedit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MTraceEdit"/>
+      </Unit189>
+      <Unit190>
+        <Filename Value="AlignmentEditor/mtraceeditform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TraceEditForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MTraceEditForm"/>
+      </Unit190>
+      <Unit191>
+        <Filename Value="Helpers/mhelpfiles.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit191>
+      <Unit192>
+        <Filename Value="Helpers/mhelpkeywords.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit192>
+      <Unit193>
+        <Filename Value="MegaDlgs/htmloptionsdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="HtmlOptionsDialog"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit193>
+      <Unit194>
+        <Filename Value="Web/mbrowserutils.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit194>
+      <Unit195>
+        <Filename Value="reltime/mtimetreewizardform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TimeTreeWizardForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MTimeTreeWizardForm"/>
+      </Unit195>
+      <Unit196>
+        <Filename Value="reltime/mtimetreevalidation.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MTimeTreeValidation"/>
+      </Unit196>
+      <Unit197>
+        <Filename Value="Common/mgroupinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit197>
+      <Unit198>
+        <Filename Value="Helpers/mwebdialogfiles.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit198>
+      <Unit199>
+        <Filename Value="Clinic/EvoD.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit199>
+      <Unit200>
+        <Filename Value="Clinic/MMdWelcomeForm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MdWelcomeForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit200>
+      <Unit201>
+        <Filename Value="Clinic/MMyPegSearchDlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MyPegSearchDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit201>
+      <Unit202>
+        <Filename Value="Clinic/MutationDataCache.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit202>
+      <Unit203>
+        <Filename Value="Clinic/MyPegThreads.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit203>
+      <Unit204>
+        <Filename Value="Clinic/mutationexplorer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MutationExplorerForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MutationExplorer"/>
+      </Unit204>
+      <Unit205>
+        <Filename Value="MegaDlgs/mselectoutgrouptaxadlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SelectOutgroupTaxaDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit205>
+      <Unit206>
+        <Filename Value="GeneDuplication/geneduplicationwizardform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="GDWizardForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="GeneDuplicationWizardForm"/>
+      </Unit206>
+      <Unit207>
+        <Filename Value="reltime/mreltimethreads.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit207>
+      <Unit208>
+        <Filename Value="Private/dev/ChangesToLazarusCodeForMacVersion.txt"/>
+        <IsPartOfProject Value="True"/>
+      </Unit208>
+      <Unit209>
+        <Filename Value="Helpers/mdrawmenuitems.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit209>
+      <Unit210>
+        <Filename Value="MegaDlgs/protodatatypeform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ProtoDataTypeDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit210>
+      <Unit211>
+        <Filename Value="DataOutput/mseqdataexport.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit211>
+      <Unit212>
+        <Filename Value="InputData/mseqexportoptions.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit212>
+      <Unit213>
+        <Filename Value="MegaDlgs/thirdpartytoolsdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ThirdPartyForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit213>
+      <Unit214>
+        <Filename Value="TreeEditor/mabstracttreerenderer.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit214>
+      <Unit215>
+        <Filename Value="TreeEditor/mpdftreerenderer.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit215>
+      <Unit216>
+        <Filename Value="TreeEditor/mbitmaptreerenderer.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit216>
+      <Unit217>
+        <Filename Value="TreeEditor/msvgtreerenderer.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit217>
+      <Unit218>
+        <Filename Value="DataOutput/msvgstrings.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit218>
+      <Unit219>
+        <Filename Value="TamuraFuncs/mtajimaneutralitytestthread.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit219>
+      <Unit220>
+        <Filename Value="TamuraFuncs/mtajimaclocktestthread.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit220>
+      <Unit221>
+        <Filename Value="DataOutput/mtajimatestexport.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit221>
+      <Unit222>
+        <Filename Value="DataOutput/mmodeltestmatrixexport.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit222>
+      <Unit223>
+        <Filename Value="DataOutput/mpattertestmatrixexport.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit223>
+      <Unit224>
+        <Filename Value="Applinker/mcipresjobinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit224>
+      <Unit225>
+        <Filename Value="TextEditor/minnerform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="InnerForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MInnerForm"/>
+      </Unit225>
+      <Unit226>
+        <Filename Value="reltime/mreltimecomputer.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit226>
+      <Unit227>
+        <Filename Value="reltime/mreltimeexport.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit227>
+      <Unit228>
+        <Filename Value="reltime/mreltimetreenode.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit228>
+      <Unit229>
+        <Filename Value="DataOutput/mclocktestexport.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit229>
+      <Unit230>
+        <Filename Value="AnalysisWizard/manalysiswizard.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MAnalysisWizard"/>
+      </Unit230>
+      <Unit231>
+        <Filename Value="MegaDlgs/mspeciesmapdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SpeciesMapDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MSpeciesMapDlg"/>
+      </Unit231>
+      <Unit232>
+        <Filename Value="Web/mbrowserprocesshandler.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit232>
+      <Unit233>
+        <Filename Value="TreeEditor/mcalibrateclockdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CalibrateClockDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit233>
+      <Unit234>
+        <Filename Value="AnalysisWizard/manalysiswizardform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="AnalysisWizardForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MAnalysisWizardForm"/>
+      </Unit234>
+      <Unit235>
+        <Filename Value="reltime/mstrictclocktree.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit235>
+      <Unit236>
+        <Filename Value="MegaDlgs/mdensitydistdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CalibrationParamsDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit236>
+      <Unit237>
+        <Filename Value="reltime/mcalibrationdensity.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit237>
+      <Unit238>
+        <Filename Value="MegaDlgs/mcleanspeciesnamesdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CleanSpNamesDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MCleanSpeciesNamesDlg"/>
+      </Unit238>
+      <Unit239>
+        <Filename Value="TreeEditor/memftreerenderer.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit239>
+      <Unit240>
+        <Filename Value="reltime/mtipdatesfinder.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit240>
+      <Unit241>
+        <Filename Value="reltime/mparsetipdatesdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ParseTipDatesForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit241>
+      <Unit242>
+        <Filename Value="reltime/mcalibrationsampler.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit242>
+      <Unit243>
+        <Filename Value="Helpers/mshortcutshelper.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit243>
+      <Unit244>
+        <Filename Value="BEAM/mbeamtypes.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit244>
+      <Unit245>
+        <Filename Value="BEAM/mbeamthread.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit245>
+      <Unit246>
+        <Filename Value="ImageForm/mimageform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ImageForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit246>
+      <Unit247>
+        <Filename Value="uniqueinstance/uniqueinstancebase.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UniqueInstanceBase"/>
+      </Unit247>
+      <Unit248>
+        <Filename Value="uniqueinstance/uniqueinstance.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UniqueInstance"/>
+      </Unit248>
+      <Unit249>
+        <Filename Value="uniqueinstance/uniqueinstanceraw.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UniqueInstanceRaw"/>
+      </Unit249>
+      <Unit250>
+        <Filename Value="MegaVcl/miniformstream.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit250>
+      <Unit251>
+        <Filename Value="Common/mversioninfo.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit251>
+      <Unit252>
+        <Filename Value="CloneFinder/clone_finder_main_form.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CloneFinderMainForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit252>
+      <Unit253>
+        <Filename Value="CloneFinder/data/clonefinderconstants.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit253>
+      <Unit254>
+        <Filename Value="CloneFinder/data/mcancercellfraction.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit254>
+      <Unit255>
+        <Filename Value="CloneFinder/data/mclonefinderalignment.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit255>
+      <Unit256>
+        <Filename Value="CloneFinder/data/mcnvprovile.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit256>
+      <Unit257>
+        <Filename Value="CloneFinder/data/mtumorclonefrequency.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit257>
+      <Unit258>
+        <Filename Value="CloneFinder/data/mtumorsampleprofile.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit258>
+      <Unit259>
+        <Filename Value="CloneFinder/parsers/mabstractclonedataparser.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit259>
+      <Unit260>
+        <Filename Value="CloneFinder/parsers/mancestreeclonedataparser.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit260>
+      <Unit261>
+        <Filename Value="CloneFinder/parsers/mcancercellfractionsparser.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit261>
+      <Unit262>
+        <Filename Value="CloneFinder/parsers/mccfparser.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit262>
+      <Unit263>
+        <Filename Value="CloneFinder/parsers/mclonefrequencyparser.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit263>
+      <Unit264>
+        <Filename Value="CloneFinder/parsers/mcnvparser.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit264>
+      <Unit265>
+        <Filename Value="CloneFinder/parsers/mdefaultclonedataparser.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit265>
+      <Unit266>
+        <Filename Value="CloneFinder/compute/binomialreplicates.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit266>
+      <Unit267>
+        <Filename Value="CloneFinder/compute/mclonefinderthreads.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit267>
+      <Unit268>
+        <Filename Value="CloneFinder/dialogs/mallelefreqresultsdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="AlleleFreqResultsForm"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit268>
+      <Unit269>
+        <Filename Value="CloneFinder/dialogs/mallelefreqviewer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="AlleleFreqDispForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit269>
+      <Unit270>
+        <Filename Value="CloneFinder/dialogs/mclonefinderoptionsform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CloneFinderOptionsDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit270>
+      <Unit271>
+        <Filename Value="CloneFinder/dialogs/mmultilocusmultipopdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MultiLocusMultiPopDlg"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit271>
+      <Unit272>
+        <Filename Value="CloneFinder/dialogs/monelocusmultipopdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="OneLocusMultiPopDlg"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit272>
+      <Unit273>
+        <Filename Value="CloneFinder/dialogs/monelocusonepopdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="OneLocusOnePopDlg"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit273>
+      <Unit274>
+        <Filename Value="CloneFinder/options/mclonefinderoptions.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit274>
+      <Unit275>
+        <Filename Value="CloneFinder/process/mprocessclonefindercmds.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit275>
+      <Unit276>
+        <Filename Value="CloneFinder/renderers/mabstractgridrenderer.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit276>
+      <Unit277>
+        <Filename Value="CloneFinder/renderers/mclonefreqsgridrenderer.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit277>
+      <Unit278>
+        <Filename Value="CloneFinder/renderers/mcnvdrawgridrenderer.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit278>
+      <Unit279>
+        <Filename Value="CloneFinder/renderers/mreadcountgridrenderer.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit279>
+      <Unit280>
+        <Filename Value="Workflow/data/mworkflow.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit280>
+      <Unit281>
+        <Filename Value="Workflow/data/mnative_calculation.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit281>
+      <Unit282>
+        <Filename Value="Workflow/data/mworkflow_alignment_element.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit282>
+      <Unit283>
+        <Filename Value="Workflow/data/mworkflow_element.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit283>
+      <Unit284>
+        <Filename Value="CloneFinder/parsers/mclone_data_parser_factory.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit284>
+      <Unit285>
+        <Filename Value="MegaDlgs/mappdepot_dlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="AppDepotForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit285>
+      <Unit286>
+        <Filename Value="Workflow/gui/mappflows_form.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="WorkflowForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit286>
+      <Unit287>
+        <Filename Value="Workflow/gui/mgui_workflow_nodes.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit287>
+      <Unit288>
+        <Filename Value="Workflow/data/mworkflow_generator.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit288>
+      <Unit289>
+        <Filename Value="Workflow/data/mworkflow_dist_estimation_element.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit289>
+      <Unit290>
+        <Filename Value="Common/mdist_command_results_wrapper.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit290>
+      <Unit291>
+        <Filename Value="TamuraFuncs/mmodel_test_results.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit291>
+      <Unit292>
+        <Filename Value="TreeEditor/mtree_display_setup.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit292>
+      <Unit293>
+        <Filename Value="Common/mmega_error_handler.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit293>
+      <Unit294>
+        <Filename Value="Workflow/data/mworkflow_interfaces.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit294>
+      <Unit295>
+        <Filename Value="Workflow/data/mworkflow_output_data_element.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit295>
+      <Unit296>
+        <Filename Value="Process/mdist_command_threads.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit296>
+      <Unit297>
+        <Filename Value="Process/mdist_command_finalize.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit297>
+      <Unit298>
+        <Filename Value="TreeEditor/frames/taxa_names_frame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TaxaNamesFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit298>
+      <Unit299>
+        <Filename Value="TreeEditor/frames/branch_lengths_frame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="BranchLengthsFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit299>
+      <Unit300>
+        <Filename Value="TreeEditor/frames/node_stats_frame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="NodeStatsFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit300>
+      <Unit301>
+        <Filename Value="TreeEditor/frames/layout_frame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="LayoutFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit301>
+      <Unit302>
+        <Filename Value="TreeEditor/frames/frame_utils.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit302>
+      <Unit303>
+        <Filename Value="TreeEditor/frames/subtree_frame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SubtreeFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit303>
+      <Unit304>
+        <Filename Value="TreeEditor/frames/compute_frame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ComputeFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit304>
+      <Unit305>
+        <Filename Value="TreeEditor/frames/ancestors_frame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="AncestorsFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit305>
+      <Unit306>
+        <Filename Value="TreeEditor/frames/distance_scale_frame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DistanceScaleFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit306>
+      <Unit307>
+        <Filename Value="TreeEditor/frames/time_scale_frame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TimeScaleFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit307>
+      <Unit308>
+        <Filename Value="TreeEditor/frames/div_times_frame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DivergenceTimesFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit308>
+      <Unit309>
+        <Filename Value="MegaDlgs/mdefine_genetic_code_dlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DefineNewGeneticCodeDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit309>
+      <Unit310>
+        <Filename Value="TamuraFuncs/mepthreads.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit310>
+      <Unit311>
+        <Filename Value="Common/mgeographical_info.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit311>
+      <Unit312>
+        <Filename Value="TamuraFuncs/mancestral_states_navigator.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit312>
+      <Unit313>
+        <Filename Value="TreeEditor/frames/multi_trees_frame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MultiTreesFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit313>
+      <Unit314>
+        <Filename Value="TreeEditor/frames/caption_frame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CaptionFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit314>
+      <Unit315>
+        <Filename Value="Process/mcl_command_threads.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit315>
+      <Unit316>
+        <Filename Value="Compute/mcomposition_stats_thread.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit316>
+      <Unit317>
+        <Filename Value="TreeEditor/frames/gene_duplications_frame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="GeneDuplicationsFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit317>
+      <Unit318>
+        <Filename Value="TreeEditor/mjumptogenedupdlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="JumpToGeneDupForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MJumpToGeneDupDlg"/>
+      </Unit318>
+      <Unit319>
+        <Filename Value="TreeEditor/frames/collapse_nodes_frame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CollapseNodesFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit319>
+      <Unit320>
+        <Filename Value="TreeEditor/frames/tree_info_frame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TreeInfoFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit320>
+      <Unit321>
+        <Filename Value="InputData/mallele_frequency.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit321>
+      <Unit322>
+        <Filename Value="InputData/mallele_frequency_search.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit322>
+      <Unit323>
+        <Filename Value="InputData/mentropy.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit323>
+      <Unit324>
+        <Filename Value="InputData/msequence_identity_dlg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SequenceIdentityOptionsDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit324>
+      <Unit325>
+        <Filename Value="InputData/mchar_scanner.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit325>
+      <Unit326>
+        <Filename Value="Alignment/mraw_fasta_loader.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit326>
+      <Unit327>
+        <Filename Value="Common/msequence_name_filter.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit327>
+      <Unit328>
+        <Filename Value="InputData/medit_site_labels_frame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="EditSiteLabelsFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit328>
+      <Unit329>
+        <Filename Value="InputData/msite_labels.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit329>
+      <Unit330>
+        <Filename Value="MegaDlgs/app_options_frame.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="OptionsGridFrame"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit330>
+      <Unit331>
+        <Filename Value="Common/mstringbuilder.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit331>
+      <Unit332>
+        <Filename Value="Applinker/iqtree_results_menu_builder.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit332>
+      <Unit333>
+        <Filename Value="Common/mbootstrap_sampler.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit333>
+      <Unit334>
+        <Filename Value="TamuraFuncs/mbaby_bootstrap_calculator.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit334>
+      <Unit335>
+        <Filename Value="MegaDlgs/mega_info_form.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MegaInfoForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit335>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <Target>
+      <Filename Value="mega7prj"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="MegaDlgs;MEGA7-Help;Common;TamuraFuncs;reltime;Alignment;InputData;Compute;RuntimeProgress;Webtop;Process;TreeEditor;TextEditor;MegaVcl;UsageStatistics;AlignmentEditor;Captions;DataOutput;GeneDuplication;Clinic;ResultsForms;Web;Applinker;PatristicDist;CalibrationTester;InputData/nexus;Private/Help;Helpers;uniqueinstance;BEAM;ImageForm;CloneFinder;CloneFinder/data;CloneFinder/parsers;CloneFinder/compute;CloneFinder/dialogs;CloneFinder/options;CloneFinder/process;CloneFinder/renderers;Workflow/data;Workflow/gui;TreeEditor/frames;AnalysisWizard"/>
+      <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Parsing>
+      <SyntaxOptions>
+        <IncludeAssertionCode Value="True"/>
+      </SyntaxOptions>
+    </Parsing>
+    <CodeGeneration>
+      <Checks>
+        <IOChecks Value="True"/>
+        <RangeChecks Value="True"/>
+        <OverflowChecks Value="True"/>
+        <StackChecks Value="True"/>
+      </Checks>
+    </CodeGeneration>
+    <Linking>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <Verbosity>
+        <ShowDebugInfo Value="True"/>
+      </Verbosity>
+      <CustomOptions Value="-dVISUAL_BUILD
+-dDEBUG"/>
+      <OtherDefines Count="2">
+        <Define0 Value="VISUAL_BUILD"/>
+        <Define1 Value="DEBUG"/>
+      </OtherDefines>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="9">
+      <Item1>
+        <Name Value="EAbort"/>
+        <Enabled Value="False"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+        <Enabled Value="False"/>
+      </Item3>
+      <Item4>
+        <Name Value="Exception"/>
+        <Enabled Value="False"/>
+      </Item4>
+      <Item5>
+        <Name Value="EReadError"/>
+      </Item5>
+      <Item6>
+        <Name Value="RunError(3)"/>
+      </Item6>
+      <Item7>
+        <Name Value="EResNotFound"/>
+        <Enabled Value="False"/>
+      </Item7>
+      <Item8>
+        <Name Value="EDistComputationError"/>
+        <Enabled Value="False"/>
+      </Item8>
+      <Item9>
+        <Name Value="EConvertError"/>
+        <Enabled Value="False"/>
+      </Item9>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

@@ -1,0 +1,60 @@
+ 		A timetree inferred by applying the RelTime {if TAnalysisInfo.IsRtdt = True} with Dated Tips (RTDT) {endif} method [{TLegendGenerator.ReltimeCitation:ExpandCitation}][{TLegendGenerator.ReltimeCitation2:ExpandCitation}]{if TAnalysisInfo.IsRtdt = True} [{TLegendGenerator.RtdtCitation:ExpandCitation}] {endif} 
+        to the user-supplied phylogenetic tree
+		{if TLegendGenerator.Operation = 'dtdoRelTimeML'}
+        whose branch lengths were calculated using the Maximum Likelihood (ML) method
+		and the {TAnalysisInfo.DistModelName} substitution model [{TDistPack.MethodCitation:ExpandCitation}]. 
+		{elseif TLegendGenerator.Operation = 'dtdoRelTimeBLens'}
+		with branch lengths.
+		{elseif TLegendGenerator.Operation = 'dtdoRelTimeLS'}
+		whose branch lengths were calculated using the Ordinary Least Squares method.
+		{else}
+        analyzed using the {TTreePack.TreeMethodName} method [{TTreePack.TreeMethodCitation:ExpandCitation}].
+		{endif}
+		
+		{if TTreeBox.NumCalibrations > 0}
+			The timetree was computed using {if TAnalysisInfo.IsRtdt = True} sampling tip dates for {endif} {TTreeBox.NumCalibrations} {if TAnalysisInfo.IsRtdt = True} taxa that were used as {endif} calibration {if TTreeBox.NumCalibrations = 1} constraint. {else} constraints. {endif}
+			{if TAnalysisInfo.UsesCalibrationDensities = True}
+			The Tao et al. [{TLegendGenerator.DensitiesCitation:ExpandCitation}] method was used to set minimum and maximum time boundaries on nodes for which calibration densities were provided. Confidence intervals were computed using the Tao et al. [{TLegendGenerator.DensitiesCitation:ExpandCitation}] method.
+			{endif}
+		{else}
+			{if TTreeBox.ShowDivergenceTimes = True} All divergence times shown are relative times as no calibrations were provided.{endif}
+		{endif}
+		
+		{if TLegendGenerator.DisplayingErrorBars = 'True'}
+			Bars around each node represent 95% confidence intervals.
+		{endif}		
+		{if TLegendGenerator.Operation = 'dtdoRelTimeML'}
+			 The estimated log likelihood value of the tree is {TLegendGenerator.LogLikelihoodCE}.				 
+			  {if TLegendGenerator.GammaPara = 'N/A'}
+			  {else}
+				 A discrete Gamma distribution was used to model evolutionary rate differences
+				 among sites ({TLegendGenerator.NoOfGCats} categories (+<i>G</i>,
+				 parameter = {TLegendGenerator.GammaPara})).
+			  {endif}
+
+			  {if TLegendGenerator.PropOfInvariant = 'N/A'}
+			  {else}
+				The rate variation model allowed for some sites to be evolutionarily
+				invariable ([+<i>I</i>], {TLegendGenerator.PropOfInvariant}% sites).
+			  {endif}
+		{elseif TLegendGenerator.Operation = 'dtdoRelTimeLS'}
+			{if TAnalysisInfo.HasDistPack = False}
+				The evolutionary distances were provided by the user. 
+			{elseif TAnalysisInfo.DistModelName = ''}
+				The evolutionary distances were computed using the 	{TLegendGenerator.FullModelName} method  [{TDistPack.MethodCitation:ExpandCitation}] 	and are in the units of the {TAnalysisInfo.DistUnitCaption}.
+			{else}
+				&#32 The evolutionary distances were computed using the {TAnalysisInfo.DistModelName} method [{TDistPack.MethodCitation:ExpandCitation}] and are in the units of the {TAnalysisInfo.DistUnitCaption}.
+			{endif}
+
+			{if TAnalysisInfo.HasDistPack = True}
+				  {if TAnalysisInfo.DistGammaParaCaption ! ''}
+				&#32 {TAnalysisInfo.DistGammaParaCaption} (shape parameter =  {TDistPack.GammaParameter}).
+			  {endif}
+			{endif}
+
+			{if TAnalysisInfo.DistHeteroPatternCaption ! ''}
+				&#32 {TAnalysisInfo.DistHeteroPatternCaption} [{TLegendGenerator.HeteroPatternDistCitation:ExpandCitation}].
+			{endif}		
+		
+		{endif}							 	   	   
+		{IncludeExternalFile=data_coverage_snippet.htm}	

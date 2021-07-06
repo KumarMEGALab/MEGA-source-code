@@ -1,0 +1,33 @@
+#MEGA
+!Title Replication 1 of a computer simulation with 200 sites and a rate of 0.02 substitutions per site;
+!Format
+   DataType=Nucleotide
+   NSeqs=6 NSites=200
+   Identical=. Missing=? Indel=-;
+
+[
+M. Nei and S. Kumar (2000) Molecular Evolution and Phylogenetics.  
+Oxford University Press. New York.
+Data for Figure 5.5.
+]
+
+#a ATGACAATCA TTCGCATCTT ACCTAGCCAG CGTAGCGAAG GTGTCCAGTA AGTCTGCGTG CTTTAACCGA TGGTTTGCTG 
+#b .......... ..T....... ......A... .......... .........G ........G. ...AC.G... .......... 
+#c .......... ..T....... ........G. ....A..T.. ........A. ........G. ...ACC.... .......... 
+#d .......A.. .GT....... ........G. G......... .......... .CAT....GT ...ACC...G ....G..... 
+#e ..A....... GGT...C... T.......GT .....T...A T......... ...T..G.G. ...AGC...G ....G..GA. 
+#f ....G...A. .GT..T.... C.....T.G. G.G..TC... ..A....... ...T....G. ...A.C...C ....G.T.A. 
+
+#a AGGTGACTAC GCCGCGTGAC GATCTATGGT CCTTACGGAG TTTGGCACTC GCAAGATATC GGGTCCGGGA CTCTCCTGAA 
+#b .......... .......... ....C..... ..GC...... C.......G. .......T.. .......... .......... 
+#c ........G. .......... T...C..... ..G....... ........G. .......T.. ......TA.. .......... 
+#d ..C.....C. ......A... .T..CG.... ..G......C ....A.C.G. ...TA..T.. ..C...T... .....T.C.. 
+#e .T........ ....GA.... TT..C..... .GG....... ..G.A.C.G. ...CA.CT.. .......A.. ..G....... 
+#f .......... .......... TT..CT.... ..G..A..GT ...TA.C.G. ...TA.CT.. ......T... ........G. 
+
+#a TTACCTATGG CGTTGTGTCC TACAACGCGC ACACGCGCGC 
+#b ...G...... ..C....... .........G ........A. 
+#c ...G...... ..C.C..... ..GT...A.G ........A. 
+#d ...A.....C ..C.C..... ..TC.....G T...C...A. 
+#e ...G....C. ..C.C.CC.. ..TCGG.T.A ....A...A. 
+#f ...G.....C ..C.C..... A.TC..CA.G ..C.....A. 

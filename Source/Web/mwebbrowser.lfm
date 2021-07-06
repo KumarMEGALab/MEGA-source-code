@@ -1,0 +1,527 @@
+object ChromiumBrowser: TChromiumBrowser
+  Left = 144
+  Height = 657
+  Top = 55
+  Width = 938
+  Caption = 'MEGA Web Browser'
+  ClientHeight = 637
+  ClientWidth = 938
+  Menu = MainMenu1
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnHelp = FormHelp
+  OnShow = FormShow
+  LCLVersion = '2.0.2.0'
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 30
+    Top = 0
+    Width = 938
+    Caption = 'ToolBar1'
+    Color = clBtnFace
+    DisabledImages = MegaForm.DisabledIcons
+    Images = MegaForm.NewIcons
+    ParentColor = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 0
+    object ToolButton1: TToolButton
+      Left = 450
+      Top = 2
+      Action = actPrev
+    end
+    object ToolButton2: TToolButton
+      Left = 473
+      Top = 2
+      Action = actNext
+    end
+    object edAddress: TEdit
+      Left = 1
+      Height = 23
+      Top = 2
+      Width = 449
+      OnClick = edAddressClick
+      OnKeyPress = edAddressKeyPress
+      TabOrder = 0
+      Text = 'http://www.ncbi.nlm.nih.gov/'
+    end
+    object ToolButton3: TToolButton
+      Left = 496
+      Top = 2
+      Action = actReload
+    end
+    object AddToAlignmentSpacer: TToolButton
+      Left = 519
+      Height = 22
+      Top = 2
+      Caption = 'AddToAlignmentSpacer'
+      Style = tbsDivider
+    end
+    object SpeedButton1: TSpeedButton
+      Left = 524
+      Height = 22
+      Top = 2
+      Width = 151
+      Action = AddToAlignment
+    end
+    object ExportToolsSpacer: TToolButton
+      Left = 675
+      Height = 22
+      Top = 2
+      Caption = 'ExportToolsSpacer'
+      Style = tbsDivider
+    end
+    object ToolButton6: TToolButton
+      Left = 680
+      Top = 2
+      Action = actSaveToTextFile
+    end
+    object ToolButton7: TToolButton
+      Left = 726
+      Top = 2
+      Action = actExportExcel
+    end
+    object ToolButton9: TToolButton
+      Left = 749
+      Top = 2
+      Action = actCopyToClipboard
+    end
+    object devToolsBtn: TButton
+      Left = 772
+      Height = 22
+      Top = 2
+      Width = 91
+      Action = actDevToolsExecute
+      TabOrder = 1
+    end
+    object printBtn: TToolButton
+      Left = 703
+      Top = 2
+      Action = actPrint
+    end
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 584
+    Top = 30
+    Width = 938
+    ActivePage = TabSheet1
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 1
+    OnChange = PageControl1ChangeTab
+    OnChanging = PageControl1ChangingTab
+    OnCloseTabClicked = PageControl1CloseTabClicked
+    OnContextPopup = PageControl1ContextPopup
+    Options = [nboShowCloseButtons]
+    object TabSheet1: TTabSheet
+      Caption = 'New Window'
+      ClientHeight = 556
+      ClientWidth = 930
+      object Splitter1: TSplitter
+        Cursor = crVSplit
+        Left = 0
+        Height = 5
+        Top = 446
+        Width = 930
+        Align = alBottom
+        ResizeAnchor = akBottom
+        Visible = False
+      end
+      object crm: TChromium
+        Left = 0
+        Height = 446
+        Top = 0
+        Width = 930
+        Color = clWhite
+        Align = alClient
+        TabOrder = 1
+        OnProcessMessageReceived = crmProcessMessageReceived
+        OnBeforeContextMenu = crmBeforeContextMenu
+        OnContextMenuCommand = crmContextMenuCommand
+        OnAddressChange = crmAddressChange
+        OnTitleChange = crmTitleChange
+        OnStatusMessage = crmStatusMessage
+        OnBeforeDownload = crmBeforeDownload
+        OnBeforePopup = crmBeforePopup
+        OnLoadStart = crmLoadStart
+        OnLoadEnd = crmLoadEnd
+        OnLoadError = crmLoadError
+        DefaultUrl = 'http://www.ncbi.nlm.nih.gov/'
+      end
+      object Panel1: TPanel
+        Left = 0
+        Height = 105
+        Top = 451
+        Width = 930
+        Align = alBottom
+        Caption = 'Panel1'
+        ClientHeight = 105
+        ClientWidth = 930
+        TabOrder = 2
+        Visible = False
+        object debug: TChromium
+          Left = 595
+          Height = 103
+          Top = 1
+          Width = 334
+          Color = clYellow
+          Align = alRight
+          TabOrder = 0
+          DefaultUrl = 'about:blank'
+        end
+        object FLog: TMemo
+          Left = 1
+          Height = 103
+          Top = 1
+          Width = 589
+          Align = alClient
+          ScrollBars = ssAutoBoth
+          TabOrder = 1
+        end
+        object Splitter2: TSplitter
+          Left = 590
+          Height = 103
+          Top = 1
+          Width = 5
+          Align = alRight
+          ResizeAnchor = akRight
+        end
+      end
+    end
+  end
+  object StatusBar: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 614
+    Width = 938
+    Panels = <>
+  end
+  object MainMenu1: TMainMenu
+    Images = MegaForm.NewIcons
+    OwnerDraw = True
+    OnDrawItem = MainMenu1DrawItem
+    OnMeasureItem = MainMenu1MeasureItem
+    left = 87
+    top = 112
+    object MenuItem1: TMenuItem
+      Caption = '&File'
+      object MenuItem5: TMenuItem
+        Action = actNewTab
+      end
+      object MenuItem7: TMenuItem
+        Action = actNewWindow
+      end
+      object MenuItem8: TMenuItem
+        Action = actCloseTab
+      end
+      object TabToolsItemSpacer: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem10: TMenuItem
+        Action = actPrint
+      end
+      object MenuItem11: TMenuItem
+        Action = AddToAlignment
+      end
+      object ExportOptionsSpacer: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem13: TMenuItem
+        Action = actExportExcel
+      end
+      object MenuItem14: TMenuItem
+        Action = actExportCsv
+      end
+      object MenuItem15: TMenuItem
+        Action = actSaveToTextFile
+      end
+      object MenuItem16: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem17: TMenuItem
+        Action = actExit
+      end
+    end
+    object MenuItem2: TMenuItem
+      Caption = '&Edit '
+      object MenuItem22: TMenuItem
+        Action = actCut
+      end
+      object MenuItem23: TMenuItem
+        Action = actCopy
+      end
+      object MenuItem24: TMenuItem
+        Action = actCopyToClipboard
+      end
+      object MenuItem25: TMenuItem
+        Action = actPaste
+      end
+      object MenuItem26: TMenuItem
+        Action = actSelectAll
+      end
+      object MenuItem27: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem28: TMenuItem
+        Action = actFindText
+      end
+    end
+    object MenuItem3: TMenuItem
+      Caption = '&View'
+      object ToggleToolbar: TMenuItem
+        Caption = '&Toolbar'
+        Checked = True
+        Hint = 'Toggle display of the main toolbar'
+        OnClick = ToggleToolbarClick
+      end
+      object StatusBar1: TMenuItem
+        Caption = '&Status Bar'
+        Checked = True
+        Hint = 'Toggle display of the status bar'
+        OnClick = StatusBar1Click
+      end
+      object MenuItem31: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem32: TMenuItem
+        Action = actZoomIn
+      end
+      object MenuItem33: TMenuItem
+        Action = actZoomOut
+      end
+      object MenuItem34: TMenuItem
+        Action = actZoomReset
+      end
+    end
+    object NavigateMenu: TMenuItem
+      Caption = '&Navigate'
+      object MenuItem29: TMenuItem
+        Action = actNext
+      end
+      object MenuItem30: TMenuItem
+        Action = actPrev
+      end
+      object MenuItem35: TMenuItem
+        Action = actStop
+      end
+      object MenuItem36: TMenuItem
+        Action = actReload
+      end
+      object MenuItem21: TMenuItem
+        Caption = '-'
+      end
+      object Search1: TMenuItem
+        Caption = '&Web Search'
+        OnClick = Search1Click
+      end
+    end
+    object HelpItem: TMenuItem
+      Caption = '&Help '
+      object MenuItem19: TMenuItem
+        Action = actDisplayHelpContents
+      end
+      object Website1: TMenuItem
+        Action = actMegaWebsite
+      end
+      object MenuItem4: TMenuItem
+        Action = DeveloperAction
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Images = MegaForm.NewIcons
+    left = 330
+    top = 224
+    object actExportExcel: TAction
+      Caption = 'E&xport to Excel'
+      Hint = 'Export results to an Excel file'
+      ImageIndex = 71
+      OnExecute = actExportExcelExecute
+    end
+    object actExportCsv: TAction
+      Caption = 'Export to &CSV'
+      Hint = 'Export results to a comma-separated-values file'
+      ImageIndex = 72
+      OnExecute = actExportCsvExecute
+    end
+    object actPrev: TAction
+      Caption = '&Back'
+      Hint = 'Go back'
+      ImageIndex = 47
+      OnExecute = actPrevExecute
+      OnUpdate = actPrevUpdate
+      ShortCut = 32805
+    end
+    object actNext: TAction
+      Caption = '&Forward'
+      Hint = 'Go forward'
+      ImageIndex = 48
+      OnExecute = actNextExecute
+      OnUpdate = actNextUpdate
+      ShortCut = 32807
+    end
+    object actReload: TAction
+      Caption = '&Reload'
+      Hint = 'Reload the current page'
+      ImageIndex = 49
+      OnExecute = actReloadExecute
+      OnUpdate = actReloadUpdate
+      ShortCut = 116
+    end
+    object AddToAlignment: TAction
+      Caption = '&Add To Alignment'
+      Hint = 'Add sequence data to the Alignment Explorer'
+      ImageIndex = 50
+      OnExecute = AddToAlignmentExecute
+      OnUpdate = AddToAlignmentUpdate
+    end
+    object actSaveToTextFile: TAction
+      Caption = '&Save to File'
+      Hint = 'Save text from the current page to a text file'
+      ImageIndex = 21
+      OnExecute = actSaveToTextFileExecute
+      ShortCut = 16467
+    end
+    object actPrint: TAction
+      Caption = '&Print'
+      Hint = 'Print the text of the current page'
+      ImageIndex = 0
+      OnExecute = actPrintExecute
+      ShortCut = 16464
+    end
+    object actCopyToClipboard: TAction
+      Caption = 'Copy &All to Clipboard'
+      Hint = 'Copy all text to the system clip board'
+      ImageIndex = 77
+      OnExecute = actCopyToClipboardExecute
+      ShortCut = 49219
+    end
+    object actNewTab: TAction
+      Caption = 'New &Tab'
+      ImageIndex = 63
+      OnExecute = actNewTabExecute
+      ShortCut = 16468
+    end
+    object actCloseTab: TAction
+      Caption = '&Close Active Tab'
+      ImageIndex = 59
+      OnExecute = actCloseTabExecute
+      ShortCut = 16471
+    end
+    object actNewWindow: TAction
+      Caption = 'Open New &Window'
+      OnExecute = actNewWindowExecute
+      ShortCut = 16462
+    end
+    object actDisplayHelpContents: TAction
+      Caption = '&Contents'
+      ImageIndex = 68
+      OnExecute = actDisplayHelpContentsExecute
+      ShortCut = 16456
+    end
+    object actMegaWebsite: TAction
+      Caption = 'MEGA &Website'
+      OnExecute = actMegaWebsiteExecute
+    end
+    object actCut: TAction
+      Caption = 'C&ut'
+      ImageIndex = 56
+      OnExecute = actCutExecute
+      ShortCut = 16472
+    end
+    object actCopy: TAction
+      Caption = '&Copy'
+      ImageIndex = 77
+      OnExecute = actCopyExecute
+      ShortCut = 16451
+    end
+    object actPaste: TAction
+      Caption = '&Paste'
+      ImageIndex = 64
+      OnExecute = actPasteExecute
+      ShortCut = 16470
+    end
+    object actSelectAll: TAction
+      Caption = '&Select All'
+      ImageIndex = 179
+      OnExecute = actSelectAllExecute
+      ShortCut = 16449
+    end
+    object actFindText: TAction
+      Caption = '&Find Text'
+      ImageIndex = 57
+      OnExecute = actFindTextExecute
+      ShortCut = 16454
+    end
+    object actDevToolsExecute: TAction
+      Caption = '&Dev Tools'
+      OnExecute = actDevToolsExecuteExecute
+    end
+    object actExit: TAction
+      Caption = '&Exit'
+      Hint = 'Close the browser window'
+      ImageIndex = 59
+      OnExecute = actExitExecute
+      ShortCut = 16465
+    end
+    object actZoomIn: TAction
+      Caption = 'Zoom &In'
+      Hint = 'Zoom in'
+      ImageIndex = 154
+      OnExecute = actZoomInExecute
+      ShortCut = 16571
+    end
+    object actZoomOut: TAction
+      Caption = 'Zoom &Out'
+      Hint = 'Zoom out'
+      ImageIndex = 155
+      OnExecute = actZoomOutExecute
+      ShortCut = 16493
+    end
+    object actZoomReset: TAction
+      Caption = 'Zoom &Default'
+      Hint = 'Reset do the default zoom level'
+      OnExecute = actZoomResetExecute
+    end
+    object actStop: TAction
+      Caption = '&Stop'
+      Hint = 'Cancel loading of the current page'
+      ImageIndex = 132
+      OnExecute = actStopExecute
+      ShortCut = 27
+    end
+    object DeveloperAction: TAction
+      Caption = 'Dev Action'
+      OnExecute = DeveloperActionExecute
+      ShortCut = 24644
+    end
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 200
+    OnTimer = Timer1Timer
+    left = 627
+    top = 154
+  end
+  object CloseTabPopup: TPopupMenu
+    left = 553
+    top = 177
+    object MenuItem18: TMenuItem
+      Action = actCloseTab
+    end
+  end
+  object FindDialog1: TFindDialog
+    OnFind = FindDialog1Find
+    left = 214
+    top = 103
+  end
+  object SaveDialog: TSaveDialog
+    Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
+    left = 435
+    top = 260
+  end
+end

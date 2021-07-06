@@ -1,0 +1,43 @@
+object MyPegMessageDlg: TMyPegMessageDlg
+  Left = 710
+  Height = 299
+  Top = 262
+  Width = 401
+  Caption = 'MEGA-MD: Messages'
+  ClientHeight = 299
+  ClientWidth = 401
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Tahoma'
+  LCLVersion = '1.6.2.0'
+  object Memo1: TMemo
+    Left = 0
+    Height = 264
+    Top = 0
+    Width = 401
+    Align = alTop
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Color = 16445924
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Lines.Strings = (
+      ''
+    )
+    ParentFont = False
+    ScrollBars = ssBoth
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 338
+    Height = 25
+    Top = 269
+    Width = 57
+    Anchors = [akRight, akBottom]
+    Caption = 'OK'
+    ModalResult = 1
+    TabOrder = 1
+  end
+end

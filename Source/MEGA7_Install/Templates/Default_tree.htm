@@ -1,0 +1,158 @@
+<HTML>
+<HEAD>
+<TITLE>{TTreeViewForm.Caption:ExtractCaptionInfo}</TITLE>
+<style>{TLegendGenerator.Style}</style>
+</HEAD>
+
+<BODY>
+  <SPAN class="figureTitle">
+    {if TLegendGenerator.Operation = 'dtdoOLSComputeUserTreeBLens'}
+	Evolutionary analysis by least squares method
+	{else}
+		Evolutionary relationships of {TTreeBox.NoOfOTUS} taxa
+	{endif}
+    {if TTreeViewForm.ActiveTabName = 'TimeTree'}
+      (timetree)
+    {endif}
+	{if TTreeBox.IsGeneDups = True}
+		(gene family tree)
+	{endif}
+  </span>
+<br>
+
+<div id ="content">
+  {if TTreeViewForm.ActiveTabName = 'Timetree'}
+	{if TTreeViewForm.TimeTreeTypeStr = 'tttStrictClocksLocal'}
+		{IncludeExternalFile=StrictClockTree_snippet.htm}
+	{elseif TTreeViewForm.TimeTreeTypeStr = 'tttStrictClocksMain'}
+		{IncludeExternalFile=StrictClockTree_snippet.htm}
+	{else}
+		{IncludeExternalFile=Reltime_snippet.htm}
+	{endif}
+  {else}
+	  {if TLegendGenerator.AnalyzeUserTree = True}
+		 The user-specified tree topology was analyzed
+	  {else}
+		 The evolutionary history was inferred
+	  {endif}  
+	  using the {TTreePack.TreeMethodName} method [{TTreePack.TreeMethodCitation:ExpandCitation}].
+	  {if TTreeViewForm.ActiveTabName = 'Bootstrap consensus tree'}
+		The bootstrap consensus tree inferred from {TTreePack.BootReps}
+		replicates [{TLegendGenerator.BootstrapTestCitation:ExpandCitation}] is
+		taken to represent the evolutionary history of the taxa
+		analyzed [{TLegendGenerator.BootstrapTestCitation:ExpandCitation}].
+		Branches corresponding to partitions reproduced in less
+		than {TTreeBox.ConsensusValue}% bootstrap replicates are collapsed.
+
+	  {if TTreeViewForm.StatPosCaption ! ''}
+		The percentage of replicate trees in which the associated taxa clustered together in the bootstrap test ({TTreePack.BootReps} replicates) are shown {TTreeViewForm.StatPosCaption} [{TLegendGenerator.BootstrapTestCitation:ExpandCitation}].
+	  {endif}
+
+	  {elseif TTreeViewForm.ActiveTabName = 'Consensus tree'}
+		The consensus tree inferred from {TTreeBox.NoOfTrees} optimal trees
+		{if TTreeInfoForm.SBL ! ''}
+		  (sum of branch length = {TTreeInfoForm.SBL})
+		{endif}
+		is shown. Branches corresponding to partitions reproduced in less
+		than {TTreeBox.ConsensusValue}% trees are collapsed.
+
+		{if TTreeViewForm.StatPosCaption ! ''}
+		  The percentage of optimal trees in which the associated taxa clustered together are shown {TTreeViewForm.StatPosCaption}.
+		{endif}
+
+		{elseif TTreeBox.TreeIndex = 0}
+		  The consensus tree inferred from {TTreeBox.NoOfTrees} optimal trees
+		  {if TTreeInfoForm.SBL ! ''}
+			(sum of branch length = {TTreeInfoForm.SBL})
+		  {endif}
+			is shown. Branches corresponding to partitions reproduced in less
+			than {TTreeBox.ConsensusValue}% trees are collapsed.
+
+			{if TTreeViewForm.StatPosCaption ! ''}
+			   The percentage of parsimonious trees in which the associated taxa clustered together are shown {TTreeViewForm.StatPosCaption}.
+			{endif}
+
+		{elseif TTreeBox.NoOfTrees > 1}
+		    {if TTreeBox.IsGeneDups = True}
+			Tree #{TTreeBox.TreeIndex} out of {TTreeBox.NoOfTrees} trees
+			{else
+			Tree #{TTreeBox.TreeIndex} out of {TTreeBox.NoOfTrees} minimum evolution trees
+			{endif}
+			{if TTreeInfoForm.SBL ! ''}
+				&#32(sum of branch length = {TTreeInfoForm.SBL})
+			{endif}
+			&#32is shown.
+
+				{if TTreeViewForm.StatPosCaption ! ''}
+				&#32 The percentage of replicate trees in which the associated taxa clustered together in the bootstrap test ({TTreePack.BootReps} replicates) are shown {TTreeViewForm.StatPosCaption} [{TLegendGenerator.BootstrapTestCitation:ExpandCitation}].
+			{endif}
+
+		{else}
+			{if TLegendGenerator.AnalyzeUserTree = True} 
+				The sum of branch lengths = {TTreeInfoForm.SBL} for the displayed tree.
+			{else}
+				The optimal tree 
+				{if TTreeInfoForm.SBL ! ''}
+					&#32with the sum of branch length = {TTreeInfoForm.SBL}
+				{endif}			
+				is shown.
+			{endif}
+				{if TTreeViewForm.StatPosCaption ! ''}
+				{if TTreePack.TestType = ttCPTest}
+					&#32 The confidence probability (multiplied by 100) that the interior branch length is greater than 0, as estimated using the bootstrap test ({TTreePack.BootReps} replicates is shown {TTreeViewForm.StatPosCaption} [{TLegendGenerator.DopazoCPTestCitation:ExpandCitation}, {TLegendGenerator.RzhNeiCPTestCitation:ExpandCitation}].
+				{else}
+					&#32 The percentage of replicate trees in which the associated taxa clustered together in the bootstrap test ({TTreePack.BootReps} replicates) are shown {TTreeViewForm.StatPosCaption} [{TLegendGenerator.BootstrapTestCitation:ExpandCitation}].
+				{endif}
+			{endif}
+		{endif}
+
+
+		{if TTreeBox.ShowTopologyOnly = False}
+			{if TTreeBox.IsLinearized = True}
+				&#32 The phylogenetic tree was linearized assuming equal evolutionary rates in all lineages [{TLegendGenerator.LinearizedCitation:ExpandCitation}].
+				{if TTreeBox.IsTimescale = True}
+					&#32 The clock calibration to convert distance to time was {TTreeBox.TimeFactor} (time/node height).
+				{endif}
+			{endif}
+
+			&#32 The tree is drawn to scale, with branch lengths
+			{if TTreeViewForm.BLenCaption ! ''}
+				&#32({TTreeViewForm.BLenCaption})
+			{endif}
+			&#32in the same units as those of the evolutionary distances used to infer the phylogenetic tree.
+		{elseif TTreeViewForm.BLenCaption ! ''}
+			&#32({TTreeViewForm.BLenCaption}).
+		{endif}
+		
+			{if TAnalysisInfo.HasDistPack = False}
+			The evolutionary distances were provided by the user. 
+		{elseif TAnalysisInfo.DistModelName = ''}
+			The evolutionary distances were computed using the 	{TLegendGenerator.FullModelName} method  [{TDistPack.MethodCitation:ExpandCitation}] 	and are in the units of the {TAnalysisInfo.DistUnitCaption}.
+		{else}
+			&#32 The evolutionary distances were computed using the {TAnalysisInfo.DistModelName} method [{TDistPack.MethodCitation:ExpandCitation}] and are in the units of the {TAnalysisInfo.DistUnitCaption}.
+		{endif}
+
+		{if TAnalysisInfo.HasDistPack = True}
+			  {if TAnalysisInfo.DistGammaParaCaption ! ''}
+			&#32 {TAnalysisInfo.DistGammaParaCaption} (shape parameter =  {TDistPack.GammaParameter}).
+		  {endif}
+		{endif}
+
+		{if TAnalysisInfo.DistHeteroPatternCaption ! ''}
+			&#32 {TAnalysisInfo.DistHeteroPatternCaption} [{TLegendGenerator.HeteroPatternDistCitation:ExpandCitation}].
+		{endif}
+
+
+		{if TTreePack.NameAcronym = ME}
+			&#32 The ME tree was searched using the Close-Neighbor-Interchange (CNI) algorithm [{TLegendGenerator.MegaBook:ExpandCitation}] at a search level of {TTreePack.SearchFactor}.  The Neighbor-joining algorithm [{TLegendGenerator.NJCitation:ExpandCitation}] was used to generate the initial tree.
+		{endif}
+		{IncludeExternalFile=data_coverage_snippet.htm}
+  
+  {endif}
+
+{IncludeExternalFile=Gene_duplication_snippet.htm}
+{IncludeExternalFile=Data_Subset_Template.htm}
+</div>
+<br><br>
+</body>
+</html>

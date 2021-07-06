@@ -1,0 +1,163 @@
+<HTML>
+<HEAD>
+<TITLE>Maximum Parsimony</TITLE>
+<style>{TLegendGenerator.Style}</style>
+</HEAD>
+
+<BODY>
+  <SPAN class="figureTitle">
+	{if TLegendGenerator.Operation = 'dtdoMPComputeUserTreeBLens'}
+		Evolutionary analysis by Maximum Parsimony method
+	{else}
+	   Maximum Parsimony analysis of taxa
+	  {if TTreeBox.IsLinearized = True}
+		(linearized)
+	  {endif}
+	{endif}  
+  </span>
+
+<div id ="content">
+  {if TLegendGenerator.AnalyzeUserTree = True}
+	 The user-specified tree topology was analyzed
+  {else}
+	 The evolutionary history was inferred
+  {endif} 
+  using the {TTreePack.TreeMethodName} method.
+  {if TTreeViewForm.ActiveTabName = 'Timetree'}  
+	Divergence times for all branching points in the topology were calculated with the 
+	RelTime method [{TLegendGenerator.ReltimeCitation:ExpandCitation}] using the branch lengths contained in the inferred tree.
+	Those branch lengths were calculated using the average pathway method [see pg. 132 in ref. {TLegendGenerator.MegaBook:ExpandCitation}] and 
+	are in the units of the number of changes over the whole sequence.
+	{if TTreeViewForm.HasCalibrations = True}
+		{if TLegendGenerator.DisplayingDivTimes = 'True'}
+			Relative node times were optimized and converted to absolute divergence times (shown next to branching points) based 
+			on the user-supplied calibration constraints. 	
+		{endif}	
+	{endif}
+	{if TLegendGenerator.DisplayingErrorBars = 'True'}
+		Bars around each node represent 95% confidence intervals which were computed using the method described in Tamura et al. (2013)[{TLegendGenerator.ReltimeCitation:ExpandCitation}].
+	{endif}	
+  {else}
+	  {if TTreeViewForm.ActiveTabName = 'Bootstrap consensus tree'}
+		The bootstrap consensus tree inferred from {TTreePack.BootReps}
+		replicates is taken to represent the evolutionary history of the taxa
+		analyzed [{TLegendGenerator.BootstrapTestCitation:ExpandCitation}].
+		Branches corresponding to partitions reproduced in less than
+		{TTreeBox.ConsensusValue}% bootstrap replicates are collapsed.
+		{if TTreeViewForm.StatPosCaption ! ''}
+		  The percentage of replicate trees in which the associated taxa clustered
+		  together in the bootstrap test ({TTreePack.BootReps} replicates) are
+		  shown {TTreeViewForm.StatPosCaption}[{TLegendGenerator.BootstrapTestCitation:ExpandCitation}].
+		{endif}
+	  {elseif TTreeViewForm.ActiveTabName = 'Consensus tree'}
+		The consensus tree inferred from {TTreeBox.NoOfTrees} most parsimonious trees
+		{if TTreeInfoForm.TreeLength ! ''}
+		  (length = {TTreeInfoForm.TreeLength})
+		{endif}
+		&#32is shown. Branches corresponding to partitions reproduced in less than
+		{TTreeBox.ConsensusValue}% trees are collapsed.
+		The consistency index is {TTreeBox.TreeCI} ({TTreeBox.TreeCI_infosites}),
+		the retention index is {TTreeBox.TreeRI} ({TTreeBox.TreeRI_infosites}), and
+		the composite index is {TTreeBox.TreeRCI} ({TTreeBox.TreeRCI_infosites}) for
+		all sites and parsimony-informative sites (in parentheses).
+		{if TTreeViewForm.StatPosCaption ! ''}
+		  The percentage of parsimonious trees in which the associated taxa
+		  clustered together are shown {TTreeViewForm.StatPosCaption}.
+		{endif}
+	  {elseif TTreeBox.TreeIndex = 0)
+		The consensus tree inferred from {TTreeBox.NoOfTrees} most parsimonious trees
+		{if TTreeInfoForm.TreeLength ! ''}
+		  (length = {TTreeInfoForm.TreeLength})
+		{endif}
+		is shown. Branches corresponding to partitions reproduced in less than
+		{TTreeBox.ConsensusValue}% trees are collapsed.
+		The consistency index is {TTreeBox.TreeCI} ({TTreeBox.TreeCI_infosites}),
+		the retention index is {TTreeBox.TreeRI} ({TTreeBox.TreeRI_infosites}),
+		and the composite index is {TTreeBox.TreeRCI} ({TTreeBox.TreeRCI_infosites})
+		for all sites and parsimony-informative sites (in parentheses).
+		{if TTreeViewForm.StatPosCaption ! ''}
+		  The percentage of parsimonious trees in which the associated taxa clustered together are shown {TTreeViewForm.StatPosCaption}.
+		{endif}
+	  {elseif TTreeBox.NoOfTrees > 1}
+		Tree #{TTreeBox.TreeIndex} out of {TTreeBox.NoOfTrees} most parsimonious trees
+		(length = {TTreeInfoForm.TreeLength}) is shown. The consistency index is
+		{TTreeBox.TreeCI} ({TTreeBox.TreeCI_infosites}),
+		the retention index is {TTreeBox.TreeRI} ({TTreeBox.TreeRI_infosites}),
+		and the composite index is {TTreeBox.TreeRCI} ({TTreeBox.TreeRCI_infosites})
+		for all sites and parsimony-informative sites (in parentheses).
+		{if TTreeViewForm.StatPosCaption ! ''}
+		  The percentage of replicate trees in which the associated taxa clustered
+		  together in the bootstrap test ({TTreePack.BootReps} replicates) are
+		  shown {TTreeViewForm.StatPosCaption} [{TLegendGenerator.BootstrapTestCitation:ExpandCitation}].
+		{endif}
+	  {else}
+		{if TLegendGenerator.AnalyzeUserTree = True}	  
+		The tree length is {TTreeInfoForm.TreeLength}.
+		{else}
+		The most parsimonious tree with length = {TTreeInfoForm.TreeLength} is shown.
+		{endif}
+		The consistency index is {TTreeBox.TreeCI} ({TTreeBox.TreeCI_infosites}),
+		the retention index is {TTreeBox.TreeRI} ({TTreeBox.TreeRI_infosites}),
+		and the composite index is {TTreeBox.TreeRCI} ({TTreeBox.TreeRCI_infosites})
+		for all sites and parsimony-informative sites (in parentheses).
+		{if TTreeViewForm.StatPosCaption ! ''}
+		  The percentage of replicate trees in which the associated taxa clustered
+		  together in the bootstrap test ({TTreePack.BootReps} replicates) are
+		  shown {TTreeViewForm.StatPosCaption} [{TLegendGenerator.BootstrapTestCitation:ExpandCitation}].
+		{endif}
+	  {endif}
+
+	  {if TTreePack.MPSearchName = 'Branch-&-Bound'}
+		The MP tree was obtained using the Max-mini branch-and-bound algorithm
+		(pg. 122 in ref. [{TLegendGenerator.MegaBook:ExpandCitation}]).
+		This search guarantees to find all optimal topologies and resulted in
+		{TTreeBox.NoOfTrees} parsimony tree(s).
+	  {elseif TTreePack.MPSearchName = 'Min-Mini'}
+		The MP tree was obtained using the Min-mini heuristic algorithm
+		(pg. 128 in ref. [{TLegendGenerator.MegaBook:ExpandCitation}])
+		with a search factor of {TTreePack.SearchFactor}.
+	  {elseif TTreePack.MPSearchName = 'SPR'}
+		The MP tree was obtained using the Subtree-Pruning-Regrafting (SPR) algorithm
+		(pg. 126 in ref. [{TLegendGenerator.MegaBook:ExpandCitation}]) with
+		search level {TTreePack.SearchLevel} in which the initial trees were
+		obtained by the random addition of sequences ({TTreePack.RandomAddReps} replicates).
+	  {elseif TTreePack.MPSearchName = 'TBR'}
+		The MP tree was obtained using the Tree-Bisection-Regrafting (TBR) algorithm
+		(pg. 126 in ref. [{TLegendGenerator.MegaBook:ExpandCitation}]) with
+		search level {TTreePack.SearchLevel} in which the initial trees were
+		obtained by the random addition of sequences ({TTreePack.RandomAddReps} replicates).
+	  {elseif TTreePack.MPSearchName = 'CNI'}
+		The MP tree was obtained using the Close-Neighbor-Interchange algorithm
+		(pg. 128 in ref. [{TLegendGenerator.MegaBook:ExpandCitation}]) with
+		search level {TTreePack.SearchLevel}
+		in which the initial trees were obtained with
+		{if TTreePack.MPInitialTreesMethod = MinMini}
+		  the Min-mini heuristic algorithm (search factor =  {TTreePack.SearchFactor}).
+		{else}
+		  the random addition of sequences ({TTreePack.RandomAddReps} replicates).
+		{endif}
+	  {endif}
+
+	  {if TTreeViewForm.BLenCaption ! ''}
+		Branch lengths were calculated using the average pathway method [see pg. 132 in ref. {TLegendGenerator.MegaBook:ExpandCitation}] and are in the units of the number of changes over the whole sequence.
+		They are shown {TTreeViewForm.BLenCaption}.
+	  {endif}
+
+	  {if TTreeBox.ShowTopologyOnly = False}
+		The tree is drawn to scale
+		{if TTreeViewForm.BLenCaption = ''}
+		  , with branch lengths calculated using the average pathway method [see pg. 132 in ref. {TLegendGenerator.MegaBook:ExpandCitation}] and are in the units of the number of changes over the whole sequence
+		{endif}
+		.
+	  {endif}  
+  
+  {endif}
+
+ {IncludeExternalFile=Gene_duplication_snippet.htm}
+ {IncludeExternalFile=Data_Subset_Template.htm}
+
+</div>
+<br>
+<br>
+</body>
+</html>

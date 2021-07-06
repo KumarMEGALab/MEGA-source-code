@@ -1,0 +1,89 @@
+<HTML>
+<HEAD type="PrimaryResultWindow">
+<STYLE>{TLegendGenerator.Style}</STYLE>
+<TITLE>{TLegendGenerator.Title}</TITLE>
+</HEAD>
+
+<BODY>
+  <span class="figureTitle">
+     Maximum Likelihood Estimate of {TLegendGenerator.Title}
+  </span>
+
+  {if TLegendGenerator.SubstitutionType = 'Matrix'}
+    {TLegendGenerator.MatrixTable}
+      <div class="note">
+        NOTE.-- Each entry shows the probability of substitution from one base (row)
+        to another base (column)
+  {endif}
+
+  {if TLegendGenerator.SubstitutionType = 'TsTvBias'}
+     <br><br>
+     The {if TLegendGenerator.Rassumed = 'True'} assumed {else} estimated {endif}
+     Transition/Transversion bias (<i>R</i>) is {TLegendGenerator.SVR}.
+  {endif}
+
+  {if TLegendGenerator.SubstitutionType = 'Gamma'}
+     <br><br>
+     The estimated value of the shape parameter for the discrete Gamma Distribution
+     is {TLegendGenerator.GammaPara}.
+     {if TLegendGenerator.PropOfInvariant = 'N/A'}
+     {else}
+       The proportion of sites estimated to be invariant is {TLegendGenerator.PropOfInvariant}%.
+     {endif}
+  {endif}
+
+  Substitution pattern and rates were estimated under
+  the {TLegendGenerator.ModelName} [{TDistPack.MethodCitation:ExpandCitation}].
+
+  {if TLegendGenerator.GammaPara = 'N/A'}
+  {else}
+     A discrete Gamma distribution was used to model evolutionary rate differences
+     among sites ({TLegendGenerator.NoOfGCats} categories,
+     {if TLegendGenerator.SubstitutionType = 'Gamma'}
+       (+G).
+     {else}
+       ([+G], parameter = {TLegendGenerator.GammaPara}).
+     {endif}
+  {endif}
+
+  {if TLegendGenerator.PropOfInvariant = 'N/A'}
+  {else}
+     The rate variation model allowed for some sites to be evolutionarily
+     invariable
+     {if TLegendGenerator.SubstitutionType = 'Gamma'}
+       (+I).
+     {else}
+       ([+I], {TLegendGenerator.PropOfInvariant}% sites).
+     {endif}
+  {endif}
+
+  {if TLegendGenerator.SubstitutionType = 'Matrix'}
+    Rates of different transitional substitutions are shown in <b>bold</b> and those of transversionsal
+    substitutions are shown in <i>italics</i>.
+  {endif}
+
+  The nucleotide frequencies are A = {TLegendGenerator.FreqA}, T/U = {TLegendGenerator.FreqT},
+  C = {TLegendGenerator.FreqC}, and G = {TLegendGenerator.FreqG}.
+
+  {if TAnalysisInfo.UserTreeFile ! ''}
+    For estimating ML values, a user-specified toplogy was used.
+  {elseif TTreePack.MLInitialTreesMethodCitation ! ''}
+    For estimating ML values, a tree topology was automatically computed by
+    the {TTreePack.MLInitialTreesMethodCitation} method.
+  {endif}
+
+  {if TTreePack.IsDoubleOptimized = True}
+    Branch lengths were double optimized in the ML procedure.
+  {endif}
+
+  The maximum Log likelihood for this computation was {TLegendGenerator.LogL}.
+
+  {IncludeExternalFile=Data_Subset_Template.htm}
+
+  {if TLegendGenerator.SubstitutionType = 'Matrix'}
+    </div>
+  {endif}
+<br>
+<br>
+</body>
+</html>

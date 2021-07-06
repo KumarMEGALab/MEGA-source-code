@@ -1,0 +1,46 @@
+object AlignmentDataTypeDlg: TAlignmentDataTypeDlg
+  Left = 604
+  Height = 86
+  Top = 373
+  Width = 430
+  BorderIcons = []
+  Caption = 'Data Type for Alignment'
+  ClientHeight = 86
+  ClientWidth = 430
+  LCLVersion = '1.6.0.4'
+  object DnaBtn: TButton
+    Left = 16
+    Height = 25
+    Top = 48
+    Width = 75
+    Caption = '&DNA'
+    ModalResult = 6
+    TabOrder = 0
+  end
+  object ProteinBtn: TButton
+    Left = 178
+    Height = 25
+    Top = 48
+    Width = 75
+    Caption = '&Protein'
+    ModalResult = 7
+    TabOrder = 1
+  end
+  object CancelBtn: TButton
+    Left = 336
+    Height = 25
+    Top = 48
+    Width = 75
+    Caption = '&Cancel'
+    ModalResult = 2
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    Left = 33
+    Height = 20
+    Top = 16
+    Width = 372
+    Caption = 'Are you building a DNA or protein sequence alignment?'
+    ParentColor = False
+  end
+end

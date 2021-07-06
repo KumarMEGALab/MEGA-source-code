@@ -1,0 +1,69 @@
+<HTML>
+<HEAD>
+<TITLE>Homogeneity of Substitution Patterns ({TAnalysisInfo.KumarGadagkar2001InfoCaption})</TITLE>
+<style>{TLegendGenerator.Style}</style>
+</HEAD>
+
+<BODY>
+
+  <span class="figureTitle">
+    {if TAnalysisInfo.KumarGadagkar2001InfoCaption = 'Disparity Index Test'}
+	Table. Test of the Homogeneity of Substitution Patterns Between Sequences
+   {elseif TAnalysisInfo.KumarGadagkar2001InfoCaption = 'Disparity Index'}
+	Table. Estimates of Net Base Composition Bias Disparity between Sequences
+   {else}
+	Table. Estimates of Base Composition Bias Difference between Sequences
+   {endif}
+</span>
+
+<br>
+<br>
+
+<div id ="content">
+
+  {if TAnalysisInfo.KumarGadagkar2001InfoCaption = 'Disparity Index Test'}
+	The probability of rejecting the null hypothesis that sequences
+        have evolved with the same pattern of substitution, as judged from
+        the extent of differences in base composition biases
+        between sequences (Disparity Index test, [{TLegendGenerator.PatternCitation:ExpandCitation}]).
+	A Monte Carlo test ({TDistPack.BootReps} replicates) was used to estimate
+        the <i>P</i>-values [{TLegendGenerator.PatternCitation:ExpandCitation}],
+        which are shown
+	{if TD_DisplayMatrix.IsDataLowerLeft = True}
+	    below the diagonal.
+	{else}
+	    above the diagonal.
+	{endif}
+
+	<i>P</i>-values smaller than 0.05 are considered significant (marked with yellow highlights)
+	The estimates of the disparity index per site are shown for each sequence pair
+	{if TD_DisplayMatrix.IsDataLowerLeft = True}
+	    above the diagonal.
+	{else}
+	    below the diagonal.
+	{endif}
+
+  {elseif TAnalysisInfo.KumarGadagkar2001InfoCaption = 'Disparity Index'}
+	Disparity Index per site is shown for all sequence pairs [{TLegendGenerator.PatternCitation:ExpandCitation}].
+	Values greater than 0 indicate the larger differences in base composition
+        biases than expected based on evolutionary divergence between sequences and
+        by chance alone.
+  {else}
+	The difference in base composition bias per site is shown
+        [{TLegendGenerator.PatternCitation:ExpandCitation}].
+	Note that even when the substitution patterns are homogeneous among
+        lineages, the compositional distance will correlate with the number of
+        differences between sequences.
+  {endif}
+
+  {IncludeExternalFile=Data_Subset_Template.htm}
+
+  {if TDisplayMatrixDlg.HasInvalidData = True}
+    The presence of n/c in the results denotes cases in which it was not
+    possible to estimate evolutionary distances.
+  {endif}
+
+</div>
+<br><br>
+</body>
+</html>

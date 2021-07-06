@@ -1,0 +1,415 @@
+object DisplayMatrixDlg: TDisplayMatrixDlg
+  Left = 785
+  Height = 343
+  Top = 290
+  Width = 604
+  Caption = 'Distance Output'
+  ClientHeight = 323
+  ClientWidth = 604
+  Color = clBtnFace
+  Constraints.MinHeight = 203
+  Constraints.MinWidth = 375
+  Menu = MainMenu1
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnHelp = FormHelp
+  OnResize = FormResize
+  ParentFont = True
+  Position = poDesktopCenter
+  SessionProperties = 'ClientHeight;ClientWidth;Color;FontDialog.Font;FontDialog.MaxFontSize;FontDialog.MinFontSize;FontDialog.Options;Height;PixelsPerInch;PrinterSetupDialog.Name;SaveDialog.FileName;SaveDialog.InitialDir;SpinEdit1.Value;Width;UpperRightAction.Checked;LowerLeftAction.Checked'
+  ShowHint = True
+  LCLVersion = '2.0.2.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 300
+    Top = 0
+    Width = 604
+    Align = alClient
+    BevelOuter = bvNone
+    Caption = 'Panel1'
+    ClientHeight = 300
+    ClientWidth = 604
+    TabOrder = 0
+    object DataGrid: TDrawGrid
+      Left = 0
+      Height = 272
+      Top = 28
+      Width = 604
+      Align = alClient
+      AutoEdit = False
+      DefaultDrawing = False
+      ExtendedSelect = False
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowMoving]
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      TitleFont.CharSet = ANSI_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -10
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Pitch = fpVariable
+      TitleFont.Quality = fqDraft
+      OnClick = DataGridClick
+      OnColRowMoved = DataGridColRowMoved
+      OnDrawCell = DataGridDrawCell
+      OnMouseDown = DataGridMouseDown
+      OnMouseMove = DataGridMouseMove
+      OnMouseUp = DataGridMouseUp
+      OnSelectCell = DataGridSelectCell
+    end
+    object SpinEdit1: TSpinEdit
+      Left = 331
+      Height = 23
+      Top = 63
+      Width = 63
+      MaxValue = 0
+      TabOrder = 1
+      Value = 3
+      Visible = False
+    end
+    object MainToolBar: TToolBar
+      Left = 0
+      Height = 28
+      Top = 0
+      Width = 604
+      ButtonHeight = 24
+      ButtonWidth = 24
+      Caption = 'MainToolBar'
+      DisabledImages = MegaForm.DisabledIcons
+      EdgeBorders = [ebLeft, ebTop, ebRight, ebBottom]
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Images = MegaForm.NewIcons
+      ParentFont = False
+      TabOrder = 2
+      object ToolButton6: TToolButton
+        Left = 75
+        Height = 24
+        Top = 2
+        Caption = 'ToolButton6'
+        Style = tbsSeparator
+      end
+      object ToolButton3: TToolButton
+        Left = 131
+        Height = 24
+        Top = 2
+        Caption = 'ToolButton3'
+        Style = tbsSeparator
+      end
+      object ToolButton1: TToolButton
+        Left = 163
+        Height = 24
+        Top = 2
+        Caption = 'ToolButton1'
+        Style = tbsSeparator
+      end
+      object UpperRightBtn: TToolButton
+        Left = 27
+        Top = 2
+        Action = UpperRightAction
+        OnClick = FormatSBtnClick
+      end
+      object LowerLeftBtn: TToolButton
+        Left = 3
+        Top = 2
+        Action = LowerLeftAction
+      end
+      object ShowPairNameBtn: TToolButton
+        Left = 51
+        Top = 2
+        Action = ShowPairNamesAction
+      end
+      object DecPrecisionBtn: TToolButton
+        Left = 83
+        Top = 2
+        Action = DecPrecisionAction
+      end
+      object IncPrecisionBtn: TToolButton
+        Left = 107
+        Top = 2
+        Action = IncPrecisionAction
+      end
+      object ExportDataBtn: TToolButton
+        Left = 139
+        Top = 2
+        Action = ExportDataAction
+      end
+      object ExportXlBtn: TToolButton
+        Left = 171
+        Top = 2
+        Action = ExportExcelAction
+      end
+      object ExportCsvBtn: TToolButton
+        Left = 195
+        Top = 2
+        Action = ExportToCsvAction
+      end
+      object ExportMegaBtn: TToolButton
+        Left = 219
+        Top = 2
+        Action = ExportToMegaAction
+      end
+      object ExportTxtBtn: TToolButton
+        Left = 243
+        Top = 2
+        Action = ExportTextAction
+      end
+      object CaptionBtn: TToolButton
+        Left = 267
+        Top = 2
+        Action = ShowCaptionAction
+      end
+    end
+  end
+  object StatusBar: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 300
+    Width = 604
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Panels = <    
+      item
+        Text = 'dOrSE'
+        Width = 50
+      end    
+      item
+        Text = 'Other'
+        Width = 500
+      end>
+    ParentFont = False
+    SimplePanel = False
+  end
+  object MainMenu1: TMainMenu
+    Images = MegaForm.NewIcons
+    OwnerDraw = True
+    OnDrawItem = MainMenu1DrawItem
+    OnMeasureItem = MainMenu1MeasureItem
+    left = 54
+    top = 171
+    object FileMenu: TMenuItem
+      Caption = '&File'
+      object ShowTitleItem: TMenuItem
+        Caption = 'Show Input Data &Title'
+        OnClick = ShowTitleItemClick
+      end
+      object ShowDescriptionItem: TMenuItem
+        Caption = 'Show Analysis &Description'
+        OnClick = ShowDescriptionItemClick
+      end
+      object MenuItem2: TMenuItem
+        Action = ShowAnalysisSummaryAction
+      end
+      object N3: TMenuItem
+        Caption = '-'
+      end
+      object SaveToFileItem: TMenuItem
+        Caption = '&Export/Print Distances. . .'
+        OnClick = SaveToFileItemClick
+      end
+      object N4: TMenuItem
+        Caption = '-'
+      end
+      object ShowListofInvalidDistancesItem: TMenuItem
+        Caption = 'Show Invalid Distance Pairs List'
+        OnClick = ShowListofInvalidDistancesItemClick
+      end
+      object N5: TMenuItem
+        Caption = '-'
+      end
+      object QuitItem: TMenuItem
+        Caption = '&Quit Viewer'
+        OnClick = QuitItemClick
+      end
+    end
+    object DisplayMenu: TMenuItem
+      Caption = '&Display'
+      object ShowPairNameItem: TMenuItem
+        Caption = 'Show &Pair Name'
+        OnClick = ShowPairNameItemClick
+      end
+      object N7: TMenuItem
+        Caption = '-'
+      end
+      object SortSeqItem: TMenuItem
+        Caption = '&Sort Taxa'
+        object SortOriginalItem: TMenuItem
+          Caption = '&Original'
+          OnClick = SortItemClick
+        end
+        object SortByNameItem: TMenuItem
+          Caption = '&By Name'
+          OnClick = SortItemClick
+        end
+        object SortGpItem: TMenuItem
+          Caption = 'By &Group Name'
+          OnClick = SortItemClick
+        end
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object ShowTaxaNamesItem: TMenuItem
+        Caption = 'Show Names'
+        OnClick = ShowTaxaNamesItemClick
+      end
+      object ShowGpNamesItem: TMenuItem
+        Caption = 'Show &Group Names'
+        OnClick = ShowGpNamesItemClick
+      end
+      object N6: TMenuItem
+        Caption = '-'
+      end
+      object FontItem: TMenuItem
+        Caption = 'Change &Font'
+        OnClick = FontItemClick
+      end
+    end
+    object AverageMenu: TMenuItem
+      Caption = '&Average'
+      object AvgAllItem: TMenuItem
+        Caption = '&Overall'
+        OnClick = AvgAllItemClick
+      end
+      object N2: TMenuItem
+        Caption = '-'
+      end
+      object WithinGpsAvgItem: TMenuItem
+        Caption = '&Within Groups'
+        OnClick = GpsAvgItemClick
+      end
+      object BetweenGpsAvgItem: TMenuItem
+        Caption = 'Between Groups'
+        OnClick = GpsAvgItemClick
+      end
+      object NetBetweenGpsAvgItem: TMenuItem
+        Caption = '&Net Between Groups'
+        OnClick = GpsAvgItemClick
+      end
+      object WeightedAvgItem: TMenuItem
+        Caption = 'Avg. For Vertebrates'
+        Visible = False
+        OnClick = GpsAvgItemClick
+      end
+    end
+    object miGenerateCaption: TMenuItem
+      Caption = 'Caption'
+      OnClick = miGenerateCaptionClick
+    end
+    object HelpMenu: TMenuItem
+      Caption = '&Help '
+      object MenuItem1: TMenuItem
+        Caption = '&Contents'
+        OnClick = HelpMenuClick
+      end
+    end
+  end
+  object SaveDialog: TSaveDialog
+    Options = [ofOverwritePrompt, ofHideReadOnly, ofPathMustExist]
+    left = 304
+    top = 224
+  end
+  object FontDialog: TFontDialog
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    MinFontSize = 0
+    MaxFontSize = 0
+    left = 328
+    top = 152
+  end
+  object PrinterSetupDialog: TPrinterSetupDialog
+    left = 440
+    top = 140
+  end
+  object ActionList1: TActionList
+    Images = MegaForm.NewIcons
+    left = 204
+    top = 248
+    object LowerLeftAction: TAction
+      Caption = 'LowerLeftAction'
+      Hint = 'Distances in lower left'
+      ImageIndex = 188
+      OnExecute = FormatSBtnClick
+    end
+    object UpperRightAction: TAction
+      Caption = 'UpperRightAction'
+      Hint = 'Distances in upper right'
+      ImageIndex = 193
+      OnExecute = FormatSBtnClick
+    end
+    object ShowPairNamesAction: TAction
+      Caption = 'ShowPairNamesAction'
+      Hint = 'Show pair of taxa names'
+      ImageIndex = 194
+      OnExecute = ShowPairNameItemClick
+    end
+    object IncPrecisionAction: TAction
+      Caption = '&Increment Precision'
+      Hint = 'Increment the precision of distances'
+      ImageIndex = 115
+      OnExecute = IncPrecisionBtnClick
+    end
+    object DecPrecisionAction: TAction
+      Caption = '&Decrement Precision'
+      Hint = 'Decrease the precision of distances'
+      ImageIndex = 116
+      OnExecute = DecPrecisionBtnClick
+    end
+    object ExportDataAction: TAction
+      Caption = 'ExportDataAction'
+      Hint = 'Export distances to a file'
+      ImageIndex = 35
+      OnExecute = SaveToFileItemClick
+    end
+    object ExportExcelAction: TAction
+      Caption = '&Excel'
+      Hint = 'Export distances to an Excel file'
+      ImageIndex = 71
+      OnExecute = SaveToFileItemClick
+    end
+    object ExportToCsvAction: TAction
+      Caption = '&CSV (comma separated values)'
+      Hint = 'Export distances to a CSV file'
+      ImageIndex = 72
+      OnExecute = SaveToFileItemClick
+    end
+    object ExportToMegaAction: TAction
+      Caption = '&MEGA'
+      Hint = 'Export distances to a MEGA file'
+      ImageIndex = 22
+      OnExecute = SaveToFileItemClick
+    end
+    object ExportTextAction: TAction
+      Caption = 'ExportTextAction'
+      Hint = 'Export distances to a text file'
+      ImageIndex = 21
+      OnExecute = SaveToFileItemClick
+    end
+    object ShowCaptionAction: TAction
+      Caption = '&Show Caption'
+      Hint = 'Display the Caption Expert window'
+      ImageIndex = 133
+      OnExecute = miGenerateCaptionClick
+    end
+    object ShowAnalysisSummaryAction: TAction
+      Caption = 'Show Analyis Summary'
+      Hint = 'Display analysis summary data'
+      OnExecute = ShowAnalysisSummaryActionExecute
+    end
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    IniSection = 'TDisplayMatrixDlg'
+    left = 512
+    top = 84
+  end
+end

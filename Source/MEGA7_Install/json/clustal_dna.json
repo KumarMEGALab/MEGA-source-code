@@ -1,0 +1,30 @@
+{
+	Copyright 1992-2021 Sudhir Kumar and Koichiro Tamura
+
+	This file is part of the MEGA (Molecular Evolutionary Genetics Analyis) software.
+
+	MEGA (Molecular Evolutionary Genetics Analysis) is free software:
+	you can redistribute it and/or modify it under the terms of the
+	GNU General Public License as published by the Free Software
+	Foundation, either version 3 of the License, or (at your option)
+	any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+   Contributor(s):   The MEGA source code and software is made available in the hopes that it will be useful. 
+   In keeping with the spirit and intent that the MEGA project is developed under, the authors of MEGA request that before
+   distributing any significant changes to the MEGA source code (or derivatives thereof), you share
+   those changes with the MEGA authors so that they may have the opportunity to test that
+   the changes do not introduce errors into the code or otherwise negatively impact the correctness
+   or performance of the MEGA software.
+   
+	Please email inqiries to s.kumar@temple.edu
+}
+
+{ "MUSCLE Settings" : "DNA", "Count" : 12, "FSettings-0" : { "FName" : "Pairwise Alignment", "FDisplayName" : "Pairwise Alignment", "FSettingType" : "stString", "FIsReadOnly" : true, "FIsApplicable" : true, "FIndentLevel" : 0, "FShortCmdFlag" : "", "FLongCmdFlag" : "", "FStringValue" : "====================" }, "FSettings-1" : { "FName" : "DNAPWGapOpeningPenalty", "FDisplayName" : "Gap Openening Penalty", "FSettingType" : "stFloat", "FIsReadOnly" : false, "FIsApplicable" : true, "FIndentLevel" : 1, "FShortCmdFlag" : "", "FLongCmdFlag" : "", "FIncrement" : 1.00000000000000E-001, "FMax" : 1.00000000000000E+002, "FMin" : 0.00000000000000E+000, "FPrecision" : 2, "FValue" : 1.50000000000000E+001 }, "FSettings-2" : { "FName" : "DNAPWGapExtensionPenalty", "FDisplayName" : "Gap Extension Penalty", "FSettingType" : "stFloat", "FIsReadOnly" : false, "FIsApplicable" : true, "FIndentLevel" : 1, "FShortCmdFlag" : "", "FLongCmdFlag" : "", "FIncrement" : 1.00000000000000E-001, "FMax" : 1.00000000000000E+002, "FMin" : 0.00000000000000E+000, "FPrecision" : 2, "FValue" : 6.66000000000000E+000 }, "FSettings-3" : { "FName" : "Multiple Alignment", "FDisplayName" : "Multiple Alignment", "FSettingType" : "stString", "FIsReadOnly" : true, "FIsApplicable" : true, "FIndentLevel" : 0, "FShortCmdFlag" : "", "FLongCmdFlag" : "", "FStringValue" : "====================" }, "FSettings-4" : { "FName" : "DNAMAGapOpeningPenalty", "FDisplayName" : "Gap Openening Penalty", "FSettingType" : "stFloat", "FIsReadOnly" : false, "FIsApplicable" : true, "FIndentLevel" : 1, "FShortCmdFlag" : "", "FLongCmdFlag" : "", "FIncrement" : 1.00000000000000E-001, "FMax" : 1.00000000000000E+002, "FMin" : 0.00000000000000E+000, "FPrecision" : 2, "FValue" : 1.50000000000000E+001 }, "FSettings-5" : { "FName" : "DNAMAGapExtensionPenalty", "FDisplayName" : "Gap Extension Penalty", "FSettingType" : "stFloat", "FIsReadOnly" : false, "FIsApplicable" : true, "FIndentLevel" : 1, "FShortCmdFlag" : "", "FLongCmdFlag" : "", "FIncrement" : 1.00000000000000E-001, "FMax" : 1.00000000000000E+002, "FMin" : 0.00000000000000E+000, "FPrecision" : 2, "FValue" : 6.66000000000000E+000 }, "FSettings-6" : { "FName" : "Global Options", "FDisplayName" : "Global Options", "FSettingType" : "stString", "FIsReadOnly" : true, "FIsApplicable" : true, "FIndentLevel" : 0, "FShortCmdFlag" : "", "FLongCmdFlag" : "", "FStringValue" : "====================" }, "FSettings-7" : { "FName" : "DNA Weight Matrix", "FDisplayName" : "DNAWeightMatrix", "FSettingType" : "stPicklist", "FIsReadOnly" : false, "FIsApplicable" : true, "FIndentLevel" : 1, "FShortCmdFlag" : "", "FLongCmdFlag" : "", "FItemIndex" : 0, "FPickListString" : "IUB, ClustalW (1.6)", "FShortCmdFlagPickList" : "", "FLongCmdFlagPickList" : "", "FValue" : "IUB" }, "FSettings-8" : { "FName" : "TransitionWeightNEdit", "FDisplayName" : "Transition Weight", "FSettingType" : "stFloat", "FIsReadOnly" : false, "FIsApplicable" : true, "FIndentLevel" : 1, "FShortCmdFlag" : "", "FLongCmdFlag" : "", "FIncrement" : 1.00000000000000E-001, "FMax" : 1.00000000000000E+000, "FMin" : 0.00000000000000E+000, "FPrecision" : 2, "FValue" : 5.00000000000000E-001 }, "FSettings-9" : { "FName" : "UseNegativeMatrix", "FDisplayName" : "Use Negative Matrix", "FSettingType" : "stPicklist", "FIsReadOnly" : false, "FIsApplicable" : true, "FIndentLevel" : 1, "FShortCmdFlag" : "", "FLongCmdFlag" : "", "FItemIndex" : 0, "FPickListString" : "ON, OFF", "FShortCmdFlagPickList" : "", "FLongCmdFlagPickList" : "", "FValue" : "ON" }, "FSettings-10" : { "FName" : "DelayDivergentCutoff", "FDisplayName" : "Delay Divergence Cutoff(%)", "FSettingType" : "stInteger", "FIsReadOnly" : false, "FIsApplicable" : true, "FIndentLevel" : 1, "FShortCmdFlag" : "", "FLongCmdFlag" : "", "FValue" : 30, "FIncrement" : 1, "FMax" : 100, "FMin" : 0 }, "FSettings-11" : { "FName" : "KeepPredefinedGaps", "FDisplayName" : "Keep Predefined Gaps", "FSettingType" : "stPicklist", "FIsReadOnly" : false, "FIsApplicable" : true, "FIndentLevel" : 1, "FShortCmdFlag" : "", "FLongCmdFlag" : "", "FItemIndex" : 0, "FPickListString" : "True, False", "FShortCmdFlagPickList" : "", "FLongCmdFlagPickList" : "", "FValue" : "True" } }

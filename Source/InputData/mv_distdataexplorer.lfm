@@ -1,0 +1,367 @@
+object V_DistDataExplorer: TV_DistDataExplorer
+  Left = 525
+  Height = 356
+  Top = 252
+  Width = 683
+  Caption = 'Input Distance Data Viewer'
+  ClientHeight = 336
+  ClientWidth = 683
+  Color = clBtnFace
+  Constraints.MinHeight = 345
+  Constraints.MinWidth = 396
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Arial'
+  Menu = MainMenu1
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnHelp = FormHelp
+  OnResize = FormResize
+  OnShow = FormShow
+  Position = poScreenCenter
+  SessionProperties = 'FontDialog1.Font;FontDialog1.MaxFontSize;FontDialog1.MinFontSize;FontDialog1.Options;Height;PixelsPerInch;SaveDialog1.FileName;SaveDialog1.InitialDir;SpinEdit1.Value;Width'
+  ShowHint = True
+  LCLVersion = '2.0.2.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 313
+    Top = 0
+    Width = 683
+    Align = alClient
+    BevelOuter = bvNone
+    Caption = 'Panel1'
+    ClientHeight = 313
+    ClientWidth = 683
+    TabOrder = 0
+    object SpinEdit1: TSpinEdit
+      Left = 422
+      Height = 24
+      Top = 50
+      Width = 121
+      Enabled = False
+      MaxValue = 0
+      TabOrder = 0
+      Value = 3
+      Visible = False
+    end
+    object MainToolBar: TToolBar
+      Left = 0
+      Height = 30
+      Top = 0
+      Width = 683
+      ButtonHeight = 24
+      ButtonWidth = 29
+      Caption = 'MainToolBar'
+      DisabledImages = MegaForm.DisabledIcons
+      Flat = False
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Images = MegaForm.NewIcons
+      ParentFont = False
+      TabOrder = 1
+      object ToolButton6: TToolButton
+        Left = 30
+        Height = 24
+        Top = 2
+        Caption = 'ToolButton6'
+        ImageIndex = 4
+        Style = tbsSeparator
+      end
+      object ToolButton5: TToolButton
+        Left = 96
+        Height = 24
+        Top = 2
+        Caption = 'ToolButton5'
+        ImageIndex = 4
+        Style = tbsSeparator
+      end
+      object ExportXLTBtn: TToolButton
+        Left = 133
+        Hint = 'Export data in Excel format'
+        Top = 2
+        Caption = 'ExportXLTBtn'
+        ImageIndex = 71
+        OnClick = FileSaveToFileItemClick
+      end
+      object ExportCSVTBtn: TToolButton
+        Left = 162
+        Hint = 'Export data as Comma Seperated Values'
+        Top = 2
+        Caption = 'ExportCSVTBtn'
+        ImageIndex = 72
+        OnClick = FileSaveToFileItemClick
+      end
+      object ExportMEGATBtn: TToolButton
+        Left = 191
+        Hint = 'Export data in MEGA format'
+        Top = 2
+        Caption = 'ExportMEGATBtn'
+        ImageIndex = 22
+        OnClick = FileSaveToFileItemClick
+      end
+      object ExportTextTBtn: TToolButton
+        Left = 220
+        Hint = 'Export data as plain text'
+        Top = 2
+        Caption = 'ExportTextTBtn'
+        ImageIndex = 21
+        OnClick = FileSaveToFileItemClick
+      end
+      object EditTaxaGroupsSBtn: TToolButton
+        Left = 1
+        Top = 2
+        Caption = 'EditTaxaGroupsSBtn'
+        ImageIndex = 36
+        OnClick = FileSelectEditTaxaGroupsItemClick
+      end
+      object DecPrecisionSBtn: TToolButton
+        Left = 38
+        Top = 2
+        Caption = 'DecPrecisionSBtn'
+        ImageIndex = 116
+        OnClick = DecPrecisionSBtnClick
+      end
+      object IncPrecisionSBtn: TToolButton
+        Left = 67
+        Top = 2
+        Caption = 'IncPrecisionSBtn'
+        ImageIndex = 115
+        OnClick = IncPrecisionSBtnClick
+      end
+      object ExportDataSBtn: TToolButton
+        Left = 104
+        Top = 2
+        Caption = 'ExportDataSBtn'
+        ImageIndex = 35
+        OnClick = FileSaveToFileItemClick
+      end
+    end
+    object DataGrid: TDrawGrid
+      Left = 0
+      Height = 283
+      Top = 30
+      Width = 683
+      Align = alClient
+      DefaultColWidth = 15
+      DefaultDrawing = False
+      ExtendedSelect = False
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowMoving]
+      ParentShowHint = False
+      TabOrder = 2
+      TitleFont.CharSet = ANSI_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -13
+      TitleFont.Name = 'Arial'
+      OnColRowMoved = DataGridColRowMoved
+      OnDrawCell = DataGridDrawCell
+      OnMouseDown = DataGridMouseDown
+      OnMouseMove = DataGridMouseMove
+      OnMouseUp = DataGridMouseUp
+    end
+  end
+  object StatusBar: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 313
+    Width = 683
+    Panels = <>
+  end
+  object MainMenu1: TMainMenu
+    Images = MegaForm.NewIcons
+    left = 80
+    top = 224
+    object FileMenu: TMenuItem
+      Caption = '&File'
+      object FileSelectEditTaxaGroupsItem: TMenuItem
+        Caption = 'Select && Edit Taxa/Gps'
+        OnClick = FileSelectEditTaxaGroupsItemClick
+      end
+      object MenuItem1: TMenuItem
+        Caption = '-'
+      end
+      object SaveSession: TMenuItem
+        Caption = 'Save Session'
+        OnClick = SaveSessionClick
+      end
+      object SaveToFileItem: TMenuItem
+        Caption = '&Export/Print Distances'
+        OnClick = FileSaveToFileItemClick
+      end
+      object MenuItem4: TMenuItem
+        Caption = '-'
+      end
+      object FileQuitViewerItem: TMenuItem
+        Caption = '&Quit Viewer'
+        OnClick = FileQuitViewerItemClick
+      end
+    end
+    object DisplayMenu: TMenuItem
+      Caption = '&Display'
+      object DispSelTaxaItem: TMenuItem
+        Caption = '&Show only Selected Taxa'
+        OnClick = DispSelTaxaItemClick
+      end
+      object DisplayN1: TMenuItem
+        Caption = '-'
+      end
+      object SortTaxaSubmenu: TMenuItem
+        Caption = '&Sort Taxa'
+        OnClick = DispSortItemClick
+        object DispAsInInputFileItem: TMenuItem
+          Caption = '&Input Data Order'
+          OnClick = DispSortItemClick
+        end
+        object DispSortAlphaItem: TMenuItem
+          Caption = '&By Name'
+          OnClick = DispSortItemClick
+        end
+        object DispSortGpItem: TMenuItem
+          Caption = 'By &Group Name'
+          OnClick = DispSortItemClick
+        end
+      end
+      object DisplayN2: TMenuItem
+        Caption = '-'
+      end
+      object DispGpNamesItem: TMenuItem
+        Caption = 'Show &Group Names'
+        OnClick = DispGpNamesItemClick
+      end
+      object DisplayN3: TMenuItem
+        Caption = '-'
+      end
+      object DispChangeFontItem: TMenuItem
+        Caption = 'Change &Font'
+        OnClick = DispChangeFontItemClick
+      end
+    end
+    object AverageMenu: TMenuItem
+      Caption = '&Average'
+      object AvgAllItem: TMenuItem
+        Caption = '&Overall'
+        OnClick = AvgAllItemClick
+      end
+      object AverageN1: TMenuItem
+        Caption = '-'
+      end
+      object WithinGpsAvgItem: TMenuItem
+        Caption = '&Within Groups'
+        OnClick = AvgGpsItemClick
+      end
+      object BetweenGpsAvgItem: TMenuItem
+        Caption = 'Between Groups'
+        OnClick = AvgGpsItemClick
+      end
+      object NetBetweenGpsAvgItem: TMenuItem
+        Caption = '&Net Between Groups'
+        OnClick = AvgGpsItemClick
+      end
+    end
+    object HelpMenu: TMenuItem
+      Caption = '&Help '
+      Hint = 'Insert sequence from clipboard'
+      ShortCut = 16450
+      object MenuItem2: TMenuItem
+        Caption = '&Contents'
+        OnClick = HelpMenuClick
+      end
+    end
+  end
+  object ImageList2: TImageList
+    left = 264
+    top = 208
+    Bitmap = {
+      4C69020000001000000010000000848484008484840084848400848484008484
+      8400848484008484840084848400848484008484840084848400000000000000
+      000000000000000000000000000084848400FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF84848400000000000000
+      000000000000000000000000000084848400FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFF000000FFFFFFFFFF84848400000000000000
+      000000000000000000000000000084848400FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFF000000FF000000FFFFFFFFFF84848400000000000000
+      000000000000000000000000000084848400FFFFFFFF000000FFFFFFFFFFFFFF
+      FFFFFFFFFFFF000000FF000000FF000000FFFFFFFFFF84848400000000000000
+      000000000000000000000000000084848400FFFFFFFF000000FF000000FFFFFF
+      FFFF000000FF000000FF000000FFFFFFFFFFFFFFFFFF84848400000000000000
+      000000000000000000000000000084848400FFFFFFFF000000FF000000FF0000
+      00FF000000FF000000FFFFFFFFFFFFFFFFFFFFFFFFFF84848400000000000000
+      000000000000000000000000000084848400FFFFFFFFFFFFFFFF000000FF0000
+      00FF000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF84848400000000000000
+      000000000000000000000000000084848400FFFFFFFFFFFFFFFFFFFFFFFF0000
+      00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF84848400000000000000
+      000000000000000000000000000084848400FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF84848400000000000000
+      0000000000000000000000000000848484008484840084848400848484008484
+      8400848484008484840084848400848484008484840084848400000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000848484008484840084848400848484008484
+      8400848484008484840084848400848484008484840084848400000000000000
+      000000000000000000000000000084848400FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF84848400000000000000
+      000000000000000000000000000084848400FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF84848400000000000000
+      000000000000000000000000000084848400FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF84848400000000000000
+      000000000000000000000000000084848400FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF84848400000000000000
+      000000000000000000000000000084848400FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF84848400000000000000
+      000000000000000000000000000084848400FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF84848400000000000000
+      000000000000000000000000000084848400FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF84848400000000000000
+      000000000000000000000000000084848400FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF84848400000000000000
+      000000000000000000000000000084848400FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF84848400000000000000
+      0000000000000000000000000000848484008484840084848400848484008484
+      8400848484008484840084848400848484008484840084848400000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000
+    }
+  end
+  object SaveDialog1: TSaveDialog
+    Options = [ofOverwritePrompt, ofHideReadOnly, ofEnableSizing]
+    left = 344
+    top = 136
+  end
+  object FontDialog1: TFontDialog
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    MinFontSize = 0
+    MaxFontSize = 0
+    Options = []
+    left = 136
+    top = 104
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    IniSection = 'TV_DistDataExplorer'
+    left = 507
+    top = 91
+  end
+end

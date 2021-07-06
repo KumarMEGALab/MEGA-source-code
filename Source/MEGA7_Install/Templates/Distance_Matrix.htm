@@ -1,0 +1,85 @@
+<HTML>
+<HEAD>
+<TITLE>{TDisplayMatrixDlg.Caption:ExtractCaptionInfo}</TITLE>
+<STYLE>{TLegendGenerator.Style}</STYLE>
+</HEAD>
+
+<BODY>
+  <span class="figureTitle">
+  Table. {TAnalysisInfo.DistComputationTypeTitleCaption}
+  </span>
+
+<div id ="content">
+
+  {if TDistPack.ComputationType = gdAvgDiversityWithinSubPops }
+    The {TAnalysisInfo.DistUnitCaption} from {TAnalysisInfo.DistComputationTypeShortCaption}
+    are shown (see eq. 12.72 in ref. [{TLegendGenerator.MegaBook:ExpandCitation}]).
+  {elseif TDistPack.ComputationType = gdAvgDiversityForEntirePop }
+    The {TAnalysisInfo.DistUnitCaption} from {TAnalysisInfo.DistComputationTypeShortCaption}
+    are shown (see eq. 12.73 in ref. [{TLegendGenerator.MegaBook:ExpandCitation}]).
+  {elseif TDistPack.ComputationType = gdInterPopDiversity }
+    The {TAnalysisInfo.DistUnitCaption} from {TAnalysisInfo.DistComputationTypeShortCaption}
+    are shown (see eq. 12.74 in ref. [{TLegendGenerator.MegaBook:ExpandCitation}]).
+  {elseif TDistPack.ComputationType = gdPropOfInterPopDiversity }
+    The {TAnalysisInfo.DistUnitCaption} from {TAnalysisInfo.DistComputationTypeShortCaption}
+    are shown (see eq. 12.75 in ref. {TLegendGenerator.MegaBook:ExpandCitation}]).
+  {else}
+    The {TAnalysisInfo.DistUnitCaption} from {TAnalysisInfo.DistComputationTypeShortCaption}
+    are shown.
+  {endif}
+
+  {if TLegendGenerator.ExportingData = 'True'}
+    {if TLegendGenerator.ExportDataUsingStdErr = 'True'}
+        Standard error estimate(s) are shown
+      {if TLegendGenerator.ExportDataAsColumn = 'True'}
+        in the last column.
+      {elseif TLegendGenerator.ExportDataOppositeSides = 'True'}
+        {if TLegendGenerator.ExportDataLowerLeft = 'True'}
+	  above
+	{else}
+	  below
+        {endif}
+   	  the diagonal.
+      {else}
+         in every other column.
+      {endif}
+    {endif}
+  {elseif TDistPack.VarType ! gdNone} Standard error estimate(s) are shown
+    {if TDistPack.ComputationType = gdPairwise}
+      {if TD_DisplayMatrix.IsDataLowerLeft = True} above {else} below {endif} the diagonal
+    {elseif TDistPack.ComputationType = gdBetweenGroupMean}
+      {if TD_DisplayMatrix.IsDataLowerLeft = True} above {else} below {endif} the diagonal
+    {elseif TDistPack.ComputationType = gdNetGroupMean}
+      {if TD_DisplayMatrix.IsDataLowerLeft = True} above {else} below {endif} the diagonal
+    {else}
+       in the second column
+  {endif}
+
+    {if TDistPack.VarType = gdBootstrapVar} and were obtained by a
+      bootstrap procedure ({TDistPack.BootReps} replicates).
+    {else} and were obtained by using analytical formulas. {endif}
+  {endif}
+
+  {if TAnalysisInfo.DistModelName ! ''}
+    Analyses were conducted using the {TAnalysisInfo.DistModelName} model [{TDistPack.MethodCitation:ExpandCitation}].
+  {endif}
+
+  {if TAnalysisInfo.DistGammaParaCaption ! ''}
+    &#32 {TAnalysisInfo.DistGammaParaCaption} (shape parameter =  {TDistPack.GammaParameter}).
+  {endif}
+
+  {if TAnalysisInfo.DistHeteroPatternCaption ! ''}
+    &#32 {TAnalysisInfo.DistHeteroPatternCaption} [{TLegendGenerator.HeteroPatternDistCitation:ExpandCitation}].
+  {endif}
+
+  {IncludeExternalFile=Data_Subset_Template.htm}
+
+  {if TD_DisplayMatrix.HasInvalidData = True}
+     The presence of n/c in the results denotes cases in which it was not
+     possible to estimate evolutionary distances.
+  {endif}
+
+</div>
+<br>
+</body>
+</html>

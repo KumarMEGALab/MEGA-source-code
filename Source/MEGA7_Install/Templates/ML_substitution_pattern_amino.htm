@@ -1,0 +1,67 @@
+<HTML>
+<HEAD type="PrimaryResultWindow">
+<STYLE type="text/css">
+ {TLegendGenerator.Style}
+</STYLE>
+	<TITLE>{TLegendGenerator.Title}</TITLE>
+</HEAD>
+<BODY>
+<div class="figureTitle">{TLegendGenerator.Title}[{TLegendGenerator.MLCitation:ExpandCitation}]</div>
+
+
+{TLegendGenerator.MatrixTable}
+
+
+<div class="note">
+NOTE: Each entry of this substitution matrix, shows the estimated substitution rates between each Amino Acid site computed using the {TLegendGenerator.ModelName} {TLegendGenerator.empirical} [{TDistPack.MethodCitation:ExpandCitation}].
+
+
+&#32The rates among sites were treated as being
+
+{if TLegendGenerator.Gamma = 'N/A'}
+	{if TLegendGenerator.Invariant = 'N/A'}
+	 	uniform (Uniform Rates option).
+	{else}
+		invariant (Invariant Sites option) with an invariant value of {TLegendGenerator.Invariant}.
+	{endif}
+
+{else}
+    {if TLegendGenerator.SubstitutionType = 'Gamma'}
+	<span class="highlighted">
+    {endif}
+	Gamma Distributed
+
+	{if TLegendGenerator.Invariant = 'N/A'}
+		(Gamma Distributed Option)
+	{else}
+		with invariant sites (Gamma with Invariant Sites option)
+	{endif}
+
+
+	{if TLegendGenerator.Invariant = 'N/A'}
+		contining {TLegendGenerator.GDC}  Discrete Gamma Catagories ( {TLegendGenerator.GR} ) resulting in a Gamma rating of {TLegendGenerator.Gamma}.
+
+	{else}
+		contining {TLegendGenerator.GDC}  Discrete Gamma Catagories ( {TLegendGenerator.GR} ) resulting in a Gamma rating of {TLegendGenerator.Gamma} and an Invariant of {TLegendGenerator.Invariant}.
+	{endif}
+
+    {if TLegendGenerator.SubstitutionType = 'Gamma'}
+	</span>
+    {endif}
+{endif}
+
+The highest log likelihood found was {TLegendGenerator.LogL}.
+
+ {if TTreePack.IsDoubleOptimized = True}
+    &#32 The branch lengths were double optimized (Double Optimize Branch Lengths option).
+{endif}
+
+
+&#32 The amino acid frequencies are {TLegendGenerator.FreqA} (A), {TLegendGenerator.FreqR} (R), {TLegendGenerator.FreqN} (N), {TLegendGenerator.FreqD} (D), {TLegendGenerator.FreqC} (C), {TLegendGenerator.FreqQ} (Q), {TLegendGenerator.FreqE} (E), {TLegendGenerator.FreqG} (G), {TLegendGenerator.FreqH} (H), {TLegendGenerator.FreqI} (I), {TLegendGenerator.FreqL} (L), {TLegendGenerator.FreqK} (K), {TLegendGenerator.FreqM} (M), {TLegendGenerator.FreqF} (F), {TLegendGenerator.FreqP} (P), {TLegendGenerator.FreqS} (S), {TLegendGenerator.FreqT} (T), {TLegendGenerator.FreqW} (W), {TLegendGenerator.FreqY} (Y), and {TLegendGenerator.FreqV} (V).
+
+
+ {IncludeExternalFile=Data_Subset_Template.htm}
+
+</div>
+</body>
+</html>

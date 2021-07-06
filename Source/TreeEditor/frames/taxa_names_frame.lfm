@@ -1,0 +1,160 @@
+object TaxaNamesFrame: TTaxaNamesFrame
+  Left = 0
+  Height = 190
+  Top = 0
+  Width = 320
+  ClientHeight = 190
+  ClientWidth = 320
+  TabOrder = 0
+  DesignLeft = 629
+  DesignTop = 262
+  object Panel1: TPanel
+    Left = 0
+    Height = 30
+    Top = 0
+    Width = 320
+    Align = alTop
+    ClientHeight = 30
+    ClientWidth = 320
+    Color = 13421772
+    ParentColor = False
+    TabOrder = 0
+    object Image1: TImage
+      Left = 5
+      Height = 9
+      Top = 10
+      Width = 9
+      Picture.Data = {
+        1754506F727461626C654E6574776F726B477261706869638E03000089504E47
+        0D0A1A0A0000000D49484452000000090000000908040000004A98CE9B000002
+        DC7A5458745261772070726F66696C6520747970652065786966000078DAED96
+        4D92E4280C85F79C628E60490889E3607E22FA0673FC7960CA599955DD11D3D3
+        8B59A409DB58164FA04F3833F4BF7F8CF0170ECAEC21AA79CA291D38628E990B
+        3A7E5CC775A723AEEB75E47DA7677BB85F304C82BB5C8FA96FFF02BB3E0658DC
+        F6F3D91EAC6E1DDF42740BAF4366E4D9DF7EBE85842F3BEDE7F031A1123F2D67
+        9F5CB7EC167F7D8E866434859E70E02E2407AE694691EB2C3823AE2C0EA74332
+        FA0ABF69A7EF7317EEEE4BF2EEDE4BEE8EB2EDF29C8A70A4ED905E72B4EDA42F
+        76B9C3F0D38CE811F9E985F11DE24BEEC6683E46BF56576242A652D88BFA58CA
+        EAC1F1442A650D4B688653D1B7D5329A638915C41A689E6835502646B607456A
+        5468505FF74A15538CDC195363E6CAB26C2EC699EB4C3A70A0D160038C16C4C1
+        A6829AC0CCF75C68C5CD2B5E2547E446F064821861C49716BE33FE4EBB85C698
+        A54B74F89D2BCC8B674D631A93DCBCC20B4068EC9CEACAEF6AE153DD1C9FC00A
+        08EA4AB36381E5382F8953E9515BB2380BFCF488E1B8B60659DB024811622B26
+        4302024722514A847A6023421E1D7C0A66CE12F9040152E54661808D48021CEC
+        06C4C618A3E5CBCA97199F16805049624083ED0258312AEAC7A2A3868A8AC6A0
+        AA494D5DB3962429264D29599ADFA86262D1D49299B9652B2E1E5D3DB9B97BF6
+        92390B3E619A53B6903DE75C0A821648178C2EF028E5E453CE78EA994E3BFDCC
+        67A9289F1AABD654AD7ACDB5346ED2B0FD5B6A169AB7DC4AA78E52EAB16B4FDD
+        BAF7DCCB40AD0D1971E848C3868F3CCA4D6D537DA6462FE47E4D8D36B5492C2E
+        3F7B5083D9EC4382E6E744273310E348206E93000A9A27B3C329469EE426B323
+        33368532A8914E388D2631108C9D5807DDEC1EE47EC92D68FC57DCF867E4C244
+        F727C885896E93FBCAED1B6AADAC5F145980E62E9C393D64E0C3D68FEE85BDCC
+        9FA4DFBF87FF2AF0167A0BBD85DE426FA1B7D05BE87F2384BF0E39FC031DB38F
+        F84FCCD9F000000002624B474400893EE918B6000000097048597300002E2300
+        002E230178A53F760000000774494D4507E4041C103303DF0A2A290000003749
+        44415408D763746140074C0CC408B1303030FC47116164626060904212908268
+        7C0E179462780E330B2228C5F01C66164490118F8D00B25B067A75DFABCA0000
+        000049454E44AE426082
+      }
+    end
+    object ShowTaxaNamesCheckBx: TCheckBox
+      Left = 20
+      Height = 19
+      Top = 5
+      Width = 92
+      Caption = 'Taxon Names'
+      Checked = True
+      State = cbChecked
+      TabOrder = 0
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 160
+    Top = 30
+    Width = 320
+    Align = alClient
+    ClientHeight = 160
+    ClientWidth = 320
+    Color = 16316663
+    ParentColor = False
+    TabOrder = 1
+    object TaxaNameFontBtn: TButton
+      Left = 20
+      Height = 25
+      Top = 8
+      Width = 50
+      Caption = 'Font...'
+      TabOrder = 0
+    end
+    object EditMarkersBtn: TButton
+      Left = 165
+      Height = 25
+      Top = 65
+      Width = 100
+      Caption = 'Edit Markers...'
+      TabOrder = 1
+    end
+    object TaxaFontSizeSpinEdit: TSpinEdit
+      Left = 84
+      Height = 23
+      Top = 8
+      Width = 50
+      MaxValue = 96
+      TabOrder = 2
+      Value = 11
+    end
+    object HideOverlappingTaxaCheckBx: TCheckBox
+      Left = 20
+      Height = 19
+      Top = 42
+      Width = 140
+      Caption = 'Hide Overlapping Taxa'
+      Checked = True
+      State = cbChecked
+      TabOrder = 3
+    end
+    object Label1: TLabel
+      Left = 20
+      Height = 15
+      Top = 94
+      Width = 68
+      Caption = 'Arrange Taxa'
+      ParentColor = False
+    end
+    object InputOrderRadioBtn: TRadioButton
+      Left = 37
+      Height = 19
+      Top = 129
+      Width = 97
+      Caption = 'By Input Order'
+      TabOrder = 4
+    end
+    object BalancedShapeRadioBtn: TRadioButton
+      Left = 37
+      Height = 19
+      Top = 110
+      Width = 123
+      Caption = 'For Balanced Shape'
+      Checked = True
+      TabOrder = 5
+      TabStop = True
+    end
+    object Label2: TLabel
+      Left = 143
+      Height = 15
+      Top = 12
+      Width = 47
+      Caption = 'Font Size'
+      ParentColor = False
+    end
+    object ShowNodeMarkersCheckBx: TCheckBox
+      Left = 20
+      Height = 19
+      Top = 66
+      Width = 129
+      Caption = 'Show Taxon Markers'
+      TabOrder = 6
+    end
+  end
+end
