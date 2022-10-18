@@ -3,7 +3,7 @@ The Molecular Evolutionary Genetics Analysis (MEGA) software is developed with t
 The MEGA source code is protected by copyright law and made available under the terms of the GNU General Public License. Please read the [LICENSE.txt](LICENSE.txt) file which outlines the terms under which the MEGA source code is made available.
 	
 	
-	Copyright 1992-2021 Sudhir Kumar and Koichiro Tamura
+	Copyright 1992-2022 Sudhir Kumar and Koichiro Tamura
 
 	MEGA (Molecular Evolutionary Genetics Analysis) is free software:
 	you can redistribute it and/or modify it under the terms of the
