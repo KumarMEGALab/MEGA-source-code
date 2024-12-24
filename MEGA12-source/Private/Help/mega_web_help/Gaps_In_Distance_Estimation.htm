@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Gaps In Distance Estimation</title>
+<link rel="StyleSheet" href="default.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.5.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Handling Missing Data and Alignment Gaps" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1>Gaps In Distance Estimation</h1>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Gaps often are inserted 
+ during the alignment of homologous regions of sequences and represent 
+ deletions or insertions (<a href="javascript:TextPopup(this)" id="HotSpot9096" class="glossterm">indels</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot9096', 'POPUP9096');
+//]]></script><span class="glosstext" id="POPUP9096" style="display: none;"> Phylogenetic analysis on two or more DNA or amino acid sequences requires that the sequences be aligned so that the substitutions can be accurately enumerated.  During the alignment, gaps must be introduced in sequences that have undergone deletions or insertions.  These gaps are known as alignment gaps, or indels.</span>). They introduce some complications in 
+ distance estimation. Furthermore, sites with missing information sometimes 
+ result from experimental difficulties; they present the same alignment 
+ problems as gaps. In the following discussion, both of these situations 
+ are treated in the same way.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">In</font> <i><font style="font-size: 11pt; 
+	 font-family: Arial; font-style: italic;" size="2" face="Arial">MEGA</font></i><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">, 
+ there are two ways to treat gaps. One is to delete all of these sites 
+ from the data analysis. This option, called the</font> <i><font style="font-size: 11pt; 
+	 font-family: Arial; font-style: italic;" size="2" face="Arial">Complete-Deletion</font></i><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">, 
+ is generally desirable because different regions of DNA or amino acid 
+ sequences evolve under different evolutionary forces. The second method 
+ is relevant if the number of nucleotides involved in a gap is small and 
+ if the gaps are distributed more or less randomly. In that case it may 
+ be possible to compute a distance for each pair of sequences, ignoring 
+ only those gaps that are involved in the comparison; this option is called</font> 
+ <i><font style="font-size: 11pt; font-family: Arial; font-style: italic;" 
+			 size="2" face="Arial">Pairwise-Deletion</font></i><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">. The following table illustrates 
+ the effect of these options on distance estimation with the following 
+ three sequences:</font></p>
+<p style="text-align: left; margin: 0pt 6.5pt 0pt 5.75pt;"><u><font style="font-size: 11pt; 
+	 font-family: 'Courier New'; text-decoration: underline; " size="2" 
+	 face="Courier New">1</font></u> <u><font style="font-size: 11pt; font-family: 'Courier New'; 
+												 text-decoration: underline; " 
+												 size="2" face="Courier New">10</font></u> 
+ <u><font style="font-size: 11pt; font-family: 'Courier New'; text-decoration: underline; " 
+			 size="2" face="Courier New">20</font></u></p>
+<p style="text-align: left; margin: 0pt 6.5pt 0pt 5.75pt;"><font style="font-size: 11pt; 
+	 font-family: 'Courier New';" size="2" face="Courier New">seq1 A-AC-GGAT-AGGA-ATAAA</font></p>
+<p style="text-align: left; margin: 0pt 6.5pt 0pt 5.75pt;"><font style="font-size: 11pt; 
+	 font-family: 'Courier New';" size="2" face="Courier New">seq2 AT-CC?GATAA?GAAAAC-A</font></p>
+<p style="text-align: left; margin: 0pt 6.5pt 0pt 5.75pt;"><font style="font-size: 11pt; 
+	 font-family: 'Courier New';" size="2" face="Courier New">seq3 ATTCC-GA?TACGATA-AGA 
+ &#160;Total sites = 20.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Here, the <a href="javascript:TextPopup(this)" id="HotSpot47197" class="glossterm">alignment gaps</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot47197', 'POPUP47197');
+//]]></script><span class="glosstext" id="POPUP47197" style="display: none;"> Phylogenetic analysis on two or more DNA or amino acid sequences requires that the sequences be aligned so that the substitutions can be accurately enumerated.  During alignment, gaps must be introduced in sequences that have undergone deletions or insertions.  These gaps are known as alignment gaps or indels.</span> 
+ are indicated with a hyphen (-) and the missing information sites are 
+ denoted by a question mark (?).</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><i><font style="font-size: 11pt; 
+	 font-family: Arial; font-style: italic;" size="2" face="Arial">Complete-Deletion</font></i> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">and</font> 
+ <i><font style="font-size: 11pt; font-family: Arial; font-style: italic;" 
+			 size="2" face="Arial">Pairwise-Deletion</font></i> <font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">options</font></p>
+<table cellspacing="0">
+	<col />
+	<col />
+	<col />
+	<col />
+	<col />
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 2pt 6.5pt 0pt 5.75pt;">&#160;</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 2pt 6.5pt 0pt 5.75pt;">&#160;</p></td>
+		<td colspan="3" style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: center; margin: 2pt 6.5pt 0pt 5.75pt;"><b><font 
+		 style="font-size: 11pt; font-family: Arial; font-weight: bold;" 
+		 size="2" face="Arial">Differences/Comparisons</font></b></p></td>
+		
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 2pt 6.5pt 0pt 5.75pt;"><b><u><font 
+		 style="font-size: 11pt; font-family: Arial; font-weight: bold; 
+		 text-decoration: underline; " size="2" face="Arial">Option</font></u></b></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 2pt 6.5pt 0pt 5.75pt;"><b><u><font 
+		 style="font-size: 11pt; font-family: Arial; font-weight: bold; 
+		 text-decoration: underline; " size="2" face="Arial">Sequence Data</font></u></b></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: center; margin: 2pt 6.5pt 0pt 5.75pt;"><b><u><font 
+		 style="font-size: 11pt; font-family: Arial; font-weight: bold; 
+		 text-decoration: underline; " size="2" face="Arial">(1,2)</font></u></b></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: center; margin: 2pt 6.5pt 0pt 5.75pt;"><b><u><font 
+		 style="font-size: 11pt; font-family: Arial; font-weight: bold; 
+		 text-decoration: underline; " size="2" face="Arial">(1,3)</font></u></b></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: center; margin: 2pt 6.5pt 0pt 5.75pt;"><b><u><font 
+		 style="font-size: 11pt; font-family: Arial; font-weight: bold; 
+		 text-decoration: underline; " size="2" face="Arial">(2,3)</font></u></b></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 2pt 6.5pt 0pt 5.75pt;"><i><font 
+		 style="font-size: 11pt; font-family: Arial; font-style: italic;" 
+		 size="2" face="Arial">Complete deletion</font></i></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><font 
+		 style="font-size: 11pt; font-family: 'Courier New';" size="2" 
+		 face="Courier New">1. A C GA A GA A A A</font></p>
+		<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><font 
+		 style="font-size: 11pt; font-family: 'Courier New';" size="2" 
+		 face="Courier New">2. A C GA A GA A C A</font></p>
+		<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><font 
+		 style="font-size: 11pt; font-family: 'Courier New';" size="2" 
+		 face="Courier New">3. A C GA A GA A A A</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: center; margin: 2pt 6.5pt 0pt 5.75pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">1/10</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: center; margin: 2pt 6.5pt 0pt 5.75pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">0/10</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: center; margin: 2pt 6.5pt 0pt 5.75pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">1/10</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 2pt 6.5pt 0pt 5.75pt;"><i><font 
+		 style="font-size: 11pt; font-family: Arial; font-style: italic;" 
+		 size="2" face="Arial">Pairwise Deletion</font></i></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><font 
+		 style="font-size: 11pt; font-family: 'Courier New';" size="2" 
+		 face="Courier New">1. A-AC-GGAT-AGGA-ATAAA</font></p>
+		<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><font 
+		 style="font-size: 11pt; font-family: 'Courier New';" size="2" 
+		 face="Courier New">2. AT-CC?GATAA?GAAAAC-A</font></p>
+		<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><font 
+		 style="font-size: 11pt; font-family: 'Courier New';" size="2" 
+		 face="Courier New">3. ATTCC-GA?TACGATA-AGA</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: center; margin: 2pt 6.5pt 0pt 5.75pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">2/12</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: center; margin: 2pt 6.5pt 0pt 5.75pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">3/13</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: center; margin: 2pt 6.5pt 0pt 5.75pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">3/14</font></p></td>
+	</tr>
+</table>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">In the above table, the 
+ number of compared sites varies with pairwise comparisons in the</font> 
+ <i><font style="font-size: 11pt; font-family: Arial; font-style: italic;" 
+			 size="2" face="Arial">Pairwise-Deletion</font></i> <font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">option, but remains the 
+ same for pairwise comparisons in the</font> <i><font style="font-size: 11pt; 
+														 font-family: Arial; 
+														 font-style: italic;" 
+														 size="2" face="Arial">Complete-Deletion</font></i> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">option. 
+ In this data set, more information can be obtained by using the</font> 
+ <i><font style="font-size: 11pt; font-family: Arial; font-style: italic;" 
+			 size="2" face="Arial">Pairwise-Deletion</font></i> <font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">option. In practice, however, 
+ different regions of nucleotide or amino acid sequences often evolve differently, 
+ in which case, the</font> <i><font style="font-size: 11pt; font-family: Arial; 
+									 font-style: italic;" size="2" face="Arial">Complete-Deletion</font></i> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">option 
+ is preferable.</font></p>
+</body>
+</html>

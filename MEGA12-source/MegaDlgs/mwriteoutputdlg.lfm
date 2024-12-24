@@ -1,0 +1,235 @@
+object WriteOutputDlg: TWriteOutputDlg
+  Left = 870
+  Height = 331
+  Top = 333
+  Width = 447
+  HorzScrollBar.Visible = False
+  VertScrollBar.Visible = False
+  Caption = 'Options for Result Output'
+  ClientHeight = 331
+  ClientWidth = 447
+  Constraints.MinHeight = 280
+  Constraints.MinWidth = 440
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -14
+  OnActivate = FormActivate
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnHelp = FormHelp
+  OnResize = FormResize
+  OnShow = FormShow
+  Position = poScreenCenter
+  SessionProperties = 'SaveToDiskRadioBtn.Checked;selDirectory.Text;selFilename.Text;SaveDlg.InitialDir;SaveDlg.FileName'
+  LCLVersion = '2.2.6.0'
+  object FormatAndFilePanel: TPanel
+    Left = 0
+    Height = 101
+    Top = 0
+    Width = 447
+    Align = alTop
+    BevelColor = clBtnFace
+    BevelOuter = bvNone
+    ClientHeight = 101
+    ClientWidth = 447
+    TabOrder = 0
+    OnClick = FormatAndFilePanelClick
+    OnPaint = FormatAndFilePanelPaint
+    object OutputFormatLbl: TLabel
+      Left = 20
+      Height = 19
+      Top = 14
+      Width = 132
+      Caption = 'Select Output Format'
+      ParentColor = False
+    end
+    object ExportExcelDisabled: TLabel
+      Left = 256
+      Height = 20
+      Top = 10
+      Width = 136
+      Caption = 'ExportExcelDisabled'
+      Color = clBtnFace
+      Font.Color = clTeal
+      Font.Height = -15
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Visible = False
+      OnClick = ExportExcelDisabledClick
+    end
+    object SaveToDiskRadioBtn: TRadioButton
+      Left = 39
+      Height = 22
+      Top = 68
+      Width = 123
+      Anchors = [akLeft, akBottom]
+      AutoSize = False
+      Caption = 'Save to Disk'
+      OnClick = SaveToDiskRadioBtnClick
+      TabOrder = 0
+    end
+    object DisplayOnlyBtn: TRadioButton
+      Left = 175
+      Height = 22
+      Top = 68
+      Width = 156
+      Anchors = [akLeft, akBottom]
+      AutoSize = False
+      Caption = 'Display Results'
+      Checked = True
+      OnClick = DisplayOnlyBtnClick
+      TabOrder = 1
+      TabStop = True
+    end
+  end
+  object Panel4: TPanel
+    Left = 0
+    Height = 36
+    Top = 295
+    Width = 447
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 36
+    ClientWidth = 447
+    TabOrder = 1
+    object ToolBar1: TToolBar
+      Left = 63
+      Height = 30
+      Top = 1
+      Width = 358
+      Align = alNone
+      AutoSize = True
+      ButtonHeight = 30
+      ButtonWidth = 115
+      Caption = 'ToolBar1'
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      HotImages = ImageForm.DlgButtonsHover
+      Images = ImageForm.DlgButtons
+      TabOrder = 0
+      object ToolButton1: TToolButton
+        Left = 1
+        Top = 0
+        Action = HelpAction
+      end
+      object ToolButton2: TToolButton
+        Left = 120
+        Top = 0
+        Action = CancelAction
+      end
+      object ToolButton3: TToolButton
+        Left = 239
+        Top = 0
+        Action = OkAction
+      end
+    end
+  end
+  object SitesPanel: TPanel
+    Left = 0
+    Height = 78
+    Top = 217
+    Width = 447
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 78
+    ClientWidth = 447
+    TabOrder = 2
+    OnPaint = SitesPanelPaint
+    object ChooseSitesLabel: TLabel
+      Left = 20
+      Height = 19
+      Top = 19
+      Width = 169
+      Caption = 'Sites to Choose for Analysis'
+      ParentColor = False
+    end
+  end
+  object FilenamePanel: TPanel
+    Left = 0
+    Height = 116
+    Top = 101
+    Width = 447
+    Align = alTop
+    BevelColor = clBtnFace
+    BevelOuter = bvNone
+    ClientHeight = 116
+    ClientWidth = 447
+    TabOrder = 3
+    OnPaint = FilenamePanelPaint
+    object outputFilenameLbl: TLabel
+      Left = 20
+      Height = 19
+      Top = 5
+      Width = 103
+      Caption = 'Output Filename'
+      ParentColor = False
+    end
+    object directoryLbl: TLabel
+      Left = 20
+      Height = 19
+      Top = 60
+      Width = 56
+      Caption = 'Directory'
+      ParentColor = False
+    end
+    object FilePickBtn: TSpeedButton
+      Left = 395
+      Height = 30
+      Top = 79
+      Width = 30
+      Caption = '. . .'
+      OnClick = FilePickBtnClick
+    end
+    object selFilename: TEdit
+      Left = 20
+      Height = 30
+      Top = 25
+      Width = 405
+      AutoSize = False
+      OnChange = selFilenameChange
+      TabOrder = 0
+    end
+    object selDirectory: TEdit
+      Left = 20
+      Height = 30
+      Top = 79
+      Width = 369
+      AutoSize = False
+      OnChange = selDirectoryChange
+      TabOrder = 1
+    end
+  end
+  object SaveDlg: TSaveDialog
+    Left = 352
+    Top = 32
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    Left = 117
+    Top = 43
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 256
+    Top = 120
+    object OkAction: TAction
+      Caption = 'OkAction'
+      ImageIndex = 5
+      OnExecute = OkBtnClick
+      ShortCut = 16467
+    end
+    object HelpAction: TAction
+      Caption = 'HelpAction'
+      ImageIndex = 8
+      OnExecute = HelpBtnClick
+      ShortCut = 112
+    end
+    object CancelAction: TAction
+      Caption = 'CancelAction'
+      ImageIndex = 0
+      OnExecute = CancelBtnClick
+      ShortCut = 27
+    end
+  end
+end

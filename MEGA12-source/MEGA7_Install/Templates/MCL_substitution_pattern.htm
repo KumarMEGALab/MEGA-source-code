@@ -1,0 +1,52 @@
+<HTML>
+<HEAD type="PrimaryResultWindow">
+<STYLE>{TLegendGenerator.Style}</STYLE>
+<TITLE>{TLegendGenerator.Title}</TITLE>
+</HEAD>
+
+<BODY>
+  <span class="figureTitle">
+    Maximum Composite Likelihood Estimate of the Pattern of Nucleotide Substitution
+  </span>
+
+<TABLE>
+  <TR><TH>&nbsp;</TH><TH>A</TH><TH>T</TH><TH>C</TH><TH>G</TH></TR>
+  <TR><TD class="rowHeader">A</TD><TD align="center">-</TD><TD><i>{TLegendGenerator.Qat}</i></TD><TD><i>{TLegendGenerator.Qac}</i></TD><TD><b>{TLegendGenerator.Qag}</b></TD></TR>
+  <TR><TD class="rowHeader">T</TD><TD><i>{TLegendGenerator.Qta}</i></TD><TD align="center">-</TD><TD><b>{TLegendGenerator.Qtc}</b></TD><TD><i>{TLegendGenerator.Qtg}</i></TD></TR>
+  <TR><TD class="rowHeader">C</TD><TD><i>{TLegendGenerator.Qca}</i></TD><TD><b>{TLegendGenerator.Qct}</b></TD><TD align="center">-</TD><TD><i>{TLegendGenerator.Qcg}</i></TD></TR>
+  <TR class="lastRow">
+      <TD class="rowHeader" style="border-bottom: 2px solid black;">G</TD><TD style="border-bottom: 2px solid black;"><b>{TLegendGenerator.Qga}</b></TD><TD style="border-bottom: 2px solid black;"><i>{TLegendGenerator.Qgt}</i></TD><TD style="border-bottom: 2px solid black;"><i>{TLegendGenerator.Qgc}</i></TD><TD style="border-bottom: 2px solid black;">-</TD></TR>
+</TABLE>
+
+<div class="note">
+  NOTE:-- Each entry shows the probability of substitution (r) from one base (row) to
+    another base (column)[{TLegendGenerator.MCLCitation:ExpandCitation}]. For simplicity, the sum of r values is made equal to 100.
+    Rates of different transitional substitutions are shown in <b>bold</b> and
+    those of transversionsal substitutions are shown in <i>italics</i>.
+    The nucleotide frequencies are {TLegendGenerator.FreqA} (A),
+    {TLegendGenerator.FreqT} (T/U), {TLegendGenerator.FreqC} (C), and
+    {TLegendGenerator.FreqG} (G).
+
+    {if TLegendGenerator.MCLType = 'TsTvBias'}
+      The transition/transversion rate ratios are <i>k<sub>1</sub></i> =
+      {TLegendGenerator.k1} (purines) and <i>k<sub>2</sub></i> =
+      {TLegendGenerator.k2} (pyrimidines).
+      The overall transition/transversion bias is <i>R</i> = {TLegendGenerator.R}</b>,
+      where <i>R</i> = [A*G*<i>k<sub>1</sub></i> + T*C*<i>k<sub>2</sub></i>]/[(A+G)*(T+C)].
+    {endif}
+
+    {if TAnalysisInfo.DistGammaParaCaption ! ''}
+      {TAnalysisInfo.DistGammaParaCaption} (shape parameter =  {TDistPack.GammaParameter}).
+    {endif}
+
+    {if TAnalysisInfo.DistHeteroPatternCaption ! ''}
+      {TAnalysisInfo.DistHeteroPatternCaption} [{TLegendGenerator.HeteroPatternDistCitation:ExpandCitation}].
+    {endif}
+
+    {IncludeExternalFile=Data_Subset_Template.htm}
+
+</div>
+<br><br>
+</body>
+</html>
+

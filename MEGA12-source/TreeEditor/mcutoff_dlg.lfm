@@ -1,0 +1,128 @@
+object TreeCutoffForm: TTreeCutoffForm
+  Left = 589
+  Height = 140
+  Top = 276
+  Width = 383
+  Caption = 'M12: Tree Cutoff Options'
+  ClientHeight = 140
+  ClientWidth = 383
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnResize = FormResize
+  Position = poOwnerFormCenter
+  LCLVersion = '2.2.4.0'
+  object Label1: TLabel
+    Left = 63
+    Height = 15
+    Top = 20
+    Width = 175
+    Caption = 'Cut-off Value for Condensed Tree'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 66
+    Height = 15
+    Top = 59
+    Width = 172
+    Caption = 'Cut-off Value for Consensus Tree'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 326
+    Height = 15
+    Top = 22
+    Width = 10
+    Caption = '%'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 326
+    Height = 15
+    Top = 60
+    Width = 10
+    Caption = '%'
+    ParentColor = False
+  end
+  object CondensedSEdit: TSpinEdit
+    Left = 262
+    Height = 23
+    Top = 18
+    Width = 50
+    MaxValue = 100
+    TabOrder = 0
+    Value = 50
+  end
+  object ConsensusSEdit: TSpinEdit
+    Left = 262
+    Height = 23
+    Top = 56
+    Width = 50
+    MaxValue = 100
+    TabOrder = 1
+    Value = 50
+  end
+  object ButtonsPanel: TPanel
+    Left = 0
+    Height = 50
+    Top = 90
+    Width = 383
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 50
+    ClientWidth = 383
+    TabOrder = 2
+    object ToolBar1: TToolBar
+      Left = 8
+      Height = 30
+      Top = 13
+      Width = 358
+      Align = alNone
+      AutoSize = True
+      ButtonHeight = 30
+      ButtonWidth = 115
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      HotImages = ImageForm.DlgButtonsHover
+      Images = ImageForm.DlgButtons
+      TabOrder = 0
+      object ToolButton1: TToolButton
+        Left = 1
+        Top = 0
+        Action = HelpAction
+      end
+      object ToolButton2: TToolButton
+        Left = 120
+        Top = 0
+        Action = CancelAction
+      end
+      object ToolButton3: TToolButton
+        Left = 239
+        Top = 0
+        Action = OkAction
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 56
+    Top = 32
+    object OkAction: TAction
+      Caption = 'OkAction'
+      ImageIndex = 5
+      OnExecute = OkActionExecute
+      ShortCut = 16467
+    end
+    object CancelAction: TAction
+      Caption = 'CancelAction'
+      ImageIndex = 0
+      OnExecute = CancelActionExecute
+      ShortCut = 27
+    end
+    object HelpAction: TAction
+      Caption = 'HelpAction'
+      ImageIndex = 8
+      OnExecute = HelpActionExecute
+      ShortCut = 16456
+    end
+  end
+end

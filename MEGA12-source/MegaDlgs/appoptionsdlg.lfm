@@ -1,0 +1,117 @@
+object AppOptions: TAppOptions
+  Left = 637
+  Height = 548
+  Top = 226
+  Width = 559
+  BorderIcons = [biSystemMenu]
+  Caption = 'AppOptions'
+  ClientHeight = 548
+  ClientWidth = 559
+  DefaultMonitor = dmMainForm
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnResize = FormResize
+  Position = poMainFormCenter
+  LCLVersion = '2.2.6.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 41
+    Top = 507
+    Width = 559
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 41
+    ClientWidth = 559
+    TabOrder = 0
+    object ButtonsPanel: TPanel
+      Left = 0
+      Height = 41
+      Top = 0
+      Width = 559
+      Align = alClient
+      BevelOuter = bvNone
+      ClientHeight = 41
+      ClientWidth = 559
+      TabOrder = 0
+      object ToolBar1: TToolBar
+        Left = 81
+        Height = 30
+        Top = 7
+        Width = 477
+        Align = alNone
+        Anchors = [akRight, akBottom]
+        AutoSize = True
+        ButtonHeight = 30
+        ButtonWidth = 115
+        Caption = 'ToolBar1'
+        EdgeInner = esNone
+        EdgeOuter = esNone
+        HotImages = ImageForm.DlgButtonsHover
+        Images = ImageForm.DlgButtons
+        TabOrder = 0
+        object ToolButton1: TToolButton
+          Left = 1
+          Top = 0
+          Action = HelpAction
+        end
+        object ToolButton2: TToolButton
+          Left = 120
+          Top = 0
+          Action = RestoreDefaultsAction
+        end
+        object ToolButton3: TToolButton
+          Left = 239
+          Top = 0
+          Action = CancelAction
+        end
+        object ToolButton4: TToolButton
+          Left = 358
+          Top = 0
+          Action = ComputeAction
+        end
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 388
+    Top = 87
+    object HelpAction: TAction
+      Caption = '&Help'
+      Hint = 'Display the help documentation'
+      ImageIndex = 8
+      OnExecute = HelpActionExecute
+      ShortCut = 112
+    end
+    object SaveSettingsAction: TAction
+      Caption = '&Save Settings...'
+      Hint = 'Save current settings to an mao file'
+      ImageIndex = 6
+      OnExecute = SaveSettingsActionExecute
+      ShortCut = 16467
+    end
+    object CancelAction: TAction
+      Caption = '&Cancel'
+      Hint = 'Cancel your changes'
+      ImageIndex = 0
+      OnExecute = CancelActionExecute
+      ShortCut = 27
+    end
+    object RestoreDefaultsAction: TAction
+      Caption = '&Restore Defaults'
+      Hint = 'Restore all settings to their defaults'
+      ImageIndex = 9
+      OnExecute = RestoreDefaultsActionExecute
+      ShortCut = 116
+    end
+    object ComputeAction: TAction
+      Caption = '&Compute'
+      Hint = 'Launch the analysis with the current settings'
+      ImageIndex = 5
+      OnExecute = ComputeActionExecute
+      ShortCut = 4163
+    end
+  end
+end

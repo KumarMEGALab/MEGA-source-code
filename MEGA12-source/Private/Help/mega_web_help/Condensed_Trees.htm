@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="PhylogeneticTrees_RH.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Condensed Trees</title>
+<link rel="stylesheet" href="PhylogeneticTrees_RH.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<style type="text/css">
+<!--
+A:visited { color:#954F72; }
+A:link { color:#0000ff; }
+-->
+</style>
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.3.5.0_2";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Constructing Phylogenetic Trees > Statistical Tests of a Tree Obtained" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1>Condensed Trees</h1>
+<p>When several interior branches of a phylogenetic tree have low statistical 
+ support (<i>P<sub>C</sub></i> or <i>P<sub>B</sub></i>) values, it often 
+ is useful to produce a multifurcating tree by assuming that all interior 
+ branches have a <a href="javascript:TextPopup(this)" id="HotSpot44299" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot44299', 'POPUP44299');
+//]]></script><span class="glosstext" id="POPUP44299" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> 
+ length equal to 0. We call this multifurcating tree a <i>condensed tree</i>. 
+ In <i>MEGA</i>, condensed trees can be produced for any level of <i>P<sub>C</sub></i> 
+ or <i>P<sub>B</sub></i> value. For example, if there are several branches 
+ with <i>P<sub>C</sub></i> or <i>P<sub>B</sub></i> values of less than 
+ 50%, a condensed tree with the 50% <i>P<sub>C</sub></i> or <i>P<sub>B</sub></i> 
+ level will have a multifurcating tree with all its <a href="javascript:TextPopup(this)" id="HotSpot10580" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot10580', 'POPUP10580');
+//]]></script><span class="glosstext" id="POPUP10580" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> 
+ lengths reduced to 0.</p>
+<p>Since branches of low significance are eliminated to form a condensed 
+ tree, this tree emphasizes the reliable portions of branching patterns. 
+ However, this tree has one drawback. Since some branches are reduced to 
+ 0, it is difficult to draw a tree with proper <a href="javascript:TextPopup(this)" id="HotSpot26702" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot26702', 'POPUP26702');
+//]]></script><span class="glosstext" id="POPUP26702" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> 
+ lengths for the remaining portion. Therefore we give our attention only 
+ to the <a href="javascript:TextPopup(this)" id="HotSpot44877" class="glossterm">topology</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot44877', 'POPUP44877');
+//]]></script><span class="glosstext" id="POPUP44877" style="display: none;"> The branching pattern of a tree is its topology.</span> so the 
+ <a href="javascript:TextPopup(this)" id="HotSpot17185" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot17185', 'POPUP17185');
+//]]></script><span class="glosstext" id="POPUP17185" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> lengths of a condensed 
+ tree in <i>MEGA</i> are not proportional to the number of nucleotide or 
+ amino acid substitutions.</p>
+<p>Note that, although they may look similar, condensed trees are different 
+ from the consensus trees mentioned earlier. A <a href="javascript:TextPopup(this)" id="HotSpot56343" class="glossterm">consensus 
+ tree</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot56343', 'POPUP56343');
+//]]></script><span class="glosstext" id="POPUP56343" style="display: none;"> The MP method produces many equally parsimonious trees.  Choosing this command produces a composite tree that is a consensus among all such trees, for example, either as a strict consensus, in which all conflicting branching patterns among the trees are resolved by making those nodes multifurcating or as a Majority-Rule consensus, in which conflicting branching patterns are resolved by selecting the pattern seen in more than 50% of the trees.   (Details are given in Nei and Kumar [2000], page 130).</span> is produced from many equally parsimonious trees, 
+ whereas a condensed tree is merely a simplified version of a tree. A condensed 
+ tree can be produced for any type of tree (NJ, ME, UPGMA, MP, or maximum-likelihood 
+ tree).</p>
+<p>See also <u style="color: #007fbf;"><span style="color: #007fbf;"><a 
+	 href="Nei_and_Kumar_2000.htm" style="color: #007fbf;">Nei and Kumar 
+ (2000)</a></span></u><span style="display: none;">Nei_and_Kumar_2000</span> 
+ page 175.</p>
+<p>&#160;</p>
+<b><span style="font-size: 10.0pt; font-family: Arial, sans-serif; color: #0000ff;"><br 
+	 style="clear: all;" clear="all" />
+</span></b> 
+</body>
+</html>

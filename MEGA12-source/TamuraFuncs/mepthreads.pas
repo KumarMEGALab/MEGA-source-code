@@ -1,0 +1,1533 @@
+{
+	Copyright 1992-2024 Sudhir Kumar and Koichiro Tamura
+
+	This file is part of the MEGA (Molecular Evolutionary Genetics Analyis) software.
+
+	MEGA (Molecular Evolutionary Genetics Analysis) is free software:
+	you can redistribute it and/or modify it under the terms of the
+	GNU General Public License as published by the Free Software
+	Foundation, either version 3 of the License, or (at your option)
+	any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+   Contributor(s):   The MEGA source code and software is made available in the hopes that it will be useful. 
+   In keeping with the spirit and intent that the MEGA project is developed under, the authors of MEGA request that before
+   distributing any significant changes to the MEGA source code (or derivatives thereof), you share
+   those changes with the MEGA authors so that they may have the opportunity to test that
+   the changes do not introduce errors into the code or otherwise negatively impact the correctness
+   or performance of the MEGA software.
+   
+	Please email inqiries to s.kumar@temple.edu
+}
+
+unit mepthreads;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, MLSearchThread, MAnalysisInfo, MTreeList, MTreeData,
+  MTreeDataAdapter, MLTree, MLTreeAnalyzer, mreltimecomputer, megautils_nv,
+  ExcelWrite, MegaConsts;
+
+const
+  EP_THREAD = 'EP thread';
+  PP_THREAD = 'Posterior Probs thread';
+
+type
+
+  { TEpThreadTerminator }
+
+  TEpThreadTerminator = class(TObject)
+    public
+      procedure OnThreadDone(Thread: TObject);
+  end;
+
+  { TEpThread }
+
+  TEpThread = class(TMegaThread)
+    private
+      FTimetreeSBL: Double;
+      FUserTree: TTreeData;
+      FCheckCancelFunc: TProgressCheckCancelFunc;
+      FKeepUserProvidedTimes: Boolean;
+      FSubTasksCheckCancel: TCheckCancelFunc;
+      FWeightsNullifier: array of array of Integer;
+      FWeights: ArrayOfDouble;
+      FNormalizedTimes: T2DExtArray;
+      FSumOfWeights: Double;
+      FEpValues: T2DExtArray;
+      FUngappedTimes: T2DExtArray;
+      FPrunedTrees: TList;
+      FAnalyzedTrees: TList;
+      FReltimeTrees: TList;
+      FNewickStrings: TStringList;
+      FSeqStrings: TStringList;
+      FOtuNameLists: TList;
+      FAnalysisInfo: TAnalysisInfo;
+      FMsgLog: TStringList;
+      FTreePruner: TSimpleTreeDataAdapter;
+      FReltimeComputer: TReltimeComputer;
+      FPosteriorProbs: TAncStateRecArrayArrayArray;
+      FNumStates: Integer;
+      FProgress: Integer;
+      FSubtaskProgress: Integer;
+      FStatus: AnsiString;
+      FStatusInfo: AnsiString;
+      FSubtaskStatus: String;
+      FCancelled: Boolean;
+      FOrigNumTaxa: Integer;
+      FFocalSequence: String;
+      FFocalSequenceName: String;
+      procedure SetAnalysisInfo(AValue: TAnalysisInfo);
+      procedure ClearPrunedTrees;
+      procedure ClearOtuNamesLists;
+      procedure ClearReltimeTrees;
+      procedure SetCheckCancelFunc(AValue: TProgressCheckCancelFunc);
+      procedure SetSubTasksCheckCancel(AValue: TCheckCancelFunc);
+      function WeightsNullifierToStringList: TStringList;
+      function UngappedTimesToStringList: TStringList;
+      function NormalizedTimesToStringList: TStringList;
+      function PosteriorProbsToDebugFiles: Boolean;
+      function PosteriorProbsToSpreadsheet: TExcelWrite;
+      procedure NewickStringsToDebugFiles;
+      procedure UngappedTimesToDebugFile;
+      procedure NormalizedTimesToDebugFile;
+      procedure DoCheckCancelFunc;
+      procedure DoSubtaskCheckCancelFunc;
+      function UpdateOverallProgress(aProgress: Integer): Boolean;
+      function DebugFilename(fileExt: String): String;
+      function CheckIsUltrametric(aTree: TTreeData): Boolean;
+      function ListContainsNames(masterList: TStringList; subList: TStringList; var msg: String): Boolean;
+      function ValidateNamesList(const aNamesLists: TList; var aMsg: String): Boolean;
+      function DebugDumpPrunedTrees(targetDir: String): Boolean;
+    protected
+      FOrigOtuNames: TStringList;
+      procedure OnCalcProbsFinished(aThread: TObject);
+      function PruneTrees: Boolean;
+      function SumOfPosteriorProbs(site: Integer; state: Integer): Double;
+      procedure CalculatePosteriorProbs;
+      procedure GenerateTimetrees;
+      procedure CalculateEpValues;
+      function CalculateEpValue(site: Integer; state: Integer): Extended;
+      function GetUngappedTimes: T2DExtArray;
+      function GetUngappedTime(aData: TTreeData; allNames: TStringList; droppedNames: TStringList; IsDebug: Boolean=False): Extended;
+      procedure CalcNormalizedTimes;
+      procedure GetSeqsForNames(const names: TStringList; var Seqs: TStringList);
+      procedure GetPrunedNames(const NamesBeforePruning: TStringList; const NamesAfterPruning: TStringList; var ResultList: TStringList);
+      procedure GenerateOutput(var xl: TExcelWrite);
+      procedure ComputeBranchLengths;
+      procedure DoUpdateRunStatus;
+      procedure UpdateRunStatus(aStatus: AnsiString; aInfo: AnsiString);
+      procedure DoShowProgressDlg;
+      procedure DoHideProgressDlg;
+      function CheckMoveFocalSeqToFirst: Boolean;
+      function AnalysisDescription: String; override;
+    public
+      StopCodonSitesChangedToMissingData: TIntArray;
+      RunStatusProc: TRunStatusProc;
+      constructor Create(MAI: TAnalysisInfo);
+      destructor Destroy; override;
+      procedure Execute; override;
+      procedure UpdateAnalysisSummary; override;
+      function GenerateCaption: TStringList;
+      function GetXlOutput: TExcelWrite;
+      function GetTextOutput: TStringList;
+      property AnalysisInfo: TAnalysisInfo read FAnalysisInfo write SetAnalysisInfo;
+      property MsgLog: TStringList read FMsgLog;
+      property IsSuccess: Boolean read FIsSuccess;
+      property EPValues: T2DExtArray read FEpValues;
+      property SubTasksCheckCancel: TCheckCancelFunc read FSubTasksCheckCancel write SetSubTasksCheckCancel;
+      property CheckCancelFunc: TProgressCheckCancelFunc read FCheckCancelFunc write SetCheckCancelFunc;
+      property KeepUserProvidedTimes: Boolean read FKeepUserProvidedTimes write FKeepUserProvidedTimes;
+  end;
+
+  { TCalcPosteriorProbsThread }
+
+  TCalcPosteriorProbsThread = class(TMegaThread)
+    private
+      FStatus: AnsiString;
+      FStatusInfo: AnsiString;
+      FAnalysisInfo: TAnalysisInfo;
+      FCheckCancel: TProgressCheckCancelFunc;
+      FMsgLog: TStringList;
+      FSubtaskCheckCancel: TCheckCancelFunc;
+      FTrees: TList;
+      FNewickStrings: TStringList;
+      FSeqStrings: TStringList;
+      FOtuNamesLists: TList;
+      FOrigOtuNames: TStringList;
+      FPosteriorProbs: TAncStateRecArrayArrayArray;
+      FIndex: Integer;
+      FGroupNames: TStringList;
+      procedure SetCheckCancel(AValue: TProgressCheckCancelFunc);
+      procedure SetSubtaskCheckCancel(AValue: TCheckCancelFunc);
+    protected
+      procedure UpdateAnalysisInfo;
+      function AnalyzeAllTrees: Boolean;
+      function AnalyzeTree: Boolean;
+      procedure AnalyzeUserTreeDone(aThread: TObject);
+      procedure DoUpdateRunStatus;
+      procedure UpdateRunStatus(aStatus: AnsiString; aInfo: AnsiString);
+      procedure DoShowProgressDlg;
+      procedure DoHideProgressDlg;
+    public
+      RunStatusProc: TRunStatusProc;
+      constructor Create(MAI: TAnalysisInfo; Newicks: TStringList; Names: TList; SeqStrings: TStringList);
+      destructor Destroy; override;
+      procedure Execute; override;
+
+      property IsSuccess: Boolean read FIsSuccess;
+      property MsgLog: TStringList read FMsgLog;
+      property PosteriorProbs: TAncStateRecArrayArrayArray read FPosteriorProbs;
+      property TreeDataList: TList read FTrees;
+      property SubtaskCheckCancel: TCheckCancelFunc read FSubtaskCheckCancel write SetSubtaskCheckCancel;
+      property CheckCancel: TProgressCheckCancelFunc read FCheckCancel write SetCheckCancel;
+  end;
+
+implementation
+
+uses
+  {$IFNDEF VISUAL_BUILD}
+  MD_MegaMain, KeywordConsts,
+  {$ELSE}
+  MWriteOutputDlg, Dialogs, MEditorForm,
+  {$ENDIF}
+  LCLIntF, MegaUtils, math, MLegendGenerator, mdistpack, StringUtils,
+  LazFileUtils, MAnalysisSummary, mtree_display_setup, ProcessTreeCmds;
+
+{ TEpThreadTerminator }
+
+procedure TEpThreadTerminator.OnThreadDone(Thread: TObject);
+var
+  s: TAnalysisSummary = nil;
+  exporter: TTreeDisplaySetup = nil;
+  t: TEpThread = nil;
+  caption: TStringList = nil;
+  outList: TStringList = nil;
+  xlWrite: TExcelWrite = nil;
+  outfile: String = 'Evolutionary_Probabilities';
+  {$IFDEF VISUAL_BUILD}
+  outType: TExportType;
+  {$ENDIF}
+begin
+  t := TEpThread(Thread);
+
+  try
+    try
+      if t.IsSuccess then
+      begin
+        {$IFDEF VISUAL_BUILD}
+        s := t.AnalysisInfo.AnalysisSummary;
+        outType := PromptUserWriteOutput(outfile, True, EXexcelXmlDisp);
+        if (outType <> EXnone) and (Trim(outfile) <> EmptyStr) then
+        begin
+          case outType of
+            EXtext, EXtextSave:
+              begin
+                outList := t.GetTextOutput;
+                if outType = EXtextSave then
+                  outList.SaveToFile(outfile)
+                else
+                  OpenStringList(outList, 'Evolutionary Probabilities');
+              end;
+            EXcsvDisp, EXcsvSave, EXexcelDisp, EXexcelSave, EXexcelXmlDisp, EXexcelXmlSave, EXodsDisp, EXodsSave:
+              begin
+                xlWrite := t.GetXlOutput;
+                case outType of
+                  EXcsvDisp, EXcsvSave: xlWrite.SaveFile(outfile, ExportCSV);
+                  EXexcelDisp, EXexcelSave: xlWrite.SaveFile(outFile, ExportExcel);
+                  EXexcelXmlDisp, EXexcelXmlSave: xlWrite.SaveFile(outfile, ExportExelXML);
+                  EXodsDisp, EXodsSave: xlWrite.SaveFile(outfile, ExportODS);
+                end;
+                case outType of
+                  EXcsvDisp, EXexcelDisp, EXexcelXmlDisp, EXodsDisp: OpenDocument(outfile);
+                end;
+              end;
+          end;
+        end;
+        {$ELSE}
+        s := D_MegaMain.AnalysisSummary;
+        outList := t.GetTextOutput;
+        outfile := NextAvailableFilenameNV('.txt');
+        outList.SaveToFile(outfile);
+        caption := t.GenerateCaption;
+        caption.SaveToFile(ChangeFileExt(outfile, '_caption.html'));
+        D_MegaMain.AnalysisSummary.AddAnalysisInfo(t.AnalysisInfo);
+        if t.AnalysisInfo.isAminoAcid then
+          D_MegaMain.AnalysisSummary.DataType := snProtein
+        else
+          D_MegaMain.AnalysisSummary.DataType := snNucleotide;
+        D_MegaMain.AnalysisSummary.WriteToFile(ChangeFileExt(outfile, '_summary.txt'));
+        if ExportIncludedSitesSummary then
+        begin
+          exporter := TTreeDisplaySetup.Create;
+          exporter.DoExportIncludedSitesSummary(t.AnalysisInfo.MyIncludedSites, t.AnalysisInfo.IsCodonByCodon);
+        end;
+        {$ENDIF}
+        s.NumTaxa := t.AnalysisInfo.NoOfSeqs;
+        s.NumSites := t.AnalysisInfo.NoOfSites;
+        UploadUsageData(s);
+      end
+      else
+        if Trim(t.MsgLog.Text) <> EmptyStr then
+          raise Exception.Create(t.MsgLog.Text)
+        else
+          raise Exception.Create('EP calculation returned false due to an unknown error');
+    except
+      on E:Exception do
+      begin
+        {$IFDEF VISUAL_BUILD}
+        ShowMessage('EP calculation failed: ' + E.Message);
+        {$ELSE}
+        error_nv('Oh no! An error occurred in the EP calculation: ', E);
+        {$ENDIF}
+      end;
+    end;
+  finally
+    if Assigned(outList) then
+      outList.Free;
+    if Assigned(xlWrite) then
+      xlWrite.Free;
+    if Assigned(caption) then
+      caption.Free;
+    if Assigned(exporter) then
+      exporter.Free;
+  end;
+end;
+
+{ TCalcPosteriorProbsThread }
+
+procedure TCalcPosteriorProbsThread.SetSubtaskCheckCancel(
+  AValue: TCheckCancelFunc);
+begin
+  if FSubtaskCheckCancel=AValue then Exit;
+  FSubtaskCheckCancel:=AValue;
+end;
+
+procedure TCalcPosteriorProbsThread.SetCheckCancel(
+  AValue: TProgressCheckCancelFunc);
+begin
+  if FCheckCancel=AValue then Exit;
+  FCheckCancel:=AValue;
+end;
+
+procedure TCalcPosteriorProbsThread.UpdateAnalysisInfo;
+var
+  aNames: TStringList;
+  i: Integer;
+  seq: String;
+begin
+  if Assigned(FAnalysisInfo.MyOriTreeList) then
+  begin
+    FAnalysisInfo.MyOriTreeList.Free;
+    FAnalysisInfo.MyOriTreeList := nil;
+  end;
+  FAnalysisInfo.MyUserNewickTree := FNewickStrings[FIndex];
+  aNames := TStringList(FOtuNamesLists[FIndex]);
+  FAnalysisInfo.MyOtuNames.Assign(aNames);
+  if not Assigned(FAnalysisInfo.MySeqStrings) then
+    FAnalysisInfo.MySeqStrings := TStringList.Create
+  else
+    FAnalysisInfo.MySeqStrings.Clear;
+  for i := 0 to aNames.Count - 1 do
+  begin
+    seq := FSeqStrings[FOrigOtuNames.IndexOf(aNames[i])];
+    FAnalysisInfo.MySeqStrings.Add(seq);
+  end;
+  FAnalysisInfo.MyNoOfSeqs := aNames.Count;
+end;
+
+function TCalcPosteriorProbsThread.AnalyzeAllTrees: Boolean;
+var
+  i: Integer;
+begin
+  Result := True;
+  if FNewickStrings.Count > 0 then
+  begin
+    SetLength(FPosteriorProbs, FNewickStrings.Count);
+    for i := 0 to FNewickStrings.Count - 1 do
+    begin
+      FIndex := i;
+      Result := Result and AnalyzeTree;
+      //if Assigned(FCheckCancel)then
+      //  FCheckCancel(Round(i*100/FNewickStrings.Count));
+    end;
+    UpdateRunStatus(PP_THREAD, 'Finished');
+  end
+  else
+    raise Exception.Create('list of pruned trees is empty');
+end;
+
+function TCalcPosteriorProbsThread.AnalyzeTree: Boolean;
+var
+  aThread: TMLTreeAnalyzeThread = nil;
+  status: Integer = -1;
+begin
+  try
+    Synchronize(@DoShowProgressDlg);
+    UpdateRunStatus(PP_THREAD, Format('Evaluating tree %d/%d', [FIndex + 1, FNewickStrings.Count]));
+    UpdateAnalysisInfo;
+    aThread := TMLTreeAnalyzeThread.Create(nil);
+    aThread.SkipSummaryUpdate := True;
+    aThread.GroupNames := FGroupNames;
+    aThread.OptimizeBLens := true;
+    aThread.OptimizeParams := true;
+    aThread.ProgressDlg := FAnalysisInfo.ARP;
+    {$IFDEF VISUAL_BUILD}
+    if Assigned(FSubtaskCheckCancel) then
+      aThread.SubTasksCheckCancel := FSubtaskCheckCancel;
+    {$ENDIF}
+    aThread.ShowProgress := true;
+    aThread.OnTerminate := @AnalyzeUserTreeDone;
+    FAnalysisInfo.ARP.Thread := aThread;
+    aThread.FreeOnTerminate := False;
+    aThread.Start;
+    status := aThread.WaitFor;
+    if status <> 0 then
+      raise Exception.Create('TMLTreeAnalyzeThread returned failure code: ' + IntToStr(status));
+    Result := True;
+  finally
+    if Assigned(aThread) then
+      aThread.Free;
+  end;
+end;
+
+procedure TCalcPosteriorProbsThread.AnalyzeUserTreeDone(aThread: TObject);
+var
+  t: TMLTreeAnalyzeThread;
+  aData: TTreeData;
+begin
+  t := TMLTreeAnalyzeThread(aThread);
+  FPosteriorProbs[FIndex] := FAnalysisInfo.MyMLAnalysisPack.GetExpectedStateProbArray(0); { why is node index zero here? Because the focal sequence gets moved to the zero position in the alignment and thus is node zero in the tree}
+  aData := TTreeData.Create(t.MLTreeAnalyzer.NoOfSeqs, True, False, False);
+  t.MLTreeAnalyzer.GetTreeData(aData);
+  FTrees.Add(aData);
+  FAnalysisInfo.MyMLAnalysisPack.SubTaskCheckCancel := nil;
+  if Assigned(FAnalysisInfo.MyMLAnalysisPack.MLTree) then
+    FAnalysisInfo.MyMLAnalysisPack.MLTree.SubtaskCheckCancel := nil;
+  FAnalysisInfo.MyMLAnalysisPack.Free;
+  FAnalysisInfo.MySeqStrings := nil; { freed by TAnalysisInfo.MyMLAnalysisPack}
+end;
+
+procedure TCalcPosteriorProbsThread.DoUpdateRunStatus;
+begin
+  if Assigned(RunStatusProc) then
+    RunStatusProc(FStatus, FStatusInfo);
+end;
+
+procedure TCalcPosteriorProbsThread.UpdateRunStatus(aStatus: AnsiString; aInfo: AnsiString);
+begin
+  FStatus := aStatus;
+  FStatusInfo := aInfo;
+  Synchronize(@DoUpdateRunStatus);
+end;
+
+procedure TCalcPosteriorProbsThread.DoShowProgressDlg;
+begin
+  if Assigned(FAnalysisInfo) and Assigned(FAnalysisInfo.ARP) then
+    FAnalysisInfo.ARP.Show;
+end;
+
+procedure TCalcPosteriorProbsThread.DoHideProgressDlg;
+begin
+  if Assigned(FAnalysisInfo) and Assigned(FAnalysisInfo.ARP) then
+    FAnalysisInfo.ARP.Hide;
+end;
+
+constructor TCalcPosteriorProbsThread.Create(MAI: TAnalysisInfo; Newicks: TStringList; Names: TList; SeqStrings: TStringList);
+begin
+  inherited Create(True);
+  SkipSummaryUpdate := True;
+  RunStatusProc := nil;
+  FreeOnTerminate := True;
+  FAnalysisInfo := MAI;
+  FTrees := TList.Create;
+  FOtuNamesLists := Names;
+  FOrigOtuNames := TStringList(FOtuNamesLists[0]);
+  FNewickStrings := Newicks;
+  FSeqStrings := SeqStrings;
+  FGroupNames := TStringList.Create
+end;
+
+destructor TCalcPosteriorProbsThread.Destroy;
+begin
+  RunStatusProc := nil;
+  if Assigned(FGroupNames) then
+    FGroupNames.Free;
+  { self does not own FTreeDataList, FAnalysisInfo, FSeqStrings, FOtuNamesLists, or FNewickStrings}
+  inherited Destroy;
+end;
+
+procedure TCalcPosteriorProbsThread.Execute;
+begin
+  ReturnValue := 1;
+  try
+    FAnalysisInfo.SetupOutgroupMembers;
+    FGroupNames.Assign(FAnalysisInfo.GroupInfo.GroupNames);
+    FIsSuccess := AnalyzeAllTrees;
+    if not FIsSuccess then
+      FMsgLog.Add('Analysis of pruned trees failed unexpectedly')
+    else
+      ReturnValue := 0;
+    {$IFNDEF VISUAL_BUILD}{$IFNDEF MSWINDOWS}
+    UpdatePeakMemUsage;
+    {$ENDIF}{$ENDIF}
+  except
+    on E:Exception do
+    begin
+      FIsSuccess := False;
+      FMsgLog.Add('An error occurred when analyzing pruned trees: ' + E.Message);
+    end;
+  end;
+end;
+
+{ TEpThread }
+
+procedure TEpThread.SetAnalysisInfo(AValue: TAnalysisInfo);
+begin
+  if FAnalysisInfo=AValue then Exit;
+  FAnalysisInfo:=AValue;
+end;
+
+procedure TEpThread.ClearPrunedTrees;
+var
+  i: Integer;
+begin
+  if not Assigned(FPrunedTrees) then
+    Exit;
+  if FPrunedTrees.Count > 0 then
+    for i := 0 to FPrunedTrees.Count - 1 do
+      TTreeData(FPrunedTrees[i]).Free;
+  FPrunedTrees.Clear;
+end;
+
+procedure TEpThread.ClearOtuNamesLists;
+var
+  i: Integer;
+begin
+  if FOtuNameLists.Count > 0 then
+    for i := 0 to FOtuNameLists.Count - 1 do
+      TStringList(FOtuNameLists[i]).Free;
+  FOtuNameLists.Clear;
+end;
+
+procedure TEpThread.ClearReltimeTrees;
+var
+  i: Integer;
+begin
+  if FReltimeTrees.Count > 0 then
+    for i := 0 to FReltimeTrees.Count - 1 do
+      TTreeData(FReltimeTrees[i]).Free;
+  FReltimeTrees.Clear;
+end;
+
+procedure TEpThread.SetCheckCancelFunc(AValue: TProgressCheckCancelFunc);
+begin
+  if FCheckCancelFunc=AValue then Exit;
+  FCheckCancelFunc:=AValue;
+end;
+
+procedure TEpThread.SetSubTasksCheckCancel(AValue: TCheckCancelFunc);
+begin
+  if FSubTasksCheckCancel=AValue then Exit;
+  FSubTasksCheckCancel:=AValue;
+end;
+
+function TEpThread.WeightsNullifierToStringList: TStringList;
+var
+  i,j: Integer;
+  line: String;
+begin
+  Result := TStringList.Create;
+  for i := 0 to Length(FWeightsNullifier[0]) - 1 do
+  begin
+    line := IntToStr(i + 1) + #9;
+    for j := 0 to Length(FWeightsNullifier) - 1 do
+      line := line + IntToStr(FWeightsNullifier[j][i]) + #9;
+    line := Trim(line);
+    Result.Add(line);
+  end;
+end;
+
+function TEpThread.UngappedTimesToStringList: TStringList;
+var
+  step, site: Integer;
+  line: String;
+begin
+  Result := TStringList.Create;
+  line := 'site';
+  for step := 0 to Length(FUngappedTimes) - 1 do
+    line := line + #9 + IntToStr(step + 1);
+  Result.Add(line);
+
+  for site := 0 to Length(FUngappedTimes[0]) - 1 do
+  begin
+    line := IntToStr(site + 1) + #9;
+    for step := 0 to Length(FUngappedTimes) - 1 do
+      line := line + Format('%.6f', [FUngappedTimes[step][site]]) + #9;
+    Result.Add(Trim(line));
+  end;
+end;
+
+function TEpThread.NormalizedTimesToStringList: TStringList;
+var
+  site, step: Integer;
+  line: String;
+begin
+  Result := TStringList.Create;
+  line := 'site';
+  for step := 0 to Length(FNormalizedTimes[0]) - 1 do
+    line := line + ',' + IntToStr(step + 1);
+  Result.Add(line);
+  for site := 0 to Length(FNormalizedTimes) - 1 do
+  begin
+    line := IntToStr(site + 1);
+    for step := 0 to Length(FNormalizedTimes[site]) - 1 do
+      line := line + ',' + Format('%.6f', [FNormalizedTimes[site][step]]);
+    Result.Add(line);
+  end;
+end;
+
+function TEpThread.PosteriorProbsToDebugFiles: Boolean;
+{$IFDEF DEBUG}
+var
+  iter, site, state: Integer;
+  aList: TStringList = nil;
+  line: String;
+  filename: String;
+{$ENDIF}
+begin
+  Result := False;
+  {$IFDEF DEBUG}
+  Result := True;
+  try
+    aList := TStringList.Create;
+    for iter := 0 to Length(FPosteriorProbs) - 1 do
+    begin
+      aList.Clear;
+      aList.Add('Predicted Living sequence for #1,');
+      aList.Add('Site #,Probability,');
+      line := ' ,';
+      for state := 0 to FNumStates - 1 do
+        line := line + Format('%s,', [FPosteriorProbs[iter][0][state].Name[1]]);
+      aList.Add(line);
+      for site := 0 to FAnalysisInfo.NoOfSites - 1 do
+      begin
+        line := IntToStr(site + 1) + ',';
+        for state := 0 to FNumStates - 1 do
+          line := line + Format('%.8f,', [FPosteriorProbs[iter][site][state].Prob]);
+        aList.Add(line);
+      end;
+      filename := DebugFilename(Format('gene_%.3d_AS.csv', [iter]));
+      filename := ExtractFileDir(filename) + PathDelim + Format('gene_%.3d_AS.csv', [iter]);
+      aList.SaveToFile(filename);
+    end;
+  finally
+    if Assigned(aList) then
+      aList.Free;
+  end;
+  {$ENDIF}
+end;
+
+function TEpThread.PosteriorProbsToSpreadsheet: TExcelWrite;
+{$IFDEF DEBUG}
+var
+  iter, site, state: Integer;
+{$ENDIF}
+begin
+  Result := nil;
+  {$IFDEF DEBUG}
+  Result := TExcelWrite.Create(nil, 'iter-1');
+  Result.IsXLS := True;
+  for iter := 0 to Length(FPosteriorProbs) - 1 do
+  begin
+    if iter > 0 then
+      Result.AddWorksheet(Format('iter-%d', [iter+1]));
+    Result.Add('site');
+    for state := 0 to FNumStates - 1 do
+      Result.Add(FPosteriorProbs[iter][0][state].Name);
+    Result.WriteLine(iter);
+    for site := 0 to FAnalysisInfo.NoOfSites - 1 do
+    begin
+      Result.Add(site + 1);
+      for state := 0 to FNumStates - 1 do
+        Result.Add(FPosteriorProbs[iter][site][state].Prob);
+      Result.WriteLine(iter);
+    end;
+  end;
+  {$ENDIF}
+end;
+
+procedure TEpThread.NewickStringsToDebugFiles;
+var
+  i: Integer;
+  aList: TStringList = nil;
+  {$IFNDEF VISUAL_BUILD}filename: String;{$ENDIF}
+begin
+  try
+    if FNewickStrings.Count > 0 then
+    begin
+      aList := TStringList.Create;
+      for i := 0 to FNewickStrings.Count - 1 do
+      begin
+        aList.Clear;
+        aList.Add(FNewickStrings[i]);
+        {$IFDEF VISUAL_BUILD}
+        FNewickStrings.SaveToFile(NextAvailableFilename(GetCurrentDir + Format('_debug_pruned_trees_%d.txt', [i+1])));
+        {$ELSE}
+        filename := NextAvailableFilenameNV(Format('_debug_pruned_trees_%d.nwk', [i+1]));
+        filename := ExtractFileDir(filename) + PathDelim + Format('gene_%.3d.nwk', [i]);
+        aList.SaveToFile(filename);
+        {$ENDIF}
+      end;
+    end;
+  finally
+    if Assigned(aList) then
+      aList.Free;
+  end;
+end;
+
+procedure TEpThread.UngappedTimesToDebugFile;
+{$IFDEF DEBUG}
+var
+  aList: TStringList;
+  filename: String;
+{$ENDIF}
+begin
+  {$IFDEF DEBUG}
+  aList := UngappedTimesToStringList;
+  filename := DebugFilename('_ungapped_times.txt');
+  aList.SaveToFile(filename);
+  aList.Free;
+  {$ENDIF}
+end;
+
+procedure TEpThread.NormalizedTimesToDebugFile;
+{$IFDEF DEBUG}
+var
+  aList: TStringList;
+  filename: String;
+{$ENDIF}
+begin
+  {$IFDEF DEBUG}
+  aList := NormalizedTimesToStringList;
+  filename := DebugFilename('_normalized_times.txt');
+  aList.SaveToFile(filename);
+  aList.Free;
+  {$ENDIF}
+end;
+
+procedure TEpThread.DoCheckCancelFunc;
+begin
+  if Assigned(FCheckCancelFunc) then
+  begin
+    FCancelled := FCheckCancelFunc(FProgress);
+    if FCancelled then
+      Terminate;
+  end;
+end;
+
+procedure TEpThread.DoSubtaskCheckCancelFunc;
+begin
+  if Assigned(FSubTasksCheckCancel) then
+    FCancelled := FSubTasksCheckCancel(FSubtaskProgress, FSubtaskStatus);
+  if FCancelled then
+    Terminate;
+end;
+
+function TEpThread.UpdateOverallProgress(aProgress: Integer): Boolean;
+begin
+  FProgress := aProgress;
+  Synchronize(@DoCheckCancelFunc);
+  Result := FCancelled;
+end;
+
+function TEpThread.DebugFilename(fileExt: String): String;
+begin
+  {$IFDEF VISUAL_BUILD}
+  Result := GetCurrentDir + fileExt;
+  Result := NextAvailableFilename(Result);
+  {$ELSE}
+  Result := NextAvailableFilenameNV(fileExt);
+  {$ENDIF}
+end;
+
+function TEpThread.CheckIsUltrametric(aTree: TTreeData): Boolean;
+var
+  adapter: TSimpleTreeDataAdapter = nil;
+begin
+  try
+    adapter := TSimpleTreeDataAdapter.Create;
+    adapter.SetTreeData(aTree, True);
+    Result := adapter.IsUltrametric;
+  finally
+    if Assigned(adapter) then
+      adapter.Free;
+  end;
+end;
+
+function TEpThread.ListContainsNames(masterList: TStringList; subList: TStringList; var msg: String): Boolean;
+var
+  i: Integer = -1;
+begin
+  Result := False;
+  for i := 0 to subList.Count - 1 do
+    if not (masterList.IndexOf(subList[i]) >= 0) then
+    begin
+      msg := Format('master list is missing %s', [subList[i]]);
+      Exit(False);
+    end;
+  Result := True;
+end;
+
+function TEpThread.ValidateNamesList(const aNamesLists: TList; var aMsg: String): Boolean;
+var
+  i: Integer = -1;
+  j: Integer = -1;
+  list1: TStringList = nil;
+  list2: TStringList = nil;
+begin
+  Result := False;
+  aMsg := EmptyStr;
+  if not (aNamesLists.Count = FOtuNameLists.Count) then
+  begin
+    aMsg := Format('unequal number of name lists - %d versus %d', [FOtuNameLists.Count, aNamesLists.Count]);
+    Exit;
+  end;
+
+  for i := 0 to FOtuNameLists.Count - 1 do
+  begin
+    list1 := TStringList(FOtuNameLists[i]);
+    list2 := TStringList(aNamesLists[i]);
+    if list1.Count <> list2.Count then
+    begin
+      aMsg := Format('names lists have unequal counts - %d versus %d', [list1.Count, list2.Count]);
+      Exit;
+    end;
+
+    for j := 0 to list1.Count - 1 do
+      if list1[j] <> list2[j] then
+      begin
+        aMsg := Format('mismatched names: "%s" versus "%s"', [list1[j], list2[j]]);
+        Exit;
+      end;
+  end;
+  Result := True;
+end;
+
+function TEpThread.DebugDumpPrunedTrees(targetDir: String): Boolean;
+{$IFDEF DEBUG}
+var
+  aTreeList: TTreeList = nil;
+  aData: TTreeData = nil;
+  i: Integer = -1;
+  filename: String = '';
+  aNames: TStringList = nil;
+{$ENDIF}
+begin
+  Result := False;
+  {$IFDEF DEBUG}
+  if not DirectoryExists(targetDir) then
+    ForceDirectories(targetDir);
+  try
+    aTreeList := TTreeList.Create;
+    for i := 0 to FPrunedTrees.Count - 1 do
+    begin
+      aNames := TStringList(FOtuNameLists[i]);
+      aTreeList.OTUNameList.AddStrings(aNames);
+      aData := TTreeData(FPrunedTrees[i]);
+      aTreeList.Add(aData);
+      filename := Format('%s%spruned-tree-%d.nwk', [ChompPathDelim(targetDir), PathDelim, i + 1]);
+      aTreeList.ExportATreeToNewickFile(0, filename, aData.isBLen, False, 0.0);
+      aTreeList.Clear;
+    end;
+  finally
+    if Assigned(aTreeList) then
+      aTreeList.Free;
+  end;
+  {$ENDIF}
+end;
+
+procedure TEpThread.OnCalcProbsFinished(aThread: TObject);
+var
+  t: TCalcPosteriorProbsThread;
+begin
+  t := TCalcPosteriorProbsThread(aThread);
+  if not t.IsSuccess then
+    raise Exception.Create(t.MsgLog.Text);
+  FAnalyzedTrees := t.TreeDataList;
+  FPosteriorProbs := t.PosteriorProbs;
+  FAnalysisInfo.MyMLAnalysisPack := nil;
+  FProgress := 90;
+  FStatus := 'Calculating EP Values';
+  Synchronize(@DoCheckCancelFunc);
+end;
+
+procedure TEpThread.Execute;
+var
+  aData: TTreeData = nil;
+begin
+  ReturnValue := 1;
+  try
+    StartExecute;
+    UpdateRunStatus('Focal Sequence', FAnalysisInfo.EpFocalSequenceName);
+    if CheckMoveFocalSeqToFirst then
+      FMsgLog.Add('Focal sequence has been moved to the first position in the sequence alignment');
+    FUserTree := AnalysisInfo.MyOriTreeList[0].Clone;
+    if FKeepUserProvidedTimes and (not CheckIsUltrametric(FUserTree)) then
+      raise Exception.Create('EP calculation failed because the provided tree with times is not ultrametric');
+
+    if not FKeepUserProvidedTimes then
+    begin
+      ComputeBranchLengths;
+      RootOnOutgroup(FUserTree);
+    end;
+
+    FIsSuccess := PruneTrees;
+    if FIsSuccess then
+    begin
+      FNewickStrings.Delete(FNewickStrings.Count - 1);
+      aData := TTreeData(FPrunedTrees[FPrunedTrees.Count - 1]);
+      aData.Free;
+      FPrunedTrees.Delete(FPrunedTrees.Count - 1);
+      CalculatePosteriorProbs;
+      GenerateTimetrees;
+
+      if FIsSuccess then
+      begin
+        FUngappedTimes := GetUngappedTimes;
+        CalcNormalizedTimes;
+        CalculateEpValues;
+        ReturnValue := 0;
+        //{$IFDEF DEBUG}{$IFNDEF VISUAL_BUILD}
+        //PosteriorProbsToDebugFiles;
+        //NewickStringsToDebugFiles;
+        //UngappedTimesToDebugFile;
+        //NormalizedTimesToDebugFile;
+        //{$ENDIF}{$ENDIF}
+      end;
+      FAnalysisInfo.MyNoOfSeqs := FOrigNumTaxa;
+      Synchronize(@DoHideProgressDlg);
+    end
+    else
+      raise Exception.Create('failed to prune tree');
+    EndExecute;
+    UpdateAnalysisSummary;
+  except
+    on E:Exception do
+    begin
+      Synchronize(@DoHideProgressDlg);
+      FMsgLog.Add(E.Message);
+      {$IFNDEF VISUAL_BUILD}
+      FMsgLog.SaveToFile(NextAvailableFilenameNV('.txt'));
+      {$ENDIF}
+      FIsSuccess := False;
+    end;
+  end;
+end;
+
+procedure TEpThread.UpdateAnalysisSummary;
+var
+  s: TAnalysisSummary = nil;
+begin
+  inherited UpdateAnalysisSummary;
+  {$IFNDEF VISUAL_BUILD}
+  s := D_MegaMain.AnalysisSummary;
+  s.AddCalculatedValue('Focal Sequence', Format('"%s"', [FFocalSequenceName]));
+  {$ENDIF}
+end;
+
+function TEpThread.GetXlOutput: TExcelWrite;
+begin
+  Result := TExcelWrite.Create(nil, 'Evolutionary Probabilities');
+  Result.IsXLS := True;
+  GenerateOutput(Result);
+end;
+
+function TEpThread.PruneTrees: Boolean;
+begin
+  UpdateRunStatus(EP_THREAD, 'Pruning trees');
+  Result := False;
+  Assert(Assigned(FAnalysisInfo) and Assigned(FAnalysisInfo.MyOriTreeList) and FAnalysisInfo.MyOriTreeList.IsRooted);
+  if not FAnalysisInfo.MyOriTreeList.isRooted then
+    raise Exception.Create('EP calculation requires a rooted tree but the input tree is not rooted');
+  FTreePruner.SetTreeData(FUserTree, True, FAnalysisInfo.MyOriTreeList.OTUNameList);
+  FPrunedTrees := FTreePruner.GetPrunedEpTreeList(FAnalysisInfo.EpFocalSequenceName, FNewickStrings, FOtuNameLists);
+  Assert(FNewickStrings.Count = FOtuNameLists.Count, Format('unequal tree to names lists count - %d versus %d', [FNewickStrings.Count, FOtuNameLists.Count]));
+  Result := (FPrunedTrees.Count > 0);
+end;
+
+function TEpThread.SumOfPosteriorProbs(site: Integer; state: Integer): Double;
+var
+  iter: Integer;
+begin
+  Result := 0.0;
+  for iter := 0 to FPrunedTrees.Count - 1 do
+    Result := Result + FPosteriorProbs[iter][site][state].Prob;
+end;
+
+procedure TEpThread.CalculatePosteriorProbs;
+var
+  aThread: TCalcPosteriorProbsThread = nil;
+  status: Integer;
+begin
+  try
+    UpdateRunStatus(EP_THREAD, 'Calculating posterior probabilities');
+    aThread := TCalcPosteriorProbsThread.Create(AnalysisInfo, FNewickStrings, FOtuNameLists, FSeqStrings);
+    aThread.OnTerminate := @OnCalcProbsFinished;
+    aThread.SubtaskCheckCancel := SubTasksCheckCancel;
+    aThread.CheckCancel := @UpdateOverallProgress;
+    aThread.RunStatusProc := RunStatusProc;
+    aThread.FreeOnTerminate := False;
+    aThread.Start;
+    status := aThread.WaitFor;
+    if status <> 0 then
+      raise Exception.Create('TCalcPosteriorProbsThread returned failure status: ' + IntToStr(status));
+  finally
+    if Assigned(aThread) then
+      aThread.Free;
+  end;
+end;
+
+procedure TEpThread.GenerateTimetrees;
+var
+  i: Integer;
+  aData: TTreeData;
+  reltimeTree: TTreeData;
+  newicks: TStringList = nil;
+  namesLists: TList = nil;
+  msg: String = '';
+  aTempResult: Boolean = False;
+begin
+  try
+    UpdateRunStatus(EP_THREAD, 'Generating timetrees');
+    FSumOfWeights := 0.0;
+    if FKeepUserProvidedTimes then
+      reltimeTree := FUserTree.Clone
+    else
+      reltimeTree := FReltimeComputer.ComputeReltimeBlens(FUserTree, AnalysisInfo.MaxRateRatio);
+    FTimetreeSBL := reltimeTree.SBL;
+    //{$IFDEF DEBUG}{$IFNDEF VISUAL_BUILD}
+    //DebugOutputTreeToNewickFile(reltimeTree, FOrigOtuNames, NextAvailableFilenameNV('_full_timetree.nwk'), msg);
+    //DebugOutputTreeToNewickFile(FUserTree, FOrigOtuNames, NextAvailableFilenameNV('_user_tree.nwk'), msg);
+    //{$ENDIF}{$ENDIF}
+    Assert(FOrigOtuNames.Count = reltimeTree.NoOfOTUs, Format('bad otu names list. Expected %d names but got %d', [reltimeTree.NoOfOTUs, FOrigOtuNames.Count]));
+    FTreePruner.SetTreeData(reltimeTree, True, FOrigOtuNames);
+    newicks := TStringList.Create;
+    namesLists := TList.Create;
+    FReltimeTrees := FTreePruner.GetPrunedEpTreeList(FAnalysisInfo.EpFocalSequenceName, newicks, namesLists);
+    aTempResult := ValidateNamesList(namesLists, msg);
+    Assert(aTempResult, msg);
+    SetLength(FWeights, FReltimeTrees.Count);
+    Assert(FReltimeTrees.Count = newicks.Count, Format('expected %d tree strings but got %d', [FReltimeTrees.Count, newicks.Count]));
+    if FReltimeTrees.Count > 0 then
+      for i := 0 to FReltimeTrees.Count - 1 do
+      begin
+        aData := TTreeData(FReltimeTrees[i]);
+        FWeights[i] := aData.SBL;
+        FSumOfWeights := FSumOfWeights + FWeights[i];
+      end;
+    //{$IFDEF DEBUG}{$IFNDEF VISUAL_BUILD}
+    //ArrayOfDoubleToFile(FWeights, NextAvailableFilenameNV('_weights.csv'));
+    //newicks.SaveToFile(NextAvailableFilenameNV('_timetrees.nwk'));
+    //{$ENDIF}{$ENDIF}
+  finally
+    if Assigned(newicks) then
+      newicks.Free;
+    if Assigned(namesLists) then
+    begin
+      if namesLists.Count > 0 then
+        for i := 0 to namesLists.Count - 1 do
+          TStringList(namesLists[i]).Free;
+      namesLists.Free;
+    end;
+  end;
+end;
+
+procedure TEpThread.CalculateEpValues;
+var
+  numStates: Integer;
+  state, site: Integer;
+begin
+  UpdateRunStatus(EP_THREAD, 'Calculating EP values');
+  if FAnalysisInfo.isAminoAcid then
+    numStates := 20
+  else
+    numStates := 4;
+  SetLength(FEpValues, numStates);
+
+  for state := 0 to Length(FEpValues) - 1 do
+  begin
+    SetLength(FEpValues[state], AnalysisInfo.NoOfSites);
+    for site := 0 to AnalysisInfo.NoOfSites - 1 do
+      FEpValues[state][site] := 0.0;
+  end;
+  for site := 0 to AnalysisInfo.NoOfSites - 1 do
+    for state := 0 to numStates - 1 do
+      FEpValues[state][site] := CalculateEpValue(site, state);
+end;
+
+function TEpThread.CalculateEpValue(site: Integer; state: Integer): Extended;
+var
+  iter: Integer;
+  w: Extended;
+begin
+  Result := 0.0;
+  w := 0.0;
+  for iter := 0 to FPrunedTrees.Count - 1 do
+  begin
+    w := w + FNormalizedTimes[site][iter];
+    Result := Result + FPosteriorProbs[iter][site][state].Prob*FNormalizedTimes[site][iter];
+  end;
+  if w > 0.0 then
+    Result := Result/w;
+end;
+
+function TEpThread.GetUngappedTimes: T2DExtArray;
+var
+  step, site, seq: Integer;
+  allNames: TStringList = nil;
+  droppedNames: TStringList = nil;
+  aData: TTreeData = nil;
+  aSeqs: TStringList = nil;
+  prevNames: String = '';
+  aMsg: String = '';
+begin
+  UpdateRunStatus(EP_THREAD, 'Getting ungapped times');
+  SetLength(Result, FReltimeTrees.Count);
+  for step := 0 to Length(Result) - 1 do
+  begin
+    SetLength(Result[step], Length(FSeqStrings[0]));
+    for site := 0 to Length(Result[step]) - 1 do
+      Result[step][site] := 0.0;
+  end;
+  aSeqs := TStringList.Create;
+  droppedNames := TStringList.Create;
+
+  FSubtaskStatus := 'Getting ungapped times';
+  for step := 0 to FReltimeTrees.Count - 1 do
+  begin
+    if Assigned(FSubTasksCheckCancel) then
+    begin
+      FSubtaskProgress := Round(step/FReltimeTrees.Count*100);
+      Synchronize(@DoSubtaskCheckCancelFunc);
+    end;
+    aData := TTreeData(FReltimeTrees[step]);
+    allNames := TStringList(FOtuNameLists[step]);
+    Assert(aData.NoOfOTUs = allNames.Count, Format('tree has %d taxa but names list has %d names', [aData.NoOfOTUs, allNames.Count]));
+    aSeqs.Clear;
+    droppedNames.Clear;
+    prevNames := EmptyStr;
+
+    GetSeqsForNames(allNames, aSeqs);
+    for site := 0 to Length(Result[step]) - 1 do
+    begin
+      droppedNames.Clear;
+      for seq := 0 to aSeqs.Count - 1 do
+      begin
+        if aSeqs[seq][site+1] = '-' then
+          if droppedNames.IndexOf(allNames[seq]) < 0 then
+            droppedNames.Add(allNames[seq]);
+      end;
+
+      Assert(not ListHasDuplicateStrings(droppedNames), 'dropped names list contains duplicates');
+      if droppedNames.Count = 0 then
+        Result[step][site] := aData.SBL
+      else
+      begin
+        if (droppedNames.Text = prevNames) and (prevNames <> EmptyStr) then
+          Result[step][site] := Result[step][site - 1]
+        else
+        begin
+          prevNames := droppedNames.Text;
+          Assert(ListContainsNames(allNames, droppedNames, aMsg));
+          Result[step][site] := GetUngappedTime(aData, allNames, droppedNames);
+        end;
+      end;
+    end;
+  end;
+end;
+
+function TEpThread.GetUngappedTime(aData: TTreeData; allNames: TStringList; droppedNames: TStringList; IsDebug: Boolean): Extended;
+var
+  adapter: TSimpleTreeDataAdapter = nil;
+begin
+  if (allNames.Count - DroppedNames.Count) < 2 then
+  begin
+    Result := 0.0;
+    Exit;
+  end;
+
+  try
+    Result := aData.SBL;
+    if droppedNames.Count > 0 then
+    begin
+      adapter := TSimpleTreeDataAdapter.Create;
+      adapter.SetTreeData(aData, True, allNames);
+      adapter.RemoveLeafNodes(droppedNames);
+      Result := adapter.SumOfBlens;
+    end;
+  finally
+    if Assigned(adapter) then
+      adapter.Free;
+  end;
+end;
+
+procedure TEpThread.CalcNormalizedTimes;
+var
+  site, step: Integer;
+  tempSum: Extended;
+begin
+  UpdateRunStatus(EP_THREAD, 'Normalizing times');
+  SetLength(FNormalizedTimes, Length(FSeqStrings[0]));
+  for site := 0 to Length(FNormalizedTimes) - 1 do
+  begin
+    SetLength(FNormalizedTimes[site], Length(FUngappedTimes));
+    tempSum := 0.0;
+    for step := 0 to Length(FNormalizedTimes[site]) - 1 do
+    begin
+      FNormalizedTimes[site][step] := FUngappedTimes[step][site];
+      tempSum := tempSum + FNormalizedTimes[site][step];
+    end;
+    if CompareValue(tempSum, 0.0, 0.0000001) > 0 then
+      for step := 0 to Length(FNormalizedTimes[site]) - 1 do
+        FNormalizedTimes[site][step] := FNormalizedTimes[site][step]/tempSum;
+  end;
+end;
+
+procedure TEpThread.GetSeqsForNames(const names: TStringList; var Seqs: TStringList);
+var
+  i, index: Integer;
+  oriNames: TStringList;
+begin
+  Seqs.Clear;
+  oriNames := TStringList(FOtuNameLists[0]);
+  if names.Count > 0 then
+    for i := 0 to names.Count - 1 do
+    begin
+      index := oriNames.IndexOf(names[i]);
+      Seqs.Add(FSeqStrings[index]);
+    end;
+end;
+
+procedure TEpThread.GetPrunedNames(const NamesBeforePruning: TStringList; const NamesAfterPruning: TStringList; var ResultList: TStringList);
+var
+  i: Integer;
+  index: Integer;
+begin
+  ResultList.Assign(NamesBeforePruning);
+  if NamesAfterPruning.Count > 0 then
+    for i := NamesAfterPruning.Count - 1 downto 0 do
+    begin
+      index := ResultList.IndexOf(NamesAfterPruning[i]);
+      ResultList.Delete(index);
+    end;
+end;
+
+function TEpThread.GetTextOutput: TStringList;
+var
+  site, state: Integer;
+  line: String;
+  caption: TStringList = nil;
+begin
+  try
+    Result := TStringList.Create;
+    line := 'Site' + #9 + 'Base' + #9;
+    for state := 0 to FNumStates - 1 do
+    begin
+      line := line + FPosteriorProbs[0][0][state].Name[1];
+      line := line + '         ' + #9;
+    end;
+    line := line + 'Absolute-Timespan' + #9;
+    line := line + 'Timespan-Normalized-to-1';
+
+    Result.Add(line);
+
+    for site := 0 to FAnalysisInfo.NoOfSites - 1 do
+    begin
+      line := Format('%d%s%s%s', [FAnalysisInfo.MyIncludedSites[site], #9, FFocalSequence[site + 1], #9]);
+      for state := 0 to FNumStates - 1 do
+      begin
+        line := line + Format('%.8f', [FEpValues[state][site]]);
+        line := line + #9;
+      end;
+      Line += Format('%10.8f', [FUngappedTimes[0][site]]) + #9;
+      line += Format('%10.8f', [FUngappedTimes[0][site]/FTimetreeSBL]);
+      Result.Add(line);
+    end;
+    Result.Add(EmptyStr);
+    {$IFDEF VISUAL_BUILD}
+    caption := GenerateCaption;
+    Result.AddStrings(caption);
+    {$ENDIF}
+  finally
+    if Assigned(caption) then
+      caption.Free;
+  end;
+end;
+
+procedure TEpThread.GenerateOutput(var xl: TExcelWrite);
+var
+  site, state: Integer;
+  caption: TStringList;
+begin
+  try
+    xl.Add('Site');
+    xl.Add('Base');
+    for state := 0 to FNumStates - 1 do
+      xl.Add(FPosteriorProbs[0][0][state].Name[1]);
+    xl.Add('Absolute-Timespan');
+    xl.Add('Timespan-Normalized-to-1');
+    xl.WriteLine();
+
+    for site := 0 to FAnalysisInfo.NoOfSites - 1 do
+    begin
+      xl.Add(FAnalysisInfo.MyIncludedSites[site]);
+      xl.Add(FFocalSequence[site + 1]);
+      for state := 0 to FNumStates - 1 do
+        xl.Add(FEpValues[state][site]);
+      xl.Add(FUngappedTimes[0][site]);
+      xl.Add(FUngappedTimes[0][site]/FTimetreeSBL);
+      xl.WriteLine();
+    end;
+    caption := GenerateCaption;
+    xl.AddCaptionAsWorksheet(caption);
+  finally
+    if Assigned(caption) then
+      caption.Free;
+  end;
+end;
+
+procedure TEpThread.ComputeBranchLengths;
+var
+  aThread: TMLTreeAnalyzeThread = nil;
+  aMLTree: TMLTree = nil;
+begin
+  if FCancelled then
+    raise EAbort.Create('user cancelled');
+  try
+    UpdateRunStatus(EP_THREAD, 'computing branch lengths');
+    aThread := TMLTreeAnalyzeThread.Create(nil);
+    aThread.FreeOnTerminate := False;
+    aThread.OptimizeBLens := True;
+    aThread.OptimizeParams := True;
+    aThread.ProgressDlg := AnalysisInfo.ARP;
+    aThread.ShowProgress := True;
+    aThread.GroupNames := AnalysisInfo.MyGpNames;
+    FAnalysisInfo.ARP.Thread := aThread;
+    aThread.Start;
+    aThread.WaitFor;
+    if aThread.Canceled then
+      FCancelled := True
+    else
+    begin
+      aMLTree := aThread.MLTreeAnalyzer.MLTree;
+      AMLTree.GetTreeData(FUserTree);
+    end;
+  finally
+    if aThread <> nil then
+      aThread.Free;
+  end;
+end;
+
+procedure TEpThread.DoUpdateRunStatus;
+begin
+  if Assigned(RunStatusProc) then
+    RunStatusProc(FStatus, FStatusInfo);
+end;
+
+procedure TEpThread.UpdateRunStatus(aStatus: AnsiString; aInfo: AnsiString);
+begin
+  FStatus := aStatus;
+  FStatusInfo := aInfo;
+  Synchronize(@DoUpdateRunStatus);
+end;
+
+procedure TEpThread.DoShowProgressDlg;
+begin
+  if Assigned(FAnalysisInfo) and Assigned(FAnalysisInfo.ARP) then
+    FAnalysisInfo.ARP.Show;
+end;
+
+procedure TEpThread.DoHideProgressDlg;
+begin
+  if Assigned(FAnalysisInfo) and Assigned(FAnalysisInfo.ARP) then
+    FAnalysisInfo.ARP.Hide;
+end;
+
+function TEpThread.CheckMoveFocalSeqToFirst: Boolean;
+var
+  index: Integer = -1;
+  newick: String = '';
+  outgroupNames: TStringList = nil;
+  aData: TTreeData = nil;
+begin
+  try
+    Result := False;
+    if FFocalSequenceName <> EmptyStr then
+    begin
+      index := FOrigOtuNames.IndexOf(FFocalSequenceName);
+      if index < 0 then
+        raise exception.Create(Format('the specified focal sequence (%s) was not found. Please check your inputs', [FFocalSequenceName]));
+      if index <> 0 then
+      begin
+        outgroupNames := TStringList.Create;
+        FAnalysisInfo.MyOriTreeList.GetOutgroupTaxaNames(0, outgroupNames);
+        Assert(FAnalysisInfo.KeepUserTreeTimes or (outgroupNames.Count > 0), 'when using Reltime to compute evolutionary time spans, an outgroup is required');
+        Result := True;
+        FOrigOtuNames.Exchange(0, index);
+        FSeqStrings.Exchange(0, index);
+        FAnalysisInfo.MyOtuNames.Exchange(0, index);
+        FAnalysisInfo.MySeqStrings.Exchange(0, index);
+        FAnalysisInfo.MyUsedOtuInfos.Exchange(0, index);
+        newick := FAnalysisInfo.MyUserNewickTree;
+        if Trim(newick) = EmptyStr then
+          raise Exception.Create('Application Error: missing newick string');
+        FAnalysisInfo.MyOriTreeList.Clear;
+        FAnalysisInfo.MyOriTreeList.ImportFromNewick(FAnalysisInfo.MyUserNewickTree, FOrigOtuNames, True);
+        FAnalysisInfo.MyOriTreeList.SetOutgroupMembers(outgroupNames);
+        aData := FAnalysisInfo.MyOriTreeList[0];
+        RootTreeDataOnOutgroup(aData);
+        {$IFNDEF VISUAL_BUILD}
+        warn_nv(Format('Focal sequence (%s) has been moved to the first position in the alignment', [FFocalSequenceName]));
+        {$ENDIF}
+        newick := EmptyStr;
+      end;
+    end;
+  finally
+    if Assigned(outgroupNames) then
+      outgroupNames.Free;
+  end;
+end;
+
+function TEpThread.AnalysisDescription: String;
+begin
+  Result := 'Evolutionary Probabilities';
+end;
+
+function TEpThread.GenerateCaption: TStringList;
+var
+  lg: TLegendGenerator = nil;
+begin
+  try
+    try
+      lg := TLegendGenerator.Create;
+      lg.LoadTemplateFromFile('evolutionary_probabilities.htm');
+      lg.BindData(FAnalysisInfo);
+      lg.BindData(FAnalysisInfo.MyDistPack);
+      lg.BindData(FAnalysisInfo.MyTreePack);
+      lg.AssignData('NoOfSeqs', IntToStr(FAnalysisInfo.NoOfSeqs));
+      lg.AssignData('TaxonName', FAnalysisInfo.EpFocalSequenceName);
+      lg.AssignData('NoOfSites', IntToStr(FAnalysisInfo.NoOfSites));
+
+      if FAnalysisInfo.MyDistPack.DoesContain(gdGamma) then
+        lg.AssignData('NoOfGCats', IntToStr(FAnalysisInfo.NoOfGammaCat))
+      else
+        lg.AssignData('GammaPara', 'N/A');
+      if not FAnalysisInfo.MyDistPack.DoesContain(gdInvar) then
+        lg.AssignData('PropOfInvariant', 'N/A');
+      Result := TStringList.Create;
+      {$IFDEF VISUAL_BUILD}
+      lg.GenerateLegendAsText(Result);
+      {$ELSE}
+      Result.Text := lg.GenerateLegend;
+      {$ENDIF}
+    except
+      on E:Exception do
+      {$IFDEF VISUAL_BUILD}
+         ShowMessage('Oh no! Failed to generate caption: ' + E.Message);
+      {$ELSE}
+         Warn_nv('Failed to generate caption: ' + E.Message);
+      {$ENDIF}
+    end;
+  finally
+    if Assigned(lg) then
+      lg.Free;
+  end;
+end;
+
+constructor TEpThread.Create(MAI: TAnalysisInfo);
+begin
+  inherited Create(True);
+  SetLength(StopCodonSitesChangedToMissingData, 0);
+  RunStatusProc := nil;
+  FTimetreeSBL := 0;
+  FOrigOtuNames := TStringList.Create;
+  FOrigOtuNames.Assign(MAI.MyOtuNames);
+  FKeepUserProvidedTimes := False;
+  FCancelled := False;
+  FProgress := 0;
+  FStatus := 'Initializing EP calculation';
+  FreeOnTerminate := True;
+  FTreePruner := TSimpleTreeDataAdapter.Create;
+  AnalysisInfo := MAI;
+  FAInfo := MAI;
+  FMsgLog := TStringList.Create;
+  FPrunedTrees := TList.Create;
+  FNewickStrings := TStringList.Create;
+  FOtuNameLists := TList.Create;
+  FSeqStrings := TStringList.Create;
+  FSeqStrings.Assign(MAI.MySeqStrings);
+  FReltimeComputer := TReltimeComputer.Create;
+  FReltimeTrees := TList.Create;
+  FOrigNumTaxa := MAI.MyOriTreeList.NoOfOTUs;
+  if FAnalysisInfo.isAminoAcid then
+    FNumStates := 20
+  else
+    FNumStates := 4;
+  KeepUserProvidedTimes := MAI.KeepUserTreeTimes;
+  FFocalSequence := FAnalysisInfo.EpFocalSequence;
+  FFocalSequenceName := FAnalysisInfo.EpFocalSequenceName;
+end;
+
+destructor TEpThread.Destroy;
+begin
+  SetLength(StopCodonSitesChangedToMissingData, 0);
+  if Assigned(FAnalysisInfo) and Assigned(FAnalysisInfo.ARP) then
+  begin
+    //FAnalysisInfo.ARP.Free; { TODO 1 -oglen -cbugs : FAnalysisInfo.ARP needs to be freed but doing so is leading to a weird crash bug }
+    FAnalysisInfo.ARP := nil;
+  end;
+  if Assigned(FOrigOtuNames) then
+    FOrigOtuNames.Free;
+  if Assigned(FAnalysisInfo) then
+    FAnalysisInfo.Free;
+  if Assigned(FTreePruner) then
+    FTreePruner.Free;
+  if Assigned(FMsgLog) then
+    FMsgLog.Free;
+  if Assigned(FPrunedTrees) then
+  begin
+    ClearPrunedTrees;
+    FPrunedTrees.Free;
+  end;
+  if Assigned(FOtuNameLists) then
+  begin
+    ClearOtuNamesLists;
+    FOtuNameLists.Free;
+  end;
+  if Assigned(FSeqStrings) then
+    FSeqStrings.Free;
+  if Assigned(FNewickStrings) then
+    FNewickStrings.Free;
+  if Assigned(FReltimeComputer) then
+    FReltimeComputer.Free;
+  if Assigned(FReltimeTrees) then
+  begin
+    ClearReltimeTrees;
+    FReltimeTrees.Free;
+  end;
+  inherited Destroy;
+end;
+
+end.
+

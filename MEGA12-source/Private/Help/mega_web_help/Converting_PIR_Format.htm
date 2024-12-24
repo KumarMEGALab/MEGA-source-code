@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+ <title>Converting PIR Format</title>
+<link rel="StyleSheet" href="default.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "3.2.1.0_10";
+</script>
+ <meta name="topic-breadcrumbs" content="Part III: Input Data Types and File Formats > Importing Data From Other Formats > Format Specific Notes" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+<h1>Converting PIR Format</h1>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">These files consist of 
+ groups of non-blank lines that look similar to this:</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">ENTRY G006uaah</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">TITLE G019uabh 400 bp 240 
+ bases</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">SEQUENCE</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">5 10 15 20 25 30</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">1 A C A T A A A A T A A 
+ A C T G T T T T C T A T G T G A A A A</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">31 T T A A C C T A N N 
+ A T A T G C T T T G C T T A T G T T T A</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">61 A G A T G T C A T G 
+ C T T T T T A T C A G T T G A G G A G T</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">91 T C A G C T T A A T 
+ A A T C C T C T A A G A T C T T A A A C</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">121 A A A T A G G A A A 
+ A A A A C T A A A A G T A G A A A A T G</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">151 G A A A T A A A A T 
+ G T C A A A G C A T T T C T A C C A C T</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">181 C A G A A T T G A T 
+ C T T A T A A C A T G A A A T G C T T T</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">211 T T A A A A G A A A 
+ A T A T T A A A G T T A A A C T C C C C</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">The</font> <i><font style="font-size: 11pt; 
+	 font-family: Arial; font-style: italic;" size="2" face="Arial">MEGA</font></i> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">format 
+ converter looks for the “ENTRY” tag and treats the following string as 
+ the sequence name, e.g.,</font> <font style="font-size: 11pt; font-family: 'Courier New';" 
+										 size="2" face="Courier New">G006uaah</font> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">above. 
+ The remaining lines have their digits and spaces removed; any non-sequence 
+ characters also are deleted.</font> <i><font style="font-size: 11pt; font-family: Arial; 
+												 font-style: italic;" size="2" 
+												 face="Arial">MEGA</font></i> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">would 
+ convert the above sequence as follows:</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#mega</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Title: filename.pir</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#G006uaah</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">ACATAAAATAAACTGTTTTCTATGTGAAAA</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">TTAACCTANNATATGCTTTGCTTATGTTTA</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">AGATGTCATGCTTTTTATCAGTTGAGGAGT</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">TCAGCTTAATAATCCTCTAAGATCTTAAAC</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">AAATAGGAAAAAAACTAAAAGTAGAAAATG</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">GAAATAAAATGTCAAAGCATTTCTACCACT</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">CAGAATTGATCTTATAACATGAAATGCTTT</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">TTAAAAGAAAATATTAAAGTTAAACTCCCC</font></p>
+</body>
+</html>

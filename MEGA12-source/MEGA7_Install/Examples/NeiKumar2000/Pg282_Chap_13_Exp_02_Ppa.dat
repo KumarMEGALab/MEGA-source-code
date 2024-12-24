@@ -1,0 +1,78 @@
+{
+	Copyright 1992-2024 Sudhir Kumar and Koichiro Tamura
+
+	This file is part of the MEGA (Molecular Evolutionary Genetics Analyis) software.
+
+	MEGA (Molecular Evolutionary Genetics Analysis) is free software:
+	you can redistribute it and/or modify it under the terms of the
+	GNU General Public License as published by the Free Software
+	Foundation, either version 3 of the License, or (at your option)
+	any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+   Contributor(s):   The MEGA source code and software is made available in the hopes that it will be useful. 
+   In keeping with the spirit and intent that the MEGA project is developed under, the authors of MEGA request that before
+   distributing any significant changes to the MEGA source code (or derivatives thereof), you share
+   those changes with the MEGA authors so that they may have the opportunity to test that
+   the changes do not introduce errors into the code or otherwise negatively impact the correctness
+   or performance of the MEGA software.
+   
+	Please email inqiries to s.kumar@temple.edu
+}
+
+11 Pan.paniscus    11 3a X mtDNA BamHI      6.0000 14 20
+11 Pan.paniscus    11 3a X mtDNA BclI       6.0000 28 50 78 96
+11 Pan.paniscus    11 3a X mtDNA BglI       6.0000 38 93 65
+11 Pan.paniscus    11 3a X mtDNA BstEII     6.0000  3 99 23
+11 Pan.paniscus    11 3a X mtDNA EcoRI      6.0000 66 25 68 75
+11 Pan.paniscus    11 3a X mtDNA HindIII    6.0000 17 30 25 27 62
+11 Pan.paniscus    11 3a X mtDNA HpaI       6.0000 39 85 66
+11 Pan.paniscus    11 3a X mtDNA KpnI       6.0000 85
+11 Pan.paniscus    11 3a X mtDNA PstI       6.0000 23 47
+11 Pan.paniscus    11 3a X mtDNA PvuII      6.0000 33 64 59 70 93
+11 Pan.paniscus    11 3a X mtDNA SacI       6.0000 -1
+11 Pan.paniscus    11 3a X mtDNA XbaI       6.0000 44 17 50 54 92
+11 Pan.paniscus    11 3a X mtDNA SalI       6.0000 -1
+11 Pan.paniscus    11 3a X mtDNA AvaI       6.0000  7 11 16
+11 Pan.paniscus    11 3a X mtDNA HincII     6.0000 18 40 55 66 86
+11 Pan.paniscus    11 3a X mtDNA FnuDII     4.0000 27 33 72  0 41 46 85 92 95
+12 Pan.paniscus    12 3b X mtDNA BamHI      6.0000 14 20
+12 Pan.paniscus    12 3b X mtDNA BclI       6.0000 39 28 50 78 96
+12 Pan.paniscus    12 3b X mtDNA BglI       6.0000 46 58 38 93 65
+12 Pan.paniscus    12 3b X mtDNA BstEII     6.0000 23
+12 Pan.paniscus    12 3b X mtDNA EcoRI      6.0000 25 68 75
+12 Pan.paniscus    12 3b X mtDNA HindIII    6.0000 17 25 27 62
+12 Pan.paniscus    12 3b X mtDNA HpaI       6.0000 39 85 66
+12 Pan.paniscus    12 3b X mtDNA KpnI       6.0000 85
+12 Pan.paniscus    12 3b X mtDNA PstI       6.0000 23 47
+12 Pan.paniscus    12 3b X mtDNA PvuII      6.0000 33 64 59 70 93
+12 Pan.paniscus    12 3b X mtDNA SacI       6.0000 -1
+12 Pan.paniscus    12 3b X mtDNA XbaI       6.0000 44 17 50 54 92
+12 Pan.paniscus    12 3b X mtDNA SalI       6.0000 -1
+12 Pan.paniscus    12 3b X mtDNA AvaI       6.0000  7 11 16
+12 Pan.paniscus    12 3b X mtDNA HincII     6.0000 18 40 55 66 86
+12 Pan.paniscus    12 3b X mtDNA FnuDII     4.0000 27 33  0 41 46 85 92 95
+13 Pan.paniscus    13 3a X mtDNA BamHI      6.0000 14 20
+13 Pan.paniscus    13 3a X mtDNA BclI       6.0000 28 50 78 96
+13 Pan.paniscus    13 3a X mtDNA BglI       6.0000 38 93 65
+13 Pan.paniscus    13 3a X mtDNA BstEII     6.0000  3 99 23
+13 Pan.paniscus    13 3a X mtDNA EcoRI      6.0000 66 25 68 75
+13 Pan.paniscus    13 3a X mtDNA HindIII    6.0000 17 30 25 27 62
+13 Pan.paniscus    13 3a X mtDNA HpaI       6.0000 39 85 66
+13 Pan.paniscus    13 3a X mtDNA KpnI       6.0000 85
+13 Pan.paniscus    13 3a X mtDNA PstI       6.0000 23 47
+13 Pan.paniscus    13 3a X mtDNA PvuII      6.0000 33 64 59 70 93
+13 Pan.paniscus    13 3a X mtDNA SacI       6.0000 -1
+13 Pan.paniscus    13 3a X mtDNA XbaI       6.0000 44 17 50 54 92
+13 Pan.paniscus    13 3a X mtDNA SalI       6.0000 -1
+13 Pan.paniscus    13 3a X mtDNA AvaI       6.0000  7 11 16
+13 Pan.paniscus    13 3a X mtDNA HincII     6.0000 18 40 55 66 86
+13 Pan.paniscus    13 3a X mtDNA FnuDII     4.0000 27 33 72  0 41 46 85 92 95
+

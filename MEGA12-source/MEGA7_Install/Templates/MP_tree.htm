@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<TITLE>Maximum Parsimony</TITLE>
+<style>{TLegendGenerator.Style}</style>
+</HEAD>
+
+<BODY>
+  <SPAN class="figureTitle">
+	{if TLegendGenerator.Operation = 'dtdoMPComputeUserTreeBLens'}
+		Evolutionary analysis by Maximum Parsimony method
+	{else}
+	   Maximum Parsimony analysis of taxa
+	  {if TTreeBox.IsLinearized = True}
+		(linearized)
+	  {endif}
+	{endif}  
+  </span>
+
+<div id ="content">
+  {TLegendGenerator.MpTreeCaption}
+	
+
+</div>
+<br>
+<br>
+</body>
+</html>

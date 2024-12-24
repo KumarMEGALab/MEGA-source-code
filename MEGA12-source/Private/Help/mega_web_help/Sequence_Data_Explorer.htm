@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Sequence Data Explorer</title>
+<link rel="StyleSheet" href="default.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "3.4.1.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part III: Input Data Types and File Formats > Viewing And Exploring Input Data > Sequence Data Explorer" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1>Sequence Data Explorer</h1>
+<p class="MsoNormal">The <i>Sequence Data Explorer</i> shows the aligned 
+ sequence data.<span style="mso-spacerun: yes;">&#160;</span>&#160;You 
+ can scroll along the alignment using the scrollbar at the bottom right 
+ hand side of the explorer window.<span style="mso-spacerun: yes;">&#160;</span>&#160;The 
+ <i>Sequence Data Explorer</i> provides a number of utilities for exploring 
+ the statistical attributes of the data and also for selecting data subsets.</p>
+<p class="MsoNormal">&#160;</p>
+<p class="MsoNormal">This explorer consists of a number of regions as follows:</p>
+<p class="MsoNormal" style="font-weight: bold;">Menu Bar</p>
+<p class="MsoNormal" style="color: #007fbf; text-decoration: underline; "><a 
+	 href="Data_Menu_(Sequence_Data_Explorer).htm" style="color: #007fbf; 
+	 text-decoration: underline; "><i><u style="text-underline: double;"><span 
+	 style="font-style: normal; color: #007fbf; text-decoration: underline; ">Data</span></u></i><span 
+	 style="color: #007fbf; text-decoration: underline; "> </span><u style="text-underline: double;"><span 
+	 style="color: #007fbf; text-decoration: underline; ">menu</span></u></a></p>
+<p class="MsoNormal" style="color: #007fbf; text-decoration: underline; "><a 
+	 href="Part_II_Assembling_Data_For_Analysis/Building_Sequence_Alignments/Menu_Items_In_Alignment_Explorer/Search_Menu.htm" 
+	 style="color: #007fbf; text-decoration: underline; ">Search menu</a></p>
+<p class="MsoNormal" style="text-underline: double; color: #007fbf; text-decoration: underline; "><u><span><a 
+	 href="Display_Menu_in_Sequence_Data_Explorer.htm" style="color: #007fbf; 
+	 text-decoration: underline; ">Display menu</a></span></u></p>
+<p class="MsoNormal" style="color: #007fbf; text-decoration: underline; "><a 
+	 href="Highlight_Menu_in_Sequence_Data_Explorer.htm" style="color: #007fbf; 
+	 text-decoration: underline; "><i><u style="text-underline: double;"><span 
+	 style="font-style: normal; color: #007fbf; text-decoration: underline; ">Highlight</span></u></i><span 
+	 style="color: #007fbf; text-decoration: underline; "> </span><u style="text-underline: double;"><span 
+	 style="color: #007fbf; text-decoration: underline; ">menu</span></u></a></p>
+<p class="MsoNormal" style="color: #007fbf; text-decoration: underline; "><a 
+	 href="Statistics_Menu_in_Sequence_Data_Explorer.htm" style="color: #007fbf; 
+	 text-decoration: underline; "><i><u style="text-underline: double;"><span 
+	 style="font-style: normal; color: #007fbf; text-decoration: underline; ">Statistics</span></u></i> 
+ <u style="text-underline: double;"><span style="color: #007fbf; text-decoration: underline; ">menu</span></u></a></p>
+<p class="MsoNormal"><i>Help</i>: This item brings up the help file for 
+ the <i>Sequence Data Explorer</i>.</p>
+<p class="MsoNormal" style="font-weight: bold;">Tool Bar</p>
+<p class="MsoNormal">The tool bar provides quick access to the following 
+ menu items:</p>
+<p class="MsoNormal">General Utilities</p>
+<p class="MsoNormal"><img src="image13.gif" style=" border:none; width:100%; max-width:26px;" alt="" border="0" />: This brings up the <a href="Export_Data_(Sequence_Data_Explorer).htm"><i><u 
+	 style="text-underline: double;"><span style="color: #007fbf;">Exporting 
+ Sequence Data</span></u></i><span style="display: none; mso-hide: all;">HC_Export_Data_in_Sequence_Data_Explorer</span></a> 
+ dialog box, which contains options to control how <i>MEGA</i> writes the 
+ output data, available options are Text, MEGA, CSV, and Excel.</p>
+<p class="MsoNormal"><img src="image14.gif" style=" border:none; width:100%; max-width:26px;" alt="" border="0" />: This brings up the Exporting 
+ Sequence Data dialog box and sets the default output format to MEGA.</p>
+<p class="MsoNormal"><img src="image15.gif" style=" border:none; width:100%; max-width:26px;" alt="" border="0" />: This brings up the Exporting 
+ Sequence Data dialog box and sets the default output format to Excel.</p>
+<p class="MsoNormal"><img src="image16.gif" style=" border:none; width:100%; max-width:26px;" alt="" border="0" />: This brings up the Exporting 
+ Sequence Data dialog box and sets the default output format to CSV (Comma 
+ separated values).</p>
+<p class="MsoNormal"><img src="image17.gif" style=" border:none; width:100%; max-width:26px;" alt="" border="0" />: This brings up the <a href="Setup_Select_Genes_Domains_Dialog.htm" 
+	 style="color: #007fbf;"><u style="text-underline: double;"><span style="color: #007fbf; 
+	 text-decoration: underline; ">dialog box</span></u><span style="display: none; 
+	 mso-hide: all; color: #007fbf; text-decoration: underline; ">HC_Genes_Domains_Dialog</span></a> 
+ for setting up and selecting <a href="javascript:TextPopup(this)" id="HotSpot27596" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot27596', 'POPUP27596');
+//]]></script><span class="glosstext" id="POPUP27596" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span> 
+ and genes.</p>
+<p class="MsoNormal"><img src="image18.gif" style=" border:none; width:100%; max-width:26px;" alt="" border="0" />: This brings up the <a href="Setup_Select_Taxa_Groups_Dialog.htm"><u 
+	 style="text-underline: double;"><span style="color: #007fbf;">dialog 
+ box</span></u><span style="display: none; mso-hide: all;">HC_Setup_Taxa_Groups_Dlg</span></a> 
+ for setting up, editing, and selecting taxa and <a href="javascript:TextPopup(this)" id="HotSpot43761" class="glossterm">groups 
+ of taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot43761', 'POPUP43761');
+//]]></script><span class="glosstext" id="POPUP43761" style="display: none;"> A group of taxa is a set of one or more taxa. Members of a group can be specified in the input data file, and created and edited in the Setup Taxa and Groups dialog.  Groups of taxa often are constructed based on their evolutionary relatedness.  For example, sequences may be grouped based on the geographic origin of the source individual, or sequences from a multi-gene family may be arranged into groups consisting of orthologous sequences.</span>.</p>
+<p class="MsoNormal"><img src="image19.gif" style=" border:none; width:100%; max-width:36px;" alt="" border="0" />: This toggle replaces the nucleotide/amino 
+ acid at a site with the identical symbol (e.g. a dot) if the site contains 
+ the same nucleotide/amino acid.</p>
+<p class="MsoNormal"><img src="image21.gif" style=" border:none; width:100%; max-width:36px;" alt="" border="0" />: This button provides the facility 
+ to translate codons in the sequence data into amino acid sequences and 
+ back.<span style="mso-spacerun: yes;">&#160;</span>&#160;All protein-coding 
+ regions will be automatically identified and translated for display.<span 
+	 style="mso-spacerun: yes;">&#160;</span>&#160;When the translated 
+ sequence is already displayed, then issuing this command displays the 
+ original nucleotide sequences (including all coding and non-coding regions).<span 
+	 style="mso-spacerun: yes;">&#160;</span>&#160;Depending on the data 
+ displayed (translated or nucleotide), relevant menu options in the <i>Sequence 
+ Data Explorer</i> become enabled.<span style="mso-spacerun: yes;">&#160;</span>&#160;Note 
+ that the translated/un-translated status in this data explorer does not 
+ have any impact on the options for analysis available in <i style="mso-bidi-font-style: normal;">MEGA</i> 
+ (e.g., <i>Distances</i> or <i>Phylogeny</i> menus), as <i style="mso-bidi-font-style: normal;">MEGA</i> 
+ provides all possible options for your dataset at all times.</p>
+<p class="MsoNormal">&#160;</p>
+<p class="MsoNormal" style="font-weight: bold;">Highlighting Sites</p>
+<p class="MsoNormal"><b><span style="color: #800000;">C</span></b>: If 
+ this button is pressed, then all <u><span style="text-decoration: none; ">constant 
+ sites</span></u><span style="display: none; mso-hide: all;">RH_Constant_Site</span> 
+ will be highlighted.<span style="mso-spacerun: yes;">&#160;</span>&#160;A 
+ count of the highlighted sites will be displayed on the status bar.</p>
+<p class="MsoNormal"><b><span style="color: #800000;">V</span></b>: If 
+ this button is pressed, then all <u><span style="text-decoration: none; ">variable 
+ sites</span></u><span style="display: none; mso-hide: all;">RH_Variable_site</span> 
+ will be highlighted.<span style="mso-spacerun: yes;">&#160;</span>&#160;A 
+ count of the highlighted sites will be displayed on the status bar.</p>
+<p class="MsoNormal"><b><span style="color: #800000;">Pi</span></b>: If 
+ this button is pressed, then all <u style="text-decoration: none; ">parsimony-informative 
+ sites</u><span style="display: none; mso-hide: all; text-decoration: underline; ">RH_Parsimony_informative_site</span> 
+ will be highlighted.<span style="mso-spacerun: yes;">&#160;</span>&#160;A 
+ count of the highlighted sites will be displayed on the status bar.</p>
+<p class="MsoNormal"><b><span style="color: #800000;">S</span></b>: If 
+ this button is pressed, then all <u style="text-decoration: none; ">singleton 
+ sites</u><span style="display: none; mso-hide: all;">RH_Singleton_Sites</span> 
+ will be highlighted.<span style="mso-spacerun: yes;">&#160;</span>&#160;A 
+ count of the highlighted sites will be displayed on the status bar.</p>
+<p class="MsoNormal"><span style="font-weight: bold; color: #800000;">L</span>: 
+ If this button is pressed, then all labelled sites will be highlighted 
+ and a count of highlighted sites will be displayed on the status bar (see 
+ also <a href="Labeled_Sites.htm">labelled sites</a>).</p>
+<p class="MsoNormal"><b><span style="color: #800000;">0</span></b>: If 
+ this button is pressed, then sites will be highlighted only if they are 
+ <u><span style="text-decoration: none; ">zero-fold degenerate sites</span></u><span 
+	 style="display: none; mso-hide: all;">RH_Degeneracy</span> in all 
+ sequences displayed.<span style="mso-spacerun: yes;">&#160;</span>&#160;A 
+ count of highlighted sites will be displayed on the status bar.<span style="mso-spacerun: yes;">&#160;</span>&#160;(This 
+ button is available only if the dataset contains protein coding DNA sequences).</p>
+<p class="MsoNormal"><b><span style="color: #800000;">2</span></b>: If 
+ this button is pressed, then sites will be highlighted only if they are 
+ <u><span style="text-decoration: none; ">two-fold degenerate sites</span></u><span 
+	 style="display: none; mso-hide: all;">RH_Degeneracy</span> in all 
+ sequences displayed.<span style="mso-spacerun: yes;">&#160;</span>&#160;A 
+ count of highlighted sites will be displayed on the status bar.<span style="mso-spacerun: yes;">&#160;</span>&#160;(This 
+ button is available only if the dataset contains protein coding DNA sequences).</p>
+<p class="MsoNormal"><b><span style="color: #800000;">4</span></b>: If 
+ this button is pressed, then sites will be highlighted only if they are 
+ <u><span style="text-decoration: none; ">four-fold degenerate sites</span></u><span 
+	 style="display: none; mso-hide: all; text-decoration: underline; ">R</span><span 
+	 style="display: none; mso-hide: all;">H_Degeneracy</span> in all sequences 
+ displayed.<span style="mso-spacerun: yes;">&#160;</span>&#160;A count 
+ of highlighted sites will be displayed on the status bar.<span style="mso-spacerun: yes;">&#160;</span>&#160;(This 
+ button is available only if the dataset contains protein coding DNA sequences).</p>
+<p class="MsoNormal"><b><span style="color: #800000;">Special</span></b>: 
+ This dropdown allows for the selection of a special highlighting option.</p>
+<p class="MsoNormal"><b><span style="color: #800000;">CpG/TpG/CpA</span></b>: 
+ if this button is pressed, then all sites which have a C followed by a 
+ G, T by G, or C by A will be highlighted.<span style="mso-spacerun: yes;">&#160;</span>&#160;You 
+ may also select a percentage of sequences which must have these properties 
+ for<span style="mso-spacerun: yes;">&#160;</span>&#160;a site to be counted.</p>
+<p class="MsoNormal"><b><span style="color: #800000;">Coverage</span></b>: 
+ if this button is pressed, then you will enter a percentage.<span style="mso-spacerun: yes;">&#160;</span>&#160;All 
+ the sites with this percentage or less of ambiguous sites will be highlighted.</p>
+<p class="MsoNormal"><img src="image9.gif" style=" border:none; width:100%; max-width:62px;" alt="" border="0" />: This button allows you to quickly 
+ navigate between highlighted sites by jumping to the previous or next 
+ highlighted site.</p>
+<p class="MsoNormal" style="font-weight: bold;">Searching</p>
+<p class="MsoNormal"><img src="image22.gif" style=" border:none; width:100%; max-width:26px;" alt="" border="0" />: This button allows you to specify 
+ a sequence name to find.<span style="mso-spacerun: yes;">&#160;</span>&#160;Search 
+ results are bolded and the row is highlighted blue.<span style="mso-spacerun: yes;">&#160;</span>&#160;MEGA 
+ first looks for an exact match to the name you specified, if none exists 
+ it looks for names starting with what you provided, if no names start 
+ with the provided search term, then MEGA looks for your search term anywhere 
+ in the names(rather than just the start).</p>
+<p class="MsoNormal"><img src="image23.gif" style=" border:none; width:100%; max-width:26px;" alt="" border="0" />: This button allows you to specify 
+ a Motif to search for in the sequence data.<span style="mso-spacerun: yes;">&#160;</span>&#160;This 
+ Motif supports IUPAC codes such as R (for A or G) and Y (for T or C).<span 
+	 style="mso-spacerun: yes;">&#160;</span>&#160;MEGA highlights (in 
+ Yellow) the first instance of this motif it finds.</p>
+<p class="MsoNormal"><img src="image24.gif" style=" border:none; width:100%; max-width:27px;" alt="" border="0" /> and <img src="image25.gif" style=" border:none; width:100%; max-width:27px;" alt="" border="0" />: 
+ These buttons are only enabled if you have already searched for a Sequence 
+ Name or Motif.<span style="mso-spacerun: yes;">&#160;</span>&#160;By clicking 
+ the forward or backward button MEGA will search for the next or previous 
+ search result (assuming there is more than one possible matches).</p>
+<p class="MsoNormal" style="font-weight: bold;">The 2-Dimensional Data 
+ Grid</p>
+<p class="MsoNormal"><i>Fixed Row</i>:<span style="mso-spacerun: yes;">&#160;</span>&#160;This 
+ is the first row in the data grid.<span style="mso-spacerun: yes;">&#160;</span>&#160;It 
+ is used to display the nucleotides (or amino acids) in the first sequence 
+ when you have chosen to show their identity using a special character.<span 
+	 style="mso-spacerun: yes;">&#160;</span>&#160;For protein coding regions, 
+ it also clearly marks the first, second, and the third <a href="javascript:TextPopup(this)" id="HotSpot10684" class="glossterm">codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot10684', 'POPUP10684');
+//]]></script><span class="glosstext" id="POPUP10684" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span> positions.</p>
+<p class="MsoNormal"><i>Fixed Column</i>:<span style="mso-spacerun: yes;">&#160;</span>&#160;This 
+ is the first and the leftmost column in the data grid.<span style="mso-spacerun: yes;">&#160;</span>&#160;It 
+ is always visible, even when you are scrolling through sites.<span style="mso-spacerun: yes;">&#160;</span>&#160;The 
+ column contains the sequence names and an associated check box.<span style="mso-spacerun: yes;">&#160;</span>&#160;You 
+ can check or uncheck this box to include or exclude a sequence from analysis.<span 
+	 style="mso-spacerun: yes;">&#160;</span>&#160;Also in this column, 
+ you can drag-and-drop sequences to sort them.</p>
+<p class="MsoNormal"><i>Rest of the Grid</i>:<span style="mso-spacerun: yes;">&#160;</span>&#160;Cells 
+ to the right of and below the first row contain the nucleotides or amino 
+ acids of the input data.<span style="mso-spacerun: yes;">&#160;</span>&#160;Note 
+ that all cells are drawn in light color if they contain data corresponding 
+ to unselected sequences or genes or <a href="javascript:TextPopup(this)" id="HotSpot23755" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot23755', 'POPUP23755');
+//]]></script><span class="glosstext" id="POPUP23755" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span>.</p>
+<p class="MsoNormal" style="font-weight: bold;">Status Bar</p>
+<p class="MsoNormal">This section displays the location of the focused 
+ site and the total sequence length.<span style="mso-spacerun: yes;">&#160;</span>&#160;It 
+ also shows the <a href="javascript:TextPopup(this)" id="HotSpot13751" class="glossterm">site label</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot13751', 'POPUP13751');
+//]]></script><span class="glosstext" id="POPUP13751" style="display: none;"> The individual sites in nucleotide or amino acid data can be labeled to construct non-contiguous sets of sites.  The Setup Genes and Domains dialog can be used to assign or edit site labels, in addition to specifying them in the input data files. This is shown in the following example of three-sequences in which the sites in the Third Gene are labeled with a ‘+’ mark.  An underscore marks an absence of any labels.  !Gene=FirstGene  Domain=Exon1  Property=Coding;  #Human_{Mammal}  ATGGTTTCTAGTCAGGTCACCATGATAGGTCTCAAT  #Mouse_{Mammal}  ATGGTTTCTAGTCAGGTCACCATGATAGGTCCCAAT  #Chicken_{Aves}  ATGGTTTCTAGTCAGCTCACCATGATAGGTCTCAAT    !Gene=SecondGene  Domain=AnIntron Property=Noncoding;  #Human     ATTCCCAGGGAATTCCCGGGGGGTTTAAGGCCCCTTTAAAGAAAGAT  #Mouse     GTAGCGCGCGTCGTCAGAGCTCCCAAGGGTAGCAGTCACAGAAAGAT  #Chicken   GTAAAAAAAAAAGTCAGAGCTCCCCCCAATATATATCACAGAAAGAT    !Gene=ThirdGene  Domain=Exon2  Property=Coding;  #Human      ATCTGCTCTCGAGTACTGATACAAATGACTTCTGCGTACAACTGA  #Mouse      ATCTGATCTCGTGTGCTGGTACGAATGATTTCTGCGTTCAACTGA  #Chicken    ATCTGCTCTCGAGTACTGCTACCAATGACTTCTGCGTACAACTGA  !Label      +++__-+++-a-+++-L-+++-k-+++123+++-_-+++---+++;    Each site can be associated with only one label.  A label can be a letter or a number.  For analyses that require codons, MEGA includes only those codons in which all three positions are given the same label.  This site labeling system facilitates the analysis of specific sites, as often is required for comparing sequences of regulatory elements, intron-splice sites, and antigen recognition sites in the genes of applications such as the Major Histocompatibility Complex.</span>, 
+ if any, and a count of the highlighted sites.</p>
+</body>
+</html>

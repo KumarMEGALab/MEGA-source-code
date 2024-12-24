@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+<meta name="OriginalFile" content="ContextHelp_HC.doc" />
+ <title>Compute MCL Transversion/Transition bias</title>
+<link rel="stylesheet" href="ContextHelp_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "7.1.5.0_6";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix B: Main Menu Items and Dialogs Reference > Main MEGA Menus > Models Menu" />
+</head>
+<body link="blue" vlink="purple">
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1><span style=" font-size:11.0pt;">Compute MCL Transversion/Transition bias</span></h1>
+<p style=" margin-left:0in;"><i><span style=" font-size:11.0pt;">Models</span></i> <span style=" font-size:11.0pt;">| <i>Compute MCL <a href="javascript:TextPopup(this)" id="HotSpot16178" class="glossterm">Transversion</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot16178', 'POPUP16178');
+//]]></script><span class="glosstext" id="POPUP16178" style="display: none;"> A change from a purine to a pyrimidine, or vice versa, is a transversion.</span>/<a href="javascript:TextPopup(this)" id="HotSpot17945" class="glossterm">Transition</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot17945', 'POPUP17945');
+//]]></script><span class="glosstext" id="POPUP17945" style="display: none;"> A transition occurs when a purine is substituted by a purine, or a pyrimidine by a pyrimidine.</span> bias</i></span></p>
+<p style=" margin-left:0in;"><span style=" font-size:11.0pt;">&#160;</span></p>
+<p><span style=" font-size:11.0pt; font-family:'Arial' ,sans-serif;">This option estimates the <a href="javascript:TextPopup(this)" id="HotSpot35354" class="glossterm">Transition</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot35354', 'POPUP35354');
+//]]></script><span class="glosstext" id="POPUP35354" style="display: none;"> A transition occurs when a purine is substituted by a purine, or a pyrimidine by a pyrimidine.</span> / <a href="javascript:TextPopup(this)" id="HotSpot45142" class="glossterm">Transversion</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot45142', 'POPUP45142');
+//]]></script><span class="glosstext" id="POPUP45142" style="display: none;"> A change from a purine to a pyrimidine, or vice versa, is a transversion.</span> bias  parameters κ (for <a href="javascript:TextPopup(this)" id="HotSpot41966" class="glossterm">purines</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot41966', 'POPUP41966');
+//]]></script><span class="glosstext" id="POPUP41966" style="display: none;"> The nucleotides adenine (A) and guanine (G) are known as purines.</span> + pyrimidines), κ1 (<a href="javascript:TextPopup(this)" id="HotSpot42897" class="glossterm">purines</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot42897', 'POPUP42897');
+//]]></script><span class="glosstext" id="POPUP42897" style="display: none;"> The nucleotides adenine (A) and guanine (G) are known as purines.</span> only), and κ2 (pyrimidines only) under the <a href="javascript:TextPopup(this)" id="HotSpot44008" class="glossterm">Maximum Composite Likelihood</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot44008', 'POPUP44008');
+//]]></script><span class="glosstext" id="POPUP44008" style="display: none;"> In general, a composite likelihood is defined as a sum of log-likelihoods for related estimates. In MEGA4, the maximum composite likelihood is used for describing the sum of log-likelihoods for all pairwise distances in a distance matrix (Tamura et al. 2004) estimated by using the Tamura-Nei (1993) model (see related Tamura-Nei distance). Further information is in the Maximum Composite Likelihood Method.</span> model.  (nucleotide data only, coding or non-coding)</span></p>
+<p style=" margin-left:0in;">&#160;</p>
+<p style=" margin-left:0in;">&#160;</p>
+<b><span style=" font-size:8.0pt; font-family:'Arial' ,sans-serif;"><br clear="all" /></span></b>
+</body>
+</html>

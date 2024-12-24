@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>General Considerations (Distance Data Format)</title>
+<link rel="StyleSheet" href="default.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "3.1.3.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part III: Input Data Types and File Formats > MEGA Input Data Formats > Distance Input Data" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1>General Considerations (Distance Data Format)</h1>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">For a set of</font> <i><font 
+	 style="font-size: 11pt; font-family: Arial; font-style: italic;" size="2" 
+	 face="Arial">m</font></i> <font style="font-size: 11pt; font-family: Arial;" 
+									 size="2" face="Arial">sequences (or 
+ <a href="javascript:TextPopup(this)" id="HotSpot25368" class="glossterm">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot25368', 'POPUP25368');
+//]]></script><span class="glosstext" id="POPUP25368" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span>), there are</font> <i><font style="font-size: 11pt; font-family: Arial; 
+									 font-style: italic;" size="2" face="Arial">m</font></i><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">(</font><i><font 
+	 style="font-size: 11pt; font-family: Arial; font-style: italic;" size="2" 
+	 face="Arial">m</font></i><font style="font-size: 11pt; font-family: Arial;" 
+									 size="2" face="Arial">-1)/2 pairwise 
+ distances. These distances can be arranged either in the lower-left or 
+ in the upper-right triangular matrix. After writing the</font> <font style="font-size: 11pt; 
+	 font-family: 'Courier New';" size="2" face="Courier New">#mega,!Title,!Description</font><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">, 
+ and</font> <font style="font-size: 11pt; font-family: 'Courier New';" 
+					 size="2" face="Courier New">!Format</font> <font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">commands (some of which 
+ are optional), you then need to write all the <a href="javascript:TextPopup(this)" id="HotSpot32271" class="glossterm">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot32271', 'POPUP32271');
+//]]></script><span class="glosstext" id="POPUP32271" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> names (see below). 
+ <a href="javascript:TextPopup(this)" id="HotSpot62338" class="glossterm">Taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot62338', 'POPUP62338');
+//]]></script><span class="glosstext" id="POPUP62338" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> names are followed by the distance matrix. An example of a matrix 
+ is:</font></p>
+<p style="text-align: center; margin: 0pt 6.5pt 20pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#one</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#two</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#three</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#four</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#five<br />
+</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">1.0 2.0&#160;3.0&#160;4.0</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">3.0&#160;2.5&#160;4.6</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">1.3&#160;3.6</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">4.2</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">In the above example, pairwise 
+ distances are written in the upper triangular matrix (upper-right format). 
+ Two alternate distance matrix formats are:</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<table style="margin-left: 0.35pt;" cellspacing="0">
+	<col />
+	<col />
+	<col />
+	<col />
+	<col />
+	<col />
+	<col />
+	<col />
+	<tr style="vertical-align: top;">
+		<td colspan="4" style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Lower-left 
+		 matrix</font></p></td>
+		<td colspan="4" style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Upper-right 
+		 matrix</font></p></td>
+		
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">d</font><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">12</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">d</font><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">12</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">d</font><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">13</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">d</font><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">14</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">d</font><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">15</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">d</font><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">13</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">d</font><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">23</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">d</font><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">23</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">d</font><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">24</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">d</font><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">25</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">d</font><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">14</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">d</font><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">24</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">d</font><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">34</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">d</font><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">34</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">d</font><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">35</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">d</font><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">15</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">d</font><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">25</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">d</font><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">35</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">d</font><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">45</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">d</font><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">45</font></p></td>
+	</tr>
+</table>
+</body>
+</html>

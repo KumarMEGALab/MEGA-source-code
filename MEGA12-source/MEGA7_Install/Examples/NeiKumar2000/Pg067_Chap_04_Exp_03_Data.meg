@@ -1,0 +1,84 @@
+#mega
+!Title Sequences of the mitochondrial Ndh5 genes for Human and Common Chimpanzee;
+!Format 
+    DataType=Nucleotide
+    NTaxa=2 NSites=1809
+    Identical=. Missing=? Indel=-
+    CodeTable=Vertebrate_mitochondrial;
+
+[
+M. Nei and S. Kumar (2000) Molecular Evolution and Phylogenetics.  
+Oxford University Press. New York.
+Data for Example 4.3.
+]
+
+!Domain=Data Property=Coding;
+#Chimp   ATA ACC ATG TAT GCT ACC ATA ACC ACC TTA GCC CTA ACT TCC TTA ATT CCC CCC ATC CTC GGC GCC CTC ATT AAC CCT AAC
+#Human   ... ... ... C.C A.. ..T ... ... ... C.. A.. ..G ... ... C.. ... ... ... ... ..T AC. A.. ... G.. ... ... ...
+
+#Chimp   AAA AAA AAC TCA TAC CCC CAT TAC GTG AAA TCC ATT ATC GCA TCC ACC TTT ATC ATT AGC CTT TTC CCC ACA ACA ATA TTC
+#Human   ... ... ... ... ... ... ... ..T ..A ... ... ... G.. ... ... ... ... ..T ..C ..T ..C ... ... ... ... ... ...
+
+#Chimp   ATA TGC CTA GAC CAA GAA ACT ATT ATC TCG AAC TGA CAC TGA GCA ACA ACC CAA ACA ACC CAA CTC TCC CTG AGC TTT AAA
+#Human   ..G ... ... ... ... ... GT. ... ... ... ... ... ... ... ..C ... ... ... ... ... ..G ... ... ..A ... ..C ...
+
+#Chimp   CTA GAC TAT TTC TCC ATA ACA TTT ATC CCC GTA GCA CTG TTC GTT ACA TGA TCC ATC ATA GAA TTC TCA CTA TGA TAT ATA
+#Human   ... ... ..C ... ... ... .T. ..C ... ..T ... ... T.. ... ... ... ..G ... ... ... ... ... ... ..G ... ... ...
+
+#Chimp   GAC TCA GAC CCC AAC ATC AAC CAA TTC TTC AAA TAC TTA CTT ATC TTC CTA ATT ACT ATA CTA ATC CTA GTC ACC GCT AAC
+#Human   A.. ... ... ..A ... ..T ..T ..G ... ... ... ..T C.. ..C ... ... ... ... ..C ... ... ... T.. ..T ... ... ...
+
+#Chimp   AAC CTA TTC CAA CTC TTC ATC GGC TGA GAA GGC GTA GGA ATT ATA TCC TTT CTA CTC ATT AGC TGA TGG TAC GCC CGA ACA
+#Human   ... ... ... ... ..G ... ... ... ... ..G ... ... ... ... ... ... ..C T.G ... ..C ..T ... ..A ... ... ... G..
+
+#Chimp   GAT GCC AAC ACA GCA GCC ATC CAA GCA ATC CTA TAT AAC CGT ATC GGT GAT ATT GGT TTT GTC CTA GCC CTA GCA TGA TTT
+#Human   ... ... ... ... ... ... ..T ... ... ... ... ..C ... ... ... ..C ... ..C ... ..C A.. ..C ... T.. ... ... ...
+
+#Chimp   CTC CTA CAC TCC AAC TCA TGA GAT CCA CAA CAA ATA ATC CTC CTA AGT ACT AAT ACA GAC CTT ACT CCA CTA CTA GGC TTC
+#Human   A.. ... ... ... ... ... ... ..C ... ... ... ... GC. ..T ... .AC G.. ... C.. AG. ..C ..C ... ... ... ... C..
+
+#Chimp   CTC CTA GCA GCA GCA GGC AAA TCA GCT CAA CTA GGC CTT CAC CCC TGA CTC CCC TCA GCC ATA GAA GGC CCT ACC CCT GTT
+#Human   ... ... ... ... ... ... ... ... ..C ... T.. ..T ..C ... ... ... ... ... ... ... ... ... ... ..C ... ..A ..C
+
+#Chimp   TCA GCC CTA CTC CAC TCA AGC ACC ATA GTC GTA GCA GGA ATC TTC CTA CTC ATC CGC TTC TAC CCC CTA GCA GAG AAT AAC
+#Human   ... ... ... ... ... ... ... ..T ... ..T ... ... ... ... ... T.. ... ... ... ... C.. ... ... ... ..A ... .G.
+
+#Chimp   CCA CTA ATC CAA ACT CTC ACG CTA TGC CTA GGC GCT ATC ACC ACC CTA TTC GCA GCA GTC TGC GCC CTC ACA CAA AAT GAC
+#Human   ... ... ... ... ... ..A ..A ... ... T.. ... ... ... ... ..T ..G ... ... ... ... ... ... ..T ... ... ... ...
+
+#Chimp   ATC AAA AAA ATC GTG GCC TTC TCC ACT TCA AGC CAA CTA GGA CTC ATA ATA GTT ACA ATC GGT ATC AAC CAA CCA CAC CTA
+#Human   ... ... ... ... ..A ... ... ... ... ... ..T ... ... ... ... ... ... ... ... ... ..C ... ... ... ... ... ...
+
+#Chimp   GCA TTC CTT CAC ATC TGC ACC CAC GCT TTC TTC AAA GCC ATA CTA TTC ATA TGC TCC GGA TCC ATT ATT CAC AAC CTC AAT
+#Human   ... ... ..G ... ... ..T ... ... ..C ... ... ... ... ... ... ..T ..G ... ... ..G ... ..C ..C ... ... ..T ..C
+
+#Chimp   AAT GAG CAA GAC ATT CGA AAA ATA GGA GGA TTA CTC AAA ACC ATA CCC CTC ACT TCA ACC TCC CTC ACC ATT GGG AGC CTA
+#Human   ... ..A ... ..T ... ... ... ... ... ... C.. ... ... ... ... ..T ... ... ... ... ... ... ... ... ..C ... ...
+
+#Chimp   GCA TTA GCA GGA ATA CCC TTC CTC ACA GGT TTC TAC TCC AAA GAC CTC ATC ATC GAA ACC GCT AAC ATA TCA TAC ACA AAC
+#Human   ... ... ... ... ... ..T ... ... ... ... ... ... ... ... ... .A. ... ... ... ... ..A ... ... ... ... ... ...
+
+#Chimp   GCC TGA GCC CTA TCT ATT ACT CTC ATC GCC ACC TCT CTG ACA AGC GCC TAC AGC ACC CGA ATA ATC CTC CTC ACC CTA ACA
+#Human   ... ... ... ... ... ... ... ... ... ..T ... ..C ... ... ... ... ..T ... ..T ... ... ..T ..T ... ... ... ...
+
+#Chimp   GGT CAA CCT CGC TTC CCA ACC CTC ACC AAC ATT AAC GAA AAC AAC CCC ACT CTG TTA AAT CCC ATT AAA CGC CTA ACC ATT
+#Human   ... ... ... ... ... ..C ... ..T ..T ... ... ... ... ..T ... ... ..C ..A C.. ..C ... ... ... G.. ..G G.A GCC
+
+#Chimp   GGA AGC TTA TTT GCA GGA TTT CTC ATT ACC AAC AAC ATT CTC CCC ATA TCT ACT CCC CAA GTG ACA ATT CCC CTT TAC TTA
+#Human   ... ... C.. ..C ... ... ... ... ... ..T ... ... ... TC. ... GC. ..C C.C TT. ... ACA ... ..C ... ..C ... C..
+
+#Chimp   AAA CTT ACA GCC CTA GGC GTT ACT TCC CTA GGA CTT CTA ACA GCC CTA GAC CTC AAT TAC CTA ACC AGC AAG CTC AAA ATA
+#Human   ... ..C ... ... ..C .CT ..C ... .T. ... ... ... ... ... ... ... ... ... ..C ... ... ... .A. ..A ..T ... ...
+
+#Chimp   AAA TCC CCA CTA TAT ACA TTT CAC TTC TCT AAT ATA CTC GGA TTC TAC CCT AAC ATT ATA CAC CGC TCG ATC CCC TAT CTA
+#Human   ... ... ... ... .GC ... ... T.T ... ..C ..C ... ... ... ... ... ... .G. ..C .C. ... ... A.A ... ... ... ...
+
+#Chimp   GGC CTT CTT ACA AGC CAA AAC CTA CCC CTA CTT CTT CTA GAC CTG ACC TGA CTA GAG AAA CTA TTA CCT AAA ACA ATT TCA
+#Human   ... ... ... ..G ... ... ... ..G ... ... ..C ..C ... ... ..A ... ... ... ..A ..G ... ... ... ... ... ... ...
+
+#Chimp   CAG TAC CAA ATC TCC GCT TCC ATT ACC ACC TCA ACC CAA AAA GGC ATG ATC AAA CTT TAT TTC CTC TCT TTT TTC TTC CCT
+#Human   ... C.. ... ... ... A.C ... ..C .T. ... ... ... ... ... ... ..A ..T ... ... ..C ... ... ... ..C ... ... ..A
+
+#Chimp   CTC ATC TTA ACC TTA CTC CTA ATC ACA
+#Human   ... ... C.. ... C.. ... ... ... ...
+

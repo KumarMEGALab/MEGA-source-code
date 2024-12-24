@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+ <title>MUSCLE Options (Protein)</title>
+<link rel="StyleSheet" href="../../../default.css" type="text/css" />
+ <link rel="StyleSheet" href="../../../default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../..";
+gCommonRootRelPath = "../../..";
+gTopicId = "2.2.1.0_3";
+</script>
+ <meta name="topic-breadcrumbs" content="Part II: Assembling Data for Analysis > Building Sequence Alignments > MUSCLE" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../ehlpdhtm.js"></script>
+
+<h1>MUSCLE Options (Protein)</h1>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" color="#333333" size="2" face="Arial">This dialog 
+ box contains a set of parameters for running MUSCLE to align PROTEIN sequ</font><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+	 face="Arial">ences. If you wish to align DNA</font> <font style="font-size: 11pt; 
+	 font-family: Arial;" color="#333333" size="2" face="Arial">sequences 
+ then you must un-translate to DNA (assuming you started with DNA) then 
+ align.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" color="#333333" size="2" face="Arial">Below are 
+ descriptions of some of the parameters you may change, if you do not change 
+ them they will stay as whatever you se</font><font style="font-size: 11pt; 
+													 font-family: Arial;" 
+													 color="#333333" size="2" 
+													 face="Arial">e</font> 
+ <font style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+		 face="Arial">them at last.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;">&#160;</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" color="#333333" size="2" face="Arial">Presets</font><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+	 face="Arial">:</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">None</font></b><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+	 face="Arial">: Not selecting any presets</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Large 
+ Alignment</font></b><font style="font-size: 11pt; font-family: Arial;" 
+							 color="#333333" size="2" face="Arial">: If 
+ you have a large number of sequences (a few thousand) or they are very 
+ long the default settings may be too slow for practical use. This sets 
+ the max number of iterations to 2. (command parameter: -maxiters 2)</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Fast 
+ Speed</font></b><font style="font-size: 11pt; font-family: Arial;" color="#333333" 
+						 size="2" face="Arial">: Gives the fastest possible 
+ speeds for a result. This will compromise on accuracy. (command parameters: 
+ -maxiters 1 -diags -sv -distance1 kbit20_3)</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Refining 
+ Alignment</font></b><font style="font-size: 11pt; font-family: Arial;" 
+							 color="#333333" size="2" face="Arial">: Use 
+ this when you are refining an existing alignment to make it better. (command 
+ parameters: -refine)</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;">&#160;</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Gap 
+ Opening Penalty</font></b><font style="font-size: 11pt; font-family: Arial;" 
+								 color="#333333" size="2" face="Arial">: 
+ The penalty for opening a gap in the alignment. Increasing this value 
+ makes the gaps less frequent.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Gap 
+ Extension Penalty</font></b><font style="font-size: 11pt; font-family: Arial;" 
+									 color="#333333" size="2" face="Arial">: 
+ The penalty for extending a gap by one residue. Increasing this value 
+ will make the gaps shorter. Terminal gaps are not penalized.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Hydrophobicity 
+ Multiplier</font></b><font style="font-size: 11pt; font-family: Arial;" 
+							 color="#333333" size="2" face="Arial">: Multiplier 
+ for gap open/close penalties in hydrophobic regions.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Max 
+ Memory in MB</font></b><font style="font-size: 11pt; font-family: Arial;" 
+								 color="#333333" size="2" face="Arial">: 
+ MUSCLE by default specifies an upper limit on how much of your computer's 
+ memory it may use (in Megabytes) so that it does not use all your computers 
+ resources and cause it to run slow or be unable to operate. By default 
+ this number is how much physical memory your computer has available. You 
+ may be able to increase this number depending on how much virtual memory 
+ you have available.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Max 
+ Iterations</font></b><font style="font-size: 11pt; font-family: Arial;" 
+							 color="#333333" size="2" face="Arial">: The 
+ maximum number of iterations allowed</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Clustering 
+ Method (Iteration 1,2)</font></b><font style="font-size: 11pt; font-family: Arial;" 
+										 color="#333333" size="2" face="Arial">: 
+ The clustering method used in the first two iterations.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Cluster 
+ Method (Other Iterations)</font></b><font style="font-size: 11pt; font-family: Arial;" 
+											 color="#333333" size="2" face="Arial">: 
+ The clustering method used in iterations after the first two.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Max 
+ Diagonal Length</font></b><font style="font-size: 11pt; font-family: Arial;" 
+								 color="#333333" size="2" face="Arial">: 
+ Maximum length of the diagonal</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Other 
+ Commands</font></b><font style="font-size: 11pt; font-family: Arial;" 
+							 color="#333333" size="2" face="Arial">: You 
+ may enter parameters for MUSCLE which will be appended to the previously 
+ selected parameters.</font></p>
+</body>
+</html>

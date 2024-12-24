@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+<meta name="OriginalFile" content="PhylogeneticTrees_RH.doc" />
+ <title>Gene Duplication Inference</title>
+<link rel="stylesheet" href="PhylogeneticTrees_RH.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.8.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Identifying Gene Duplications" />
+</head>
+<body link="blue" vlink="#954F72">
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1>Gene Duplication Inference</h1>
+<p>&#160;</p>
+<p><b><a href="javascript:TextPopup(this)" id="HotSpot2252" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot2252', 'POPUP2252');
+//]]></script><span class="glosstext" id="POPUP2252" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> Duplication Wizard</b></p>
+<p>MEGA7 introduces a new wizard-style system for identifying <a href="javascript:TextPopup(this)" id="HotSpot43836" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot43836', 'POPUP43836');
+//]]></script><span class="glosstext" id="POPUP43836" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> duplications (and optionally, speciation events) in a <a href="javascript:TextPopup(this)" id="HotSpot29090" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot29090', 'POPUP29090');
+//]]></script><span class="glosstext" id="POPUP29090" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> family tree. This program is available from the main MEGA form in the <i>User Tree</i> menu. When the analysis is launched, the <a href="javascript:TextPopup(this)" id="HotSpot53510" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot53510', 'POPUP53510');
+//]]></script><span class="glosstext" id="POPUP53510" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> Duplication Wizard, which guides the user through the steps for inferring <a href="javascript:TextPopup(this)" id="HotSpot14067" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot14067', 'POPUP14067');
+//]]></script><span class="glosstext" id="POPUP14067" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> duplications, is shown.</p>
+<p><b>Input Data</b></p>
+<ul style=" margin-top:0in;" type="disc">
+<li>
+<p><a href="javascript:TextPopup(this)" id="HotSpot40008" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot40008', 'POPUP40008');
+//]]></script><span class="glosstext" id="POPUP40008" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> Tree File – the <a href="javascript:TextPopup(this)" id="HotSpot55624" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot55624', 'POPUP55624');
+//]]></script><span class="glosstext" id="POPUP55624" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> family tree in a Newick formatted file is required for the analysis.</p>
+</li>
+<li>
+<p>Species Tree File – an optional species tree file in <a href="javascript:TextPopup(this)" id="HotSpot23937" class="glossterm">Newick format</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot23937', 'POPUP23937');
+//]]></script><span class="glosstext" id="POPUP23937" style="display: none;"> NEWICK is a simple format used to write out trees in a text file.  While this is a hard-to-read format for humans, it is very useful for exchanging trees between different types of software. An example of the contents of a NEWICK format tree file is given below (note that semi-colon is needed to end the tree).  Further information on this format can be found at Joe Felsenstein’s website.   ((raccoon, bear),((sea_lion,seal),((monkey,cat), weasel)),dog);  The above tree with branch lengths will look as follows:  ((raccoon:19.19959,bear:6.80041):0.84600,((sea_lion:11.99700, seal:12.00300):7.52973,((monkey:100.85930,cat:47.14069):20.59201, weasel:18.87953):2.09460):3.87382,dog:25.46154);  If you wish to specify bootstrap values then they could appear before the branch lengths (e.g., in .DND files produced by CLUSTAL) or after the branch lengths (e.g., in .PHB files produced by CLUSTAL).  In these cases, the format might look like:  ((raccoon:19.19959,bear:6.80041)50:0.84600,((sea_lion:11.99700, seal:12.00300)100:7.52973,((monkey:100.85930,cat:47.14069)80:20.59201, weasel:18.87953)75:2.09460)50:3.87382,dog:25.46154);  or  ((raccoon:19.19959,bear:6.80041):0.84600[50],((sea_lion:11.99700, seal:12.00300):7.52973[100],((monkey:100.85930,cat:47.14069):20.59201[80], weasel:18.87953):2.09460[75]):3.87382[50],dog:25.46154);</span>. If a species tree is provided, then the algorithm described in Zmasek and Eddy (2001) will be used to infer <a href="javascript:TextPopup(this)" id="HotSpot5957" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot5957', 'POPUP5957');
+//]]></script><span class="glosstext" id="POPUP5957" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> duplications and speciation events for all internal nodes in the <a href="javascript:TextPopup(this)" id="HotSpot23923" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot23923', 'POPUP23923');
+//]]></script><span class="glosstext" id="POPUP23923" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> tree. If the species tree is not provided, then all internal nodes in the tree that contain at least one common species in the two descendant clades will be marked as <a href="javascript:TextPopup(this)" id="HotSpot36803" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot36803', 'POPUP36803');
+//]]></script><span class="glosstext" id="POPUP36803" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> duplication events.</p>
+</li>
+<li>
+<p>Mapping of <a href="javascript:TextPopup(this)" id="HotSpot41462" class="glossterm">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot41462', 'POPUP41462');
+//]]></script><span class="glosstext" id="POPUP41462" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> names to species names – the species name for each taxon must be provided and a simple grid-like dialog is provided for completing this task. With this dialog, users can either manually enter the species name for each taxon or load the names from a text file that gives the mapping in the form</p>
+</li>
+</ul>
+<p style=" margin-left:1.0in;">taxonName=speciesName</p>
+<p style=" text-indent:.5in;">for each taxon and each mapping is on its own line.</p>
+<p><b>Steps for Doing the <a href="javascript:TextPopup(this)" id="HotSpot14337" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot14337', 'POPUP14337');
+//]]></script><span class="glosstext" id="POPUP14337" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> Duplication Analysis</b></p>
+<ol style=" margin-top:0in;" start="1" type="1">
+<li>
+<p>Load the <a href="javascript:TextPopup(this)" id="HotSpot13952" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot13952', 'POPUP13952');
+//]]></script><span class="glosstext" id="POPUP13952" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> tree file – in the first step, the wizard is used to browse for and load the Newick formatted <a href="javascript:TextPopup(this)" id="HotSpot22936" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot22936', 'POPUP22936');
+//]]></script><span class="glosstext" id="POPUP22936" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> tree file</p>
+</li>
+<li>
+<p>Map species names to <a href="javascript:TextPopup(this)" id="HotSpot44753" class="glossterm">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot44753', 'POPUP44753');
+//]]></script><span class="glosstext" id="POPUP44753" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> names - in the second step, species names are mapped to <a href="javascript:TextPopup(this)" id="HotSpot25527" class="glossterm">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot25527', 'POPUP25527');
+//]]></script><span class="glosstext" id="POPUP25527" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> names using a grid-like interface. Species names can be entered manually or imported from a text file that gives the name for each taxon as</p>
+<p style=" margin-left:1.0in;">taxonName=speciesName</p>
+<p style=" margin-left:1.0in;">and each mapping is on a separate line.</p>
+</li>
+<li>
+<p>Load an (optional) species tree – if a species tree is available, the wizard can be used to browse for and load the Newick formatted species tree file.</p>
+</li>
+<li>
+<p>Root the <a href="javascript:TextPopup(this)" id="HotSpot46727" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot46727', 'POPUP46727');
+//]]></script><span class="glosstext" id="POPUP46727" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> tree (optional) – if the root of the <a href="javascript:TextPopup(this)" id="HotSpot54145" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot54145', 'POPUP54145');
+//]]></script><span class="glosstext" id="POPUP54145" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> tree is known, the wizard can be used to specify the root. If this option is chosen, the <a href="javascript:TextPopup(this)" id="HotSpot29208" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot29208', 'POPUP29208');
+//]]></script><span class="glosstext" id="POPUP29208" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> tree will be displayed in the Tree Explorer window and users can specify the root by clicking on a <a href="javascript:TextPopup(this)" id="HotSpot13958" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot13958', 'POPUP13958');
+//]]></script><span class="glosstext" id="POPUP13958" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> or <a href="javascript:TextPopup(this)" id="HotSpot26900" class="glossterm">node</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot26900', 'POPUP26900');
+//]]></script><span class="glosstext" id="POPUP26900" style="display: none;"> A node in a phylogenetic tree represents a taxon, the external or terminal nodes represent the extant taxa and the internal nodes represent the ancestral taxa.</span> to root the tree on. If the root is not known, the analysis will be performed with all possible root placements and the placement(s) of the root that results in the minimum number of <a href="javascript:TextPopup(this)" id="HotSpot44062" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot44062', 'POPUP44062');
+//]]></script><span class="glosstext" id="POPUP44062" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> duplications will be kept and all others discarded.</p>
+</li>
+<li>
+<p>Root the species tree – the analysis requires that the species tree, if provided, is rooted. Rooting the species tree is done in the same way as rooting the <a href="javascript:TextPopup(this)" id="HotSpot38418" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot38418', 'POPUP38418');
+//]]></script><span class="glosstext" id="POPUP38418" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> tree, via the tree explorer.</p>
+</li>
+<li>
+<p>Launch the Analysis – the final step is to launch the analysis. A progress window is displayed while the calculation is executed and once the analysis is complete, the <a href="javascript:TextPopup(this)" id="HotSpot20448" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot20448', 'POPUP20448');
+//]]></script><span class="glosstext" id="POPUP20448" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> family tree is displayed in the Tree Explorer window with <a href="javascript:TextPopup(this)" id="HotSpot27845" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot27845', 'POPUP27845');
+//]]></script><span class="glosstext" id="POPUP27845" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> duplications marked by solid blue diamonds in the tree and if a species tree was provided, speciation events are marked by open red diamonds in the tree.</p>
+</li>
+</ol>
+<p>&#160;</p>
+</body>
+</html>

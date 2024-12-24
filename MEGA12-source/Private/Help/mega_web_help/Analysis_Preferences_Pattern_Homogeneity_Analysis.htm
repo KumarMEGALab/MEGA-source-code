@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="CentralDialogBox_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Analysis Preferences (Pattern Homogeneity Analysis)</title>
+<link rel="stylesheet" href="CentralDialogBox_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.6.1.0_4";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Tests of Selection > Synonymous/Nonsynonymous Tests" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1>Analysis Preferences (Pattern Homogeneity Analysis)</h1>
+<p style="font-size: 11.0pt;">In this dialog box, you can select and view 
+ options in the <b>Options Summary</b> for the different pattern homogeneity 
+ analyses (<u><span style="color: #008000;"><a href="javascript:TextPopup(this)" id="HotSpot24580" class="glossterm">Composition 
+ Distance</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot24580', 'POPUP24580');
+//]]></script><span class="glosstext" id="POPUP24580" style="display: none;"> Composition distance is a measure of the difference in nucleotide (or amino acid) composition for a given pair of sequences.  It is one half the sum of squared difference in counts of bases (or residues).  MEGA computes and presents the Composition Distance per site, which is given by the total composition distance between two sequences divided by the number of positions compared, excluding gaps and missing data.</span></span></u><span style="display: none;">RH_Composition_Distance</span> 
+ <span style="display: none;">RH_Composition_Distance</span>, <u><span 
+	 style="color: #008000;"><a href="javascript:TextPopup(this)" id="HotSpot34043" class="glossterm">Disparity 
+ Index</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot34043', 'POPUP34043');
+//]]></script><span class="glosstext" id="POPUP34043" style="display: none;"> Disparity Index measures the observed difference in substitution patterns for a pair of sequences.  It works by comparing the nucleotide (or amino acid) frequencies in given pair of sequences and using the number of observed differences between sequences.  MEGA computes and presents the Disparity Index per site, which is given by the total disparity index between two sequences divided by the number of positions compared, excluding gaps and missing data.  It is more powerful than a chi-square test of the equality of base frequencies between sequences.</span></span></u><span style="display: none;">RH_Disparity_Index</span>, 
+ and <u><span style="color: #008000;"><a href="javascript:TextPopup(this)" id="HotSpot33498" class="glossterm">Disparity 
+ Index</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot33498', 'POPUP33498');
+//]]></script><span class="glosstext" id="POPUP33498" style="display: none;"> Disparity Index measures the observed difference in substitution patterns for a pair of sequences.  It works by comparing the nucleotide (or amino acid) frequencies in given pair of sequences and using the number of observed differences between sequences.  MEGA computes and presents the Disparity Index per site, which is given by the total disparity index between two sequences divided by the number of positions compared, excluding gaps and missing data.  It is more powerful than a chi-square test of the equality of base frequencies between sequences.</span> </span><span style="text-decoration: none; ">Tes</span>t</u><span 
+	 style="display: none;">Disparity_Index_Test</span>). Options are organized 
+ in logical sections and a yellow row indicates that you have a choice 
+ for that particular attribute</p>
+<p><b><i><span style="font-size: 11.0pt;">No. of Monte-Carlo Repetitions</span></i></b></p>
+<p style="margin-left: .5in;"><span style="font-size: 11.0pt;">If the </span><a 
+	 href="Disparity_Index_Test.htm" style="color: #007fbf;"><u style="color: #007fbf;"><span 
+	 style="color: #007fbf;">Disparity Index Test is selected</span></u><span 
+	 style="display: none; color: #007fbf;">Disparity_Index_Test</span></a><span 
+	 style="font-size: 11.0pt;">, <i>MEGA</i> will conduct the Monte-Carlo 
+ analysis, for which you need to provide the number of replicates and a 
+ starting random seed.</span></p>
+<p class="Leftalignarial"><b><i><span style="font-size: 11.0pt;">Data Subset 
+ to Use</span></i></b></p>
+<p style="margin-left: .5in;"><span style="font-size: 11.0pt;">These are 
+ options for handling gaps and missing data, including or excluding <a href="javascript:TextPopup(this)" id="HotSpot43107" class="glossterm">codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot43107', 'POPUP43107');
+//]]></script><span class="glosstext" id="POPUP43107" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span> positions, and restricting the 
+ analysis to <a href="javascript:TextPopup(this)" id="HotSpot14945" class="glossterm">labeled sites</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot14945', 'POPUP14945');
+//]]></script><span class="glosstext" id="POPUP14945" style="display: none;"> Sites in a sequence alignment can be categorized and labeled with user-defined symbols. Each category is represented by a letter or a number. Each site can be assigned to only one category, although any combination of categories can be selected for analysis.  Labeled sites work independently of and in addition to genes and domains, thus allowing complex subsets of sites to be defined easily.</span> 
+ (if applicable).</span></p>
+<p style="margin-left: .5in;"><u><span style="font-size: 11.0pt;">Gaps 
+ and Missing Data</span></u></p>
+<p style="margin-left: .5in;"><span style="font-size: 11.0pt;">You may 
+ choose to remove all sites containing <a href="javascript:TextPopup(this)" id="HotSpot24234" class="glossterm">alignment 
+ gaps</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot24234', 'POPUP24234');
+//]]></script><span class="glosstext" id="POPUP24234" style="display: none;"> Phylogenetic analysis on two or more DNA or amino acid sequences requires that the sequences be aligned so that the substitutions can be accurately enumerated.  During alignment, gaps must be introduced in sequences that have undergone deletions or insertions.  These gaps are known as alignment gaps or indels.</span> and missing information before the calculation begins 
+ (</span><a href="Complete-Deletion_Option.htm" style="color: #007fbf;"><u 
+	 style="color: #007fbf;"><span style="color: #007fbf;">Complete-deletion</span></u><span 
+	 style="display: none; color: #007fbf;">RH_Complete_Deletion_Option</span></a><span 
+	 style="font-size: 11.0pt;"> option).&#160;&#160;Alternatively, you 
+ may choose to retain all such sites initially, excluding them as necessary 
+ in the pairwise distance estimation (</span><u style="color: #007fbf;"><span 
+	 style="color: #007fbf;"><a href="Pairwise-deletion_option.htm" style="color: #007fbf;">Pairwise-deletion</a></span></u><span 
+	 style="display: none;">RH_Pairwise_deletion_option</span><span style="font-size: 11.0pt;"> 
+ option), or you may use </span><u style="color: #007fbf;"><span style="color: #007fbf;"><a 
+	 href="Partial-Deletion_Option.htm" style="color: #007fbf;">Partial 
+ Deletion</a></span></u><span style="display: none;">RH_Partial_Deletion_Option</span><span 
+	 style="font-size: 11.0pt;"> (Site coverage) as a percentage.</span></p>
+<p style="text-indent: .5in;"><u><span style="font-size: 11.0pt;">Codon 
+ Positions</span></u></p>
+<p style="margin-left: .5in;"><span style="font-size: 11.0pt;">Check or 
+ uncheck the boxes to select any combination of 1<sup>st</sup>, 2<sup>nd</sup>, 
+ 3<sup>rd</sup>, and non-coding positions for analysis.&#160;&#160;This 
+ option is available only if the nucleotide sequences contain protein-coding 
+ regions and you have selected a nucleotide-by-nucleotide analysis.&#160;&#160;If 
+ they do, you also can choose between the analysis of nucleotide sequences 
+ or translated protein sequences.&#160;&#160;If the latter is chosen, <i>MEGA</i> 
+ will translate all protein-coding regions into amino acid sequences and 
+ conduct the protein sequence analysis.</span></p>
+<p style="text-indent: .5in;"><u><span style="font-size: 11.0pt;">Labeled 
+ Sites</span></u></p>
+<p style="margin-left: .5in;"><span style="font-size: 11.0pt;">This option 
+ is available only if some or all of the sites have associated labels.&#160;&#160;By 
+ clicking on the row, you will be provided with the option of including 
+ sites with selected labels.&#160;&#160;If you choose to include only <a href="javascript:TextPopup(this)" id="HotSpot3308" class="glossterm">labeled sites</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot3308', 'POPUP3308');
+//]]></script><span class="glosstext" id="POPUP3308" style="display: none;"> Sites in a sequence alignment can be categorized and labeled with user-defined symbols. Each category is represented by a letter or a number. Each site can be assigned to only one category, although any combination of categories can be selected for analysis.  Labeled sites work independently of and in addition to genes and domains, thus allowing complex subsets of sites to be defined easily.</span>, then these sites will 
+ be the first extracted from the data.&#160;&#160;Then all other options 
+ mentioned above will be enforced.&#160;&#160;Note that labels associated 
+ with all three positions in the <a href="javascript:TextPopup(this)" id="HotSpot48361" class="glossterm">codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot48361', 'POPUP48361');
+//]]></script><span class="glosstext" id="POPUP48361" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span> 
+ must be included for a full <a href="javascript:TextPopup(this)" id="HotSpot37501" class="glossterm">codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot37501', 'POPUP37501');
+//]]></script><span class="glosstext" id="POPUP37501" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span> 
+ to be incorporated in the analysis.</span></p>
+<p>&#160;</p>
+<p>&#160;</p>
+<b><span style="font-size: 11.0pt; font-family: Arial, sans-serif; color: #0000ff;"><br 
+	 style="clear: all;" clear="all" />
+</span></b> 
+</body>
+</html>

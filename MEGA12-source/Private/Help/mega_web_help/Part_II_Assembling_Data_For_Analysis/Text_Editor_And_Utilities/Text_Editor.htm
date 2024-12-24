@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Text Editor</title>
+<link rel="StyleSheet" href="../../default.css" type="text/css" />
+ <link rel="StyleSheet" href="../../default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "2.1.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part II: Assembling Data for Analysis > Text Editor and Utilities" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+<h1 style="font-size: 12pt;">Text Editor</h1>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-size: 12pt;"><i><font 
+	 style="font-style: italic;">MEGA</font></i> includes a <i><font style="font-style: italic;">Text 
+ File Editor</font></i>, which is useful for creating and editing ASCII 
+ text files. It is invoked automatically by <i><font style="font-style: italic;">MEGA</font></i> 
+ if the input data file processing modules detect errors in the data file 
+ format. In this case, you should make appropriate changes and save the 
+ data file.</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-size: 12pt;">The 
+ text editor is straightforward if you are familiar with programs like 
+ Notepad. Click on the section you wish to change, type in the new text, 
+ or select text to cut, copy or paste. Only the display font can be used 
+ in a document. You can have as many different text editor windows open 
+ at one time and you may close them independently. However, if you have 
+ a file open in the <i><font style="font-style: italic;">Text Editor</font></i>, 
+ you should save it and close the <i><font style="font-style: italic;">Text 
+ Editor</font></i> window before trying to use that data file for analysis 
+ in <i><font style="font-style: italic;">MEGA</font></i>. Otherwise, <i><font 
+	 style="font-style: italic;">MEGA</font></i> may not have the most 
+ up-to-date version of the data.</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-size: 12pt;">The 
+ <i><font style="font-style: italic;">Text File Editor and Format converter</font></i> 
+ is a sophisticated tool with numerous special capabilities that include:</p>
+<ul style="font-size: 12pt;">
+	<li style="font-size: 12pt;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 6pt; 
+									 font-size: 12pt;"><b><font style="font-weight: bold;">Large 
+	 files</font></b> –The ability to operate on files of virtually unlimited 
+	 size and line lengths.</p></li>
+	<li style="font-size: 12pt;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 6pt; 
+									 font-size: 12pt;"><b><font style="font-weight: bold;">General 
+	 purpose</font></b> –Used to view/edit any ASCII text file.</p></li>
+	<li style="font-size: 12pt;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 6pt; 
+									 font-size: 12pt;"><b><font style="font-weight: bold;">Undo/ReDo</font></b> 
+	 –The availability of an unlimited depth of undo/redo options</p></li>
+	<li style="font-size: 12pt;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 6pt; 
+									 font-size: 12pt;"><b><font style="font-weight: bold;">Search/Replace</font></b> 
+	 –Searches for and does block replacements for arbitrary strings.</p></li>
+	<li style="font-size: 12pt;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 6pt; 
+									 font-size: 12pt;"><b><font style="font-weight: bold;">Clipboard</font></b> 
+	 – Supports familiar clipboard <i><font style="font-style: italic;">cut</font></i>, 
+	 <i><font style="font-style: italic;">copy</font></i>, and <i><font 
+	 style="font-style: italic;">paste</font></i> operations.</p></li>
+	<li style="font-size: 12pt;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 6pt; 
+									 font-size: 12pt;"><b><font style="font-weight: bold;">Normal</font></b> 
+	 <b><font style="font-weight: bold;">and Column blocks</font></b> – 
+	 Supports regular contiguous line blocks and columnar blocks. This 
+	 is quite useful while manually aligning sequences in the <i><font 
+	 style="font-style: italic;">Text Editor</font></i>.</p></li>
+	<li style="font-size: 12pt;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 6pt; 
+									 font-size: 12pt;"><b><font style="font-weight: bold;">Drag/Drop</font></b> 
+	 – Moves text with the familiar cut and paste operations or you can 
+	 select the text and then move it with the mouse.</p></li>
+	<li style="font-size: 12pt;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 6pt; 
+									 font-size: 12pt;"><b><font style="font-weight: bold;">Printing</font></b> 
+	 –Prints the contents of the edit file.</p></li>
+</ul>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-size: 12pt;">&#160;</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-size: 12pt;">The 
+ <i><font style="font-style: italic;">Text Editor</font></i> contains a 
+ menu bar, a toolbar, and a status bar.</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-size: 12pt; 
+	 text-decoration: underline; "><u><font style="text-decoration: underline; ">The 
+ Menu bar</font></u></p>
+<table style="margin-left: 0.35pt;" cellspacing="0">
+	<col />
+	<col />
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; 
+										 font-size: 12pt; text-decoration: underline; "><u><font 
+		 style="text-decoration: underline; ">Menu</font></u></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; 
+										 font-size: 12pt; text-decoration: underline; "><u><font 
+		 style="text-decoration: underline; ">Description</font></u></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; 
+										 font-size: 12pt;"><i><font style="font-style: italic;">File</font></i> 
+		 menu</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; 
+										 font-size: 12pt;">The File Menu 
+		 contains the functions that are most commonly used to open, save, 
+		 rename, print, and close files. (Although there is no separate 
+		 “rename” function available, you can rename a file by choosing 
+		 the Save As… menu item and giving the file a different name before 
+		 you save it.)</p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; 
+										 font-size: 12pt;"><i><font style="font-style: italic;">Edit</font></i> 
+		 menu</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; 
+										 font-size: 12pt;">The Edit Menu 
+		 contains functions that are commonly used to manipulate blocks 
+		 of text. Many of the edit menu items interact with the Windows 
+		 Clipboard, which is a <i><font style="font-style: italic;">hidden 
+		 window</font></i> that allows various selections to be copied 
+		 and pasted across documents and applications.</p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; 
+										 font-size: 12pt;"><i><font style="font-style: italic;">Search</font></i> 
+		 menu</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; 
+										 font-size: 12pt;">The Search Menu 
+		 has several functions that allow you to perform searches and replacements 
+		 of text strings. You can also jump directly to a specific line 
+		 number in the file.</p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; 
+										 font-size: 12pt;"><i><font style="font-style: italic;">Display</font></i> 
+		 menu</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; 
+										 font-size: 12pt;">The Display 
+		 Menu contains functions that affect the visual display of files 
+		 in the edit windows.</p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; 
+										 font-size: 12pt;"><i><font style="font-style: italic;">Utilities</font></i> 
+		 menu</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; 
+										 font-size: 12pt;">The Utilities 
+		 Menu contains several functions that make this editor especially 
+		 useful for working with files containing molecular sequence data 
+		 (note that the <i><font style="font-style: italic;">MEGA</font></i> 
+		 editor does not try to understand the contained data, it simply 
+		 operates on the text, assuming that the user knows what (s)he 
+		 is doing.</p></td>
+	</tr>
+</table>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-size: 12pt; 
+	 text-decoration: underline; "><u><font style="text-decoration: underline; ">Toolbar</font></u></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-size: 12pt;">The 
+ Toolbar contains shortcuts to some frequently used menu commands.</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-size: 12pt; 
+	 text-decoration: underline; "><u><font style="text-decoration: underline; ">Status 
+ Bar</font></u></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-size: 12pt;">The 
+ Status bar is positioned at the bottom of the editor window. It shows 
+ the position of the cursor (line number and position in the line), whether 
+ the file has been edited, and the status of some keyboard keys (CAPS, 
+ NUM, and SCROLL lock).</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-size: 12pt;">&#160;</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-weight: bold; 
+	 font-size: 12pt;"><b><font style="font-weight: bold;">Hotkeys and 
+ Shortcut keys</font></b></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-size: 12pt;">Many 
+ menu items have a <i><font style="font-style: italic;">hotkey</font></i> 
+ and/or a <i><font style="font-style: italic;">shortcut</font></i> key. 
+ These are special key combinations that are helpful for people who are 
+ more comfortable using a keyboard than the mouse. <i><font style="font-style: italic;">Hotkeys</font></i> 
+ are identified by an underscore character in the name of the menu item, 
+ e.g., “<u><font style="text-decoration: underline; ">F</font></u>ile”, 
+ “<u><font style="text-decoration: underline; ">N</font></u>ew”. These 
+ allow you to hold down the Alt-key, which is usually found next to the 
+ space bar on the keyboard, then hit the underlined letter to produce the 
+ same action as if you clicked that name with the mouse. We show this using 
+ the notation &lt;Alt&gt;+key – e.g., the hotkey for the file menu item 
+ is shown as &lt;Alt&gt;+F. Be sure that you depress both keys together, 
+ holding the &lt;Alt&gt; key down a little bit longer than the letter key. 
+ (Some people try hitting both keys simultaneously, as if they’re hitting 
+ two keys on a piano keyboard. Quite often, this approach does not produce 
+ the desired results.)</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; text-indent: 30.25pt; 
+	 font-size: 12pt;">For instance, you could create a new file by clicking 
+ the mouse on the “File” menu item, then clicking on the “New” item beneath 
+ it. Using hotkeys, you could type &lt;Alt&gt;+F followed by &lt;Alt&gt;+N. 
+ Or, more simply, while you’re holding down the &lt;Alt&gt; key, hit the 
+ ‘F’ key followed by the ‘N’ key, then release the &lt;Alt&gt; key.</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; text-indent: 30.25pt; 
+	 font-size: 12pt;">You might notice that several menu items, e.g., 
+ the New Item on the File menu, show something to the right that looks 
+ like ‘Ctrl+N’. This is called a <i><font style="font-style: italic;">Shortcut</font></i> 
+ key sequence. Whereas executing a command with hotkeys often requires 
+ several keystrokes, shortcut keys can do the same thing with just one 
+ keystroke. Shortcut keys work the same as hotkeys, using the &lt;Ctrl&gt; 
+ key instead of the &lt;Alt&gt; key. To create a new file, for example, 
+ you can hold down the &lt;Ctrl&gt; key and hit the ‘N’ key, which is shown 
+ as &lt;Ctrl&gt;+N here. (In the menus, this appears simply as ‘Ctrl+N’.)</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; text-indent: 30.25pt; 
+	 font-size: 12pt;">Not all menu items have associated shortcut keys 
+ because there are only 26 shortcut keys, one for each letter of the alphabet. 
+ Hotkeys, in contrast, are localized to each menu and submenu. For hotkeys 
+ to work, the menu item must be visible whereas <i><font style="font-style: italic;">shortcut 
+ keys work at any time.</font></i> For instance, if you are typing data 
+ into a text file and want to create a note in a new window, you may simply 
+ hit the shortcut key sequence, &lt;Ctrl&gt;+N to generate a new window. 
+ After you type the note, you can hit &lt;Ctrl&gt;+S to save it, give it 
+ a file name, hit the enter key [this part doesn’t make sense]; then you 
+ can hit the &lt;Alt&gt;+F+C hotkey sequence to close the file (there is 
+ no shortcut key for closing a file).</p>
+</body>
+</html>

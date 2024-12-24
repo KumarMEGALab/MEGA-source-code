@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<TITLE>{TTreeViewForm.Caption:ExtractCaptionInfo}</TITLE>
+<style>{TLegendGenerator.Style}</style>
+</HEAD>
+
+<BODY>
+  <SPAN class="figureTitle">
+    {if TLegendGenerator.Operation = 'dtdoOLSComputeUserTreeBLens'}
+	Evolutionary analysis by least squares method
+	{else}
+		Evolutionary relationships of {TTreeBox.NoOfOTUS} taxa
+	{endif}
+    {if TTreeViewForm.ActiveTabName = 'TimeTree'}
+      (timetree)
+    {endif}
+	{if TTreeBox.IsGeneDups = True}
+		(gene family tree)
+	{endif}
+  </span>
+<br> 
+<div id ="content">
+{TLegendGenerator.DefaultTreeCaption}
+</div>
+<br><br>
+</body>
+</html>

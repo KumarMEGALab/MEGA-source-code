@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+ <title>Converting IG Format</title>
+<link rel="StyleSheet" href="default.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "3.2.1.0_4";
+</script>
+ <meta name="topic-breadcrumbs" content="Part III: Input Data Types and File Formats > Importing Data From Other Formats > Format Specific Notes" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+<h1>Converting IG Format</h1>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">These files consist of 
+ one or more groups of non-blank lines separated by one or more blank lines. 
+ The following is an example of the non-blank lines:</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">&#160;;G028uaah 240 bases</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">&#160;G028uaah</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">&#160;CATAAGCTCCTTTTAACTTGTTAAAGTCTTGCTTGAATTAAAGACTTGTT</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">&#160;TAAACACAAAATTTAGACTTTTACTCAACAAAAGTGATTGATTGATTGAT</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">The first line in each 
+ group begins with a semicolon. This line is ignored by</font> <i><font 
+	 style="font-size: 11pt; font-family: Arial; font-style: italic;" size="2" 
+	 face="Arial">MEGA</font></i><font style="font-size: 11pt; font-family: Arial;" 
+										 size="2" face="Arial">. The following 
+ line (e.g.,</font> <font style="font-size: 11pt; font-family: 'Courier New';" 
+							 size="2" face="Courier New">G028uaah</font> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">above) 
+ is treated as the name of the sequence. Subsequent lines, until the</font> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">next 
+ semicolon,</font> <font style="font-size: 11pt; font-family: Arial;" size="2" 
+						 face="Arial">are taken as the sequence</font><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">.</font> 
+ <i><font style="font-size: 11pt; font-family: Arial; font-style: italic;" 
+			 size="2" face="Arial">MEGA</font></i> <font style="font-size: 11pt; 
+														 font-family: Arial;" 
+														 size="2" face="Arial">recognizes 
+ the letters a-z and A-Z for DNA and protein sequences and only a few special 
+ characters, such as period [.], hyphen [-], space, and question mark [?].</font> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Depending 
+ on their context, all other characters in the input files are either ignored 
+ or are interpreted as specific non-sequence data, such as comments, headers, 
+ etc.</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">The example converts to</font> 
+ <i><font style="font-size: 11pt; font-family: Arial; font-style: italic;" 
+			 size="2" face="Arial">MEGA</font></i> <font style="font-size: 11pt; 
+														 font-family: Arial;" 
+														 size="2" face="Arial">file 
+ format as follows:</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">&#160;#mega</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">&#160;!Title: filename</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">&#160;#G019uabh</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">&#160;ATACATCATAACACTACTTCCTACCCATAAGCTCCTTTTAACTTGTTAAA</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">&#160;GTCTTGCTTGAATTAAAGACTTGTTTAAACACAAAAATTTAGAGTTTTAC</font></p>
+</body>
+</html>

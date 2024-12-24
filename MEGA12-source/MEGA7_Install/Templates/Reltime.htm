@@ -1,0 +1,88 @@
+<HTML>
+<HEAD type="PrimaryResultWindow">
+<TITLE>
+	Timetree Analysis Results
+</TITLE>
+<style> {TLegendGenerator.Style}</style>
+</HEAD>
+
+<BODY>
+  <SPAN class="figureTitle">
+    {if TTreeViewForm.ActiveTabName  = 'Timetree'}
+		Timetree analysis using the RelTime {if TAnalysisInfo.IsRtdt = True} with Dated Tips (RTDT) {endif} method
+	{else}
+		{if TLegendGenerator.RunMode = 'commandLine'}
+		Timetree analysis using the RelTime {if TAnalysisInfo.IsRtdt = True} with Dated Tips (RTDT) {endif} method
+		{else}
+			{if TLegendGenerator.Operation = 'dtdoRelTimeBLens'}
+			Evolutionary analysis by the Reltime method			
+			{else}
+			Evolutionary analysis by {TTreePack.TreeMethodName} method
+			{endif}
+		{endif}
+    {endif}
+  </span>
+  
+ <div id ="content">
+        {if TLegendGenerator.RunMode = 'commandLine'}
+            {TLegendGenerator.ReltimeCaption}
+	{elseif TTreeViewForm.ActiveTabName = 'Timetree'}
+		{TLegendGenerator.ReltimeCaption}
+	{elseif TTreeViewForm.ActiveTabName = 'Original Tree'}
+		{if TLegendGenerator.Operation = 'dtdoRelTimeBLens'}
+			Branch lengths from the user-specified tree topology (shown) were used to 
+			compute relative times of divergence using the Reltime method [{TLegendGenerator.ReltimeCitation:ExpandCitation}][{TLegendGenerator.ReltimeCitation2:ExpandCitation}].
+		{elseif TLegendGenerator.Operation = 'dtdoRelTimeLS'}
+			{if TAnalysisInfo.HasDistPack = False}
+				The evolutionary distances were provided by the user. 
+			{elseif TAnalysisInfo.DistModelName = ''}
+				The evolutionary distances were computed using the 	{TLegendGenerator.FullModelName} method  [{TDistPack.MethodCitation:ExpandCitation}] 	and are in the units of the {TAnalysisInfo.DistUnitCaption}.
+			{else}
+				&#32 The evolutionary distances were computed using the {TAnalysisInfo.DistModelName} method [{TDistPack.MethodCitation:ExpandCitation}] and are in the units of the {TAnalysisInfo.DistUnitCaption}.
+			{endif}
+
+			{if TAnalysisInfo.HasDistPack = True}
+				  {if TAnalysisInfo.DistGammaParaCaption ! ''}
+				&#32 {TAnalysisInfo.DistGammaParaCaption} (shape parameter =  {TDistPack.GammaParameter}).
+			  {endif}
+			{endif}
+
+			{if TAnalysisInfo.DistHeteroPatternCaption ! ''}
+				&#32 {TAnalysisInfo.DistHeteroPatternCaption} [{TLegendGenerator.HeteroPatternDistCitation:ExpandCitation}].
+			{endif}				
+		{else}	
+			The user-specified tree topology was analyzed
+			by using the {TTreePack.TreeMethodName} method based on
+			the {TAnalysisInfo.DistModelName} substitution model [{TDistPack.MethodCitation:ExpandCitation}].
+			
+			{if TLegendGenerator.GammaPara = 'N/A'}
+			
+			{else}
+				A discrete Gamma distribution was used to model evolutionary rate differences
+				among sites ({TLegendGenerator.NoOfGCats} categories (+<i>G</i>,
+				parameter = {TLegendGenerator.GammaPara})).
+			{endif}
+
+			{if TLegendGenerator.PropOfInvariant = 'N/A'}
+			{else}
+				The rate variation model allowed for some sites to be evolutionarily
+				invariable ([+<i>I</i>], {TLegendGenerator.PropOfInvariant}% sites).
+			{endif}
+
+			{if TTreeBox.ShowTopologyOnly = False}
+				The tree is drawn to scale, with branch lengths measured in the
+				{if TTreeViewForm.BLenCaption ! ''}
+					number of substitutions per site ({TTreeViewForm.BLenCaption}).
+				{else}
+					number of substitutions per site.
+				{endif}
+			{endif}	
+		{endif}		
+		{IncludeExternalFile=Data_Subset_Template.htm}	
+	{endif}	
+
+</div>
+<br>
+<br>
+</body>
+</html>

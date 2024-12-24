@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="PhylogeneticTrees_RH.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>General Comments on Statistical Tests</title>
+<link rel="stylesheet" href="PhylogeneticTrees_RH.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<style type="text/css">
+<!--
+A:visited { color:#954F72; }
+A:link { color:#0000ff; }
+-->
+</style>
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.3.5.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Constructing Phylogenetic Trees > Statistical Tests of a Tree Obtained" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1>General Comments on Statistical Tests</h1>
+<p>There are two different types of methods for testing the reliability 
+ of an obtained tree. One is to test the topological difference between 
+ the tree and its closely related tree by using a certain quantity, for 
+ example, the sum of all <a href="javascript:TextPopup(this)" id="HotSpot39174" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot39174', 'POPUP39174');
+//]]></script><span class="glosstext" id="POPUP39174" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> 
+ lengths in the minimum evolution method.&#160;&#160;This type of test 
+ examines the reliability of every interior <a href="javascript:TextPopup(this)" id="HotSpot28941" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot28941', 'POPUP28941');
+//]]></script><span class="glosstext" id="POPUP28941" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> 
+ of the tree, and is generally a conservative test as compared to other 
+ tests included in <i>MEGA</i>.</p>
+<p>The other type of test examines the reliability of each interior <a href="javascript:TextPopup(this)" id="HotSpot26194" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot26194', 'POPUP26194');
+//]]></script><span class="glosstext" id="POPUP26194" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> whether or not it is significantly 
+ different from 0.&#160;&#160;If a particular interior <a href="javascript:TextPopup(this)" id="HotSpot32150" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot32150', 'POPUP32150');
+//]]></script><span class="glosstext" id="POPUP32150" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> 
+ is not significantly different from 0, we cannot exclude the possibility 
+ of a trifurcation of the associated branches or that the other types of 
+ bifurcating trees can be generated by changing the splitting order of 
+ the three branches involved.&#160;&#160;Therefore, in <i>MEGA</i> we implement 
+ the bootstrap procedure for estimating the standard error of the interior 
+ <a href="javascript:TextPopup(this)" id="HotSpot38424" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot38424', 'POPUP38424');
+//]]></script><span class="glosstext" id="POPUP38424" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> and test the deviation 
+ of the <a href="javascript:TextPopup(this)" id="HotSpot31263" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot31263', 'POPUP31263');
+//]]></script><span class="glosstext" id="POPUP31263" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> length 
+ from 0 (<a href="Dopazo_1994.htm" style="color: #007fbf;"><u style="color: #007fbf;"><span 
+	 style="color: #007fbf;">Dopazo 1994</span></u><span style="display: none; 
+														 color: #007fbf;">Dopazo_1994</span></a>).&#160;</p>
+<p>The third type of test is the bootstrap test, in which the reliability 
+ of a given <a href="javascript:TextPopup(this)" id="HotSpot4981" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot4981', 'POPUP4981');
+//]]></script><span class="glosstext" id="POPUP4981" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> pattern 
+ is ascertained by examining the frequency of its occurrence in a large 
+ number of trees, each based on the resampled dataset.</p>
+<p>Details of these procedures are given in Nei and Kumar (<u style="color: #007fbf;"><span 
+	 style="color: #007fbf;"><a href="Nei_and_Kumar_2000.htm" style="color: #007fbf;">2000</a></span></u><span 
+	 style="display: none; color: #007fbf;">Nei_and_Kumar_2000</span>, 
+ chapter 9).</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<b><span style="font-size: 10.0pt; font-family: Arial, sans-serif; color: #0000ff;"><br 
+	 style="clear: all;" clear="all" />
+</span></b> 
+</body>
+</html>

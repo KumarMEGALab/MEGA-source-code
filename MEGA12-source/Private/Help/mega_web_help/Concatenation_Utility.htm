@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Concatenation Utility</title>
+<link rel="StyleSheet" href="default.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "2.2.5.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part II: Assembling Data for Analysis > Building Sequence Alignments > Concatenate Sequence Data" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+<h1>Concatenation Utility</h1>
+<p style="line-height: 150%;">MEGA provides a utility for concatenating 
+ multiple files containing sequence data into a single sequence alignment. 
+ This tool is used as follows:</p>
+<ul style="list-style: disc;">
+	<li><p style="line-height: 150%;">All of the source alignment files 
+	 that are to be concatenated should be collected and placed together 
+	 into a directory/folder on your computer. There should be no other 
+	 files in this directory and all of these files should be FASTA formatted 
+	 files or MEGA formatted files. The data must all be of the same type 
+	 as well (cannot mix DNA and amino acid data).</p></li>
+	<li><p style="line-height: 150%;">From the MEGA main form, click Data-&gt;Concatenate 
+	 Sequence Alignments. MEGA will prompt you for the directory/folder 
+	 that contains the source alignment files and you should select that 
+	 directory. </p></li>
+	<li><p style="line-height: 150%;">If MEGA cannot infer the data type 
+	 contained in the files, MEGA will prompt you for the data type (as 
+	 well as special symbols used such as for indels or identical bases).</p></li>
+	<li><p style="line-height: 150%;">MEGA will process the input files 
+	 in alphabetical order, concatenating sequences that have the same 
+	 name and adding a new sequence when a new name is encountered. Wherever 
+	 needed, MEGA will add missing base symbols (default is ?) to fill 
+	 missing data so that sequence data alignment is maintained. For example, 
+	 if a new sequence is encountered in the third file processed, missing 
+	 base symbols (equal to the number of bases from the first two files) 
+	 will be pre-pended to the new sequence.</p></li>
+	<li><p style="line-height: 150%;">Once the concatenation is complete, 
+	 the data will be imported into the Sequence Data Explorer window (press 
+	 f4 or click View-&gt;Explore Active Data on the main form to view 
+	 the alignment).</p></li>
+	<li><p style="line-height: 150%;">From the Sequence Data Explorer, 
+	 you can export the concatenated alignment to multiple formats by clicking 
+	 Data-&gt;Export Data...</p></li>
+</ul>
+</body>
+</html>

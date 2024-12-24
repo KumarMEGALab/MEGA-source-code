@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="DistanceMethods_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Tamura-Nei distance (Heterogeneous Patterns)</title>
+<link rel="stylesheet" href="DistanceMethods_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.2.1.1.2.0_3";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Computing Evolutionary Distances > Distance Models > Nucleotide Substitution Models > Heterogeneous Patterns" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1 style="margin-left: 0in;"><span style="font-size: 11.0pt;">Tamura-Nei 
+ distance (Heterogeneous Patterns)</span></h1>
+<p style="font-size: 11.0pt;">The Tamura-Nei model (<u style="color: #007fbf;"><span 
+	 style="color: #007fbf;"><a href="Tamura_and_Nei_1993.htm" style="color: #007fbf;">1993</a></span></u><span 
+	 style="display: none;">Tamura_and_Nei_1993</span>) corrects for multiple 
+ hits, taking into account the substitution rate differences between nucleotides 
+ and the inequality of nucleotide frequencies.&#160;&#160;It distinguishes 
+ between <a href="Transition.htm" style="color: #007fbf;"><u style="color: #007fbf;"><span 
+	 style="color: #007fbf;">transitional</span></u><span style="display: none; 
+															 color: #007fbf;">RH_Transition</span></a> 
+ substitution rates between <u><span style="color: #008000;"><a href="javascript:TextPopup(this)" id="HotSpot29699" class="glossterm">purines</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot29699', 'POPUP29699');
+//]]></script><span class="glosstext" id="POPUP29699" style="display: none;"> The nucleotides adenine (A) and guanine (G) are known as purines.</span></span></u><span style="display: none;">RH_Purines</span> 
+ and transversional substitution rates between <u style="color: #007fbf;"><span 
+	 style="color: #007fbf;"><a href="Pyrimidines.htm" style="color: #007fbf;">pyrimidines</a></span></u><span 
+	 style="display: none;">RH_Pyrimidines</span>.&#160;&#160;It assumes 
+ an equality of substitution rates among sites (see <u style="text-underline: double; 
+														 color: #007fbf;"><span 
+	 style="color: #007fbf;"><a href="Tamura-Nei_gamma_distance.htm" style="color: #007fbf;">related 
+ gamma model</a></span></u><span style="display: none;">HC_Tamura_Nei_distance_with_Gamma_model</span>).When 
+ nucleotide frequencies are different between the sequences, the modified 
+ formula (<a href="Tamura_and_Kumar_2002.htm" style="color: #007fbf;"><u 
+	 style="color: #007fbf;"><span style="color: #007fbf;">Tamura and Kumar 
+ 2002</span></u><span style="display: none; color: #007fbf;">Tamura_and_Kumar_2002</span></a>) 
+ relaxes the assumption of substitution pattern homogeneity.</p>
+<p>&#160;</p>
+<p><span style="font-size: 11.0pt;">The Tamura-Nei model</span></p>
+<p><span style="font-size: 11.0pt;"><img src="DistanceMethods_HC_files/image067.jpg" alt="" border="0" style="width:100%; max-width:740px" /></span></p>
+<p>&#160;</p>
+<p><i><span style="font-size: 11.0pt;">MEGA</span></i> <span style="font-size: 11.0pt;">provides 
+ facilities for computing the following quantities for this method:</span></p>
+<table style="margin-left: 5.75pt;" cellspacing="0">
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="174"><p style="margin-top: 0in; text-autospace: none;"><b><u><span 
+		 style="font-size: 11.0pt;">Quantity</span></u></b></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="270"><p style="margin-top: 0in; text-autospace: none;"><b><u><span 
+		 style="font-size: 11.0pt;">Description</span></u></b></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="174"><p class="Leftalignarial"><i><span style="font-size: 11.0pt;">d</span></i><span 
+		 style="font-size: 11.0pt;">: Transitions &amp; Transversions</span></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="270"><p class="Leftalignarial"><span style="font-size: 11.0pt;">Number 
+		 of nucleotide substitutions per site.</span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="174"><p class="Leftalignarial"><i><span style="font-size: 11.0pt;">s</span></i><span 
+		 style="font-size: 11.0pt;">: Transitions only</span></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="270"><p class="Leftalignarial"><span style="font-size: 11.0pt;">Number 
+		 of transitional substitutions per site.</span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="174"><p class="Leftalignarial"><i><span style="font-size: 11.0pt;">v</span></i><span 
+		 style="font-size: 11.0pt;">: Transversions only</span></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="270"><p class="Leftalignarial"><span style="font-size: 11.0pt;">Number 
+		 of transversional substitutions per site.</span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="174"><p class="Leftalignarial"><i><span style="font-size: 11.0pt;">R</span></i> 
+		 <span style="font-size: 11.0pt;">= <i>s</i>/<i>v</i></span></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="270"><p class="Leftalignarial"><span style="font-size: 11.0pt;"><a href="javascript:TextPopup(this)" id="HotSpot33346" class="glossterm">Transition</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot33346', 'POPUP33346');
+//]]></script><span class="glosstext" id="POPUP33346" style="display: none;"> A transition occurs when a purine is substituted by a purine, or a pyrimidine by a pyrimidine.</span>/transversions ratio.</span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="174"><p class="Leftalignarial"><i><span style="font-size: 11.0pt;">L</span></i><span 
+		 style="font-size: 11.0pt;">: No of valid common sites</span></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="270"><p class="Leftalignarial"><span style="font-size: 11.0pt;">Number 
+		 of sites compared.</span></p></td>
+	</tr>
+</table>
+<p>&#160;</p>
+<p><span style="font-size: 11.0pt;">Formulas for computing these quantities 
+ are as follows:</span></p>
+<p><b><span style="font-size: 11.0pt;">Distances</span></b></p>
+<p><span style="font-size: 11.0pt;"><img src="DistanceMethods_HC_files/image069.jpg" alt="" border="0" style="width:100%; max-width:795px" /></span></p>
+<p><span style="font-size: 11.0pt;">where <i>P</i><sub>1</sub> and <i>P</i><sub>2</sub> 
+ are the proportions of transitional differences between nucleotides A 
+ and G, and between T and C, respectively, <i>Q</i> is the proportion of 
+ transversional differences, <i>g</i></span><i><sub><span style="font-size: 11.0pt;">XA</span></sub></i><span 
+	 style="font-size: 11.0pt;">, <i>g</i></span><i><sub><span style="font-size: 11.0pt;">XC</span></sub></i><span 
+	 style="font-size: 11.0pt;">, <i>g</i></span><i><sub><span style="font-size: 11.0pt;">XG</span></sub></i><span 
+	 style="font-size: 11.0pt;">, <i>g</i></span><i><sub><span style="font-size: 11.0pt;">XT</span></sub></i><span 
+	 style="font-size: 11.0pt;">, are the respective frequencies of A, 
+ C, G and T</span> <span style="font-size: 11.0pt;">of sequence <i>X,</i></span> 
+ <i><span style="font-size: 11.0pt;">g</span></i><i><sub><span style="font-size: 11.0pt;">XR</span></sub></i> 
+ <span style="font-size: 11.0pt;">=</span> <i><span style="font-size: 11.0pt;">g</span></i><i><sub><span 
+	 style="font-size: 11.0pt;">XA</span></sub></i> <span style="font-size: 11.0pt;">+</span> 
+ <i><span style="font-size: 11.0pt;">g</span></i><i><sub><span style="font-size: 11.0pt;">XG</span></sub></i> 
+ <span style="font-size: 11.0pt;">and</span> <i><span style="font-size: 11.0pt;">g</span></i><i><sub><span 
+	 style="font-size: 11.0pt;">XY</span></sub></i> <span style="font-size: 11.0pt;">=</span> 
+ <i><span style="font-size: 11.0pt;">g</span></i><i><sub><span style="font-size: 11.0pt;">XT</span></sub></i> 
+ <span style="font-size: 11.0pt;">+</span> <i><span style="font-size: 11.0pt;">g</span></i><i><sub><span 
+	 style="font-size: 11.0pt;">XC</span></sub></i><span style="font-size: 11.0pt;">,</span> 
+ <i><span style="font-size: 11.0pt;">g</span></i><i><sub><span style="font-size: 11.0pt;">A</span></sub></i><span 
+	 style="font-size: 11.0pt;">, <i>g</i></span><i><sub><span style="font-size: 11.0pt;">C</span></sub></i><span 
+	 style="font-size: 11.0pt;">, <i>g</i></span><i><sub><span style="font-size: 11.0pt;">G</span></sub></i><span 
+	 style="font-size: 11.0pt;">, <i>g</i></span><i><sub><span style="font-size: 11.0pt;">T</span></sub></i><span 
+	 style="font-size: 11.0pt;">, <i>g</i></span><i><sub><span style="font-size: 11.0pt;">R</span></sub></i><span 
+	 style="font-size: 11.0pt;">,</span> <span style="font-size: 11.0pt;">and</span> 
+ <i><span style="font-size: 11.0pt;">g</span></i><i><sub><span style="font-size: 11.0pt;">Y</span></sub></i> 
+ <span style="font-size: 11.0pt;">are the</span> <span style="font-size: 11.0pt;">average</span> 
+ <span style="font-size: 11.0pt;">frequencies</span> <span style="font-size: 11.0pt;">of 
+ the pair of sequences, and</span></p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;"><img src="DistanceMethods_HC_files/image081.jpg" alt="" border="0" style="width:100%; max-width:623px" /></span></p>
+<p style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p style="margin-left: 0in;"><span style="font-size: 11.0pt;">The variances 
+ can be estimated by the bootstrap method.</span></p>
+<p>&#160;</p>
+</body>
+</html>

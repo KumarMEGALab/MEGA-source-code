@@ -1,0 +1,128 @@
+object MdWelcomeForm: TMdWelcomeForm
+  Left = 674
+  Height = 160
+  Top = 303
+  Width = 288
+  BorderIcons = []
+  Caption = 'Select Run Mode'
+  ClientHeight = 160
+  ClientWidth = 288
+  Color = clBtnFace
+  DefaultMonitor = dmMainForm
+  Font.Color = clGrayText
+  Font.Height = -13
+  Font.Name = 'Tahoma'
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '2.2.4.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 160
+    Top = 0
+    Width = 288
+    Align = alClient
+    ClientHeight = 160
+    ClientWidth = 288
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    ParentFont = False
+    TabOrder = 0
+    object SpeedButton1: TSpeedButton
+      Left = 12
+      Height = 22
+      Top = 101
+      Width = 73
+      Caption = 'What''s This?'
+      Flat = True
+      Font.Color = clBlue
+      Font.Height = -10
+      Font.Name = 'Tahoma'
+      OnClick = SpeedButton1Click
+      ParentFont = False
+    end
+    object SpeedButton2: TSpeedButton
+      Left = 107
+      Height = 22
+      Top = 101
+      Width = 74
+      Caption = 'What''s This?'
+      Flat = True
+      Font.Color = clBlue
+      Font.Height = -10
+      Font.Name = 'Tahoma'
+      OnClick = SpeedButton2Click
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 11
+      Height = 71
+      Top = 11
+      Width = 266
+      Align = alTop
+      Alignment = taCenter
+      AutoSize = False
+      BorderSpacing.Around = 10
+      Caption = 'Do you wish to specify coordinate information for variants of interest using the search wizard or a text file?'
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      ParentColor = False
+      ParentFont = False
+      WordWrap = True
+    end
+    object ToolBar1: TToolBar
+      Left = 1
+      Top = 127
+      Width = 286
+      Align = alBottom
+      ButtonHeight = 30
+      ButtonWidth = 90
+      Caption = 'ToolBar1'
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      HotImages = ImageForm.Buttons_90x30_hover
+      Images = ImageForm.Buttons_90x30
+      ImagesWidth = 90
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      object ToolButton1: TToolButton
+        Left = 1
+        Top = 0
+        Action = WizardAction
+      end
+      object ToolButton2: TToolButton
+        Left = 95
+        Top = 0
+        Action = FileAction
+      end
+      object ToolButton3: TToolButton
+        Left = 189
+        Top = 0
+        Action = CancelAction
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.Buttons_90x30
+    Left = 152
+    Top = 64
+    object WizardAction: TAction
+      Caption = '&Wizard...'
+      ImageIndex = 9
+      OnExecute = DoInteractiveButtonClick
+    end
+    object CancelAction: TAction
+      Caption = 'CancelAction'
+      ImageIndex = 10
+      OnExecute = CancelButtonClick
+    end
+    object FileAction: TAction
+      Caption = 'FileAction'
+      ImageIndex = 3
+      OnExecute = LoadFileButtonClick
+    end
+  end
+end

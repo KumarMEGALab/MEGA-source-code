@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="DistanceMethods_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Jukes-Cantor distance</title>
+<link rel="stylesheet" href="DistanceMethods_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.2.1.1.0_3";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Computing Evolutionary Distances > Distance Models > Nucleotide Substitution Models" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1 style="margin-left: 0in;"><span style="font-size: 11.0pt;">Jukes-Cantor 
+ distance</span></h1>
+<p><span style="font-size: 11.0pt;">In the </span><u style="font-size: 11pt; 
+													 color: #007fbf;"><span 
+	 style="font-size: 11pt; color: #007fbf;"><a href="Jukes_and_Cantor_1969.htm" 
+												 style="font-size: 11pt; 
+												 color: #007fbf;">Jukes 
+ and Cantor (1969)</a></span></u><span style="display: none;">Jukes_and_Cantor_1969</span><span 
+	 style="font-size: 11.0pt;"> model, the rate of nucleotide substitution 
+ is the same for all pairs of the four nucleotides A, T, C, and G.&#160;&#160;As 
+ is shown below, the multiple hit correction equation for this model produces 
+ a maximum likelihood estimate of the number of nucleotide substitutions 
+ between two sequences.&#160;&#160;It assumes an equality of substitution 
+ rates among sites (see the related </span><u style="text-underline: double; 
+												 font-size: 11pt; color: #007fbf;"><span 
+	 style="font-size: 11pt; color: #007fbf;"><a href="Jukes-Cantor_Gamma_distance.htm" 
+												 style="font-size: 11pt; 
+												 color: #007fbf;">gamma 
+ distance</a></span></u><span style="display: none;">HC_Jukes_Cantor_Gamma_distance</span><span 
+	 style="font-size: 11.0pt;">), equal nucleotide frequencies, and it 
+ does not correct for higher rate of</span><span style="font-size: 11pt;"> 
+ </span><u style="font-size: 11pt;"><span style="font-size: 11pt;"><a href="javascript:TextPopup(this)" id="HotSpot8072" class="glossterm">transition</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot8072', 'POPUP8072');
+//]]></script><span class="glosstext" id="POPUP8072" style="display: none;"> A transition occurs when a purine is substituted by a purine, or a pyrimidine by a pyrimidine.</span></span></u><span 
+	 style="display: none; font-size: 11pt;">RH_Transition</span><span 
+	 style="font-size: 11pt;">al substitutions as compared to </span><u 
+	 style="font-size: 11pt;"><span style="font-size: 11pt;"><a href="javascript:TextPopup(this)" id="HotSpot34365" class="glossterm">transversion</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot34365', 'POPUP34365');
+//]]></script><span class="glosstext" id="POPUP34365" style="display: none;"> A change from a purine to a pyrimidine, or vice versa, is a transversion.</span></span></u><span 
+	 style="display: none; font-size: 11pt;">RH_Transversion</span><span 
+	 style="font-size: 11.0pt;">al substitutions.</span></p>
+<p style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">The 
+ Jukes-Cantor model</span></p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;"><img src="DistanceMethods_HC_files/image002.jpg" alt="" border="0" style="width:100%; max-width:530px" /></span></p>
+<p style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p><i><span style="font-size: 11.0pt;">MEGA</span></i> <span style="font-size: 11.0pt;">provides 
+ facilities for computing the following quantities:</span></p>
+<p style="margin-top: 0in;"><b><i><span style="font-size: 11.0pt;">d</span></i></b><b><span 
+	 style="font-size: 11.0pt;">: Transitions + Transversions</span></b><span 
+	 style="font-size: 11.0pt;">&#160;&#160;: Number of nucleotide substitutions 
+ per site.</span></p>
+<p style="margin-top: 0in;"><b><i><span style="font-size: 11.0pt;">L</span></i></b><b><span 
+	 style="font-size: 11.0pt;">: No of valid common sites</span></b><span 
+	 style="font-size: 11.0pt;">: Number of sites compared.</span></p>
+<p><span style="font-size: 11.0pt;">Formulas for computing these quantities 
+ are as follows:</span></p>
+<p><b><span style="font-size: 11.0pt;">Distance</span></b></p>
+<p><span style="font-size: 11.0pt;"><img src="DistanceMethods_HC_files/image004.jpg" alt="" border="0" style="width:100%; max-width:335px" /></span></p>
+<p><span style="font-size: 11.0pt;">where <i>p</i> is the proportion of 
+ sites with different nucleotides.</span></p>
+<p class="TipNoteHeading" style="margin-top: 4.0pt;">&#160;</p>
+<p class="TipNoteHeading" style="margin-top: 4.0pt;"><span style="font-size: 11.0pt;">Variance</span></p>
+<p><span style="font-size: 11.0pt;"><img src="DistanceMethods_HC_files/image006.jpg" alt="" border="0" style="width:100%; max-width:448px" /></span></p>
+<p><span style="font-size: 11.0pt;">See also </span><u style="font-size: 11pt; 
+														 color: #007fbf;"><span 
+	 style="font-size: 11pt; color: #007fbf;"><a href="Nei_and_Kumar_2000.htm" 
+												 style="font-size: 11pt; 
+												 color: #007fbf;">Nei and 
+ Kumar (2000)</a></span></u><span style="display: none; font-size: 11pt; 
+									 color: #007fbf;">Nei_and_Kumar_2000</span><span 
+	 style="font-size: 11.0pt;">, page 36.</span></p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>MEGA Saved Sessions</title>
+<link rel="StyleSheet" href="../../default.css" type="text/css" />
+ <link rel="StyleSheet" href="../../default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "3.1.0_2";
+</script>
+ <meta name="topic-breadcrumbs" content="Part III: Input Data Types and File Formats > MEGA Input Data Formats" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+<h1>MEGA Saved Sessions</h1>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Session saving allows you 
+ to save the current status of MEGA into a file that you can open later 
+ to resume where you left off.</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">This format is also much 
+ more efficient than the current MEGA format (.MEG) which results in much 
+ improved save and load times. If you look at the file you will only be 
+ able to read the part of</font> <font style="font-size: 11pt; font-family: Arial;" 
+										 size="2" face="Arial">it which 
+ contains the actual data. The rest of</font> <font style="font-size: 11pt; 
+													 font-family: Arial;" 
+													 size="2" face="Arial">the 
+ file is in binary format which contains information on what the state 
+ of all the options were.</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">The new format has an extension 
+ of mdsx (.mdsx).</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Errors with a saved session</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Problem:</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">‘The file selected is a 
+ MEGA session file but appears to have been not fully saved when created'</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><u><font style="font-size: 11pt; 
+	 font-family: Arial; text-decoration: underline; " size="2" face="Arial">Reason</font></u><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">:<br />
+This error occurs when you attempt to open a saved session file that was 
+ not fully saved.&#160;&#160;This means, that only part of the file was 
+ saved when it was<br />
+created.&#160;&#160;This could be caused by a user shutting down MEGA before 
+ it has finished writing the file, or a bug in MEGA.</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Problem:</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">'The file selected does 
+ not appear to be a Mega Session File, it may be corrupt'</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><u><font style="font-size: 11pt; 
+	 font-family: Arial; text-decoration: underline; " size="2" face="Arial">Reason</font></u><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">:<br />
+This error occurs when MEGA can not identify the file you are attempting 
+ to open as a MEGA saved session file.&#160;&#160;Please make sure you 
+ opened the right file.&#160;<br />
+If you obtained this file from someone else please obtain another copy 
+ of the file from them and try again as the file might have been corrupted 
+ in<br />
+transport.</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Problem:</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">'This Mega Session was 
+ created with a newer version of Mega; only settings compatible with this 
+ version of Mega will be restored'</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><u><font style="font-size: 11pt; 
+	 font-family: Arial; text-decoration: underline; " size="2" face="Arial">Reason</font></u><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">:<br />
+If you are opening a saved session created with a newer version of MEGA, 
+ this warning will appear.&#160;&#160;Only saved settings that apply to 
+ your version of MEGA<br />
+will be restored.&#160;</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Problem:</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">'This Mega Session file 
+ was created with an older version of Mega; only settings that are compatible 
+ with this version of Mega will be restored'</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><u><font style="font-size: 11pt; 
+	 font-family: Arial; text-decoration: underline; " size="2" face="Arial">Reason</font></u><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">:<br />
+if you are opening a saved session created with an older version of MEGA, 
+ this warning will appear.&#160;&#160;Only settings that exist in the saved 
+ session will be<br />
+applied to your version of MEGA.</font></p>
+</body>
+</html>

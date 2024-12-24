@@ -1,0 +1,530 @@
+object V_DistDataExplorer: TV_DistDataExplorer
+  Left = 525
+  Height = 356
+  Top = 252
+  Width = 683
+  Caption = 'Input Distance Data Viewer'
+  ClientHeight = 336
+  ClientWidth = 683
+  Color = clBtnFace
+  Constraints.MinHeight = 345
+  Constraints.MinWidth = 396
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Arial'
+  Menu = MainMenu1
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnHelp = FormHelp
+  OnResize = FormResize
+  OnShow = FormShow
+  Position = poMainFormCenter
+  SessionProperties = 'FontDialog1.Font;SaveDialog1.InitialDir;SpinEdit1.Value;DataGrid.Font'
+  ShowHint = True
+  LCLVersion = '2.2.6.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 313
+    Top = 0
+    Width = 683
+    Align = alClient
+    BevelOuter = bvNone
+    Caption = 'Panel1'
+    ClientHeight = 313
+    ClientWidth = 683
+    TabOrder = 0
+    object MainToolBar: TToolBar
+      Left = 0
+      Height = 30
+      Top = 0
+      Width = 683
+      ButtonHeight = 24
+      ButtonWidth = 29
+      Caption = 'MainToolBar'
+      DisabledImages = MegaForm.DisabledIcons
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Images = MegaForm.NewIcons
+      ParentFont = False
+      TabOrder = 0
+      object ToolButton6: TToolButton
+        Left = 30
+        Height = 24
+        Top = 2
+        Caption = 'ToolButton6'
+        ImageIndex = 4
+        Style = tbsSeparator
+      end
+      object ToolButton5: TToolButton
+        Left = 96
+        Height = 24
+        Top = 2
+        Caption = 'ToolButton5'
+        ImageIndex = 4
+        Style = tbsSeparator
+      end
+      object ExportXLTBtn: TToolButton
+        Left = 133
+        Hint = 'Export data in Excel format'
+        Top = 2
+        Caption = 'ExportXLTBtn'
+        ImageIndex = 71
+        OnClick = FileSaveToFileItemClick
+      end
+      object ExportCSVTBtn: TToolButton
+        Left = 162
+        Hint = 'Export data as Comma Seperated Values'
+        Top = 2
+        Caption = 'ExportCSVTBtn'
+        ImageIndex = 72
+        OnClick = FileSaveToFileItemClick
+      end
+      object ExportMEGATBtn: TToolButton
+        Left = 191
+        Hint = 'Export data in MEGA format'
+        Top = 2
+        Caption = 'ExportMEGATBtn'
+        ImageIndex = 22
+        OnClick = FileSaveToFileItemClick
+      end
+      object ExportTextTBtn: TToolButton
+        Left = 220
+        Hint = 'Export data as plain text'
+        Top = 2
+        Caption = 'ExportTextTBtn'
+        ImageIndex = 21
+        OnClick = FileSaveToFileItemClick
+      end
+      object EditTaxaGroupsSBtn: TToolButton
+        Left = 1
+        Top = 2
+        Caption = 'EditTaxaGroupsSBtn'
+        ImageIndex = 36
+        OnClick = FileSelectEditTaxaGroupsItemClick
+      end
+      object DecPrecisionSBtn: TToolButton
+        Left = 38
+        Top = 2
+        Caption = 'DecPrecisionSBtn'
+        ImageIndex = 116
+        OnClick = DecPrecisionSBtnClick
+      end
+      object IncPrecisionSBtn: TToolButton
+        Left = 67
+        Top = 2
+        Caption = 'IncPrecisionSBtn'
+        ImageIndex = 115
+        OnClick = IncPrecisionSBtnClick
+      end
+      object ExportDataSBtn: TToolButton
+        Left = 104
+        Top = 2
+        Caption = 'ExportDataSBtn'
+        ImageIndex = 35
+        OnClick = FileSaveToFileItemClick
+      end
+    end
+    object GridPanel: TPanel
+      Left = 0
+      Height = 251
+      Top = 62
+      Width = 683
+      Align = alClient
+      Caption = 'GridPanel'
+      ClientHeight = 251
+      ClientWidth = 683
+      TabOrder = 1
+      object DataGrid: TDrawGrid
+        Left = 1
+        Height = 232
+        Top = 1
+        Width = 664
+        Align = alClient
+        AutoEdit = False
+        DefaultColWidth = 15
+        DefaultDrawing = False
+        ExtendedSelect = False
+        FixedRows = 0
+        Flat = True
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowMoving]
+        ParentFont = False
+        ParentShowHint = False
+        ScrollBars = ssNone
+        TabOrder = 0
+        OnColRowMoved = DataGridColRowMoved
+        OnContextPopup = DataGridContextPopup
+        OnDrawCell = DataGridDrawCell
+        OnKeyDown = DataGridKeyDown
+        OnMouseDown = DataGridMouseDown
+        OnMouseMove = DataGridMouseMove
+        OnMouseUp = DataGridMouseUp
+        OnSelectCell = DataGridSelectCell
+      end
+      object GridHorizScrollbar: TScrollBar
+        Left = 1
+        Height = 17
+        Top = 233
+        Width = 681
+        Align = alBottom
+        PageSize = 0
+        TabOrder = 1
+        OnChange = GridHorizScrollbarChange
+        OnScroll = GridHorizScrollbarScroll
+      end
+      object GridVertScrollbar: TScrollBar
+        Left = 665
+        Height = 232
+        Top = 1
+        Width = 17
+        Align = alRight
+        Kind = sbVertical
+        PageSize = 0
+        TabOrder = 2
+        OnChange = GridVertScrollbarChange
+        OnScroll = GridVertScrollbarScroll
+      end
+    end
+    object SearchPanel: TPanel
+      Left = 0
+      Height = 32
+      Top = 30
+      Width = 683
+      Align = alTop
+      BevelOuter = bvNone
+      ClientHeight = 32
+      ClientWidth = 683
+      TabOrder = 2
+      object ToolBar1: TToolBar
+        Left = 502
+        Height = 26
+        Top = 4
+        Width = 78
+        Align = alNone
+        Anchors = [akTop, akRight]
+        Caption = 'ToolBar1'
+        EdgeInner = esNone
+        EdgeOuter = esNone
+        Images = ImageForm.DefaultIcons
+        TabOrder = 0
+        object ToolButton2: TToolButton
+          Left = 24
+          Hint = 'Find previous'
+          Top = 0
+          Action = FindPreviousAction
+        end
+        object ToolButton3: TToolButton
+          Left = 47
+          Hint = 'Find next'
+          Top = 0
+          Action = FindNextAction
+        end
+        object ToolButton1: TToolButton
+          Left = 1
+          Top = 0
+          Action = FindFirstAction
+        end
+      end
+      object SearchEdit: TEdit
+        Left = 59
+        Height = 24
+        Top = 4
+        Width = 431
+        Anchors = [akTop, akLeft, akRight]
+        OnChange = SearchEditChange
+        OnKeyDown = SearchEditKeyDown
+        TabOrder = 1
+      end
+      object Label1: TLabel
+        Left = 8
+        Height = 16
+        Top = 7
+        Width = 41
+        Caption = 'Search'
+        ParentColor = False
+      end
+      object Button1: TButton
+        Left = 587
+        Height = 25
+        Top = 3
+        Width = 75
+        Action = CloseAction
+        Anchors = [akTop, akRight]
+        Caption = 'Hide'
+        TabOrder = 2
+      end
+    end
+  end
+  object StatusBar: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 313
+    Width = 683
+    Panels = <>
+  end
+  object MainMenu1: TMainMenu
+    Images = MegaForm.NewIcons
+    Left = 80
+    Top = 224
+    object FileMenu: TMenuItem
+      Caption = '&File'
+      object FileSelectEditTaxaGroupsItem: TMenuItem
+        Caption = 'Select && Edit Taxa/Gps'
+        OnClick = FileSelectEditTaxaGroupsItemClick
+      end
+      object MenuItem1: TMenuItem
+        Caption = '-'
+      end
+      object SaveSession: TMenuItem
+        Caption = 'Save Session'
+        OnClick = SaveSessionClick
+      end
+      object SaveToFileItem: TMenuItem
+        Caption = '&Export/Print Distances'
+        OnClick = FileSaveToFileItemClick
+      end
+      object MenuItem4: TMenuItem
+        Caption = '-'
+      end
+      object FileQuitViewerItem: TMenuItem
+        Caption = '&Quit Viewer'
+        OnClick = FileQuitViewerItemClick
+      end
+    end
+    object DisplayMenu: TMenuItem
+      Caption = '&Display'
+      object DispSelTaxaItem: TMenuItem
+        Caption = '&Show only Selected Taxa'
+        OnClick = DispSelTaxaItemClick
+      end
+      object DisplayN1: TMenuItem
+        Caption = '-'
+      end
+      object SortTaxaSubmenu: TMenuItem
+        Caption = '&Sort Taxa'
+        OnClick = DispSortItemClick
+        object DispAsInInputFileItem: TMenuItem
+          Caption = '&Input Data Order'
+          OnClick = DispSortItemClick
+        end
+        object DispSortAlphaItem: TMenuItem
+          Caption = '&By Name'
+          OnClick = DispSortItemClick
+        end
+        object DispSortGpItem: TMenuItem
+          Caption = 'By &Group Name'
+          OnClick = DispSortItemClick
+        end
+      end
+      object DisplayN2: TMenuItem
+        Caption = '-'
+      end
+      object DispGpNamesItem: TMenuItem
+        Caption = 'Show &Group Names'
+        OnClick = DispGpNamesItemClick
+      end
+      object DisplayN3: TMenuItem
+        Caption = '-'
+      end
+      object DispChangeFontItem: TMenuItem
+        Caption = 'Change &Font'
+        OnClick = DispChangeFontItemClick
+      end
+    end
+    object MenuItem3: TMenuItem
+      Caption = '&Search'
+      object MenuItem5: TMenuItem
+        Action = FindFirstAction
+      end
+      object MenuItem6: TMenuItem
+        Action = FindPreviousAction
+      end
+      object MenuItem7: TMenuItem
+        Action = FindNextAction
+      end
+      object MenuItem8: TMenuItem
+        Action = ActionToggleSearchTools
+      end
+    end
+    object AverageMenu: TMenuItem
+      Caption = '&Average'
+      object AvgAllItem: TMenuItem
+        Caption = '&Overall'
+        OnClick = AvgAllItemClick
+      end
+      object AverageN1: TMenuItem
+        Caption = '-'
+      end
+      object WithinGpsAvgItem: TMenuItem
+        Caption = '&Within Groups'
+        OnClick = AvgGpsItemClick
+      end
+      object BetweenGpsAvgItem: TMenuItem
+        Caption = 'Between Groups'
+        OnClick = AvgGpsItemClick
+      end
+      object NetBetweenGpsAvgItem: TMenuItem
+        Caption = '&Net Between Groups'
+        OnClick = AvgGpsItemClick
+      end
+    end
+    object WindowsMenuItem: TMenuItem
+      Caption = '&Windows'
+    end
+    object HelpMenu: TMenuItem
+      Caption = '&Help '
+      Hint = 'Insert sequence from clipboard'
+      ShortCut = 16450
+      object MenuItem2: TMenuItem
+        Caption = '&Contents'
+        OnClick = HelpMenuClick
+      end
+    end
+  end
+  object ImageList2: TImageList
+    Scaled = True
+    Left = 264
+    Top = 208
+    Bitmap = {
+      4C7A020000001000000010000000530000000000000078DA6B69696168211263
+      0320F1FF440072F5039590AD1FA49758FD3075E87A49D10F538BAE9714FDD8F4
+      12EB7F5C7A49093F6C7A29893F62F45392FE460165A06590E7FF51FDC35FFF68
+      FE1F380000FC6CC296
+    }
+  end
+  object SaveDialog1: TSaveDialog
+    Options = [ofOverwritePrompt, ofHideReadOnly, ofEnableSizing]
+    Left = 344
+    Top = 136
+  end
+  object ImageList32: TImageList
+    Height = 32
+    Width = 32
+    Left = 450
+    Top = 203
+    Bitmap = {
+      4C7A020000002000000020000000CB0000000000000078DAEDD72B0E83401485
+      615C25B292252091952CA3125989C45522594E9780ACEC5A7A9B0C86C0BC983B
+      54FC27398A643E02C3E31605F9B35CA49D7448DC87B4F4B0DFD249C11FA51F69
+      65F13B636BE529ED2DC79773D58A6B7D7CFC547E2DBD9FE4FFECD7C6FB2687BF
+      67E7F06DB6B6EFB263FDCAE3BBE163C7FAAEB57DED23D77FCF08B18FDEFFB515
+      6AA7D87F8B798BB053EDFF3AD2E6FB83EF5ABF37FF8867F957F38F3C287536CF
+      AE2D8DA2DF32DE11C2FCCFFC8F8F8F8F8F8F8F8F8FCFFCCFFC4FF2E60B0220C5
+      FC
+    }
+  end
+  object FontDialog1: TFontDialog
+    MinFontSize = 0
+    MaxFontSize = 0
+    Left = 40
+    Top = 152
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    Left = 343
+    Top = 67
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DefaultIcons
+    Left = 132
+    Top = 169
+    object FindNextAction: TAction
+      Caption = 'Find &Next'
+      Hint = 'Search taxa names in the forward direction from the selected row'
+      ImageIndex = 156
+      OnExecute = FindNextActionExecute
+      ShortCut = 114
+    end
+    object FindPreviousAction: TAction
+      Caption = 'Find &Previous'
+      Hint = 'Search taxa names backwards from the selected row'
+      ImageIndex = 157
+      OnExecute = FindPreviousActionExecute
+      ShortCut = 8306
+    end
+    object CloseAction: TAction
+      Caption = '&Close'
+      Hint = 'Hide the search toolbar'
+      ImageIndex = 59
+      OnExecute = CloseActionExecute
+      ShortCut = 27
+    end
+    object ActionToggleSearchTools: TAction
+      Caption = '&Display Search Toolbar'
+      Hint = 'Toggle the search toolbar'
+      ImageIndex = 57
+      OnExecute = ActionToggleSearchToolsExecute
+      ShortCut = 24646
+    end
+    object FindFirstAction: TAction
+      Caption = 'Find &First'
+      Hint = 'Search taxa names forward from the first row'
+      ImageIndex = 2
+      OnExecute = FindFirstActionExecute
+      ShortCut = 16454
+    end
+    object ActionMoveToBottom: TAction
+      Caption = 'Move to &Bottom'
+      Hint = 'Move the selected taxon to the bottom of the display'
+      OnExecute = ActionMoveToBottomExecute
+    end
+    object ActionMoveToTop: TAction
+      Caption = 'Move to &Top'
+      Hint = 'Move the selected taxon to the top of the display'
+      OnExecute = ActionMoveToTopExecute
+    end
+    object ActionSortAlphabetical: TAction
+      Caption = 'By &Name'
+      Hint = 'Sort alphabetically by taxa names'
+      OnExecute = ActionSortAlphabeticalExecute
+    end
+    object ActionSortByDistToFocalOtu: TAction
+      Caption = 'By &Distance to First Taxon'
+      Hint = 'Sort taxa by distance to first taxon in the display'
+      OnExecute = ActionSortByDistToFocalOtuExecute
+    end
+    object ActionRestoreInputOrder: TAction
+      Caption = 'By &Input Data Order'
+      Hint = 'Order taxa according to the original input order'
+      OnExecute = ActionRestoreInputOrderExecute
+    end
+    object ActionSortByGroup: TAction
+      Caption = 'By &Group'
+      Hint = 'Sort alphabetcally by group names'
+      OnExecute = ActionSortByGroupExecute
+    end
+  end
+  object NamesColumnPopupMenu: TPopupMenu
+    Left = 178
+    Top = 109
+    object MenuItem9: TMenuItem
+      Action = ActionMoveToTop
+    end
+    object MenuItem10: TMenuItem
+      Action = ActionMoveToBottom
+    end
+    object MenuItem11: TMenuItem
+      Action = ActionRestoreInputOrder
+      Caption = 'Restore &Input Data Order'
+    end
+    object MenuItem12: TMenuItem
+      Caption = '&Sort'
+      object MenuItem13: TMenuItem
+        Action = ActionSortAlphabetical
+      end
+      object MenuItem16: TMenuItem
+        Action = ActionSortByGroup
+      end
+      object MenuItem14: TMenuItem
+        Action = ActionSortByDistToFocalOtu
+      end
+      object MenuItem15: TMenuItem
+        Action = ActionRestoreInputOrder
+      end
+    end
+  end
+end

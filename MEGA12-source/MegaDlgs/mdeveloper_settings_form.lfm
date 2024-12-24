@@ -1,0 +1,233 @@
+object DeveloperSettingsDlg: TDeveloperSettingsDlg
+  Left = 427
+  Height = 462
+  Top = 200
+  Width = 308
+  Caption = 'Developer Settings'
+  ClientHeight = 462
+  ClientWidth = 308
+  DefaultMonitor = dmMainForm
+  FormStyle = fsStayOnTop
+  OnActivate = FormActivate
+  OnResize = FormResize
+  Position = poMainFormCenter
+  LCLVersion = '2.2.6.0'
+  object GroupBox1: TGroupBox
+    Left = 16
+    Height = 179
+    Top = 37
+    Width = 275
+    Anchors = [akTop, akLeft, akRight]
+    Caption = 'General'
+    ClientHeight = 159
+    ClientWidth = 271
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 21
+      Height = 15
+      Top = 7
+      Width = 87
+      Caption = 'Developer Mode'
+      ParentColor = False
+    end
+    object IsDeveloperComboBx: TComboBox
+      Left = 146
+      Height = 23
+      Top = 3
+      Width = 100
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'False'
+        'True'
+      )
+      OnChange = IsDeveloperComboBxChange
+      Style = csDropDownList
+      TabOrder = 0
+      Text = 'False'
+    end
+    object Label4: TLabel
+      Left = 21
+      Height = 15
+      Top = 131
+      Width = 81
+      Caption = 'Glen Dev Mode'
+      ParentColor = False
+    end
+    object GlenDevModeComboBx: TComboBox
+      Left = 146
+      Height = 23
+      Top = 127
+      Width = 100
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'False'
+        'True'
+      )
+      OnChange = GlenDevModeComboBxChange
+      Style = csDropDownList
+      TabOrder = 1
+      Text = 'False'
+    end
+    object Label5: TLabel
+      Left = 21
+      Height = 15
+      Top = 38
+      Width = 80
+      Caption = 'MyESL Enabled'
+      ParentColor = False
+    end
+    object MyEslComboBx: TComboBox
+      Left = 146
+      Height = 23
+      Top = 34
+      Width = 100
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'False'
+        'True'
+      )
+      OnChange = MyEslComboBxChange
+      Style = csDropDownList
+      TabOrder = 2
+      Text = 'False'
+    end
+    object Label6: TLabel
+      Left = 21
+      Height = 15
+      Top = 101
+      Width = 66
+      Caption = 'Display Logs'
+      ParentColor = False
+    end
+    object DisplayLogsComboBx: TComboBox
+      Left = 146
+      Height = 23
+      Top = 96
+      Width = 100
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'False'
+        'True'
+      )
+      OnChange = DisplayLogsComboBxChange
+      Style = csDropDownList
+      TabOrder = 3
+      Text = 'False'
+    end
+    object Label2: TLabel
+      Left = 21
+      Height = 15
+      Top = 70
+      Width = 77
+      Caption = 'IQTree Enabled'
+      ParentColor = False
+    end
+    object IQTreeComboBox: TComboBox
+      Left = 146
+      Height = 23
+      Top = 65
+      Width = 100
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'False'
+        'True'
+      )
+      OnChange = IQTreeComboBoxChange
+      ReadOnly = True
+      Style = csDropDownList
+      TabOrder = 4
+      Text = 'False'
+    end
+  end
+  object ToolBar1: TToolBar
+    Left = 89
+    Height = 30
+    Top = 425
+    Width = 120
+    Align = alNone
+    Anchors = [akLeft, akBottom]
+    AutoSize = True
+    ButtonHeight = 30
+    ButtonWidth = 115
+    Caption = 'ToolBar1'
+    EdgeInner = esNone
+    EdgeOuter = esNone
+    HotImages = ImageForm.DlgButtonsHover
+    Images = ImageForm.DlgButtons
+    TabOrder = 1
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 0
+      Action = CloseAction
+    end
+  end
+  object KeepOnTopChbox: TCheckBox
+    Left = 16
+    Height = 19
+    Top = 5
+    Width = 88
+    Caption = 'Keep On Top'
+    Checked = True
+    OnChange = KeepOnTopChboxChange
+    State = cbChecked
+    TabOrder = 2
+  end
+  object GroupBox3: TGroupBox
+    Left = 16
+    Height = 95
+    Top = 238
+    Width = 275
+    Anchors = [akTop, akLeft, akRight]
+    Caption = 'Phylogenomic Subsampling Upsampling'
+    ClientHeight = 75
+    ClientWidth = 271
+    TabOrder = 3
+    object UseMeanBclCBox: TCheckBox
+      Left = 21
+      Height = 19
+      Top = 11
+      Width = 196
+      Caption = 'Use Mean BCL for Stopping Rules'
+      OnChange = UseMeanBclCBoxChange
+      TabOrder = 0
+    end
+    object Label7: TLabel
+      Left = 21
+      Height = 15
+      Top = 40
+      Width = 107
+      Caption = 'Enable Subsampling'
+      ParentColor = False
+    end
+    object EnableSubsamplingComboBx: TComboBox
+      Left = 146
+      Height = 23
+      Top = 38
+      Width = 100
+      ItemHeight = 15
+      ItemIndex = 1
+      Items.Strings = (
+        'True'
+        'False'
+      )
+      OnChange = EnableSubsamplingComboBxChange
+      TabOrder = 1
+      Text = 'False'
+    end
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 248
+    Top = 24
+    object CloseAction: TAction
+      Caption = '&Close'
+      ImageIndex = 5
+      OnExecute = CloseActionExecute
+    end
+  end
+end

@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="DataExplorerHelp_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Average Menu (in Distance Data Explorer)</title>
+<link rel="stylesheet" href="DataExplorerHelp_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "3.5.0_4";
+</script>
+ <meta name="topic-breadcrumbs" content="Part III: Input Data Types and File Formats > Distance Data Explorer" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1 style="margin-left: 0in; font-size: 12pt;">Average Menu (in Distance 
+ Data Explorer)</h1>
+<p style="font-size: 12pt;">This menu is used for the computation of average 
+ values using the selected <a href="javascript:TextPopup(this)" id="HotSpot42361" class="glossterm">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot42361', 'POPUP42361');
+//]]></script><span class="glosstext" id="POPUP42361" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span>.  The following averaging options 
+ are available:</p>
+<p style="font-size: 12pt;"><i>Overall</i>:&#160;&#160;This computes and 
+ displays the overall average.</p>
+<p style="font-size: 12pt;"><i>Within groups</i>:&#160;&#160;This is enabled 
+ only if at least one group is defined.&#160;&#160;For each group, an arithmetic 
+ average is computed for all valid pairwise comparisons and results are 
+ displayed in the <i>Distance Matrix Explorer</i>.&#160;&#160;All incalculable 
+ within-group averages are shown with a red “n/c”.</p>
+<p style="font-size: 12pt;"><i>Between groups</i>:  This is enabled 
+ only if at least two groups of <a href="javascript:TextPopup(this)" id="HotSpot11039" class="glossterm">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot11039', 'POPUP11039');
+//]]></script><span class="glosstext" id="POPUP11039" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> are defined.  For each between 
+ group averages, an arithmetic average is computed for all valid inter-group 
+ pairwise comparisons and results are displayed in the <i>Distance Matrix 
+ Explorer</i>.&#160;&#160;All incalculable within group averages are shown 
+ with a red “n/c”.</p>
+<p style="font-size: 12pt;"><i>Net Between Groups</i>:&#160;&#160;This 
+ computes <b><i>net</i></b> average distances between <u style="text-underline: double; 
+														 text-decoration: none; ">groups 
+ of <a href="javascript:TextPopup(this)" id="HotSpot19494" class="glossterm">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot19494', 'POPUP19494');
+//]]></script><span class="glosstext" id="POPUP19494" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span></u><span style="display: none;">RH_Groups_of_taxa</span> and is 
+ enabled only if at least two groups of <a href="javascript:TextPopup(this)" id="HotSpot55869" class="glossterm">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot55869', 'POPUP55869');
+//]]></script><span class="glosstext" id="POPUP55869" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> with at least two <a href="javascript:TextPopup(this)" id="HotSpot35358" class="glossterm">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot35358', 'POPUP35358');
+//]]></script><span class="glosstext" id="POPUP35358" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> each 
+ are defined.<span style="display: none;">RH_Groups_of_taxa</span>&#160;&#160;The 
+ net average distance between two groups is given by</p>
+<p style="font-size: 12pt;"><i>d</i><sub>A</sub> = <i>d</i><sub>XY</sub> 
+ – (<i>d</i><sub>X</sub> + <i>d</i><sub>Y</sub>)/2</p>
+<p style="font-size: 12pt;">where, <i>d</i><sub>XY</sub> is the average 
+ distance between groups X and Y, and <i>d</i><sub>X</sub> and <i>d</i><sub>Y</sub> 
+ are the mean within-group distances.&#160;&#160;&#160;All incalculable 
+ within group averages are shown with a red “n/c”.</p>
+<p style="font-size: 12pt;">&#160;</p>
+</body>
+</html>

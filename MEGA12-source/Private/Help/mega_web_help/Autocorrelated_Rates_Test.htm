@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Autocorrelated Rates Test</title>
+<link rel="StyleSheet" href="default.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.4.0_6";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Constructing Time Trees" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+<h1>Autocorrelated Rates Test</h1>
+<p>When using Bayesian methods for estimating times of divergence in a 
+ phylogenetic tree, the selection of branch rate model is an important 
+ consideration. Both the independent branch rate (IBR) model and the autocorrelated 
+ branch rate (ABR) are widely used but can result in significantly different 
+ time estimates (Battistuzzi et al. 2010; Christin et al. 2014; Dos Reis 
+ et al. 2014, 2015; Foster et al. 2016; Liu et al. 2017; Pacheco et al. 
+ 2018; Takezaki 2018). In MEGA we have now added the Corrtest method (<a 
+	 href="Tao_et_al._2019.htm">Tao et al. 2019</a>) for detecting autocorrelation 
+ of evolutionary rates in large phylogenies. The Corrtest method, which 
+ uses a predictive model that was developed using machine learning techniques, 
+ tests the null hypothesis of independence of evolutionary rates among 
+ lineages. The Corrtest method requires a phylogeny with branch lengths 
+ as well as the specification of an outgroup and the implementation in 
+ MEGA adds the ability to calculate the required branch lengths using the 
+ maximum likelihood (ML) method. The Corrtest implementation in the MEGA 
+ GUI uses the same wizard system that is used for the EP method as <a href="Evolutionary_Probabilities.htm">described 
+ here</a>. The final output for the Corrtest is a P value to decide whether 
+ or not the IBR model should be rejected and a correlation score (CorrScore). 
+ The CorrScore is a value between 0 and 1 where a high value indicates 
+ that the branch rates are autocorrelated. The CorrTest method is an accurate 
+ and computationally efficient alternative to the Bayes factor (BF) approach 
+ to detect autocorrelation of evolutionary rates among lineages</p>
+</body>
+</html>

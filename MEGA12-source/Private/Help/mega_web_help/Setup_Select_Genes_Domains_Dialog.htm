@@ -1,0 +1,355 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="ContextHelp_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Setup/Select Genes &amp; Domains Dialog</title>
+<link rel="stylesheet" href="ContextHelp_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<style type="text/css">
+<!--
+A:visited { color:#800080; }
+A:link { color:#0000ff; }
+-->
+</style>
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "7.2.0_2";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix B: Main Menu Items and Dialogs Reference > MEGA Dialogs" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1><span style="font-size: 11.0pt;">Setup/Select Genes &amp; Domains Dialog</span></h1>
+<p class="equation" style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p style="margin-top: 0in; text-autospace: none; font-size: 11.0pt;">Use 
+ the <a href="javascript:TextPopup(this)" id="HotSpot36560" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot36560', 'POPUP36560');
+//]]></script><span class="glosstext" id="POPUP36560" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> &amp; Domain 
+ Editor to inspect, define, and select <u><span style="color: #008000;"><a href="javascript:TextPopup(this)" id="HotSpot41730" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot41730', 'POPUP41730');
+//]]></script><span class="glosstext" id="POPUP41730" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span></span></u><span style="display: none;">RH_Domains</span>, 
+ and <u><span style="text-decoration: none; ">genes</span><span style="color: #008000;">,</span></u> 
+ <span style="display: none;">RH_Gene</span> and labels for individual 
+ sites.</p>
+<p style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">The 
+ Genes &amp; <a href="javascript:TextPopup(this)" id="HotSpot33433" class="glossterm">Domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot33433', 'POPUP33433');
+//]]></script><span class="glosstext" id="POPUP33433" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span> dialog 
+ consists of two tabs: <i>Define/Edit/Select</i> and <i>Site Labels</i>.</span></p>
+<p class="equation" style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p><i><u><span style="font-size: 11.0pt;">Define/Edit/Select tab</span></u></i></p>
+<p><span style="font-size: 11.0pt;">This tab contains a hierarchical listing 
+ of <a href="javascript:TextPopup(this)" id="HotSpot25519" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot25519', 'POPUP25519');
+//]]></script><span class="glosstext" id="POPUP25519" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> and domain names 
+ with the corresponding information organized into four columns for amino 
+ acid sequences and six columns for nucleotide sequences.&#160;</span></p>
+<p style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p class="keyword"><a href="javascript:TextPopup(this)" id="HotSpot55904" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot55904', 'POPUP55904');
+//]]></script><span class="glosstext" id="POPUP55904" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> 
+ and domain name listing</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">Each 
+ line in this display contains a small 'expand/contract' box, a checkbox, 
+ a <a href="javascript:TextPopup(this)" id="HotSpot29827" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot29827', 'POPUP29827');
+//]]></script><span class="glosstext" id="POPUP29827" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span>/domain icon, and 
+ the name of the <a href="javascript:TextPopup(this)" id="HotSpot35340" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot35340', 'POPUP35340');
+//]]></script><span class="glosstext" id="POPUP35340" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> 
+ or domain. The 'expand/contract' box allows you to display or hide the 
+ information below a given <a href="javascript:TextPopup(this)" id="HotSpot46306" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot46306', 'POPUP46306');
+//]]></script><span class="glosstext" id="POPUP46306" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span>. 
+ The checkbox shows if the <a href="javascript:TextPopup(this)" id="HotSpot33559" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot33559', 'POPUP33559');
+//]]></script><span class="glosstext" id="POPUP33559" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> 
+ or domain is currently selected for analysis.&#160;&#160;All defined genes 
+ and <a href="javascript:TextPopup(this)" id="HotSpot41929" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot41929', 'POPUP41929');
+//]]></script><span class="glosstext" id="POPUP41929" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span> appear below 
+ the <i>Genes\Domain</i> node in the hierarchy.&#160;&#160;All domain names 
+ are shown with a yellow background.&#160;&#160;The <i>Independent</i> 
+ node shows the number of <u><span style="color: #008000;"><a href="javascript:TextPopup(this)" id="HotSpot33553" class="glossterm">Independent sites</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot33553', 'POPUP33553');
+//]]></script><span class="glosstext" id="POPUP33553" style="display: none;"> In a sequence alignment, all sites that have not been assigned to any gene or domain are classified as independent.</span></span></u><span style="display: none;">RH_Independent_Sites</span>, 
+ which are not assigned to any <a href="javascript:TextPopup(this)" id="HotSpot50648" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot50648', 'POPUP50648');
+//]]></script><span class="glosstext" id="POPUP50648" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span> 
+ or genes.</span></p>
+<p style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">If 
+ your input data file does not contain any <a href="javascript:TextPopup(this)" id="HotSpot7983" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot7983', 'POPUP7983');
+//]]></script><span class="glosstext" id="POPUP7983" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span>, 
+ then <i>MEGA</i> automatically creates a domain called Data.&#160;&#160;If 
+ you wish to create new <a href="javascript:TextPopup(this)" id="HotSpot46744" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot46744', 'POPUP46744');
+//]]></script><span class="glosstext" id="POPUP46744" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span>, 
+ you should delete the Data domain to make all sites independent.&#160;&#160;Remember 
+ that only <a href="javascript:TextPopup(this)" id="HotSpot36340" class="glossterm">independent sites</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot36340', 'POPUP36340');
+//]]></script><span class="glosstext" id="POPUP36340" style="display: none;"> In a sequence alignment, all sites that have not been assigned to any gene or domain are classified as independent.</span> 
+ can be assigned to <a href="javascript:TextPopup(this)" id="HotSpot29184" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot29184', 'POPUP29184');
+//]]></script><span class="glosstext" id="POPUP29184" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span>, 
+ and sites cannot be assigned to multiple <a href="javascript:TextPopup(this)" id="HotSpot39748" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot39748', 'POPUP39748');
+//]]></script><span class="glosstext" id="POPUP39748" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span>.&#160;&#160;Genes 
+ are simply collections of <a href="javascript:TextPopup(this)" id="HotSpot31608" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot31608', 'POPUP31608');
+//]]></script><span class="glosstext" id="POPUP31608" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span>, 
+ and thus <a href="javascript:TextPopup(this)" id="HotSpot35601" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot35601', 'POPUP35601');
+//]]></script><span class="glosstext" id="POPUP35601" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> boundaries 
+ are decided based on the <a href="javascript:TextPopup(this)" id="HotSpot28628" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot28628', 'POPUP28628');
+//]]></script><span class="glosstext" id="POPUP28628" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span> 
+ contained in them.&#160;&#160;The <i>MEGA</i> <a href="javascript:TextPopup(this)" id="HotSpot28367" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot28367', 'POPUP28367');
+//]]></script><span class="glosstext" id="POPUP28367" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> 
+ and domain organizer is flexible and is designed to enable you to specify 
+ genes and <a href="javascript:TextPopup(this)" id="HotSpot21269" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot21269', 'POPUP21269');
+//]]></script><span class="glosstext" id="POPUP21269" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span> as 
+ they appear in a genome.&#160;&#160;For instance, a sequence may contain 
+ one or more genes, each of which may contain one or more <a href="javascript:TextPopup(this)" id="HotSpot45612" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot45612', 'POPUP45612');
+//]]></script><span class="glosstext" id="POPUP45612" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span>.&#160;&#160;In between genes, 
+ there may be inter-genetic <a href="javascript:TextPopup(this)" id="HotSpot21797" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot21797', 'POPUP21797');
+//]]></script><span class="glosstext" id="POPUP21797" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span>.&#160;&#160;In 
+ addition, within or between genes or <a href="javascript:TextPopup(this)" id="HotSpot48623" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot48623', 'POPUP48623');
+//]]></script><span class="glosstext" id="POPUP48623" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span>, 
+ there may be sites that are not members of any domain.</span></p>
+<p style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">At 
+ the bottom of this tab, you will find a toolbar with many drop-down menu 
+ buttons, which can be used to <i>Add/Insert</i> new genes or <a href="javascript:TextPopup(this)" id="HotSpot40511" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot40511', 'POPUP40511');
+//]]></script><span class="glosstext" id="POPUP40511" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span>.&#160;&#160;The add and insert 
+ operations differ in the following way.&#160;&#160;If you add a <a href="javascript:TextPopup(this)" id="HotSpot54284" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot54284', 'POPUP54284');
+//]]></script><span class="glosstext" id="POPUP54284" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> or domain, then the new <a href="javascript:TextPopup(this)" id="HotSpot24472" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot24472', 'POPUP24472');
+//]]></script><span class="glosstext" id="POPUP24472" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> or domain will be added at the 
+ end of the list to which the currently focused <a href="javascript:TextPopup(this)" id="HotSpot17832" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot17832', 'POPUP17832');
+//]]></script><span class="glosstext" id="POPUP17832" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> 
+ or domain belongs.&#160;&#160;&#160;If you insert a <a href="javascript:TextPopup(this)" id="HotSpot32608" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot32608', 'POPUP32608');
+//]]></script><span class="glosstext" id="POPUP32608" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> 
+ (or domain), it will be inserted by shifting all the following genes or 
+ <a href="javascript:TextPopup(this)" id="HotSpot49291" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot49291', 'POPUP49291');
+//]]></script><span class="glosstext" id="POPUP49291" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span> down.&#160;&#160;<i>Add</i> 
+ and <i>Insert</i> commands are context sensitive.</span></p>
+<p class="equation" style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">You 
+ can rearrange the relative position of genes and <a href="javascript:TextPopup(this)" id="HotSpot14133" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot14133', 'POPUP14133');
+//]]></script><span class="glosstext" id="POPUP14133" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span> 
+ by drag-and-drop operations.&#160;</span></p>
+<p style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p class="keyword">Inspecting/modifying attributes of genes and <a href="javascript:TextPopup(this)" id="HotSpot38046" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot38046', 'POPUP38046');
+//]]></script><span class="glosstext" id="POPUP38046" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span></p>
+<p><span style="font-size: 11.0pt;">When you start, all genes and <a href="javascript:TextPopup(this)" id="HotSpot41569" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot41569', 'POPUP41569');
+//]]></script><span class="glosstext" id="POPUP41569" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span> are shown.&#160;&#160;Click 
+ on the ‘+’ in the expand/contract box to expand the listing for each <a href="javascript:TextPopup(this)" id="HotSpot56978" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot56978', 'POPUP56978');
+//]]></script><span class="glosstext" id="POPUP56978" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> to its <a href="javascript:TextPopup(this)" id="HotSpot37429" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot37429', 'POPUP37429');
+//]]></script><span class="glosstext" id="POPUP37429" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span>. 
+ Click on the ‘-‘ to collapse to the <a href="javascript:TextPopup(this)" id="HotSpot51351" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot51351', 'POPUP51351');
+//]]></script><span class="glosstext" id="POPUP51351" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span>. 
+ To select and deselect genes or <a href="javascript:TextPopup(this)" id="HotSpot40210" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot40210', 'POPUP40210');
+//]]></script><span class="glosstext" id="POPUP40210" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span> 
+ from analysis, click in the corresponding checkbox. When a <a href="javascript:TextPopup(this)" id="HotSpot46853" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot46853', 'POPUP46853');
+//]]></script><span class="glosstext" id="POPUP46853" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> is selected but some <a href="javascript:TextPopup(this)" id="HotSpot62671" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot62671', 'POPUP62671');
+//]]></script><span class="glosstext" id="POPUP62671" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span> within the <a href="javascript:TextPopup(this)" id="HotSpot11348" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot11348', 'POPUP11348');
+//]]></script><span class="glosstext" id="POPUP11348" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> 
+ are not, the checkbox for the <a href="javascript:TextPopup(this)" id="HotSpot24568" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot24568', 'POPUP24568');
+//]]></script><span class="glosstext" id="POPUP24568" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> 
+ will be grayed. If you deselect a <a href="javascript:TextPopup(this)" id="HotSpot30499" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot30499', 'POPUP30499');
+//]]></script><span class="glosstext" id="POPUP30499" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span>, 
+ all <a href="javascript:TextPopup(this)" id="HotSpot31563" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot31563', 'POPUP31563');
+//]]></script><span class="glosstext" id="POPUP31563" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span> within that 
+ <a href="javascript:TextPopup(this)" id="HotSpot41812" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot41812', 'POPUP41812');
+//]]></script><span class="glosstext" id="POPUP41812" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> are automatically 
+ deselected.</span></p>
+<p>&#160;</p>
+<p><span style="font-size: 11.0pt;">On the right side of the <a href="javascript:TextPopup(this)" id="HotSpot37607" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot37607', 'POPUP37607');
+//]]></script><span class="glosstext" id="POPUP37607" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> and domain hierarchy, you will 
+ find at least four columns of information for each domain and <a href="javascript:TextPopup(this)" id="HotSpot45624" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot45624', 'POPUP45624');
+//]]></script><span class="glosstext" id="POPUP45624" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span>.&#160;&#160;All information shown 
+ for genes is computed based on the <a href="javascript:TextPopup(this)" id="HotSpot43707" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot43707', 'POPUP43707');
+//]]></script><span class="glosstext" id="POPUP43707" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span> 
+ contained.</span></p>
+<p>&#160;</p>
+<p><span style="font-size: 11.0pt;">The first two columns show the site 
+ number in the sequence where the domain begins (<i>From</i> column) and 
+ where it ends (<i>To</i> column).&#160;&#160;The total number of sites 
+ shown next to the <i>To</i> column indicates the total number of sites 
+ automatically computed, based on the range of information given in the 
+ previous two columns.&#160;&#160;A question mark (?) shows that the domain 
+ exists but that the range of sites is not yet specified.</span></p>
+<p>&#160;</p>
+<p><span style="font-size: 11.0pt;">To specify or change sites that belong 
+ to a given domain, click on the domain name.&#160;&#160;The corresponding 
+ rows in the <i>From</i> and the <i>To</i> columns contain a button with 
+ three dots (ellipses).&#160;&#160;To change the start site, click on the 
+ ellipses in the <i>From</i> column. This will bring up a small <i>Site 
+ Picker</i> dialog box with which you can highlight the desired site and 
+ click <i>OK</i>.&#160;&#160;In this viewer, you will see that sites have 
+ different background colors.&#160;&#160;A white background marks <a href="javascript:TextPopup(this)" id="HotSpot46686" class="glossterm">independent sites</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot46686', 'POPUP46686');
+//]]></script><span class="glosstext" id="POPUP46686" style="display: none;"> In a sequence alignment, all sites that have not been assigned to any gene or domain are classified as independent.</span>, a red background 
+ indicates that the site is used by another domain, and a yellow background 
+ shows that the current site belongs to the domain being edited.&#160;&#160;To 
+ cancel any changes, click on <i>Cancel</i> in the <i>Site Picker</i> dialog 
+ box.</span></p>
+<p style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">For 
+ nucleotide sequences, two additional columns are found in the <i>Define/Edit/Select 
+ tab</i>:&#160;&#160;the <i>Coding?</i> column and the <i><a href="javascript:TextPopup(this)" id="HotSpot29398" class="glossterm">Codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot29398', 'POPUP29398');
+//]]></script><span class="glosstext" id="POPUP29398" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span> Start</i> column.&#160;&#160;A 
+ check-mark in the <i>Coding?</i> column shows that a given domain is protein 
+ coding.&#160;&#160;If it is checked, then the next column allows you to 
+ specify whether the first site in the domain is in the first, second, 
+ or the third <a href="javascript:TextPopup(this)" id="HotSpot30456" class="glossterm">codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot30456', 'POPUP30456');
+//]]></script><span class="glosstext" id="POPUP30456" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span> position.</span></p>
+<p style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p class="keyword">Site Labels Tab</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">This 
+ tab displays sequences and allows you to label individual sites.&#160;&#160;To 
+ do this, change the default underscore (_) in the topmost line to the 
+ <u><span style="color: #008000;">label</span></u><span style="display: none;">RH_Labeled_Sites</span> 
+ of choice and give it a light green background.&#160;&#160;The site number 
+ will be displayed below in a window, next to which is shown the name of 
+ the domain, along with <a href="javascript:TextPopup(this)" id="HotSpot14701" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot14701', 'POPUP14701');
+//]]></script><span class="glosstext" id="POPUP14701" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span>, 
+ name.&#160;&#160;&#160;<a href="javascript:TextPopup(this)" id="HotSpot39980" class="glossterm">Labeled sites</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot39980', 'POPUP39980');
+//]]></script><span class="glosstext" id="POPUP39980" style="display: none;"> Sites in a sequence alignment can be categorized and labeled with user-defined symbols. Each category is represented by a letter or a number. Each site can be assigned to only one category, although any combination of categories can be selected for analysis.  Labeled sites work independently of and in addition to genes and domains, thus allowing complex subsets of sites to be defined easily.</span> 
+ can be selected or deselected for analysis.</span></p>
+<p style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">To 
+ change or give a label to a site, click on the site and type in the character 
+ you wish to mark it with. You can use the left and right arrow buttons 
+ on the keyboard to move to and then label adjacent sites. To change a 
+ label, simply overtype it. To remove a label, use the spacebar to type 
+ a space.</span></p>
+<p style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p style="margin-top: 0in; text-autospace: none;"><u><span style="font-size: 11.0pt;">Example<span 
+	 class="Hyperlink">&#160;</span></span></u></p>
+<p><span style="font-size: 11.0pt;">Imagine an alignment consisting of 
+ a genomic sequence, including a <a href="javascript:TextPopup(this)" id="HotSpot36918" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot36918', 'POPUP36918');
+//]]></script><span class="glosstext" id="POPUP36918" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> 
+ and its upstream and downstream regions. You can define each <a href="javascript:TextPopup(this)" id="HotSpot20480" class="glossterm">intron</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot20480', 'POPUP20480');
+//]]></script><span class="glosstext" id="POPUP20480" style="display: none;"> Introns are the non-coding segments of DNA in a gene that are interspersed among the exons.</span> and <a href="javascript:TextPopup(this)" id="HotSpot14347" class="glossterm">exon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot14347', 'POPUP14347');
+//]]></script><span class="glosstext" id="POPUP14347" style="display: none;"> A protein-coding gene typically consists of multiple coding regions, known as exons, interspersed with non-coding DNA (introns)</span> 
+ as a domain, and then define the overall <a href="javascript:TextPopup(this)" id="HotSpot52731" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot52731', 'POPUP52731');
+//]]></script><span class="glosstext" id="POPUP52731" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span>, 
+ assigning the exons and introns to that <a href="javascript:TextPopup(this)" id="HotSpot18382" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot18382', 'POPUP18382');
+//]]></script><span class="glosstext" id="POPUP18382" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span>. 
+ The upstream and downstream regions also can be defined as <a href="javascript:TextPopup(this)" id="HotSpot30398" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot30398', 'POPUP30398');
+//]]></script><span class="glosstext" id="POPUP30398" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span>, or possibly multiple <a href="javascript:TextPopup(this)" id="HotSpot12789" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot12789', 'POPUP12789');
+//]]></script><span class="glosstext" id="POPUP12789" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span>, depending on the analysis you 
+ wish to perform. These <a href="javascript:TextPopup(this)" id="HotSpot9719" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot9719', 'POPUP9719');
+//]]></script><span class="glosstext" id="POPUP9719" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span> 
+ do not have to be assigned to any <a href="javascript:TextPopup(this)" id="HotSpot30106" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot30106', 'POPUP30106');
+//]]></script><span class="glosstext" id="POPUP30106" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span>. 
+ Furthermore, some sites may be left unassigned, as <a href="javascript:TextPopup(this)" id="HotSpot20651" class="glossterm">independent 
+ sites</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot20651', 'POPUP20651');
+//]]></script><span class="glosstext" id="POPUP20651" style="display: none;"> In a sequence alignment, all sites that have not been assigned to any gene or domain are classified as independent.</span>. These can be scattered throughout the sequence and 
+ can be included or excluded from analysis as a group.&#160;&#160;If you 
+ have a complicated patterns of sites you wish to analyze as groups, and 
+ the domain <a href="javascript:TextPopup(this)" id="HotSpot29207" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot29207', 'POPUP29207');
+//]]></script><span class="glosstext" id="POPUP29207" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> approach 
+ is unsuitable, you should assign a category to these sites, which can 
+ be specified in addition to the groups and <a href="javascript:TextPopup(this)" id="HotSpot27690" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot27690', 'POPUP27690');
+//]]></script><span class="glosstext" id="POPUP27690" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span>.</span></p>
+<p>&#160;</p>
+<b><span style="font-size: 11.0pt; font-family: Arial, sans-serif;"><br 
+	 style="clear: all;" clear="all" />
+</span></b> 
+</body>
+</html>

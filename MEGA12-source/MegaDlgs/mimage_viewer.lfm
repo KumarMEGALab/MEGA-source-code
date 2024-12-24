@@ -1,0 +1,79 @@
+object MegaImageViewer: TMegaImageViewer
+  Left = 432
+  Height = 643
+  Top = 157
+  Width = 918
+  Caption = 'MegaImageViewer'
+  ClientHeight = 623
+  ClientWidth = 918
+  DefaultMonitor = dmMainForm
+  Menu = MainMenu1
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '2.2.6.0'
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 600
+    Width = 918
+    Panels = <>
+  end
+  object ScrollBox1: TScrollBox
+    Left = 0
+    Height = 600
+    Top = 0
+    Width = 918
+    HorzScrollBar.Page = 330
+    VertScrollBar.Page = 250
+    Align = alClient
+    ClientHeight = 596
+    ClientWidth = 914
+    TabOrder = 1
+    object Image1: TImage
+      Left = 0
+      Height = 250
+      Top = 0
+      Width = 330
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 69
+    Top = 14
+    object MenuItem1: TMenuItem
+      Caption = '&File'
+      object MenuItem2: TMenuItem
+        Action = SaveToFileAction
+      end
+      object MenuItem4: TMenuItem
+        Action = LoadFromFileAction
+      end
+      object MenuItem5: TMenuItem
+        Action = QuitAction
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Left = 154
+    Top = 123
+    object SaveToFileAction: TAction
+      Caption = '&Save to File...'
+      OnExecute = SaveToFileActionExecute
+    end
+    object LoadFromFileAction: TAction
+      Caption = '&Load From File...'
+      OnExecute = LoadFromFileActionExecute
+    end
+    object QuitAction: TAction
+      Caption = '&Close'
+      OnExecute = QuitActionExecute
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 18
+    Top = 56
+  end
+  object SaveDialog1: TSaveDialog
+    Left = 156
+    Top = 55
+  end
+end

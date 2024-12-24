@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Writing Command Statements for Defining Groups of Taxa</title>
+<link rel="StyleSheet" href="default.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "3.1.2.2.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part III: Input Data Types and File Formats > MEGA Input Data Formats > Sequence Input Data > Defining Groups and Meta Data" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1>Writing Command Statements for Defining Groups of Taxa and for Annotating 
+ Taxa with Meta Data</h1>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">The <i><font style="font-style: italic;">MEGA</font></i> 
+ format allows you to assign group definitions and other meta data to the 
+ <a href="javascript:TextPopup(this)" id="HotSpot29786" class="glossterm">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot29786', 'POPUP29786');
+//]]></script><span class="glosstext" id="POPUP29786" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> in sequence alignment 
+ files as well as to distance data files. Meta data is written in a set 
+ of curly brackets following the <a href="javascript:TextPopup(this)" id="HotSpot27342" class="glossterm">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot27342', 'POPUP27342');
+//]]></script><span class="glosstext" id="POPUP27342" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> 
+ name. The meta data can be attached to the <a href="javascript:TextPopup(this)" id="HotSpot31022" class="glossterm">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot31022', 'POPUP31022');
+//]]></script><span class="glosstext" id="POPUP31022" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> 
+ name using an underscore or it can just be appended to the sequence name. 
+ It is important to note that there should be no spaces between the <a href="javascript:TextPopup(this)" id="HotSpot35218" class="glossterm">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot35218', 'POPUP35218');
+//]]></script><span class="glosstext" id="POPUP35218" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> name and meta data command. (Note 
+ that groups of <a href="javascript:TextPopup(this)" id="HotSpot53005" class="glossterm">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot53005', 'POPUP53005');
+//]]></script><span class="glosstext" id="POPUP53005" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> can 
+ also be defined interactively through a <a href="Setup_Select_Taxa_Groups_Dialog.htm">dialog 
+ box</a>). MEGA supports the following meta data commands (order does not 
+ matter):</p>
+<p style="margin: 6pt 6.5pt 2pt 18pt; margin-left: 64px;"><font style="font-size: 11pt;" 
+	 size="2">&#160;&#160;&#160;&#160;group, species, population, continent, 
+ country, city, year, month, day, time</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">Meta data commands 
+ must adhere to the following rules:</p>
+<ul style="list-style: disc;">
+	<li><p style="margin: 6pt 6.5pt 2pt 18pt; margin-left: 64px;">All fields 
+	 are optional.</p></li>
+	<li><p style="margin: 6pt 6.5pt 2pt 18pt; margin-left: 64px;">Fields 
+	 are defined after taxa names and in curly braces that follow an underscore 
+	 (_) character.</p></li>
+	<li><p style="margin: 6pt 6.5pt 2pt 18pt; margin-left: 64px;">Fields 
+	 are defined as field=value pairs.</p></li>
+	<li><p style="margin: 6pt 6.5pt 2pt 18pt; margin-left: 64px;">Fields 
+	 definitions are separated by the pipe (|) character.</p></li>
+	<li><p style="margin: 6pt 6.5pt 2pt 18pt; margin-left: 64px;">Year 
+	 and day fields must be integers.</p></li>
+	<li><p style="margin: 6pt 6.5pt 2pt 18pt; margin-left: 64px;">Month 
+	 can be defined as an integer (1-12), the full month name (e.g. September) 
+	 or a 3 letter abbreviation (e.g. sep)</p></li>
+	<li><p style="margin: 6pt 6.5pt 2pt 18pt; margin-left: 64px;">Values 
+	 for string-based fields (population, group, species, continent, country, 
+	 city) must follow the same <a href="Part_III_Input_Data_Types_and_File_Format/MEGA_Input_Data_File_Formats/General_Conventions/Rules_for_Taxa_Names.htm">rules 
+	 as taxa names</a>.</p></li>
+	<li><p style="margin: 6pt 6.5pt 2pt 18pt; margin-left: 64px;">Time 
+	 must be formatted as hh:mm:ss. </p></li>
+</ul>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt; font-weight: bold;">The 
+ following example shows meta data commands for three pathogen sequences:</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">#pathogen_sample_20200520_Paris_{population=european|group=symptomatic|species=homo_sapiens|continent=Europe|country=France|city=Paris|year=2020|month=5|day=20|time=23:59:59}</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt; font-family: 'Courier New', monospace;">TAATTAAAGG 
+ GCCGTGGTAT A-CTGACCAT GCGAAGGTAG CATAATCATT AGCCTTTTGA TTTGAGGCTG</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">#pathogen_sample_20200610_Canberra_{population=european|group=asymptomatic|species=homo_sapiens|continent=Australia|country=Australia|city=Canberra|year=2020|month=6|day=10|time=13:59:59}</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt; font-family: 'Courier New', monospace;">GTG..G.... 
+ ....C..... TTT.....G. .......... .......... ..T.....A. ..GA.....C</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">#pathogen_sample_20180402_Sydney_{population=european|group=asymptomatic|species=felis_catus|continent=Australia|country=Australia|city=Sydney|year=2018|month=4|day=2|time=22:58:00}</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt; font-family: 'Courier New', monospace;">AT...G.... 
+ ....C..... TT......G. .......... .......... ..T.....A. ..G......C </p>
+<p>&#160;</p>
+<p style="margin: 6pt 6.5pt 2pt 18pt; text-align: left; font-weight: bold;">In 
+ the following, we show an example in which human and mouse are designated 
+ as the members of the group Mammal and chicken belongs to group Aves.</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">!<a href="javascript:TextPopup(this)" id="HotSpot23943" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot23943', 'POPUP23943');
+//]]></script><span class="glosstext" id="POPUP23943" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span>=FirstGene 
+ Domain=Exon1 Property=Coding;</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#Human_{Mammal} ATGGTTTCTAGTCAGGTCACCATGATAGGTCTCAAT</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#Mouse_{Mammal} ATGGTTTCTAGTCAGGTCACCATGATAGGTCCCAAT</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#Chicken_{Aves} ATGGTTTCTAGTCAGCTCACCATGATAGGTCTCAAT</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">!<a href="javascript:TextPopup(this)" id="HotSpot28635" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot28635', 'POPUP28635');
+//]]></script><span class="glosstext" id="POPUP28635" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span>=SecondGene 
+ Domain=<a href="javascript:TextPopup(this)" id="HotSpot35510" class="glossterm">Intron</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot35510', 'POPUP35510');
+//]]></script><span class="glosstext" id="POPUP35510" style="display: none;"> Introns are the non-coding segments of DNA in a gene that are interspersed among the exons.</span> Property=Noncoding;</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#Human ATTCCCAGGGAATTCCCGGGGGGTTTAAGGCCCCTTTAAAGAAAGAT</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#Mouse GTAGCGCGCGTCGTCAGAGCTCCCAAGGGTAGCAGTCACAGAAAGAT</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#Chicken GTAAAAAAAAAAGTCAGAGCTCCCCCCAATATATATCACAGAAAGAT</font></p>
+<p style="text-align: center; margin: 0pt 6.5pt 20pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">!<a href="javascript:TextPopup(this)" id="HotSpot46115" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot46115', 'POPUP46115');
+//]]></script><span class="glosstext" id="POPUP46115" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span>=ThirdGene 
+ Domain=Exon2 Property=Coding;</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#Human ATCTGCTCTCGAGTACTGATACAAATGACTTCTGCGTACAACTGA</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#Mouse ATCTGATCTCGTGTGCTGGTACGAATGATTTCTGCGTTCAACTGA</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">#Chicken ATCTGCTCTCGAGTACTGCTACCAATGACTTCTGCGTACAACTGA</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+</body>
+</html>

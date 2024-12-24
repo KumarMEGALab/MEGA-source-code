@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="DistanceMethods_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Bootstrap method to compute standard error of distance estimates</title>
+<link rel="stylesheet" href="DistanceMethods_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.2.2.0_3";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Computing Evolutionary Distances > Specifying Distance Estimation Options" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+<h1 style="margin-left: 0in;"><span style="font-size: 11.0pt;">Bootstrap 
+ method to compute standard error of distance estimates</span></h1>
+<p><span style="font-size: 11.0pt;">When you choose the bootstrap method 
+ for estimating the standard error, you must specify the number of replicates 
+ and the seed for the </span><u style="text-underline: double; color: #007fbf;"><span 
+	 style="color: #007fbf;"><a href="Pseudorandom_number_generator.htm" 
+								 style="color: #007fbf;">pseudorandom number 
+ generator</a></span></u><span style="display: none;">HC_Psuedorandom_number_generator</span><span 
+	 style="font-size: 11.0pt;">.&#160;&#160;In each bootstrap replicate, 
+ the desired quantity is estimated and the standard deviation of the original 
+ values is computed (see </span><u style="color: #007fbf;"><span style="color: #007fbf;"><a 
+	 href="Nei_and_Kumar_2000.htm" style="color: #007fbf;">Nei and Kumar 
+ [2000]</a></span></u><span style="display: none;">Nei_and_Kumar_2000</span><span 
+	 style="font-size: 11.0pt;">, page 25 for details).&#160;</span></p>
+<p><span style="font-size: 11.0pt;">It is possible that in some bootstrap 
+ replicates the quantity you desire is not calculable for statistical or 
+ technical reasons.&#160;&#160;In these cases, <i>MEGA</i> will discard 
+ the results of the bootstrap replicates and its final estimate will be 
+ the results of all valid replicates.&#160;&#160;This means that the number 
+ of bootstrap replicates used can be smaller than the number specified 
+ by the user.&#160;&#160;However, if the number of valid bootstrap replicates 
+ is &lt; 25, then <i>MEGA</i> will report that the standard error cannot 
+ be computed (an “n/c” swill appear in the result window).</span></p>
+<p>&#160;</p>
+</body>
+</html>

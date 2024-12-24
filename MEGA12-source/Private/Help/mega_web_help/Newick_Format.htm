@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="Glossary_RH.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Newick Format</title>
+<link rel="stylesheet" href="Glossary_RH.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<style type="text/css">
+<!--
+A:visited { color:#800080; }
+A:link { color:#0000ff; }
+-->
+</style>
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "9.0_42";
+</script>
+ <meta name="topic-breadcrumbs" content="Glossary" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1>Newick Format</h1>
+<p>NEWICK is a simple format used to write out trees in a text file.&#160;&#160;While 
+ this is a hard-to-read format for humans, it is very useful for exchanging 
+ trees between different types of software. An example of the contents 
+ of a NEWICK format tree file is given below (note that semi-colon is needed 
+ to end the tree).&#160;&#160;Further information on this format can be 
+ found at Joe Felsenstein’s <u style="text-underline: double; color: #007fbf;"><span 
+	 style="color: #007fbf;"><a href="http://evolution.genetics.washington.edu/phylip.html" 
+								 style="color: #007fbf;">website</a></span></u><span 
+	 style="display: none;">!Inet(&quot;http://evolution.genetics.washington.edu/phylip/felsenstein.html&quot;)</span>.</p>
+<p><code><span style="font-size: 10.0pt;">((raccoon, bear),((sea_lion,seal),((monkey,cat), 
+ weasel)),dog);</span></code></p>
+<p><code><span style="font-size: 10.0pt;">The above tree with <a href="javascript:TextPopup(this)" id="HotSpot43236" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot43236', 'POPUP43236');
+//]]></script><span class="glosstext" id="POPUP43236" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> lengths will look as follows:</span></code></p>
+<p><code><span style="font-size: 10.0pt;">((raccoon:19.19959,bear:6.80041):0.84600,((sea_lion:11.99700, 
+ seal:12.00300):7.52973,((monkey:100.85930,cat:47.14069):20.59201, weasel:18.87953):2.09460):3.87382,dog:25.46154);</span></code></p>
+<p><code><span style="font-size: 10.0pt;">If you wish to specify bootstrap 
+ values then they could appear before the <a href="javascript:TextPopup(this)" id="HotSpot39970" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot39970', 'POPUP39970');
+//]]></script><span class="glosstext" id="POPUP39970" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> 
+ lengths (e.g., in .<span style="font-variant: small-caps;">dnd</span> 
+ files produced by CLUSTAL) or after the <a href="javascript:TextPopup(this)" id="HotSpot38127" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot38127', 'POPUP38127');
+//]]></script><span class="glosstext" id="POPUP38127" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> 
+ lengths (e.g., in .<span style="font-variant: small-caps;">PHB</span> 
+ files produced by CLUSTAL).&#160;&#160;In these cases, the format might 
+ look like:</span></code></p>
+<p><code><span style="font-size: 10.0pt;">((raccoon:19.19959,bear:6.80041)50:0.84600,((sea_lion:11.99700, 
+ seal:12.00300)100:7.52973,((monkey:100.85930,cat:47.14069)80:20.59201, 
+ weasel:18.87953)75:2.09460)50:3.87382,dog:25.46154);</span></code></p>
+<p><code><span style="font-size: 10.0pt;">or</span></code></p>
+<p><code><span style="font-size: 10.0pt;">((raccoon:19.19959,bear:6.80041):0.84600[50],((sea_lion:11.99700, 
+ seal:12.00300):7.52973[100],((monkey:100.85930,cat:47.14069):20.59201[80], 
+ weasel:18.87953):2.09460[75]):3.87382[50],dog:25.46154);</span></code></p>
+<pre>
+&#160;</pre>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<b><span style="font-size: 10.0pt; font-family: Arial, sans-serif; color: #0000ff;"><br 
+	 style="clear: all;" clear="all" />
+</span></b> 
+</body>
+</html>

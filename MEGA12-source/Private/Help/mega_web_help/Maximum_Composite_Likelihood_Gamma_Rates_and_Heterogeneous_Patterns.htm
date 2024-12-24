@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="DistanceMethods_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Maximum Composite Likelihood (Gamma Rates and Heterogeneous Patterns)</title>
+<link rel="stylesheet" href="DistanceMethods_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.2.1.1.2.1.0_5";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Computing Evolutionary Distances > Distance Models > Nucleotide Substitution Models > Heterogeneous Patterns > Gamma Rates" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1 style="margin-left: 0in;"><span style="font-size: 11.0pt;">Maximum 
+ Composite Likelihood (Gamma Rates and Heterogeneous Patterns)</span></h1>
+<p style="margin-left: 0in;"><span style="font-size: 11.0pt;">The </span><u 
+	 style="color: #007fbf;"><span style="color: #007fbf;"><a href="Tamura_and_Nei_1993.htm" 
+	 style="color: #007fbf;">Tamura-Nei (1993)</a></span></u><span style="display: none;">Tamura_and_Nei_1993</span><span 
+	 style="font-size: 11.0pt;"> distance estimated by the </span><u style="text-underline: double; 
+	 color: #007fbf;"><span style="color: #007fbf;"><a href="Maximum_Composite_Likelihood_Method.htm" 
+														 style="color: #007fbf;">composite 
+ likelihood method</a></span></u><span style="display: none;">HC_MCL</span><span 
+	 style="font-size: 11.0pt;"> (</span><u style="color: #007fbf;"><span 
+	 style="color: #007fbf;"><a href="Tamura_et_al_2004.htm" style="color: #007fbf;">Tamura 
+ et al. 2004</a></span></u><span style="display: none;">Tamura_et_al_2004</span><span 
+	 style="font-size: 11.0pt;">) with the gamma model corrects for multiple 
+ hits, taking into account the rate substitution differences between nucleotides 
+ and the inequality of nucleotide frequencies.&#160;&#160;In this distance, 
+ evolutionary rates among sites are modeled using the gamma distribution.&#160;&#160;You 
+ will need to provide a </span><u style="text-underline: double;"><span 
+	 style="color: #008000;"><a href="javascript:TextPopup(this)" id="HotSpot26680" class="glossterm">gamma parameter</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot26680', 'POPUP26680');
+//]]></script><span class="glosstext" id="POPUP26680" style="display: none;"> According to the gamma distribution, the substitution rate often varies from site to site within a sequence.  The shape of this distribution is determined by a value known as the gamma parameter, which is also known as the shape parameter.</span></span></u><span 
+	 style="display: none;">RH_Gamma_parameter</span><span style="font-size: 11.0pt;"> 
+ for computing this distance. When the nucleotide frequencies between the 
+ sequences are different, the expected proportions of observed differences 
+ (P1, P2, and Q) in the computation of the </span><u style="text-underline: double; 
+													 text-decoration: none; "><span 
+	 style="text-decoration: none; ">composite likelihood</span></u><span 
+	 style="display: none;">Maximum_Composite_Likelihood</span><span style="font-size: 11.0pt;"> 
+ can be obtained by the modified formulas according to </span><a href="Tamura_and_Kumar_2002.htm" 
+	 style="color: #007fbf;"><u style="color: #007fbf;"><span style="color: #007fbf;">Tamura 
+ and Kumar (2002)</span></u><span style="display: none; color: #007fbf;">Tamura_and_Kumar_2002</span></a><span 
+	 style="font-size: 11.0pt;"> to relax the assumption of the substitution 
+ pattern homogeneity.</span></p>
+<p style="margin-left: 0in;">&#160;</p>
+</body>
+</html>

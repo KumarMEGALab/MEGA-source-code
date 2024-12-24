@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="CentralDialogBox_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Analysis Preferences (Fisher's Exact Test)</title>
+<link rel="stylesheet" href="CentralDialogBox_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.6.1.0_3";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Tests of Selection > Synonymous/Nonsynonymous Tests" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1>Analysis Preferences (Fisher's Exact Test)</h1>
+<p><span style="font-size: 11.0pt;">When the numbers of codons or the total 
+ numbers of synonymous and/or nonsynonymous substitutions are small, the 
+ </span><u style="text-underline: double; color: #007fbf;"><span style="color: #007fbf;"><a 
+	 href="Large_Sample_Tests_of_Selection.htm" style="color: #007fbf;">large 
+ sample Z-test</a></span></u><span style="display: none;">HC_Test_of_Selection_Tab</span><span 
+	 style="font-size: 11.0pt;"> is too liberal in rejecting the null hypothesis.&#160;&#160;In 
+ these cases, tests of selection can be conducted to examine the null hypothesis 
+ of the neutral evolution.&#160;&#160;Only the Nei-Gojobori and Modified 
+ Nei-Gojobori methods can be used for this test because it requires the 
+ direct computation of the numbers of synonymous and nonsynonymous differences, 
+ and the number of synonymous and nonsynonymous sites.&#160;&#160;It should 
+ be used only when sequences show a small number of differences. To conduct 
+ Fisher’s Exact Test, you need to specify two specific options:</span></p>
+<p class="Leftalignarial"><b><i><span style="font-size: 11.0pt;">Substitution 
+ Model</span></i></b></p>
+<p style="margin-left: .5in;"><span style="font-size: 11.0pt;">In this 
+ set of options, you choose various attributes of the substitution models 
+ for DNA and protein sequences.</span></p>
+<p style="text-indent: .5in;"><u><span style="font-size: 11.0pt;">Substitutions 
+ Type</span></u></p>
+<p style="margin-left: 35.45pt; text-indent: .55pt;"><span style="font-size: 11.0pt;">Here 
+ you are limited to Syn-Nonsyn.</span></p>
+<p style="text-indent: .5in;"><u><span style="font-size: 11.0pt;">Model</span></u></p>
+<p style="margin-left: .5in;"><span style="font-size: 11.0pt;">By clicking 
+ on the row currently selected model, you may select a stochastic </span><a 
+	 href="Models_for_estimating_distances.htm" style="color: #007fbf;"><u 
+	 style="text-underline: double; color: #007fbf;"><span style="color: #007fbf;">model</span></u><span 
+	 style="display: none; color: #007fbf;">HC_Models_for_estimating_distances</span></a><span 
+	 style="font-size: 11.0pt;"> for estimating evolutionary distance.&#160;&#160;This 
+ will reveal a </span><u style="text-underline: double; text-decoration: none; ">menu</u><span 
+	 style="display: none;">HC_Models_for_estimating_distances</span><span 
+	 style="font-size: 11.0pt;"> containing two different options: the 
+ </span><a href="Nei-Gojobori_Method.htm" style="color: #007fbf;"><u style="color: #007fbf;"><span 
+	 style="color: #007fbf;">original</span></u><span style="display: none; 
+														 color: #007fbf;">Nei_and_Gojobori_1986</span></a><span 
+	 style="font-size: 11.0pt;"> or </span><a href="Modified_Nei-Gojobori_Method.htm" 
+												 style="color: #007fbf;"><u 
+	 style="color: #007fbf;"><span style="color: #007fbf;">modified</span></u><span 
+	 style="display: none; color: #007fbf;">Zhang_et_al_1998</span></a><span 
+	 style="font-size: 11.0pt;"> Nei &amp; Gojobori methods.</span></p>
+<p style="text-indent: .5in;"><u><span style="font-size: 11.0pt;">Transition/Transversion 
+ Ratio</span></u></p>
+<p style="margin-left: .5in;"><span style="font-size: 11.0pt;">This option 
+ will be visible if the chosen model requires you to provide a value for 
+ the </span><u style="color: #007fbf;"><span style="color: #007fbf;"><a 
+	 href="Transition_Transversion_Ratio_R.htm" style="color: #007fbf;">Transition/Transversion 
+ ratio (R)</a></span></u><span style="display: none;">RH_Transition_Transversion_Ratio_R</span><span 
+	 style="font-size: 11.0pt;">.</span></p>
+<p class="Leftalignarial"><b><i><span style="font-size: 11.0pt;">Data Subset 
+ to Use</span></i></b></p>
+<p style="margin-left: .5in;"><span style="font-size: 11.0pt;">These options 
+ handle gaps and missing data and restrict the analysis to <a href="javascript:TextPopup(this)" id="HotSpot22764" class="glossterm">labeled sites</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot22764', 'POPUP22764');
+//]]></script><span class="glosstext" id="POPUP22764" style="display: none;"> Sites in a sequence alignment can be categorized and labeled with user-defined symbols. Each category is represented by a letter or a number. Each site can be assigned to only one category, although any combination of categories can be selected for analysis.  Labeled sites work independently of and in addition to genes and domains, thus allowing complex subsets of sites to be defined easily.</span>, if applicable.</span></p>
+<p style="text-indent: .5in;"><u><span style="font-size: 11.0pt;">Gaps 
+ and Missing Data</span></u></p>
+<p style="margin-left: .5in;"><span style="font-size: 11.0pt;">You may 
+ choose to remove all sites containing <a href="javascript:TextPopup(this)" id="HotSpot33408" class="glossterm">alignment 
+ gaps</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot33408', 'POPUP33408');
+//]]></script><span class="glosstext" id="POPUP33408" style="display: none;"> Phylogenetic analysis on two or more DNA or amino acid sequences requires that the sequences be aligned so that the substitutions can be accurately enumerated.  During alignment, gaps must be introduced in sequences that have undergone deletions or insertions.  These gaps are known as alignment gaps or indels.</span> and missing information before the calculation begins 
+ (</span><u style="color: #007fbf;"><span style="color: #007fbf;"><a href="Complete-Deletion_Option.htm" 
+	 style="color: #007fbf;">Complete-deletion</a></span></u><span style="display: none; 
+	 color: #007fbf;">RH_Complete_Deletion_Option</span><span style="font-size: 11.0pt;"> 
+ option).&#160;&#160;Alternatively, you may choose to retain all such sites 
+ initially, excluding them as necessary in the pairwise distance estimation 
+ (</span><u style="color: #007fbf;"><span style="color: #007fbf;"><a href="Pairwise-deletion_option.htm" 
+	 style="color: #007fbf;">Pairwise-deletion</a></span></u><span style="display: none;">RH_Pairwise_deletion_option</span><span 
+	 style="font-size: 11.0pt;"> option), or you may use </span><u style="color: #007fbf;"><span 
+	 style="color: #007fbf;"><a href="Partial-Deletion_Option.htm" style="color: #007fbf;">Partial 
+ Deletion</a></span></u><span style="display: none;">RH_Partial_Deletion_Option</span><span 
+	 style="font-size: 11.0pt;"> (Site coverage) as a percentage.</span></p>
+<p style="text-indent: .5in;"><u><span style="font-size: 11.0pt;">Labeled 
+ Sites</span></u></p>
+<p style="margin-left: .5in;"><span style="font-size: 11.0pt;">This option 
+ is available only if some or all of the sites have associated labels.&#160;&#160;By 
+ clicking on the row, you will be provided with the option of including 
+ sites with selected labels.&#160;&#160;If you choose to include only <a href="javascript:TextPopup(this)" id="HotSpot30758" class="glossterm">labeled sites</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot30758', 'POPUP30758');
+//]]></script><span class="glosstext" id="POPUP30758" style="display: none;"> Sites in a sequence alignment can be categorized and labeled with user-defined symbols. Each category is represented by a letter or a number. Each site can be assigned to only one category, although any combination of categories can be selected for analysis.  Labeled sites work independently of and in addition to genes and domains, thus allowing complex subsets of sites to be defined easily.</span>, then these sites will 
+ be the first extracted from the data. Then all other options mentioned 
+ above will be enforced.&#160;&#160;Note that labels associated with all 
+ three positions in the <a href="javascript:TextPopup(this)" id="HotSpot35325" class="glossterm">codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot35325', 'POPUP35325');
+//]]></script><span class="glosstext" id="POPUP35325" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span> 
+ must be included for a full <a href="javascript:TextPopup(this)" id="HotSpot31948" class="glossterm">codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot31948', 'POPUP31948');
+//]]></script><span class="glosstext" id="POPUP31948" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span> 
+ to be incorporated in the analysis.</span></p>
+<p class="Leftalignarial" style="margin-left: .5in;">&#160;</p>
+<p style="margin-left: .5in;">&#160;</p>
+<b><span style="font-size: 11.0pt; font-family: Arial, sans-serif; color: #0000ff;"><br 
+	 style="clear: all;" clear="all" />
+</span></b> 
+</body>
+</html>

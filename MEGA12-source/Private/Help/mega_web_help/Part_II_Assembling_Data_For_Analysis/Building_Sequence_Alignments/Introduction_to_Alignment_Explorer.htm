@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Introduction to Alignment Explorer</title>
+<link rel="StyleSheet" href="../../default.css" type="text/css" />
+ <link rel="StyleSheet" href="../../default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "2.2.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part II: Assembling Data for Analysis > Building Sequence Alignments" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+
+<h1>Introduction to Alignment Explorer</h1>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt;" 
+	 color="#333333" size="2">The</font> <i><font style="font-size: 11pt; 
+													 font-style: italic;" 
+													 color="#333333" size="2">Alignment 
+ Explorer</font></i> <font style="font-size: 11pt;" color="#333333" size="2">provides 
+ options to (1) view and manually edit alignments and (2) generate alignments 
+ using a built-in</font> <font style="font-size: 11pt;" size="2" color="#007FBF"><a 
+	 href="../../ClustalW.htm" style="color: #007fbf;">CLUSTALW</a></font> 
+ <font style="font-size: 11pt;" color="#333333" size="2">implementation</font> 
+ <font style="font-size: 11pt;" color="#333333" size="2">and</font> <font 
+	 style="font-size: 11pt;" size="2" color="#007FBF"><a href="MUSCLE/About_Muscle.htm" 
+															 style="color: #007fbf;">MUSCLE</a></font> 
+ <font style="font-size: 11pt;" color="#333333" size="2">program</font> 
+ <font style="font-size: 11pt;" color="#333333" size="2">(for the complete 
+ sequence or data in any rectangular region). The</font> <i><font style="font-size: 11pt; 
+	 font-style: italic;" color="#333333" size="2">Alignment Explorer</font></i> 
+ <font style="font-size: 11pt;" color="#333333" size="2">also provides 
+ tools for exploring web-based databases (e.g.,</font> <font style="font-size: 11pt;" 
+															 size="2"><a href="javascript:TextPopup(this)" id="HotSpot18624" class="glossterm">NCBI</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot18624', 'POPUP18624');
+//]]></script><span class="glosstext" id="POPUP18624" style="display: none;"> An acronym that stands for “National Center for Biotechnology Information”. NCBI is a federally funded resource for molecular biology information. NCBI creates databases, conducts research in computational biology, develops software and tools for analyzing genome data, and disseminates biomedical information. You can find out more about NCBI by visiting the NCBI website (http://www.ncbi.nlm.nih.gov).</span></font> 
+ <font style="font-size: 11pt;" color="#333333" size="2">Query and</font> 
+ <font style="font-size: 11pt;" size="2" color="#007FBF"><a href="BLAST/About_BLAST.htm" 
+															 style="color: #007fbf;">BLAST</a></font> 
+ <font style="font-size: 11pt;" color="#333333" size="2">searches) and 
+ retrieving desired sequence data directly into the current alignment.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt;" 
+	 color="#333333" size="2">The Alignment Explorer has the following 
+ menus in its main menu:</font> <span style="color: #007fbf;"><u style="color: #007fbf;"><font 
+	 style="font-size: 11pt; text-decoration: underline; " size="2" color="#007FBF"><a 
+	 href="../../Data_Menu_in_Alignment_Explorer.htm" style="color: #007fbf;">Data</a></font></u><font 
+	 style="font-size: 11pt;" size="2" color="#007FBF">,</font> <u style="color: #007fbf;"><font 
+	 style="font-size: 11pt; text-decoration: underline; " size="2" color="#007FBF"><a 
+	 href="../../Edit_Menu_in_Alignment_Explorer.htm" style="color: #007fbf;">Edit</a></font></u><font 
+	 style="font-size: 11pt;" size="2" color="#007FBF">,</font> <u style="color: #007fbf;"><font 
+	 style="font-size: 11pt; text-decoration: underline; " size="2" color="#007FBF"><a 
+	 href="../../Sequencer_Menu_in_Alignment_Explorer.htm" style="color: #007fbf;">Search</a></font></u><font 
+	 style="font-size: 11pt;" size="2" color="#007FBF">,</font> <u style="color: #007fbf;"><font 
+	 style="font-size: 11pt; text-decoration: underline; " size="2" color="#007FBF"><a 
+	 href="../../Alignment_Menu_in_Alignment_Explorer.htm" style="color: #007fbf;">Alignment</a></font></u><font 
+	 style="font-size: 11pt;" size="2" color="#007FBF">, </font><u style="color: #007fbf;"><font 
+	 style="font-size: 11pt; text-decoration: underline; " size="2" color="#007FBF"><a 
+	 href="../../Display_Menu_in_Alignment_Explorer.htm" style="color: #007fbf;">Display</a>, 
+ </font></u><u style="color: #007fbf;"><font style="font-size: 11pt; text-decoration: underline; " 
+											 size="2" color="#007FBF"><a 
+	 href="../../Web_Menu_in_Alignment_Explorer.htm" style="color: #007fbf;">Web</a></font></u><font 
+	 style="font-size: 11pt;" size="2" color="#007FBF">,</font> <u style="color: #007fbf;"><font 
+	 style="font-size: 11pt; text-decoration: underline; " size="2" color="#007FBF"><a 
+	 href="../../Sequencer_Menu_in_Alignment_Explorer.htm" style="color: #007fbf;">Sequencer</a></font></u></span><font 
+	 style="font-size: 11pt;" color="#333333" size="2">, and Help. In addition, 
+ there are</font> <u style="color: #007fbf;"><font style="font-size: 11pt; 
+													 text-decoration: underline; " 
+													 size="2" color="#007FBF"><a 
+	 href="../../Toolbars_in_Alignment_Explorer.htm" style="color: #007fbf;">Toolbars</a></font></u><font 
+	 style="font-size: 11pt;" color="#333333" size="2"> that provide quick 
+ access to many Alignment Explorer functions. The main Alignment Explorer 
+ window contains up to two alignment grids.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt;" 
+	 color="#333333" size="2">For amino acid input sequence data, the</font> 
+ <i><font style="font-size: 11pt; font-style: italic;" color="#333333" 
+			 size="2">Alignment Explorer</font></i> <font style="font-size: 11pt;" 
+															 color="#333333" 
+															 size="2">provides 
+ only one view. However, it offers two views of DNA sequence data: the 
+ DNA Sequences grid and the Translated Protein Sequences grid. These two 
+ views are present in alignment grids in the two tabs with each grid displaying 
+ the sequence data for the current alignment. Each row represents a single 
+ sequence and each column represents a site. A “*” character is used to 
+ indicate site columns, exhibiting consensus across all sequences. An entire 
+ sequence may be selected by clicking on the gray sequence label cell found 
+ to the left of the sequence data. An entire site may be selected by clicking 
+ on the gray cell found above the site column. The alignment grid has the 
+ ability to assign a unique color to each unique nucleotide or amino acid 
+ and it can display a background color for each cell in the grid. This 
+ behavior can be controlled from the</font> <i><font style="font-size: 11pt; 
+													 font-style: italic;" 
+													 color="#333333" size="2">Display</font></i> 
+ <font style="font-size: 11pt;" color="#333333" size="2">menu item found 
+ in the main menu. Please note that when the</font> <font style="font-size: 11pt;" 
+															 size="2" color="#007FBF"><a 
+	 href="../../ClustalW.htm" style="color: #007fbf;">ClustalW</a></font> 
+ <font style="font-size: 11pt;" color="#333333" size="2">(and</font> <font 
+	 style="font-size: 11pt;" size="2" color="#007FBF"><a href="MUSCLE/About_Muscle.htm" 
+															 style="color: #007fbf;">MUSCLE</a></font><font 
+	 style="font-size: 11pt;" color="#333333" size="2">)</font> <font style="font-size: 11pt;" 
+	 color="#333333" size="2">alignment algorithms</font> <font style="font-size: 11pt;" 
+	 color="#333333" size="2">are</font> <font style="font-size: 11pt;" 
+												 color="#333333" size="2">initiated,</font> 
+ <font style="font-size: 11pt;" color="#333333" size="2">they</font> <font 
+	 style="font-size: 11pt;" color="#333333" size="2">will</font> <font 
+	 style="font-size: 11pt;" color="#333333" size="2">only align the sites 
+ currently selected in the alignment grids. Multiple sites may be selected 
+ by clicking and then dragging the mouse within the grid. Note that all 
+ of the manual or automatic alignment procedures carried out in the Protein 
+ Sequences grid will be imposed on the corresponding DNA sequences as soon 
+ as you flip to the DNA sequence grid. Even more importantly, the</font> 
+ <i><font style="font-size: 11pt; font-style: italic;" color="#333333" 
+			 size="2">Alignment Explorer</font></i> <font style="font-size: 11pt;" 
+															 color="#333333" 
+															 size="2">provides 
+ unlimited UNDO capabilities.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;">&#160;</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" color="#333333" size="2" face="Arial">You may 
+ adjust the width of the sequence name column by clicking on the line which 
+ separates the sequence names column and the start of the data column and 
+ dragging.</font></p>
+</body>
+</html>

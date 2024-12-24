@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+ <title>Testing for Selection</title>
+<link rel="StyleSheet" href="../../default.css" type="text/css" />
+ <link rel="StyleSheet" href="../../default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "1.3.0_8";
+</script>
+ <meta name="topic-breadcrumbs" content="Part I: Getting Started > A Walk Through MEGA" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+
+<h1>Testing for Selection</h1>
+<p style="text-align: left; margin: 4pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">In 
+ this example, we</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">describe 
+ how to perform a <a href="javascript:TextPopup(this)" id="HotSpot44344" class="glossterm">codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot44344', 'POPUP44344');
+//]]></script><span class="glosstext" id="POPUP44344" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span>-based test of <a href="javascript:TextPopup(this)" id="HotSpot53683" class="glossterm">positive selection</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot53683', 'POPUP53683');
+//]]></script><span class="glosstext" id="POPUP53683" style="display: none;"> At the DNA sequence level, positive selection refers to selection in favor of nonsynonymous substitutions.  In this case, the evolutionary distance based on nonsynonymous substitutions is expected to be greater than synonymous substitutions.</span></font> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">for 
+ five alleles from the human HLA-A locus (Nei and Hughes 1991).</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">The 
+ “</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+				 size="4" face="Times New Roman">HLA-</font><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">3Seq.meg&quot;</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">data file</font><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">, 
+ which is</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+						 size="4" face="Times New Roman">used in this tutorial</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">,</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">can 
+ be found in the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+								 font-style: italic;" size="4" face="Times New Roman">MEGA/Examples</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">folder</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">(The 
+ default location for Windows users is</font> <i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">C:\Users\UserName\Documents\MEGA</font></i><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">7</font></i><i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">\Examples\</font></i><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">.</font></i> <font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">The 
+ default location for Mac users is</font> <i><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-style: italic;" 
+													 size="4" face="Times New Roman">$HOME/MEGA/Examples, 
+ where $HOME is the user’s home directory</font></i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">)</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 5pt 5.75pt;">&#160;</p>
+<p style="text-align: left; margin: 4pt 6.5pt 5pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Computing 
+ Synonymous and Non</font></u></b><b><u><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+												 font-weight: bold; text-decoration: underline; " 
+												 size="4" face="Times New Roman">-</font></u></b><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">synonymous 
+ Distances</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 4.5pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example 
+ 7.1:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Activa</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">te the &quot;HLA-</font><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">3Seq.meg&quot; 
+ file</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+					 size="4" face="Times New Roman">. If necessary, refer</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">to</font> <font style="font-size: 12pt; 
+												 font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">Example 
+ 1.2 in the “MEGA Basics” tutorial.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">From 
+ the</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+					 size="4" face="Times New Roman">m</font><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">ain</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">MEGA</font></i> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">window 
+ launch bar, select</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+										 font-weight: bold; font-style: italic;" 
+										 size="4" face="Times New Roman">Selection 
+ | <a href="javascript:TextPopup(this)" id="HotSpot52739" class="glossterm">Codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot52739', 'POPUP52739');
+//]]></script><span class="glosstext" id="POPUP52739" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span>-based Z-Test of Selection</font></i></b><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">An</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">Analysis Preferences</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">window</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">appears. 
+ For the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-style: italic;" size="4" face="Times New Roman">Model/Method</font></i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">, select the</font> <b><i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-weight: bold; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">Nei-Gojobori 
+ m</font></i></b><b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-weight: bold; font-style: italic;" size="4" 
+							 face="Times New Roman">ethod (Proportion)</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">model.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">In 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman">Test 
+ Hypothesis (HA: alternative)</font></i> <font style="font-size: 12pt; 
+												 font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">row, 
+ select</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-weight: bold; font-style: italic;" size="4" 
+							 face="Times New Roman"><a href="javascript:TextPopup(this)" id="HotSpot32307" class="glossterm">Positive Selection</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot32307', 'POPUP32307');
+//]]></script><span class="glosstext" id="POPUP32307" style="display: none;"> At the DNA sequence level, positive selection refers to selection in favor of nonsynonymous substitutions.  In this case, the evolutionary distance based on nonsynonymous substitutions is expected to be greater than synonymous substitutions.</span> 
+ (HA: dN > dS)</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">from 
+ the pull-down</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">menu</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">From 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman">Scope</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">row, select the</font> <b><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; font-style: italic;" 
+	 size="4" face="Times New Roman">Overall Average</font></i></b> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">option.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">For 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman">Gaps/Missing 
+ Data Treatment</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">option, 
+ select</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-weight: bold; font-style: italic;" size="4" 
+							 face="Times New Roman">Pairwise Deletion</font></i></b><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Click 
+ on &quot;Compute&quot; to accept the default values for the remaining 
+ options. A progress indicator appears briefly, and then the computation 
+ results are displayed in a results window in grid format.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">The 
+ column labeled &quot;Prob&quot; contains the probability computed (must 
+ be &lt;0.05 for hypothesis rejection at 5% level). The column labeled 
+ &quot;Stat&quot; contains the statistic used to compute the probability. 
+ The difference in synonymous and non-synonymous substitutions should be 
+ significant at the 5% level.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Close 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman">Test 
+ of <a href="javascript:TextPopup(this)" id="HotSpot17410" class="glossterm">Positive Selection</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot17410', 'POPUP17410');
+//]]></script><span class="glosstext" id="POPUP17410" style="display: none;"> At the DNA sequence level, positive selection refers to selection in favor of nonsynonymous substitutions.  In this case, the evolutionary distance based on nonsynonymous substitutions is expected to be greater than synonymous substitutions.</span></font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">window.</font></p>
+</body>
+</html>

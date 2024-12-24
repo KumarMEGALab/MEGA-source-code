@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Writing Command Statement for Defining Genes and Domains</title>
+<link rel="StyleSheet" href="default.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "3.1.2.1.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part III: Input Data Types and File Formats > MEGA Input Data Formats > Sequence Input Data > Defining Genes and Domains" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1>Writing Command Statement for Defining Genes and Domains</h1>
+<table >
+	<col />
+	<col />
+	<col />
+	<col />
+	<tr style="vertical-align: top;">
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Command</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Setting</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Remark</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Example</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">DataType</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">DNA, 
+		 RNA, nucleotide, protein</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Specifies 
+		 the type of data in the file</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">DataType=DNA</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">NSeqs</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">A 
+		 count</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Number 
+		 of sequences</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">NSeqs=85</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">NTaxa</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">A 
+		 count</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Synonymous 
+		 with</font> <font style="font-size: 11pt; font-family: 'Courier New';" 
+							 color="#000000" size="2" face="Courier New">NSeqs</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">NTaxa=85</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">NSites</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">A 
+		 count</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Number 
+		 of nucleotides or amino acids</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Nsites=4592</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Property</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial"><a href="javascript:TextPopup(this)" id="HotSpot21204" class="glossterm">Exon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot21204', 'POPUP21204');
+//]]></script><span class="glosstext" id="POPUP21204" style="display: none;"> A protein-coding gene typically consists of multiple coding regions, known as exons, interspersed with non-coding DNA (introns)</span>, 
+		 <a href="javascript:TextPopup(this)" id="HotSpot9995" class="glossterm">Intron</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot9995', 'POPUP9995');
+//]]></script><span class="glosstext" id="POPUP9995" style="display: none;"> Introns are the non-coding segments of DNA in a gene that are interspersed among the exons.</span>,</font></p>
+		<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Coding,</font></p>
+		<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Noncoding,</font></p>
+		<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">and 
+		 End.</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Specifies 
+		 whether a domain is protein coding.</font> <font style="font-size: 11pt; 
+															 font-family: 'Courier New';" 
+															 color="#000000" 
+															 size="2" face="Courier New"><a href="javascript:TextPopup(this)" id="HotSpot5724" class="glossterm">Exon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot5724', 'POPUP5724');
+//]]></script><span class="glosstext" id="POPUP5724" style="display: none;"> A protein-coding gene typically consists of multiple coding regions, known as exons, interspersed with non-coding DNA (introns)</span></font> 
+		 <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">and</font> 
+		 <font style="font-size: 11pt; font-family: 'Courier New';" color="#000000" 
+				 size="2" face="Courier New">Coding</font> <font style="font-size: 11pt; 
+		 font-family: Arial;" size="2" face="Arial">are synonymous, as 
+		 are</font> <font style="font-size: 11pt; font-family: 'Courier New';" 
+							 size="2" face="Courier New"><a href="javascript:TextPopup(this)" id="HotSpot27385" class="glossterm">Intron</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot27385', 'POPUP27385');
+//]]></script><span class="glosstext" id="POPUP27385" style="display: none;"> Introns are the non-coding segments of DNA in a gene that are interspersed among the exons.</span></font> 
+		 <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">and</font> 
+		 <font style="font-size: 11pt; font-family: 'Courier New';" size="2" 
+				 face="Courier New">Noncoding</font><font style="font-size: 11pt; 
+															 font-family: Arial;" 
+															 size="2" face="Arial">.</font> 
+		 <font style="font-size: 11pt; font-family: 'Courier New';" size="2" 
+				 face="Courier New">End</font> <font style="font-size: 11pt; 
+													 font-family: Arial;" 
+													 size="2" face="Arial">specifies 
+		 that the domain with the given name ends at this point.</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Property=cyt_b</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Indel</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">single 
+		 character</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Use 
+		 dash (-) to identify insertion/deletions in sequence alignments</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Indel 
+		 = -</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Identical</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">single 
+		 character</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Use 
+		 period (.) to show identify with the first sequence.</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Identical 
+		 = .</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">MatchChar</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">single 
+		 character</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Synonymous 
+		 with the</font> <font style="font-size: 11pt; font-family: 'Courier New';" 
+								 size="2" face="Courier New">identical</font> 
+		 <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">keyword.</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">MatchChar 
+		 = .</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Missing</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">single 
+		 character</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Use 
+		 a question mark (?) to indicate missing data.</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Missing 
+		 = ?</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">CodeTable</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">A 
+		 name</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">This 
+		 instruction gives the name of the code table for the protein coding 
+		 <a href="javascript:TextPopup(this)" id="HotSpot43335" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot43335', 'POPUP43335');
+//]]></script><span class="glosstext" id="POPUP43335" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span> of the data</font></p></td>
+		<td><p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: 'Courier New';" size="2" 
+		 face="Courier New">CodeTable</font> <font style="font-size: 11pt; 
+													 font-family: Arial;" 
+													 size="2" face="Arial">= 
+		 Standard</font></p></td>
+	</tr>
+</table>
+<p>&#160;</p>
+</body>
+</html>

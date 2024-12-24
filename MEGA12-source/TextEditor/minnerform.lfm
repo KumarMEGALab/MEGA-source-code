@@ -1,0 +1,100 @@
+object InnerForm: TInnerForm
+  Left = 576
+  Height = 170
+  Top = 312
+  Width = 330
+  BorderStyle = bsNone
+  Caption = 'InnerForm'
+  ClientHeight = 170
+  ClientWidth = 330
+  Color = clBtnFace
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  SessionProperties = 'PrintDialog1.Options'
+  LCLVersion = '2.2.6.0'
+  inline SynMemo1: TSynMemo
+    Cursor = crIBeam
+    Left = 0
+    Height = 170
+    Top = 0
+    Width = 330
+    Align = alClient
+    Font.Color = clWindowText
+    Font.Height = -14
+    Font.Name = 'Courier New'
+    Font.Pitch = fpFixed
+    Font.Quality = fqNonAntialiased
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+    Gutter.Width = 57
+    Gutter.MouseActions = <>
+    Keystrokes = <>
+    MouseActions = <>
+    MouseTextActions = <>
+    MouseSelActions = <>
+    Lines.Strings = (
+      'SynMemo1'
+    )
+    Options = [eoAutoIndent, eoGroupUndo, eoHideRightMargin, eoShowScrollHint, eoSmartTabs, eoTabsToSpaces, eoDragDropEditing]
+    MouseOptions = [emDragDropEditing]
+    VisibleSpecialChars = [vscSpace, vscTabAtLast]
+    SelectedColor.BackPriority = 50
+    SelectedColor.ForePriority = 50
+    SelectedColor.FramePriority = 50
+    SelectedColor.BoldPriority = 50
+    SelectedColor.ItalicPriority = 50
+    SelectedColor.UnderlinePriority = 50
+    SelectedColor.StrikeOutPriority = 50
+    OnDropFiles = SynMemo1DropFiles
+    inline SynLeftGutterPartList1: TSynGutterPartList
+      object SynGutterMarks1: TSynGutterMarks
+        Width = 24
+        MouseActions = <>
+      end
+      object SynGutterLineNumber1: TSynGutterLineNumber
+        Width = 17
+        MouseActions = <>
+        MarkupInfo.Background = clBtnFace
+        MarkupInfo.Foreground = clNone
+        DigitCount = 2
+        ShowOnlyLineNumbersMultiplesOf = 1
+        ZeroStart = False
+        LeadingZeros = False
+      end
+      object SynGutterChanges1: TSynGutterChanges
+        Width = 4
+        MouseActions = <>
+        ModifiedColor = 59900
+        SavedColor = clGreen
+      end
+      object SynGutterSeparator1: TSynGutterSeparator
+        Width = 2
+        MouseActions = <>
+        MarkupInfo.Background = clWhite
+        MarkupInfo.Foreground = clGray
+      end
+      object SynGutterCodeFolding1: TSynGutterCodeFolding
+        MouseActions = <>
+        MarkupInfo.Background = clNone
+        MarkupInfo.Foreground = clGray
+        MouseActionsExpanded = <>
+        MouseActionsCollapsed = <>
+      end
+    end
+  end
+  object PrintDialog1: TPrintDialog
+    Left = 113
+    Top = 26
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    IniSection = 'TInnerForm'
+    Left = 182
+    Top = 33
+  end
+end

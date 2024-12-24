@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="DistanceMethods_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Kumar Method</title>
+<link rel="stylesheet" href="DistanceMethods_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.2.1.3.0_5";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Computing Evolutionary Distances > Distance Models > Synonymous and Nonsynonymous Substitution Models" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1 style="margin-left: 0in;"><span style="font-size: 11.0pt;">Kumar Method</span></h1>
+<p class="MTDisplayEquation" style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">This 
+ method is a modification of the </span><u style="text-underline: double; 
+											 color: #007fbf;"><span style="color: #007fbf;"><a 
+	 href="Pamilo_and_Bianchi_1993.htm" style="color: #007fbf;">Pamilo-Bianchi-Li</a></span></u><span 
+	 style="display: none;">HC_Pamilo_Bianchi_Li_Method</span><span style="font-size: 11.0pt;"> 
+ and </span><u style="color: #007fbf;"><span style="color: #007fbf;"><a 
+	 href="Comeron_1995.htm" style="color: #007fbf;">Comeron</a></span></u><span 
+	 style="display: none;">Comeron_1995</span><span style="font-size: 11.0pt;"> 
+ (1995) methods and is able to handle some problematic </span><u><span 
+	 style="color: #008000;"><a href="javascript:TextPopup(this)" id="HotSpot28322" class="glossterm">degeneracy</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot28322', 'POPUP28322');
+//]]></script><span class="glosstext" id="POPUP28322" style="display: none;"> 0-fold degenerate sites are those at which all changes are nonsynonymous.  2-fold degenerate sites are those at which one out of three changes is synonymous.  (All sites at which two out of three changes are synonymous also are included in this category.)  4-fold degenerate sites are those at which all changes are synonymous.</span></span></u><span 
+	 style="display: none;">RH_degeneracy</span><span style="font-size: 11.0pt;"> 
+ class assignments (see a detailed description below).&#160;&#160;It computes 
+ the following quantities:</span></p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></p>
+<p style="margin-left: .5in;"><u><span style="font-size: 11.0pt;">Synonymous 
+ distance</span></u></p>
+<p style="margin-top: 0in; margin-right: 6.5pt; margin-bottom: .0001pt; 
+	 margin-left: .5in; text-autospace: none;"><span style="font-size: 11.0pt;">This 
+ is the number of synonymous substitutions per synonymous site.</span></p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></p>
+<p style="margin-left: .5in;"><u><span style="font-size: 11.0pt;">Nonsynonymous 
+ distance</span></u></p>
+<p style="margin-top: 0in; margin-right: 6.5pt; margin-bottom: .0001pt; 
+	 margin-left: .5in; text-autospace: none;"><span style="font-size: 11.0pt;">This 
+ is the number of nonsynonymous substitutions per nonsynonymous site.</span></p>
+<p style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<u>Substitutions 
+ at the 4-fold degenerate sites</u></span></p>
+<p style="margin-top: 0in; margin-right: 6.5pt; margin-bottom: .0001pt; 
+	 margin-left: .5in; text-autospace: none;"><span style="font-size: 11.0pt;">This 
+ is the number of substitutions per 4-fold degenerate site.&#160;&#160;It 
+ is useful for measuring the rate of neutral evolution.</span></p>
+<p style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<u>Substitutions 
+ at the 0-fold degenerate sites</u></span></p>
+<p style="margin-top: 0in; margin-right: 6.5pt; margin-bottom: .0001pt; 
+	 margin-left: .5in; text-autospace: none;"><span style="font-size: 11.0pt;">This 
+ is the number of substitutions per 0-fold degenerate site.&#160;&#160;It 
+ is useful for measuring the rate of amino acid sequence evolution.</span></p>
+<p style="margin-top: 0in; margin-right: 6.5pt; margin-bottom: .0001pt; 
+	 margin-left: .5in; text-autospace: none;">&#160;</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<u>Number 
+ of 4-fold degenerate sites</u></span></p>
+<p style="margin-top: 0in; margin-right: 6.5pt; margin-bottom: .0001pt; 
+	 margin-left: .5in; text-autospace: none;"><span style="font-size: 11.0pt;">This 
+ is the estimate of the number of 4-fold degenerate sites, computed by 
+ averaging the number of 4-fold degenerate sites in the two sequences, 
+ compared.</span></p>
+<p class="MTDisplayEquation">&#160;</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<u>Number 
+ of 0-fold degenerate sites</u></span></p>
+<p style="margin-top: 0in; margin-right: 6.5pt; margin-bottom: .0001pt; 
+	 margin-left: .5in; text-autospace: none;"><span style="font-size: 11.0pt;">This 
+ is the estimate of the number of 0-fold degenerate sites, computed by 
+ averaging the number of 0-fold degenerate sites in the two sequences, 
+ compared.</span></p>
+<p class="MTDisplayEquation">&#160;</p>
+<p style="margin-left: .5in;"><u><span style="font-size: 11.0pt;">Difference 
+ between synonymous and nonsynonymous distances</span></u></p>
+<p style="margin-top: 0in; margin-right: 6.5pt; margin-bottom: .0001pt; 
+	 margin-left: .5in; text-autospace: none;"><span style="font-size: 11.0pt;">This 
+ computes the differences between the synonymous and nonsynonymous distances.&#160;&#160;These 
+ statistics are useful for conducting tests of selection.</span></p>
+<p>&#160;</p>
+<p style="margin-left: 0in;"><u><span style="font-size: 11.0pt;">Kumar’s 
+ modification of the PBL method:</span></u></p>
+<p><span style="font-size: 11.0pt;">The treatment of arginine and isoleucine 
+ codons in the Li-Wu-Luo and the Pamilo-Bianchi-Li methods is arbitrary, 
+ which sometimes creates a problem because the arginine codons occur quite 
+ frequently.&#160;&#160;</span><a href="Comeron_1995.htm" style="color: #007fbf;"><u 
+	 style="color: #007fbf;"><span style="color: #007fbf;">Comeron (1995)</span></u><span 
+	 style="display: none; color: #007fbf;">Comeron_1995</span></a><span 
+	 style="font-size: 11.0pt;"> addressed this problem by dividing the 
+ 2-fold degenerate sites into two groups: 2S-fold and 2V-fold.&#160;&#160;The 
+ 2S-fold refers to sites in which the transitional change is synonymous 
+ and the two transversional changes are nonsynonymous, whereas the 2V-fold 
+ represents sites in which the transitional change is nonsynonymous and 
+ the transversional changes are synonymous.&#160;&#160;Although these definitions 
+ help in correcting some of the inaccurate classifications of synonymous 
+ and nonsynonymous sites (e.g., methionine codons), they do not solve the 
+ problem completely.&#160;&#160;For example, consider mutations in the 
+ first nucleotide position of the arginine <a href="javascript:TextPopup(this)" id="HotSpot57067" class="glossterm">codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot57067', 'POPUP57067');
+//]]></script><span class="glosstext" id="POPUP57067" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span>: 
+ CGG produces TGG (Trp), AGG (Arg), or GGG (Gly).&#160;&#160;The transitional 
+ change (C to T) results in a <a href="javascript:TextPopup(this)" id="HotSpot41889" class="glossterm">nonsynonymous 
+ change</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot41889', 'POPUP41889');
+//]]></script><span class="glosstext" id="POPUP41889" style="display: none;"> A nucleotide change is nonsynonymous if it changes the amino acid encoded by the original codon.  A nucleotide site in which one or more changes are nonsynonymous is referred to as a nonsynonymous site.  If only one of three possible nucleotide changes at that site is nonsynonymous, then the site is 1/3 nonsynonymous.  If two of three nucleotide changes are nonsynonymous, then the site is 2/3 nonsynonymous.  And, if all three possible nucleotide changes are nonsynonymous, then the site is completely nonsynonymous.</span>.&#160;&#160;Of the two transversional substitutions, 
+ one (C to A) results in a synonymous change, while the other (C to G) 
+ results in a <a href="javascript:TextPopup(this)" id="HotSpot49929" class="glossterm">nonsynonymous change</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot49929', 'POPUP49929');
+//]]></script><span class="glosstext" id="POPUP49929" style="display: none;"> A nucleotide change is nonsynonymous if it changes the amino acid encoded by the original codon.  A nucleotide site in which one or more changes are nonsynonymous is referred to as a nonsynonymous site.  If only one of three possible nucleotide changes at that site is nonsynonymous, then the site is 1/3 nonsynonymous.  If two of three nucleotide changes are nonsynonymous, then the site is 2/3 nonsynonymous.  And, if all three possible nucleotide changes are nonsynonymous, then the site is completely nonsynonymous.</span>.&#160;&#160;Therefore, 
+ this nucleotide site is neither a 2S-fold nor a 2V-fold site.&#160;&#160;Thus, 
+ the first position of three arginine codons (CGU, CGC, and CGA) and the 
+ third position of two isoleucine codons (ATT and ATC) cannot be assigned 
+ to any of the Comeron (1995) categories.&#160;&#160;For this reason, Comeron 
+ (personal communication) used a more complicated classification of codons 
+ when he wrote his computer program. For example, the first position of 
+ arginine <a href="javascript:TextPopup(this)" id="HotSpot36149" class="glossterm">codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot36149', 'POPUP36149');
+//]]></script><span class="glosstext" id="POPUP36149" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span> CGG was 
+ assigned to a 2V-fold site with a probability of one-third and to a 0-fold 
+ site with a probability of two-thirds.&#160;&#160;Similar assignments 
+ are used by W.-H. Li </span><span style="background: #ffff00;">(personal 
+ communication)</span><span style="font-size: 11.0pt;"> in his computer 
+ program.</span></p>
+<p class="BlockText"><span style="font-size: 11.0pt;">Since the nucleotide 
+ site assignments discussed above are quite arbitrary and may not apply 
+ to all known genetic code tables, Kumar developed another method that 
+ uses the PBL method for any genetic code table.&#160;&#160;In this version, 
+ nucleotide sites are first classified into 0-fold, 2-fold, and 4-fold 
+ degenerate sites.&#160;&#160;The 2-fold degenerate sites are further subdivided 
+ into simple 2-fold and complex 2-fold degenerate sites.&#160;&#160;Simple 
+ 2-fold sites are those at which the transitional change results in a synonymous 
+ substitution and the two transversional changes result in nonsynonymous 
+ substitutions.&#160;&#160;All other 2-fold sites, including those for 
+ the three isoleucine codons, belong to the complex 2-fold site category.&#160;&#160;If 
+ we use this definition, all nucleotide sites can be classified into the 
+ five groups shown in the following table.</span></p>
+<p style="margin-left: 0in; line-height: 150%;">&#160;</p>
+<p style="margin-left: 0in; line-height: 150%;"><span style="font-size: 11.0pt; 
+														 line-height: 150%;">Table.</span></p>
+<table cellspacing="0">
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="133"><p style="line-height: 150%;"><u><span style="font-size: 11.0pt; 
+		 line-height: 150%;"><a href="javascript:TextPopup(this)" id="HotSpot22253" class="glossterm">Degeneracy</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot22253', 'POPUP22253');
+//]]></script><span class="glosstext" id="POPUP22253" style="display: none;"> 0-fold degenerate sites are those at which all changes are nonsynonymous.  2-fold degenerate sites are those at which one out of three changes is synonymous.  (All sites at which two out of three changes are synonymous also are included in this category.)  4-fold degenerate sites are those at which all changes are synonymous.</span></span></u> 
+		 <span style="font-size: 11.0pt; line-height: 150%;">-&gt;</span></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="66"><p style="text-align: center; line-height: 150%;"><u><span 
+		 style="font-size: 11.0pt; line-height: 150%;">0-fold</span></u></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="102"><p style="text-align: center; line-height: 150%;"><span 
+		 style="font-size: 11.0pt; line-height: 150%;">Simple 2-fold</span></p></td>
+		<td colspan="2" style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="144"><p style="text-align: center; line-height: 150%;"><span 
+		 style="font-size: 11.0pt; line-height: 150%;">Complex 2-fold</span></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="60"><p style="text-align: center; line-height: 150%;"><u><span 
+		 style="font-size: 11.0pt; line-height: 150%;">4-fold</span></u></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="133"><p style="line-height: 150%;"><u><span style="font-size: 11.0pt; 
+		 line-height: 150%;">No. of sites</span></u> <span style="font-size: 11.0pt; 
+															 line-height: 150%;">-&gt;</span></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="66"><p style="text-align: center; line-height: 150%;"><i><span 
+		 style="font-size: 11.0pt; line-height: 150%;">L</span></i><sub><span 
+		 style="font-size: 11.0pt; line-height: 150%;">0</span></sub></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="102"><p style="text-align: center; line-height: 150%;"><i><span 
+		 style="font-size: 11.0pt; line-height: 150%;">L</span></i><sub><span 
+		 style="font-size: 11.0pt; line-height: 150%;">2S</span></sub></p></td>
+		<td colspan="2" style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="144"><p style="text-align: center; line-height: 150%;"><i><span 
+		 style="font-size: 11.0pt; line-height: 150%;">L</span></i><sub><span 
+		 style="font-size: 11.0pt; line-height: 150%;">2C</span></sub></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="60"><p style="text-align: center; line-height: 150%;"><span 
+		 style="font-size: 11.0pt; line-height: 150%;">&#160;<i>L</i><sub>4</sub></span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="133"><p class="MTDisplayEquation" style="line-height: 150%;">&#160;</p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="66"><p style="text-align: center; line-height: 150%;">&#160;</p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="102"><p style="text-align: center; line-height: 150%;">&#160;</p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="60"><p style="text-align: center; line-height: 150%;"><i><u><span 
+		 style="font-size: 11.0pt; line-height: 150%;">Syn</span></u></i></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="84"><p style="text-align: center; line-height: 150%;"><i><u><span 
+		 style="font-size: 11.0pt; line-height: 150%;">Nonsyn</span></u></i></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="60"><p style="text-align: center; line-height: 150%;">&#160;</p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="133"><p style="line-height: 200%;"><span style="font-size: 11.0pt; 
+															 line-height: 200%;"><a href="javascript:TextPopup(this)" id="HotSpot34302" class="glossterm">Transition</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot34302', 'POPUP34302');
+//]]></script><span class="glosstext" id="POPUP34302" style="display: none;"> A transition occurs when a purine is substituted by a purine, or a pyrimidine by a pyrimidine.</span> (<i>s</i>)</span></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="66"><p style="text-align: center; line-height: 200%;"><i><span 
+		 style="font-size: 11.0pt; line-height: 200%;">s</span></i><sub><span 
+		 style="font-size: 11.0pt; line-height: 200%;">0</span></sub></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="102"><p style="text-align: center; line-height: 200%;"><i><span 
+		 style="font-size: 11.0pt; line-height: 200%;">s</span></i><sub><span 
+		 style="font-size: 11.0pt; line-height: 200%;">2</span></sub></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="60"><p style="text-align: center; line-height: 200%;"><i><span 
+		 style="font-size: 11.0pt; line-height: 200%;">s</span></i><sub><span 
+		 style="font-size: 11.0pt; line-height: 200%;">2S</span></sub></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="84"><p style="text-align: center; line-height: 200%;"><i><span 
+		 style="font-size: 11.0pt; line-height: 200%;">s</span></i><sub><span 
+		 style="font-size: 11.0pt; line-height: 200%;">2N</span></sub></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="60"><p style="text-align: center; line-height: 200%;"><i><span 
+		 style="font-size: 11.0pt; line-height: 200%;">s</span></i><sub><span 
+		 style="font-size: 11.0pt; line-height: 200%;">4</span></sub></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="133"><p style="line-height: 200%;"><span style="font-size: 11.0pt; 
+															 line-height: 200%;"><a href="javascript:TextPopup(this)" id="HotSpot39970" class="glossterm">Transversion</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot39970', 'POPUP39970');
+//]]></script><span class="glosstext" id="POPUP39970" style="display: none;"> A change from a purine to a pyrimidine, or vice versa, is a transversion.</span> (<i>v</i>)</span></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="66"><p style="text-align: center; line-height: 200%;"><i><span 
+		 style="font-size: 11.0pt; line-height: 200%;">v</span></i><sub><span 
+		 style="font-size: 11.0pt; line-height: 200%;">0</span></sub></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="102"><p style="text-align: center; line-height: 200%;"><i><span 
+		 style="font-size: 11.0pt; line-height: 200%;">V</span></i><sub><span 
+		 style="font-size: 11.0pt; line-height: 200%;">2</span></sub></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="60"><p style="text-align: center; line-height: 200%;"><i><span 
+		 style="font-size: 11.0pt; line-height: 200%;">v</span></i><sub><span 
+		 style="font-size: 11.0pt; line-height: 200%;">2S</span></sub></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="84"><p style="text-align: center; line-height: 200%;"><i><span 
+		 style="font-size: 11.0pt; line-height: 200%;">v</span></i><sub><span 
+		 style="font-size: 11.0pt; line-height: 200%;">2N</span></sub></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;" 
+			 width="60"><p style="text-align: center; line-height: 200%;"><i><span 
+		 style="font-size: 11.0pt; line-height: 200%;">v</span></i><sub><span 
+		 style="font-size: 11.0pt; line-height: 200%;">4</span></sub></p></td>
+	</tr>
+</table>
+<p><span style="font-size: 11.0pt;">Here,<i>L</i><sub>0</sub>, <i>L</i><sub>2S</sub>, 
+ <i>L</i><sub>2C</sub>, and <i>L</i><sub>4</sub> are the numbers of 0-fold, 
+ simple 2-fold, complex 2-fold, and 4-fold degenerate sites, respectively.</span></p>
+<p style="line-height: 150%;">&#160;</p>
+<p><span style="font-size: 11.0pt;">Once this table is filled using the 
+ observed counts for a given pair of sequences, we compute the proportions 
+ of transitional (<i>P</i><sub>i</sub>) and transversional (Q<sub>i</sub>) 
+ differences for the <i>i</i>-fold degenerate site in the following way:</span></p>
+<p>&#160;</p>
+<table style="margin-left: 5.75pt;" cellspacing="0">
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><i><span 
+		 style="font-size: 11.0pt;">P<sub>0</sub> = (s<sub>0</sub> + s<sub>2N</sub>)/(L<sub>0</sub> 
+		 + L<sub>2C</sub>)</span></i></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 style="margin-left: 0in;"><i><span style="font-size: 11.0pt;">&#160;&#160;Q<sub>0</sub> 
+		 = v<sub>o</sub>/L<sub>0</sub></span></i></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><i><span 
+		 style="font-size: 11.0pt;">P<sub>2</sub> = (s<sub>0</sub> + s<sub>2S</sub>)/(L<sub>2S</sub> 
+		 + L<sub>2C</sub>)&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></i></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><i><span 
+		 style="font-size: 11.0pt;">Q<sub>2</sub> = (v<sub>2</sub> + v<sub>2N</sub>)/(L<sub>2S</sub> 
+		 + L<sub>2C</sub>)</span></i></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><i><span 
+		 style="font-size: 11.0pt;">P<sub>4</sub> = s<sub>4</sub>/L<sub>4</sub></span></i></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><i><span 
+		 style="font-size: 11.0pt;">Q<sub>4</sub> = (v<sub>4</sub> + v<sub>2S</sub>)/(L<sub>4</sub> 
+		 + L<sub>2C</sub>)</span></i></p></td>
+	</tr>
+</table>
+<p><span style="font-size: 11.0pt;">From these quantities, we compute the 
+ <i>A</i><sub>i</sub> and <i>B</i><sub>i</sub> as in the PBL method.&#160;&#160;&#160;Then 
+ using <i>L</i><sub>2</sub> = <i>L</i><sub>2C</sub> + <i>L</i><sub>2S</sub>, 
+ we apply the formulas for the PBL method.</span></p>
+<p>&#160;</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">See 
+ also </span><u style="color: #007fbf;"><span style="color: #007fbf;"><a 
+	 href="Nei_and_Kumar_2000.htm" style="color: #007fbf;">Nei and Kumar 
+ (2000)</a></span></u><span style="display: none;">Nei_and_Kumar_2000</span><span 
+	 style="font-size: 11.0pt;">, page 64.</span></p>
+<p style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

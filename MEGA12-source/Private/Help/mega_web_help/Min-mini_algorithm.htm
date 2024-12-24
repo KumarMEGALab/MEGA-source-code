@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="Glossary_RH.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Min-mini algorithm</title>
+<link rel="stylesheet" href="Glossary_RH.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<style type="text/css">
+<!--
+A:visited { color:#800080; }
+A:link { color:#0000ff; }
+-->
+</style>
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.3.3.1.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Constructing Phylogenetic Trees > Maximum Parsimony (MP) Method > Heuristic Search" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1>Min-mini algorithm</h1>
+<p>This is a heuristic search algorithm for finding the <a href="Maximum_Parsimony_Principle.htm" 
+															 style="color: #007fbf;"><u 
+	 style="text-underline: double; color: #007fbf;"><span style="color: #007fbf;">MP</span></u><span 
+	 style="display: none; color: #007fbf;">HC_Maximum_Parsimony</span></a> 
+ tree, and is somewhat similar to the <u style="color: #007fbf;"><span 
+	 style="color: #007fbf;"><a href="Branch-and-Bound_algorithm.htm" style="color: #007fbf;">branch-and 
+ bound</a></span></u><span style="display: none;">RH_Branch_and_Bound_algorithm</span> 
+ search method.&#160;&#160;However, in this algorithm, many trees that 
+ are unlikely to have a small local <a href="javascript:TextPopup(this)" id="HotSpot42820" class="glossterm">tree 
+ length</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot42820', 'POPUP42820');
+//]]></script><span class="glosstext" id="POPUP42820" style="display: none;"> Tree length is the criterion used by the Maximum Parsimony method to search for the best tree.  It is defined as the sum of the minimum numbers of substitutions over all sites for the given topology.   To compute the tree length for the unweighted parsimony method, we use the procedure described in Fitch (1971), which is based on the two rules described below.  For a given site these rules are applied to each node and the sum of substitutions over all nodes and over all sites are taken.  Note that the estimation of the minimum number of substitutions is not affected by the position of the root.  Rule 1.  When the two descendent nodes of an ancestral node have some states (nucleotides or amino acids) in common, the ancestral node is assigned to the set of common states.  In this case, the most parsimonious explanation does not require any substitutions.  Rule 2.  When the two descendant nodes have no states in common, then all states in the descendent nodes are combined to form the set of possible states at the ancestral node.  In this case, one substitution is required.</span> are eliminated from the computation of their <i>L</i> 
+ values. Thus while the algorithm speeds up the search for the MP tree, 
+ as compared to the branch-and-bound search, the final tree or trees may 
+ not be the true MP tree(s).&#160;&#160;The user can specify a search factor 
+ to control the extensiveness of the search and <i>MEGA</i> adds the user 
+ specified search factor to the current local upper bound.&#160;&#160;Of 
+ course, the larger the search factor, the slower the search, since many 
+ more trees will be examined.&#160;</p>
+<p>&#160;(See also <a href="Nei_and_Kumar_2000.htm" style="color: #007fbf;"><u 
+	 style="color: #007fbf;"><span style="color: #007fbf;">Nei &amp; Kumar 
+ (2000)</span></u><span style="display: none; color: #007fbf;">Nei_and_Kumar_2000</span></a>, 
+ pages 122, 125)</p>
+<p>&#160;</p>
+<b><span style="font-size: 10.0pt; font-family: Arial, sans-serif; color: #0000ff;"><br 
+	 style="clear: all;" clear="all" />
+</span></b> 
+</body>
+</html>

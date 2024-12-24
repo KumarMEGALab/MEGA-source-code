@@ -1,0 +1,359 @@
+object SpeciesMapDlg: TSpeciesMapDlg
+  Left = 544
+  Height = 588
+  Top = 278
+  Width = 683
+  BorderIcons = []
+  Caption = 'Taxa to Species Mapping'
+  ClientHeight = 568
+  ClientWidth = 683
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -14
+  Font.Name = 'Tahoma'
+  Menu = MainMenu1
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnHelp = FormHelp
+  OnResize = FormResize
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  SessionProperties = 'SearchEdit.Text'
+  LCLVersion = '2.2.4.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 497
+    Top = 28
+    Width = 683
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 497
+    ClientWidth = 683
+    TabOrder = 0
+    object DrawGrid: TDrawGrid
+      Left = 0
+      Height = 497
+      Top = 0
+      Width = 683
+      Align = alClient
+      BorderStyle = bsNone
+      Color = clBtnFace
+      ColCount = 2
+      DefaultDrawing = False
+      ExtendedSelect = False
+      FixedCols = 0
+      FixedRows = 0
+      GridLineWidth = 0
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goEditing]
+      TabOrder = 0
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -14
+      TitleFont.Name = 'Tahoma'
+      OnDrawCell = DrawGridDrawCell
+      OnGetEditText = DrawGridGetEditText
+      OnMouseMove = DrawGridMouseMove
+      OnMouseUp = DrawGridMouseUp
+      OnSelectCell = DrawGridSelectCell
+      OnSetEditText = DrawGridSetEditText
+    end
+  end
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 28
+    Top = 0
+    Width = 683
+    ButtonHeight = 26
+    ButtonWidth = 26
+    Color = clBtnFace
+    DisabledImages = MegaForm.DisabledIcons
+    Images = MegaForm.NewIcons
+    ParentColor = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 1
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 2
+      Action = ImportDataAction
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object ToolButton2: TToolButton
+      Left = 27
+      Top = 2
+      Action = ExportDataAction
+    end
+    object ToolButton5: TToolButton
+      Left = 53
+      Top = 2
+      Action = CopyAction
+    end
+    object ToolButton6: TToolButton
+      Left = 79
+      Top = 2
+      Action = PasteAction
+    end
+    object ToolButton7: TToolButton
+      Left = 105
+      Top = 2
+      Action = SelectAllAction
+    end
+    object ToolButton8: TToolButton
+      Left = 131
+      Top = 2
+      Action = CopySelectedToRightAction
+    end
+    object ToolButton9: TToolButton
+      Left = 157
+      Top = 2
+      Action = CopyAllToRightAction
+    end
+    object ToolButton10: TToolButton
+      Left = 183
+      Top = 2
+      Action = CleanSpeciesNamesAction
+    end
+    object ToolButton4: TToolButton
+      Left = 209
+      Top = 2
+      Caption = 'ToolButton4'
+      Enabled = False
+    end
+    object SearchEdit: TEdit
+      Left = 235
+      Height = 24
+      Top = 2
+      Width = 208
+      Font.Color = clGray
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsItalic]
+      OnClick = SearchEditClick
+      OnEnter = SearchEditEnter
+      ParentFont = False
+      TabOrder = 0
+      Text = ' Find'
+    end
+    object SearchUpBtn: TBitBtn
+      Left = 467
+      Height = 26
+      Top = 2
+      Width = 24
+      Action = SearchUpAction
+      Layout = blGlyphRight
+      TabOrder = 1
+    end
+    object SearchDownBtn: TBitBtn
+      Left = 443
+      Height = 26
+      Top = 2
+      Width = 24
+      Action = SearchDownAction
+      TabOrder = 2
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 43
+    Top = 525
+    Width = 683
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 43
+    ClientWidth = 683
+    TabOrder = 2
+    object ToolBar2: TToolBar
+      Left = 200
+      Height = 30
+      Top = 6
+      Width = 239
+      Align = alNone
+      AutoSize = True
+      ButtonHeight = 30
+      ButtonWidth = 115
+      Caption = 'ToolBar2'
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      HotImages = ImageForm.DlgButtonsHover
+      Images = ImageForm.DlgButtons
+      TabOrder = 0
+      object ToolButton3: TToolButton
+        Left = 1
+        Top = 0
+        Action = CancelAction
+      end
+      object ToolButton11: TToolButton
+        Left = 120
+        Top = 0
+        Action = SaveAction2
+      end
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 416
+    Top = 232
+    object F1: TMenuItem
+      Caption = 'File'
+      object Import1: TMenuItem
+        Action = ImportDataAction
+      end
+      object Export1: TMenuItem
+        Action = ExportDataAction
+      end
+      object Save1: TMenuItem
+        Action = SaveAction
+      end
+    end
+    object Edit1: TMenuItem
+      Caption = '&Edit'
+      Hint = 'Remove unwanted tokens/characters from species names'
+      object Find1: TMenuItem
+        Action = SearchUpAction
+        Caption = 'Search &Up'
+      end
+      object FindNext1: TMenuItem
+        Action = SearchDownAction
+        Caption = 'Search &Down'
+      end
+      object CopyTaxaNamestoSpecies1: TMenuItem
+        Caption = '&Copy Taxa Names to Species'
+        object AllTaxa1: TMenuItem
+          Action = CopyAllToRightAction
+        end
+        object SelectedTaxa1: TMenuItem
+          Action = CopySelectedToRightAction
+        end
+      end
+      object CleanSpeciesNames1: TMenuItem
+        Action = CleanSpeciesNamesAction
+      end
+    end
+    object Help1: TMenuItem
+      Caption = 'Help'
+      Hint = 'Display help documentation'
+      ShortCut = 16456
+      object Contents1: TMenuItem
+        Action = HelpContentsAction
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Images = MegaForm.NewIcons
+    Left = 200
+    Top = 240
+    object ImportDataAction: TAction
+      Caption = 'Import'
+      Hint = 'Import the taxa to species mapping from a text file'
+      ImageIndex = 69
+      OnExecute = ImportDataActionExecute
+      ShortCut = 16463
+    end
+    object ExportDataAction: TAction
+      Caption = 'Export'
+      Hint = 'Export the taxa to species mapping to a text file'
+      ImageIndex = 33
+      OnExecute = ExportDataActionExecute
+      ShortCut = 16453
+    end
+    object SaveAction: TAction
+      Caption = '&Save...'
+      Hint = 'Save the taxa to species mapping'
+      ImageIndex = 35
+      OnExecute = SaveActionExecute
+      ShortCut = 16467
+    end
+    object DisplayHelpAction: TAction
+      Caption = 'Help'
+      Hint = 'Display help documentation'
+      ImageIndex = 68
+      OnExecute = DisplayHelpActionExecute
+      ShortCut = 16456
+    end
+    object SearchUpAction: TAction
+      Hint = 'Search keyword up'
+      ImageIndex = 202
+      OnExecute = SearchUpActionExecute
+      ShortCut = 49222
+    end
+    object SearchDownAction: TAction
+      Hint = 'Search keyword down'
+      ImageIndex = 200
+      OnExecute = SearchDownActionExecute
+      ShortCut = 16454
+    end
+    object CopyAction: TAction
+      Caption = 'Copy'
+      Hint = 'Copy selected items to the clip board'
+      ImageIndex = 77
+      OnExecute = CopyActionExecute
+      ShortCut = 16451
+    end
+    object PasteAction: TAction
+      Caption = 'Paste'
+      Hint = 'Paste selected to the grid'
+      ImageIndex = 64
+      OnExecute = PasteActionExecute
+      ShortCut = 16470
+    end
+    object SelectAllAction: TAction
+      Caption = 'Select All'
+      Hint = 'Select all text'
+      ImageIndex = 179
+      OnExecute = SelectAllActionExecute
+      ShortCut = 16449
+    end
+    object HelpContentsAction: TAction
+      Caption = '&Contents...'
+      Hint = 'Display the application help contents'
+      ImageIndex = 68
+      OnExecute = HelpContentsActionExecute
+      ShortCut = 112
+    end
+    object StripNumericTokensAction: TAction
+      Caption = 'StripNumericTokensAction'
+    end
+    object CopySelectedToRightAction: TAction
+      Caption = '&Selected Taxa'
+      Hint = 'Copy selected taxa to the right'
+      ImageIndex = 48
+      OnExecute = CopySelectedToRightActionExecute
+      ShortCut = 49235
+    end
+    object CopyAllToRightAction: TAction
+      Caption = '&All Taxa'
+      Hint = 'Copy all taxa names to the right'
+      ImageIndex = 199
+      OnExecute = CopyAllToRightActionExecute
+      ShortCut = 49217
+    end
+    object CleanSpeciesNamesAction: TAction
+      Caption = 'C&lean Species Names...'
+      Hint = 'Remove unwanted tokens/characters from species names'
+      ImageIndex = 60
+      OnExecute = CleanSpeciesNamesActionExecute
+    end
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    Left = 326
+    Top = 104
+  end
+  object ActionList2: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 134
+    Top = 158
+    object SaveAction2: TAction
+      Caption = 'SaveAction2'
+      ImageIndex = 5
+      OnExecute = SaveActionExecute
+      ShortCut = 16467
+    end
+    object CancelAction: TAction
+      Caption = 'CancelAction'
+      ImageIndex = 0
+      OnExecute = CancelBtnClick
+      ShortCut = 27
+    end
+  end
+end

@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+ <title>Converting NBRF Format</title>
+<link rel="StyleSheet" href="default.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "3.2.1.0_6";
+</script>
+ <meta name="topic-breadcrumbs" content="Part III: Input Data Types and File Formats > Importing Data From Other Formats > Format Specific Notes" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+<h1>Converting NBRF Format</h1>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">NBRF files consist of one 
+ or more groups of non-blank lines separated by one or more blank lines; 
+ the non-blank lines look similar to this:</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">&#160;&gt;P1;Chloroflex</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">&#160;Chloroflex 428 bases</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">&#160;&#160;MSKEHVQTIA 
+ TDDVSKNGHT PPTNASTPPY PFVAIVGQAE LKLALLLCVV</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">&#160;&#160;NPTIGGVMVM 
+ GHRGTAKSTA VRALAAMLPP IKAVAGCPYS CAPDRTAGLC</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">&#160;&#160;DQCRALEQQS 
+ GKTKKPAVIN IPVPVVDLPL GATEDRVCGT LDIERALTQG</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">&#160;&#160;VQAFAPGLLA 
+ RANRGFLYID EVNLLEDHLV DVLLDVAASG VNVVEREGVS</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">&#160;&#160;VRHPARFVLV 
+ GSGNPEEGDL RPQLLDRFGL HARITTITDV SERVEIVKRR</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">&#160;&#160;REYDADPFAF 
+ VEKWAKETQK LQRKIKQAQR RLPEVILPDP VLYKIAELCV</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">&#160;&#160;KLEVDGHRGE 
+ LTLARA-ATA LAALEGRNEV TVQDVRRIAV LALRHRLRKD</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">&#160;&#160;PLETQD---- 
+ ---DAVRIER AVEEVLVP-- ---------- ----------</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">&#160;&#160;---------- 
+ ---------- --------*</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Each group begins with 
+ a line starting with a greater-than symbol (‘</font><font style="font-size: 11pt; 
+															 font-family: 'Courier New';" 
+															 size="2" face="Courier New">&gt;</font><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">’). 
+ This line is ignored. The first word in the following line (e.g.,</font> 
+ <font style="font-size: 11pt; font-family: 'Courier New';" size="2" face="Courier New">Chloroflex</font> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">above) 
+ is treated as the name of the sequence; the rest of that line is ignored 
+ Subsequent lines are taken as the sequence. This example would be converted 
+ to the</font> <i><font style="font-size: 11pt; font-family: Arial; font-style: italic;" 
+						 size="2" face="Arial">MEGA</font></i> <font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">file format as follows:</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#mega</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">!Title: filename</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#Chloroflex</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">MSKEHVQTIA TDDVSKNGHT PPTNASTPPY 
+ PFVAIVGQAE LKLALLLCVV</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">NPTIGGVMVM GHRGTAKSTA VRALAAMLPP 
+ IKAVAGCPYS CAPDRTAGLC</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">DQCRALEQQS GKTKKPAVIN IPVPVVDLPL 
+ GATEDRVCGT LDIERALTQG</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">VQAFAPGLLA RANRGFLYID EVNLLEDHLV 
+ DVLLDVAASG VNVVEREGVS</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">VRHPARFVLV GSGNPEEGDL RPQLLDRFGL 
+ HARITTITDV SERVEIVKRR</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">REYDADPFAF VEKWAKETQK LQRKIKQAQR 
+ RLPEVILPDP VLYKIAELCV</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">KLEVDGHRGE LTLARA-ATA LAALEGRNEV 
+ TVQDVRRIAV LALRHRLRKD</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">PLETQD---- ---DAVRIER AVEEVLVP-- 
+ ---------- ----------</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">---------- ---------- --------</font></p>
+</body>
+</html>

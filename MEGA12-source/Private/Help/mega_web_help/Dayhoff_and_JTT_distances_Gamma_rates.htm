@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="DistanceMethods_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Dayhoff and JTT distances (Gamma rates)</title>
+<link rel="stylesheet" href="DistanceMethods_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.2.1.2.1.0_2";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Computing Evolutionary Distances > Distance Models > Amino Acid Substitution Models > Gamma Distances" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+<h1 style="margin-left: 0in;"><span style="font-size: 11.0pt;">Dayhoff 
+ and JTT distances (Gamma rates)</span></h1>
+<p class="MTDisplayEquation"><span style="font-size: 11.0pt;">The PAM and 
+ JTT distances correct for multiple substitutions based on a model of amino 
+ acid substitution described as substitution-rate matrices. The PAM distance 
+ uses PAM 001 matrix (p. 348 in </span><a href="Dayhoff_1979.htm" style="font-size: 11pt; 
+											 color: #007fbf;"><u style="font-size: 11pt; 
+	 color: #007fbf;"><span style="font-size: 11pt; color: #007fbf;">Dayhoff 
+ 1979</span></u><span style="display: none; font-size: 11pt; color: #007fbf;">RH_Dayhoff_1979</span></a><span 
+	 style="font-size: 11.0pt;">) and the JTT distance uses JTT matrix 
+ (</span><u style="font-size: 11pt; color: #007fbf;"><span style="font-size: 11pt; 
+															 color: #007fbf;"><a 
+	 href="Jones_et_al_1992.htm" style="font-size: 11pt; color: #007fbf;">Jones 
+ et al. 1992</a></span></u><span style="display: none;">RH_Jones_et_al_1992</span><span 
+	 style="font-size: 11.0pt;">). The matrix (<i>F</i>) uses a substitution-rate 
+ matrix (<i>Q</i>) and the gamma distribution with parameter <i>a</i> for 
+ the rate variation among sites.&#160;&#160;It consists of the observed 
+ proportions of amino acid pairs with their divergence time <i>t</i>, given 
+ by the following equation</span></p>
+<p class="MTDisplayEquation"><span style="font-size: 11.0pt;"><img src="DistanceMethods_HC_files/image087.jpg" alt="" border="0" style="width:100%; max-width:305px" /></span></p>
+<p class="MTDisplayEquation"><span style="font-size: 11.0pt;">where <i>A</i> 
+ denotes the diagonal matrix of the equilibrium amino acid frequencies 
+ for <i>Q</i>. From this equation, the evolutionary distance <i>d</i> = 
+ 2<i>tQ</i> can be computed iteratively by a maximum-likelihood method. 
+ The eigen values for the PAM and JTT matrices required in this computation 
+ were obtained from the program source code of PHYLIP version 3.6&#160;&#160;(</span><a 
+	 href="Felsenstein_1993.htm" style="font-size: 11pt; color: #007fbf;"><u 
+	 style="text-underline: double; font-size: 11pt; color: #007fbf;"><span 
+	 style="font-size: 11pt; color: #007fbf;">Felsenstein et al. 1993-2001</span></u><span 
+	 style="display: none; font-size: 11pt; color: #007fbf;">Felsenstein_1993</span></a><span 
+	 style="font-size: 11.0pt;">).</span></p>
+<p class="MTDisplayEquation">&#160;</p>
+<p><i><span style="font-size: 11.0pt;">MEGA</span></i> <span style="font-size: 11.0pt;">provides 
+ facilities for computing the following quantities:</span></p>
+<table style="margin-left: 5.75pt;" cellspacing="0">
+	<col />
+	<col />
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 style="margin-top: 0in; text-autospace: none;"><b><u><span 
+		 style="font-size: 11.0pt;">Quantity</span></u></b></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 style="margin-top: 0in; text-autospace: none;"><b><u><span 
+		 style="font-size: 11.0pt;">Description</span></u></b></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 style="margin-top: 0in; text-autospace: none;"><i><span style="font-size: 11.0pt;">d</span></i><span 
+		 style="font-size: 11.0pt;">: distance</span></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">Number 
+		 of amino acid substitutions per site.</span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 style="margin-top: 0in; text-autospace: none;"><i><span style="font-size: 11.0pt;">L</span></i><span 
+		 style="font-size: 11.0pt;">: No of valid common sites</span></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">Number 
+		 of sites compared.</span></p></td>
+	</tr>
+</table>
+<p class="MTDisplayEquation">&#160;</p>
+<p class="MTDisplayEquation"><span style="font-size: 11.0pt;">The variance 
+ of <i>d</i> can be estimated by the bootstrap method.</span></p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

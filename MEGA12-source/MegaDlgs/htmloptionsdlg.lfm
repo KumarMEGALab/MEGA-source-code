@@ -1,0 +1,171 @@
+object HtmlOptionsDialog: THtmlOptionsDialog
+  Left = 552
+  Height = 551
+  Top = 239
+  Width = 372
+  BorderIcons = []
+  Caption = 'MEGA Export Options'
+  ClientHeight = 551
+  ClientWidth = 372
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnHelp = FormHelp
+  OnHide = FormHide
+  OnResize = FormResize
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.2.4.0'
+  object OptionsDlgStatusBar: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 528
+    Width = 372
+    Font.Color = clWindowText
+    Panels = <>
+    ParentFont = False
+  end
+  object BottomPanel: TPanel
+    Left = 0
+    Height = 45
+    Top = 483
+    Width = 372
+    Align = alBottom
+    BevelOuter = bvNone
+    Caption = 'BottomPanel'
+    ClientHeight = 45
+    ClientWidth = 372
+    Color = clWhite
+    ParentColor = False
+    TabOrder = 1
+    object ButtonsPanel: TPanel
+      Left = 0
+      Height = 45
+      Top = 0
+      Width = 372
+      Align = alClient
+      BevelOuter = bvNone
+      ClientHeight = 45
+      ClientWidth = 372
+      Color = clWhite
+      ParentColor = False
+      TabOrder = 0
+      object ToolBar1: TToolBar
+        Left = 31
+        Height = 30
+        Top = 7
+        Width = 358
+        Align = alNone
+        AutoSize = True
+        ButtonHeight = 30
+        ButtonWidth = 115
+        Caption = 'ToolBar1'
+        EdgeInner = esNone
+        EdgeOuter = esNone
+        HotImages = ImageForm.DlgButtonsHover
+        Images = ImageForm.DlgButtons
+        TabOrder = 0
+        object ToolButton1: TToolButton
+          Left = 1
+          Top = 0
+          Action = HelpAction
+        end
+        object ToolButton2: TToolButton
+          Left = 120
+          Top = 0
+          Action = CancelAction
+        end
+        object ToolButton3: TToolButton
+          Left = 239
+          Top = 0
+          Action = OkAction
+        end
+      end
+    end
+  end
+  object CEFWindowParent1: TCEFLinkedWindowParent
+    Left = 0
+    Height = 488
+    Top = 0
+    Width = 372
+    Align = alClient
+    TabOrder = 2
+    OnEnter = CEFWindowParent1Enter
+    OnExit = CEFWindowParent1Exit
+    Chromium = Chromium1
+  end
+  object OpenDialog: TOpenDialog
+    left = 208
+    top = 64
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    left = 232
+    top = 323
+    object ToggleDevToolsAction: TAction
+      Caption = 'ToggleDevToolsAction'
+      OnExecute = ToggleDevToolsActionExecute
+      ShortCut = 16468
+    end
+    object OpenFileAction: TAction
+      Caption = 'OpenFileAction'
+      OnExecute = OpenFileActionExecute
+      ShortCut = 16463
+    end
+    object ShowDevToolsAction: TAction
+      Caption = 'ShowDevToolsAction'
+      OnExecute = ShowDevToolsActionExecute
+      ShortCut = 24649
+    end
+    object ExecuteJavascript: TAction
+      Caption = 'ExecuteJavascript'
+      OnExecute = ExecuteJavascriptExecute
+      ShortCut = 16458
+    end
+    object DebugAction: TAction
+      Caption = 'DebugAction'
+      OnExecute = DebugActionExecute
+      ShortCut = 16452
+    end
+    object HelpAction: TAction
+      Caption = '&Help'
+      Hint = 'Display help documentation'
+      ImageIndex = 8
+      OnExecute = HelpButtonImgClick
+      ShortCut = 112
+    end
+    object CancelAction: TAction
+      Caption = '&Cancel'
+      Hint = 'Abort the current operation and close this window'
+      ImageIndex = 0
+      OnExecute = CancelButtonImgClick
+      ShortCut = 27
+    end
+    object OkAction: TAction
+      Caption = '&Ok'
+      Hint = 'Save the current settings and continue'
+      ImageIndex = 5
+      OnExecute = OkButtonImgClick
+      ShortCut = 16467
+    end
+  end
+  object SaveDialog: TSaveDialog
+    left = 90
+    top = 263
+  end
+  object OpenFolder: TSelectDirectoryDialog
+    left = 101
+    top = 66
+  end
+  object Chromium1: TChromium
+    OnProcessMessageReceived = Chromium1ProcessMessageReceived
+    OnGotFocus = Chromium1GotFocus
+    OnAfterCreated = Chromium1AfterCreated
+    OnBeforeClose = Chromium1BeforeClose
+    OnClose = Chromium1Close
+    left = 8
+    top = 8
+  end
+end

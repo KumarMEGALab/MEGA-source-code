@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+<meta name="OriginalFile" content="ContextHelp_HC.doc" />
+ <title>Minimum Evolution (Construct Phylogeny)</title>
+<link rel="stylesheet" href="ContextHelp_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "";
+</script>
+</head>
+<body link="blue" vlink="purple">
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1><span style=" font-size:11.0pt;">Minimum Evolution (Construct Phylogeny)</span></h1>
+<p class="keyword">Phylogeny | Construct/Test Minimum Evolution Tree…</p>
+<p><span style=" font-size:11.0pt;">This command is used to construct a phylogenetic tree under the minimum evolution criterion.&#160; In this method the sum, <i>S</i>, of all <a href="javascript:TextPopup(this)" id="HotSpot45721" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot45721', 'POPUP45721');
+//]]></script><span class="glosstext" id="POPUP45721" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> length estimates, <i>i.e</i>.</span></p>
+<p><i><span style=" font-size:11.0pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; S</span></i> <span style=" font-size:11.0pt;">=</span> <span style=" font-size:11.0pt;"></span><span style=" font-size:11.0pt;"><i>b<sub>i</sub></i>,</span></p>
+<p><span style=" font-size:11.0pt;">is computed for all plausible topologies, and the <a href="javascript:TextPopup(this)" id="HotSpot22814" class="glossterm">topology</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot22814', 'POPUP22814');
+//]]></script><span class="glosstext" id="POPUP22814" style="display: none;"> The branching pattern of a tree is its topology.</span> that has the smallest <i>S</i> value is chosen as the best tree: the ME tree.&#160; This criterion does not require the assumption of evolutionary rate constancy as needed in the <u style=" text-underline:double;"><span style=" color:green;">UPGMA analysis</span></u><span style=" display:none;">HC_UPGMA</span>.  Therefore the inferred phylogenetic tree is an <a href="javascript:TextPopup(this)" id="HotSpot57522" class="glossterm">unrooted tree</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot57522', 'POPUP57522');
+//]]></script><span class="glosstext" id="POPUP57522" style="display: none;"> An unrooted tree is one in which no assumption is made regarding the ancestor of all the taxa in the tree.</span>, even though, for ease of inspection, it is often displayed in a manner similar to rooted trees.</span></p>
+<p><i><span style=" font-size:11.0pt;">MEGA</span></i> <span style=" font-size:11.0pt;">employs the <u><span style=" color:green;"><a href="javascript:TextPopup(this)" id="HotSpot50647" class="glossterm">Close-Neighbor-Interchange (CNI)</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot50647', 'POPUP50647');
+//]]></script><span class="glosstext" id="POPUP50647" style="display: none;"> In any method, examining all possible topologies is very time consuming.  This algorithm reduces the time spent searching by first producing a temporary tree, (e.g., an NJ tree when an ME tree is being sought), and then examining all of the topologies that are different from this temporary tree by a topological distance of dT = 2 and 4.  If this is repeated many times, and all the topologies previously examined are avoided, one can usually obtain the tree being sought.    For the MP method, the CNI search can start with a tree generated by the random addition of sequences.  This process can be repeated multiple times to find the MP tree.  See Nei &amp; Kumar (2000) for details.</span></span></u><span style=" display:none;">RH_Close_Neighbor_Interchange_CNI</span> algorithm to find the ME tree.  This is a <a href="javascript:TextPopup(this)" id="HotSpot32612" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot32612', 'POPUP32612');
+//]]></script><span class="glosstext" id="POPUP32612" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> swapping method, which begins with a given initial tree.  You can ask <i>MEGA</i> to automatically construct a Neighbor-Joining (NJ) tree and use that as the starting tree.&#160; Alternatively, you can provide your own <u><span style=" color:green;"><a href="javascript:TextPopup(this)" id="HotSpot45645" class="glossterm">topology</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot45645', 'POPUP45645');
+//]]></script><span class="glosstext" id="POPUP45645" style="display: none;"> The branching pattern of a tree is its topology.</span></span></u><span style=" display:none;">RH_Topology</span>.&#160; Note that the final tree produced after this search is not guaranteed to be the ME tree.&#160; These options are available in the <i><u style=" text-underline:double;"><span style=" color:green;">Analysis Preferences</span></u><span style=" display:none;">HC_ME_Analysis_Options</span></i> dialog box, which is displayed before the phylogenetic analysis begins.  This dialog box also allows you to specify the distance estimation method, subset of sites to include, and whether to conduct a test of the <a href="javascript:TextPopup(this)" id="HotSpot52110" class="glossterm">inferred tree</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot52110', 'POPUP52110');
+//]]></script><span class="glosstext" id="POPUP52110" style="display: none;"> A tree reconstructed from the observed sequence or other appropriate data using any tree-making method (such as UPGMA, NJ, ME, or MP) is known as an inferred or reconstructed tree.</span>.</span></p>
+<p><span style=" font-size:11.0pt;">&#160;</span></p>
+<b><span style=" font-size:11.0pt; font-family:'Arial' ,sans-serif;"><br clear="all" /></span></b>
+</body>
+</html>

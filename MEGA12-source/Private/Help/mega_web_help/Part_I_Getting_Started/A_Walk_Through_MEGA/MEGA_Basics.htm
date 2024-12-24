@@ -1,0 +1,1142 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>MEGA Basics</title>
+<link rel="StyleSheet" href="../../default.css" type="text/css" />
+ <link rel="StyleSheet" href="../../default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "1.3.0_2";
+</script>
+ <meta name="topic-breadcrumbs" content="Part I: Getting Started > A Walk Through MEGA" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+
+<h1>MEGA Basics</h1>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">In 
+ this tutorial, we will focus on opening and manipulating data files and 
+ saving results.</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">All of 
+ the data files used in this tutorial can be found in the</font> <i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">MEGA/Examples</font></i><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">/</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">folder</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">(The 
+ default location for Windows users is</font> <i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">C:\Users\UserName\Documents\MEGA</font></i><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">7</font></i><i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">\Examples\</font></i><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">.</font></i> <font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">The 
+ location for Mac users is</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+											 font-style: italic;" size="4" 
+											 face="Times New Roman">$HOME/MEGA/Examples, 
+ where $HOME is the user’s home directory</font></i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">).</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">You 
+ can directly access the Examples folder by clicking the ‘Examples’ button 
+ on the bottom bar of the main window.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Active 
+ Files vs. Open Files</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">In 
+ order to perform any kind of calculation/analysis in</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">you will need to provide a data file. If 
+ you are running an analysis on a data file with sequences then you must 
+ make sure that the sequences have been aligned prior to analysis (the 
+ sequences must be all the same length). In order to get the sequences 
+ ready for analysis you may have to align them using the Alignment Editor 
+ which provides automated and manual alignment facilities. If you have 
+ a file which needs editing in order to conform to one of the file format 
+ standards you can open it up in the Text Editor for manual editing.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Viewing 
+ a Data File Using the MEGA Text Editor</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">From 
+ the main</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">menu, you can open any text file for viewing 
+ and/or editing. In this example, we will open a native</font> <i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">MEGA</font></i> <font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">text 
+ file and explore its format.</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">This 
+ feature isn’t used too often in</font> <i><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman'; 
+												 font-style: italic;" size="4" 
+												 face="Times New Roman">MEGA</font></i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">, but is useful when you have a file which 
+ is corrupted or needs manual editing. If you want to start using</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">MEGA</font></i> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">ASAP, 
+ you can skip this example.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example 
+ 1.1</font></b><b><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-weight: bold;" size="4" face="Times New Roman">:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">To 
+ open the text editor, click</font> <b><i><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman'; 
+												 font-weight: bold; font-style: italic;" 
+												 size="4" face="Times New Roman">File</font></i></b> 
+ <b><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold;" 
+			 size="4" face="Times New Roman">|</font></b> <b><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; font-style: italic;" 
+	 size="4" face="Times New Roman">Edit a Text File</font></i></b> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">from the main</font> <i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">menu</font><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">In 
+ the window that opens, select</font> <b><i><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-weight: bold; 
+													 font-style: italic;" 
+													 size="4" face="Times New Roman">File 
+ | Open</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">and use the 
+ file browser to navigate to the</font> <i><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman'; 
+												 font-style: italic;" size="4" 
+												 face="Times New Roman">MEGA</font></i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">/Examples directory. Select the &quot;Drosophila_Adh.meg&quot; 
+ file to open it.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Examine 
+ the &quot;Drosophila_Adh.meg&quot; file. Notice the OTU (Operational Taxonomic 
+ Unit) names and the interleaved sequence data.</font> <font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">This 
+ file is in the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+								 font-style: italic;" size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">format which is one of the two formats 
+ which</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-style: italic;" size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">reads for analysis. The other format</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">MEGA</font></i> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">accepts 
+ for analysis is FASTA.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Note:</font></b></p>
+<ul>
+	<li style="font-size: 10pt;"><p style="margin-bottom: 5pt; margin-top: 5pt; 
+									 text-align: left; margin-left: 6pt;"><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">The</font> <b><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman'; 
+												 font-weight: bold;" size="4" 
+												 face="Times New Roman">#mega</font></b> 
+	 <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+			 face="Times New Roman">directive specifies the format of the 
+	 file</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+						 size="4" face="Times New Roman">, which is the</font> 
+	 <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+				 size="4" face="Times New Roman">MEGA</font></i> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">format</font><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">.</font></p></li>
+	<li style="font-size: 10pt;"><p style="margin-bottom: 5pt; margin-top: 5pt; 
+									 text-align: left; margin-left: 6pt;"><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">The</font> <b><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman'; 
+												 font-weight: bold;" size="4" 
+												 face="Times New Roman">!Title</font></b> 
+	 <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+			 face="Times New Roman">directive indicates the title of the 
+	 file, up to the semicolon.</font></p></li>
+	<li style="font-size: 10pt;"><p style="margin-bottom: 5pt; margin-top: 5pt; 
+									 text-align: left; margin-left: 6pt;"><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">The</font> <b><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman'; 
+												 font-weight: bold;" size="4" 
+												 face="Times New Roman">!Description</font></b> 
+	 <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+			 face="Times New Roman">directive indicates the description 
+	 of the file, up to the next semicolon.</font></p></li>
+	<li style="font-size: 10pt;"><p style="margin-bottom: 5pt; margin-top: 5pt; 
+									 text-align: left; margin-left: 6pt;"><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">The</font> <b><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman'; 
+												 font-weight: bold;" size="4" 
+												 face="Times New Roman">!<a href="javascript:TextPopup(this)" id="HotSpot37361" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot37361', 'POPUP37361');
+//]]></script><span class="glosstext" id="POPUP37361" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span></font></b> 
+	 <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+			 face="Times New Roman">directive is used to identify the <a href="javascript:TextPopup(this)" id="HotSpot33940" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot33940', 'POPUP33940');
+//]]></script><span class="glosstext" id="POPUP33940" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> 
+	 and its properties, up to the next semicolon.</font></p></li>
+	<li style="font-size: 10pt;"><p style="margin-bottom: 5pt; margin-top: 5pt; 
+									 text-align: left; margin-left: 6pt;"><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">The</font> <b><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman'; 
+												 font-weight: bold;" size="4" 
+												 face="Times New Roman">#</font></b> 
+	 <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+			 face="Times New Roman">directive is used to specify the sequence 
+	 data.</font></p></li>
+</ul>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">From 
+ the</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+					 size="4" face="Times New Roman">text editor</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">, you can make changes to the file such as 
+ specifying a format. Experiment with the menu options in the</font> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">editor</font><i><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-style: italic;" 
+													 size="4" face="Times New Roman">.</font></i></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Exit 
+ the text editor before proceeding with data analysis. Select the</font> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">File</font></i></b> 
+ <b><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold;" 
+			 size="4" face="Times New Roman">|</font></b> <b><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; font-style: italic;" 
+	 size="4" face="Times New Roman">Exit Editor</font></i></b> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">main 
+ menu option from the text editor window. If the editor asks you if you 
+ would like to save the changes that you have made to the file, click ‘</font><b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 font-style: italic;" size="4" face="Times New Roman">No’</font></i></b><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Opening 
+ (a</font></u></b><b><u><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+								 font-weight: bold; text-decoration: underline; " 
+								 size="4" face="Times New Roman">ctivating</font></u></b><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">)</font></u></b> 
+ <b><u><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 text-decoration: underline; " size="4" face="Times New Roman">a 
+ Data File</font></u></b> <b><u><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+										 font-weight: bold; text-decoration: underline; " 
+										 size="4" face="Times New Roman">for 
+ Analysis</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">You 
+ can activate a data file using any of the following methods:</font></p>
+<ul>
+	<li><p style="margin-bottom: 5pt; margin-top: 5pt; text-align: left; 
+			 margin-left: 24pt;"><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">From 
+	 the launch bar of the main</font> <i><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman'; 
+												 font-style: italic;" size="4" 
+												 face="Times New Roman">MEGA</font></i> 
+	 <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+			 face="Times New Roman">window, click</font> <b><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; font-style: italic;" 
+	 size="4" face="Times New Roman">Data | Open a File/Session</font></i></b></p></li>
+	<li><p style="margin-bottom: 5pt; margin-top: 5pt; text-align: left; 
+			 margin-left: 24pt;"><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">Click</font> 
+	 <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+				 font-weight: bold; font-style: italic;" size="4" face="Times New Roman">File</font></i></b> 
+	 <b><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold;" 
+				 size="4" face="Times New Roman">|</font></b> <b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 font-style: italic;" size="4" face="Times New Roman">Open a File/Session</font></i></b> 
+	 <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+			 face="Times New Roman">from the main menu of the</font> <i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">MEGA</font></i> <font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">window.</font></p></li>
+	<li><p style="margin-bottom: 5pt; margin-top: 5pt; text-align: left; 
+			 margin-left: 24pt;"><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">Select 
+	 an analysis or computation from</font> <i><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-style: italic;" 
+													 size="4" face="Times New Roman">MEGA</font></i><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">’</font></i><i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">s</font></i> 
+	 <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+			 face="Times New Roman">main menu</font><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">,</font> 
+	 <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+			 face="Times New Roman">then you</font> <font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">will</font> 
+	 <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+			 face="Times New Roman">be</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">prompted 
+	 to open</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">a data</font> 
+	 <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+			 face="Times New Roman">file</font><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">.</font> 
+	 <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+			 face="Times New Roman">You will have to supply a data file</font> 
+	 <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+			 face="Times New Roman">before proceeding with the calculation.&#160;</font></p></li>
+</ul>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example 
+ 1.2</font></b><b><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-weight: bold;" size="4" face="Times New Roman">:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Now 
+ we will select a file to activate</font> <font style="font-size: 12pt; 
+												 font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">using 
+ the first method</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">. From 
+ the main MEGA window, select</font> <b><i><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman'; 
+												 font-weight: bold; font-style: italic;" 
+												 size="4" face="Times New Roman">Data</font></i></b> 
+ <b><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold;" 
+			 size="4" face="Times New Roman">|</font></b> <b><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; font-style: italic;" 
+	 size="4" face="Times New Roman">Open a File/Session</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">from the launch bar. Navigate to the</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">Examples</font></i> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">directory (</font><i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">Mega7</font></i><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">/Examples</font></i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">) 
+ and open the &quot;Drosophila_Adh.meg,&quot; file.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Below 
+ the main</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">launch bar you will notice that two icons 
+ appear in the main</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+									 font-style: italic;" size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">window; a “TA” icon and a “Close Data” 
+ icon. Click the “TA” icon and you will be able to view the data you just 
+ opened. Click the “Close Data” icon to close the data file currently opened.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Note:</font></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">You can o</font><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">nly 
+ one data file may be open at a time.</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">You 
+ can open a different data file by going to</font> <b><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; font-style: italic;" 
+	 size="4" face="Times New Roman">Data</font></i></b> <b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">|</font></b> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Open 
+ a File/</font></i></b><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">Session</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">, you will see a warning which asks if you 
+ want to close the current file to open another, just say “yes”.</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">Each</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">time 
+ you select an analysis,</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+										 font-style: italic;" size="4" 
+										 face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">will ask if you would like to use the currently 
+ active data.</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">If you click 
+ “yes”, then the next analysis will use the data file you already have 
+ open, by clicking “no” the current data file will be closed and you will 
+ be asked for a new file.<br />
+</font> <font style="font-size: 10pt; font-family: 'Times New Roman';" 
+				 size="2" face="Times New Roman">Hint: You can turn this 
+ prompt off by selecting the checkbox “Remember to use currently active 
+ data file”.</font> <font style="font-size: 10pt; font-family: 'Times New Roman';" 
+							 size="2" face="Times New Roman">MEGA will 
+ then assume that you want to keep using that file until you open a different 
+ one or close MEGA.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Viewing 
+ Sequence Data</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">The</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">Sequence Data Explorer</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">allows you to visually explore your sequence 
+ data as well as perform a wide range of statistical analysis based on 
+ data composition. You can activate the</font> <i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">Sequence 
+ Data Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">window 
+ by using any of these methods:</font></p>
+<ul>
+	<li><p style="margin-bottom: 5pt; margin-top: 5pt; text-align: left; 
+			 margin-left: 6pt;"><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">Clicking 
+	 on the “TA” icon below the launch bar of the main</font> <i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">MEGA</font></i> <font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">window.</font></p></li>
+	<li><p style="margin-bottom: 5pt; margin-top: 5pt; text-align: left; 
+			 margin-left: 6pt;"><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">Press</font> 
+	 <b><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold;" 
+				 size="4" face="Times New Roman">F4</font></b> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">on 
+	 the keyboard.</font></p></li>
+</ul>
+<ul>
+	<li><p style="margin-bottom: 5pt; margin-top: 5pt; text-align: left; 
+			 margin-left: 6pt;"><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">Selecting</font> 
+	 <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+				 font-weight: bold; font-style: italic;" size="4" face="Times New Roman">Data</font></i></b> 
+	 <b><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold;" 
+				 size="4" face="Times New Roman">|</font></b> <b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 font-style: italic;" size="4" face="Times New Roman">Explore Active 
+	 Data</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">from the 
+	 launch bar of the main</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+											 font-style: italic;" size="4" 
+											 face="Times New Roman">MEGA</font></i> 
+	 <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+			 face="Times New Roman">window.</font></p></li>
+</ul>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Note: 
+ You must have a data file already opened to explore active data.</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example 
+ 1.3:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Re-open 
+ the Drosophila file as described in Example 1.2.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Select</font> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Data</font></i></b> 
+ <b><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold;" 
+			 size="4" face="Times New Roman">|</font></b> <b><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; font-style: italic;" 
+	 size="4" face="Times New Roman">Explore Active Data</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">from the launch bar of the main</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">MEGA</font></i> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">window 
+ and the sequence data will be displayed in the</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">Sequence 
+ Data Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">window. 
+ Leave this window open for the next example.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Note:</font></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">If you hover your mouse over the icons 
+ on the toolbar, each icon will display text</font> <font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">describing</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">the icons function.</font> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">This 
+ window provides</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">several</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">options for saving the displayed data in 
+ various formats, translating and highlighting sequences, setting site 
+ coverage, as well as various tools for locating information within the 
+ data file.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Translating 
+ Sequences</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Using 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman">Sequence 
+ Data Explorer</font></i><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">, you 
+ can translate protein-coding sequences into amino acid sequences and back 
+ using any of the</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">following</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">methods:</font></p>
+<ul>
+	<li><p style="margin-bottom: 5pt; margin-top: 5pt; text-align: left; 
+			 margin-left: 6pt;"><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">Select 
+	 the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-weight: bold; font-style: italic;" size="4" 
+							 face="Times New Roman">Data | Translate Sequences</font></i></b> 
+	 <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+			 face="Times New Roman">from the</font> <i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">Sequence 
+	 Data Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+									 size="4" face="Times New Roman">main 
+	 window.</font></p></li>
+	<li><p style="margin-bottom: 5pt; margin-top: 5pt; text-align: left; 
+			 margin-left: 6pt;"><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">Press 
+	 the</font> <b><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-weight: bold;" size="4" face="Times New Roman">T</font></b> 
+	 <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+			 face="Times New Roman">key on the keyboard.</font></p></li>
+	<li><p style="margin-bottom: 5pt; margin-top: 5pt; text-align: left; 
+			 margin-left: 6pt;"><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">Click 
+	 the button on the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+										 font-style: italic;" size="4" 
+										 face="Times New Roman">Sequence 
+	 Data Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+									 size="4" face="Times New Roman">launch 
+	 bar labeled</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+									 font-weight: bold; font-style: italic;" 
+									 size="4" face="Times New Roman">UUC</font></i></b> 
+	 <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+				 size="4" face="Times New Roman">-&gt;</font></i> <b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 font-style: italic;" size="4" face="Times New Roman">Phe</font></i></b><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">.</font></p></li>
+</ul>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Note:</font></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">The</font> <b><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-weight: bold;" 
+													 size="4" face="Times New Roman">T</font></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">key is a toggle - it turns the <a href="javascript:TextPopup(this)" id="HotSpot38949" class="glossterm">translation</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot38949', 'POPUP38949');
+//]]></script><span class="glosstext" id="POPUP38949" style="display: none;"> Translation is the process whereby each codon in the mRNA is translated into a particular amino acid, according to the genetic code specific to the species and its DNA, and added to the growing polypeptide chain.</span> 
+ on and off. You can tell whether the data is translated or not by clicking 
+ on the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-style: italic;" size="4" face="Times New Roman">Sequence 
+ Data Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">main menu 
+ option,</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-weight: bold; font-style: italic;" size="4" 
+							 face="Times New Roman">Data</font></i></b><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">. There will be a check mark next to the</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">Translate Sequences</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">option if the data is translated.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example 
+ 1.4:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">With 
+ the Drosophila file still open in Sequence Data Explorer</font> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">(from the previous example)</font><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">, 
+ press the T key on the keyboard to translate the nucleotide sequences 
+ into amino acid sequences.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Once 
+ the sequences are translated, calculate the amino acid composition by 
+ selecting the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+									 font-weight: bold; font-style: italic;" 
+									 size="4" face="Times New Roman">Statistics 
+ | Amino Acid Composition</font></i></b> <font style="font-size: 12pt; 
+												 font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">main 
+ menu command from the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+										 font-style: italic;" size="4" 
+										 face="Times New Roman">Sequence 
+ Data Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">window. 
+ If you</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+					 size="4" face="Times New Roman">do not</font> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">have M</font><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">icrosoft</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">Excel installed,</font> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">we 
+ suggest you select</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+										 font-weight: bold; font-style: italic;" 
+										 size="4" face="Times New Roman">Statistics 
+ | Display Results in Comma-delimited (CSV)</font></i></b> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">or</font> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Statistics 
+ | Display Results in Text Editor</font></i></b> <font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">to 
+ view the results in a CSV or text format</font><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">, 
+ before running the Ami</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+									 size="4" face="Times New Roman">n</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">o Acid Composition report. If you do have Excel</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">,</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+												 font-style: italic;" size="4" 
+												 face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">will open an Excel workbook displaying 
+ the calculations for the amino acid composition.</font> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Except 
+ for Mac, in which case you must save a file.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Exit 
+ out of excel.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Note: 
+ If Excel is not installed on your computer</font> <font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">and 
+ you still select save as Excel</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">,</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">You will be prompted to save the results 
+ in excel format somewhere on your hard drive.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Exporting 
+ Sequence Data</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Using 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman">Sequence 
+ Data Explorer</font></i><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">, you 
+ can save</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+						 size="4" face="Times New Roman">data in the following 
+ formats:</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+						 size="4" face="Times New Roman">Mega, Nexus (PAUP 
+ 4.0), Nexus (PAUP 3.0/MacClade), Phylip 3.0, Excel Workbook, or CSV (Excel 
+ Importable).</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example 
+ 1.5:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">On 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman">Sequence 
+ Data Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">launch 
+ bar, click on the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+										 font-weight: bold; font-style: italic;" 
+										 size="4" face="Times New Roman">Export 
+ Data</font></i></b>  <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">icon. 
+ The window,</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">Exporting 
+ Sequence Data</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">will appear.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">In 
+ this window, you can set the title and a description of the data as well 
+ as choose a format.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Note:</font></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">If you choose any of these export formats, 
+ except Excel, the data will open in the</font> <i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">Text 
+ File Editor and Format Converter</font></i> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">window</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">, if you wish to save the exported text go 
+ to</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-weight: bold; font-style: italic;" size="4" 
+						 face="Times New Roman">File | Save As</font></i></b><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">. If you choose the Excel</font> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">option 
+ and Excel is installed on your computer, the data will appear in a new 
+ Excel workbook. If you choose Excel and you do not have Excel installed 
+ on your computer, an Excel file will be created and you will be prompted 
+ for a location in which to save it. Select any of the options except Excel.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Saving 
+ Sessions</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">MEGA 
+ includes a feature for saving data sessions that allows you to save <a href="javascript:TextPopup(this)" id="HotSpot44297" class="glossterm">translation</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot44297', 'POPUP44297');
+//]]></script><span class="glosstext" id="POPUP44297" style="display: none;"> Translation is the process whereby each codon in the mRNA is translated into a particular amino acid, according to the genetic code specific to the species and its DNA, and added to the growing polypeptide chain.</span></font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">state</font><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">, 
+ highlighting, font changes,</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman"><a href="javascript:TextPopup(this)" id="HotSpot36957" class="glossterm">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot36957', 'POPUP36957');
+//]]></script><span class="glosstext" id="POPUP36957" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> 
+ groups, genes and <a href="javascript:TextPopup(this)" id="HotSpot51954" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot51954', 'POPUP51954');
+//]]></script><span class="glosstext" id="POPUP51954" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span>, and</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">or 
+ other changes assoc</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">iated 
+ with your current file into a single session file</font><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">. 
+ If you open the saved session later, the data and all of the associated 
+ settings will be restored</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">automatically</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example 
+ 1.6:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">From 
+ the Sequence Data Explorer main menu, select</font> <b><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; font-style: italic;" 
+	 size="4" face="Times New Roman">Data</font></i></b> <b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">|</font></b> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Save 
+ Session</font></i></b><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">. A ‘Save 
+ As’ dialog opens that will allow you to save the session in an “.mdsx” 
+ file at the location of your choice. Any <a href="javascript:TextPopup(this)" id="HotSpot55532" class="glossterm">translation</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot55532', 'POPUP55532');
+//]]></script><span class="glosstext" id="POPUP55532" style="display: none;"> Translation is the process whereby each codon in the mRNA is translated into a particular amino acid, according to the genetic code specific to the species and its DNA, and added to the growing polypeptide chain.</span>, highlighting, font 
+ changes, etc. will be saved in the resulting session. Save the file as 
+ “Drosophila_Adh.mdsx”.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Close 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman">Sequence 
+ Data Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">window 
+ and the data file by clicking the</font> <b><i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-weight: bold; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">Close 
+ Data</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">icon in the 
+ main MEGA window.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Reopen 
+ the session by selecting</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+											 font-weight: bold; font-style: italic;" 
+											 size="4" face="Times New Roman">Data 
+ | Open a File / Session…</font></i></b> <font style="font-size: 12pt; 
+												 font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">from 
+ the launch bar of the main</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+											 font-style: italic;" size="4" 
+											 face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">window and selecting the “Drosophila_Adh.mdsx” 
+ file. Any changes made to the data are preserved.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Close 
+ the Sequence Data Explorer window and the Drosophila file.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Viewing 
+ Distance Data</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">allows you to save distance data in</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">MEGA’s</font></i> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">native 
+ “.meg” format and</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">later 
+ explore the</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">data using 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman">Distance 
+ Data Explorer</font></i><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example 
+ 1.7:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">From 
+ the launch bar on the main</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+											 font-style: italic;" size="4" 
+											 face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">window, select</font> <b><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; font-style: italic;" 
+	 size="4" face="Times New Roman">Data</font></i></b> <b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">|</font></b> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Open 
+ a File/Session…</font></i></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">In 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman">Open 
+ a File</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+						 size="4" face="Times New Roman">window, find the 
+ data file named &quot;Distance Data.meg,&quot; then click the</font> <b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 font-style: italic;" size="4" face="Times New Roman">Open</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">button to activate the data file. This 
+ file sis located in the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+										 font-style: italic;" size="4" 
+										 face="Times New Roman">MEGA/Examples</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">directory.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">On 
+ the main</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">window, select</font> <b><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; font-style: italic;" 
+	 size="4" face="Times New Roman">Data</font></i></b> <b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">|</font></b> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Explore 
+ Active Data</font></i></b><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">. The 
+ contents of the selected data file will be displayed in the</font> <i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">Distance Data Explorer</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">window</font><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">In 
+ the leftmost column you will see the names of the <a href="javascript:TextPopup(this)" id="HotSpot46388" class="glossterm">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot46388', 'POPUP46388');
+//]]></script><span class="glosstext" id="POPUP46388" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> listed. You can 
+ resize this column by dragging the vertical bar at its right edge. The 
+ distances are displayed in the columns to the right.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">You 
+ can change the number of decimal places displayed in the distances by 
+ clicking on the toolbar icons labeled</font> <b><i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-weight: bold; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">0.0</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">(Decrease Decimal)</font> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">and</font> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">0.00</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">(Increase Decimal).</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Exporting 
+ Distance Data</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Throughout</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">MEGA</font></i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">, 
+ you will find viewing windows, each with its own set of toolbar icons. 
+ Wherever appropriate, you will see a bank of &quot;Export&quot; icons. 
+ The set of icons being displayed depends on which viewer you are using</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">and the current analysis</font><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">. 
+ In the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-style: italic;" size="4" face="Times New Roman">Distance 
+ Data Explorer</font></i><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">, the 
+ available export formats and associated icons are: XL, CSV,</font> <i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">MEGA</font></i> <font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">and 
+ TXT.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example 
+ 1.8:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Click 
+ on the icon labeled</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+										 font-weight: bold; font-style: italic;" 
+										 size="4" face="Times New Roman">CSV</font></i></b><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">. The</font> <i><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-style: italic;" 
+													 size="4" face="Times New Roman">Distance 
+ Write-out Options</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+									 size="4" face="Times New Roman">window 
+ will appear. Because you clicked on the CSV icon, the Output Format is 
+ automatically set to &quot;CSV : Comma-separated file&quot;.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Click 
+ the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-weight: bold; font-style: italic;" size="4" 
+						 face="Times New Roman">Print/ Save Matrix</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">button. A new CSV file will open in the</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">Text File Editor and File 
+ Format Converter</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+									 size="4" face="Times New Roman">displaying 
+ your data. The new file is automatically given a name and saved to your 
+ computers</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">Temporary</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">folder. Use the</font> <b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">File 
+ |</font></b> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-weight: bold; font-style: italic;" size="4" 
+							 face="Times New Roman">Save As</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">menu option in the text editor to give 
+ the file a different name and to specify a destination folder for it.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Calculating 
+ Average Distances</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">On 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman">Distance 
+ Data Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">task bar, 
+ you will find the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+										 font-weight: bold; font-style: italic;" 
+										 size="4" face="Times New Roman">Average</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">menu. From here, you can calculate average 
+ pair-wise distances between sequences in several ways:</font> <b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 font-style: italic;" size="4" face="Times New Roman">Overall</font></i></b><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">,</font> <b><i><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman'; 
+												 font-weight: bold; font-style: italic;" 
+												 size="4" face="Times New Roman">Within 
+ Groups</font></i></b><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">,</font> <b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 font-style: italic;" size="4" face="Times New Roman">Between Groups</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">and</font> <b><i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-weight: bold; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">Net 
+ Between Groups</font></i></b><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+									 size="4" face="Times New Roman">. 
+ Of course, in order to calculate based on groups, groups must be defined 
+ for your data. For more information on defining groups, see the Tutorial 
+ labeled “Managing <a href="javascript:TextPopup(this)" id="HotSpot31545" class="glossterm">Taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot31545', 'POPUP31545');
+//]]></script><span class="glosstext" id="POPUP31545" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> with Groups”.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example 
+ 1.9</font></b><b><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-weight: bold;" size="4" face="Times New Roman">:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Select</font> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Average 
+ | Overall</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">from the</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">Distance Data Explorer</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">main menu. A dialog is displayed that shows 
+ the calculated overall average pair-wise distance among all selected sequences.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Close 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman">Distance 
+ Data Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">window 
+ by selecting the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+									 font-weight: bold; font-style: italic;" 
+									 size="4" face="Times New Roman">File</font></i></b> 
+ <b><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold;" 
+			 size="4" face="Times New Roman">|</font></b> <b><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; font-style: italic;" 
+	 size="4" face="Times New Roman">Quit Viewer</font></i></b> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">main 
+ menu option.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Note:</font></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">If you wish to continue with the tutorial, 
+ leave</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-style: italic;" size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">open. If not, close</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">by selecting the</font> <b><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; font-style: italic;" 
+	 size="4" face="Times New Roman">File | Exit MEGA</font></i></b> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">menu command from the main</font> <i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">MEGA</font></i> <font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">window.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Note:</font></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">If you close</font> <i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">and then reopen it,</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">will remember</font> <font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">the 
+ settings you used previously for an analysis (bootstrap, model, etc.)</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">.</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">If 
+ the settings you used last are not applicable to the analysis you are 
+ performing currently,</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+										 font-style: italic;" size="4" 
+										 face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">will select</font> <font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">the 
+ first available applicable</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">options 
+ for you.</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">tries</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">to 
+ reuse as many settings as it can in order to save time and effort.</font></p>
+</body>
+</html>

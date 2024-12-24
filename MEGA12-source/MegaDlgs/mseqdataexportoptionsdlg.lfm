@@ -1,0 +1,327 @@
+object SeqDataExportOptionsDlg: TSeqDataExportOptionsDlg
+  Left = 609
+  Height = 515
+  Top = 275
+  Width = 406
+  Caption = 'Sequence Data Export Options'
+  ClientHeight = 515
+  ClientWidth = 406
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnResize = FormResize
+  Position = poOwnerFormCenter
+  SessionProperties = 'ExportSitesCBx.ItemIndex;FormatCBx.ItemIndex;MissingAndGapDataCBx.ItemIndex;NoncodingChkBx.Checked;Pos1stChkBx.Checked;Pos2ndChkBx.Checked;Pos3rdChkBx.Checked;SiteNumCBx.ItemIndex;SitesPerLineSE.Value'
+  LCLVersion = '2.2.6.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 125
+    Top = 0
+    Width = 406
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 125
+    ClientWidth = 406
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 12
+      Height = 15
+      Top = 10
+      Width = 25
+      Caption = 'Title'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 12
+      Height = 15
+      Top = 60
+      Width = 64
+      Caption = 'Description'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object TitleEdit: TEdit
+      Left = 27
+      Height = 23
+      Top = 27
+      Width = 350
+      TabOrder = 0
+    end
+    object DescriptionEdit: TMemo
+      Left = 27
+      Height = 45
+      Top = 77
+      Width = 350
+      TabOrder = 1
+    end
+  end
+  object Label3: TLabel
+    Left = 12
+    Height = 15
+    Top = 122
+    Width = 40
+    Caption = 'Format'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 12
+    Height = 15
+    Top = 173
+    Width = 76
+    Caption = 'Site Numbers'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object FormatCBx: TComboBox
+    Left = 27
+    Height = 23
+    Top = 138
+    Width = 200
+    ItemHeight = 15
+    ItemIndex = 0
+    Items.Strings = (
+      'MEGA'
+      'Nexus (PAUP 4.0)'
+      'Nexus (PAUP 3.0/MacClade)'
+      'PHYLIP 3.0'
+      'Excel Workbook'
+      'CSV (Excel Importable)'
+      'Fasta'
+    )
+    OnChange = FormatCBxChange
+    Style = csDropDownList
+    TabOrder = 1
+    Text = 'MEGA'
+  end
+  object SiteNumCBx: TComboBox
+    Left = 27
+    Height = 23
+    Top = 190
+    Width = 200
+    ItemHeight = 15
+    ItemIndex = 0
+    Items.Strings = (
+      'None'
+      'For each site'
+      'At the end of line'
+    )
+    OnChange = SiteNumCBxChange
+    Style = csDropDownList
+    TabOrder = 2
+    Text = 'None'
+  end
+  object Label6: TLabel
+    Left = 12
+    Height = 15
+    Top = 364
+    Width = 184
+    Caption = 'Missing Data and Alignment Gaps'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object MissingAndGapDataCBx: TComboBox
+    Left = 27
+    Height = 23
+    Top = 381
+    Width = 350
+    ItemHeight = 15
+    ItemIndex = 0
+    Items.Strings = (
+      'Include sites with missing/ambiguous data and gaps'
+      'Exclude sites with missing/ambiguous data and gaps'
+      'Exclude sites with missing/ambiguous data only'
+      'Exclude sites with alignment gaps only'
+    )
+    Style = csDropDownList
+    TabOrder = 3
+    Text = 'Include sites with missing/ambiguous data and gaps'
+  end
+  object Label7: TLabel
+    Left = 12
+    Height = 15
+    Top = 420
+    Width = 138
+    Caption = 'Selected Sites to Include'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object ExportSitesCBx: TComboBox
+    Left = 27
+    Height = 23
+    Top = 436
+    Width = 350
+    ItemHeight = 15
+    ItemIndex = 0
+    Items.Strings = (
+      'All sites'
+      'Only highlighted sites'
+      'Only unhighlighted sites'
+    )
+    Style = csDropDownList
+    TabOrder = 4
+    Text = 'All sites'
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 46
+    Top = 469
+    Width = 406
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 46
+    ClientWidth = 406
+    TabOrder = 5
+    object ToolBar1: TToolBar
+      Left = 24
+      Height = 30
+      Top = 7
+      Width = 358
+      Align = alNone
+      AutoSize = True
+      ButtonHeight = 30
+      ButtonWidth = 115
+      Caption = 'ToolBar1'
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      HotImages = ImageForm.DlgButtonsHover
+      Images = ImageForm.DlgButtons
+      TabOrder = 0
+      object ToolButton1: TToolButton
+        Left = 1
+        Top = 0
+        Action = HelpAction
+      end
+      object ToolButton2: TToolButton
+        Left = 120
+        Top = 0
+        Action = CancelAction
+      end
+      object ToolButton3: TToolButton
+        Left = 239
+        Top = 0
+        Action = OkAction
+      end
+    end
+  end
+  object Label5: TLabel
+    Left = 12
+    Height = 15
+    Top = 225
+    Width = 75
+    Caption = 'Sites Per Line'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object SitesPerLineSE: TSpinEdit
+    Left = 27
+    Height = 23
+    Top = 241
+    Width = 90
+    MaxValue = 500000000
+    TabOrder = 6
+    Value = 80
+  end
+  object InterleavedChkBx: TCheckBox
+    Left = 27
+    Height = 19
+    Top = 271
+    Width = 119
+    Caption = '&Interleaved Output'
+    OnChange = InterleavedChkBxChange
+    TabOrder = 7
+  end
+  object IncludeCodonPositionsLabel: TLabel
+    Left = 12
+    Height = 15
+    Top = 299
+    Width = 131
+    Caption = 'Include Codon Positions'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object NoncodingChkBx: TCheckBox
+    Left = 196
+    Height = 19
+    Top = 312
+    Width = 80
+    Caption = '&Noncoding'
+    Checked = True
+    State = cbChecked
+    TabOrder = 8
+  end
+  object Pos1stChkBx: TCheckBox
+    Left = 27
+    Height = 19
+    Top = 312
+    Width = 35
+    Caption = '&1st'
+    Checked = True
+    State = cbChecked
+    TabOrder = 9
+  end
+  object Pos2ndChkBx: TCheckBox
+    Left = 83
+    Height = 19
+    Top = 312
+    Width = 40
+    Caption = '&2nd'
+    Checked = True
+    State = cbChecked
+    TabOrder = 10
+  end
+  object Pos3rdChkBx: TCheckBox
+    Left = 147
+    Height = 19
+    Top = 312
+    Width = 37
+    Caption = '&3rd'
+    Checked = True
+    State = cbChecked
+    TabOrder = 11
+  end
+  object KeepFullCodonsCbox: TCheckBox
+    Left = 27
+    Height = 19
+    Top = 335
+    Width = 112
+    Caption = 'Keep Full Codons'
+    TabOrder = 12
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    Left = 304
+    Top = 168
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 296
+    Top = 128
+    object OkAction: TAction
+      Caption = 'OkAction'
+      ImageIndex = 5
+      OnExecute = OkBtnClick
+      ShortCut = 16467
+    end
+    object CancelAction: TAction
+      Caption = 'CancelAction'
+      ImageIndex = 0
+      OnExecute = CancelBtnClick
+      ShortCut = 27
+    end
+    object HelpAction: TAction
+      Caption = 'HelpAction'
+      ImageIndex = 8
+      OnExecute = HelpBtnClick
+      ShortCut = 112
+    end
+  end
+end

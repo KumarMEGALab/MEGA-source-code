@@ -1,0 +1,400 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+ <title>Estimating Evolutionary Distances</title>
+<link rel="StyleSheet" href="../../default.css" type="text/css" />
+ <link rel="StyleSheet" href="../../default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "1.3.0_4";
+</script>
+ <meta name="topic-breadcrumbs" content="Part I: Getting Started > A Walk Through MEGA" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+<h1>Estimating Evolutionary Distances</h1>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">In 
+ this</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+					 size="4" face="Times New Roman">tutorial</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">, we will</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">estimate</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">evolutionary</font> <font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">distances 
+ for sequences from 11</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+										 font-style: italic;" size="4" 
+										 face="Times New Roman">Drosophila</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">species</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">using 
+ various models</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">.</font> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">The data files used in this tutorial</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">can be found in the</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">MEGA/Examples</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">folder (</font><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">The 
+ d</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+				 size="4" face="Times New Roman">efault location for Windows 
+ users is</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">C:\Users\UserName\Documents\MEGA</font></i><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">7</font></i><i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">\Examples\</font></i><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">.</font></i> <font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">The 
+ de</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+				 size="4" face="Times New Roman">fault location for Mac 
+ users is</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">$HOME/MEGA/Examples, 
+ where $HOME is the user’s home directory</font></i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">).</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Estimating</font></u></b> 
+ <b><u><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 text-decoration: underline; " size="4" face="Times New Roman">Evolutionary 
+ Distances</font></u></b> <b><u><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+										 font-weight: bold; text-decoration: underline; " 
+										 size="4" face="Times New Roman">Using 
+ Pairwise Distance</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">In 
+ MEGA, you can estimate evolutionary distances between sequences by computing 
+ the proportion of nucleotide differences between each pair of sequences.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example 
+ 3.1:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Open 
+ the &quot;Drosophila_Adh.meg&quot; data file.</font> <font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">If 
+ needed, refer to the</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+									 size="4" face="Times New Roman">“MEGA 
+ Basics” tutorial.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">From 
+ the</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+					 size="4" face="Times New Roman">main</font> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">M</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">EGA</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">launch bar</font><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">, 
+ select</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-weight: bold; font-style: italic;" size="4" 
+							 face="Times New Roman">Distance | Compute 
+ Pairwise Distance</font></i></b><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">In 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman">Analysis 
+ Preferences</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">window</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">, click the</font> <i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">Substitutions 
+ Type</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+						 size="4" face="Times New Roman">pull-down and 
+ then select the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+									 font-weight: bold; font-style: italic;" 
+									 size="4" face="Times New Roman">Nucleotide</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">option.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Click 
+ the pull-down for</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+									 font-style: italic;" size="4" face="Times New Roman">Model/Method</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">and select the</font> <b><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; font-style: italic;" 
+	 size="4" face="Times New Roman">p-distance</font></i></b> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">model</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">.</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">For 
+ this example</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">we will be 
+ using the defaults for the remaining options. Click</font> <b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 font-style: italic;" size="4" face="Times New Roman">Compute</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">to begin the computation.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">A 
+ progress ind</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">icator will 
+ appear briefly</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">and then the 
+ distance computation results will be displayed in grid form in a new window. 
+ Leave this window open so we can compare the results from the nex</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">t steps</font><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 4.5pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Compute 
+ and Compare Distances Using Other</font></u></b> <b><u><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; text-decoration: underline; " 
+	 size="4" face="Times New Roman">Models/</font></u></b><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Methods</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">supports a wide collection of models for 
+ estimating evolutionary distances. Here we compare evolutionary distances 
+ calculated by using different models.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example</font></b> 
+ <b><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold;" 
+			 size="4" face="Times New Roman">3</font></b><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">.2:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Repeat 
+ Example 3.1 above, but select the</font> <b><i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-weight: bold; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">Jukes/Cantor 
+ model</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">under the</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">Model/Method</font></i> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">pull-down instead of the</font> <b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 font-style: italic;" size="4" face="Times New Roman">p-distance</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">model, leaving all the other options the 
+ same.</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+					 size="4" face="Times New Roman">Again, leave the results 
+ window open for comparison.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Repeat 
+ the analysis, this time selecting the</font> <b><i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-weight: bold; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">Tamura-Nei 
+ model</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">under the</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">Model/Method</font></i> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">pull-down, leaving all the other options the 
+ same.</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+					 size="4" face="Times New Roman">Again, leave the results 
+ window open for comparison.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">You 
+ are now able to compare the three open result windows which contain</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">the distances estimated by</font> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">the</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">different 
+ methods</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+					 size="4" face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">After 
+ you ha</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+					 size="4" face="Times New Roman">ve compared the results, 
+ select the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+								 font-weight: bold; font-style: italic;" 
+								 size="4" face="Times New Roman">File | 
+ Quit Viewer</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+									 size="4" face="Times New Roman">option 
+ for each result window.&#160;</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">Do 
+ not close the</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">&quot;Drosophila_Adh.meg&quot; 
+ data file</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+						 size="4" face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 5pt 5.75pt;">&#160;</p>
+<p style="text-align: left; margin: 4pt 6.5pt 5pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Compute 
+ the Proportion of Amino Acid Differences</font></u></b></p>
+<p style="text-align: left; margin: 4pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">You 
+ can also calculate evolutionary distances based on the proportion of amino 
+ acid differences.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Note</font></b><b><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold;" 
+	 size="4" face="Times New Roman">:</font></b> <i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">will automatically translate nucleotide 
+ sequences into amino acid sequences using the selected genetic code table.</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">The genetic code table can be edited by</font> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Data</font></i></b> 
+ <b><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold;" 
+			 size="4" face="Times New Roman">|</font></b> <b><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; font-style: italic;" 
+	 size="4" face="Times New Roman">Select Genetic Code Table</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">from the main</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">launch bar</font><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example</font></b> 
+ <b><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold;" 
+			 size="4" face="Times New Roman">3</font></b><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">.3:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">From 
+ the main</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">window, select</font> <b><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; font-style: italic;" 
+	 size="4" face="Times New Roman">Distance |</font></i></b> <b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 font-style: italic;" size="4" face="Times New Roman">Compute Pairwise</font></i></b> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Distances</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">from the main menu. This will</font> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">display the</font> <i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">Analysis 
+ Preferences</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">window.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Click 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman">Substitutions 
+ Type</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+						 size="4" face="Times New Roman">pull-down, select</font> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Amino 
+ Acid</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">and then select</font> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">p-distance</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">under</font> <i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">Model/Method</font></i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Click 
+ the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-weight: bold; font-style: italic;" size="4" 
+						 face="Times New Roman">Compute</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">button to accept the default values for 
+ the rest of the options and begin the computation.</font> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">A 
+ progress dialog box will appear briefly. As with the</font> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">nucleotide 
+ estimation, a results viewer window will be displayed, showing the distances 
+ in a grid format.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">After 
+ you have inspected the results, use the</font> <b><i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-weight: bold; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">File 
+ | Quit Viewer</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+									 size="4" face="Times New Roman">command 
+ to</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+				 size="4" face="Times New Roman">close the results</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">viewer.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Close 
+ the data by selecting the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+												 font-weight: bold; font-style: italic;" 
+												 size="4" face="Times New Roman">Close 
+ Data</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">button on 
+ the main</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">task bar.</font></p>
+</body>
+</html>

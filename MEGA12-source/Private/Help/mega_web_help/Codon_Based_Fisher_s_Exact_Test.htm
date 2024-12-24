@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="ContextHelp_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Codon Based Fisher's Exact Test</title>
+<link rel="stylesheet" href="ContextHelp_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<style type="text/css">
+<!--
+A:visited { color:#800080; }
+A:link { color:#0000ff; }
+-->
+</style>
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "7.1.9.0_2";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix B: Main Menu Items and Dialogs Reference > Main MEGA Menus > Selection Menu" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1><span style="font-size: 11.0pt;">Codon Based Fisher's Exact Test</span></h1>
+<p class="keyword">Distance | <a href="javascript:TextPopup(this)" id="HotSpot34391" class="glossterm">Codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot34391', 'POPUP34391');
+//]]></script><span class="glosstext" id="POPUP34391" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span> 
+ Based Fisher’s Exact Test</p>
+<p><span style="font-size: 11.0pt;">This provides a test of selection based 
+ on the comparison of the numbers of </span><u style="color: #007fbf;"><span 
+	 style="color: #007fbf;"><a href="Synonymous_change.htm" style="color: #007fbf;">synonymous</a></span></u><span 
+	 style="display: none;">RH_Synonymous_change</span><span style="font-size: 11.0pt;"> 
+ and </span><a href="Nonsynonymous_change.htm" style="color: #007fbf;"><u 
+	 style="color: #007fbf;"><span style="color: #007fbf;">nonsynonymous</span></u><span 
+	 style="display: none; color: #007fbf;">RH_Nonsynonymous_change</span></a><span 
+	 style="font-size: 11.0pt;"> substitutions between sequences.&#160;&#160;Use 
+ this command to conduct a small sample test of <a href="javascript:TextPopup(this)" id="HotSpot30282" class="glossterm">positive 
+ selection</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot30282', 'POPUP30282');
+//]]></script><span class="glosstext" id="POPUP30282" style="display: none;"> At the DNA sequence level, positive selection refers to selection in favor of nonsynonymous substitutions.  In this case, the evolutionary distance based on nonsynonymous substitutions is expected to be greater than synonymous substitutions.</span> (</span><u style="color: #007fbf;"><span style="color: #007fbf;"><a 
+	 href="Zhang_et_al_1997.htm" style="color: #007fbf;">Zhang et al. 1997</a></span></u><span 
+	 style="display: none;">Zhang_et_al_1997</span><span style="font-size: 11.0pt;">): 
+ a one-tailed Fisher’s Exact test.&#160;&#160;If the resulting <i>P</i> 
+ -value is less than 0.05, then the null hypothesis of neutral evolution 
+ (strictly neutral and <a href="javascript:TextPopup(this)" id="HotSpot28049" class="glossterm">purifying selection</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot28049', 'POPUP28049');
+//]]></script><span class="glosstext" id="POPUP28049" style="display: none;"> Purifying selection refers to selection against nonsynonymous substitutions at the DNA level.  In this case, the evolutionary distance based on synonymous substitutions is expected to be greater than the distance based on nonsynonymous substitutions.</span>) 
+ is rejected.&#160;&#160;If the observed number of </span><u style="text-decoration: none; "><span 
+	 style="text-decoration: none; ">synonymous</span></u><span style="display: none;">RH_Synonymous_change</span><span 
+	 style="font-size: 11.0pt;"> differences per synonymous site (<i>p</i><sub>S</sub>) 
+ exceeds the number of </span><u style="text-decoration: none; "><span 
+	 style="text-decoration: none; ">nonsynonymous</span></u><span style="display: none;">RH_Nonsynonymous_change</span><span 
+	 style="font-size: 11.0pt;"> differences per nonsynonymous site (<i>p</i><sub>N</sub>) 
+ then <i>MEGA</i> sets <i>P&#160;</i>&#160;= 1 to indicate </span><u><span 
+	 style="color: #008000;"><a href="javascript:TextPopup(this)" id="HotSpot37909" class="glossterm">purifying 
+ selection</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot37909', 'POPUP37909');
+//]]></script><span class="glosstext" id="POPUP37909" style="display: none;"> Purifying selection refers to selection against nonsynonymous substitutions at the DNA level.  In this case, the evolutionary distance based on synonymous substitutions is expected to be greater than the distance based on nonsynonymous substitutions.</span></span></u><span style="display: none;">RH_Purifying_selection</span><span 
+	 style="font-size: 11.0pt;">, rather than </span><u><span style="color: #008000;"><a href="javascript:TextPopup(this)" id="HotSpot27848" class="glossterm">positive selection</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot27848', 'POPUP27848');
+//]]></script><span class="glosstext" id="POPUP27848" style="display: none;"> At the DNA sequence level, positive selection refers to selection in favor of nonsynonymous substitutions.  In this case, the evolutionary distance based on nonsynonymous substitutions is expected to be greater than synonymous substitutions.</span></span></u><span style="display: none;">RH_Positive_selection</span><span 
+	 style="font-size: 11.0pt;">.</span></p>
+<p>&#160;</p>
+<p><span style="font-size: 11.0pt;">See </span><u style="color: #007fbf;"><span 
+	 style="color: #007fbf;"><a href="Nei_and_Kumar_2000.htm" style="color: #007fbf;">Nei 
+ and Kumar (2000)</a></span></u><span style="display: none;">Nei_and_Kumar_2000</span><span 
+	 style="font-size: 11.0pt;"> (page 56) for further description and 
+ an example.</span></p>
+<p>&#160;</p>
+<b><span style="font-size: 11.0pt; font-family: Arial, sans-serif;"><br 
+	 style="clear: all;" clear="all" />
+</span></b> 
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="CentralDialogBox_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Large Sample Tests of Selection</title>
+<link rel="stylesheet" href="CentralDialogBox_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.6.1.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Tests of Selection > Synonymous/Nonsynonymous Tests" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1>Large Sample Tests of Selection</h1>
+<p><span style="font-size: 11.0pt;">One way to test whether <a href="javascript:TextPopup(this)" id="HotSpot33081" class="glossterm">positive selection</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot33081', 'POPUP33081');
+//]]></script><span class="glosstext" id="POPUP33081" style="display: none;"> At the DNA sequence level, positive selection refers to selection in favor of nonsynonymous substitutions.  In this case, the evolutionary distance based on nonsynonymous substitutions is expected to be greater than synonymous substitutions.</span> is operating on a 
+ <a href="javascript:TextPopup(this)" id="HotSpot14602" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot14602', 'POPUP14602');
+//]]></script><span class="glosstext" id="POPUP14602" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> is to compare the 
+ relative abundance of synonymous and nonsynonymous substitutions that 
+ have occurred in the <a href="javascript:TextPopup(this)" id="HotSpot37251" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot37251', 'POPUP37251');
+//]]></script><span class="glosstext" id="POPUP37251" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> 
+ sequences.&#160;&#160;For a pair of sequences, this is done by first estimating 
+ the number of synonymous substitutions per synonymous site (<i>d</i><sub>S</sub>) 
+ and the number of nonsynonymous substitutions per nonsynonymous site (<i>d</i><sub>N</sub>), 
+ and their variances: Var(<i>d</i><sub>S</sub>) and Var(<i>d</i><sub>N</sub>), 
+ respectively.&#160;&#160;With this information, we can test the null hypothesis 
+ that H<sub>0</sub>: <i>d</i><sub>N</sub> = <i>d</i><sub>S</sub> using 
+ a Z-test:</span></p>
+<p><span style="font-size: 11.0pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Z 
+ = (<i>d</i><sub>N</sub> - <i>d</i><sub>S</sub>) / SQRT(Var(<i>d</i><sub>S</sub>) 
+ + Var(<i>d</i><sub>N</sub>))</span></p>
+<p><span style="font-size: 11.0pt;">The level of significance at which 
+ the null hypothesis is rejected depends on the alternative hypothesis 
+ (HA).</span></p>
+<p><span style="font-size: 11.0pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;H<sub>0</sub>:&#160;&#160;&#160;&#160;&#160;&#160;&#160;<i>d</i><sub>N</sub> 
+ = <i>d</i><sub>S</sub></span></p>
+<p><span style="font-size: 11.0pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;HA: 
+ &#160;&#160;&#160;&#160;&#160;(a)&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<i>d</i><sub>N</sub></span> 
+ <span style="font-size: 11.0pt; font-family: Symbol;">¹</span> <span style="font-size: 11.0pt;"><i>d</i><sub>S</sub>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(test 
+ of neutrality).</span></p>
+<p style="margin-left: 1.5in; text-indent: -.5in;"><span style="font-size: 11.0pt;">(b)<span 
+	 style="font: 7.0pt 'Times New Roman';">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></span>&#160;<i><span 
+	 style="font-size: 11.0pt;">d</span></i><sub><span style="font-size: 11.0pt;">N</span></sub> 
+ <span style="font-size: 11.0pt;">&gt; <i>d</i><sub>S</sub> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(<a href="javascript:TextPopup(this)" id="HotSpot31894" class="glossterm">positive selection</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot31894', 'POPUP31894');
+//]]></script><span class="glosstext" id="POPUP31894" style="display: none;"> At the DNA sequence level, positive selection refers to selection in favor of nonsynonymous substitutions.  In this case, the evolutionary distance based on nonsynonymous substitutions is expected to be greater than synonymous substitutions.</span>).</span></p>
+<p style="margin-left: 1.5in; text-indent: -.5in;"><span style="font-size: 11.0pt;">(c)<span 
+	 style="font: 7.0pt 'Times New Roman';">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></span>&#160;<i><span 
+	 style="font-size: 11.0pt;">d</span></i><sub><span style="font-size: 11.0pt;">N</span></sub> 
+ <span style="font-size: 11.0pt;">&lt; <i>d</i><sub>S</sub> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(<a href="javascript:TextPopup(this)" id="HotSpot40249" class="glossterm">purifying selection</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot40249', 'POPUP40249');
+//]]></script><span class="glosstext" id="POPUP40249" style="display: none;"> Purifying selection refers to selection against nonsynonymous substitutions at the DNA level.  In this case, the evolutionary distance based on synonymous substitutions is expected to be greater than the distance based on nonsynonymous substitutions.</span>).</span></p>
+<p>&#160;</p>
+<p><span style="font-size: 11.0pt;">For alternative hypotheses (b) and 
+ (c), we use a one-tailed test and for (a) we use a two-tailed test.&#160;&#160;These 
+ three tests can be conducted directly for pairs of sequences, overall 
+ sequences, or within groups of sequences.&#160;&#160;For testing for selection 
+ in a pairwise manner, you can compute the variance of (<i>d</i><sub>N</sub> 
+ - <i>d</i><sub>S</sub>) by using either the analytical formulas or the 
+ bootstrap resampling method.</span></p>
+<p><span style="font-size: 11.0pt;">For data sets containing more than 
+ two sequences, you can compute the average number of synonymous substitutions 
+ and the average number of nonsynonymous substitutions to conduct a Z-test 
+ in manner similar to the one mentioned above.&#160;&#160;The variance 
+ of the difference between these two quantities is estimated by the bootstrap 
+ method (</span><u style="color: #007fbf;"><span style="color: #007fbf;"><a 
+	 href="Nei_and_Kumar_2000.htm" style="color: #007fbf;">Nei and Kumar 
+ [2000]</a></span></u><span style="display: none;">Nei_and_Kumar_2000</span><span 
+	 style="font-size: 11.0pt;">, page 56).</span></p>
+<p>&#160;</p>
+<b><span style="font-size: 11.0pt; font-family: Arial, sans-serif; color: #0000ff;"><br 
+	 style="clear: all;" clear="all" />
+</span></b> 
+</body>
+</html>

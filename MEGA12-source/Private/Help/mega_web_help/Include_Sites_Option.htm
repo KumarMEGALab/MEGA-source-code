@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="CentralDialogBox_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Include Sites Option</title>
+<link rel="stylesheet" href="CentralDialogBox_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.5.0_3";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Handling Missing Data and Alignment Gaps" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1>Include Sites Option</h1>
+<p><span style="font-size: 11.0pt;">With this command you can set the options 
+ for handling gaps and missing data in the analysis, such as including 
+ or excluding <a href="javascript:TextPopup(this)" id="HotSpot33226" class="glossterm">codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot33226', 'POPUP33226');
+//]]></script><span class="glosstext" id="POPUP33226" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span> positions, 
+ and restricting the analysis to only some types of <a href="javascript:TextPopup(this)" id="HotSpot31262" class="glossterm">labeled 
+ sites</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot31262', 'POPUP31262');
+//]]></script><span class="glosstext" id="POPUP31262" style="display: none;"> Sites in a sequence alignment can be categorized and labeled with user-defined symbols. Each category is represented by a letter or a number. Each site can be assigned to only one category, although any combination of categories can be selected for analysis.  Labeled sites work independently of and in addition to genes and domains, thus allowing complex subsets of sites to be defined easily.</span>, if applicable.</span></p>
+<p><u><span style="font-size: 11.0pt;">Gaps and Missing Data</span></u></p>
+<p><span style="font-size: 11.0pt;">You may choose to remove all sites 
+ containing <a href="javascript:TextPopup(this)" id="HotSpot35791" class="glossterm">alignment gaps</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot35791', 'POPUP35791');
+//]]></script><span class="glosstext" id="POPUP35791" style="display: none;"> Phylogenetic analysis on two or more DNA or amino acid sequences requires that the sequences be aligned so that the substitutions can be accurately enumerated.  During alignment, gaps must be introduced in sequences that have undergone deletions or insertions.  These gaps are known as alignment gaps or indels.</span> 
+ and missing information before the parsimony analysis begins (</span><u 
+	 style="color: #007fbf;"><span style="color: #007fbf;"><a href="Complete-Deletion_Option.htm" 
+	 style="color: #007fbf;">Complete-deletion</a></span></u><span style="display: none;">RH_Complete_Deletion_Option</span><span 
+	 style="font-size: 11.0pt;"> option).&#160;&#160;Alternatively, you 
+ may choose to retain all such sites.&#160;&#160;In this case, all missing-information 
+ and alignment gap sites are treated as missing data in the calculation 
+ of </span><u><span style="color: #008000;"><a href="javascript:TextPopup(this)" id="HotSpot31394" class="glossterm">tree 
+ length</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot31394', 'POPUP31394');
+//]]></script><span class="glosstext" id="POPUP31394" style="display: none;"> Tree length is the criterion used by the Maximum Parsimony method to search for the best tree.  It is defined as the sum of the minimum numbers of substitutions over all sites for the given topology.   To compute the tree length for the unweighted parsimony method, we use the procedure described in Fitch (1971), which is based on the two rules described below.  For a given site these rules are applied to each node and the sum of substitutions over all nodes and over all sites are taken.  Note that the estimation of the minimum number of substitutions is not affected by the position of the root.  Rule 1.  When the two descendent nodes of an ancestral node have some states (nucleotides or amino acids) in common, the ancestral node is assigned to the set of common states.  In this case, the most parsimonious explanation does not require any substitutions.  Rule 2.  When the two descendant nodes have no states in common, then all states in the descendent nodes are combined to form the set of possible states at the ancestral node.  In this case, one substitution is required.</span></span></u><span style="display: none;">RH_Tree_length</span><span 
+	 style="font-size: 11.0pt;">.&#160;&#160;The third option is </span><u 
+	 style="color: #007fbf;"><span style="color: #007fbf;"><a href="Partial-Deletion_Option.htm" 
+	 style="color: #007fbf;">Partial Deletion</a></span></u><span style="display: none;">RH_Partial_Deletion_Option</span><span 
+	 style="font-size: 11.0pt;"> (Site coverage) as a percentage of unambiguous 
+ data (if there is less unambiguous data than the % specified then it gets 
+ deleted).</span></p>
+<p><u><span style="font-size: 11.0pt;">Codon Positions</span></u></p>
+<p><span style="font-size: 11.0pt;">Check or uncheck the boxes to select 
+ any combination of 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>, and 
+ non-coding positions for analysis.&#160;&#160;This option is available 
+ only if the nucleotide sequences contain protein-coding regions.&#160;&#160;If 
+ it does, you can choose between the analysis of nucleotide sequences or 
+ translated protein sequences.&#160;&#160;If the latter is chosen, <i>MEGA</i> 
+ will translate all protein-coding regions into amino acid sequences and 
+ conduct the protein sequence parsimony analysis.</span></p>
+<p><u><span style="font-size: 11.0pt;">Labeled Sites</span></u></p>
+<p><span style="font-size: 11.0pt;">This option is available only if you 
+ have labels associated with some or all of the sites in the data.&#160;&#160;By 
+ clicking on the row, you will be provided with the option of including 
+ sites with selected labels.&#160;&#160;If you choose to include only <a href="javascript:TextPopup(this)" id="HotSpot12124" class="glossterm">labeled sites</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot12124', 'POPUP12124');
+//]]></script><span class="glosstext" id="POPUP12124" style="display: none;"> Sites in a sequence alignment can be categorized and labeled with user-defined symbols. Each category is represented by a letter or a number. Each site can be assigned to only one category, although any combination of categories can be selected for analysis.  Labeled sites work independently of and in addition to genes and domains, thus allowing complex subsets of sites to be defined easily.</span>, then these sites will 
+ be the first extracted from the data.&#160;&#160;Then all other options 
+ mentioned above will be enforced.&#160;&#160;Note that labels associated 
+ with all three positions in the <a href="javascript:TextPopup(this)" id="HotSpot44124" class="glossterm">codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot44124', 'POPUP44124');
+//]]></script><span class="glosstext" id="POPUP44124" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span> 
+ must be included for a full <a href="javascript:TextPopup(this)" id="HotSpot48653" class="glossterm">codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot48653', 'POPUP48653');
+//]]></script><span class="glosstext" id="POPUP48653" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span> 
+ to be incorporated in the analysis.</span></p>
+<p>&#160;</p>
+<p>&#160;</p>
+<b><span style="font-size: 11.0pt; font-family: Arial, sans-serif; color: #0000ff;"><br 
+	 style="clear: all;" clear="all" />
+</span></b> 
+</body>
+</html>

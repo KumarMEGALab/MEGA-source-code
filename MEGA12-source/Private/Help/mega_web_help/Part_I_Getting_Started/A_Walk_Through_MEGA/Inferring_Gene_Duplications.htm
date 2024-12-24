@@ -1,0 +1,507 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+ <title>Inferring Gene Duplications</title>
+<link rel="StyleSheet" href="../../default.css" type="text/css" />
+ <link rel="StyleSheet" href="../../default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "1.3.0_15";
+</script>
+ <meta name="topic-breadcrumbs" content="Part I: Getting Started > A Walk Through MEGA" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+
+<h1>Inferring Gene Duplications</h1>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">This 
+ example shows how</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">to identify 
+ <a href="javascript:TextPopup(this)" id="HotSpot4635" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot4635', 'POPUP4635');
+//]]></script><span class="glosstext" id="POPUP4635" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> duplications (and optionally speciation events) in</font> <i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">MEGA</font></i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">. 
+ For this analysis,</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+									 font-style: italic;" size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">uses a <a href="javascript:TextPopup(this)" id="HotSpot39397" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot39397', 'POPUP39397');
+//]]></script><span class="glosstext" id="POPUP39397" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> Duplication Wizard window which 
+ will walk you through the necessary steps</font><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">.</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">The data files used in this example can 
+ be found in the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+								 font-style: italic;" size="4" face="Times New Roman">MEGA/Examples</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">folder (The default location for Windows 
+ users is</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">C:\Users\UserName\Documents\MEGA</font></i><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">7</font></i><i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">\Examples\</font></i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">. The default location for Mac users is</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">$HOME/MEGA/Examples</font></i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">, where</font> <i><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-style: italic;" 
+													 size="4" face="Times New Roman">$HOME</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">is the user’s home directory).</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 font-style: italic;" size="4" face="Times New Roman">Setting up the 
+ analysis</font></i></b></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">From 
+ the main</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">window, select</font> <b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">User 
+ Tree</font></b> <b><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-weight: bold;" size="4" face="Times New Roman">|</font></b> 
+ <b><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold;" 
+			 size="4" face="Times New Roman">Find <a href="javascript:TextPopup(this)" id="HotSpot29820" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot29820', 'POPUP29820');
+//]]></script><span class="glosstext" id="POPUP29820" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> Duplications</font></b><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">.</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">The</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman"><a href="javascript:TextPopup(this)" id="HotSpot37987" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot37987', 'POPUP37987');
+//]]></script><span class="glosstext" id="POPUP37987" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> Duplication Wizard</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">window, which outlines the 6 steps for 
+ identifying <a href="javascript:TextPopup(this)" id="HotSpot46494" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot46494', 'POPUP46494');
+//]]></script><span class="glosstext" id="POPUP46494" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> duplications in</font> <i><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-style: italic;" 
+													 size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">will be displayed.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Step1:</font></u></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">First, we will load a</font> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman"><a href="javascript:TextPopup(this)" id="HotSpot45081" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot45081', 'POPUP45081');
+//]]></script><span class="glosstext" id="POPUP45081" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> 
+ tree</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+					 size="4" face="Times New Roman">file.</font> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">In the</font> <i><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-style: italic;" 
+													 size="4" face="Times New Roman"><a href="javascript:TextPopup(this)" id="HotSpot37198" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot37198', 'POPUP37198');
+//]]></script><span class="glosstext" id="POPUP37198" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> 
+ Duplications</font></i> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+									 font-style: italic;" size="4" face="Times New Roman">Wizard</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">window,</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">click 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman">Load 
+ <a href="javascript:TextPopup(this)" id="HotSpot23475" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot23475', 'POPUP23475');
+//]]></script><span class="glosstext" id="POPUP23475" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> Tree</font></i><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+								 font-style: italic;" size="4" face="Times New Roman">...</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">button and then using the file open dialog,</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">find and select the “gene_tree.nwk</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">”</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">tree</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">file</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">in 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-variant: small-caps; font-style: italic;" size="4" 
+					 face="Times New Roman">MEGA</font></i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">\</font><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">Examples</font></i> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">directory</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">.</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">After 
+ the</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+					 size="4" face="Times New Roman">tree</font> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">file is parsed by</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">MEGA</font></i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">, the</font> <font style="font-size: 12pt; 
+												 font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">Map 
+ Species To <a href="javascript:TextPopup(this)" id="HotSpot59512" class="glossterm">Taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot59512', 'POPUP59512');
+//]]></script><span class="glosstext" id="POPUP59512" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span></font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">action 
+ in step 2 will become enabled.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Step 
+ 2:</font></u></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+						 size="4" face="Times New Roman">Second, we will</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">provide species names for each taxon in 
+ the <a href="javascript:TextPopup(this)" id="HotSpot24669" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot24669', 'POPUP24669');
+//]]></script><span class="glosstext" id="POPUP24669" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> tree</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">. Click the</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">Map Species Names</font></i><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">…</font></i> <font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">button 
+ and</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+					 size="4" face="Times New Roman">the species mapping</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">dialog</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">be 
+ displayed.</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+						 size="4" face="Times New Roman">Species names 
+ could be mapped manually using the grid displayed in this dialog, but 
+ we will load the names from a text file that specifies the mapping as 
+ taxon_name=species_name for each taxon in the <a href="javascript:TextPopup(this)" id="HotSpot19870" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot19870', 'POPUP19870');
+//]]></script><span class="glosstext" id="POPUP19870" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> tree</font><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">.</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">Click</font> <b><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-weight: bold;" 
+														 size="4" face="Times New Roman">File 
+ |</font></b> <b><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-weight: bold;" size="4" face="Times New Roman">Import</font></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">and</font> <font style="font-size: 12pt; 
+												 font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">then 
+ find the</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+						 size="4" face="Times New Roman">“</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">taxa_to_species_map.txt</font><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">”</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">file. Once</font> <i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">loads the file, the grid will be populated 
+ with species names for each taxon. Click the</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">Save</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">button to complete this step and then</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">step 3 will become enabled.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Step 
+ 3:</font></u></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+						 size="4" face="Times New Roman">Next, we</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">can optionally load a trusted species tree 
+ file</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+					 size="4" face="Times New Roman">. Click the</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">Load Species Tree</font></i><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">…</font></i> <font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">button 
+ and</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+					 size="4" face="Times New Roman">then using the file 
+ open dialog, find and select the “species_tree.nwk” file in the</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">MEGA\Examples</font></i> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">directory</font><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">.</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">After the species tree file is parsed by</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">MEGA</font></i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">, 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman"><a href="javascript:TextPopup(this)" id="HotSpot29729" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot29729', 'POPUP29729');
+//]]></script><span class="glosstext" id="POPUP29729" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> 
+ Duplication Wizard</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+									 size="4" face="Times New Roman">will 
+ jump to Step 5. This is because the tree in</font> <font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">the</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">“</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">gene_tree.nwk</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">” file</font> <font style="font-size: 12pt; 
+												 font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">is 
+ already rooted so we don’t need to specify the root to</font> <i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">MEGA</font></i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Step 
+ 4:</font></u></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+						 size="4" face="Times New Roman">We skip this step 
+ for brevity (but don’t worry, it is done exactly as</font> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">in</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">Step 5). Note – if our <a href="javascript:TextPopup(this)" id="HotSpot39677" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot39677', 'POPUP39677');
+//]]></script><span class="glosstext" id="POPUP39677" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> tree was not 
+ rooted, we could optionally skip this step. In that case,</font> <i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">MEGA</font></i> <font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">would</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">execute</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">the 
+ analysis with all possible p</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">lacements 
+ of the root and keep</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+									 size="4" face="Times New Roman">the 
+ result(s) that minimize the number of <a href="javascript:TextPopup(this)" id="HotSpot53971" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot53971', 'POPUP53971');
+//]]></script><span class="glosstext" id="POPUP53971" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> duplications found.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Step 
+ 5:</font></u></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+						 size="4" face="Times New Roman">Next,</font> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">must specify the placement of the root for 
+ the species tree as this is required for the analysis</font><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">.</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">Click the</font> <i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">Set 
+ Species Tree Root…</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+									 size="4" face="Times New Roman">button.</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">The species tree will be displayed in</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">Tree Explorer</font></i> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">window and the cursor will be adorned with 
+ the root placement tool icon. Click on the <a href="javascript:TextPopup(this)" id="HotSpot27898" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot27898', 'POPUP27898');
+//]]></script><span class="glosstext" id="POPUP27898" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> to</font> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">“</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">puffer fish</font><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">”</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">in the tree and then click the</font> <i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">Finished</font></i> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">button 
+ on the toolbar at the top of the window. MEGA will set the placement of 
+ the root internally and advance to the last step.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Step 
+ 6:</font></u></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+						 size="4" face="Times New Roman">Finally, in the</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman"><a href="javascript:TextPopup(this)" id="HotSpot25200" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot25200', 'POPUP25200');
+//]]></script><span class="glosstext" id="POPUP25200" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> Duplications</font></i> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">Wizard</font></i> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">window, 
+ click the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">Launch 
+ Analysis</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">button. Progress 
+ will be displayed as the analysis runs. When the analysis completes, the</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">Tree Explorer</font></i> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">window will return and display the</font> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman"><a href="javascript:TextPopup(this)" id="HotSpot35827" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot35827', 'POPUP35827');
+//]]></script><span class="glosstext" id="POPUP35827" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span></font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">tree.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;">&#160;</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 font-style: italic;" size="4" face="Times New Roman">Viewing the results</font></i></b></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">In 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman">Tree 
+ Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">window, the</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman"><a href="javascript:TextPopup(this)" id="HotSpot55566" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot55566', 'POPUP55566');
+//]]></script><span class="glosstext" id="POPUP55566" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span></font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">tree 
+ will be displayed with</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+									 size="4" face="Times New Roman"><a href="javascript:TextPopup(this)" id="HotSpot45820" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot45820', 'POPUP45820');
+//]]></script><span class="glosstext" id="POPUP45820" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> 
+ duplications and speciation events shown</font><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">.</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">Closed b</font><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">lue 
+ diamonds indicate those nodes which</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">represent 
+ <a href="javascript:TextPopup(this)" id="HotSpot47411" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot47411', 'POPUP47411');
+//]]></script><span class="glosstext" id="POPUP47411" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> duplication events</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+									 size="4" face="Times New Roman">.</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">Open red diamonds indicate speciation events.</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">To</font> <font style="font-size: 12pt; 
+												 font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">display 
+ species names instead of <a href="javascript:TextPopup(this)" id="HotSpot59224" class="glossterm">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot59224', 'POPUP59224');
+//]]></script><span class="glosstext" id="POPUP59224" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> names</font><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">, 
+ click</font> <b><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-weight: bold;" size="4" face="Times New Roman">View 
+ | Show/ Hide</font></b> <b><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+									 font-weight: bold;" size="4" face="Times New Roman">|</font></b> 
+ <b><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold;" 
+			 size="4" face="Times New Roman">Species Names.</font></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">You can change back to <a href="javascript:TextPopup(this)" id="HotSpot25730" class="glossterm">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot25730', 'POPUP25730');
+//]]></script><span class="glosstext" id="POPUP25730" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> names</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">by clicking</font> <b><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-weight: bold;" 
+															 size="4" face="Times New Roman">View 
+ | Show/Hide |</font></b> <b><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+									 font-weight: bold;" size="4" face="Times New Roman"><a href="javascript:TextPopup(this)" id="HotSpot36919" class="glossterm">Taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot36919', 'POPUP36919');
+//]]></script><span class="glosstext" id="POPUP36919" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> 
+ Names</font></b><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+						 size="4" face="Times New Roman">).</font> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">You can toggle the display of markers for <a href="javascript:TextPopup(this)" id="HotSpot26552" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot26552', 'POPUP26552');
+//]]></script><span class="glosstext" id="POPUP26552" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> 
+ duplications and speciation events by clicking</font> <b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">View</font></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">|</font> <b><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-weight: bold;" 
+													 size="4" face="Times New Roman">Show/Hide</font></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">|</font> <b><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-weight: bold;" 
+													 size="4" face="Times New Roman"><a href="javascript:TextPopup(this)" id="HotSpot30149" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot30149', 'POPUP30149');
+//]]></script><span class="glosstext" id="POPUP30149" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> 
+ Duplication Markers</font></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">(or</font> 
+ <b><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold;" 
+			 size="4" face="Times New Roman">Speciation Markers</font></b><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">).</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">You 
+ can also traverse <a href="javascript:TextPopup(this)" id="HotSpot53788" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot53788', 'POPUP53788');
+//]]></script><span class="glosstext" id="POPUP53788" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> duplications or speciations throughout the tree 
+ by clicking</font> <b><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-weight: bold;" size="4" face="Times New Roman">Search 
+ | <a href="javascript:TextPopup(this)" id="HotSpot31277" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot31277', 'POPUP31277');
+//]]></script><span class="glosstext" id="POPUP31277" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> Duplication/Speciation Events</font></b><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">.</font></p>
+</body>
+</html>

@@ -1,0 +1,274 @@
+object ParseTipDatesForm: TParseTipDatesForm
+  Left = 535
+  Height = 472
+  Top = 229
+  Width = 533
+  Caption = 'MX: Parse Tip Dates'
+  ClientHeight = 472
+  ClientWidth = 533
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnResize = FormResize
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  SessionProperties = 'DelimiterEdit.Text;DigitsEdit.Value;Height;PositionComboBox.ItemIndex;Width'
+  LCLVersion = '2.2.6.0'
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 449
+    Width = 533
+    Panels = <>
+    ParentFont = False
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 167
+    Top = 0
+    Width = 533
+    Align = alTop
+    ClientHeight = 167
+    ClientWidth = 533
+    ParentFont = False
+    TabOrder = 1
+    object GroupBox1: TGroupBox
+      Left = 8
+      Height = 153
+      Top = 8
+      Width = 208
+      Caption = 'Dates are Formatted As'
+      ClientHeight = 133
+      ClientWidth = 204
+      ParentFont = False
+      TabOrder = 0
+      object IsNumberBtn: TRadioButton
+        Left = 16
+        Height = 19
+        Top = 7
+        Width = 64
+        Caption = 'Number'
+        Checked = True
+        OnChange = IsNumberBtnChange
+        ParentFont = False
+        TabOrder = 3
+        TabStop = True
+      end
+      object IsDateBtn: TRadioButton
+        Left = 16
+        Height = 19
+        Top = 69
+        Width = 94
+        Caption = 'Calendar Date'
+        OnChange = IsDateBtnChange
+        ParentFont = False
+        TabOrder = 0
+      end
+      object DigitsEdit: TSpinEdit
+        Left = 42
+        Height = 23
+        Top = 29
+        Width = 86
+        Increment = 2
+        MaxValue = 4
+        MinValue = 2
+        OnChange = DigitsEditChange
+        ParentFont = False
+        TabOrder = 1
+        Value = 4
+      end
+      object DateFormatEdit: TEdit
+        Left = 42
+        Height = 23
+        Top = 95
+        Width = 88
+        ParentFont = False
+        TabOrder = 2
+        Text = 'yyyy-mm-dd'
+        TextHint = 'yyyy-mm-dd'
+      end
+      object Label1: TLabel
+        Left = 135
+        Height = 15
+        Top = 34
+        Width = 30
+        Caption = 'Digits'
+        ParentColor = False
+        ParentFont = False
+      end
+      object ApplyDateBtn: TButton
+        Left = 134
+        Height = 23
+        Top = 95
+        Width = 52
+        Caption = 'Apply'
+        Enabled = False
+        OnClick = ApplyDateBtnClick
+        ParentFont = False
+        TabOrder = 4
+      end
+    end
+    object GroupBox2: TGroupBox
+      Left = 224
+      Height = 153
+      Top = 8
+      Width = 296
+      Caption = 'Position in Taxa Names'
+      ClientHeight = 133
+      ClientWidth = 292
+      ParentFont = False
+      TabOrder = 1
+      object PositionBtn: TRadioButton
+        Left = 16
+        Height = 19
+        Top = 7
+        Width = 134
+        Caption = 'Locate Using Position'
+        Checked = True
+        OnChange = PositionBtnChange
+        ParentFont = False
+        TabOrder = 3
+        TabStop = True
+      end
+      object DelimitedBtn: TRadioButton
+        Left = 16
+        Height = 19
+        Top = 69
+        Width = 139
+        Caption = 'Locate Using Delimiter'
+        OnChange = DelimitedBtnChange
+        ParentFont = False
+        TabOrder = 0
+      end
+      object DelimiterEdit: TEdit
+        Left = 40
+        Height = 23
+        Top = 95
+        Width = 179
+        OnChange = DelimiterEditChange
+        OnEditingDone = DelimiterEditEditingDone
+        ParentFont = False
+        TabOrder = 1
+      end
+      object PositionComboBox: TComboBox
+        Left = 40
+        Height = 23
+        Top = 29
+        Width = 179
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'Beginning of Name'
+          'End of Name'
+          'First Number'
+          'Second Number'
+          'Third Number'
+          'Third Number From Last'
+          'Second Number From Last'
+          'Last Number'
+        )
+        OnChange = PositionComboBoxChange
+        ParentFont = False
+        Style = csDropDownList
+        TabOrder = 2
+        Text = 'Beginning of Name'
+      end
+      object Label4: TLabel
+        Left = 224
+        Height = 15
+        Top = 32
+        Width = 43
+        Caption = 'Position'
+        ParentColor = False
+        ParentFont = False
+      end
+      object ApplyDelimBtn: TButton
+        Left = 224
+        Height = 23
+        Top = 95
+        Width = 52
+        Caption = 'Apply'
+        Enabled = False
+        OnClick = ApplyDelimBtnClick
+        ParentFont = False
+        TabOrder = 4
+      end
+    end
+  end
+  object TipDatesDrawGrid: TDrawGrid
+    Left = 0
+    Height = 242
+    Top = 167
+    Width = 533
+    Align = alClient
+    ColCount = 4
+    DefaultDrawing = False
+    ExtendedSelect = False
+    FixedCols = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goThumbTracking, goSmoothScroll]
+    ParentFont = False
+    TabOrder = 2
+    OnColRowMoved = TipDatesDrawGridColRowMoved
+    OnDrawCell = TipDatesDrawGridDrawCell
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 40
+    Top = 409
+    Width = 533
+    Align = alBottom
+    ClientHeight = 40
+    ClientWidth = 533
+    ParentFont = False
+    TabOrder = 3
+    object ToolBar1: TToolBar
+      Left = 83
+      Height = 30
+      Top = 4
+      Width = 239
+      Align = alNone
+      AutoSize = True
+      ButtonHeight = 30
+      ButtonWidth = 115
+      Caption = 'ToolBar1'
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      HotImages = ImageForm.DlgButtonsHover
+      Images = ImageForm.DlgButtons
+      TabOrder = 0
+      object ToolButton2: TToolButton
+        Left = 1
+        Top = 0
+        Action = CancelAction
+      end
+      object ToolButton3: TToolButton
+        Left = 120
+        Top = 0
+        Action = SaveAction
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 361
+    Top = 189
+    object SaveAction: TAction
+      Caption = 'SaveAction'
+      ImageIndex = 5
+      OnExecute = SaveActionExecute
+      ShortCut = 16467
+    end
+    object CancelAction: TAction
+      Caption = 'CancelAction'
+      ImageIndex = 0
+      OnExecute = CancelActionExecute
+      ShortCut = 27
+    end
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    IniSection = 'TParseTipDatesForm'
+    Left = 423
+    Top = 293
+  end
+end

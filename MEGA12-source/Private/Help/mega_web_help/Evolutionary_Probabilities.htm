@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Evolutionary Probabilities</title>
+<link rel="StyleSheet" href="default.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.8_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+<h1>Evolutionary Probabilities</h1>
+<p>The Evolutionary Probabilities (EP) analysis in MEGA is used for predicting 
+ permissible and forbidden mutations from an evolutionary perspective. 
+ This tool computes evolutionary probabilities (EP’s) (<a href="Liu_et_al._2016.htm">Liu 
+ et al. 2016</a>) of alleles in DNA and protein sequences based on long-term 
+ substitution patterns contained in multiple sequence alignments. The EP 
+ value of an allele gives an evolutionary expectation of observing an allele 
+ in a population. The implementation of the EP calculation in MEGA differs 
+ from that described by Liu et al in that divergence time estimates are 
+ not required a priori but rather are estimated by MEGA using the RelTime 
+ method (<a href="Tamura_et_al_2012.htm">Tamura et al. 2012</a>). The MEGA 
+ GUI provides a wizard-style system that walks the user through the steps 
+ required to set up the analysis. </p>
+<p>&#160;</p>
+<ol style="list-style: decimal;">
+	<li style="font-size: 11pt;">The EP analysis in MEGA requires 2 input 
+	 data files and the wizard system prompts the user for them. </li>
+	<ol style="list-style: decimal; font-size: 11pt;">
+		<li style="font-size: 11pt;">The first input is a multiple sequence 
+		 alignment where the first sequence in the alignment is the focal 
+		 sequence for which EP values will be calculated. </li>
+		<li style="font-size: 11pt;">The second input is a Newick formatted 
+		 file that gives the evolutionary relationships for the sequences 
+		 contained in the input sequence alignment.</li>
+	</ol>
+	<li style="font-size: 11pt;">After loading the input files, MEGA prompts 
+	 the user to specify an outgroup which can be done in either of two 
+	 ways</li>
+	<ol style="list-style: decimal; font-size: 11pt;">
+		<li style="font-size: 11pt;">The tree can be displayed in the Tree 
+		 Explorer so that the outgroup can be specified by clicking on 
+		 a branch in the tree</li>
+		<li style="font-size: 11pt;">The list of taxa can be displayed 
+		 in the Taxa/Groups dialog and the outgroup can be specified by 
+		 selecting taxa names</li>
+	</ol>
+	<li><span style="font-size: 11pt;">The EP Wizard prompts for analysis 
+	 options (substitution model, rates and patterns, data sub-setting, 
+	 etc…) to be used by displaying the Analysis Preferences dialog.</span> 
+	 </li>
+</ol>
+<p>&#160;</p>
+<p>Once set up is complete and the user launches the calculation, MEGA 
+ displays a progress dialog as EP values are calculated for all sites included 
+ after sub-setting of the data. To compute EP values at a given site, MEGA 
+ computes a set of posterior probabilities of observing a specific allele 
+ at that site in the focal species. The first value in this set is computed 
+ using the full data set. The other values in the set are computed by progressively 
+ pruning the sister species or group closest to the focal species. Pruning 
+ stops when the tree has only the focal species and the outgroup. During 
+ this process, MEGA also computes relative times of divergence at each 
+ step and uses these divergence times to compute the evolutionary time 
+ span (ETS, <a href="Liu_et_al._2016.htm">see Liu et al. 2016</a>) at each 
+ step of the procedure. The ETS values are used to formulate a weighted 
+ mean of the set of posterior probabilities which give the EP values at 
+ the current site. The final result is the EP value for all possible bases 
+ (4 for DNA, 20 for amino acids) at each site in the input sequence alignment 
+ and the result can be displayed in a spreadsheet or text format.</p>
+</body>
+</html>

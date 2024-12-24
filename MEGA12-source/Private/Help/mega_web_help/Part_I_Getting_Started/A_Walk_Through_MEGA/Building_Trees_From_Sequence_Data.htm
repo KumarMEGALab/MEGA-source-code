@@ -1,0 +1,778 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+ <title>Building Trees From Sequence Data</title>
+<link rel="StyleSheet" href="../../default.css" type="text/css" />
+ <link rel="StyleSheet" href="../../default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "1.3.0_5";
+</script>
+ <meta name="topic-breadcrumbs" content="Part I: Getting Started > A Walk Through MEGA" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+
+<h1>Building Trees From Sequence Data</h1>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">In 
+ this tutorial, we will</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+									 size="4" face="Times New Roman">illustrate 
+ the procedures</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">for</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">building trees and in-memory sequence data 
+ editing, using the commands</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">available</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">in the</font> <i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">Data</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">and</font> <i><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-style: italic;" 
+													 size="4" face="Times New Roman">Phylogeny</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">menus.</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">We 
+ will be using the</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">&quot;Crab_rRNA.meg&quot; 
+ file</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+					 size="4" face="Times New Roman">which can be found 
+ in the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-style: italic;" size="4" face="Times New Roman">MEGA/Examples</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">directory. This file</font> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">contains 
+ nucleotide sequences for the large subunit mitochondrial rRNA <a href="javascript:TextPopup(this)" id="HotSpot35747" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot35747', 'POPUP35747');
+//]]></script><span class="glosstext" id="POPUP35747" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> from 
+ different crab species (Cunningham</font> <i><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-style: italic;" 
+													 size="4" face="Times New Roman">et 
+ al</font></i><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+					 size="4" face="Times New Roman">. 1992). Since the 
+ rRNA <a href="javascript:TextPopup(this)" id="HotSpot41227" class="glossterm">gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot41227', 'POPUP41227');
+//]]></script><span class="glosstext" id="POPUP41227" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> is transcribed, but not translated, it falls in th</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">e category of non-coding genes.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">The 
+ “Crab_rRNA.meg” file</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+									 size="4" face="Times New Roman">used 
+ in this tutorial can be found in the</font> <i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">MEGA/Examples</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">folder</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">(The 
+ default location for Windows users is</font> <i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">C:\Users\UserName\Documents\MEGA</font></i><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">7</font></i><i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">\Examples\</font></i><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">.</font></i> <font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">The 
+ default location for Mac users is</font> <i><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-style: italic;" 
+													 size="4" face="Times New Roman">$HOME/MEGA/Examples, 
+ where $HOME is the user’s home directory</font></i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">)</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Building 
+ a Neighbor-Joining</font></u></b> <b><u><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman'; 
+												 font-weight: bold; text-decoration: underline; " 
+												 size="4" face="Times New Roman">(NJ)</font></u></b> 
+ <b><u><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 text-decoration: underline; " size="4" face="Times New Roman">Tree</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">In 
+ this example, we will illustrate the basics of phylogenetic tree re-construction 
+ using</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-style: italic;" size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">and become familiar with the</font> <i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">Tree Explorer</font></i> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">window.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example 
+ 4.1:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Activate 
+ the &quot;Crab_rRNA.meg&quot; data file.</font> <font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">If 
+ necessary, refer</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">to</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">Example 1.2 of the “MEGA Basics” tutorial.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">From 
+ the</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+					 size="4" face="Times New Roman">main</font> <i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">MEGA</font></i> <font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">launch 
+ bar</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+				 size="4" face="Times New Roman">, select</font> <b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 font-style: italic;" size="4" face="Times New Roman">Phylogeny</font></i></b> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">| Construct/Test 
+ Neighbor-Joining Tree</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">menu 
+ option.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">In 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman">Analysis 
+ Preferences</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">window 
+ select the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+								 font-weight: bold; font-style: italic;" 
+								 size="4" face="Times New Roman">p-distance</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">option from the</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">Model/Method</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">drop-down.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Click</font> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Compute</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">to accept the defaults for the rest of 
+ the options and begin the computa</font><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">tion</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">. A progress indicator will appear briefly 
+ before the tree displays in the</font> <i><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman'; 
+												 font-style: italic;" size="4" 
+												 face="Times New Roman">Tree 
+ Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">window</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">To 
+ select a <a href="javascript:TextPopup(this)" id="HotSpot57205" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot57205', 'POPUP57205');
+//]]></script><span class="glosstext" id="POPUP57205" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span>, click o</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">n 
+ it with the left mouse button</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">. 
+ If you click on a <a href="javascript:TextPopup(this)" id="HotSpot24763" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot24763', 'POPUP24763');
+//]]></script><span class="glosstext" id="POPUP24763" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> with the right mouse button, you will get a small 
+ options menu that will let you <a href="javascript:TextPopup(this)" id="HotSpot26464" class="glossterm">flip</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot26464', 'POPUP26464');
+//]]></script><span class="glosstext" id="POPUP26464" style="display: none;"> This command changes the cursor to the 'Flip' icon. Then, if you click on an interior branch, MEGA reverses the order of the lineages defined by this branch.  The cursor will revert to the arrow if you click on the arrow icon on the left hand side of the Tree Explorer.</span> the <a href="javascript:TextPopup(this)" id="HotSpot23083" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot23083', 'POPUP23083');
+//]]></script><span class="glosstext" id="POPUP23083" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> and perform various other 
+ operations on it.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Select 
+ a <a href="javascript:TextPopup(this)" id="HotSpot14165" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot14165', 'POPUP14165');
+//]]></script><span class="glosstext" id="POPUP14165" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> and then</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">p</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">ress the</font> <b><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-weight: bold;" 
+													 size="4" face="Times New Roman">Up</font></b><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">,</font> <b><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+												 font-weight: bold;" size="4" 
+												 face="Times New Roman">Down</font></b><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">,</font> <b><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+												 font-weight: bold;" size="4" 
+												 face="Times New Roman">Left</font></b><b><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold;" 
+	 size="4" face="Times New Roman">,</font></b> <font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">and</font> 
+ <b><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold;" 
+			 size="4" face="Times New Roman">Right</font></b> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">arrow 
+ keys to see how the cursor moves through the tree.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Change 
+ the <a href="javascript:TextPopup(this)" id="HotSpot29414" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot29414', 'POPUP29414');
+//]]></script><span class="glosstext" id="POPUP29414" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> style by</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+									 size="4" face="Times New Roman">selecting</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">the</font> <b><i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-weight: bold; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">View 
+ | Tree/<a href="javascript:TextPopup(this)" id="HotSpot25162" class="glossterm">Branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot25162', 'POPUP25162');
+//]]></script><span class="glosstext" id="POPUP25162" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> Style</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">command 
+ from the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">Tree 
+ Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">main</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">menu.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Select 
+ the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-weight: bold; font-style: italic;" size="4" 
+						 face="Times New Roman">View | <a href="javascript:TextPopup(this)" id="HotSpot34730" class="glossterm">Topology</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot34730', 'POPUP34730');
+//]]></script><span class="glosstext" id="POPUP34730" style="display: none;"> The branching pattern of a tree is its topology.</span> Only</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">command from the</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">Tree 
+ Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">main</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">menu to</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">display 
+ the branching pattern</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+									 size="4" face="Times New Roman">on 
+ the screen.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">You 
+ can display the numerical <a href="javascript:TextPopup(this)" id="HotSpot12935" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot12935', 'POPUP12935');
+//]]></script><span class="glosstext" id="POPUP12935" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> lengths in the <a href="javascript:TextPopup(this)" id="HotSpot38555" class="glossterm">Topology</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot38555', 'POPUP38555');
+//]]></script><span class="glosstext" id="POPUP38555" style="display: none;"> The branching pattern of a tree is its topology.</span> Only option by 
+ selecting</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+								 font-weight: bold; font-style: italic;" 
+								 size="4" face="Times New Roman">View | 
+ Options</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">and clicking 
+ on the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-weight: bold; font-style: italic;" size="4" 
+							 face="Times New Roman">B</font></i></b><b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 font-style: italic;" size="4" face="Times New Roman">ranch</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">tab. Check the box labeled</font> <b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 font-style: italic;" size="4" face="Times New Roman">Display <a href="javascript:TextPopup(this)" id="HotSpot7669" class="glossterm">Branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot7669', 'POPUP7669');
+//]]></script><span class="glosstext" id="POPUP7669" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> 
+ Length</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">and click</font> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Ok</font></i></b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">.</font></i> <font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">&#160;</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Printing 
+ the NJ Tree</font></u></b> <b><u><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+										 font-weight: bold; text-decoration: underline; " 
+										 size="4" face="Times New Roman">(For 
+ Windows users)</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Windows 
+ users can print directly from</font> <i><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman'; 
+												 font-style: italic;" size="4" 
+												 face="Times New Roman">Tree 
+ Explorer</font></i><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example 
+ 4.2a:</font></b> <b><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-weight: bold;" size="4" face="Times New Roman">&#160;&#160;</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Select 
+ the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-weight: bold; font-style: italic;" size="4" 
+						 face="Times New Roman">File | Print</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">option from the</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">Tree 
+ Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">main</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">menu to bring up a standard</font> <i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">P</font></i><i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">rint</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">window</font><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">. 
+ This will print the tree full-sized and may take</font> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">multiple 
+ sheets of paper. Press</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+											 font-weight: bold; font-style: italic;" 
+											 size="4" face="Times New Roman">Cancel</font></i></b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">.</font></i></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">To 
+ restrict the size of the printed tree to a single sheet of paper, choose 
+ the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-weight: bold; font-style: italic;" size="4" 
+						 face="Times New Roman">File | Print in a Sheet</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">command from the</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">Tree 
+ Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">main</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">menu.</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">Press</font> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Ok</font></i></b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">.</font></i></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Select 
+ the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-weight: bold; font-style: italic;" size="4" 
+						 face="Times New Roman">File | Exit</font></i></b> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Tree 
+ Explorer</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">command 
+ to exit the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">Tree 
+ Explorer</font></i><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">.</font> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">Click the</font> <b><i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-weight: bold; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">OK</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">button to close the</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">Tree 
+ Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">without saving 
+ the tree session.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Printing 
+ the NJ Tree</font></u></b> <b><u><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+										 font-weight: bold; text-decoration: underline; " 
+										 size="4" face="Times New Roman">(For 
+ Mac users)</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">does not support printing directly from</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">Tree Explorer</font></i> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">when running on a Mac system. To print a tree 
+ using a Mac, users can save the tree image to a PDF file and then print 
+ it by normal means.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example 
+ 4.2b:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Select 
+ the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-weight: bold; font-style: italic;" size="4" 
+						 face="Times New Roman">Image | Save as PDF File</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">option from the</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">Tree 
+ Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">main</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">menu to bring up a standard</font> <i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">Save</font></i> <font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">window</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">.</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">Save 
+ the image to the desired location.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Once 
+ the document is saved, you can open it with your PDF reader and print 
+ the document in the same manner as any other PDF document.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Select 
+ the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-weight: bold; font-style: italic;" size="4" 
+						 face="Times New Roman">File | Exit</font></i></b> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Tree 
+ Explorer</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">command 
+ to exit the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">Tree 
+ Explorer</font></i><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">.</font> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">Click the</font> <b><i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-weight: bold; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">OK</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">button to close the</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">Tree 
+ Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">without saving 
+ the tree session.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Construct 
+ a Maximum Parsimony (MP) Tree Using the <a href="javascript:TextPopup(this)" id="HotSpot42433" class="glossterm">Branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot42433', 'POPUP42433');
+//]]></script><span class="glosstext" id="POPUP42433" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span>-&-Bound Search Option</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Using</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">MEGA</font></i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">, 
+ you can re-construct a phylogeny using Maximum Likelihood, Minimum Evolution, 
+ UPGMA, and Maximum Parsimony methods in addition to Neighbor-Joining. 
+ Here we re-construct the phylogeny for the “Crab_rRNA.meg” data using 
+ the Maximum Parsimony (MP) method.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example 
+ 4.3</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Select 
+ the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-weight: bold; font-style: italic;" size="4" 
+						 face="Times New Roman">Phylogeny | Construct/Test 
+ Maximum Parsimony Tree(s)</font></i></b> <font style="font-size: 12pt; 
+												 font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">menu 
+ option from</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">the main MEGA</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">launch bar</font><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">. 
+ In the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-style: italic;" size="4" face="Times New Roman">Analysis 
+ Preference</font></i><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+								 font-style: italic;" size="4" face="Times New Roman">s</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">window, choose</font> <b><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; font-style: italic;" 
+	 size="4" face="Times New Roman">Max-mini <a href="javascript:TextPopup(this)" id="HotSpot22690" class="glossterm">Branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot22690', 'POPUP22690');
+//]]></script><span class="glosstext" id="POPUP22690" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span>-&-bound</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">for the</font> <i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">MP 
+ Search Method</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">option.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Click 
+ the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-weight: bold; font-style: italic;" size="4" 
+						 face="Times New Roman">Compute</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">button to accept the defaults for the other 
+ options and begin the calculation. A progress window will appear briefly, 
+ and the tree will be displayed in</font> <i><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-style: italic;" 
+													 size="4" face="Times New Roman">Tree 
+ Explorer</font></i><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">(Windows 
+ users)</font></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+						 size="4" face="Times New Roman">Now print this 
+ tree by selecting either of the</font> <b><i><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-weight: bold; 
+													 font-style: italic;" 
+													 size="4" face="Times New Roman">Print</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">options from the</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">Tree 
+ Explorer's</font></i> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+								 font-style: italic;" size="4" face="Times New Roman">File</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">menu.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">(Mac 
+ users)</font></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+						 size="4" face="Times New Roman">Save the tree 
+ to a PDF file as described in Example 4.2b above.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Compare 
+ the NJ and MP trees. For this data set, the branching pattern of these 
+ two trees is identical.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Select 
+ the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-weight: bold; font-style: italic;" size="4" 
+						 face="Times New Roman">File | Exit</font></i></b> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Tree 
+ Explorer</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">command 
+ to exit the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">Tree 
+ Explorer</font></i><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">.</font> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">Click</font> <b><i><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-weight: bold; 
+													 font-style: italic;" 
+													 size="4" face="Times New Roman">OK</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">to close</font> <i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">Tree 
+ Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">without saving 
+ the tree session.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Constructing 
+ a MP Tree using the Heuristic Search</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">For 
+ each method of phylogenetic inference,</font> <i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">provides numerous options. In this example, 
+ we conduct MP analysis using the Min-Mini Heuristic search.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example 
+ 4.4:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Follow 
+ the steps in</font> <b><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+								 font-weight: bold;" size="4" face="Times New Roman">Example 
+ 4.3</font></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+						 size="4" face="Times New Roman">and instead of</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">choosing</font> <i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">Max-mini 
+ <a href="javascript:TextPopup(this)" id="HotSpot9834" class="glossterm">Branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot9834', 'POPUP9834');
+//]]></script><span class="glosstext" id="POPUP9834" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span>-&-bound,</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">choose</font> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Min-Mini 
+ Heuristic</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">for</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">MP Search Method</font></i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">. Change the</font> <i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">MP 
+ Search Level</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">to</font> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">2</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">and click</font> <b><i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-weight: bold; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">Compute</font></i></b><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Note</font></b><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">: In this example, the same tree is obtained 
+ by the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-style: italic;" size="4" face="Times New Roman">Max-mini 
+ <a href="javascript:TextPopup(this)" id="HotSpot39470" class="glossterm">Branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot39470', 'POPUP39470');
+//]]></script><span class="glosstext" id="POPUP39470" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span>-&-bound</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+									 size="4" face="Times New Roman">option 
+ as in the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">Min-Mini 
+ Heuristic</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">option as 
+ long as the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">MP 
+ Search Level</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">is set 
+ to</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman">2</font></i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">. However, the computational time is much shorter 
+ for the Heuristic method.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><u><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 text-decoration: underline; " size="4" face="Times New Roman">Examining 
+ Data Editing Features</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">For 
+ noncoding sequence data, OTUs (Operational Taxonomic Units) as well as 
+ sites can be selected for analysis.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example 
+ 4.5:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">From</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">the main</font> <i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">window select the</font> <b><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; font-style: italic;" 
+	 size="4" face="Times New Roman">Data | Select <a href="javascript:TextPopup(this)" id="HotSpot44887" class="glossterm">Taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot44887', 'POPUP44887');
+//]]></script><span class="glosstext" id="POPUP44887" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> and Groups</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">option</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">from 
+ the launch bar</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">. A dialog 
+ box is displayed.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">All 
+ the OTU labels are checked in the left panel. This indicates that all 
+ OTUs are included in the current active data subset. To remove the first 
+ OTU from the data, uncheck the checkbox next to the</font> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">first</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">OTU name in the left panel. Click the</font> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Close</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">button.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Now, 
+ when you construct a neighbor-joining tree from this data set, it will 
+ contain 12 OTUs instead of 13.</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">Close 
+ out of the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">Tree 
+ Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">window by 
+ selecting</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+								 font-weight: bold; font-style: italic;" 
+								 size="4" face="Times New Roman">File | 
+ Exit Tree Explorer</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">and 
+ do not save. D</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">eac</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">tivate the operational data set by</font> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">select</font><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">ing</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">the</font> <b><i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-weight: bold; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">Close 
+ Data</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">icon from 
+ the main</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">MEGA</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">window.</font></p>
+</body>
+</html>

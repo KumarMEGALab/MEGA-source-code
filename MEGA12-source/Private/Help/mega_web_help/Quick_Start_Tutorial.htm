@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Quick Start Tutorial</title>
+<link rel="StyleSheet" href="default.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "1.4.0_2";
+</script>
+ <meta name="topic-breadcrumbs" content="Part I: Getting Started > Using the Command-line Interface (MEGA-CC)" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+<h1>MEGA-CC Quick Start Tutorial</h1>
+<p style="font-weight: bold;">Example Data Files</p>
+<p>For this tutorial, we will use example data files that are included 
+ with MEGA. When MEGA-GUI is launched for the first time, it will copy 
+ these example files to your computer in your Documents folder<br />
+On Windows: %HOMEPATH%\Documents\MEGA X\Examples</p>
+<p>On *nix: ~/Documents/MEGA X/Examples</p>
+<p>&#160;</p>
+<p style="font-weight: bold;">Demo 1 - Computing a Timetree Using the Reltime 
+ Method</p>
+<p>Step 1 - Launch MEGA X and set to <span style="font-style: italic;">Prototype</span> 
+ mode</p>
+<p style="margin-left: 40px;">Open MEGA X the same way other applications 
+ are opened using your operating system</p>
+<p style="margin-left: 40px;">In the main MEGA X window, click the <span 
+	 style="font-style: italic;">Prototype</span> button to enable the 
+ generation of .mao files</p>
+<p style="margin-left: 40px;"><img src="main-form.png" alt="" style=" border:none; width:100%; max-width:883px;" border="0" /></p>
+<p style="margin-left: 40px;">&#160;</p>
+<p style="margin-left: 40px;">&#160;</p>
+<p style="margin-left: 40px;">When prompted for the input data type to 
+ be used, select <span style="font-style: italic;">Nucleotide (Non-coding)</span> 
+ from the drop down list</p>
+<p style="margin-left: 40px;"><img src="image2.gif" style=" border:none; width:100%; max-width:419px;" alt="" border="0" /></p>
+<p style="margin-left: 40px;">&#160;</p>
+<p style="margin-left: 40px;">&#160;</p>
+<p style="margin-left: 40px;">From the <span style="font-style: italic;">Clocks</span> 
+ menu on the main form, select <span style="font-style: italic;">Compute 
+ Timetree | Reltime-ML</span></p>
+<p style="margin-left: 40px; font-style: italic;"><img src="reltimemenu.png" alt="" style=" border:none; width:100%; max-width:1200px;" border="0" /></p>
+<p style="margin-left: 40px; font-style: italic;">&#160;</p>
+<p style="margin-left: 40px; font-style: italic;">&#160;</p>
+<p style="margin-left: 40px; font-style: normal;">In the Analysis Preferences 
+ Dialog, accept the default settings and click the Save Settings... button. 
+ When prompted for a location to save</p>
+<p style="margin-left: 40px; font-style: normal;">the .mao file, save it 
+ in the MEGA X\Examples folder as <span style="font-style: italic;">reltime_ml_nucleotide.mao</span></p>
+<p style="margin-left: 40px; font-style: normal;"><img src="image3.gif" style=" border:none; width:100%; max-width:513px;" alt="" border="0" /></p>
+<p style="margin-left: 40px; font-style: normal;">&#160;</p>
+<p style="margin-left: 40px; font-style: normal;">&#160;</p>
+<p style="margin-left: 40px; font-style: normal;">The Reltime analysis 
+ requires that we specify an outgroup. Using a text editor, create a text 
+ file named outgroup.txt and save it in the</p>
+<p style="margin-left: 40px; font-style: normal;">MEGA X\Examples directory. 
+ In the text file, add a single line (gibbon=outgroup) which specifies 
+ that in our input phylogeny, the outgroup</p>
+<p style="margin-left: 40px; font-style: normal;">is comprised of a single 
+ taxon named gibbon</p>
+<p style="margin-left: 40px; font-style: normal;"><img src="image4.gif" style=" border:none; width:100%; max-width:548px;" alt="" border="0" /></p>
+<p style="margin-left: 40px; font-style: italic;">&#160;</p>
+<p style="margin-left: 40px; font-style: italic;">&#160;</p>
+<p style="margin-left: 40px; font-style: normal;">Open a command prompt 
+ and navigate to the MEGA X\Examples folder. Launch MEGA-CC by executing 
+ the following command:</p>
+<p style="margin-left: 40px; font-style: normal;">&#160;</p>
+<p style="margin-left: 80px; font-weight: bold; font-style: normal;">megacc 
+ -a reltime_ml_nucleotide.mao -d mtCDNA.meg -t mtCDNA.nwk -g outgroup.txt 
+ -c mtCDNACalibration.txt -o demo1</p>
+<p style="margin-left: 80px; font-style: normal; font-weight: bold;">&#160;</p>
+<p style="margin-left: 80px; font-style: normal; font-weight: bold;"><img src="image6.gif" style=" border:none; width:100%; max-width:1243px;" alt="" border="0" /></p>
+<p style="margin-left: 80px; font-style: normal; font-weight: bold;">&#160;</p>
+<p style="margin-left: 80px; font-style: normal; font-weight: bold;">&#160;</p>
+<p style="margin-left: 40px; font-style: normal;">The Reltime analysis 
+ will run and progress updates will be displayed in the command prompt 
+ window</p>
+<p style="margin-left: 40px; font-style: normal;"><img src="image7.gif" style=" border:none; width:100%; max-width:953px;" alt="" border="0" /></p>
+<p style="margin-left: 40px; font-style: normal;">&#160;</p>
+<p style="margin-left: 40px; font-style: normal;">&#160;</p>
+<p style="margin-left: 40px; font-style: normal;"><span style="font-style: normal;">The 
+ analysis &#160;will produce several output files in the MEGA X\Examples 
+ folder:</span></p>
+<p style="margin-left: 80px;">demo1_exactTimes.nwk</p>
+<p style="margin-left: 80px;">This Newick file gives the timetree scaled 
+ according to the estimated divergence times.</p>
+<p style="margin-left: 80px;">&#160;</p>
+<p style="margin-left: 80px;">demo1_relTimes.nwk</p>
+<p style="margin-left: 80px;">This Newick file gives the timetree scaled 
+ according to the estimated relative divergence times.</p>
+<p style="margin-left: 80px;">&#160;</p>
+<p style="margin-left: 80px;">demo1_nexus.tre</p>
+<p style="margin-left: 80px;">This NEXUS file outputs the timetree in NEXUS 
+ format and includes additional information such as divergence time confidence 
+ intervals (tip: open this file in the FigTree application for advanced 
+ visualization capabilities).</p>
+<p style="margin-left: 80px;">&#160;</p>
+<p style="margin-left: 80px;">demo1.txt</p>
+<p style="margin-left: 80px;">This text file gives a more detailed representation 
+ of the timetree, including relative times, exact times, evolutionary rates, 
+ and divergence time std errors.</p>
+<p style="margin-left: 80px;">&#160;</p>
+<p style="margin-left: 80px;">demo1_summary.txt</p>
+<p style="margin-left: 80px;">This file gives analysis information such 
+ as the log likelihood value of the Maximum Likelihood tree, ts/tv ratio, 
+ &#160;etc...</p>
+<p>&#160;</p>
+</body>
+</html>

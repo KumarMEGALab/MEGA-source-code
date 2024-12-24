@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Branch</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--JQuery 3.2.1 Fallback-->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <!--JQuery 3.4.1-->
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>       
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script> 
+    <script type="text/javascript" src="js/select2.min.js"></script>
+    <script src="js/jquery.fontpicker.min.js"></script>
+    <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    <!--Bootstrap 3 Fallback-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!--Bootstrap 4-->
+    <link href="css/bs4/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/default.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery.fontpicker.css" rel="stylesheet" type="text/css"/>
+
+    <script>
+        $(document).ready(function () {
+            $('#mainform').validate({
+                rules: {
+                    tree_options_branch_horizontal: {
+                        required: true,
+                        number: true,
+                        range: [0, 8190]
+                    },
+                    tree_options_branch_vertical: {
+                        required: true,
+                        number: true,
+                        range: [0, 8190]
+                    },
+                    tree_options_branch_hide_values: {
+                        required: true,
+                        number: true,
+                        range: [0, 100]
+                    },
+                    tree_options_branch_precision: {
+                        required: true,
+                        number: true,
+                        range: [0, 8]
+                    },
+                    tree_options_hide_shorter : {
+                        required: true,
+                        number: true,
+                        range: [0, Infinity]
+                    },
+                    tree_options_branch_divergence_precision: {
+                        required: true,
+                        number: true,
+                        range: [0, 100]
+                    },
+                    tree_options_branch_distance_horizontal: {
+                        required: true,
+                        number: true,
+                        range: [0, 8190]
+                    },
+                    tree_options_branch_distance_vertical: {
+                        required: true,
+                        number: true,
+                        range: [0, 8190]
+                    }
+                },
+                submitHandler: function (form) {
+                    $('#is_validated').attr("value", "true");
+                }
+            });
+            $("#accordion").accordion({
+                icons: icons,
+                collapsible: true,
+                active: 1,
+                heightStyle: "content"
+            });
+            var fontVal = "font-family: 'Lucida Console', Arial; \n\
+              font-size: 13px; \n\
+              text-decoration: none; \n\
+              line-height: 2Z00%; \n\
+              font-variant: small-caps; \n\
+              letter-spacing: 2px; \n\
+              font-style: italic;";
+            $("#tree_options_branch_statistics_font").value = fontVal;
+            $("#tree_options_branch_statistics_font").fontpicker({
+                showOn: 'all'
+            });
+            $("#tree_options_branch_length_font").value = fontVal;
+            $("#tree_options_branch_length_font").fontpicker({
+                showOn: 'all'
+            });
+            $("#tree_options_branch_divergence_font").value = fontVal;
+            $("#tree_options_branch_divergence_font").fontpicker({
+                showOn: 'all'
+            });
+            var tree_options_branch_horizontal = $('#tree_options_branch_horizontal').spinner({
+                step: 1,
+                min: 0,
+                max: 8190,
+                spin : function(event,ui){
+                    $(this).val() === ui.value;
+               }
+            });
+            tree_options_branch_horizontal.spinner("value", 56);
+            var tree_options_branch_vertical = $('#tree_options_branch_vertical').spinner({
+                step: 1,
+                min: 0,
+                max: 8190,
+                spin : function(event,ui){
+                    $(this).val() === ui.value;
+               }
+            });
+            tree_options_branch_vertical.spinner("value", 56);
+            var tree_options_branch_hide_values = $('#tree_options_branch_hide_values').spinner({
+                min: 0,
+                max: 100,
+                step: 1,
+                spin : function(event,ui){
+                    $(this).val() === ui.value;
+               }
+            });
+            tree_options_branch_hide_values.spinner("value", 56);
+            var tree_options_branch_precision = $('#tree_options_branch_precision').spinner({
+                min: 0,
+                max: 8,
+                step: 1,
+                spin : function(event,ui){
+                    $(this).val() === ui.value;
+               }
+            });
+            tree_options_branch_precision.spinner("value", 2);
+            var tree_options_hide_shorter = $('#tree_options_hide_shorter').spinner({
+                min: 0,
+                step: 0.01,
+                spin : function(event,ui){
+                    $(this).val() === ui.value;
+               }
+            });
+            tree_options_hide_shorter.spinner("value", 0.0);
+            var tree_options_branch_divergence_precision = $('#tree_options_branch_divergence_precision').spinner({
+                min: 0,                    
+                step: 1,
+                spin : function(event,ui){
+                    $(this).val() === ui.value;
+               }
+            });
+            tree_options_branch_divergence_precision.spinner("value", 2);
+            var tree_options_branch_distance_horizontal = $('#tree_options_branch_distance_horizontal').spinner({
+                step: 1,
+                min: 0,
+                max: 8190,
+                spin : function(event,ui){
+                    $(this).val() === ui.value;
+               }
+            });
+            tree_options_branch_distance_horizontal.spinner("value", 56);
+            var tree_options_branch_distance_vertical = $('#tree_options_branch_distance_vertical').spinner({
+                step: 1,
+                min: 0,
+                max: 8190,
+                spin : function(event,ui){
+                    $(this).val() === ui.value;
+               }
+            });
+            tree_options_branch_distance_vertical.spinner("value", 56);
+            var icons = {
+                header: "ui-icon-triangle-1-e",
+                aciveHeader: "ui-icon-triangle-1-s"
+            };
+            $('.checkbox').checkboxradio({
+                icon: false
+            });
+            $('.checkbox').change(function () {
+                var checkbox = $(this);
+                if (this.checked) {
+                    console.log('it is checked');
+                    $(this).attr('ischecked', true);
+                } else {
+                    console.log('it is NOT checked');
+                    $(this).attr('ischecked', false);
+                }
+            });
+            $(':checkbox').change(function () {
+                var checkbox = $(this);
+                if (this.checked) {
+                    $(this).attr('ischecked', true);
+                } else {
+                    $(this).attr('ischecked', false);
+                }
+            });
+            $("#tree_options_branch_lines").select2({
+                 minimumResultsForSearch: Infinity,
+                 templateResult: formatWidth,
+                 templateSelection: formatWidth
+            });
+                function formatWidth (width) {
+                 if (!width.id) { return width.text; }
+                 var $width = $(
+                  '<span ><img sytle="display: inline-block;" src="img/' + width.element.id.toLowerCase() + '.png" /> ' + width.text + '</span>'
+                 );
+                 return $width;
+                }
+            $("#tree_options_branch_stat_placement").select2({
+                 minimumResultsForSearch: Infinity
+            });
+            $("#tree_options_branch_branch_placement").select2({
+                 minimumResultsForSearch: Infinity
+            });
+            $("#tree_options_branch_time_placement").select2({
+                 minimumResultsForSearch: Infinity
+            });
+            //MEGA_JS_TEMPLATE_PLACEHOLDER
+            $('select').trigger("change");
+            $.validator.methods.range = function (value, element, param) {
+                var globalizedValue = value.replace(",", ".");
+                return this.optional(element) || (globalizedValue >= param[0] && globalizedValue <= param[1]);
+            };
+            $.validator.methods.number = function (value, element) {
+                return this.optional(element) || /^-?(?:\d+|\d{1,3}(?:[\s\.,]\d{3})+)(?:[\.,]\d+)?$/.test(value);
+            };
+        });
+    </script>
+
+  </head>
+  <body>
+      <input type="hidden" name="is_validated" id="is_validated" value="false"/>
+          <div class="container-fluid px-0" id="subtree_options_main-container">
+            <form id="mainform">
+            <div class="boxed">
+              <div class="row my-2">
+                <div class="col-12">
+                  <div class="grid-col-2 branch">
+                    <label for="" class="d-flex align-items-center m-0">Line Width</label>
+                    <select id="tree_options_branch_lines" class="tree_options_branch_lines">
+                      <option value="1" class="w1" id="large_w1">1 pt</option>
+                      <option value="2" class="w2" id="large_w2">2 pt</option>
+                      <option value="3" class="w3" id="large_w3">3 pt</option>
+                      <option value="4" class="w4" id="large_w4">4 pt</option>
+                      <option value="5" class="w5" id="large_w5">5 pt</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="accordion">
+              <h3>Statistic/Frequency</h3>
+              <div>
+                <div class="accordion_box">
+                  <div class="row">  
+                    <div class="col-12">
+                      <div class="main-heading subtract-left-margin">Statistic/Frequency</div>
+                    </div>
+                    <div class="col-12">
+                      <div class="grid-col-1">
+                        <input type="checkbox" name="tree_options_branch_display_stats" value="false" id="tree_options_branch_display_stats" ischecked="false"/>
+                        <label for="tree_options_branch_display_stats" class="font_weight_normal">Display Statistics/Frequency</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <label for="placement">Placement</label>
+                      <select id="tree_options_branch_stat_placement" >
+                        <option value="0">Automatic</option>
+                        <option value="1">Above Branch</option>
+                        <option value="2">Below Branch</option>
+                      </select>
+                      <input id="tree_options_branch_statistics_font" type="hidden"/>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="main-heading subtract-left-margin">Distance (Pixels) from Node</div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="grid-col-3 branch my-1">
+                        <label for="tree_options_branch_horizontal" class="d-flex align-items-center">Horizontal</label>
+                        <input class="tree_options_branch_horizontal" id="tree_options_branch_horizontal" name="tree_options_branch_horizontal">
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <label id="tree_options_branch_horizontal-error" class="error d-flex align-items-center" for="tree_options_branch_horizontal"></label>
+                    </div>
+                    <div class="col-12">
+                      <div class="grid-col-3 branch my-1">
+                        <label for="tree_options_branch_vertical" class="d-flex align-items-center">Vertical</label>
+                        <input class="tree_options_branch_vertical" id="tree_options_branch_vertical" name="tree_options_branch_vertical">
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <label id="tree_options_branch_vertical-error" class="error d-flex align-items-center" for="tree_options_branch_vertical"></label>
+                    </div>
+                  </div>
+                  <div class="row my-2">   
+                    <div class="col-12 d-flex">
+                      <input type="checkbox" name="tree_options_branch_hide_lower" value="false" id="tree_options_branch_hide_lower" ischecked="false"/>
+                      <label for="tree_options_branch_hide_lower" class="d-flex align-items-center">Hides values lower than</label>
+                      <input class="tree_options_branch_hide_values" id="tree_options_branch_hide_values" name="tree_options_branch_hide_values">
+                      <label for="tree_options_branch_hide_values" class="d-flex align-items-center pl-1">%</label>
+                    </div>
+                    <div class="col-12">
+                      <label id="tree_options_branch_hide_values-error" class="error" for="tree_options_branch_hide_values"></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3>Branch Length</h3>
+              <div>
+                <div class="accordion_box"> 
+						      <div class="row"> 
+                    <div class="col-12">
+                      <div class="section-label main-heading subtract-left-margin">Branch Length</div>
+                    </div>
+							      <div class="col-12">
+                      <div class="grid-col-1">
+                        <input type="checkbox" name="tree_options_branch_display_branch" value="false" id="tree_options_branch_display_branch" ischecked="false"/>
+                        <label for="tree_options_branch_display_branch" class="font_weight_normal">Display Branch Length</label>
+                      </div>
+							      </div>
+						      </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <label for="placement">Placement</label>
+                      <select id="tree_options_branch_branch_placement">
+                        <option value="0">Automatic</option>
+                        <option value="1">Above Branch</option>
+                        <option value="2">Below Branch</option>
+                      </select>
+                      <input id="tree_options_branch_length_font" type="hidden"/>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="grid-col-2 branch">
+                        <label for="tree_options_branch_precision" class="d-flex align-items-center">Precision</label>
+                        <input class="tree_options_branch_precision" id="tree_options_branch_precision" name="tree_options_branch_precision">
+                        <label for="tree_options_branch_precision" class="d-flex align-items-center">places after decimal</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="grid-col-1">
+                        <label id="tree_options_branch_precision-error" class="error" for="tree_options_branch_precision"></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row my-2">
+                    <div class="col-12 d-flex">
+                      <input type="checkbox" name="tree_options_branch_hide_shorter" value="false" id="tree_options_branch_hide_shorter" ischecked="false"/>
+                      <label for="tree_options_branch_hide_shorter" class="d-flex align-items-center">Hide if shorter than</label>
+                      <input class="tree_options_hide_shorter" id="tree_options_hide_shorter" name="tree_options_hide_shorter">
+                      <label for="tree_options_hide_shorter"></label>
+                    </div>
+                    <div class="col-12">
+                      <label id="tree_options_hide_shorter-error" class="error d-flex align-items-center" for="tree_options_hide_shorter"></label>
+                    </div>
+                  </div>
+			        </div>
+            </div>
+            <h3>Divergence Times</h3>
+            <div>
+              <div class="accordion_box">
+                <div class="row">   
+                  <div class="col-12">
+                    <div class="section-label main-heading subtract-left-margin">Divergence Times</div>
+                  </div>
+                  <div class="col-12">
+                    <input type="checkbox" name="tree_options_branch_display_divergence" value="false" id="tree_options_branch_display_divergence" ischecked="false"/>
+                    <label for="tree_options_branch_display_divergence" class="font_weight_normal">Display Divergence Times</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <label for="placement">Placement</label>
+                    <select id="tree_options_branch_time_placement">
+                      <option value="0">Automatic</option>
+                      <option value="1">Above Branch</option>
+                      <option value="2">Below Branch</option>
+                    </select>
+                    <input id="tree_options_branch_divergence_font" type="hidden"/>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="grid-col-3 branch">
+                      <label for="tree_options_branch_divergence_precision" class="d-flex align-items-center">Precision</label>
+                      <input id="tree_options_branch_divergence_precision" name="value">
+                      <label for="tree_options_branch_divergence_precision" class="d-flex align-items-center">places after decimal</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 mt-1">
+                    <div class="main-heading subtract-left-margin">Distance (Pixels) from Node</div>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col-12">
+                    <div class="grid-col-2 branch my-1">
+                      <label for="tree_options_branch_distance_horizontal" class="d-flex align-items-center">Horizontal</label>
+                      <input class="tree_options_branch_distance_horizontal" id="tree_options_branch_distance_horizontal" name="tree_options_branch_distance_horizontal">
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <label id="tree_options_branch_distance_horizontal-error" class="error d-flex align-items-center" for="tree_options_branch_distance_horizontal"></label>
+                  </div>
+                  
+                  <div class="col-12">
+                    <div class="grid-col-3 branch my-1">
+                      <label for="tree_options_branch_distance_vertical" class="d-flex align-items-center">Vertical</label>
+                      <input class="tree_options_branch_distance_vertical" id="tree_options_branch_distance_vertical" name="tree_options_branch_distance_vertical">
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <label id="tree_options_branch_distance_vertical-error" class="error d-flex align-items-center" for="tree_options_branch_distance_vertical"></label>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </form>
+    </div>
+  </body>
+</html>

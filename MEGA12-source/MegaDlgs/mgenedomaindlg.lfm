@@ -1,0 +1,632 @@
+object GeneDomainDlg: TGeneDomainDlg
+  Left = 671
+  Height = 412
+  Top = 242
+  Width = 704
+  BorderIcons = []
+  Caption = 'GeneDomainDlg'
+  ClientHeight = 412
+  ClientWidth = 704
+  OnActivate = FormActivate
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnHelp = FormHelp
+  OnResize = FormResize
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '2.2.6.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 36
+    Top = 376
+    Width = 704
+    Align = alBottom
+    ClientHeight = 36
+    ClientWidth = 704
+    TabOrder = 0
+    object ToolBar2: TToolBar
+      Left = 216
+      Height = 30
+      Top = 2
+      Width = 239
+      Align = alNone
+      AutoSize = True
+      ButtonHeight = 30
+      ButtonWidth = 115
+      Caption = 'ToolBar2'
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      HotImages = ImageForm.DlgButtonsHover
+      Images = ImageForm.DlgButtons
+      TabOrder = 0
+      object ToolButton6: TToolButton
+        Left = 1
+        Top = 0
+        Action = HelpAction
+      end
+      object ToolButton7: TToolButton
+        Left = 120
+        Top = 0
+        Action = OkAction
+      end
+    end
+    object NumDomainsLabel: TLabel
+      Left = 9
+      Height = 15
+      Top = 11
+      Width = 51
+      Caption = '1 Domain'
+      ParentColor = False
+    end
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 376
+    Top = 0
+    Width = 704
+    ActivePage = SiteLabelsTabSheet
+    Align = alClient
+    TabIndex = 1
+    TabOrder = 1
+    OnChange = PageControl1Change
+    object GTreeTabSheet: TTabSheet
+      Caption = 'Define/Edit/Select'
+      ClientHeight = 348
+      ClientWidth = 696
+      object GenesDomainsDrawGrid: TDrawGrid
+        Left = 0
+        Height = 283
+        Top = 35
+        Width = 696
+        Align = alClient
+        DefaultDrawing = False
+        DefaultRowHeight = 20
+        ExtendedSelect = False
+        FixedCols = 0
+        GridLineWidth = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goRowSelect, goSmoothScroll]
+        PopupMenu = GridPopupMenu
+        TabOrder = 0
+        OnClick = GenesDomainsDrawGridClick
+        OnDrawCell = GenesDomainsDrawGridDrawCell
+        OnKeyDown = GenesDomainsDrawGridKeyDown
+        OnMouseUp = GenesDomainsDrawGridMouseUp
+        OnSelectCell = GenesDomainsDrawGridSelectCell
+      end
+      object ToolBar1: TToolBar
+        Left = 0
+        Height = 30
+        Top = 318
+        Width = 696
+        Align = alBottom
+        AutoSize = True
+        ButtonHeight = 28
+        ButtonWidth = 150
+        Caption = 'ToolBar1'
+        Flat = False
+        ShowCaptions = True
+        TabOrder = 1
+        object ToolButton1: TToolButton
+          Left = 1
+          Top = 2
+          Caption = 'Add &Gene'
+          DropdownMenu = GenesPopupMenu
+          Style = tbsDropDown
+        end
+        object ToolButton2: TToolButton
+          Left = 171
+          Top = 2
+          Caption = 'Add& Domain'
+          DropdownMenu = DomainsPopupMenu
+          Style = tbsDropDown
+        end
+        object ToolButton3: TToolButton
+          Left = 341
+          Top = 2
+          Action = DeleteAction
+          Caption = 'D&elete Gene/Domain'
+        end
+        object ToolButton4: TToolButton
+          Left = 333
+          Height = 28
+          Top = 2
+          Caption = 'ToolButton4'
+          Style = tbsSeparator
+        end
+        object ToolButton5: TToolButton
+          Left = 163
+          Height = 28
+          Top = 2
+          Caption = 'ToolButton5'
+          Style = tbsSeparator
+        end
+      end
+      object Panel3: TPanel
+        Left = 0
+        Height = 35
+        Top = 0
+        Width = 696
+        Align = alTop
+        BevelOuter = bvNone
+        ClientHeight = 35
+        ClientWidth = 696
+        TabOrder = 2
+        object Label2: TLabel
+          Left = 16
+          Height = 15
+          Top = 8
+          Width = 35
+          Caption = 'Search'
+          ParentColor = False
+        end
+        object SearchEdit: TEdit
+          Left = 64
+          Height = 23
+          Top = 5
+          Width = 240
+          OnChange = SearchEditChange
+          OnKeyDown = SearchEditKeyDown
+          TabOrder = 0
+        end
+        object ToolBar3: TToolBar
+          Left = 320
+          Height = 22
+          Top = 5
+          Width = 47
+          Align = alNone
+          AutoSize = True
+          Caption = 'ToolBar3'
+          EdgeBorders = []
+          EdgeInner = esNone
+          EdgeOuter = esNone
+          Flat = False
+          Images = ImageForm.DefaultIcons
+          TabOrder = 1
+          Transparent = True
+          object ToolButton9: TToolButton
+            Left = 1
+            Top = 0
+            Action = FindPreviousAction
+          end
+          object ToolButton10: TToolButton
+            Left = 24
+            Top = 0
+            Action = FindNextAction
+          end
+        end
+        object SearchResultsLabel: TLabel
+          Left = 385
+          Height = 15
+          Top = 8
+          Width = 101
+          Caption = 'No Matches Found'
+          ParentColor = False
+        end
+      end
+    end
+    object SiteLabelsTabSheet: TTabSheet
+      Caption = 'Site Labels'
+      ClientHeight = 348
+      ClientWidth = 696
+      object GenomeTrackBar: TTrackBar
+        Cursor = crHandPoint
+        Left = 0
+        Height = 20
+        Top = 0
+        Width = 696
+        OnChange = GenomeTrackBarChange
+        PageSize = 10
+        Position = 0
+        Align = alTop
+        TabOrder = 0
+      end
+      object SiteLabelGrid: TDrawGrid
+        Left = 0
+        Height = 24
+        Top = 20
+        Width = 696
+        Align = alTop
+        DefaultDrawing = False
+        DefaultRowHeight = 20
+        ExtendedSelect = False
+        FixedCols = 0
+        FixedRows = 0
+        RowCount = 1
+        ScrollBars = ssNone
+        TabOrder = 1
+        OnClick = SiteLabelGridClick
+        OnDrawCell = SiteLabelGridDrawCell
+        OnKeyDown = SiteLabelGridKeyDown
+        OnKeyPress = SiteLabelGridKeyPress
+        OnTopleftChanged = SiteLabelGridTopleftChanged
+      end
+      object SeqGrid: TDrawGrid
+        Left = 0
+        Height = 252
+        Top = 44
+        Width = 696
+        Align = alClient
+        DefaultDrawing = False
+        ExtendedSelect = False
+        FixedCols = 0
+        FixedRows = 0
+        RowCount = 1
+        ScrollBars = ssAutoVertical
+        TabOrder = 2
+        OnDrawCell = SeqGridDrawCell
+        OnTopleftChanged = SeqGridTopleftChanged
+      end
+      object DataPreviewPanel: TPanel
+        Left = 0
+        Height = 52
+        Top = 296
+        Width = 696
+        Align = alBottom
+        ClientHeight = 52
+        ClientWidth = 696
+        TabOrder = 3
+        object GeneDomainNameSText: TStaticText
+          Left = 3
+          Height = 23
+          Top = 26
+          Width = 391
+          Anchors = [akTop, akLeft, akRight]
+          Caption = 'GeneDomainNameSText'
+          TabOrder = 0
+        end
+        object SiteNumEdit: TEdit
+          Left = 3
+          Height = 23
+          Top = 3
+          Width = 152
+          ReadOnly = True
+          TabOrder = 1
+          Text = 'SiteNumEdit'
+        end
+        object Panel2: TPanel
+          Left = 400
+          Height = 50
+          Top = 1
+          Width = 295
+          Align = alRight
+          BevelOuter = bvNone
+          ClientHeight = 50
+          ClientWidth = 295
+          TabOrder = 2
+          object AutoHighlightSitesBtn: TButton
+            Left = 214
+            Height = 23
+            Hint = 'Automatically label all sites based on coverage (conserved, variable, etc...)'
+            Top = 16
+            Width = 75
+            Caption = 'Apply'
+            TabOrder = 0
+          end
+          object Label1: TLabel
+            Left = 23
+            Height = 15
+            Top = 1
+            Width = 105
+            Caption = 'Label Site Attributes'
+            ParentColor = False
+          end
+          object AutoHighlightComboBox: TComboBox
+            Left = 12
+            Height = 23
+            Top = 16
+            Width = 192
+            ItemHeight = 15
+            ItemIndex = 2
+            Items.Strings = (
+              'Conserved Sites (c)'
+              'Variable Sites (v)'
+              'Parsimony Informative Sites (p)'
+              'Singleton Sites (s)'
+              '0-Fold Sites (0)'
+              '2-Fold Sites (2)'
+              '4-Fold Sites (4)'
+            )
+            Style = csDropDownList
+            TabOrder = 1
+            Text = 'Parsimony Informative Sites (p)'
+          end
+        end
+      end
+    end
+  end
+  object GridImages: TImageList
+    Width = 32
+    Left = 371
+    Top = 125
+    Bitmap = {
+      4C7A060000002000000010000000390100000000000078DAED98510EC4200844
+      3DBC67EBB5DCFA6162586D114789CDECC4AF257DB15290492151B7628C49BB56
+      F1917168FEFD4B5EFCCC1EE7E7F87AE9F841C416F64E7E6149F64E7E8BADCD93
+      F0C76E3FABF7DCF010BF7AFF32DFBDF8F3DFFF38DFB3FE5114EF00315DD7F5BA
+      BCF8B9267AF14B3FD0F3C7EA5FCD2F1CC9DEC92F2CC9DEC96FB1DFF8D6FE2FCF
+      BFC7DEB17F99EF5EFCB9EFDFC6E71D8062EFE7FC7F3EFFBCF9EB0B7CC4FCCFF7
+      CFF99FA2D8FFC7E2620C292F4B1D40F8FFABF85AFF1DC1B7F8FFE57F2DFFC957
+      9FF1FF51FBB7FAFFA8F3B7FAFFC8FC9BF1FFEBF3F3B8FF5AF9C8FA37C25E216F
+      3EC53BC06EFF7FA6FE21FCFF957C8DFF8EE28FFAFF88FE8FF0FF91FBB7F8FFC8
+      F3B7F8FFE8FCB3FAFF96FE8BF4FF67F8A8FAC7FE4FB1F77F67FE27BF1F879CFF
+      F9FECFE573FE67FF3F4D3F6AAE9079
+    }
+  end
+  object EditBtnImage: TImageList
+    Height = 18
+    Width = 57
+    Left = 223
+    Top = 155
+    Bitmap = {
+      4C7A0100000039000000120000004E0200000000000078DAD597BBAAEA401486
+      CF036829FA246AA1EFA062A1D63E808D88ADA2279DDA093E808D08E213280AA2
+      88D7C20B58A8857801EF850A6B9F7F20C3C6933D21D9E740B6F093955933E1FB
+      E204CDF178FC95CD6629168B5124123174C008D6E31F662D1F49FA4DB95C8E36
+      9B0DBD5E2F43078C6005B316C768344ADBED961E8F079DCF6743078C6005B316
+      47EC01DC23A3FBC9012B98B53A3E9F4F3A9D4E3F2260FD5F8E7816DC6E37AEFD
+      576C361B2D160BC575A9548ACC6633359B4D7E0D0435FAA15048B8FE5F39629F
+      1F0E0761E6F33959AD5616D46AF3E5249349E658AFD715FBC16050D87F0F58F5
+      3AEEF77B6166B3197744FDD5BC62B1C8BF5FB0FBFD7E76ACD56AB45EAFC9E572
+      B1A086DFE7FD9048245439BEE3B8DBED84994EA7DC11B5D21C78C0070EABD58A
+      9FCB8E18931D51634D2010E07D350644AFE3FD7E67FB4F944EA743168B45F179
+      F4F97C6C4E3C1E67E7854281AF43CF643251B55AA5D168444EA79305F57B5F8D
+      0101AB5E47EC3F51DAED367344502BCD81A3CCAB34361C0EB9236AF43F3BAA31
+      207A1D6FB71B4D2613615AAD167744AD34279FCFB3EF114779CCEBF532874AA5
+      42FD7E9F1C0E070BEAF7BE1A0302563D8ED7EB95C6E3B1308D46833BA216CDB1
+      DBEDD4ED76A95C2E337E0435C6D093FB58E3F178785F8D0101AB5E47EC1D51F0
+      3C824DE9790463A95462F370C439C6E11B0E87795FBE06825A69BE1A875EC7CB
+      E54283C1E04704AC5A1DF1FF76B95CB2DF9E5EAF67E88011AC5AFF934B924499
+      4C86FD26E31E193960042B98B538E27D339D4EB37B63F47764308255EB3BF207
+      29C3494E
+    }
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    OnUpdate = ActionList1Update
+    Left = 443
+    Top = 112
+    object ActionAddGene: TAction
+      Caption = 'Add New Gene At The &End'
+      Hint = 'Adds a new gene at the end of the list'
+      OnExecute = ActionAddGeneExecute
+    end
+    object ActionAddDomain: TAction
+      Caption = 'Add &Domain'
+      Hint = 'Add a new domain at the selected position'
+      OnExecute = ActionAddDomainExecute
+    end
+    object InsertGeneAction: TAction
+      Caption = 'Insert &Gene'
+      Hint = 'Inserts a new gene at the current position'
+      OnExecute = InsertGeneActionExecute
+    end
+    object InsertDomainAction: TAction
+      Caption = 'Insert &Domain'
+      Hint = 'Inserts a new domain at the current position'
+      OnExecute = InsertDomainActionExecute
+    end
+    object AddDomainToGeneAction: TAction
+      Caption = 'Add Domain &To Gene'
+      Hint = 'Add a domain to the currently selected gene'
+      OnExecute = AddDomainToGeneActionExecute
+    end
+    object DeleteAction: TAction
+      Caption = '&Delete Gene/Domain'
+      OnExecute = DeleteActionExecute
+    end
+    object HelpAction: TAction
+      Caption = 'HelpAction'
+      ImageIndex = 8
+      OnExecute = BitBtn2Click
+    end
+    object OkAction: TAction
+      Caption = 'OkAction'
+      ImageIndex = 5
+      OnExecute = OkBtnClick
+      ShortCut = 16467
+    end
+  end
+  object DomainsPopupMenu: TPopupMenu
+    Left = 311
+    Top = 216
+    object MenuItem1: TMenuItem
+      Action = InsertDomainAction
+    end
+    object MenuItem2: TMenuItem
+      Action = ActionAddDomain
+    end
+    object MenuItem3: TMenuItem
+      Action = AddDomainToGeneAction
+    end
+  end
+  object GenesPopupMenu: TPopupMenu
+    Left = 502
+    Top = 207
+    object MenuItem4: TMenuItem
+      Action = ActionAddGene
+    end
+    object MenuItem5: TMenuItem
+      Action = InsertGeneAction
+    end
+  end
+  object CheckboxImages: TImageList
+    Left = 103
+    Top = 151
+    Bitmap = {
+      4C7A0300000010000000100000007D0000000000000078DAEDD5310EC0200805
+      D01E9EB3712D5A071602E907166B3161E3C5208A2272C90641448246E4D17D2A
+      FE5952F5CBA25EF3ACCD78CDB536E33D8BD61FD9CCF979B6D33FC477EEDFC4D9
+      EF7FFCF97EDEFFF7670033BF46D5AF3FA9EAF53F44BCE6599BF19A6B6DC67B16
+      AD3FB299F3F36CA77F88FFDB0CB801C798820D
+    }
+  end
+  object GridPopupMenu: TPopupMenu
+    Left = 551
+    Top = 99
+    object MenuItem6: TMenuItem
+      Action = ActionAddGene
+    end
+    object MenuItem7: TMenuItem
+      Action = InsertGeneAction
+    end
+    object MenuItem8: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem9: TMenuItem
+      Action = AddDomainToGeneAction
+    end
+    object MenuItem10: TMenuItem
+      Action = ActionAddDomain
+    end
+    object MenuItem11: TMenuItem
+      Action = InsertDomainAction
+    end
+    object MenuItem12: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem13: TMenuItem
+      Action = DeleteAction
+    end
+  end
+  object CheckBoxImages32: TImageList
+    Height = 32
+    Width = 32
+    Left = 56
+    Top = 224
+    Bitmap = {
+      4C7A030000002000000020000000500300000000000078DAEDDA4B4F1A511407
+      7037AEFC0A2EDCB8366D345A7C2208220AC3F096F60B68626A6BECA24D8BAD55
+      BA68524DDA445D6825A936A9C66F21DD28262655BBF115175D19CA2828707ACE
+      05D42A4610EF74D14BF20F2809BF33771EE13FC1EB76EC7B5C8E88CB21479C76
+      9B2A21CB6C32441EF9BCF41AD00783BE159A1BEB55499B4E0BE883CFEB06A72C
+      1D1ADB5A2138FB19BE879621B4CC3764CCCF7D81464D1D747B5C60B7590F1B34
+      B5F0736B0BD47AECEFED41F5BD2AF0BA9DCC6F69AA67B3A9F508AFAE426DF57D
+      E1ABE0A7B6B7213E3A0A89F9F9737F6545153F898E525606BF4B4A208A391D1F
+      4FFBE130779FD9A5A5A0A07B94F18F2B2BD3FEFA3A57FFB29DF54F0301EEDB7F
+      9D7DD2D3C37DFFE763F33AFEF3B579F885D877ED176AE7E39FF4F5C1514505C4
+      24092016BB53FB26FF7476967D86923D67ABAA72CE705BFB461FAF51D14B9F79
+      798662EC1BD73F1A85584D4DEE19E87A7E7050949DD7F197485C99813CFADF71
+      79795176DEC7FF3533146B1774FEE598A158BBE0F33F99CC793CDCD6BED5F587
+      66D06898CBECDEDE7FF2FD87AE0D89A525F1FDEF8EFDC6FA5AD8DADC54CDDFDB
+      3DEF1FD4BF0C7A2DEB446BE155361BD7A0B1B8F00DA87351FF723BEDD83F9D60
+      32B6814EDBA44ADA0D7AE8EC30C2C36E0FB81DF23EF561872C45705FA812B24C
+      467DC4E7F54470DB0FB07F2BB80E0ACEA14AC8C2FEAD60FF57B2FD9F3A795383
+      06F3807334A06F6D0173C7C5FEAFCBF4FF10EBE77C1382AF73737FF57FF5CFBF
+      5DD1FF852F7CE10B5FF8C217BEF0852FFCFFB6FFD7C1C68F0DD5FC9D9D9D2BFD
+      9F3AD15A38CCFA39CF90B1B8B070B1FFA7688EB3FEDFC23957FBFF2F97DD16C7
+      FD80B1649E79266D60FF8FA31F77DAE50476F094D36E4B3964893DF34CD6C0F5
+      4EF9BC9E14F57F8A2C5940B2748264EDE21B34C8EA6837B0F5A7596CF8F7B381
+      2710181E82A1572FB826F076080607FAD9FD0E76FF017D2BCE14187E0DC1E949
+      98F838C635C1994918C5EDD4699BCF7C5A179A8DDEFFF0FE1DD74C7C1A03FFCB
+      E7EC1E8CF0852F7CE10B5FF8C217BEF0852F7CF57DD63FB09704A7A7D8FB3C13
+      9C99623DEB62FF9059FFEA8791377E361BCF8C0CFB61F0E963F67B73F2A97BD2
+      6F006C560B58BBCCE90ECA316450DF349B8C99FE292769065C075543F73BB07F
+      C31F253E3D14
+    }
+  end
+  object GridImages64: TImageList
+    Height = 32
+    Width = 64
+    Left = 310
+    Top = 122
+    Bitmap = {
+      4C7A060000004000000020000000330500000000000078DAEDDC4D6F13571406
+      E06C58F11758B0618154296A050A7548C88763930462C7F1274E550129B441A2
+      0D4561D1AA4D5A43DC45A582D44AC0021A4B4D2A35887F41BA2146422AA41B42
+      2AFE0009A424E9E99C6BBB558D53083377EEB9F66BE9082912BAF3CC9D197BE6
+      CC7D33A938A593714AC66394181AF4A578ACFEDE10BD97CD90E90F6F0BFB43C1
+      2E3AD4D6EA4BF574772A7F369332EE4FC4A214EEE9A2C2F48FF4EBFC1D9ABFA3
+      B7788CD9999FA82D70808EA593C6FD4383113A1868A1DF17177D1BF38FE565DA
+      F7763365520911FE8EF65635377E7D8A0B0BD4B2EF1DF8E1AF7BFF5F8F1ED19F
+      5353B4313BFBAFFFEE5D77FEA6A6FF2F21FE4DC7B9BA73273D75B669C5A9F52B
+      574AFE62B1EEFDCABE6307AD3ADBF3ACEC7FBE674FC97FFF7E5DFBABED15FF7A
+      3E5FF7F3BF95FDC5E868DD9FFFAF63F7E4FA2FD0FFBAF67AF46FC75E6FFEEDDA
+      B7EBDFBBF7AD97EA55FE9AFF671BFE1767CFD2B3DDBB692D1A255A5BF3D42EDD
+      BF3E3DAD0CAB95EFECE6E69AFBE04DEDE2FDCE6FB4952A53F53E7063177FFEAF
+      ACD0DAFEFDB5F701FF9E7FF2C495DD8AEBDFC6C64BFB80BDFCB7E7BB76B9B25B
+      73FDDF621FB8B55BF5FD57631FB8B55BF7FDBFB959F37AF0A6762B7FFFF03E08
+      04945BD9CF9C31FBFCC7D0EF3FFE6DB071FBB6F9E75F963CFFC1F33F3BFC6DAD
+      2DB4F8F0A16F632E3F96D3FFE0FE5728D8A97A52F78A0B6A6EB49633C6ADB95F
+      54CF4942FF2B9518A2743241BDE11EEAEE6CF7A50E878274A42F4CC3C7D2E6FD
+      F198EA01C79DE380CF053F8AC7EA0D07299B31EFCFA492EA18A8F4FF93E5FDA1
+      AB2A63F41D0E39F32FA3FFCF158B0E5074E008452347F59633068F55F2A745F8
+      079DEDB970FE1CE5739334F9E5E75A2B7F7192C6CF8FA9772024BCFFC0FE8833
+      27F9DC5754B8718DAE7E7F596B156E5EA329673F77771E12E3E7E392E786B7EF
+      BB6FBFD15A577FB84C135F7C46C1AE0EF8E187DFF0FD1FFCF0C30F3FFCF0C32F
+      CFAFBBFF0B3FFC38FFE1871F7EF8E1871F7E3CFF6B2CBFEA7F5C9CA4C28DEB6A
+      FB7456E1E675D56792D4FF88A9FED7185DFA7A42CD8DCEBA949BA0F14F3F51EB
+      8DA5F8B9FF3B1819A0C8D1FE520F5463F118DC6FECEF95D1FFE7FEB79F6BDF2B
+      C5FDDFAC00FF85F1713A3572923E18394123278FFB523C16CFFDE887A7451CFF
+      BCFE9FFBD1ED07034EBDABB902EADADFDF2763FD3FCF41B8A7BBBCFE7F5EADCF
+      D75BF3F4F3CC8C98F5FF1F9D3E65E0FDB7C762DE7F637F23BFFF083FFCD6F93D
+      BCFF831F7EF8E1871F7EF8E5F975F77FE1871FE73FFCF0C30F3FFCF0C38FE77F
+      8DE56F6B3D400F7E7BE0DB984B4B4B62FA1FDCFFE2F5FFDC93BA572CAAF5F93A
+      8BC7B835372766FD3FCF01D73FEBFF3B3497B0F5FFE7C63EA6F787B3349CCD38
+      952EFFABB34A637006C0C889E302E61FF9FFC8FF47FE3FF2FF91FF04BF1C7F2E
+      D7F49FD2752F2435FFBF1EFC6EF2FF6DF7BBCDFFB7D9EF45FEBFAD7EAFF2FF6D
+      F4BBC9FFAFEE5779EDDFAA1F2625FFDF66BF8EFC7F5B8E7F5DF9FF26FD12F2FF
+      4DF9A5E4FF1BF30BC9FF3776FC0BC9FF377AFD1390FF6FFCFA2F2CFFBFFA7BFB
+      55EFF57872FF2F28FFDF885F5DEC64E4FF1BF357F681E1FC7FA3FEF24742FEBF
+      576E5B9F7FC2EFBDDFA6FC7FAFFDC8FF47FE3FF2FF91FF8FFC7FE4FF23FF1FF9
+      4FF0CBF0FBF5FC077EF8E1871F7EB37E53FD6FF871FCC30F3FFCF0C30FBFD4FB
+      7F5DFD4FF8E187DF9EE77F5EF73FE187DFA6FC7F1D7EE4FF23FF1FF9FFC8FF47
+      FE3FF2FFFDF820FF1FF94FF0CB58FF013FFCF0C30FBF59BFA9FE37FC38FEE187
+      1F7EF8E1875FEAFDBFAEFE27FCF0C3DFB8EBBFE187DFA6FC7FAFFDC8FF47FE7F
+      23E7FFFF0DC5F68E8D
+    }
+  end
+  object EditBtnImage100: TImageList
+    Height = 36
+    Width = 100
+    Left = 155
+    Top = 240
+    Bitmap = {
+      4C7A0100000064000000240000003D0200000000000078DAED99CB4B1B511487
+      B3CECEFE0D16DDA8FD0FD4E0DEC74A04355D49A888C4B4A046DC899140606851
+      13ED46A90B358A627C2C7C20288A2121C1C498C464EC035C54440266219E760E
+      38349009666A276DE777E02364EE3D97E17CE4DE7309110281508A4C264B7777
+      F728C45F10E9F417F67175F59DBFDFDC64E8FAFA16940051FC4A0B0BCBB28F87
+      07E2CF54EA332801E1709466663EC1077C00F8800F001FF051144EA78B0C06C3
+      93F07A578A5AFBF43426E7C662C99CB18101BBAA35E1437B1F7D7D6F796C75D5
+      A75B1F4343C3CFBE367CFC3B3E0A011FF0F1BFF888C753343B3B4766F36BAAA8
+      A82493A981ECF661DAD9D92F7ABF5A5FDF2A787E757498E1A300676709B258DE
+      28D6CFE3F9081F1AFA70389C9C5B5555CD758D44CE299148D3C1C131F5F65A73
+      6A89F3FCF9FBDD5F6B1A0C86C96834F2F3B5B58DBCFB586363337C68E4637EDE
+      CBCF5A5BDBE8E2E232EFDA8B8BCBF0A1D17E25081F386F64C4A138E7F0F0183E
+      34F2F178768C8FBB15E7844211F8C0EF43973EFEE4F961B3BD838F227D040261
+      B9D63EDF66DEFEAAA9A945950FE95DA431C9397C3C9DD1D131CEADA979454B4B
+      2B148DC6F9FE21ED5356AB4DF5FD6362C2C363DDDD3DDC57279322FADD3CB85C
+      424EAE54FFAE2E8BE27CB77B5A958FA3233F9595BDD0F5FD5C8D8FC77D497AE7
+      F6F64E2A2F7F49B5B5755CEBEDEDBDDFFA3F6A77779FFAFB07A9BEDE24BBD183
+      0F001FF001E0033E007CE8C947367BCFFD6420100225C0EF0FCA3E44F1DBCF7B
+      D1094D4E4E71DF0FB44710DE333F00932696E4
+    }
+  end
+  object SearchActions: TActionList
+    Images = ImageForm.DefaultIcons
+    Left = 357
+    Top = 205
+    object FindFirstAction: TAction
+      Caption = 'Find &First'
+      Hint = 'Search for genes/domains by name'
+      ImageIndex = 2
+      OnExecute = FindFirstActionExecute
+      ShortCut = 16454
+    end
+    object FindNextAction: TAction
+      Caption = 'Find &Next'
+      Hint = 'Find the next occurrence of the search query'
+      ImageIndex = 156
+      OnExecute = FindNextActionExecute
+      ShortCut = 114
+    end
+    object FindPreviousAction: TAction
+      Caption = 'Find &Previous'
+      Hint = 'Find the previous occurrence of the search query'
+      ImageIndex = 157
+      OnExecute = FindPreviousActionExecute
+      ShortCut = 8306
+    end
+  end
+end

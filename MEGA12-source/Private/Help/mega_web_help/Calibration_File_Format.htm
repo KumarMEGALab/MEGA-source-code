@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Calibration File Format</title>
+<link rel="StyleSheet" href="default.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.4.0_4";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Constructing Time Trees" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+<h1>Calibration File Format</h1>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt; font-size: 12pt;">The 
+ calibration file is used to provide divergence time calibration constraints 
+ to MEGA so that MEGA can convert relative divergence time estimates into 
+ absolute divergence times while respecting the given constraints.</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt; font-size: 12pt;">There 
+ are three valid formats for providing calibration values in this file:</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt; font-size: 12pt;">&#160;</p>
+<p style="margin: 6pt 6.5pt 2pt 18pt; margin-left: 64px; font-size: 12pt;">!NodeName=’some 
+ name’ minTime=1.75 maxTime=2.25</p>
+<p style="margin: 6pt 6.5pt 2pt 18pt; font-size: 12pt; margin-left: 64px;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;With 
+ this format, the NodeName value must match an internal node label in the 
+ Newick file being evaluated.</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt; font-size: 12pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt; font-size: 12pt;">!MRCA=’some 
+ name’ TaxonA='taxon A name' TaxonB='taxon B name' minTime=1.75 maxTime=2.25</p>
+<p style="margin: 6pt 6.5pt 2pt 18pt; font-size: 12pt; margin-left: 64px;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;The 
+ value for MRCA is an internal node label that will be assigned to the 
+ target node. If a label for that target node is also supplied in the input 
+ Newick file, the label in the Newick file will be ignored. <span style="text-align: left; 
+	 font-size: 12pt;">The values for TaxonA and TaxonB specify two leaf 
+ nodes whose most recent common ancestor in the active phylogeny is the 
+ calibration target node.</span></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt; font-size: 12pt;">&#160;</p>
+<p style="margin: 6pt 6.5pt 2pt 18pt; font-size: 12pt; line-height: 150%;">!MRCA='demoLabel1' 
+ TaxonA=chimpanzee TaxonB=bonobo Distribution=normal mean=6.4 stddev=1.2 
+ <br />
+!NodeName='demoLabel2' Distribution=exponential time=8.2 decay=0.25<br />
+!MRCA='orangutan-sumatran' TaxonA=orangutan TaxonB=sumatran Distribution=uniform 
+ mintime=4 maxtime=6</p>
+<p style="margin: 6pt 6.5pt 2pt 18pt; font-size: 12pt; line-height: 150%;">!MRCA='orangutan-sumatran' 
+ TaxonA=orangutan TaxonB=sumatran Distribution=lognormal offset=7.0 mean=2.38 
+ stddev=0.15</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;The 
+ four examples above specify statistical distributions to be used as calibration 
+ densities (can be one of normal, lognormal, exponential, or uniform). 
+ When using this format<span style="mso-bidi-font-size: 12.0pt; line-height: 150%; 
+							 font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman'; 
+							 mso-ansi-language: EN-US; mso-fareast-language: EN-US; 
+							 mso-bidi-language: AR-SA;">, each calibration 
+ density will be transformed into a pair of discrete constraints such that 
+ the minimum bound is placed at 2.5% of the density age and the maximum 
+ bound at the 97.5% of the density age. For instances, a normal distribution 
+ with mean equal to 10 and stddev equal to 1 would result in a constrain 
+ with minTime=8.04 and maxTime=11.96</span></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt; font-size: 12pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt; font-size: 12pt; 
+	 mso-bidi-font-size: 12.0pt; line-height: 150%; font-family: Arial, sans-serif; 
+	 mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: EN-US; 
+	 mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">Note*** When 
+ specifying an exponential distribution, one can use the keywords <span 
+	 style="font-style: italic;">offset</span> and <span style="font-style: italic;">lambda</span> 
+ in place of <span style="font-style: italic;">time</span> and <span style="font-style: italic;">decay</span> 
+ respectively.</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt; font-size: 12pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt; font-size: 12pt;">A 
+ single fixed time may be provided and for the RTDT analysis, this format 
+ should be used. For example:</p>
+<p style="margin: 6pt 6.5pt 2pt 18pt; font-size: 12pt; margin-left: 64px;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;!NodeName=’some 
+ name’ time=2007</p>
+<p style="margin: 6pt 6.5pt 2pt 18pt; font-size: 12pt; margin-left: 64px;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt; font-size: 12pt;">Optionally, 
+ a calibration can be given a name as the last parameter (e.g. !MRCA…calibrationName=‘myCalib’). 
+ <span style="text-align: left; font-size: 12pt;">Multiple calibrations 
+ may be provided, in which case, MEGA will generate absolute divergence 
+ times for all branching points in the active phylogeny while respecting 
+ all of the provided constraints. Each calibration must be on a single 
+ line and only one calibration can be provided per line. Taxa names must 
+ match those in the input Newick file. If a taxon name contains whitespace, 
+ the name must be placed in single quotes. Single quotes are not allowed 
+ inside taxa names.</span></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt; font-size: 12pt;">The 
+ following are examples of valid calibration constraints:</p>
+<p style="margin: 6pt 6.5pt 2pt 18pt; margin-left: 64px; font-size: 12pt; 
+	 line-height: 150%;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;!MRCA='ch-bo' 
+ TaxonA='chimpanzee' TaxonB='bonobo' MinTime=0.8 MaxTime=5.0;</p>
+<p style="margin: 6pt 6.5pt 2pt 18pt; margin-left: 64px; font-size: 12pt; 
+	 line-height: 150%;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;!NodeName='myNode' 
+ time=6.3 calibrationName=’myCalib’;</p>
+<p style="margin: 6pt 6.5pt 2pt 18pt; margin-left: 64px; font-size: 12pt; 
+	 line-height: 150%;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;!NodeName='gorilla_human' 
+ MinTime=3.7 calibrationName='gorilla human';</p>
+<p style="margin: 6pt 6.5pt 2pt 18pt; margin-left: 64px; font-size: 12pt; 
+	 line-height: 150%;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;!MRCA='orangutan 
+ sumatran' TaxonA='orangutan' TaxonB='sumatran' MaxTime=11.0;</p>
+<p style="margin: 6pt 6.5pt 2pt 18pt; margin-left: 64px; line-height: 150%;"><span 
+	 style="font-size: 12pt;"><font style="font-size: 12pt;" size="4">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;!</font>MRCA='demoLabel1' 
+ TaxonA=chimpanzee TaxonB=bonobo Distribution=normal mean=6.4 stddev=1.2 
+ <br />
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;!NodeName='demoLabel2' 
+ Distribution=exponential time=8.2 decay=0.25; &#160;&#160;<br />
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;!MRCA='orangutan-sumatran' 
+ TaxonA=orangutan TaxonB=sumatran Distribution=uniform mintime=4 maxtime=6;</span> 
+ </p>
+<p style="margin: 6pt 6.5pt 2pt 18pt; font-size: 12pt; margin-left: 64px; 
+	 line-height: 150%;"><span style="font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;!MRCA='orangutan-sumatran' 
+ TaxonA=orangutan TaxonB=sumatran Distribution=lognormal offset=7.0 mean=2.38 
+ stddev=0.15</span></p>
+<p>&#160;</p>
+</body>
+</html>

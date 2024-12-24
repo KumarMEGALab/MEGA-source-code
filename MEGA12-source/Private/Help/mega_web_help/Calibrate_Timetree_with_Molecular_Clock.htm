@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Calibrate Timetree with Molecular Clock</title>
+<link rel="StyleSheet" href="default.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.4.0_5";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Constructing Time Trees" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+<h1>Calibrate Timetree with Molecular Clock</h1>
+<p>MEGA provides two options for calibrating the molecular clock for RelTime 
+ trees (where no calibration constraints have been used):</p>
+<p>&#160;</p>
+<p><span style="font-weight: bold;">Use a single fixed time of divergence</span> 
+ - in this case, the clock calibration is simply the (relative) height 
+ of the target node divided by fixed the time of divergence, and then this 
+ calibrated clock rate sets the scale to convert all relative times in 
+ the tree into absolute times.</p>
+<p>&#160;</p>
+<p><span style="font-weight: bold;">Use a fixed evolutionary rate</span> 
+ - using this option one can define a global evolutionary rate r (in units 
+ of substitutions per site per year) &#160;that is used throughout the 
+ tree. For every node in the tree whose relative height (in units of substitutions 
+ per site) is h, the divergence time of the node will be set to h/r.</p>
+<p>Both of these options are only available from the Tree Explorer window 
+ when displaying a RelTime tree has been generated without using calibration 
+ constraints. To access this utility in the Tree Explorer window, select 
+ an internal node or a branch to focus on in the tree and click Compute 
+ | Calibrate Molecular Clock. The molecular clock dialog will then be shown 
+ and if a branch in the tree is focused, the option for using a fixed evolutionary 
+ rate will be enabled. If a node in the tree is focused, the option to 
+ use a fixed time of divergence will be enabled (in which case you can 
+ also set the scale bar title using the Time Unit edit box in this dialog).</p>
+</body>
+</html>

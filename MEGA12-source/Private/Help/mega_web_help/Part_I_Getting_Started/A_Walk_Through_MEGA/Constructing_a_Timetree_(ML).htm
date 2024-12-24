@@ -1,0 +1,418 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Constructing a Timetree (ML)</title>
+<link rel="StyleSheet" href="../../default.css" type="text/css" />
+ <link rel="StyleSheet" href="../../default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "1.3.0_14";
+</script>
+ <meta name="topic-breadcrumbs" content="Part I: Getting Started > A Walk Through MEGA" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+
+<h1>Constructing a Timetree (ML)</h1>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">This example shows how</font> <font 
+	 style="font-size: 12pt;" size="4">to generate</font> <font style="font-size: 12pt;" 
+	 size="4">a timetree in</font> <i><font style="font-size: 12pt; font-style: italic;" 
+											 size="4">MEGA</font></i><font 
+	 style="font-size: 12pt;" size="4">. For this analysis,</font> <i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">MEGA</font></i> 
+ <font style="font-size: 12pt;" size="4">uses a Timetree Wizard window 
+ which will walk you through the necessary steps.</font> <font style="font-size: 12pt;" 
+	 size="4">The data files used in this example can be found in the</font> 
+ <i><font style="font-size: 12pt; font-style: italic;" size="4">MEGA/Example</font></i><i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">s</font></i> 
+ <font style="font-size: 12pt;" size="4">folder (The default location for 
+ Windows users is</font> <i><font style="font-size: 12pt; font-style: italic;" 
+									 size="4">C:\Users\UserName\Documents\MEGA</font></i><i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">7</font></i><i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">\Examples\</font></i><font 
+	 style="font-size: 12pt;" size="4">. The default location for Mac users 
+ is</font> <i><font style="font-size: 12pt; font-style: italic;" size="4">$HOME/MEGA/Examples</font></i><font 
+	 style="font-size: 12pt;" size="4">, where</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4">$HOME</font></i> <font style="font-size: 12pt;" 
+															 size="4">is 
+ the user’s home directory).</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-size: 12pt; 
+	 font-weight: bold; font-style: italic; font-family: Arial, sans-serif;"><b><i><font 
+	 style="font-weight: bold; font-style: italic;">Setting up the analysis</font></i></b></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">From the main</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4">MEGA</font></i> <font style="font-size: 12pt;" 
+														 size="4">window, 
+ select</font> <b><font style="font-size: 12pt; font-weight: bold;" size="4">Clocks 
+ | Compute Time Tree | RelTime-ML</font></b><font style="font-size: 12pt;" 
+													 size="4">.</font> 
+ <font style="font-size: 12pt;" size="4">The Timetree Wizard window, which 
+ outlines the 6 steps for creating a timetree in MEGA</font> <font style="font-size: 12pt;" 
+	 size="4">will be displayed.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-family: Arial, sans-serif;"><b><u><font 
+	 style="font-size: 12pt; font-weight: bold; text-decoration: underline; " 
+	 size="4">Step1:</font></u></b> <font style="font-size: 12pt;" size="4">First, 
+ we will load a sequence alignment file.</font> <font style="font-size: 12pt;" 
+														 size="4">In the</font> 
+ <i><font style="font-size: 12pt; font-style: italic;" size="4">Timetree 
+ Wizard</font></i> <font style="font-size: 12pt;" size="4">window,</font> 
+ <font style="font-size: 12pt;" size="4">click the</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4">Browse</font></i><i><font style="font-size: 12pt; 
+															 font-style: italic;" 
+															 size="4">...</font></i> 
+ <font style="font-size: 12pt;" size="4">button and</font> <font style="font-size: 12pt;" 
+	 size="4">then using the file open dialog,</font> <font style="font-size: 12pt;" 
+															 size="4">find 
+ and select the “mtCDNA.meg”</font> <font style="font-size: 12pt;" size="4">sequence 
+ alignment</font> <font style="font-size: 12pt;" size="4">file.</font> 
+ <font style="font-size: 12pt;" size="4">After the alignment file is parsed 
+ by</font> <i><font style="font-size: 12pt; font-style: italic;" size="4">MEGA</font></i><font 
+	 style="font-size: 12pt;" size="4">, the Load Tree File action in step 
+ 2 will become enabled.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-family: Arial, sans-serif;"><b><u><font 
+	 style="font-size: 12pt; font-weight: bold; text-decoration: underline; " 
+	 size="4">Step 2:</font></u></b> <font style="font-size: 12pt;" size="4">Second, 
+ we will load the newick tree file which gives the <a href="javascript:TextPopup(this)" id="HotSpot9988" class="glossterm" style="font-family: Arial, sans-serif;">topology</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot9988', 'POPUP9988');
+//]]></script><span class="glosstext" id="POPUP9988" style="display: none;"> The branching pattern of a tree is its topology.</span> for our 
+ timetree.</font> <font style="font-size: 12pt;" size="4">Click the</font> 
+ <i><font style="font-size: 12pt; font-style: italic;" size="4">Browse</font></i> 
+ <i><font style="font-size: 12pt; font-style: italic;" size="4">…</font></i> 
+ <font style="font-size: 12pt;" size="4">button and</font> <font style="font-size: 12pt;" 
+	 size="4">using the file open dialog that is displayed, find and</font> 
+ <font style="font-size: 12pt;" size="4">select the “mtCDNA.nwk” tree file.</font> 
+ <font style="font-size: 12pt;" size="4">After this file is parsed and 
+ validated against the sequence alignment begin used, step 3 will become 
+ enabled.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-family: Arial, sans-serif;"><b><u><font 
+	 style="font-size: 12pt; font-weight: bold; text-decoration: underline; " 
+	 size="4">Step 3:</font></u></b> <font style="font-size: 12pt;" size="4">Next, 
+ we need to specify an outgroup taxon (we will specify one but</font> <font 
+	 style="font-size: 12pt;" size="4">multiple <a href="javascript:TextPopup(this)" id="HotSpot61660" class="glossterm" style="font-family: Arial, sans-serif;">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot61660', 'POPUP61660');
+//]]></script><span class="glosstext" id="POPUP61660" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> can be in 
+ the outgroup). Click the</font> <i><font style="font-size: 12pt; font-style: italic;" 
+											 size="4">S</font></i><i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">elect</font></i> 
+ <i><font style="font-size: 12pt; font-style: italic;" size="4"><a href="javascript:TextPopup(this)" id="HotSpot24479" class="glossterm" style="font-family: Arial, sans-serif;">Taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot24479', 'POPUP24479');
+//]]></script><span class="glosstext" id="POPUP24479" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span>…</font></i> 
+ <font style="font-size: 12pt;" size="4">button</font> <font style="font-size: 12pt;" 
+															 size="4">and 
+ the</font> <i><font style="font-size: 12pt; font-style: italic;" size="4"><a href="javascript:TextPopup(this)" id="HotSpot20507" class="glossterm" style="font-family: Arial, sans-serif;">Taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot20507', 'POPUP20507');
+//]]></script><span class="glosstext" id="POPUP20507" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span>/Groups</font></i> 
+ <font style="font-size: 12pt;" size="4">window will be displayed with 
+ all <a href="javascript:TextPopup(this)" id="HotSpot17800" class="glossterm" style="font-family: Arial, sans-serif;">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot17800', 'POPUP17800');
+//]]></script><span class="glosstext" id="POPUP17800" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span></font> 
+ <font style="font-size: 12pt;" size="4">in our data</font> <font style="font-size: 12pt;" 
+	 size="4">listed in the</font> <i><font style="font-size: 12pt; font-style: italic;" 
+											 size="4">Ungrouped <a href="javascript:TextPopup(this)" id="HotSpot7209" class="glossterm" style="font-family: Arial, sans-serif;">Taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot7209', 'POPUP7209');
+//]]></script><span class="glosstext" id="POPUP7209" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span></font></i> 
+ <font style="font-size: 12pt;" size="4">list box</font> <font style="font-size: 12pt;" 
+	 size="4">(alternatively you can click the</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4">Select <a href="javascript:TextPopup(this)" id="HotSpot21483" class="glossterm" style="font-family: Arial, sans-serif;">Branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot21483', 'POPUP21483');
+//]]></script><span class="glosstext" id="POPUP21483" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span>…</font></i> 
+ <font style="font-size: 12pt;" size="4">button and use the Tree Explorer 
+ to specify the outgroup). Select</font> <font style="font-size: 12pt;" 
+												 size="4">the gibbon taxon</font> 
+ <font style="font-size: 12pt;" size="4">and move</font> <font style="font-size: 12pt;" 
+	 size="4">it from the</font> <i><font style="font-size: 12pt; font-style: italic;" 
+											 size="4">Ungrouped <a href="javascript:TextPopup(this)" id="HotSpot10442" class="glossterm" style="font-family: Arial, sans-serif;">Taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot10442', 'POPUP10442');
+//]]></script><span class="glosstext" id="POPUP10442" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span></font></i> 
+ <font style="font-size: 12pt;" size="4">list box to the</font> <i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4"><a href="javascript:TextPopup(this)" id="HotSpot49435" class="glossterm" style="font-family: Arial, sans-serif;">Taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot49435', 'POPUP49435');
+//]]></script><span class="glosstext" id="POPUP49435" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> 
+ in Outgroup</font></i> <font style="font-size: 12pt;" size="4">list box 
+ by clicking the left-pointing arrow. Click the</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4">Close</font></i> <font style="font-size: 12pt;" 
+															 size="4">button 
+ to save your changes and exit</font> <font style="font-size: 12pt;" size="4">the</font> 
+ <i><font style="font-size: 12pt; font-style: italic;" size="4"><a href="javascript:TextPopup(this)" id="HotSpot33242" class="glossterm" style="font-family: Arial, sans-serif;">Taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot33242', 'POPUP33242');
+//]]></script><span class="glosstext" id="POPUP33242" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span>/Groups</font></i> 
+ <font style="font-size: 12pt;" size="4">dialog.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-family: Arial, sans-serif;"><b><u><font 
+	 style="font-size: 12pt; font-weight: bold; text-decoration: underline; " 
+	 size="4">Step 4:</font></u></b> <font style="font-size: 12pt;" size="4">Now, 
+ an option to specify</font> <font style="font-size: 12pt;" size="4">divergence 
+ time</font> <font style="font-size: 12pt;" size="4">calibrations</font> 
+ <font style="font-size: 12pt;" size="4">constraints</font> <font style="font-size: 12pt;" 
+	 size="4">will become available</font> <font style="font-size: 12pt;" 
+												 size="4">(if this step 
+ is skipped, then only relative times of divergence will be calculated). 
+ Click the</font> <i><font style="font-size: 12pt; font-style: italic;" 
+							 size="4">Add Constraints</font></i><i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">…</font></i> 
+ <font style="font-size: 12pt;" size="4">button.</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4">MEGA</font></i> <font style="font-size: 12pt;" 
+														 size="4">will 
+ display</font> <font style="font-size: 12pt;" size="4">the</font> <i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">Calibration 
+ Editor</font></i> <font style="font-size: 12pt;" size="4">window</font> 
+ <font style="font-size: 12pt;" size="4">that</font> <font style="font-size: 12pt;" 
+															 size="4">is</font> 
+ <font style="font-size: 12pt;" size="4">used for</font> <font style="font-size: 12pt;" 
+	 size="4">specifying divergence time constraints in the timetree.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">First, we will create a divergence 
+ time calibration constraint</font> <font style="font-size: 12pt;" size="4">by 
+ specifying two <a href="javascript:TextPopup(this)" id="HotSpot39102" class="glossterm" style="font-family: Arial, sans-serif;">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot39102', 'POPUP39102');
+//]]></script><span class="glosstext" id="POPUP39102" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> 
+ whose most recent common ancestor is the <a href="javascript:TextPopup(this)" id="HotSpot18851" class="glossterm" style="font-family: Arial, sans-serif;">node</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot18851', 'POPUP18851');
+//]]></script><span class="glosstext" id="POPUP18851" style="display: none;"> A node in a phylogenetic tree represents a taxon, the external or terminal nodes represent the extant taxa and the internal nodes represent the ancestral taxa.</span> for which 
+ the time constraint applies</font><font style="font-size: 12pt;" size="4">.</font> 
+ <font style="font-size: 12pt;" size="4">In</font> <font style="font-size: 12pt;" 
+														 size="4">the</font> 
+ <i><font style="font-size: 12pt; font-style: italic;" size="4">Calibration 
+ Editor</font></i> <font style="font-size: 12pt;" size="4">window, select 
+ the</font> <b><font style="font-size: 12pt; font-weight: bold;" size="4">Calibration</font></b> 
+ <font style="font-size: 12pt;" size="4">| C</font><b><font style="font-size: 12pt; 
+															 font-weight: bold;" 
+															 size="4">alibrate 
+ MRCA</font></b> <font style="font-size: 12pt;" size="4">menu item (or</font> 
+ <font style="font-size: 12pt;" size="4">click the</font> <font style="font-size: 12pt;" 
+	 size="4">add new constraint</font> <font style="font-size: 12pt;" 
+												 size="4">button</font> 
+ <font style="font-size: 12pt;" size="4">on the upper left toolbar [it 
+ looks like a clock with</font> <font style="font-size: 12pt;" size="4">a 
+ plus sign on the bottom right]). This will create a new calibration constraint 
+ with a default name. From the</font> <i><font style="font-size: 12pt; 
+												 font-style: italic;" size="4">Taxon 
+ A</font></i> <font style="font-size: 12pt;" size="4">and</font> <i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">Taxon B</font></i> 
+ <font style="font-size: 12pt;" size="4">dropdown lists</font> <font style="font-size: 12pt;" 
+	 size="4">select chimpanzee and bonobo. The</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4">Calibration Name</font></i> <font style="font-size: 12pt;" 
+	 size="4">edit box</font> <font style="font-size: 12pt;" size="4">and</font> 
+ <font style="font-size: 12pt;" size="4">the</font> <i><font style="font-size: 12pt; 
+															 font-style: italic;" 
+															 size="4">MRCA 
+ <a href="javascript:TextPopup(this)" id="HotSpot50291" class="glossterm" style="font-family: Arial, sans-serif;">Node</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot50291', 'POPUP50291');
+//]]></script><span class="glosstext" id="POPUP50291" style="display: none;"> A node in a phylogenetic tree represents a taxon, the external or terminal nodes represent the extant taxa and the internal nodes represent the ancestral taxa.</span> 
+ Label</font></i> <font style="font-size: 12pt;" size="4">edit box</font> 
+ <font style="font-size: 12pt;" size="4">are populated with default names 
+ but you can edit these if you like. The MRCA</font> <font style="font-size: 12pt;" 
+															 size="4"><a href="javascript:TextPopup(this)" id="HotSpot38828" class="glossterm" style="font-family: Arial, sans-serif;">node</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot38828', 'POPUP38828');
+//]]></script><span class="glosstext" id="POPUP38828" style="display: none;"> A node in a phylogenetic tree represents a taxon, the external or terminal nodes represent the extant taxa and the internal nodes represent the ancestral taxa.</span> 
+ label is</font> <font style="font-size: 12pt;" size="4">especially</font> 
+ <font style="font-size: 12pt;" size="4">useful for interpreting the tabular 
+ Timetree</font> <font style="font-size: 12pt;" size="4">output produced 
+ by</font> <i><font style="font-size: 12pt; font-style: italic;" size="4">MEGA’s</font></i> 
+ <font style="font-size: 12pt;" size="4">Timetree system so that you can 
+ quickly identify calibrated nodes by name instead of</font> <font style="font-size: 12pt;" 
+	 size="4">by</font> <font style="font-size: 12pt;" size="4"><a href="javascript:TextPopup(this)" id="HotSpot17800" class="glossterm" style="font-family: Arial, sans-serif;">node</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot17800', 'POPUP17800');
+//]]></script><span class="glosstext" id="POPUP17800" style="display: none;"> A node in a phylogenetic tree represents a taxon, the external or terminal nodes represent the extant taxa and the internal nodes represent the ancestral taxa.</span> 
+ number.</font> <font style="font-size: 12pt;" size="4">In the</font> <i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">Min Divergence 
+ Time</font></i> <font style="font-size: 12pt;" size="4">edit box enter 
+ 1.2. In the</font> <i><font style="font-size: 12pt; font-style: italic;" 
+							 size="4">Max Divergence Time</font></i> <font 
+	 style="font-size: 12pt;" size="4">edit box enter 5.0.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">Next, we will create another calibration 
+ constraint by</font> <font style="font-size: 12pt;" size="4">selecting 
+ a <a href="javascript:TextPopup(this)" id="HotSpot7209" class="glossterm" style="font-family: Arial, sans-serif;">node</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot7209', 'POPUP7209');
+//]]></script><span class="glosstext" id="POPUP7209" style="display: none;"> A node in a phylogenetic tree represents a taxon, the external or terminal nodes represent the extant taxa and the internal nodes represent the ancestral taxa.</span> 
+ in</font> <font style="font-size: 12pt;" size="4">the</font> <font style="font-size: 12pt;" 
+	 size="4">tree display. In the</font> <font style="font-size: 12pt;" 
+												 size="4">tree display, 
+ select</font> <font style="font-size: 12pt;" size="4">the</font> <font 
+	 style="font-size: 12pt;" size="4"><a href="javascript:TextPopup(this)" id="HotSpot21483" class="glossterm" style="font-family: Arial, sans-serif;">node</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot21483', 'POPUP21483');
+//]]></script><span class="glosstext" id="POPUP21483" style="display: none;"> A node in a phylogenetic tree represents a taxon, the external or terminal nodes represent the extant taxa and the internal nodes represent the ancestral taxa.</span></font> <font 
+	 style="font-size: 12pt;" size="4">whose descendents</font> <font style="font-size: 12pt;" 
+	 size="4">are orangutan and sumatran (click this</font> <font style="font-size: 12pt;" 
+	 size="4"><a href="javascript:TextPopup(this)" id="HotSpot10442" class="glossterm" style="font-family: Arial, sans-serif;">node</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot10442', 'POPUP10442');
+//]]></script><span class="glosstext" id="POPUP10442" style="display: none;"> A node in a phylogenetic tree represents a taxon, the external or terminal nodes represent the extant taxa and the internal nodes represent the ancestral taxa.</span></font> 
+ <font style="font-size: 12pt;" size="4">to select it. It</font> <font 
+	 style="font-size: 12pt;" size="4">will</font> <font style="font-size: 12pt;" 
+														 size="4">then</font> 
+ <font style="font-size: 12pt;" size="4">have a red diamond around it when 
+ it is selected). Select</font> <b><font style="font-size: 12pt; font-weight: bold;" 
+										 size="4">Calibration</font></b> 
+ <font style="font-size: 12pt;" size="4">|</font> <b><font style="font-size: 12pt; 
+															 font-weight: bold;" 
+															 size="4">Calibrate 
+ Selected Node</font></b> <font style="font-size: 12pt;" size="4">menu 
+ item (or on</font> <font style="font-size: 12pt;" size="4">the</font> 
+ <font style="font-size: 12pt;" size="4">upper-right toolbar,</font> <font 
+	 style="font-size: 12pt;" size="4">click the new divergence time constraint 
+ button [it also looks like a clock but has a plus sign on its lower-left 
+ instead of lower-right]). This will create a new calibration.</font> <font 
+	 style="font-size: 12pt;" size="4">Now</font> <font style="font-size: 12pt;" 
+														 size="4">type 
+ 13.0 in the</font> <i><font style="font-size: 12pt; font-style: italic;" 
+							 size="4">Max Divergence Time</font></i> <font 
+	 style="font-size: 12pt;" size="4">edit box. Leave the</font> <i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">Min Divergence 
+ Time Edit</font></i> <font style="font-size: 12pt;" size="4">box blank. 
+ Click the</font> <i><font style="font-size: 12pt; font-style: italic;" 
+							 size="4">Finished</font></i> <font style="font-size: 12pt;" 
+	 size="4">button to complete step 4.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-family: Arial, sans-serif;"><b><u><font 
+	 style="font-size: 12pt; font-weight: bold; text-decoration: underline; " 
+	 size="4">Step 5:</font></u></b> <font style="font-size: 12pt;" size="4">Next, 
+ we can set several analysis settings such as substitution model, treatment 
+ of missing data, etc… Back</font> <font style="font-size: 12pt;" size="4">in 
+ the</font> <i><font style="font-size: 12pt; font-style: italic;" size="4">Timetree 
+ Wizard</font></i> <font style="font-size: 12pt;" size="4">window, click 
+ the</font> <i><font style="font-size: 12pt; font-style: italic;" size="4">Set</font></i> 
+ <i><font style="font-size: 12pt; font-style: italic;" size="4">Analysis 
+ Options…</font></i> <font style="font-size: 12pt;" size="4">button</font> 
+ <font style="font-size: 12pt;" size="4">in order</font> <font style="font-size: 12pt;" 
+	 size="4">to open the</font> <i><font style="font-size: 12pt; font-style: italic;" 
+											 size="4">Analysis Preferences</font></i> 
+ <font style="font-size: 12pt;" size="4">dialog.</font> <font style="font-size: 12pt;" 
+	 size="4">Click the</font> <i><font style="font-size: 12pt; font-style: italic;" 
+										 size="4">Save</font></i> <font 
+	 style="font-size: 12pt;" size="4">button to use the default settings.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-family: Arial, sans-serif;"><b><u><font 
+	 style="font-size: 12pt; font-weight: bold; text-decoration: underline; " 
+	 size="4">Step 6:</font></u></b> <font style="font-size: 12pt;" size="4">Finally, 
+ in the</font> <i><font style="font-size: 12pt; font-style: italic;" size="4">Timetree 
+ Wizard</font></i> <font style="font-size: 12pt;" size="4">window, click 
+ the</font> <i><font style="font-size: 12pt; font-style: italic;" size="4">Execute</font></i> 
+ <font style="font-size: 12pt;" size="4">button.</font> <font style="font-size: 12pt;" 
+	 size="4">Progress will be displayed as the analysis runs. When the 
+ analysis completes, the Tree Explorer window will return and display the</font> 
+ <font style="font-size: 12pt;" size="4">time tree.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-family: Arial, sans-serif;">&#160;</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-size: 12pt; 
+	 font-weight: bold; font-style: italic; font-family: Arial, sans-serif;"><b><i><font 
+	 style="font-weight: bold; font-style: italic;">Viewing the results</font></i></b></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">In the Tree Explorer window,</font> 
+ <font style="font-size: 12pt;" size="4">the calculated timetree will be 
+ displayed with absolute times of divergence for all branching points in 
+ the tree shown. Blue diamonds indicate those nodes which were used to 
+ calibrate the tree. To display <a href="javascript:TextPopup(this)" id="HotSpot49435" class="glossterm" style="font-family: Arial, sans-serif;">node</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot49435', 'POPUP49435');
+//]]></script><span class="glosstext" id="POPUP49435" style="display: none;"> A node in a phylogenetic tree represents a taxon, the external or terminal nodes represent the extant taxa and the internal nodes represent the ancestral taxa.</span> 
+ height error bars, click</font> <b><font style="font-size: 12pt; font-weight: bold;" 
+											 size="4">View | Show/ Hide</font></b> 
+ <b><font style="font-size: 12pt; font-weight: bold;" size="4">| Node Height 
+ Error Bars</font></b> <font style="font-size: 12pt;" size="4">(if <a href="javascript:TextPopup(this)" id="HotSpot33242" class="glossterm" style="font-family: Arial, sans-serif;">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot33242', 'POPUP33242');
+//]]></script><span class="glosstext" id="POPUP33242" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> 
+ lengths are also shown, you can hide them by clicking</font> <b><font 
+	 style="font-size: 12pt; font-weight: bold;" size="4">View | Show/Hide 
+ | Branch Lengths</font></b><font style="font-size: 12pt;" size="4">).</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">Select</font> <b><font style="font-size: 12pt; 
+	 font-weight: bold;" size="4">F</font></b><b><font style="font-size: 12pt; 
+														 font-weight: bold;" 
+														 size="4">ile | 
+ Export Current Tree (Timetree</font></b><b><font style="font-size: 12pt; 
+													 font-weight: bold;" 
+													 size="4">)</font></b> 
+ <font style="font-size: 12pt;" size="4">and</font> <font style="font-size: 12pt;" 
+															 size="4">MEGA’s 
+ text editor will be displayed with a description of the tree in tabular 
+ format.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">Go back to</font> <font style="font-size: 12pt;" 
+	 size="4">the</font> <i><font style="font-size: 12pt; font-style: italic;" 
+									 size="4">Tree Explorer</font></i> 
+ <font style="font-size: 12pt;" size="4">window and</font> <font style="font-size: 12pt;" 
+	 size="4">select</font> <b><font style="font-size: 12pt; font-weight: bold;" 
+									 size="4">View | Show/Hide | Node Ids</font></b> 
+ <font style="font-size: 12pt;" size="4">from the main menu. Now the divergence 
+ times are no longer shown but <a href="javascript:TextPopup(this)" id="HotSpot39102" class="glossterm" style="font-family: Arial, sans-serif;">node</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot39102', 'POPUP39102');
+//]]></script><span class="glosstext" id="POPUP39102" style="display: none;"> A node in a phylogenetic tree represents a taxon, the external or terminal nodes represent the extant taxa and the internal nodes represent the ancestral taxa.</span> 
+ Ids are shown. These correspond to the <a href="javascript:TextPopup(this)" id="HotSpot18851" class="glossterm" style="font-family: Arial, sans-serif;">Node</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot18851', 'POPUP18851');
+//]]></script><span class="glosstext" id="POPUP18851" style="display: none;"> A node in a phylogenetic tree represents a taxon, the external or terminal nodes represent the extant taxa and the internal nodes represent the ancestral taxa.</span> Ids in the</font> 
+ <font style="font-size: 12pt;" size="4">tabular description of the timetree 
+ in the text editor.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">The first column in the text editor</font> 
+ <font style="font-size: 12pt;" size="4">has <a href="javascript:TextPopup(this)" id="HotSpot50291" class="glossterm" style="font-family: Arial, sans-serif;">node</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot50291', 'POPUP50291');
+//]]></script><span class="glosstext" id="POPUP50291" style="display: none;"> A node in a phylogenetic tree represents a taxon, the external or terminal nodes represent the extant taxa and the internal nodes represent the ancestral taxa.</span> labels. The 
+ one specified</font> <font style="font-size: 12pt;" size="4">in the Calibration 
+ Editor is there and there is another one which was contained in the mtCDNA.nwk 
+ file. Open the mtCDNA.nwk file using the</font> <font style="font-size: 12pt;" 
+														 size="4">text 
+ editor and find this <a href="javascript:TextPopup(this)" id="HotSpot38828" class="glossterm" style="font-family: Arial, sans-serif;">node</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot38828', 'POPUP38828');
+//]]></script><span class="glosstext" id="POPUP38828" style="display: none;"> A node in a phylogenetic tree represents a taxon, the external or terminal nodes represent the extant taxa and the internal nodes represent the ancestral taxa.</span> 
+ label.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 5.75pt; font-family: Arial, sans-serif;"><b><font 
+	 style="font-size: 12pt; font-weight: bold;" size="4">Select View</font></b> 
+ <font style="font-size: 12pt;" size="4">|</font> <b><font style="font-size: 12pt; 
+															 font-weight: bold;" 
+															 size="4">Show/Hide</font></b> 
+ <font style="font-size: 12pt;" size="4">|</font> <b><font style="font-size: 12pt; 
+															 font-weight: bold;" 
+															 size="4">Data 
+ Coverage</font></b> <font style="font-size: 12pt;" size="4">and the</font> 
+ <font style="font-size: 12pt;" size="4"><a href="../../Data_Coverage.htm" 
+											 style="font-family: Arial, sans-serif;">data 
+ coverage</a></font> <font style="font-size: 12pt;" size="4">for each internal 
+ <a href="javascript:TextPopup(this)" id="HotSpot17800" class="glossterm" style="font-family: Arial, sans-serif;">node</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot17800', 'POPUP17800');
+//]]></script><span class="glosstext" id="POPUP17800" style="display: none;"> A node in a phylogenetic tree represents a taxon, the external or terminal nodes represent the extant taxa and the internal nodes represent the ancestral taxa.</span> 
+ in the tree will be displayed.</font></p>
+</body>
+</html>

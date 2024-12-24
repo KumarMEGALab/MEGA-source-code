@@ -1,0 +1,791 @@
+object TreeInputForm: TTreeInputForm
+  Left = 833
+  Height = 575
+  Top = 192
+  Width = 823
+  Caption = 'TreeInputForm'
+  ClientHeight = 555
+  ClientWidth = 823
+  Menu = MainMenu1
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnDropFiles = FormDropFiles
+  OnHelp = FormHelp
+  OnMouseWheel = FormMouseWheel
+  OnResize = FormResize
+  OnShow = FormShow
+  Position = poMainFormCenter
+  SessionProperties = 'FontDialog1.Font;FontDialog1.MaxFontSize;FontDialog1.MinFontSize;FontDialog1.Options;HideMappedTreeNamesChk.Checked;OnlyUnMappedChk.Checked;OpenDlg.FileName;OpenDlg.InitialDir;SaveDialog1.FileName;SaveDialog1.InitialDir'
+  LCLVersion = '2.2.6.0'
+  object LeftPanel: TPanel
+    Left = 0
+    Height = 482
+    Top = 0
+    Width = 347
+    Align = alLeft
+    ClientHeight = 482
+    ClientWidth = 347
+    TabOrder = 0
+    object EditHistoryPanel: TPanel
+      Left = 1
+      Height = 186
+      Top = 295
+      Width = 345
+      Align = alBottom
+      ClientHeight = 186
+      ClientWidth = 345
+      TabOrder = 0
+      Visible = False
+      object EditHistoryLbl: TLabel
+        Left = 1
+        Height = 15
+        Top = 1
+        Width = 343
+        Align = alTop
+        Alignment = taCenter
+        Caption = 'Current Tree Edit History (most recent at top)'
+        ParentColor = False
+      end
+      object EditHistory: TListBox
+        Left = 1
+        Height = 169
+        Top = 16
+        Width = 343
+        Align = alClient
+        ItemHeight = 0
+        OnDblClick = EditHistoryDblClick
+        TabOrder = 0
+      end
+    end
+    object Splitter2: TSplitter
+      Cursor = crVSplit
+      Left = 1
+      Height = 5
+      Top = 290
+      Width = 345
+      Align = alBottom
+      ResizeAnchor = akBottom
+    end
+    object LeftSideLabel: TLabel
+      Left = 1
+      Height = 15
+      Top = 1
+      Width = 345
+      Align = alTop
+      Alignment = taCenter
+      Caption = 'Match Active Data and Tree Labels'
+      ParentColor = False
+    end
+    object NameMapListView: TListView
+      Left = 1
+      Height = 274
+      Top = 16
+      Width = 345
+      Align = alClient
+      AutoSort = False
+      AutoWidthLastColumn = True
+      BorderStyle = bsNone
+      Columns = <      
+        item
+          Caption = 'Active Data Names'
+          Width = 115
+        end      
+        item
+          Caption = 'Map to User Tree Name'
+          Width = 230
+        end>
+      DragMode = dmAutomatic
+      ReadOnly = True
+      RowSelect = True
+      ScrollBars = ssAutoBoth
+      TabOrder = 2
+      ViewStyle = vsReport
+      OnChange = NameMapListViewChange
+      OnClick = NameMapListViewClick
+      OnCompare = NameMapListViewCompare
+      OnCustomDrawItem = NameMapListViewCustomDrawItem
+      OnCustomDrawSubItem = NameMapListViewCustomDrawSubItem
+      OnMouseMove = NameMapListViewMouseMove
+    end
+    object TreeToActiveMatchLbx: TCheckListBox
+      Left = 130
+      Height = 80
+      Top = 118
+      Width = 100
+      ItemHeight = 0
+      OnClickCheck = TreeToActiveMatchLBxClickCheck
+      TabOrder = 3
+      Visible = False
+    end
+  end
+  object RightPanel: TPanel
+    Left = 352
+    Height = 482
+    Top = 0
+    Width = 471
+    Align = alClient
+    BevelOuter = bvNone
+    BorderStyle = bsSingle
+    ClientHeight = 478
+    ClientWidth = 467
+    TabOrder = 1
+    object TreeContainer: TPanel
+      Left = 0
+      Height = 478
+      Top = 0
+      Width = 467
+      Align = alClient
+      BevelOuter = bvNone
+      ClientHeight = 478
+      ClientWidth = 467
+      TabOrder = 0
+      object TreeToolBar: TToolBar
+        Left = 0
+        Height = 478
+        Top = 0
+        Width = 31
+        Align = alLeft
+        ButtonHeight = 23
+        ButtonWidth = 29
+        Caption = 'TreeToolBar'
+        DisabledImages = MegaForm.DisabledIcons
+        EdgeBorders = [ebTop, ebRight]
+        Images = MegaForm.NewIcons
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 0
+        object UploadTBtn: TToolButton
+          Left = 1
+          Top = 2
+          Action = ActionUpload
+        end
+        object RecentTreesBtn: TToolButton
+          Left = 1
+          Hint = 'Open recently edited trees'
+          Top = 25
+          Caption = 'RecentTreesBtn'
+          DropdownMenu = RecentMenu
+          ImageIndex = 124
+        end
+        object NewTreeBtn: TToolButton
+          Left = 1
+          Top = 48
+          Action = ActionNewTree
+        end
+        object SaveTBtn: TToolButton
+          Left = 1
+          Top = 71
+          Action = ActionSave
+        end
+        object FontTBtn: TToolButton
+          Left = 1
+          Top = 94
+          Action = ActionFont
+        end
+        object FindTBtn: TToolButton
+          Left = 1
+          Top = 117
+          Action = ActionFind
+        end
+        object CopyTBtn: TToolButton
+          Left = 1
+          Top = 140
+          Action = ActionCopy
+        end
+        object UndoTBtn: TToolButton
+          Left = 1
+          Top = 163
+          Action = ActionUndo
+        end
+        object ToolButton1: TToolButton
+          Left = 1
+          Top = 186
+          Action = ActionAddOTU
+        end
+        object RootTBtn: TToolButton
+          Left = 1
+          Top = 232
+          Action = ActionRoot
+        end
+        object FlipTBtn: TToolButton
+          Left = 1
+          Top = 255
+          Action = ActionFlip
+        end
+        object AutosizeBtn: TToolButton
+          Left = 1
+          Top = 278
+          Action = ActionAutosize
+        end
+        object MouseScrollResizeBtn: TToolButton
+          Left = 1
+          Top = 301
+          Action = ActionResize
+        end
+        object HistoryVisibleBtn: TToolButton
+          Left = 1
+          Top = 324
+          Action = ActionToggleHistory
+        end
+        object AdvancedMap: TToolButton
+          Left = 1
+          Top = 209
+          Action = ActionRemoveOTU
+        end
+        object BLenEditBtn: TToolButton
+          Left = 1
+          Top = 347
+          Action = ActionBLenEditMode
+        end
+        object TopologyOnlyBtn: TToolButton
+          Left = 1
+          Top = 370
+          Action = ActionToggleTopology
+        end
+        object RootToggleBtn: TToolButton
+          Left = 1
+          Top = 393
+          Action = ActionToggleRoot
+        end
+      end
+      object ScrollSizeContainer: TPanel
+        Left = 31
+        Height = 478
+        Top = 0
+        Width = 436
+        Align = alClient
+        BevelOuter = bvNone
+        TabOrder = 1
+      end
+    end
+  end
+  object OkCancelPanel: TPanel
+    Left = 0
+    Height = 73
+    Top = 482
+    Width = 823
+    Align = alBottom
+    ClientHeight = 73
+    ClientWidth = 823
+    TabOrder = 2
+    object OnlyUnMappedChk: TCheckBox
+      Left = 8
+      Height = 19
+      Top = 8
+      Width = 166
+      Caption = 'Show Only Unmapped Taxa'
+      OnClick = OnlyUnmappedChkClick
+      TabOrder = 0
+    end
+    object HideMappedTreeNamesChk: TCheckBox
+      Left = 227
+      Height = 19
+      Top = 8
+      Width = 157
+      Caption = 'Hide Mapped Tree Names'
+      Checked = True
+      OnClick = HideMappedTreeNamesChkClick
+      State = cbChecked
+      TabOrder = 1
+    end
+    object ToolBar1: TToolBar
+      Left = 456
+      Height = 30
+      Top = 7
+      Width = 358
+      Align = alNone
+      Anchors = [akRight, akBottom]
+      AutoSize = True
+      ButtonHeight = 30
+      ButtonWidth = 115
+      Caption = 'ToolBar1'
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      HotImages = ImageForm.DlgButtons
+      Images = ImageForm.DlgButtonsHover
+      TabOrder = 2
+      object ToolButton2: TToolButton
+        Left = 1
+        Top = 0
+        Action = HelpAction
+      end
+      object ToolButton3: TToolButton
+        Left = 120
+        Top = 0
+        Action = CancelAction
+      end
+      object OkBtn: TToolButton
+        Left = 239
+        Top = 0
+        Action = OkAction
+      end
+    end
+    object StatusBar1: TStatusBar
+      Left = 1
+      Height = 23
+      Top = 49
+      Width = 821
+      Panels = <      
+        item
+          Width = 200
+        end      
+        item
+          Width = 200
+        end      
+        item
+          Width = 50
+        end>
+      SimplePanel = False
+    end
+    object ProgressBar: TProgressBar
+      Left = 1
+      Height = 6
+      Top = 43
+      Width = 821
+      Align = alBottom
+      Smooth = True
+      TabOrder = 4
+    end
+    object ProgressLabel: TLabel
+      Left = 8
+      Height = 15
+      Top = 27
+      Width = 32
+      Caption = 'Ready'
+      ParentColor = False
+    end
+  end
+  object Splitter1: TSplitter
+    Left = 347
+    Height = 482
+    Top = 0
+    Width = 5
+  end
+  object CheckImageList: TImageList
+    Left = 432
+    Top = 232
+  end
+  object RecentMenu: TPopupMenu
+    Left = 385
+    Top = 338
+    object MenuItem1: TMenuItem
+      Caption = '&Recent Trees'
+      Enabled = False
+    end
+  end
+  object TreeRightClick: TPopupMenu
+    Left = 480
+    Top = 392
+    object MenuItem2: TMenuItem
+      Action = ActionAddOTU
+    end
+    object MenuItem3: TMenuItem
+      Action = ActionRemoveOTU
+    end
+    object MenuItem4: TMenuItem
+      Action = ActionRoot
+    end
+    object MenuItem5: TMenuItem
+      Action = ActionFlip
+    end
+    object someSpacer: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem6: TMenuItem
+      Action = ActionFind
+    end
+    object MenuItem7: TMenuItem
+      Action = ActionAutosize
+    end
+    object MenuItem8: TMenuItem
+      Action = ActionUndo
+    end
+    object MenuItem9: TMenuItem
+      Action = ActionFont
+    end
+  end
+  object OpenDlg: TOpenDialog
+    Left = 456
+    Top = 124
+  end
+  object SaveDialog1: TSaveDialog
+    Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
+    Left = 435
+    Top = 162
+  end
+  object FontDialog1: TFontDialog
+    MinFontSize = 0
+    MaxFontSize = 0
+    Left = 464
+    Top = 26
+  end
+  object ActionList1: TActionList
+    Images = MegaForm.NewIcons
+    OnUpdate = ActionList1Update
+    Left = 435
+    Top = 304
+    object ActionUndo: TAction
+      Caption = '&Undo'
+      Hint = 'Undo the last completed action'
+      ImageIndex = 45
+      OnExecute = ActionUndoExecute
+      ShortCut = 16474
+    end
+    object ActionAddOTU: TAction
+      Caption = '&Add OTU'
+      Hint = 'Insert the selected taxon into the selected subtree.'
+      ImageIndex = 187
+      OnExecute = ActionAddOTUExecute
+      ShortCut = 107
+    end
+    object ActionRemoveOTU: TAction
+      Caption = 'Remove OTU'
+      Hint = 'Remove the selected taxon'
+      ImageIndex = 59
+      OnExecute = ActionRemoveOTUExecute
+      ShortCut = 46
+    end
+    object ActionRoot: TAction
+      Caption = '&Root'
+      Hint = 'Move the selected subtree to the root'
+      ImageIndex = 138
+      OnExecute = ActionRootExecute
+    end
+    object ActionFlip: TAction
+      Caption = '&Flip'
+      Hint = 'Flip the selected subtree'
+      ImageIndex = 73
+      OnExecute = ActionFlipExecute
+    end
+    object ActionUpload: TAction
+      Caption = '&Open...'
+      Hint = 'Open a tree file'
+      ImageIndex = 1
+      OnExecute = ActionUploadExecute
+      ShortCut = 16463
+    end
+    object ActionNewTree: TAction
+      Caption = '&New'
+      Hint = 'Generate a new tree'
+      ImageIndex = 63
+      OnExecute = ActionNewTreeExecute
+      ShortCut = 16462
+    end
+    object ActionSave: TAction
+      Caption = '&Save...'
+      Hint = 'Save the current tree to disk'
+      ImageIndex = 35
+      OnExecute = ActionSaveExecute
+      ShortCut = 16467
+    end
+    object ActionFont: TAction
+      Caption = '&Font...'
+      Hint = 'Edit the tree font'
+      ImageIndex = 51
+      OnExecute = ActionFontExecute
+    end
+    object ActionFind: TAction
+      Caption = '&Find Taxon Name'
+      Hint = 'Search for taxa by name'
+      ImageIndex = 57
+      OnExecute = ActionFindExecute
+      ShortCut = 16454
+    end
+    object ActionCopy: TAction
+      Caption = '&Copy'
+      Hint = 'Copy the tree image to the clipboard'
+      ImageIndex = 77
+      OnExecute = ActionCopyExecute
+      ShortCut = 16451
+    end
+    object ActionAutosize: TAction
+      Caption = '&Autosize'
+      Hint = 'Toggle automatic resizing of tree'
+      ImageIndex = 130
+      OnExecute = ActionAutosizeExecute
+    end
+    object ActionResize: TAction
+      Caption = '&Manual Resize'
+      Hint = 'Manually resize the tree'
+      ImageIndex = 152
+      OnExecute = ActionResizeExecute
+    end
+    object ActionToggleHistory: TAction
+      Caption = '&History'
+      Hint = 'Toggle the history log'
+      ImageIndex = 81
+      OnExecute = ActionToggleHistoryExecute
+      Visible = False
+    end
+    object ActionMrca: TAction
+      Caption = 'Find Most Recent Common Ancestor'
+      Hint = 'Find the Most Recent Common Ancestor of multiple taxa'
+      ImageIndex = 158
+      OnExecute = ActionMrcaExecute
+    end
+    object ActionBLenEditMode: TAction
+      Caption = 'Toggle editing of node ages'
+      Hint = 'Toggle editing of node ages'
+      ImageIndex = 12
+      OnExecute = ActionBLenEditModeExecute
+    end
+    object ActionToggleTopology: TAction
+      Caption = 'Displaying tree topology only'
+      Hint = 'Toggle topology-only display'
+      ImageIndex = 118
+      OnExecute = ActionToggleTopologyExecute
+    end
+    object ActionToggleRoot: TAction
+      Caption = 'Treating as rooted tree'
+      Hint = 'Currently treating as rooted tree'
+      ImageIndex = 127
+      OnExecute = ActionToggleRootExecute
+    end
+  end
+  object ButtonImages: TImageList
+    Height = 30
+    Width = 115
+    Left = 730
+    Top = 155
+    Bitmap = {
+      4C7A04000000730000001E000000950A00000000000078DAED9B5D6C145514C7
+      5F7CF3C5177DF1C5078DF1C1C4C448626294685024F8191E34E0478C22442328
+      268D891F856002820F803E94881F6B841274A52E56D705764B3AD80D74E9B6D0
+      56BA40BBA5DD85968F528A1F2FE3FCEFEC19EECECEECDEDD2E3BB3DB33C93F77
+      E6DC7BEE1DCE6FCE9DBB536E5B6091DEC662B1582C168B3567F4A46F94D03ED7
+      33E9C3FACC7456A703E7B0A1AEBD7589AFEE9755A878749DFEDFBF57053B70EB
+      3BD2A26BE126219CC386036DD09663E6A6859E2A9D8A084EA7FA7FCEE59D733B
+      D4A10D0EF8787DDF2C3BC73F44AE25B4CDCA3EF1E85AE1035F8EA15D4F78A278
+      B459E498C9B176BE8DADC73DD17FFF4E1B7366B0627FF8A28FF6D6E794DAA31D
+      9E81C1E4F7425AF8FDBCFA48F025614729DBC927A16DF22C56EA5A5073212E38
+      DA5B9F556A1F092E13ED63A115960DBE666E6E2AE90F3F796D4CC7643669DD83
+      165E236C28653F1C972FA694EFD55B3D567365D29D42AAEDD3A9B0886924B8B4
+      A27EC01139AC85DFB36C7D47BECCADA3C2E21A75264BB34D2CF4A6F031393EE3
+      499CCAD7A335D7CC74C688E5174A6DB5F0BBB998FF5E50873ED0978A7F42DB58
+      50873E71C8ED50C6426FE4380E191C9FF2244695697ECD65C66C75813D167ADD
+      88DDE23CDB64F698886B24F842417BF461B2701F6B30F98D6B1BF24749E7783E
+      AE735CEC497C2AD7C3359719BF770AEC8821140BBD26AED106C760F26BC77EA8
+      BED858F0756B43FE28E5B1AEB35CE4497C2AD743359739C76E29B06BE1B72D9E
+      09ED53232713B9B5EA42C77ED08739C7BA8F158F7E90E3F57641DD6072476E0D
+      B650D453BB58E8D51CCF93AE63FB530FD65C99748790535D2CF4B288211D83C9
+      AF2AEA87D4DEBAC0E282BEC9AE85DF12F6C96CB7756DB27CCBBA0FF28B049FF7
+      244EE56B5ECD95D0D6E6F2E131C77AD833E99811CB2B45DB986B9AB525C7D3C2
+      2B445FE6B7FA71C1C8FCADF197C1E919AB8DC97285E5170B2DCB7D079E16E75E
+      C4AA3CDDEF8910DB53FD3B8BB689855E74AD83AFC97ABED27868D77764B391E7
+      2D4209ED93BCFA4870B1B0A394EDF1E81A6187AF57B152D77D9E281E5D9DCBAB
+      8FCBF6858FE9FB9167F7EF4FDDEB99D2A9BD22B712DA87CA3EF1E82AE1035F2F
+      EFDD9FBAC753A553C1DCDFBC02C63C38CFB51DEAD0C6FC6E10F4FCBEFDA93B3D
+      573C8AB5C954EE6FD111E3DDB4DE58832C15C2396CE61A644AB4F5C33DFB5377
+      F846096D8DC12D6CAC3547A5FF23322A6CA86B6FBDD757F7EB3FDDCE6A18DDC6
+      6A18DDC26A18DDCC6A18DDC46A106D5E77178BC562B1582C16CB03FDD6D6A40F
+      0D46F4A94B67AD6F7838870D75DB3EBB9FE3E473EDDDBD52FFE76FF3DB3AB81D
+      0CAFD7777FB74C08E7B0E1401BB4E598F953C77B7E129CBABBBE2D9A77A8431B
+      1CF0E1D8F98F23720DF367B939CC3CFD35AFE2288763357C59D517720B7366A5
+      FEF0451FAAEB21B4C33370B863AB10DEC572FDF6ADF3851DA5FDB9819D9F1BF7
+      F52A0E550E882F8E40CBD3796C5473137EF2DA988EF470DCBA07B0C52133861F
+      8E73D97E5E43BB08EB52A8DCF5913D6754FB0147E4B0CC09EB63791D6567098E
+      F0618EA5638B58AAB4A5183BAD75D007FA52F177CA5F7A46EC2C99A3BAEC7399
+      3CA7D96387791071B5E7A41CFF6263E15DE7D646E647E7783E98E3EC59228610
+      BD1729BEE0518C453559A23DB39CFD1C8B78124FCC8994936E31559963E9F78B
+      D3B3439CD13FCFB1D55FFB208E88211D6E39A9BAF6010BE222AF83E9B9C1F352
+      6AEDE334BFB3D47E93C00E46C572B29CDF24C48DBED5D3B9CCA9D86F1279DE67
+      55F6ADA058FC2AF956803999BE15D89F8152DF0A54D7DDFC0DAFB2BCE66F31FC
+      6D9DC57FF362F1DFA2F9FF88F0FF1161B1582C168BC562B9EBE8D1A3AC06D2A5
+      4B9758752E66C92C59CC9255BF2CC7C6C6F4DEDE5EBDABAB4B8F442296700DFB
+      B973E79883CF598211F1EBE8E8D093C9A43E3434A48F8C8C8812D7B0A3FED8B1
+      63FAE4E424F3F021CB3367CEE8070F1E14ACC0EEE2C58BAE0257B43D74E890C8
+      6166E21F96E0815C4B2412FAC4C444518E24B4D3344D30E539D71F2C314F8207
+      E6561586769EC863F83217EF599E387142B054CD47BB301F23A753A994F298A7
+      4F9FD643A190BE67CF1E51E2DA2FB1453C366CD820CA7A63098EB86F990FE2BB
+      6AD52AC148B6E37AF9F2E5626CD98EB919F3ADCA78814040F46117EC7E60D9DD
+      DD2DEE07653DB14CA7D3824F369BCD63D3D9D969C5987812472796C82BD4975A
+      D752BF2D2D2DFAF8F8B8B0A1C43524E7067216DABF7FBFD596620DBB9CDB4E71
+      97EBED7DD0BDD018F2BC50AF2C1133BCEF9CE64E991DE26C67EBD41ECF46B1F1
+      307735353529F186D016657373B3C502B1870DF306EA51E21ABCE43EC82EF741
+      F538A73A6A079F7A67596CCD23F32CC691DA967A67A20FB028755F1457BA47F8
+      21C7649632BB2D5BB6E43D233897F9830BBDFFE027B3B3FB33CBEAB144FCD106
+      392C8F4D7EC452F6916D982FEDAC64811BEAD13F897217F198EB732CD6C02A73
+      2C7205B12B350F63DEC35A88DE67E5B0A43C7663E1C492E425CBCB972FCF4AA3
+      A3A3555DFB5CB870A1E8783217D9BE7DFB7631F7E19CD6B45497C964F27CA80F
+      A77EE91ACF0298D1757F7FBF10CEF7EDDB27DAD2358435389DCB2C671B5F1555
+      8B25E4F49B045C2AF94DA2321EB8D133416B100876D4D36F16D46DDCB8D15A9B
+      94C392DE89F095D739F46C900DFDD3FC0AC6A8C7BF05D728EB8D259ECF6A7D2B
+      501D1371A2F91392738458501DB5A5D8D2B5537F6E63801318CAB90E9B3C06D5
+      E1BB346C28EB8D25E6C56A7CC3ABC5BFBB11452CA7A6A6AA223CA7B3F9B67EFE
+      FCF9AADDCB5C53B55942C3C3C315FDCD0BCF0133993DCB2B57AE5455C8B5783C
+      AEF4B7E89E9E1EC1B5DAF730D774A35892F01BA5AFAFCFE24AC235EC60CE1CAA
+      CB727A7A9A55E7229657AF5E65D5B988E5CCCC0CABCE452CAF5DBBC6AA73F15E
+      1A168BF779B1783F098B59324B16B3E47D5EBCCF8BF779F13E2F16EFF36296BC
+      CF8BF779DDC87D5E99B193FAF1EE5D7A4F7C872871ED97D88E8EF4E81DBFAE11
+      6523ECF3EAEBDEA9FFBA6B893ED0BB37CF3ED01BD0DB02B7EA6786F655BCCFEB
+      68E756A38F450582DD0F2C875387C5FDA06C847D5E43FD915C8C171AFC7ECE71
+      6C35AEEF7664A9BACF2B3560F6DB15DDA04F9C37D74C28710DC9B9819C85067B
+      DBACB6146BD8E5DC768ABB5C6FEF83EE85C690E7857A65596C0F0272122CDB02
+      0B8C38371BE50382E540EFD715EFF3C2DC15FEF11525DE10DAA23CB077A5C502
+      B1870DF306EA51E21ABCE43EC82EF741F538A73A6A079F7A67596CCD63F25C60
+      E811C172A0F78759ED0D428CC0A2D47D515C2947E1871C9359CAEC3AFFF838EF
+      19C1B9CC1F5CE8FD073F999DDD9F59568F25E28F36C861F97D4A7EC452F6916D
+      982FEDACF2F6031ADC508FFE4994BBE03DD7E758D57D5EC815C4AED43C8C790F
+      6B217A9F95C392F2D88D85134B92972C6FD43EAF4AD73EA5F679C95C643BD63D
+      837DBF8873734DBBCDAA9B9C18CBF3A13E9CFAA56B3C0B9AC18CAECF8E248570
+      7E3CB14BB4A56B2835B0DF3A975936C23EAF01E39D52C96F1295F1E206379A37
+      0FB4ADB4CE61177BE60C8E54D7D1FEBEB53649E658261D58DA6D782E687D4463
+      601E359F8D71CB86FE697E0563C1F2D49F264BA3E47D5EA5853821FE24394788
+      05D5515B8A2D5D3BF5E736063881E1F55C1F1736790CAACB8E0F091B4ADEE7C5
+      E27D5EBCCF8BF779F13E2FDEE7C5FBBC789F17EFF362F13E2FDEE7C5E27D5E2C
+      DEE7C59A8DFE07F92E3C64
+    }
+  end
+  object HelpBtnImages: TImageList
+    Height = 30
+    Width = 90
+    Left = 542
+    Top = 219
+    Bitmap = {
+      4C7A020000005A0000001E000000810400000000000078DAED9ACD53DA4018C6
+      FFBF9E7BEFCD999E3CB4339EDAF18847BD79E885433DD843ADDA990AB5D5423F
+      4640A94A910F91A90215FCFEB86E79B6BE99256C42969042F43D3C13F2669365
+      7F79F7DD049E542A2552ACFFA2DBDB5B568022CE373737AC00459CAFAFAF5901
+      8A385F5D5DB1021471BEBCBCF4ADB3B333512E97E5F5D6D7D7452C1693C267C4
+      706C10FD845183E25C2814C4EAEAAAE4BAB1B12176777745B55A95C267C48839
+      620F95F3C5C545DFDADCDC940C33998C68341AE2F4F4542B1C23DE38C74F9F61
+      935FCEC4B8582C3AF2B50B6D1F1A6BE27C7E7E6EACBDBD3D63C676D6954AA5AF
+      BEC3A67E399F9C9CC87A9CCD661D59AAEF41B55AADEB386A08EAB55B3FA845F3
+      F3F35D71DC1FC4BDDEA75C2E27A6A6A6E4364C9C4BA592CCC766B3D9C50FF1F1
+      F171313636D621C4EDF51A315CCBA91FB0C4B93AFE8863EBE5FB9AB61F15CE38
+      07F9A8CBE368342A262727651BECE3796E6262428E5397D36EFD9B70AED7EB22
+      1E8FCB73969696E4BE537BB48368BE98CC0D3F9CF1EC6B22D48C7C3EDFB30EA3
+      5E507E43F6E378E64B26938EFD10677B3C9D4ECB38B6D8DFDFDFB7E610EE31B6
+      D8475CD73E128958F38C7200027B53165ED42F67B0C373B01BE34422618D1D63
+      C1BEBD0D38E05ABD38838B2A6249DC6667673BB8E2FEA24FC4DD38E33E53FBE9
+      E969798DB071A6B150FDD069509C69BEA86D28E6C419D2CD11623F0A9CBDD48D
+      C5C5C5AEB52FA8BAA1E3ACB20C2B67AC5F4EEB2009EB1FE4D686AEE39733E63C
+      EA04E63FD5013AE6C459AD33748D51AB1B6ECF75C498D616B7F7707AAEF3CB19
+      39A8E634AD0B949B6EEB203ED35A8839384A9C5BAD56CFF714E407E496CB784F
+      71EB075CC0DA1E471E22AEE623C548BA6314A3BA81B599DAABF93F2A9C21D4E7
+      41BC7707353637E9EA7390F2C319F2FB3BD2301843789782C2C259656DFABBE8
+      B0180F4383E04C35C4EBEFFCC3AA15F78133AD8D7876A0F54DFDDF0A31B7E70A
+      E6CC62CECC99C59C87C999C562BF288BFDA2EC1765BF288BFDA2EC1765BF28FB
+      45D92FCA7E51F68B86CB2F5A29262D1DFF39ECCB2F7A50FE26B23F5E75C51BB5
+      A28C63EBE5FB1E56B362EDFD73B9BD2F7ED15F3F17C4F2DC63B1107DD421C44D
+      FDA260897375FC11C7D6CBF7356D1F06BF68EACB8C88BF7D2AF3587A198F0AE2
+      C39B27729CA67E5113CEAD664DE4B7DFC97376327372DFA93DDA41345F4CE6C6
+      28FA45512F28BF2153DFD7D61D677BFCA0F4F51FB7F616FBF5F6BDA439F4B17D
+      8FB1C53EE2BAF66BCBCFAC79463900E5DBDF356C3EC6622E668D1D63C1BEA98F
+      9138838B2A6249DCBE7F8A74706D1E1FC93E1177E3FCBBBA65B54FACBC94D708
+      1BE7CF7763A1FAD18F5FD42B679A2F6A1B8A397186747384D887C52FBA9D7EDD
+      B5F6055537749C559661E5ECC52F8AF50FF2E317F5CA19731E7502F39FEA001D
+      73E2ACD619BAC6A8D58D5E7E51F0A5B5C58F5FD42B67E4A09AD3B42E506EBAAD
+      83F84C6BE14E7A2E747ED1C4CA0B293F7E5170016B7B1C7988B89A8F1423E98E
+      518CEA46E957CC6AAFE63FFB4507235D7D66BF6800E34ECC48B15F947D32EC17
+      65BF28FBBED8F7C59C99337366B15F7434F51749CAC772
+    }
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    IniSection = 'TTreeInputForm'
+    Left = 753
+    Top = 282
+  end
+  object ActionList2: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 677
+    Top = 212
+    object OkAction: TAction
+      Caption = '&Save Changes and Close Editor'
+      ImageIndex = 5
+      OnExecute = OkBtnClick
+      ShortCut = 16467
+    end
+    object CancelAction: TAction
+      Caption = '&Quit Without Saving'
+      ImageIndex = 0
+      OnExecute = CancelBtnClick
+    end
+    object HelpAction: TAction
+      Caption = '&Help Contents'
+      ImageIndex = 8
+      OnExecute = HelpBtnClick
+      ShortCut = 112
+    end
+    object DoneEditingAction: TAction
+      Caption = '&Quit'
+      ImageIndex = 5
+      OnExecute = DoneEditingActionExecute
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 571
+    Top = 328
+    object MenuItem10: TMenuItem
+      Caption = '&File'
+      object MenuItem14: TMenuItem
+        Action = ActionUpload
+      end
+      object MenuItem15: TMenuItem
+        Action = ActionSave
+      end
+      object MenuItem16: TMenuItem
+        Action = ActionNewTree
+      end
+      object MenuItem28: TMenuItem
+        Action = DoneEditingAction
+        ShortCut = 16465
+      end
+      object MenuItem25: TMenuItem
+        Action = CancelAction
+      end
+    end
+    object MenuItem11: TMenuItem
+      Caption = '&Edit'
+      object MenuItem17: TMenuItem
+        Action = ActionCopy
+      end
+      object Separator2: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem18: TMenuItem
+        Action = ActionAutosize
+      end
+      object MenuItem19: TMenuItem
+        Action = ActionResize
+      end
+      object Separator1: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem20: TMenuItem
+        Action = ActionAddOTU
+      end
+      object MenuItem21: TMenuItem
+        Action = ActionRemoveOTU
+      end
+      object MenuItem22: TMenuItem
+        Action = ActionFlip
+      end
+      object MenuItem23: TMenuItem
+        Action = ActionUndo
+      end
+      object Separator3: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem24: TMenuItem
+        Action = ActionFont
+      end
+    end
+    object MenuItem12: TMenuItem
+      Caption = '&Search'
+      object MenuItem26: TMenuItem
+        Action = ActionFind
+      end
+    end
+    object MenuItem13: TMenuItem
+      Caption = '&Help'
+      object MenuItem27: TMenuItem
+        Action = HelpAction
+      end
+    end
+  end
+end

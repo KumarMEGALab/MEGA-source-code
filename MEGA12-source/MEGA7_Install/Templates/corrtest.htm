@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<TITLE>Rate Correlation Test</TITLE>
+<style>{TLegendGenerator.Style}</style>
+</HEAD>
+
+<BODY>
+  <SPAN class="figureTitle">
+    Autocorrelation analysis of evolutionary rates.
+  </span>
+
+<br>
+
+<div id ="content">
+	{TLegendGenerator.CorrtestCaptionString} using the Corrtest [{TLegendGenerator.CorrtestCitation:ExpandCitation}] approach that yielded a score of {TLegendGenerator.CorrtestScore}.
+	{if TLegendGenerator.IsML = 'false'}
+	The Corrtest analysis was run using the branch lengths in the user-supplied tree to compute evolutionary rates.
+	{endif}
+	{if TLegendGenerator.IsML = 'true'}
+		The analysis employed the {TTreePack.TreeMethodName} approach with
+		the {TAnalysisInfo.DistModelName} model [{TDistPack.MethodCitation:ExpandCitation}] of {if TAnalysisInfo.isAminoAcid = True}amino acid {else}nucleotide {endif} substitution on a user-provided phylogeny yielding a log likelihood value of {TLegendGenerator.LogLikelihoodCE}.
+	
+		{if TAnalysisInfo.MLRatesCaption = 'N/A'}
+		{else}
+			{TAnalysisInfo.MLRatesCaption}
+		{endif}	
+	{endif}  
+
+	{if TAnalysisInfo.DistHeteroPatternCaption ! ''}
+		&#32 {TAnalysisInfo.DistHeteroPatternCaption} [{TLegendGenerator.HeteroPatternDistCitation:ExpandCitation}].
+	{endif}
+{IncludeExternalFile=Data_Subset_Template.htm}
+
+</div>
+<br><br>
+</body>
+</html>

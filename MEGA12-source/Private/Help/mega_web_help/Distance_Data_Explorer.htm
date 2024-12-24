@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="DataExplorerHelp_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Distance Data Explorer</title>
+<link rel="stylesheet" href="DataExplorerHelp_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "3.5.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part III: Input Data Types and File Formats > Distance Data Explorer" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1 style="margin-left: 0in; font-size: 12pt;">Distance Data Explorer</h1>
+<p style="font-size: 12pt;">The <i>Distance Data Explorer</i> shows the 
+ pair-wise distance data.&#160;&#160;This explorer is flexible and it provides 
+ useful functionalities for computing within group, among group, and overall 
+ averages, as well as facilities for selecting data subsets.</p>
+<p style="font-size: 12pt;">This explorer consists of a number of regions 
+ as follows:</p>
+<p style="font-size: 12pt;">Menu Bar</p>
+<p style="font-size: 12pt; color: #007fbf;"><a href="File_Menu_in_Distance_Data_Explorer.htm" 
+												 style="color: #007fbf;"><span 
+	 style="color: #007fbf;"><i><u style="text-underline: double; color: #007fbf;">File</u></i> 
+ </span><u style="text-underline: double;"><span style="color: #007fbf;">menu</span></u></a></p>
+<p style="font-size: 12pt; color: #007fbf;"><a href="Display_Menu_in_Distance_Data_Explorer.htm" 
+												 style="color: #007fbf;"><span 
+	 style="color: #007fbf;"><i><u style="text-underline: double; color: #007fbf;">Display</u></i> 
+ </span><u style="text-underline: double;"><span style="color: #007fbf;">menu</span></u></a></p>
+<p style="font-size: 12pt; color: #007fbf;"><a href="Average_Menu_in_Distance_Data_Explorer.htm" 
+												 style="color: #007fbf;"><i><u 
+	 style="text-underline: double;"><span style="color: #007fbf;">Average</span></u></i> 
+ <u style="text-underline: double;"><span style="color: #007fbf;">menu</span></u></a></p>
+<p style="font-size: 12pt;"><i>Help</i>: This item brings up the help file.</p>
+<p style="font-size: 12pt;">Tool Bar</p>
+<p style="font-size: 12pt;">The tool bar provides quick access to a number 
+ of menu items.</p>
+<p style="font-size: 12pt;">General Utilities</p>
+<p style="font-size: 12pt;"><img src="image77.gif" style=" border:none; width:100%; max-width:36px;" alt="" border="0" />:&#160;&#160;This 
+ icon brings up the <i><u style="text-underline: double;"><a href="Options_dialog_box.htm" 
+															 style="color: #007fbf;">Options 
+ dialog box</a></u></i><span style="display: none;">HC_Dist_Exp_Options_dialog_box</span> 
+ to export the distance matrix as a text file with options to control how 
+ <i>MEGA</i> writes which contains options to control how <i>MEGA</i> writes 
+ the output data, available options are Text, MEGA, CSV, and Excel.</p>
+<p style="font-size: 12pt;"><img src="image76.gif" style=" border:none; width:100%; max-width:36px;" alt="" border="0" />: This button brings 
+ up the <a href="Setup_Select_Taxa_Groups_Dialog.htm" style="color: #007fbf;"><u 
+	 style="text-underline: double;"><span style="color: #007fbf;">dialog 
+ box</span></u><span style="display: none; color: #007fbf;">HC_Setup_Taxa_Groups_Dlg</span></a> 
+ for setting up, editing, and selecting taxa and <a href="javascript:TextPopup(this)" id="HotSpot51754" class="glossterm">groups 
+ of taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot51754', 'POPUP51754');
+//]]></script><span class="glosstext" id="POPUP51754" style="display: none;"> A group of taxa is a set of one or more taxa. Members of a group can be specified in the input data file, and created and edited in the Setup Taxa and Groups dialog.  Groups of taxa often are constructed based on their evolutionary relatedness.  For example, sequences may be grouped based on the geographic origin of the source individual, or sequences from a multi-gene family may be arranged into groups consisting of orthologous sequences.</span>.</p>
+<p style="font-size: 12pt;">Distance Display Precision</p>
+<p style="font-size: 12pt;"><img src="image78.gif" style=" border:none; width:100%; max-width:36px;" alt="" border="0" />: With each click 
+ of this button, the precision of the distance display is decreased by 
+ one decimal place.</p>
+<p style="font-size: 12pt;"><img src="image79.gif" style=" border:none; width:100%; max-width:36px;" alt="" border="0" />: With each click 
+ of this button, the precision of the distance display is decreased by 
+ one decimal place.</p>
+<p style="font-size: 12pt;">Column Sizer: This is a slider that can be 
+ used to increase or decrease the width of the columns that show the pairwise 
+ distances.</p>
+<p style="font-size: 12pt;">The 2-Dimensional Data Grid</p>
+<p style="font-size: 12pt;">This grid displays the pair-wise distances 
+ between all the sequences in the data in the form of a lower or upper 
+ triangular matrix.&#160;&#160;The names of the sequences and groups are 
+ the row-headers; the column headers are numbered from 1 to <i>m</i>, <i>m</i> 
+ being the number of sequences.&#160;&#160;There is a column sizer button 
+ for the row-headers, so you can increase or decrease the column size to 
+ accommodate the full name of the sequences and groups.</p>
+<p style="font-size: 12pt;"><i>Fixed Row</i>:&#160;&#160;This is the first 
+ row in the data grid that displays the column number.</p>
+<p style="font-size: 12pt;"><i>Fixed Column</i>:&#160;&#160;This is the 
+ first and the leftmost column in the data grid and contains taxa names.&#160;&#160;Even 
+ if you scroll past the initial screen this column will always be visible.&#160;&#160;To 
+ include a taxon in the data set for analysis, check the associated box.&#160;&#160;In 
+ this column, you also can drag-and-drop taxa names to sort them in the 
+ desired manner.</p>
+<p style="font-size: 12pt;"><i>Rest of the Grid</i>: The cells to the right 
+ of the first column and below the first row contain the nucleotides or 
+ amino acids of the input data.&#160;&#160;Note that all cells containing 
+ data corresponding to unselected sequences or genes/<a href="javascript:TextPopup(this)" id="HotSpot20912" class="glossterm">domains</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot20912', 'POPUP20912');
+//]]></script><span class="glosstext" id="POPUP20912" style="display: none;"> A domain is a continuous block of sites in a sequence alignment.  A domain can be free-standing or assigned to genes and protein-coding (e.g., exons) or non-coding (e.g., introns). Domains can be defined in the input data, and can be defined and edited in the Setup Genes Domains dialog.</span> 
+ are drawn in a light color.</p>
+<p style="font-size: 12pt;">Status bar</p>
+<p style="font-size: 12pt;">The status bar shows the sequence pair corresponding 
+ to the position of the cursor when the cursor is on any distance value 
+ in the display.</p>
+<p style="font-size: 12pt;">&#160;</p>
+</body>
+</html>

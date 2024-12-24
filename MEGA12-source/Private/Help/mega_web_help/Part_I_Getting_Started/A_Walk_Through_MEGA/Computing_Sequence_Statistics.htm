@@ -1,0 +1,554 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+ <title>Computing Sequence Statistics</title>
+<link rel="StyleSheet" href="../../default.css" type="text/css" />
+ <link rel="StyleSheet" href="../../default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "1.3.0_10";
+</script>
+ <meta name="topic-breadcrumbs" content="Part I: Getting Started > A Walk Through MEGA" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+
+<h1>Computing Sequence Statistics</h1>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">The 
+ “Drosophila_Adh.meg” data file, which is</font> <font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">used 
+ in this tutorial</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">,</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">can be found in the</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">MEGA/Examples</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">folder</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">(The 
+ default location for Windows users is</font> <i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">C:\Users\UserName\Documents\MEGA</font></i><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">7</font></i><i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">\Examples\</font></i><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">.</font></i> <font style="font-size: 12pt; 
+														 font-family: 'Times New Roman';" 
+														 size="4" face="Times New Roman">The 
+ default location for Mac users is</font> <i><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-style: italic;" 
+													 size="4" face="Times New Roman">$HOME/MEGA/Examples, 
+ where $HOME is the user’s home directory</font></i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">)</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman"><br />
+</font><b><u><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-weight: bold; text-decoration: underline; " size="4" 
+					 face="Times New Roman">Using Sequence Data Explorer</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">The</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">Sequence Data Explorer</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">provides various tools for visually analyzing 
+ sequence data as well as calculating compositional statistics. In the 
+ following examples we will demonstrate the basic usage of the</font> <i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">Sequence Data Explorer</font></i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example 
+ 9.1:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Activate 
+ the &quot;Drosophila_Adh.meg&quot; file</font><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">)</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">.</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">If 
+ necessary, refer</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">to</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">Example 1.2 in the “MEGA Basics” tutorial.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Select 
+ the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-weight: bold; font-style: italic;" size="4" 
+						 face="Times New Roman">Data | Explore Active Data</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">(</font><b><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman'; 
+												 font-weight: bold;" size="4" 
+												 face="Times New Roman">F4)</font></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">command</font><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Use 
+ the arrow keys on your keyboard or the mouse to move from site to site. 
+ At the bottom left corner of the window, you</font> <font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">wi</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">ll find an indicator that displays the column 
+ and the total number of sites. As you move through the columns, the column 
+ indicator changes.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 4.5pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 4.5pt;"><b><u><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; text-decoration: underline; " 
+	 size="4" face="Times New Roman">Highlighting</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 4.5pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">If 
+ you look at the bottom of the</font> <i><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman'; 
+												 font-style: italic;" size="4" 
+												 face="Times New Roman">Sequence 
+ Data Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">window, 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman">Highlighted 
+ Sites</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+						 size="4" face="Times New Roman">indicator displays 
+ &quot;None&quot; because no special site attributes are yet highlighted.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 4.5pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">You 
+ can highlight variable sites in various ways:</font></p>
+<ul>
+	<li><p style="margin-bottom: 5pt; margin-top: 5pt; text-align: left; 
+			 margin-left: 10.5pt;"><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">Select 
+	 the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-weight: bold; font-style: italic;" size="4" 
+							 face="Times New Roman">Highlight | Variable 
+	 Sites</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">main menu 
+	 option on the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+									 font-style: italic;" size="4" face="Times New Roman">Sequence 
+	 Data Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+									 size="4" face="Times New Roman">main 
+	 screen.</font></p></li>
+	<li><p style="margin-bottom: 5pt; margin-top: 5pt; text-align: left; 
+			 margin-left: 10.5pt;"><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">Click 
+	 the icon labeled</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+										 font-weight: bold; font-style: italic;" 
+										 size="4" face="Times New Roman">V</font></i></b> 
+	 <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+			 face="Times New Roman">from the launch bar.</font></p></li>
+	<li><p style="margin-bottom: 5pt; margin-top: 5pt; text-align: left; 
+			 margin-left: 10.5pt;"><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">Press 
+	 the</font> <b><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-weight: bold;" size="4" face="Times New Roman">V</font></b> 
+	 <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+			 face="Times New Roman">key on the keyboard.</font></p></li>
+</ul>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 4.5pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example 
+ 9.2:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Use 
+ one of the above methods to highlight variable sites in the Drosophila 
+ data.</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+					 size="4" face="Times New Roman">All sites that are 
+ variable are</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">now</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">highlighted. The</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">Highlighted</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">indicator at the bottom of the window has 
+ been replaced with the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+										 font-style: italic;" size="4" 
+										 face="Times New Roman">Variable</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">indicator. The numbe</font><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">r 
+ of sites which are variable is</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">displayed, 
+ along with the</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">total</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">number of sites</font> <font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">(Variable 
+ sites/Total # of sites)</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+									 size="4" face="Times New Roman">. 
+ When you press the</font> <b><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+									 font-weight: bold;" size="4" face="Times New Roman">V</font></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">key</font> <font style="font-size: 12pt; 
+												 font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">again, 
+ the sites return to the normal color. The</font> <i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">Highlighted</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">indicator again displays &quot;None</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">&quot;</font><font style="font-size: 12pt; 
+												 font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Now 
+ highlight the parsimony-informative sites by pressing the</font> <b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 font-style: italic;" size="4" face="Times New Roman">P</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">key, clicking on the button labeled</font> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Pi</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">from the shortcut bar below the</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">main</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">menu, 
+ or selecting the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+									 font-weight: bold; font-style: italic;" 
+									 size="4" face="Times New Roman">Highlight 
+ | Parsim-I</font></i></b><b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+										 font-weight: bold; font-style: italic;" 
+										 size="4" face="Times New Roman">nfo 
+ sites</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">menu option.</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">The</font> <i><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-style: italic;" 
+													 size="4" face="Times New Roman">Highlighted</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">indicator turns into the</font> <i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">Parsim-info</font></i> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">indicator.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">To 
+ highlight</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">0</font></i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">,</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+												 font-style: italic;" size="4" 
+												 face="Times New Roman">2</font></i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">, and</font> <i><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-style: italic;" 
+													 size="4" face="Times New Roman">4</font></i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">-fold degenerate sites, press the</font> <b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 font-style: italic;" size="4" face="Times New Roman">0</font></i></b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">,</font></i> <b><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; font-style: italic;" 
+	 size="4" face="Times New Roman">2</font></i></b><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">,</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">or</font> <b><i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-weight: bold; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">4</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">keys, respectively, or click on the corresponding 
+ button</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+					 size="4" face="Times New Roman">s</font> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">from 
+ the shortcut bar below the</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">main</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">menu, or select the corresponding command 
+ from the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-weight: bold; font-style: italic;" size="4" 
+							 face="Times New Roman">Highlight</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">menu.</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">Once 
+ again, the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">Highlighter</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">indicator will turn into the</font> <i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+	 size="4" face="Times New Roman">Zero-fold</font></i> <font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">indicator,</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">Two-fold</font></i> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">indicator, and</font> <i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">Four-fold</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">indicator respectively.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 4.5pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 4.5pt;"><b><u><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; text-decoration: underline; " 
+	 size="4" face="Times New Roman">Statistics</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 4.5pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">The</font> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">Statistics</font></i> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">main</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">menu</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">option</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">allows 
+ you to calculate</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+									 font-style: italic;" size="4" face="Times New Roman">Nucleotide</font></i> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">Composition</font></i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">,</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+												 font-style: italic;" size="4" 
+												 face="Times New Roman">Nucleotide 
+ Pair</font></i> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">Frequencies</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">and</font> <i><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-style: italic;" 
+													 size="4" face="Times New Roman"><a href="javascript:TextPopup(this)" id="HotSpot42675" class="glossterm">Codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot42675', 'POPUP42675');
+//]]></script><span class="glosstext" id="POPUP42675" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span></font></i> 
+ <i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-style: italic;" 
+			 size="4" face="Times New Roman">Usage</font></i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">. 
+ Before selecting one of these options, you will need to select whether 
+ to use all sites or only the highlighted sites. You will also need to 
+ select the format in which you want the results displayed.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 4.5pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example 
+ 9.3:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Select</font> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Statistics 
+ | Use</font></i></b> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+									 font-weight: bold; font-style: italic;" 
+									 size="4" face="Times New Roman">All</font></i></b> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Selected</font></i></b> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Sites</font></i></b><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">.</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">To 
+ display the results of the calculation in a text file using the built-in 
+ text editor, click the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+											 font-weight: bold; font-style: italic;" 
+											 size="4" face="Times New Roman">Statistics</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">menu option again and select the</font> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Display 
+ Results in Text Editor</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">option</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">. To</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">calculate 
+ the nucleotide base frequencies, select the o</font><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman';" 
+															 size="4" face="Times New Roman">ption,</font> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Nucleotide 
+ Composition</font></i></b><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">,</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">from the</font> <b><i><font style="font-size: 12pt; 
+															 font-family: 'Times New Roman'; 
+															 font-weight: bold; 
+															 font-style: italic;" 
+															 size="4" face="Times New Roman">Statistics</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">menu.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">To 
+ compute <a href="javascript:TextPopup(this)" id="HotSpot55947" class="glossterm">codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot55947', 'POPUP55947');
+//]]></script><span class="glosstext" id="POPUP55947" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span> usage, go back to the</font> <i><font style="font-size: 12pt; 
+													 font-family: 'Times New Roman'; 
+													 font-style: italic;" 
+													 size="4" face="Times New Roman">Sequence 
+ Data Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">and select 
+ the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+						 font-weight: bold; font-style: italic;" size="4" 
+						 face="Times New Roman">Statistics | <a href="javascript:TextPopup(this)" id="HotSpot26831" class="glossterm">Codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot26831', 'POPUP26831');
+//]]></script><span class="glosstext" id="POPUP26831" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span> Usage</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">menu command. This will calculate the <a href="javascript:TextPopup(this)" id="HotSpot39982" class="glossterm">codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot39982', 'POPUP39982');
+//]]></script><span class="glosstext" id="POPUP39982" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span> 
+ usage and display the results of the calculation in a text file using 
+ the built-in text editor.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">To 
+ compute nucleotide pair frequencies, select the</font> <b><i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; font-style: italic;" 
+	 size="4" face="Times New Roman">Statistics | Nucleotide Pair Frequencies 
+ | Directional</font></i></b> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+											 font-weight: bold; font-style: italic;" 
+											 size="4" face="Times New Roman">(16 
+ pairs)</font></i></b><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">,</font> <font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">or the</font> <b><i><font style="font-size: 12pt; 
+														 font-family: 'Times New Roman'; 
+														 font-weight: bold; 
+														 font-style: italic;" 
+														 size="4" face="Times New Roman">Statistics 
+ | Nucleotide Pair Frequencies | Undirectional</font></i></b> <b><i><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+	 font-style: italic;" size="4" face="Times New Roman">(10 pairs)</font></i></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">main</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">menu 
+ option. This will calculate the pair frequencies and display the results 
+ of the calculation in a text file using the built-in text editor.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 4.5pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Note:</font></b> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">Notice that the</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">Amino 
+ Acid</font></i> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+							 font-style: italic;" size="4" face="Times New Roman">Compositions</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">option on the</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">Statistics</font></i> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">menu is disabled (grayed-out</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">)</font><font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">.</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">This option is only available if the sequences 
+ have been translated.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 4.5pt;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 4.5pt;"><b><u><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold; text-decoration: underline; " 
+	 size="4" face="Times New Roman">Using the Amino Acid Composition Option</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 4.5pt;"><b><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-weight: bold;" size="4" face="Times New Roman">Example 
+ 9.4:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">To 
+ translate these protein-coding sequences into amino acid sequences and 
+ back</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+					 size="4" face="Times New Roman">again</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">, select</font> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">the</font> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Data 
+ | Translate Sequences</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+											 size="4" face="Times New Roman">main</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">menu command from the</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">Sequence 
+ Data Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">window</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Once 
+ the sequences are translated, calculate the amino acid composition by 
+ selecting the</font> <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+									 font-weight: bold; font-style: italic;" 
+									 size="4" face="Times New Roman">Statistics 
+ | Amino Acid Composition</font></i></b> <font style="font-size: 12pt; 
+												 font-family: 'Times New Roman';" 
+												 size="4" face="Times New Roman">main</font> 
+ <font style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+		 face="Times New Roman">menu command from the</font> <i><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman'; font-style: italic;" size="4" face="Times New Roman">Sequence 
+ Data Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">window</font><font 
+	 style="font-size: 12pt; font-family: 'Times New Roman';" size="4" 
+	 face="Times New Roman">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt;"><font style="font-size: 12pt; 
+	 font-family: 'Times New Roman';" size="4" face="Times New Roman">Close 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman">Text 
+ File Editor and Format Convertor</font></i> <font style="font-size: 12pt; 
+													 font-family: 'Times New Roman';" 
+													 size="4" face="Times New Roman">window 
+ without saving your work.</font> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+										 size="4" face="Times New Roman">Close 
+ the</font> <i><font style="font-size: 12pt; font-family: 'Times New Roman'; 
+					 font-style: italic;" size="4" face="Times New Roman">Sequence 
+ Data Explorer</font></i> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+								 size="4" face="Times New Roman">and select</font> 
+ <b><i><font style="font-size: 12pt; font-family: 'Times New Roman'; font-weight: bold; 
+			 font-style: italic;" size="4" face="Times New Roman">Close 
+ Data</font></i></b> <font style="font-size: 12pt; font-family: 'Times New Roman';" 
+							 size="4" face="Times New Roman">icon on the 
+ main MEGA window.</font></p>
+</body>
+</html>

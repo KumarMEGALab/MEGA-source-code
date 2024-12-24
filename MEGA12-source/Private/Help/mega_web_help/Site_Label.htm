@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="Glossary_RH.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Site Label</title>
+<link rel="stylesheet" href="Glossary_RH.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<style type="text/css">
+<!--
+A:visited { color:#800080; }
+A:link { color:#0000ff; }
+-->
+</style>
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "9.0_61";
+</script>
+ <meta name="topic-breadcrumbs" content="Glossary" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1>Site Label</h1>
+<p>The individual sites in nucleotide or amino acid data can be labeled 
+ to construct non-contiguous sets of sites.&#160;&#160;The <u style="text-underline: double; 
+	 color: #007fbf;"><span style="color: #007fbf;"><a href="Setup_Select_Genes_Domains_Dialog.htm" 
+														 style="color: #007fbf;">Setup 
+ Genes and Domains</a></span></u><span style="display: none;">HC_Genes_Domains_Dialog</span> 
+ dialog can be used to assign or edit site labels, in addition to specifying 
+ them in the input data files. This is shown in the following example of 
+ three-sequences in which the sites in the Third <a href="javascript:TextPopup(this)" id="HotSpot37554" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot37554', 'POPUP37554');
+//]]></script><span class="glosstext" id="POPUP37554" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span> 
+ are labeled with a ‘+’ mark.&#160;&#160;An underscore marks an absence 
+ of any labels.</p>
+<p>!<a href="javascript:TextPopup(this)" id="HotSpot29646" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot29646', 'POPUP29646');
+//]]></script><span class="glosstext" id="POPUP29646" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span>=FirstGene&#160;&#160;Domain=Exon1&#160;&#160;Property=Coding;</p>
+<p>#Human_{Mammal}&#160;&#160;ATGGTTTCTAGTCAGGTCACCATGATAGGTCTCAAT</p>
+<p>#Mouse_{Mammal}&#160;&#160;ATGGTTTCTAGTCAGGTCACCATGATAGGTCCCAAT</p>
+<p>#Chicken_{Aves}&#160;&#160;ATGGTTTCTAGTCAGCTCACCATGATAGGTCTCAAT</p>
+<p>&#160;</p>
+<p>!Gene=SecondGene&#160;&#160;Domain=AnIntron Property=Noncoding;</p>
+<p>#Human&#160;&#160;&#160;&#160;&#160;ATTCCCAGGGAATTCCCGGGGGGTTTAAGGCCCCTTTAAAGAAAGAT</p>
+<p>#Mouse&#160;&#160;&#160;&#160;&#160;GTAGCGCGCGTCGTCAGAGCTCCCAAGGGTAGCAGTCACAGAAAGAT</p>
+<p>#Chicken&#160;&#160;&#160;GTAAAAAAAAAAGTCAGAGCTCCCCCCAATATATATCACAGAAAGAT</p>
+<p>&#160;</p>
+<p>!Gene=ThirdGene&#160;&#160;Domain=Exon2&#160;&#160;Property=Coding;</p>
+<p>#Human&#160;&#160;&#160;&#160;&#160;&#160;ATCTGCTCTCGAGTACTGATACAAATGACTTCTGCGTACAACTGA</p>
+<p>#Mouse&#160;&#160;&#160;&#160;&#160;&#160;ATCTGATCTCGTGTGCTGGTACGAATGATTTCTGCGTTCAACTGA</p>
+<p>#Chicken&#160;&#160;&#160;&#160;ATCTGCTCTCGAGTACTGCTACCAATGACTTCTGCGTACAACTGA</p>
+<p>!Label&#160;&#160;&#160;&#160;&#160;&#160;+++__-+++-a-+++-L-+++-k-+++123+++-_-+++---+++;</p>
+<p>&#160;</p>
+<p>Each site can be associated with only one label.&#160;&#160;A label 
+ can be a letter or a number.</p>
+<p>For analyses that require <a href="Codon.htm" style="color: #007fbf;"><u 
+	 style="color: #007fbf;"><span style="color: #007fbf;">codons</span></u><span 
+	 style="display: none; color: #007fbf;">RH_Codon</span></a>, <i>MEGA</i> 
+ includes only those codons in which all three positions are given the 
+ same <a href="Site_Label.htm" style="color: #007fbf;"><u style="color: #007fbf;"><span 
+	 style="color: #007fbf;">label</span></u><span style="display: none; 
+													 color: #007fbf;">RH_Labeled_Sites</span></a>.&#160;&#160;This 
+ site labeling system facilitates the analysis of specific sites, as often 
+ is required for comparing sequences of regulatory elements, <a href="javascript:TextPopup(this)" id="HotSpot62696" class="glossterm">intron</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot62696', 'POPUP62696');
+//]]></script><span class="glosstext" id="POPUP62696" style="display: none;"> Introns are the non-coding segments of DNA in a gene that are interspersed among the exons.</span>-splice sites, and antigen recognition 
+ sites in the genes of applications such as the Major Histocompatibility 
+ Complex.</p>
+<p>&#160;</p>
+<b><span style="font-size: 10.0pt; font-family: Arial, sans-serif; color: #0000ff;"><br 
+	 style="clear: all;" clear="all" />
+</span></b> 
+</body>
+</html>

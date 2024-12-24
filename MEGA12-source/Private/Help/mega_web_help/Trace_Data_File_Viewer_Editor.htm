@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+<meta name="OriginalFile" content="AlnBuilder_HC.doc" />
+ <title>Trace Data File Viewer/Editor</title>
+<link rel="stylesheet" href="AlnBuilder_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "";
+</script>
+</head>
+<body link="blue" vlink="purple">
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1 style=" margin-left:0in;"><span style=" font-size:11.0pt;">Trace Data File Viewer/Editor</span></h1>
+<p>Using this function, you can view and edit trace data produced by an automated DNA sequencer in <u><span style=" color:green;">ABI</span></u><span style=" display:none;">RH_ABI</span> and <u><span style=" color:green;"><a href="javascript:TextPopup(this)" id="HotSpot47410" class="glossterm">Staden</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot47410', 'POPUP47410');
+//]]></script><span class="glosstext" id="POPUP47410" style="display: none;"> The Staden file format is used to store data from DNA sequencing instruments. Each file contains the data for a single reading and includes the called sequence as well as additional data obtained from the reading. This file format was first described in   	Dear, S and Staden, R. “A Standard file format for data from DNA sequencing instruments”, DNA Sequence 3, 107-110, (1992)  MEGA is able to display the contents of a Staden-formatted trace file using MEGA’s Trace File Editor, which is part of the Alignment Explorer.</span></span></u><span style=" display:none;">RH_Staden</span> file formats.&#160; The sequences displayed can be added directly into the <u style=" text-underline:double;"><span style=" color:green;">Alignment Explorer</span></u><span style=" display:none;">HC_Alignment_Builder</span> or sent to the <u style=" text-underline:double;"><span style=" color:green;">Web Browser</span></u><span style=" display:none;">HC_Web_Browser</span> for conducting <u style=" text-underline:double;"><span style=" color:green;">BLAST</span></u><span style=" display:none;">HC_About_BLAST</span> searches.</p>
+<p>A brief description of various functions available in the Trace Data file Viewer/Editor is as follows:</p>
+<p class="SubSectionHeader">Data menu</p>
+<p><b>Open File in New Window</b>: Launches a new instance to view/edit another file.</p>
+<p><b>Open File</b>: Allows you to select another file to view/edit in the current window.</p>
+<p><b>Save File</b>: Save the current data to a file in <u><span style=" color:green;"><a href="javascript:TextPopup(this)" id="HotSpot45203" class="glossterm">Staden</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot45203', 'POPUP45203');
+//]]></script><span class="glosstext" id="POPUP45203" style="display: none;"> The Staden file format is used to store data from DNA sequencing instruments. Each file contains the data for a single reading and includes the called sequence as well as additional data obtained from the reading. This file format was first described in   	Dear, S and Staden, R. “A Standard file format for data from DNA sequencing instruments”, DNA Sequence 3, 107-110, (1992)  MEGA is able to display the contents of a Staden-formatted trace file using MEGA’s Trace File Editor, which is part of the Alignment Explorer.</span></span></u><span style=" display:none;">RH_Staden</span> format.</p>
+<p><b>Print</b>: Prints the current trace data, excluding all masked regions.</p>
+<p><b>Add to Alignment Explorer</b>: DNA sequence data, excluding all masked regions, is sent to the <i>Alignment Explorer</i> and appears as a new sequence at the end of the current alignment.</p>
+<p><b>Export FASTA File:</b> Save the active sequence data to a FASTA formatted text file.</p>
+<p><b>Exit</b>: Closes the current window.</p>
+<p class="SubSectionHeader">Edit menu</p>
+<p class="BlockText"><b>Undo</b>: Use this command to undo one or more previous actions.</p>
+<p><b>Copy</b>:&#160; This menu provides options to (1) copy DNA sequences from FASTA or plain text formats to the clipboard and (2) copy the exact portion you are viewing of the currently displayed trace image to the clipboard in the Windows Enhanced Meta File format.&#160; For FASTA format copying, both the sequence name and the DNA data will be copied, excluding the masked regions.&#160; To copy only the selected portion of the sequence, use the plain text copy command (If nothing is selected, then the plain text command will copy the entire sequence, except for the masked regions).</p>
+<p><b>Mask Upstream</b>: Mask or unmask region to the left (upstream) of the cursor.</p>
+<p><b>Mask Downstream</b>: Mask or unmask region to the right (downstream) of the cursor.</p>
+<p><b>Reverse Complement</b>: Reverse complements the entire sequence.</p>
+<p class="SubSectionHeader">Search menu</p>
+<p class="BlockText"><b>Find</b>: Finds a specified query sequence.</p>
+<p><b>Find Next</b>: Finds the next occurrence of the query sequence. To specify the query sequence, first use the <b>Find</b> menu command.</p>
+<p><b>Find Previous</b>: Finds the previous occurrence of a query sequence. To specify the query sequence, first use the <b>Find</b> command.</p>
+<p><b>Next N</b>: Go to the next indeterminate (N) nucleotide.</p>
+<p class="BlockText"><b>Find in File</b>: This command searches another file, which you specify, for the selected sequence in the current window.&#160; It can be used when you are assembling sequence subclones to build a contig.</p>
+<p><b>Do BLAST Search</b>: Launch web browser to BLAST the currently selected sequence.&#160; If nothing is selected, the entire sequence, excluding the masked regions, will be used.</p>
+<p>&#160;</p>
+<h1 style=" margin-left:0in;">&#160;</h1>
+<h1 style=" margin-left:0in;">&#160;</h1>
+<p>&#160;</p>
+</body>
+</html>

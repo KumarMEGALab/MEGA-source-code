@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+<title>MEGA-CC Overview</title>
+<link rel="StyleSheet" href="default.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "1.4.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part I: Getting Started > Using the Command-line Interface (MEGA-CC)" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+<h1>MEGA-CC Overview</h1>
+<p style="font-weight: bold;">Description</p>
+<p>MEGA-CC is the command-line interface for using MEGA and it is included 
+ with the graphical interface (GUI). Most of the calculations that are 
+ available in the graphical interface (MEGA-GUI) are also available in 
+ MEGA-CC. However, all calculation results are saved to files on your computer 
+ instead of being displayed using graphical tools. With MEGA-CC, you can 
+ batch process data files, automate calculation workflows, and integrate 
+ MEGA into analysis pipelines.</p>
+<p style="margin-left: 40px; font-weight: bold;">&#160;</p>
+<p style="font-weight: bold;"><span style="font-weight: bold;">MEGA-CC 
+ Input Data Files</span></p>
+<p style="font-weight: bold;"><span style="font-weight: normal;">In order 
+ to run MEGA-CC, a minimum of two input files are required - a MEGA Analysis 
+ Options (.mao) file and one or more data files that are to be analyzed:</span></p>
+<ul style="list-style: disc;">
+	<li>MEGA Analysis Options file</li>
+	<ul style="list-style: disc;">
+		<li>Specifies the calculation and desired settings.</li>
+		<li>Created using MEGA-GUI.</li>
+		<li>Has a .mao file extension.</li>
+	</ul>
+	<li>Data file (one or more of the following) </li>
+	<ul style="list-style: disc;">
+		<li>Multiple sequence alignment in MEGA or Fasta format.</li>
+		<li>Distance matrix in MEGA format.</li>
+		<li>Unaligned sequences in Fasta format (for sequence alignment 
+		 only).</li>
+		<li>Newick tree file (required for some analyses)</li>
+		<li>Calibrations file (for timetree analysis – but it’s optional)</li>
+		<li>Groups file (required for timetree analysis, optional for some 
+		 other analyses)</li>
+	</ul>
+</ul>
+<p>&#160;</p>
+<p style="font-weight: bold;">MEGA-CC Output Files</p>
+<p>All results produced by MEGA-CC are written to files on your computer:</p>
+<ul style="list-style: disc;">
+	<li>In general, two kinds of output files are produced</li>
+	<ol style="list-style: decimal;">
+		<li>Calculation-specific results file (Newick file, distance matrix,…).</li>
+		<li>A summary file with additional info (likelihood, SBL,…).</li>
+	</ol>
+	<li>Some analyses produce additional output (bootstrap consensus tree, 
+	 csv files, etc…).</li>
+	<li>Output directory/filename</li>
+	<ul style="list-style: disc;">
+		<li>Default is the same location as the input data file.</li>
+		<li>Specify an output directory and/or file name using -o option.</li>
+		<li>If no output filename is specified, MEGA-CC will assign a unique 
+		 name.</li>
+	</ul>
+	<li>Errors/warnings</li>
+	<ul style="list-style: disc;">
+		<li>If MEGA-CC produces any errors or warnings, they will be logged 
+		 in the summary file.</li>
+	</ul>
+</ul>
+<p>&#160;</p>
+<p style="font-weight: bold;"><span style="font-weight: bold;">Generating 
+ a MEGA Analysis Options file</span></p>
+<ol style="list-style: decimal;">
+	<li style="font-size: 11pt;">Set MEGA-GUI to <a href="Analyze_and_Prototype_Modes.htm">Prototype 
+	 mode</a> by clicking the <span style="font-style: italic;">Prototype</span> 
+	 button on the main form</li>
+	<li style="font-size: 11pt;">Specify a data type that will be used 
+	 by selecting from a drop-down list</li>
+	<li style="font-size: 11pt;">Select an analysis to run from one of 
+	 the menus on the main form</li>
+	<li style="font-size: 11pt;">Select analysis options in the <span style="font-style: italic;"><a 
+	 href="Analysis_Options.htm">Analysis Preferences Dialog</a></span></li>
+	<li style="font-size: 11pt;">Click the <span style="font-style: italic;">Save 
+	 Settings</span> button and save to the .mao file to your computer 
+	 (most likely in the same directory as the data files to be analyzed)</li>
+</ol>
+<p style="font-weight: bold;">&#160;</p>
+<p style="font-weight: bold;">Running MEGA-CC</p>
+<p style="font-weight: bold;"><span style="font-weight: normal;">There 
+ are multiple ways in which MEGA-CC can be used:</span></p>
+<ul style="list-style: disc;">
+	<li>Easiest to run using command-line or batch scripts:</li>
+	<ul style="list-style: disc;">
+		<li><span style="font-weight: bold;">megacc –a settings.mao –d 
+		 alignment.meg –o outFile</span></li>
+	</ul>
+	<li>Can also be run using custom scripts (Perl, Python, …):</li>
+	<ul style="list-style: disc;">
+		<li><span style="font-weight: bold;">exec(‘megacc –a options.mao 
+		 –d alignment.meg –o outFile’);</span></li>
+	</ul>
+	<li>Integrated File Iterator system can process multiple files without 
+	 the need for using scripts (see Demo2 below)</li>
+	<li>In addition, other applications can launch MEGA-CC:</li>
+	<ul style="list-style: disc;">
+		<li><span style="font-weight: bold;">status = CreateProcess(“path/to/megacc…”);</span></li>
+	</ul>
+	<li>To see a list of available command options, call megacc from a 
+	 command-line prompt with the –h flag (Unix users can view the man 
+	 page).</li>
+</ul>
+<p>&#160;</p>
+<p>See Also: <a href="Running_in_Command-Line_Mode.htm">A quick tutorial 
+ for using MEGA-CC</a>.</p>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>ClustalW Options (DNA)</title>
+<link rel="StyleSheet" href="../../../default.css" type="text/css" />
+ <link rel="StyleSheet" href="../../../default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../..";
+gCommonRootRelPath = "../../..";
+gTopicId = "2.2.2.0_2";
+</script>
+ <meta name="topic-breadcrumbs" content="Part II: Assembling Data for Analysis > Building Sequence Alignments > ClustalW" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../ehlpdhtm.js"></script>
+
+
+<h1>ClustalW Options (DNA)</h1>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt;" 
+	 color="#333333" size="2">This dialog box displays a single tab containing 
+ a set of organized parameters that are used by</font> <font style="font-size: 11pt;" 
+															 size="2"><a id="a5032" href="../../../ClustalW.htm" name="a5032" class="BSSCPopup">ClustalW</a></font> 
+ <font style="font-size: 11pt;" color="#333333" size="2">to align the DNA 
+ sequences. If you are aligning protein-coding sequences</font> <font style="font-size: 11pt;" 
+	 color="#333333" size="2">and have not used the Align by <a href="About_ClustalW.htm">ClustalW</a> 
+ (Codons) menu item, please note that ClustalW</font> <b><font style="font-size: 11pt; 
+	 font-weight: bold;" color="#333333" size="2">will not</font></b> <font 
+	 style="font-size: 11pt;" color="#333333" size="2">respect the <a href="javascript:TextPopup(this)" id="HotSpot47781" class="glossterm">codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot47781', 'POPUP47781');
+//]]></script><span class="glosstext" id="POPUP47781" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span> 
+ positions and may insert <a href="javascript:TextPopup(this)" id="HotSpot34599" class="glossterm">alignment gaps</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot34599', 'POPUP34599');
+//]]></script><span class="glosstext" id="POPUP34599" style="display: none;"> Phylogenetic analysis on two or more DNA or amino acid sequences requires that the sequences be aligned so that the substitutions can be accurately enumerated.  During alignment, gaps must be introduced in sequences that have undergone deletions or insertions.  These gaps are known as alignment gaps or indels.</span> within codons. For aligning cDNA 
+ or sequence data containing codons, we recommend that you align the translated 
+ protein sequences (see</font> <font style="font-size: 11pt;" size="2"><a 
+	 href="../../Aligning_Coding_Sequences_via_Protein_Sequences.htm">Aligning 
+ coding sequences via protein sequences</a></font><font style="font-size: 11pt;" 
+														 color="#333333" 
+														 size="2">).</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" color="#333333" size="2" face="Arial">In this 
+ dialog box, you will see the following options:</font></p>
+<h5 style="font-size: 12pt; text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><i><font 
+	 style="font-size: 11pt; font-family: Arial; font-weight: normal; font-style: italic;" 
+	 color="#333333" size="2" face="Arial">Parameters for Pairwise Sequence 
+ Alignment</font></i></h5>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Gap 
+ Opening Penalty</font></b><font style="font-size: 11pt; font-family: Arial;" 
+								 color="#333333" size="2" face="Arial">: 
+ The penalty for opening a gap in the alignment. Increasing this value 
+ makes the gaps less frequent.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Gap 
+ Extension Penalty</font></b><font style="font-size: 11pt; font-family: Arial;" 
+									 color="#333333" size="2" face="Arial">: 
+ The penalty for extending a gap by one residue. Increasing this value 
+ will make the gaps shorter. Terminal gaps are not penalized.</font></p>
+<h5 style="font-size: 12pt; text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><i><font 
+	 style="font-size: 11pt; font-family: Arial; font-weight: normal; font-style: italic;" 
+	 color="#333333" size="2" face="Arial">Parameters for Multiple Sequence 
+ Alignment</font></i></h5>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Gap 
+ Opening Penalty</font></b><font style="font-size: 11pt; font-family: Arial;" 
+								 color="#333333" size="2" face="Arial">: 
+ The penalty for opening a gap in the alignment. Increasing this value 
+ makes the gaps less frequent.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Gap 
+ Extension Penalty</font></b><font style="font-size: 11pt; font-family: Arial;" 
+									 color="#333333" size="2" face="Arial">: 
+ The penalty for extending a gap by one residue. Increasing this value 
+ will make the gaps shorter. Terminal gaps are not penalized.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" color="#333333" size="2" face="Arial">Common 
+ Parameters</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">DNA 
+ Weight Matrix</font></b><font style="font-size: 11pt; font-family: Arial;" 
+								 color="#333333" size="2" face="Arial">: 
+ The scores assigned to matches and mismatches (including IUB ambiguity 
+ codes).</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-weight: bold;" color="#333333" size="2"><a href="javascript:TextPopup(this)" id="HotSpot30021" class="glossterm">Transition</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot30021', 'POPUP30021');
+//]]></script><span class="glosstext" id="POPUP30021" style="display: none;"> A transition occurs when a purine is substituted by a purine, or a pyrimidine by a pyrimidine.</span> Weight</font></b><font 
+	 style="font-size: 11pt;" color="#333333" size="2">: Gives</font> <font 
+	 style="font-size: 11pt;" size="2"><a id="a5033" href="../../../Transition.htm" name="a5033" class="BSSCPopup">transitions</a></font> 
+ <font style="font-size: 11pt;" color="#333333" size="2">a weight between 
+ 0 and 1. A weight of zero means that the transitions are scored as mismatches, 
+ while a weight of 1 gives the transitions the match score. For distantly-related 
+ DNA sequences, the weight should be near zero; for closely-related sequences, 
+ it can be useful to assign a higher score.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Use 
+ Negative Matrix</font></b><font style="font-size: 11pt; font-family: Arial;" 
+								 color="#333333" size="2" face="Arial">: 
+ Enabled negative weight matrix values will be used if they are found; 
+ otherwise the matrix will be automatically adjusted to all positive values.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Delay 
+ Divergent Cutoff (%)</font></b><font style="font-size: 11pt; font-family: Arial;" 
+										 color="#333333" size="2" face="Arial">: 
+ Delays the alignment of the most distantly-related sequences until after 
+ the most closely-related sequences have been aligned. The setting shows 
+ the percent identity level required to delay the addition of a sequence. 
+ Sequences</font> <font style="font-size: 11pt; font-family: Arial;" color="#333333" 
+						 size="2" face="Arial">that is</font> <font style="font-size: 11pt; 
+	 font-family: Arial;" color="#333333" size="2" face="Arial">less identical 
+ than this level will be aligned later.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Keep 
+ Predefined Gaps</font></b><font style="font-size: 11pt; font-family: Arial;" 
+								 color="#333333" size="2" face="Arial">: 
+ When checked, alignment positions in which ANY of the sequences have a 
+ gap will be ignored.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Specify 
+ Guide Tree</font></b><font style="font-size: 11pt; font-family: Arial;" 
+							 color="#333333" size="2" face="Arial">:</font> 
+ <font style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+		 face="Arial">Browser for and select a guide tree (in Newick format) 
+ to be used for the alignment. If this option is not used, then a Neighbor-Join 
+ tree will be created and automatically used as the guide tree.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;">&#160;</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" color="#333333" size="2" face="Arial">NOTE: All 
+ Definitions are derived from the CLUSTALW manual.</font></p>
+
+</body>
+</html>

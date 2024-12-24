@@ -1,0 +1,1507 @@
+object CalibrationDlg: TCalibrationDlg
+  Left = 657
+  Height = 843
+  Top = 115
+  Width = 967
+  Caption = 'Node Calibration Editor'
+  ClientHeight = 823
+  ClientWidth = 967
+  Color = clBtnFace
+  Menu = MainMenu1
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnHelp = FormHelp
+  OnResize = FormResize
+  OnShow = FormShow
+  ParentFont = True
+  Position = poScreenCenter
+  LCLVersion = '2.2.6.0'
+  object Splitter1: TSplitter
+    Left = 362
+    Height = 784
+    Top = 0
+    Width = 2
+    Beveled = True
+  end
+  object TreePanel: TPanel
+    Left = 364
+    Height = 784
+    Top = 0
+    Width = 603
+    Align = alClient
+    ClientHeight = 784
+    ClientWidth = 603
+    Color = clWhite
+    ParentColor = False
+    TabOrder = 0
+    object ToolBar3: TToolBar
+      Left = 1
+      Height = 752
+      Top = 31
+      Width = 29
+      Align = alLeft
+      AutoSize = True
+      ButtonHeight = 26
+      ButtonWidth = 26
+      DisabledImages = MegaForm.DisabledIcons
+      EdgeBorders = [ebRight]
+      Images = MegaForm.NewIcons
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      object ToolButton7: TToolButton
+        Left = 1
+        Top = 0
+        Action = PointerAction
+        Wrap = True
+      end
+      object ToolButton9: TToolButton
+        Left = 1
+        Top = 26
+        Action = SwapAction
+        Wrap = True
+      end
+      object ToolButton10: TToolButton
+        Left = 1
+        Top = 52
+        Action = FlipAction
+        Wrap = True
+      end
+      object ToolButton11: TToolButton
+        Left = 1
+        Top = 78
+        Action = SearchAction
+        Wrap = True
+      end
+      object ToolButton12: TToolButton
+        Left = 1
+        Top = 104
+        Action = AutoSizeAction
+        Wrap = True
+      end
+      object ToolButton13: TToolButton
+        Left = 1
+        Top = 130
+        Action = ResizeAction
+        Wrap = True
+      end
+      object ToolButton14: TToolButton
+        Left = 1
+        Top = 208
+        Action = NodeIdsAction
+      end
+      object ToolButton18: TToolButton
+        Left = 1
+        Top = 156
+        Action = ActionAutoSizeHoriz
+      end
+      object ToolButton19: TToolButton
+        Left = 1
+        Top = 182
+        Action = ActionAutoSizeVert
+      end
+    end
+    object ToolBar4: TToolBar
+      Left = 1
+      Height = 30
+      Top = 1
+      Width = 601
+      AutoSize = True
+      ButtonHeight = 26
+      ButtonWidth = 26
+      DisabledImages = MegaForm.DisabledIcons
+      EdgeBorders = [ebTop, ebBottom]
+      Images = MegaForm.NewIcons
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+      object ToolButton8: TToolButton
+        Left = 1
+        Top = 2
+        Action = CopyToClipboardAction
+      end
+      object ToolButton15: TToolButton
+        Left = 27
+        Top = 2
+        Action = ShowInfoAction
+      end
+      object ToolButton16: TToolButton
+        Left = 53
+        Top = 2
+        Action = TopologyOnlyAction
+      end
+      object NewCalibrationFromSelectedNodeButton: TToolButton
+        Left = 79
+        Hint = 'Add a divergence time calibration constraint to the selected node'
+        Top = 2
+        Caption = '&Calibrate Selected Node'
+        DropdownMenu = CalibrationPopupMenu
+        ImageIndex = 177
+        OnClick = NewCalibrationFromSelectedNodeButtonClick
+        OnContextPopup = NewCalibrationFromSelectedNodeButtonContextPopup
+        OnMouseEnter = NewCalibrationFromSelectedNodeButtonMouseEnter
+        Style = tbsDropDown
+      end
+      object NewSampleTimeFromSelectedNodeBtn: TToolButton
+        Left = 117
+        Hint = 'Add a divergence time calibration constraint to the selected node'
+        Top = 2
+        Caption = '&Calibrate Selected Node'
+        ImageIndex = 177
+        OnClick = NewSampleTimeFromSelectedNodeBtnClick
+      end
+    end
+  end
+  object EditorPanel: TPanel
+    Left = 0
+    Height = 784
+    Top = 0
+    Width = 362
+    Align = alLeft
+    ClientHeight = 784
+    ClientWidth = 362
+    TabOrder = 1
+    object ToolBar1: TToolBar
+      Left = 1
+      Height = 30
+      Top = 1
+      Width = 360
+      AutoSize = True
+      ButtonHeight = 26
+      ButtonWidth = 26
+      Color = clWhite
+      DisabledImages = MegaForm.DisabledIcons
+      EdgeBorders = [ebTop, ebBottom]
+      Images = MegaForm.NewIcons
+      List = True
+      ParentColor = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      object ToolButton1: TToolButton
+        Left = 1
+        Top = 2
+        Action = LoadDataAction
+      end
+      object ToolButton2: TToolButton
+        Left = 27
+        Top = 2
+        Action = ExportCalibrationDataAction
+      end
+      object ToolButton6: TToolButton
+        Left = 53
+        Height = 26
+        Top = 2
+        Caption = 'ToolButton6'
+        ImageIndex = 7
+        Style = tbsSeparator
+      end
+      object NewCalibrationFromMrcaButton: TToolButton
+        Left = 61
+        Hint = 'Add a new calibration point'
+        Top = 2
+        Caption = 'Calibrate &MRCA'
+        DropdownMenu = CalibrationPopupMenu
+        ImageIndex = 209
+        OnClick = NewCalibrationFromMrcaButtonClick
+        OnContextPopup = NewCalibrationFromMrcaButtonContextPopup
+        OnMouseEnter = NewCalibrationFromMrcaButtonMouseEnter
+        Style = tbsDropDown
+      end
+      object ToolButton4: TToolButton
+        Left = 125
+        Top = 2
+        Action = RemoveCalibrationAction
+      end
+      object NewSampleTimeFromMrcaBtn: TToolButton
+        Left = 99
+        Hint = 'Add a new calibration point'
+        Top = 2
+        Caption = 'Calibrate &MRCA'
+        ImageIndex = 196
+        OnClick = NewSampleTimeFromMrcaBtnClick
+      end
+    end
+    object PageControl1: TPageControl
+      Left = 1
+      Height = 752
+      Top = 31
+      Width = 360
+      ActivePage = CalibrationsTab
+      Align = alClient
+      TabIndex = 0
+      TabOrder = 1
+      object CalibrationsTab: TTabSheet
+        Caption = 'Constraints'
+        ClientHeight = 724
+        ClientWidth = 352
+        object CalibrationTimesScrollbox: TScrollBox
+          Left = 0
+          Height = 724
+          Top = 0
+          Width = 352
+          HorzScrollBar.Page = 344
+          VertScrollBar.Page = 682
+          Align = alClient
+          BorderStyle = bsNone
+          ClientHeight = 724
+          ClientWidth = 352
+          TabOrder = 0
+          object GroupBox1: TGroupBox
+            Left = 0
+            Height = 178
+            Top = 0
+            Width = 352
+            Align = alTop
+            Caption = 'Calibrations'
+            ClientHeight = 158
+            ClientWidth = 348
+            TabOrder = 0
+            object CalibrationsCheckListBox: TCheckListBox
+              Left = 9
+              Height = 155
+              Top = -1
+              Width = 330
+              Anchors = [akTop, akLeft, akRight]
+              ItemHeight = 0
+              OnClick = CalibrationsCheckListBoxClick
+              OnClickCheck = CalibrationsCheckListBoxClickCheck
+              OnDrawItem = CalibrationsCheckListBoxDrawItem
+              OnSelectionChange = CalibrationsCheckListBoxSelectionChange
+              TabOrder = 0
+            end
+          end
+          object GroupBox2: TGroupBox
+            Left = 0
+            Height = 328
+            Top = 178
+            Width = 352
+            Align = alTop
+            Caption = 'Details for Selected Calibration'
+            ClientHeight = 308
+            ClientWidth = 348
+            TabOrder = 1
+            object TaxonALabel: TLabel
+              Left = 8
+              Height = 15
+              Top = 2
+              Width = 42
+              Caption = 'Taxon A'
+              ParentColor = False
+            end
+            object TaxonBLabel: TLabel
+              Left = 8
+              Height = 15
+              Top = 54
+              Width = 41
+              Caption = 'Taxon B'
+              ParentColor = False
+            end
+            object TaxonAComboBox: TComboBox
+              Left = 9
+              Height = 23
+              Top = 18
+              Width = 330
+              Anchors = [akTop, akLeft, akRight]
+              DropDownCount = 20
+              ItemHeight = 15
+              OnChange = TaxonAComboBoxChange
+              Style = csDropDownList
+              TabOrder = 0
+            end
+            object TaxonBComboBox: TComboBox
+              Left = 9
+              Height = 23
+              Top = 70
+              Width = 330
+              Anchors = [akTop, akLeft, akRight]
+              DropDownCount = 20
+              ItemHeight = 15
+              OnChange = TaxonBComboBoxChange
+              Style = csDropDownList
+              TabOrder = 1
+            end
+            object MrcaNameEdit: TLabeledEdit
+              Left = 9
+              Height = 23
+              Top = 177
+              Width = 330
+              Anchors = [akTop, akLeft, akRight]
+              EditLabel.Height = 15
+              EditLabel.Width = 330
+              EditLabel.Caption = 'MRCA Node Label'
+              EditLabel.ParentColor = False
+              TabOrder = 3
+              OnChange = MrcaNameEditChange
+            end
+            object DivergenceTimeEdit: TLabeledEdit
+              Left = 9
+              Height = 23
+              Top = 229
+              Width = 117
+              EditLabel.Height = 15
+              EditLabel.Width = 117
+              EditLabel.Caption = 'Minimum Time'
+              EditLabel.ParentColor = False
+              ReadOnly = True
+              TabOrder = 4
+              OnChange = DivergenceTimeEditChange
+            end
+            object CalibrationNameEdit: TLabeledEdit
+              Left = 9
+              Height = 23
+              Top = 124
+              Width = 330
+              Anchors = [akTop, akLeft, akRight]
+              EditLabel.Height = 15
+              EditLabel.Width = 330
+              EditLabel.Caption = 'Calibration Name'
+              EditLabel.ParentColor = False
+              TabOrder = 2
+              OnChange = CalibrationNameEditChange
+            end
+            object MaxDivTimeEdit: TLabeledEdit
+              Left = 9
+              Height = 23
+              Top = 279
+              Width = 117
+              EditLabel.Height = 15
+              EditLabel.Width = 117
+              EditLabel.Caption = 'Maximum Time'
+              EditLabel.ParentColor = False
+              ReadOnly = True
+              TabOrder = 5
+              OnChange = MaxDivTimeEditChange
+            end
+            object DensityParamsLabel: TLabel
+              Left = 166
+              Height = 60
+              Top = 244
+              Width = 178
+              Anchors = [akTop, akLeft, akRight]
+              AutoSize = False
+              Caption = '-,-'
+              ParentColor = False
+              WordWrap = True
+            end
+            object DistNameLabel: TLabel
+              Left = 166
+              Height = 28
+              Top = 211
+              Width = 174
+              Alignment = taCenter
+              AutoSize = False
+              Caption = 'Normal Distribution'
+              ParentColor = False
+              WordWrap = True
+            end
+            object SpeedButton3: TSpeedButton
+              Left = 135
+              Height = 24
+              Hint = 'Edit the currently selected calibration''s values'
+              Top = 254
+              Width = 24
+              Glyph.Data = {
+                46050000424D4605000000000000360000002800000012000000120000000100
+                2000000000001005000064000000640000000000000000000000FFFFFF00FFFF
+                FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF0056545286565452E5565452EA565452E7565452E6565452E65654
+                52E6565452E6565452E6565452E6565452E6565452E6565452E6565452EB5654
+                52E756545285FFFFFF00FFFFFF00565452BF565452FF565453D1565450D45655
+                49D556544DD5565450D5565452D5565452D5565452D5565452D5565452D55654
+                52D5565452CF565452FF565452C0FFFFFF00FFFFFF00565452DD565453E55654
+                50005655480055535900565451005755470057573F0056564700565453005654
+                5200565452005654520056545200565452D5565452E2FFFFFF00FFFFFF005654
+                52DD565450E556554800534C8E005145C4025147B0005249A700534C93005552
+                5D0057573B0056564600565454005654520056545200565452D6565452E2FFFF
+                FF00FFFFFF00565452DD56554BE5565455005145C2005144CC825045C6A15044
+                CC365043D3005145C400534C9000565356005756470056545400565452005654
+                52D6565452E2FFFFFF00FFFFFF00565452DD56544EE556554D005248AD005045
+                C7715146BCFF5146BCFF5146BAD15145C1055043D5005145C400565358005756
+                450056545300565452D6565452E2FFFFFF00FFFFFF00565452DD565451E55756
+                4300524AA1005044CD2A5146BCFF5146BCFF5146BCFF5146BCD85146BA085043
+                D600534B94005758380056545300565452D8565452E1FFFFFF00FFFFFF005654
+                52DD565452E557573D00534C8A005043D3005146BAB05146BCFF5146BCFF5146
+                BCFF5146BCD85146C0085044C9005552630057573B00565454AA565452E0FFFF
+                FF00FFFFFF00565452DD565452E556554900565357005146C0005145C3005146
+                BCBC5146BCFF5146BCFF5146BCFF5146BAD35045C8055145C200565359005757
+                3D105654545EFFFFFF00FFFFFF00565452DD565452E55654530057573B00534D
+                8A005043D7005146BB005146BCBC5146BCFF5146BCFF5146BCFF5146B9D35044
+                CC075145C40056535C0057573B00FFFFFF00FFFFFF00565452DD565452E55654
+                52005655490056544F005147B7004F43D7005145C3005146BAB95146BCFF5146
+                BCFF5146BCFF5146BAD85044CC125145C20056526100FFFFFF00FFFFFF005654
+                52DD565452E556545200565454005655480056545000544D87005145C4005044
+                CB005146B9B95146BCFF5146BCFF5146BCFF5146B98F5045C7005145C200FFFF
+                FF00FFFFFF00565452DD565452E5565452005654520056545400565549005857
+                350056535C005146C0005044CD005146B9BA5146BCFF5146BCB45146BC005146
+                BB8C5145C135FFFFFF00FFFFFF00565452DD565452E556545200565452005654
+                5200565452005654540057573D00565454005146C0005044CE115146BA8D5146
+                BC015146BC965146BCFF5146BC7FFFFFFF00FFFFFF00565452BD565452FF5654
+                52E2565452E5565452E5565452E5565452F8565454CE57563E11565454005146
+                BD005044C9005146BA735146BCFF5146BCA85146BC00FFFFFF00FFFFFF005654
+                5280565452DA565452DD565452DA565452D9565452D9565452DA565452F65654
+                547457573D00565359005146BE005145C21D5146BC7B5146BC095146BC00FFFF
+                FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00FFFFFF00
+              }
+              OnClick = SpeedButton3Click
+              ShowHint = True
+              ParentShowHint = False
+            end
+            object PleaseSelectLabel: TLabel
+              Left = 98
+              Height = 15
+              Top = 54
+              Width = 140
+              Caption = 'Select a taxon from the list'
+              Font.Color = clMaroon
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object HelpPanel: TPanel
+            Left = 0
+            Height = 218
+            Top = 506
+            Width = 352
+            Align = alClient
+            BevelOuter = bvNone
+            ClientHeight = 218
+            ClientWidth = 352
+            Color = clWhite
+            ParentColor = False
+            TabOrder = 2
+            object HelpLbl6: TLabel
+              Left = 28
+              Height = 15
+              Top = 75
+              Width = 202
+              Caption = 'taxon B from the combo boxes above.'
+              ParentColor = False
+            end
+            object HelpLbl3: TLabel
+              Left = 28
+              Height = 15
+              Top = 48
+              Width = 46
+              Caption = 'Click the'
+              ParentColor = False
+            end
+            object AddCalibrationBtn: TSpeedButton
+              Left = 92
+              Height = 24
+              Hint = 'Add a new calibration point'
+              Top = 45
+              Width = 24
+              Caption = 'Calibrate &MRCA'
+              Glyph.Data = {
+                46050000424D4605000000000000360000002800000012000000120000000100
+                20000000000010050000640000006400000000000000000000005146BC005146
+                BC005146BC005146BC005146BD005044CC00544E7C0057563F12565452755654
+                52915654528E5654526D56545228565452005654520056545200565452005654
+                52005146BC005146BC005146BC085146BC745146BC775044CE19544D87005756
+                402C565452FF565452FF565452FF565452FF565452B556545244565452005654
+                520056545200565452005146BC005146BC005146BC155146BCFF5146BCFF5044
+                D240534D8B0058582F3A56554AF4565452C8565452CC565452FD565452FF5654
+                52FF565452AC5654520056545200565452005146BC005146BC005146BC005146
+                BCFE5146BCFF5145C2135146B800544E7C00565357005756400056554B005654
+                54005654524D565452E0565452FF565452D256545200565452005146BC735146
+                BC785146BC825146BCFE5146BCFF5146B9955145C2775043D1765044C8135249
+                A30055525C00565549005654520056545200565452C5565452FF565452A35654
+                52005146BCFF5146BCFF5146BCFF5146BCFF5146BCFF5146BCFF5146BCFF5146
+                B9FF5044CE465044CF0055526300575545005654520056545200565452005654
+                52ED565452FF5654522F5146BCAF5146BCB95146BCBD5146BCFF5146BCFF5146
+                BBC75146BEB85042D4B95146BE01565357005756400056545400565452005654
+                5200565452005654525D565452FF565452A05146BC005146BC005146BC005146
+                BCFE5146BCFF5146BE185045C200534C8F0056554766575544975654549E5654
+                529E5654529E5654528A5654520656545207565452FF565452EB5146BC005146
+                BC005146BC145146BCFF5146BCFF5044CF3D534B99005858340056554BFF5654
+                54FF565452FF565452FF565452FF565452FF5654520E56545200565452F15654
+                52FF5044CF005043D0005044CD0D5044CAB45145C3B55044D126534B9A005756
+                4100565451F3565452FF56545218565452115654521156545202565452005654
+                5200565452F2565452FF544E8000544E7A00534C8C005249A0005147B2005043
+                D600544F710057564100565452F5565452FF5654520056545200565452005654
+                5200565452005654520E565452FF565452E85756410057564000575641345756
+                3F3F56544F065551650056544F0056545200565452F5565452FF565452085654
+                520056545200565452005654520056545265565452FF5654529A565452005654
+                520056545284565453FF56544FC9575547005654510056545300565452FF5654
+                52FF5654520856545200565452005654520056545203565452F4565452FF5654
+                5228565452005654520056545200565452D9565452FF56545298565452005654
+                5200565452545654526056545200565452005654520056545205565452D05654
+                52FF565452965654520056545200565452005654520056545212565452F05654
+                52FF565452CE5654524256545200565452005654520056545203565452605654
+                52EF565452FF565452C556545200565452005654520056545200565452005654
+                520056545213565452C6565452FF565452FF565452F7565452D0565452D45654
+                52FF565452FF565452FF5654529B565452005654520056545200565452005654
+                5200565452005654520056545200565452005654524D565452B8565452FF5654
+                52FF565452FF565452F3565452A0565452345654520056545200565452005654
+                5200565452005654520056545200565452005654520056545200565452005654
+                522B5654526A5654528C565452885654525D5654521756545200565452005654
+                52005654520056545200
+              }
+              OnClick = AddCalibrationBtnClick
+              ShowCaption = False
+              PopupMenu = CalibrationPopupMenu
+            end
+            object HelpLbl5: TLabel
+              Left = 128
+              Height = 15
+              Top = 48
+              Width = 159
+              Caption = 'button and select taxon A and'
+              ParentColor = False
+            end
+            object HelpLbl2: TLabel
+              Left = 28
+              Height = 15
+              Top = 128
+              Width = 186
+              Caption = 'click on a node in the tree and then'
+              ParentColor = False
+            end
+            object CalibrateNodeBtn: TSpeedButton
+              Left = 92
+              Height = 24
+              Hint = 'Calibrate a node in the tree'
+              Top = 152
+              Width = 24
+              Caption = '&Calibrate Selected Node'
+              Glyph.Data = {
+                46050000424D4605000000000000360000002800000012000000120000000100
+                2000000000001005000064000000640000000000000000000000565452005654
+                5200565452005654520056545200565452285654526D5654528E565452915654
+                527557563F12544E7C005044CC005146BD005146BC005146BC005146BC005146
+                BC005654520056545200565452005654520056545244565452B5565452FF5654
+                52FF565452FF565452FF5756402C544D87005044CE195146BC775146BC745146
+                BC085146BC005146BC00565452005654520056545200565452AC565452FF5654
+                52FF565452FD565452CC565452C856554AF458582F3A534D8B005044D2405146
+                BCFF5146BCFF5146BC155146BC005146BC005654520056545200565452D25654
+                52FF565452E05654524D5654540056554B005756400056535700544E7C005146
+                B8005145C2135146BCFF5146BCFE5146BC005146BC005146BC00565452005654
+                52A3565452FF565452C556545200565452005655490055525C005249A3005044
+                C8135043D1765145C2775146B9955146BCFF5146BCFE5146BC825146BC785146
+                BC735654522F565452FF565452ED565452005654520056545200575545005552
+                63005044CF005044CE465146B9FF5146BCFF5146BCFF5146BCFF5146BCFF5146
+                BCFF5146BCFF5146BCFF565452A0565452FF5654525D56545200565452005654
+                52005654540057564000565357005146BE015042D4B95146BEB85146BBC75146
+                BCFF5146BCFF5146BCBD5146BCB95146BCAF565452EB565452FF565452075654
+                52065654528A5654529E5654529E5654549E5755449756554766534C8F005045
+                C2005146BE185146BCFF5146BCFE5146BC005146BC005146BC00565452FF5654
+                52F1565452005654520E565452FF565452FF565452FF565452FF565454FF5655
+                4BFF58583400534B99005044CF3D5146BCFF5146BCFF5146BC145146BC005146
+                BC00565452FF565452F256545200565452005654520256545211565452115654
+                5218565452FF565451F357564100534B9A005044D1265145C3B55044CAB45044
+                CD0D5043D0005044CF00565452E8565452FF5654520E56545200565452005654
+                52005654520056545200565452FF565452F557564100544F71005043D6005147
+                B2005249A000534C8C00544E7A00544E80005654529A565452FF565452655654
+                520056545200565452005654520056545208565452FF565452F5565452005654
+                4F005551650056544F0657563F3F575641345756400057564100565452285654
+                52FF565452F45654520356545200565452005654520056545208565452FF5654
+                52FF56545300565451005755470056544FC9565453FF56545284565452005654
+                52005654520056545296565452FF565452D05654520556545200565452005654
+                52005654526056545254565452005654520056545298565452FF565452D95654
+                520056545200565452005654520056545200565452C5565452FF565452EF5654
+                52605654520356545200565452005654520056545242565452CE565452FF5654
+                52F0565452125654520056545200565452005654520056545200565452005654
+                529B565452FF565452FF565452FF565452D4565452D0565452F7565452FF5654
+                52FF565452C65654521356545200565452005654520056545200565452005654
+                5200565452005654520056545234565452A0565452F3565452FF565452FF5654
+                52FF565452B85654524D56545200565452005654520056545200565452005654
+                52005654520056545200565452005654520056545200565452175654525D5654
+                52885654528C5654526A5654522B565452005654520056545200565452005654
+                52005654520056545200
+              }
+              OnClick = CalibrateNodeBtnClick
+              ShowCaption = False
+              PopupMenu = CalibrationPopupMenu
+            end
+            object HelpLbl1: TLabel
+              Left = 11
+              Height = 15
+              Top = 19
+              Width = 143
+              Caption = 'To create a new calibration:'
+              ParentColor = False
+            end
+            object ShowHelpBtn: TSpeedButton
+              Left = 260
+              Height = 23
+              Top = 8
+              Width = 81
+              Anchors = [akTop, akRight]
+              Caption = '<< hide'
+              Flat = True
+              Font.Color = clBlue
+              Font.Height = -12
+              Font.Name = 'Tahoma'
+              OnClick = ShowHelpBtnClick
+              ParentFont = False
+            end
+            object HelpLbl7: TLabel
+              Left = 28
+              Height = 15
+              Top = 155
+              Width = 44
+              Caption = 'click the'
+              ParentColor = False
+            end
+            object HelpLbl8: TLabel
+              Left = 100
+              Height = 15
+              Top = 104
+              Width = 11
+              Caption = 'or'
+              ParentColor = False
+            end
+            object HelpLbl9: TLabel
+              Left = 128
+              Height = 15
+              Top = 155
+              Width = 39
+              Caption = 'button.'
+              ParentColor = False
+            end
+          end
+        end
+      end
+      object SampleTimesTab: TTabSheet
+        Caption = 'Sample Times'
+        ClientHeight = 724
+        ClientWidth = 352
+        ImageIndex = 1
+        object SampleTimesScrollbox: TScrollBox
+          Left = 0
+          Height = 724
+          Top = 0
+          Width = 352
+          HorzScrollBar.Page = 281
+          VertScrollBar.Page = 566
+          Align = alClient
+          ClientHeight = 720
+          ClientWidth = 348
+          TabOrder = 0
+          object ShowHelpBtn2: TSpeedButton
+            Left = 278
+            Height = 23
+            Top = 416
+            Width = 69
+            Anchors = [akTop, akRight]
+            Caption = '<< less'
+            Flat = True
+            Font.Color = clBlue
+            Font.Height = -12
+            Font.Name = 'Tahoma'
+            OnClick = ShowHelpBtn2Click
+            ParentFont = False
+          end
+          object HelpLabel1: TLabel
+            Left = 12
+            Height = 15
+            Top = 424
+            Width = 143
+            Caption = 'To create a new calibration:'
+            ParentColor = False
+          end
+          object HelpLabel2: TLabel
+            Left = 24
+            Height = 15
+            Top = 461
+            Width = 245
+            Caption = 'Select a leaf node in the tree and then click the'
+            ParentColor = False
+          end
+          object HelpLabel3: TLabel
+            Left = 96
+            Height = 15
+            Top = 493
+            Width = 55
+            Caption = 'button. Or'
+            ParentColor = False
+          end
+          object HelpLabel4: TLabel
+            Left = 24
+            Height = 15
+            Top = 524
+            Width = 49
+            Caption = 'Click the '
+            ParentColor = False
+          end
+          object HelpLabel5: TLabel
+            Left = 144
+            Height = 15
+            Top = 524
+            Width = 137
+            Caption = 'button and select a taxon '
+            ParentColor = False
+          end
+          object HelpLabel6: TLabel
+            Left = 24
+            Height = 15
+            Top = 551
+            Width = 145
+            Caption = 'from the combo box above'
+            ParentColor = False
+          end
+          object GroupBox3: TGroupBox
+            Left = 0
+            Height = 185
+            Top = 0
+            Width = 348
+            Align = alTop
+            Caption = 'Tip Date Calibrations'
+            ClientHeight = 165
+            ClientWidth = 344
+            TabOrder = 0
+            object SampleTimesCheckListBox: TCheckListBox
+              Left = 9
+              Height = 160
+              Top = 0
+              Width = 326
+              Anchors = [akTop, akLeft, akRight]
+              ItemHeight = 0
+              OnClick = CalibrationsCheckListBoxClick
+              OnClickCheck = CalibrationsCheckListBoxClickCheck
+              OnDrawItem = CalibrationsCheckListBoxDrawItem
+              Style = lbOwnerDrawFixed
+              TabOrder = 0
+            end
+          end
+          object GroupBox4: TGroupBox
+            Left = 0
+            Height = 228
+            Top = 185
+            Width = 348
+            Align = alTop
+            Caption = 'Details for Selected Calibration'
+            ClientHeight = 208
+            ClientWidth = 344
+            TabOrder = 1
+            object Label1: TLabel
+              Left = 8
+              Height = 15
+              Top = 30
+              Width = 31
+              Caption = 'Taxon'
+              ParentColor = False
+            end
+            object SampleTimesTaxonComboBox: TComboBox
+              Left = 8
+              Height = 23
+              Top = 52
+              Width = 326
+              Anchors = [akTop, akLeft, akRight]
+              DropDownCount = 20
+              ItemHeight = 15
+              OnChange = SampleTimesTaxonComboBoxChange
+              Style = csDropDownList
+              TabOrder = 0
+            end
+            object SampleTimeEdit: TLabeledEdit
+              Left = 8
+              Height = 23
+              Top = 171
+              Width = 134
+              EditLabel.Height = 15
+              EditLabel.Width = 134
+              EditLabel.Caption = 'Sample Time'
+              EditLabel.ParentColor = False
+              TabOrder = 2
+              OnChange = SampleTimeEditChange
+            end
+            object SampleTimesNameEdit: TLabeledEdit
+              Left = 8
+              Height = 23
+              Top = 112
+              Width = 326
+              Anchors = [akTop, akLeft, akRight]
+              EditLabel.Height = 15
+              EditLabel.Width = 326
+              EditLabel.Caption = 'Calibration Name'
+              EditLabel.ParentColor = False
+              ReadOnly = True
+              TabOrder = 1
+              OnChange = SampleTimesNameEditChange
+            end
+            object SampleTimesErrorMsg: TLabel
+              Left = 149
+              Height = 38
+              Top = 165
+              Width = 179
+              Alignment = taCenter
+              Anchors = [akTop, akLeft, akRight]
+              AutoSize = False
+              Caption = 'Needs to be a positive numeric value'
+              ParentColor = False
+              WordWrap = True
+            end
+          end
+          object SampleTimesCalibrateNodeBtn: TSpeedButton
+            Left = 49
+            Height = 24
+            Hint = 'Add a divergence time calibration constraint to the selected node'
+            Top = 488
+            Width = 24
+            Caption = '&Calibrate Selected Node'
+            Glyph.Data = {
+              46050000424D4605000000000000360000002800000012000000120000000100
+              2000000000001005000064000000640000000000000000000000565452005654
+              5200565452005654520056545200565452285654526D5654528E565452915654
+              527557563F12544E7C005044CC005146BD005146BC005146BC005146BC005146
+              BC005654520056545200565452005654520056545244565452B5565452FF5654
+              52FF565452FF565452FF5756402C544D87005044CE195146BC775146BC745146
+              BC085146BC005146BC00565452005654520056545200565452AC565452FF5654
+              52FF565452FD565452CC565452C856554AF458582F3A534D8B005044D2405146
+              BCFF5146BCFF5146BC155146BC005146BC005654520056545200565452D25654
+              52FF565452E05654524D5654540056554B005756400056535700544E7C005146
+              B8005145C2135146BCFF5146BCFE5146BC005146BC005146BC00565452005654
+              52A3565452FF565452C556545200565452005655490055525C005249A3005044
+              C8135043D1765145C2775146B9955146BCFF5146BCFE5146BC825146BC785146
+              BC735654522F565452FF565452ED565452005654520056545200575545005552
+              63005044CF005044CE465146B9FF5146BCFF5146BCFF5146BCFF5146BCFF5146
+              BCFF5146BCFF5146BCFF565452A0565452FF5654525D56545200565452005654
+              52005654540057564000565357005146BE015042D4B95146BEB85146BBC75146
+              BCFF5146BCFF5146BCBD5146BCB95146BCAF565452EB565452FF565452075654
+              52065654528A5654529E5654529E5654549E5755449756554766534C8F005045
+              C2005146BE185146BCFF5146BCFE5146BC005146BC005146BC00565452FF5654
+              52F1565452005654520E565452FF565452FF565452FF565452FF565454FF5655
+              4BFF58583400534B99005044CF3D5146BCFF5146BCFF5146BC145146BC005146
+              BC00565452FF565452F256545200565452005654520256545211565452115654
+              5218565452FF565451F357564100534B9A005044D1265145C3B55044CAB45044
+              CD0D5043D0005044CF00565452E8565452FF5654520E56545200565452005654
+              52005654520056545200565452FF565452F557564100544F71005043D6005147
+              B2005249A000534C8C00544E7A00544E80005654529A565452FF565452655654
+              520056545200565452005654520056545208565452FF565452F5565452005654
+              4F005551650056544F0657563F3F575641345756400057564100565452285654
+              52FF565452F45654520356545200565452005654520056545208565452FF5654
+              52FF56545300565451005755470056544FC9565453FF56545284565452005654
+              52005654520056545296565452FF565452D05654520556545200565452005654
+              52005654526056545254565452005654520056545298565452FF565452D95654
+              520056545200565452005654520056545200565452C5565452FF565452EF5654
+              52605654520356545200565452005654520056545242565452CE565452FF5654
+              52F0565452125654520056545200565452005654520056545200565452005654
+              529B565452FF565452FF565452FF565452D4565452D0565452F7565452FF5654
+              52FF565452C65654521356545200565452005654520056545200565452005654
+              5200565452005654520056545234565452A0565452F3565452FF565452FF5654
+              52FF565452B85654524D56545200565452005654520056545200565452005654
+              52005654520056545200565452005654520056545200565452175654525D5654
+              52885654528C5654526A5654522B565452005654520056545200565452005654
+              52005654520056545200
+            }
+            OnClick = SampleTimesCalibrateNodeBtnClick
+            ShowCaption = False
+          end
+          object SampleTimesNewCalibrationBtn: TSpeedButton
+            Left = 96
+            Height = 24
+            Hint = 'Add a new calibration point'
+            Top = 522
+            Width = 24
+            Caption = 'Calibrate &MRCA'
+            Glyph.Data = {
+              46050000424D4605000000000000360000002800000012000000120000000100
+              20000000000010050000640000006400000000000000000000005146BC005146
+              BC005146BC005146BC005146BD005044CC00544E7C0057563F12565452755654
+              52915654528E5654526D56545228565452005654520056545200565452005654
+              52005146BC005146BC005146BC085146BC745146BC775044CE19544D87005756
+              402C565452FF565452FF565452FF565452FF565452B556545244565452005654
+              520056545200565452005146BC005146BC005146BC155146BCFF5146BCFF5044
+              D240534D8B0058582F3A56554AF4565452C8565452CC565452FD565452FF5654
+              52FF565452AC5654520056545200565452005146BC005146BC005146BC005146
+              BCFE5146BCFF5145C2135146B800544E7C00565357005756400056554B005654
+              54005654524D565452E0565452FF565452D256545200565452005146BC735146
+              BC785146BC825146BCFE5146BCFF5146B9955145C2775043D1765044C8135249
+              A30055525C00565549005654520056545200565452C5565452FF565452A35654
+              52005146BCFF5146BCFF5146BCFF5146BCFF5146BCFF5146BCFF5146BCFF5146
+              B9FF5044CE465044CF0055526300575545005654520056545200565452005654
+              52ED565452FF5654522F5146BCAF5146BCB95146BCBD5146BCFF5146BCFF5146
+              BBC75146BEB85042D4B95146BE01565357005756400056545400565452005654
+              5200565452005654525D565452FF565452A05146BC005146BC005146BC005146
+              BCFE5146BCFF5146BE185045C200534C8F0056554766575544975654549E5654
+              529E5654529E5654528A5654520656545207565452FF565452EB5146BC005146
+              BC005146BC145146BCFF5146BCFF5044CF3D534B99005858340056554BFF5654
+              54FF565452FF565452FF565452FF565452FF5654520E56545200565452F15654
+              52FF5044CF005043D0005044CD0D5044CAB45145C3B55044D126534B9A005756
+              4100565451F3565452FF56545218565452115654521156545202565452005654
+              5200565452F2565452FF544E8000544E7A00534C8C005249A0005147B2005043
+              D600544F710057564100565452F5565452FF5654520056545200565452005654
+              5200565452005654520E565452FF565452E85756410057564000575641345756
+              3F3F56544F065551650056544F0056545200565452F5565452FF565452085654
+              520056545200565452005654520056545265565452FF5654529A565452005654
+              520056545284565453FF56544FC9575547005654510056545300565452FF5654
+              52FF5654520856545200565452005654520056545203565452F4565452FF5654
+              5228565452005654520056545200565452D9565452FF56545298565452005654
+              5200565452545654526056545200565452005654520056545205565452D05654
+              52FF565452965654520056545200565452005654520056545212565452F05654
+              52FF565452CE5654524256545200565452005654520056545203565452605654
+              52EF565452FF565452C556545200565452005654520056545200565452005654
+              520056545213565452C6565452FF565452FF565452F7565452D0565452D45654
+              52FF565452FF565452FF5654529B565452005654520056545200565452005654
+              5200565452005654520056545200565452005654524D565452B8565452FF5654
+              52FF565452FF565452F3565452A0565452345654520056545200565452005654
+              5200565452005654520056545200565452005654520056545200565452005654
+              522B5654526A5654528C565452885654525D5654521756545200565452005654
+              52005654520056545200
+            }
+            OnClick = SampleTimesNewCalibrationBtnClick
+            ShowCaption = False
+          end
+        end
+      end
+    end
+  end
+  object BottomPanel: TPanel
+    Left = 0
+    Height = 39
+    Top = 784
+    Width = 967
+    Align = alBottom
+    ClientHeight = 39
+    ClientWidth = 967
+    TabOrder = 2
+    OnClick = BottomPanelClick
+    object BottomBottomPanel: TPanel
+      Left = 1
+      Height = 30
+      Top = 4
+      Width = 583
+      Anchors = [akTop, akLeft, akRight]
+      BevelOuter = bvNone
+      TabOrder = 0
+    end
+    object ToolBar2: TToolBar
+      Left = 597
+      Height = 30
+      Top = 4
+      Width = 358
+      Align = alNone
+      Anchors = [akTop, akRight]
+      AutoSize = True
+      ButtonHeight = 30
+      ButtonWidth = 115
+      Caption = 'ToolBar2'
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      HotImages = ImageForm.DlgButtonsHover
+      Images = ImageForm.DlgButtons
+      TabOrder = 1
+      object ToolButton3: TToolButton
+        Left = 1
+        Top = 0
+        Action = HelpAction2
+      end
+      object ToolButton5: TToolButton
+        Left = 120
+        Top = 0
+        Action = CancelAction
+      end
+      object ToolButton17: TToolButton
+        Left = 239
+        Top = 0
+        Action = OkAction
+      end
+    end
+  end
+  object MainMenu1: TMainMenu
+    Images = MegaForm.NewIcons
+    Left = 784
+    Top = 64
+    object File1: TMenuItem
+      Caption = '&File'
+      object LoadCalibrationDataItem: TMenuItem
+        Action = LoadDataAction
+        Caption = '&Import Calibration Data'
+      end
+      object SaveCalibrationDataItem: TMenuItem
+        Action = ExportCalibrationDataAction
+        Caption = 'E&xport Calibration Data'
+      end
+      object Finished1: TMenuItem
+        Action = CreateTimeTreeAction
+      end
+      object ExitItem: TMenuItem
+        Action = CloseAction
+      end
+    end
+    object Edit2: TMenuItem
+      Caption = '&Edit '
+      object CopytoClipboard1: TMenuItem
+        Action = CopyToClipboardAction
+      end
+    end
+    object Search1: TMenuItem
+      Caption = '&Search'
+      object Find1: TMenuItem
+        Action = SearchAction
+      end
+    end
+    object View1: TMenuItem
+      Caption = '&View'
+      object ShowTopologyOnly1: TMenuItem
+        Action = TopologyOnlyAction
+      end
+      object SwapSubtree1: TMenuItem
+        Action = SwapAction
+      end
+      object FlipSubtree1: TMenuItem
+        Action = FlipAction
+      end
+      object AutoSizeAction1: TMenuItem
+        Action = AutoSizeAction
+      end
+      object ManualResize1: TMenuItem
+        Action = ResizeAction
+      end
+      object NodeIDs1: TMenuItem
+        Action = NodeIdsAction
+      end
+    end
+    object Edit1: TMenuItem
+      Caption = '&Calibration'
+      object NewCalibrationItem: TMenuItem
+        Caption = 'Calibrate &MRCA'
+        Hint = 'Add a new calibration point'
+        ImageIndex = 196
+        object NormalDistItem3: TMenuItem
+          Caption = 'Normal Distribution'
+          OnClick = NormalDistItem3Click
+        end
+        object LogNormalDistItem3: TMenuItem
+          Caption = 'Log-normal Distribution'
+          OnClick = LogNormalDistItem3Click
+        end
+        object ExponentialDistItem3: TMenuItem
+          Caption = 'Exponential Distribution'
+          OnClick = ExponentialDistItem3Click
+        end
+        object UniformDistItem3: TMenuItem
+          Caption = 'Uniform Distribution'
+          OnClick = UniformDistItem3Click
+        end
+        object MinTimeItem3: TMenuItem
+          Caption = 'Min Time'
+          OnClick = MinTimeItem3Click
+        end
+        object MaxTimeItem3: TMenuItem
+          Caption = 'Max Time'
+          OnClick = MaxTimeItem3Click
+        end
+        object FixedTimeItem3: TMenuItem
+          Caption = 'Fixed Time'
+          OnClick = FixedTimeItem3Click
+        end
+        object FixedRateItem3: TMenuItem
+          Caption = 'Fixed Rate'
+          OnClick = FixedRateItem3Click
+        end
+      end
+      object CalibrateSelectedNode1: TMenuItem
+        Caption = '&Calibrate Selected Node'
+        Hint = 'Add a divergence time calibration constraint to the selected node'
+        ImageIndex = 177
+        object NormalDistItem2: TMenuItem
+          Caption = 'Normal Distribution'
+          OnClick = NormalDistItem2Click
+        end
+        object LogNormalDistItem2: TMenuItem
+          Caption = 'Log-normal Distribution'
+          OnClick = LogNormalDistItem2Click
+        end
+        object ExponentialDistItem2: TMenuItem
+          Caption = 'Exponential Distribution'
+          OnClick = ExponentialDistItem2Click
+        end
+        object UniformDistItem2: TMenuItem
+          Caption = 'Uniform Distribution'
+          OnClick = UniformDistItem2Click
+        end
+        object MinTimeItem2: TMenuItem
+          Caption = 'Min Time'
+          OnClick = MinTimeItem2Click
+        end
+        object MaxTimeItem2: TMenuItem
+          Caption = 'Max Time'
+          OnClick = MaxTimeItem2Click
+        end
+        object FixedTimeItem2: TMenuItem
+          Caption = 'Fixed Time'
+          OnClick = FixedTimeItem2Click
+        end
+        object FixedRateItem2: TMenuItem
+          Caption = 'Fixed Rate'
+          OnClick = FixedRateItem2Click
+        end
+      end
+      object CalibrateLeafNodeItem: TMenuItem
+        Caption = '&Calibrate Selected Node'
+        Hint = 'Calibrate a node in the tree'
+        ImageIndex = 196
+        OnClick = CalibrateLeafNodeItemClick
+      end
+      object DeleteCalibrationItem: TMenuItem
+        Action = RemoveCalibrationAction
+        Caption = '&Delete'
+      end
+      object MenuItem2: TMenuItem
+        Action = ActionClearCalibrations
+      end
+      object MenuItem5: TMenuItem
+        Action = RemoveInvalidCalibrationsAction
+      end
+      object EditCalibrationItem: TMenuItem
+        Caption = 'Edit Calibration'
+        ImageIndex = 201
+        OnClick = EditCalibrationItemClick
+      end
+      object MenuItem3: TMenuItem
+        Action = ParseTipDatesAction
+      end
+    end
+    object helpItem: TMenuItem
+      Caption = '&Help '
+      Hint = 'Display help for using this dialog'
+      object MenuItem4: TMenuItem
+        Caption = '&Help'
+        Hint = 'Display help for using this dialog'
+        ShortCut = 16456
+        OnClick = HelpActionExecute
+      end
+      object MenuItem6: TMenuItem
+        Action = DeveloperAction
+      end
+    end
+    object DeveloperMenu: TMenuItem
+      Caption = '&Developer'
+      Visible = False
+      object MenuItem7: TMenuItem
+        Action = DeveloperAction
+      end
+    end
+  end
+  object ActionList16: TActionList
+    Images = MegaForm.NewIcons
+    Left = 616
+    Top = 96
+    object LoadDataAction: TAction
+      Caption = '&Load Calibration Data'
+      Hint = 'Load calibration data from a text file'
+      ImageIndex = 69
+      OnExecute = LoadDataActionExecute
+      ShortCut = 16463
+    end
+    object ExportCalibrationDataAction: TAction
+      Caption = 'E&xport Calibrations'
+      Hint = 'Export all calibration data to a text file'
+      ImageIndex = 91
+      OnExecute = ExportCalibrationDataActionExecute
+      ShortCut = 49235
+    end
+    object AddCalibrationAction: TAction
+      Caption = 'Calibrate &MRCA'
+      Hint = 'Add a new calibration point'
+      ImageIndex = 196
+      OnExecute = AddCalibrationActionExecute
+      ShortCut = 16462
+    end
+    object RemoveCalibrationAction: TAction
+      Caption = '&Delete Calibration'
+      Hint = 'Delete the currently selected calibration point'
+      ImageIndex = 159
+      OnExecute = RemoveCalibrationActionExecute
+      ShortCut = 46
+    end
+    object HelpAction: TAction
+      Caption = 'Show Help Tip'
+      Hint = 'Display help for using this dialog'
+      ImageIndex = 68
+      OnExecute = HelpActionExecute
+      ShortCut = 16456
+    end
+    object FileExit1: TFileExit
+      Category = 'File'
+      Caption = 'E&xit'
+      Hint = 'Exit|Quits the application'
+      ImageIndex = 21
+    end
+    object CreateTimeTreeAction: TAction
+      Caption = '&Finished'
+      Hint = 'Save your changes and close this dialog'
+      ImageIndex = 35
+      OnExecute = CreateTimeTreeActionExecute
+    end
+    object CloseAction: TAction
+      Caption = '&Quit    '
+      Hint = 'Close this dialog, do not pass go and do not collect $200'
+      ImageIndex = 59
+      OnExecute = CloseActionExecute
+      ShortCut = 16465
+    end
+    object ActionClearCalibrations: TAction
+      Caption = 'Clear Calibrations'
+      Hint = 'Delete all calibration constraints'
+      ImageIndex = 59
+      OnExecute = ActionClearCalibrationsExecute
+    end
+    object ParseTipDatesAction: TAction
+      Caption = 'Extract Sample Times From Names'
+      ImageIndex = 110
+      OnExecute = ParseTipDatesActionExecute
+    end
+    object RemoveInvalidCalibrationsAction: TAction
+      Caption = 'Remove Invalid Calibrations'
+      Hint = 'Remove all calibrations that are not valid'
+      OnExecute = RemoveInvalidCalibrationsActionExecute
+    end
+    object DeveloperAction: TAction
+      Caption = 'Developer Action'
+      Enabled = False
+      OnExecute = DeveloperActionExecute
+      ShortCut = 24644
+      Visible = False
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 704
+    Top = 48
+  end
+  object SaveDialog1: TSaveDialog
+    Left = 648
+    Top = 160
+  end
+  object ActionList18: TActionList
+    Images = MegaForm.NewIcons
+    OnUpdate = ActionList18Update
+    Left = 592
+    Top = 264
+    object CalibrateSelectedNodeAction: TAction
+      Caption = '&Calibrate Selected Node'
+      Hint = 'Add a divergence time calibration constraint to the selected node'
+      ImageIndex = 177
+      OnExecute = CalibrateSelectedNodeActionExecute
+      ShortCut = 49230
+    end
+    object TopologyOnlyAction: TAction
+      Caption = 'Show &Topology Only'
+      Hint = 'Toggle the display between scaled and topology only'
+      ImageIndex = 118
+      OnExecute = TopologyOnlyActionExecute
+      ShortCut = 16468
+    end
+    object ShowInfoAction: TAction
+      Caption = 'Show &Info'
+      Hint = 'Show the tree information window'
+      ImageIndex = 148
+      OnExecute = ShowInfoActionExecute
+      ShortCut = 16457
+    end
+    object CopyToClipboardAction: TAction
+      Caption = '&Copy to Clipboard'
+      Hint = 'Copy the tree image to the clipboard'
+      ImageIndex = 77
+      OnExecute = CopyToClipboardActionExecute
+      ShortCut = 16451
+    end
+    object PointerAction: TAction
+      Caption = '&Pointer'
+      Hint = 'Select the pointer tool'
+      ImageIndex = 149
+      OnExecute = PointerActionExecute
+    end
+    object SwapAction: TAction
+      Caption = 'S&wap Subtree'
+      Hint = 'Swap descendent lineages for the selected node/branch'
+      ImageIndex = 53
+      OnExecute = SwapActionExecute
+      ShortCut = 16471
+    end
+    object FlipAction: TAction
+      Caption = '&Flip Subtree'
+      Hint = 'Flip the subtree for the selected node/branch'
+      ImageIndex = 73
+      OnExecute = FlipActionExecute
+      ShortCut = 16460
+    end
+    object SearchAction: TAction
+      Caption = '&Find'
+      Hint = 'Search for a taxon in the tree'
+      ImageIndex = 57
+      OnExecute = SearchActionExecute
+      ShortCut = 16454
+    end
+    object AutoSizeAction: TAction
+      Caption = '&Auto-size'
+      Hint = 'Resize the tree to fit inside the window'
+      ImageIndex = 130
+      OnExecute = AutoSizeActionExecute
+      ShortCut = 16449
+    end
+    object NodeIdsAction: TAction
+      Caption = 'No&de IDs'
+      Hint = 'Toggle the display of node IDs'
+      ImageIndex = 117
+      OnExecute = NodeIdsActionExecute
+      ShortCut = 16452
+    end
+    object ResizeAction: TAction
+      Caption = 'Manual &Resize'
+      Hint = 'Manually resize the tree'
+      ImageIndex = 152
+      OnExecute = ResizeActionExecute
+      ShortCut = 16466
+    end
+    object ActionAddCalibration: TAction
+      Caption = '&Calibrate Selected Node'
+      Hint = 'Calibrate a node in the tree'
+      ImageIndex = 196
+      OnExecute = ActionAddCalibrationExecute
+    end
+    object ActionAutoSizeVert: TAction
+      Caption = 'Auto-size &Vertically'
+      Hint = 'Automatically resize the tree vertically to fit in the current display'
+      ImageIndex = 208
+      OnExecute = ActionAutoSizeVertExecute
+    end
+    object ActionAutoSizeHoriz: TAction
+      Caption = 'Auto-size &Horizontally'
+      Hint = 'Automatically resize the tree horizontally to fit in the current display'
+      ImageIndex = 207
+      OnExecute = ActionAutoSizeHorizExecute
+    end
+  end
+  object TreePopupMenu: TPopupMenu
+    Images = MegaForm.NewIcons
+    Left = 504
+    Top = 168
+    object ShowInfoMenuItem: TMenuItem
+      Action = ShowInfoAction
+    end
+    object SwapSubtree2: TMenuItem
+      Action = SwapAction
+    end
+    object FlipSubtree2: TMenuItem
+      Action = FlipAction
+    end
+    object Find2: TMenuItem
+      Action = SearchAction
+    end
+    object AutoSizeAction2: TMenuItem
+      Action = AutoSizeAction
+    end
+    object ManualResize2: TMenuItem
+      Action = ResizeAction
+    end
+    object Pointer1: TMenuItem
+      Action = PointerAction
+    end
+    object CalibrateNodePopupItem: TMenuItem
+      Caption = '&Calibrate Node'
+      object MenuItem8: TMenuItem
+        Caption = '&Normal Distribution'
+        OnClick = NormalDistItemClick
+      end
+      object MenuItem9: TMenuItem
+        Caption = '&Log-normal Distribution'
+        OnClick = LogNormalDistItemClick
+      end
+      object MenuItem10: TMenuItem
+        Caption = '&Exponential Distribution'
+        OnClick = ExponentialDistItemClick
+      end
+      object MenuItem11: TMenuItem
+        Caption = '&Uniform Distribution'
+        OnClick = UniformDistItemClick
+      end
+      object MenuItem12: TMenuItem
+        Caption = 'M&in Time Only'
+        OnClick = MinTimeItemClick
+      end
+      object MenuItem13: TMenuItem
+        Caption = 'M&ax Time Only'
+        OnClick = MaxTimeItemClick
+      end
+      object MenuItem14: TMenuItem
+        Caption = 'Fixed &Time'
+        OnClick = FixedTimeItemClick
+      end
+      object MenuItem15: TMenuItem
+        Caption = 'Fixed &Rate'
+        OnClick = FixedRateItemClick
+      end
+    end
+  end
+  object ImageList1: TImageList
+    Left = 741
+    Top = 292
+    Bitmap = {
+      4C7A0200000010000000100000004D0000000000000078DA6B69696168211263
+      0320F1FF448051FDA3FA71E9A724FD8D02CA40CB20CFFF402564EB07E925563F
+      4C1DBA5E52F4C3D4A2EB25453F36BDC4FA1F975E52C20F9BDED1FC3F7C01000F
+      30C296
+    }
+  end
+  object CalibrationPopupMenu: TPopupMenu
+    Images = MegaForm.NewIcons
+    Left = 693
+    Top = 243
+    object MenuItem1: TMenuItem
+      Caption = '-- Select a calibration type --'
+      Enabled = False
+    end
+    object NormalDistItem: TMenuItem
+      Caption = 'Normal Distribution'
+      OnClick = NormalDistItemClick
+    end
+    object LogNormalDistItem: TMenuItem
+      Caption = 'Log-normal Distribution'
+      OnClick = LogNormalDistItemClick
+    end
+    object ExponentialDistItem: TMenuItem
+      Caption = 'Exponential Distribution'
+      OnClick = ExponentialDistItemClick
+    end
+    object UniformDistItem: TMenuItem
+      Caption = 'Uniform Distribution'
+      OnClick = UniformDistItemClick
+    end
+    object MinTimeItem: TMenuItem
+      Caption = 'Min Time Only'
+      OnClick = MinTimeItemClick
+    end
+    object MaxTimeItem: TMenuItem
+      Caption = 'Max Time Only'
+      OnClick = MaxTimeItemClick
+    end
+    object FixedTimeItem: TMenuItem
+      Caption = 'Fixed Time'
+      OnClick = FixedTimeItemClick
+    end
+    object FixedRateItem: TMenuItem
+      Caption = 'Fixed Rate'
+      OnClick = FixedRateItemClick
+    end
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 546
+    Top = 439
+    object OkAction: TAction
+      Caption = 'OkAction'
+      ImageIndex = 5
+      OnExecute = CreateTimeTreeActionExecute
+    end
+    object CancelAction: TAction
+      Caption = 'CancelAction'
+      ImageIndex = 0
+      OnExecute = CloseActionExecute
+    end
+    object HelpAction2: TAction
+      Caption = 'HelpAction2'
+      ImageIndex = 8
+      OnExecute = HelpBtnClick
+      ShortCut = 112
+    end
+  end
+end

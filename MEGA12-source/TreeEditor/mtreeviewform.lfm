@@ -1,0 +1,1926 @@
+object TreeViewForm: TTreeViewForm
+  Left = 279
+  Height = 873
+  Top = 105
+  Width = 1599
+  HorzScrollBar.Visible = False
+  VertScrollBar.Visible = False
+  Caption = 'TreeViewForm'
+  ClientHeight = 853
+  ClientWidth = 1599
+  Constraints.MinHeight = 356
+  Constraints.MinWidth = 750
+  DefaultMonitor = dmMainForm
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clBlack
+  Font.Height = -13
+  Font.Name = 'Arial'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  Menu = MainMenu
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnDragDrop = FormDragDrop
+  OnDragOver = FormDragOver
+  OnHelp = FormHelp
+  OnHide = FormHide
+  OnResize = FormResize
+  OnShow = FormShow
+  Position = poMainFormCenter
+  SessionProperties = 'ActionHideOverlappingTaxa.Checked;FileOpenDialog.FileName;FileOpenDialog.InitialDir;FileSaveDialog.FileName;FileSaveDialog.InitialDir;FontDialog.Font;FontDialog.MaxFontSize;FontDialog.MinFontSize;FontDialog.Name;FontDialog.Options;PrinterSetupDialog.Name'
+  ShowHint = True
+  LCLVersion = '2.2.6.0'
+  object BottomPanel: TPanel
+    Left = 0
+    Height = 24
+    Top = 829
+    Width = 1599
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 24
+    ClientWidth = 1599
+    TabOrder = 0
+    object TreeStatusBar: TStatusBar
+      Left = 0
+      Height = 24
+      Top = 0
+      Width = 1374
+      Align = alClient
+      Panels = <      
+        item
+          Bevel = pbNone
+          Text = 'Displaying Tree'
+          Width = 400
+        end      
+        item
+          Alignment = taRightJustify
+          Bevel = pbNone
+          Text = 'Ready'
+          Width = 62
+        end>
+      SimplePanel = False
+    end
+    object ProgressBar1: TProgressBar
+      Left = 1374
+      Height = 24
+      Top = 0
+      Width = 225
+      Align = alRight
+      Smooth = True
+      TabOrder = 1
+    end
+  end
+  object Panel13: TPanel
+    Left = 327
+    Height = 799
+    Top = 30
+    Width = 1272
+    Align = alClient
+    BevelOuter = bvNone
+    Caption = 'Panel13'
+    ClientHeight = 799
+    ClientWidth = 1272
+    TabOrder = 1
+    object TreeTabControl: TTabControl
+      Left = 0
+      Height = 610
+      Top = 34
+      Width = 1272
+      OnChange = TreeTabControlChange
+      Align = alClient
+      OnChangeBounds = TreeTabControlChangeBounds
+      TabOrder = 0
+    end
+    object CaptionPanel: TPanel
+      Left = 0
+      Height = 150
+      Top = 649
+      Width = 1272
+      Align = alBottom
+      BevelOuter = bvNone
+      TabOrder = 1
+    end
+    object CaptionSplitter: TSplitter
+      Cursor = crVSplit
+      Left = 0
+      Height = 5
+      Top = 644
+      Width = 1272
+      Align = alBottom
+      ResizeAnchor = akBottom
+    end
+    object MacOSTabsPanel: TPanel
+      Left = 0
+      Height = 34
+      Top = 0
+      Width = 1272
+      Align = alTop
+      ClientHeight = 34
+      ClientWidth = 1272
+      TabOrder = 3
+      Visible = False
+      object OriTreeBtn: TRadioButton
+        Left = 24
+        Height = 20
+        Top = 8
+        Width = 93
+        Caption = 'Original Tree'
+        Checked = True
+        OnChange = MacTabButtonClick
+        TabOrder = 2
+        TabStop = True
+      end
+      object BootTreeBtn: TRadioButton
+        Left = 154
+        Height = 20
+        Top = 8
+        Width = 105
+        Caption = 'Bootstrap Tree'
+        OnChange = MacTabButtonClick
+        TabOrder = 0
+        Visible = False
+      end
+      object ReltimeTreeBtn: TRadioButton
+        Left = 304
+        Height = 20
+        Top = 8
+        Width = 70
+        Caption = 'Timetree'
+        OnChange = MacTabButtonClick
+        TabOrder = 1
+        Visible = False
+      end
+      object CustomTimetreeBtn: TRadioButton
+        Left = 417
+        Height = 20
+        Top = 8
+        Width = 122
+        Caption = 'Divergence Times'
+        OnClick = MacTabButtonClick
+        TabOrder = 3
+      end
+      object CondensedTreeBtn: TRadioButton
+        Left = 565
+        Height = 20
+        Top = 8
+        Width = 141
+        Caption = 'Condensed Topology'
+        OnClick = MacTabButtonClick
+        TabOrder = 4
+      end
+    end
+  end
+  object CollapsePanel: TPanel
+    Left = 315
+    Height = 799
+    Hint = 'Click to Collapse or Expand Side Panel'
+    Top = 30
+    Width = 12
+    Align = alLeft
+    ClientHeight = 799
+    ClientWidth = 12
+    ParentColor = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 2
+    OnClick = CollapsePanelClick
+    OnMouseEnter = CollapsePanelMouseEnter
+    OnMouseLeave = CollapsePanelMouseLeave
+    object CollapseButton: TSpeedButton
+      Left = 1
+      Height = 797
+      Hint = 'Click to Collapse or Expand Side Panel'
+      Top = 1
+      Width = 10
+      Align = alClient
+      Color = clDefault
+      Flat = True
+      Glyph.Data = {
+        F6000000424DF600000000000000420000002800000009000000090000000100
+        100003000000B40000006400000064000000000000000000000000F80000E007
+        00001F0000002842284228422842284228422842284228420000284228422842
+        2842284228422842284228420000284228422842284228422842284228422842
+        0000284228422842284228422842284228422842000028422842284228422842
+        2842284228422842000028422842284228422842284228422842284200002842
+        2842284228422842284228422842284200002842284228422842284228422842
+        2842284200002842284228422842284228422842284228420000
+      }
+      Images = ImageForm.SmallArrowIcons
+      ImageIndex = 2
+      OnClick = CollapsePanelClick
+      OnMouseEnter = CollapsePanelMouseEnter
+      OnMouseLeave = CollapsePanelMouseLeave
+      ShowCaption = False
+      ShowHint = True
+      ParentShowHint = False
+    end
+  end
+  object SidePanel: TScrollBox
+    Left = 0
+    Height = 799
+    Top = 30
+    Width = 310
+    HorzScrollBar.Page = 1
+    HorzScrollBar.Visible = False
+    VertScrollBar.Page = 79
+    Align = alLeft
+    BorderStyle = bsNone
+    ClientHeight = 799
+    ClientWidth = 310
+    DockSite = True
+    DragKind = dkDock
+    TabOrder = 3
+    object Panel2: TPanel
+      Left = 0
+      Height = 15
+      Hint = 'Move the tree formatting toolbar to the opposite side of the window'
+      Top = 0
+      Width = 310
+      Align = alTop
+      ClientHeight = 15
+      ClientWidth = 310
+      TabOrder = 0
+      OnClick = Panel2Click
+      OnMouseEnter = Panel2MouseEnter
+      OnMouseLeave = Panel2MouseLeave
+      object SpeedButton2: TSpeedButton
+        Left = 286
+        Height = 13
+        Hint = 'Move the tree formatting toolbar to the right side of the window'
+        Top = 1
+        Width = 23
+        Align = alRight
+        Color = clDefault
+        Flat = True
+        Glyph.Data = {
+          F6000000424DF600000000000000420000002800000009000000090000000100
+          100003000000B40000006400000064000000000000000000000000F80000E007
+          00001F0000002842284228422842284228422842284228420000284228422842
+          2842284228422842284228420000284228422842284228422842284228422842
+          0000284228422842284228422842284228422842000028422842284228422842
+          2842284228422842000028422842284228422842284228422842284200002842
+          2842284228422842284228422842284200002842284228422842284228422842
+          2842284200002842284228422842284228422842284228420000
+        }
+        Images = ImageForm.SmallArrowIcons
+        ImageIndex = 1
+        OnClick = SpeedButton2Click
+      end
+      object SpeedButton3: TSpeedButton
+        Left = 0
+        Height = 22
+        Hint = 'Move the tree formatting toolbar to the left side of the window'
+        Top = -3
+        Width = 23
+        Color = clDefault
+        Flat = True
+        Glyph.Data = {
+          F6000000424DF600000000000000420000002800000009000000090000000100
+          100003000000B40000006400000064000000000000000000000000F80000E007
+          00001F0000002842284228422842284228422842284228420000284228422842
+          2842284228422842284228420000284228422842284228422842284228422842
+          0000284228422842284228422842284228422842000028422842284228422842
+          2842284228422842000028422842284228422842284228422842284200002842
+          2842284228422842284228422842284200002842284228422842284228422842
+          2842284200002842284228422842284228422842284228420000
+        }
+        Images = ImageForm.SmallArrowIcons
+        ImageIndex = 2
+        OnClick = SpeedButton3Click
+      end
+    end
+    object ButtonsPanel: TPanel
+      Left = 0
+      Height = 64
+      Top = 15
+      Width = 310
+      BevelOuter = bvNone
+      TabOrder = 1
+    end
+  end
+  object Splitter1: TSplitter
+    Left = 310
+    Height = 799
+    Top = 30
+    Width = 5
+    OnMoved = Splitter1Moved
+  end
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 30
+    Top = 0
+    Width = 1599
+    ButtonHeight = 28
+    ButtonWidth = 28
+    Caption = 'ToolBar1'
+    Images = ImageForm.DefaultIcons
+    TabOrder = 5
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 2
+      Action = ActionSaveSession
+    end
+    object ToolButton2: TToolButton
+      Left = 29
+      Top = 2
+      Action = ActionPrint
+    end
+    object ToolButton3: TToolButton
+      Left = 57
+      Top = 2
+      Action = ActionCopy
+    end
+    object ToolButton4: TToolButton
+      Left = 85
+      Height = 28
+      Top = 2
+      Caption = 'ToolButton4'
+      Style = tbsDivider
+    end
+    object ToolButton5: TToolButton
+      Left = 118
+      Top = 2
+      Action = ActionInfo
+    end
+    object FormattingToolsBtn: TToolButton
+      Left = 90
+      Hint = 'Display the tree formatting tools'
+      Top = 2
+      Caption = 'F&ormat Tree'
+      ImageIndex = 150
+      OnClick = FormattingToolsBtnClick
+    end
+    object ToolButton7: TToolButton
+      Left = 342
+      Height = 28
+      Top = 2
+      Caption = 'ToolButton7'
+      Style = tbsDivider
+    end
+    object TreeStyleBtn2: TToolButton
+      Left = 347
+      Top = 2
+      Caption = 'TreeStyleBtn2'
+      DropdownMenu = BranchStyleMenu
+      ImageIndex = 147
+    end
+    object ToolButton9: TToolButton
+      Left = 375
+      Top = 2
+      Action = ActionTopology
+    end
+    object ToolButton10: TToolButton
+      Left = 408
+      Top = 2
+      Action = ActionCondensed
+    end
+    object ToolButton11: TToolButton
+      Left = 436
+      Top = 2
+      Action = ActionConsensus
+    end
+    object RelTimeBtn: TToolButton
+      Left = 464
+      Top = 2
+      Action = ActionReltime
+    end
+    object ToolButton6: TToolButton
+      Left = 146
+      Top = 2
+      Action = ActionAutoSize
+    end
+    object ToolButton8: TToolButton
+      Left = 230
+      Top = 2
+      Action = DisplayTaxaNamesAction
+    end
+    object ToolButton12: TToolButton
+      Left = 258
+      Top = 2
+      Action = ActionBranchLengthDisplay
+    end
+    object ToolButton13: TToolButton
+      Left = 286
+      Top = 2
+      Action = ActionBranchInfoDisplay
+    end
+    object ToolButton14: TToolButton
+      Left = 403
+      Height = 28
+      Top = 2
+      Caption = 'ToolButton14'
+      Style = tbsDivider
+    end
+    object ToolButton15: TToolButton
+      Left = 314
+      Top = 2
+      Action = ActionNodeIdsDisplay
+    end
+    object ToolButton16: TToolButton
+      Left = 174
+      Top = 2
+      Action = ActionResize
+    end
+    object ToolButton17: TToolButton
+      Left = 202
+      Top = 2
+      Action = ActionPoint
+    end
+  end
+  object MainMenu: TMainMenu
+    Images = MegaForm.NewIcons
+    Left = 488
+    Top = 256
+    object FileMenu: TMenuItem
+      Caption = '&File'
+      object MenuItem20: TMenuItem
+        Action = ActionSaveSession
+      end
+      object MenuItem21: TMenuItem
+        Action = ActionExportCurrentTree
+      end
+      object MenuItem37: TMenuItem
+        Action = ActionExportCurrentTreeClock
+      end
+      object MenuItem38: TMenuItem
+        Action = ActionExportTimetreeNexus
+      end
+      object MenuItem121: TMenuItem
+        Action = ActionExportElapsedTimes
+      end
+      object MenuItem22: TMenuItem
+        Action = ActionExportAllTrees
+      end
+      object MenuItem39: TMenuItem
+        Action = ActionExportCurrentTreeCalibrations
+      end
+      object MenuItem40: TMenuItem
+        Action = ActionExportAnalysisSummary
+      end
+      object MenuItem41: TMenuItem
+        Action = ActionExportPartitionList
+      end
+      object MenuItem64: TMenuItem
+        Action = ExportPairwiseDistancesAction
+      end
+      object MenuItem42: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem43: TMenuItem
+        Action = ActionExportTreeTabular
+      end
+      object MenuItem44: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem45: TMenuItem
+        Action = ActionExportGpNames
+      end
+      object MenuItem46: TMenuItem
+        Action = ActionImportGpNames
+      end
+      object MenuItem61: TMenuItem
+        Action = ActionImportNames
+      end
+      object MenuItem47: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem48: TMenuItem
+        Action = ActionInfo
+      end
+      object MenuItem49: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem50: TMenuItem
+        Action = ActionPrint
+      end
+      object MenuItem51: TMenuItem
+        Action = ActionPrintSmall
+      end
+      object MenuItem52: TMenuItem
+        Action = ActionPrinterSetup
+      end
+      object MenuItem53: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem54: TMenuItem
+        Action = ActionQuit
+      end
+    end
+    object SearchMenu: TMenuItem
+      Caption = '&Search'
+      object GoToNodeBranch1: TMenuItem
+        Caption = '&Go To Node\Branch...'
+        ShortCut = 16455
+        OnClick = GoToNodeBranch1Click
+      end
+      object MenuItem93: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem55: TMenuItem
+        Action = ActionFindTaxaName
+      end
+      object MenuItem126: TMenuItem
+        Action = ActionFindLabelledNode
+      end
+      object MenuItem56: TMenuItem
+        Action = ActionSearchGeneDups
+      end
+      object MenuItem122: TMenuItem
+        Action = FindMrcaAction
+      end
+    end
+    object ImageMenu: TMenuItem
+      Caption = '&Image'
+      object MenuItem57: TMenuItem
+        Action = ActionCopy
+      end
+      object MenuItem59: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem12: TMenuItem
+        Action = ActionSaveImageToBmp
+      end
+      object MenuItem13: TMenuItem
+        Action = ActionSaveImageToPdf
+      end
+      object MenuItem14: TMenuItem
+        Action = ActionSaveImageToPng
+      end
+      object MenuItem15: TMenuItem
+        Action = ActionSaveImageToSvg
+      end
+      object MenuItem16: TMenuItem
+        Action = ActionSaveImageToTIFF
+      end
+      object MenuItem63: TMenuItem
+        Action = ActionSaveImageToEmf
+      end
+      object MenuItem18: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem60: TMenuItem
+        Action = ActionLoadImages
+      end
+    end
+    object SubtreeMenu: TMenuItem
+      Caption = 'S&ubtree'
+      object MenuItem23: TMenuItem
+        Action = ActionRootOnBranch
+      end
+      object MenuItem24: TMenuItem
+        Action = ActionFlip
+      end
+      object MenuItem25: TMenuItem
+        Action = ActionSwap
+      end
+      object MenuItem26: TMenuItem
+        Action = ActionCompress
+      end
+      object MenuItem17: TMenuItem
+        Caption = '-'
+      end
+      object DrawOptionsItem: TMenuItem
+        Caption = '&Draw Options'
+        OnClick = DrawOptionsItemClick
+        object Options1: TMenuItem
+          Action = ActionSubtreeOption
+        end
+      end
+      object UseSubtreeAttribItem: TMenuItem
+        Caption = 'Use S&ubtree Draw Options'
+        OnClick = UseSubtreeAttribItemClick
+      end
+      object UseGroupAttribItem: TMenuItem
+        Caption = 'Use &Group Draw Options'
+        OnClick = UseGroupAttribItemClick
+      end
+      object MenuItem62: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem65: TMenuItem
+        Action = ActionDisplaySeparately
+      end
+    end
+    object ViewMenu: TMenuItem
+      Caption = '&View'
+      object MenuItem19: TMenuItem
+        Action = ActionTopology
+      end
+      object MenuItem66: TMenuItem
+        Caption = '-'
+      end
+      object OverlappingTaxaItem: TMenuItem
+        Action = ActionHideOverlappingTaxa
+      end
+      object MenuItem111: TMenuItem
+        Action = ActionHideOverlappingDivTimes
+      end
+      object ChangeRootMenuItem: TMenuItem
+        Action = ActionRootOnMidpoint
+      end
+      object ArrangeTaxaMenuItem: TMenuItem
+        Caption = '&Arrange Taxa'
+        object SortClusterShapeItem: TMenuItem
+          Action = ActionBalancedTree
+        end
+        object SortClusterOrderItem: TMenuItem
+          Action = ActionInputOrderTree
+        end
+        object N1: TMenuItem
+          Caption = '-'
+        end
+        object MenuItem117: TMenuItem
+          Action = ActionSortByContinent
+        end
+        object MenuItem118: TMenuItem
+          Action = SortTreeByGroup
+        end
+        object MenuItem116: TMenuItem
+          Action = ActionSortTreeByYear
+        end
+      end
+      object MenuItem67: TMenuItem
+        Caption = '-'
+      end
+      object TreeStyleMenuItem: TMenuItem
+        Caption = 'Tree/Branch &Style'
+        object MenuItem68: TMenuItem
+          Caption = '&Traditional'
+          Hint = 'Display the tree as a rectangular  cladogram'
+          ImageIndex = 144
+          object MenuItem72: TMenuItem
+            Action = ActionRectangular
+          end
+          object MenuItem73: TMenuItem
+            Action = ActionSlanted
+          end
+          object MenuItem74: TMenuItem
+            Action = ActionCurved
+          end
+        end
+        object MenuItem70: TMenuItem
+          Action = ActionRadial
+        end
+        object MenuItem71: TMenuItem
+          Action = ActionCircular
+        end
+      end
+      object ShowHideMenuItem: TMenuItem
+        Caption = 'Sho&w/Hide'
+        object MenuItem69: TMenuItem
+          Action = DisplayTaxaNamesAction
+        end
+        object MenuItem75: TMenuItem
+          Action = ActionMarkerDisplay
+        end
+        object MenuItem76: TMenuItem
+          Action = ActionDisplaySpeciesNames
+        end
+        object MenuItem82: TMenuItem
+          Action = ActionNodeIdsDisplay
+        end
+        object MenuItem78: TMenuItem
+          Caption = '-'
+        end
+        object MenuItem83: TMenuItem
+          Action = ActionDisplayGeneDupMarkers
+        end
+        object MenuItem84: TMenuItem
+          Action = ActionDisplaySpeciationMarkers
+        end
+        object N2: TMenuItem
+          Caption = '-'
+        end
+        object MenuItem79: TMenuItem
+          Action = ActionBranchInfoDisplay
+        end
+        object MenuItem80: TMenuItem
+          Action = ActionDataCoverageDisplay
+        end
+        object MenuItem81: TMenuItem
+          Action = ActionBranchLengthDisplay
+        end
+        object MenuItem77: TMenuItem
+          Action = ActionDisplayDivergenceTimes
+        end
+        object MenuItem120: TMenuItem
+          Action = ActionDisplayErrorBars
+        end
+        object MenuItem85: TMenuItem
+          Caption = '-'
+        end
+        object MenuItem86: TMenuItem
+          Action = ToggleTimescaleAction
+        end
+        object MenuItem87: TMenuItem
+          Action = ActionScaleBarDisplay
+        end
+      end
+      object MenuItem137: TMenuItem
+        Caption = 'Auto-size'
+        object MenuItem138: TMenuItem
+          Action = ActionAutoSize
+        end
+        object MenuItem139: TMenuItem
+          Action = ActionHorizAutoSize
+        end
+        object MenuItem140: TMenuItem
+          Action = ActionVertAutoSize
+        end
+      end
+      object MenuItem88: TMenuItem
+        Caption = '-'
+      end
+      object FontMenuItem: TMenuItem
+        Caption = '&Fonts'
+        object MenuItem136: TMenuItem
+          Action = UseDefaultFontsAction
+        end
+        object MenuItem89: TMenuItem
+          Action = ActionTaxonFont
+        end
+        object MenuItem90: TMenuItem
+          Action = ActionBranchInfoFont
+        end
+        object MenuItem91: TMenuItem
+          Action = ActionScaleBarFont
+        end
+        object MenuItem92: TMenuItem
+          Action = ActionAncStateFont
+        end
+        object MenuItem113: TMenuItem
+          Action = ActionTimesFont
+        end
+      end
+      object GotoSeparator: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem95: TMenuItem
+        Action = ActionFormattingTools
+      end
+      object N3: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem123: TMenuItem
+        Action = ActionCloneSession
+      end
+    end
+    object ComputeMenu: TMenuItem
+      Caption = '&Compute'
+      object CondensedTreeItem: TMenuItem
+        Action = ActionCondensed
+      end
+      object MenuItem34: TMenuItem
+        Caption = '-'
+      end
+      object ConsensusTreeItem: TMenuItem
+        Action = ActionConsensus
+      end
+      object MenuItem33: TMenuItem
+        Caption = '-'
+      end
+      object ReltimeMenuItem: TMenuItem
+        Action = ActionReltime
+      end
+      object MenuItem112: TMenuItem
+        Action = ActionMolecularClock
+      end
+      object MenuItem119: TMenuItem
+        Action = CorrtestAction
+      end
+      object GeneDupsSpacer: TMenuItem
+        Caption = '-'
+      end
+      object InferGeneDupsItem: TMenuItem
+        Action = ActionLaunchGeneDupsSearch
+      end
+    end
+    object ShowCharStateItem: TMenuItem
+      Caption = '&Ancestors'
+      object MenuItem28: TMenuItem
+        Action = ActionAncStateShowAll
+      end
+      object MenuItem29: TMenuItem
+        Action = ActionAncStateShowMost
+      end
+      object MenuItem30: TMenuItem
+        Action = ActionAncStateHideAmbiguous
+      end
+      object MenuItem31: TMenuItem
+        Action = ActionAncStateShowNone
+      end
+      object MenuItem27: TMenuItem
+        Caption = '-'
+        Visible = False
+      end
+      object ExtCharAncItem: TMenuItem
+        Action = ActionAncStateExtended
+      end
+      object MenuItem96: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem97: TMenuItem
+        Action = ActionActStateExportMostProbableSequence
+      end
+      object MenuItem98: TMenuItem
+        Action = ActionActStateExportCurrentSite
+      end
+      object MenuItem100: TMenuItem
+        Action = ActionAncStateExportAllSites
+      end
+      object MenuItem101: TMenuItem
+        Action = ActionActStateExportChangesList
+      end
+      object Exportmostprobablesequenceforcurrentlyselectednode1: TMenuItem
+        Action = ActionActStateExportMostProbableSequenceCurrentNode
+      end
+      object MenuItem102: TMenuItem
+        Action = ActionAncStateExportPredictLivingSequence
+      end
+      object MenuItem103: TMenuItem
+        Action = ActionAncStateExportTextExport
+      end
+    end
+    object miCaptionExpert: TMenuItem
+      Caption = 'Caption'
+      object MenuItem94: TMenuItem
+        Action = CaptionCopyToClipboardAction
+      end
+      object MenuItem104: TMenuItem
+        Action = CaptionPrintAction
+      end
+      object MenuItem105: TMenuItem
+        Action = CaptionSaveToTextAction
+      end
+      object MenuItem106: TMenuItem
+        Action = CaptionZoomInAction
+      end
+      object MenuItem107: TMenuItem
+        Action = CaptionZoomOutAction
+      end
+      object MenuItem108: TMenuItem
+        Action = CaptionShowInNewWindowAction
+      end
+      object MenuItem109: TMenuItem
+        Action = CaptionDockInTEAction
+      end
+      object MenuItem110: TMenuItem
+        Action = CaptionHideAction
+      end
+    end
+    object WindowsMenuItem: TMenuItem
+      Caption = '&Windows'
+    end
+    object IQTreeMenu: TMenuItem
+      Caption = 'IQTree'
+      Visible = False
+    end
+    object HelpMenu: TMenuItem
+      Caption = '&Help '
+      object MenuItem58: TMenuItem
+        Caption = 'Tree Explorer Help'
+        OnClick = HelpMenuClick
+      end
+      object MenuItem99: TMenuItem
+        Caption = 'About MEGA'
+        OnClick = MenuItem99Click
+      end
+    end
+    object DeveloperMenu: TMenuItem
+      Caption = 'Developer'
+      object MenuItem141: TMenuItem
+        Action = ActionExportTaxaNames
+      end
+      object MenuItem142: TMenuItem
+        Action = DebugAction
+      end
+    end
+  end
+  object TreeActionList: TActionList
+    Images = MegaForm.NewIcons
+    OnUpdate = TreeActionListUpdate
+    Left = 568
+    Top = 264
+    object ActionSlanted: TAction
+      Caption = '&Straight'
+      Hint = 'Display the tree using straight lines'
+      ImageIndex = 139
+      OnExecute = ActionSlantedExecute
+    end
+    object ActionRectangular: TAction
+      Caption = '&Rectangular'
+      Hint = 'Display the tree as a rectangular  cladogram'
+      ImageIndex = 144
+      OnExecute = ActionRectangularExecute
+    end
+    object ActionCurved: TAction
+      Caption = '&Curved'
+      Hint = 'Display the tree as a cladogram with curved lines'
+      ImageIndex = 140
+      OnExecute = ActionCurvedExecute
+    end
+    object ActionCircular: TAction
+      Caption = '&Circle'
+      Hint = 'Display the tree in circular format'
+      ImageIndex = 153
+      OnExecute = ActionCircularExecute
+    end
+    object ActionRadial: TAction
+      Caption = 'R&adiation'
+      Hint = 'Display the tree in radial style'
+      ImageIndex = 146
+      OnExecute = ActionRadialExecute
+    end
+    object ActionBranchLengthDisplay: TAction
+      Caption = 'Toggle Display of &Branch Lengths'
+      Hint = 'Toggle the display of branch lengths'
+      ImageIndex = 12
+      OnExecute = ActionBranchLengthDisplayExecute
+    end
+    object ActionTopology: TAction
+      Caption = 'Toggle Scaling of &Tree'
+      Hint = 'Topology Only (Toggle scaling of the tree)'
+      ImageIndex = 118
+      OnExecute = ActionTopologyExecute
+    end
+    object ActionFlip: TAction
+      Caption = '&Flip Subtree'
+      Hint = 'Flip the selected subtree'
+      ImageIndex = 53
+      OnExecute = ActionFlipExecute
+    end
+    object ActionResize: TAction
+      Caption = '&Resize Tree'
+      Hint = 'Resize the tree by dragging the mouse'
+      ImageIndex = 152
+      OnExecute = ActionResizeExecute
+    end
+    object ActionRootOnBranch: TAction
+      Caption = '&Root Tree'
+      Hint = 'Root the tree on the selected branch'
+      ImageIndex = 138
+      OnExecute = ActionRootOnBranchExecute
+    end
+    object ActionSwap: TAction
+      Caption = '&Swap Subtree'
+      Hint = 'Swap the selected subtree'
+      ImageIndex = 143
+      OnExecute = ActionSwapExecute
+    end
+    object ActionAutoSize: TAction
+      Caption = '&Autosize Tree Horizontally and Vertically'
+      Hint = 'Autosize the tree to fit inside the display window'
+      ImageIndex = 130
+      OnExecute = ActionAutoSizeExecute
+    end
+    object ActionCompress: TAction
+      Caption = '&Compress/Expand Subtree'
+      Hint = 'Compress the selected subtree'
+      ImageIndex = 142
+      OnExecute = ActionCompressExecute
+    end
+    object ActionSaveSession: TAction
+      Caption = '&Save Current Session'
+      Hint = 'Save the current tree session'
+      ImageIndex = 35
+      OnExecute = ActionSaveSessionExecute
+      ShortCut = 16467
+    end
+    object ActionPrint: TAction
+      Caption = '&Print Tree'
+      Hint = 'Print the tree image to a file'
+      ImageIndex = 0
+      OnExecute = ActionPrintExecute
+    end
+    object ActionCopy: TAction
+      Caption = '&Copy to Clipboard'
+      Hint = 'Copy the tree image to the clipboard'
+      ImageIndex = 77
+      OnExecute = ActionCopyExecute
+    end
+    object ActionInfo: TAction
+      Caption = 'Show In&fo'
+      Hint = 'Display the tree information box'
+      ImageIndex = 148
+      OnExecute = ActionInfoExecute
+      ShortCut = 16457
+    end
+    object ActionPoint: TAction
+      Caption = 'Activate &Pointer'
+      Hint = 'Activate the pointer tool'
+      ImageIndex = 149
+      OnExecute = ActionPointExecute
+      ShortCut = 27
+    end
+    object ActionFormattingTools: TAction
+      Caption = 'F&ormat Tree'
+      Hint = 'Display the tree formatting tools'
+      ImageIndex = 150
+      OnExecute = ActionFormattingToolsExecute
+    end
+    object ActionSubtreeOption: TAction
+      Caption = 'Format S&ubtree'
+      Hint = 'Set formatting options for the selected subtree'
+      ImageIndex = 98
+      OnExecute = ActionSubtreeOptionExecute
+    end
+    object ActionBalancedTree: TAction
+      Caption = 'Sort Tree for &Balanced Shape'
+      Checked = True
+      Hint = 'Sort taxa in the tree for a balanced display'
+      OnExecute = ActionBalancedTreeExecute
+    end
+    object ActionInputOrderTree: TAction
+      Caption = 'Sort Tree by &Input Order'
+      Hint = 'Sort the tree to display taxa by their input order'
+      OnExecute = ActionInputOrderTreeExecute
+    end
+    object ActionBranchInfoDisplay: TAction
+      Caption = 'Toggle Display of Node &Stats'
+      Hint = 'Toggle the display of node stats'
+      ImageIndex = 129
+      OnExecute = ActionBranchInfoDisplayExecute
+    end
+    object ActionAncStateShowAll: TAction
+      Caption = 'Show &All'
+      OnExecute = ActionAncStateShowAllExecute
+    end
+    object ActionLinearized: TAction
+      Caption = 'ActionLinearized'
+      ImageIndex = 174
+      OnExecute = ActionLinearizedExecute
+    end
+    object CaptionHideAction: TAction
+      Caption = '&Hide Caption'
+      Hint = 'Hide the Caption'
+      ImageIndex = 59
+      OnExecute = CaptionHideActionExecute
+    end
+    object RootTreeFinishedAction: TAction
+      Caption = '&Finished'
+      ImageIndex = 138
+      OnExecute = RootTreeFinishedActionExecute
+    end
+    object ActionRootByOutgroup: TAction
+      Caption = 'Root on Outgroup'
+      Hint = 'Root the tree on the outgroup'
+      ImageIndex = 107
+      OnExecute = ActionRootByOutgroupExecute
+    end
+    object ActionAncStateShowMost: TAction
+      Caption = 'Show &Most Probable'
+      Enabled = False
+      Hint = 'Show the most probable ancestral states in the tree'
+      OnExecute = ActionAncStateShowMostExecute
+    end
+    object ActionAncStateShowNone: TAction
+      Caption = 'Hide A&ncestral States'
+      Enabled = False
+      Hint = 'Hide the display of ancestral states in the tree'
+      OnExecute = ActionAncStateShowNoneExecute
+    end
+    object ActionAncStateHideAmbiguous: TAction
+      Caption = '&Hide Ambiguous'
+      Enabled = False
+      Hint = 'Do not display ambiguous ancestral states in the tree'
+      OnExecute = ActionAncStateHideAmbiguousExecute
+    end
+    object ActionHideOverlappingTaxa: TAction
+      Caption = 'Hide &Overlapping Taxa'
+      Checked = True
+      Hint = 'Hide the display of overlapping taxa names'
+      OnExecute = ActionHideOverlappingTaxaExecute
+    end
+    object ActionAncStateExtended: TAction
+      Caption = '&Extended Character Format'
+      Enabled = False
+      OnExecute = ActionAncStateExtendedExecute
+    end
+    object ActionRootOnMidpoint: TAction
+      Caption = 'Root on &Midpoint'
+      ImageIndex = 138
+      OnExecute = ActionRootOnMidpointExecute
+    end
+    object ActionExportCurrentTreeCalibrations: TAction
+      Caption = 'Export &Calibrations'
+      Hint = 'Export timetree calibrations to a text file'
+      OnExecute = ActionExportCurrentTreeCalibrationsExecute
+    end
+    object ActionExportCurrentTree: TAction
+      Caption = 'Export Current Tree (&Newick)'
+      Hint = 'Export the current tree to a newick text file'
+      OnExecute = ActionExportCurrentTreeExecute
+    end
+    object ActionExportAllTrees: TAction
+      Caption = 'Export A&ll Trees (Newick)'
+      Hint = 'Export all trees to a newick text file'
+      OnExecute = ActionExportAllTreesExecute
+    end
+    object ActionNodeIdsDisplay: TAction
+      Caption = 'Toggle Display of Node &IDs'
+      Hint = 'Toggle the display of node IDs'
+      ImageIndex = 117
+      OnExecute = ActionNodeIdsDisplayExecute
+    end
+    object ActionAddCalibration: TAction
+      Caption = '&Calibrate the Selected Node'
+      Hint = 'Calibrate the selected node'
+      ImageIndex = 177
+      OnExecute = ActionAddCalibrationExecute
+      Visible = False
+    end
+    object ActionFindTaxaName: TAction
+      Caption = '&Find Taxon Name'
+      Hint = 'Search the tree by taxon name'
+      ImageIndex = 2
+      OnExecute = ActionFindTaxaNameExecute
+      ShortCut = 16454
+    end
+    object ActionLaunchGeneDupsSearch: TAction
+      Caption = 'Find &Gene Duplications'
+      Hint = 'Search for gene duplication events in the tree'
+      ImageIndex = 168
+      OnExecute = ActionLaunchGeneDupsSearchExecute
+    end
+    object ActionDisplayDivergenceTimes: TAction
+      Caption = 'Toggle Display of Divergence &Times'
+      Hint = 'Toggle the display of divergence times'
+      ImageIndex = 141
+      OnExecute = ActionDisplayDivergenceTimesExecute
+    end
+    object ToggleTimescaleAction: TAction
+      Caption = 'Toggle Display of &Timescale'
+      Hint = 'Toggle the display of the timescale'
+      ImageIndex = 165
+      OnExecute = ToggleTimescaleActionExecute
+    end
+    object ActionCondensed: TAction
+      Caption = 'Compute &Condensed Tree'
+      Hint = 'Compute condensed tree'
+      ImageIndex = 175
+      OnExecute = ActionCondensedExecute
+    end
+    object ActionConsensus: TAction
+      Caption = 'Compute Con&sensus Tree'
+      Hint = 'Compute consensus'
+      ImageIndex = 97
+      OnExecute = ActionConsensusExecute
+    end
+    object ActionReltime: TAction
+      Caption = 'Compute &Timetree'
+      Hint = 'Compute divergence times for the active tree using branch lengths'
+      ImageIndex = 41
+      OnExecute = ActionReltimeExecute
+    end
+    object ActionDisplaySeparately: TAction
+      Caption = '&Display Subtree in New Window'
+      Hint = 'Displays the selected subtree in a new Tree Explorer window'
+      ImageIndex = 173
+      OnExecute = ActionDisplaySeparatelyExecute
+    end
+    object ActionDataCoverageDisplay: TAction
+      Caption = 'Toggle Display of &Data Coverage'
+      Hint = 'Display the percent of data coverage for internal nodes'
+      ImageIndex = 164
+      OnExecute = ActionDataCoverageDisplayExecute
+    end
+    object ActionDisplaySpeciesNames: TAction
+      Caption = 'Toggle Display of S&pecies Names'
+      Hint = 'Toggle the display of species names'
+      ImageIndex = 162
+      OnExecute = ActionDisplaySpeciesNamesExecute
+    end
+    object DisplayTaxaNamesAction: TAction
+      Caption = 'Toggle Display of Taxa &Names'
+      Hint = 'Toggle the display of taxa names'
+      ImageIndex = 163
+      OnExecute = DisplayTaxaNamesActionExecute
+    end
+    object ActionRecalibrateTimetree: TAction
+      Caption = '&Recalibrate Timetree'
+      Hint = 'Recalibrate the timetree'
+      ImageIndex = 176
+      OnExecute = ActionRecalibrateTimetreeExecute
+    end
+    object ActionMLLinearized: TAction
+      Caption = 'Timetree (ML)'
+      Hint = 'Construct a TimeTree using the ML framework'
+      ImageIndex = 174
+      OnExecute = ActionMLLinearizedExecute
+    end
+    object ActionTaxonFont: TAction
+      Caption = '&Taxon Name Font'
+      ImageIndex = 51
+      OnExecute = ActionTaxonFontExecute
+    end
+    object ActionBranchInfoFont: TAction
+      Caption = 'Branch &Information Font'
+      ImageIndex = 51
+      OnExecute = ActionBranchInfoFontExecute
+    end
+    object ActionScaleBarFont: TAction
+      Caption = '&Scale Bar Font'
+      ImageIndex = 51
+      OnExecute = ActionScaleBarFontExecute
+    end
+    object ActionAncStateFont: TAction
+      Caption = '&Ancestral State Font'
+      ImageIndex = 51
+      OnExecute = ActionAncStateFontExecute
+    end
+    object ActionDisplayErrorBars: TAction
+      Caption = 'Toggle Display of &Node Height Error Bars'
+      Hint = 'Toggle the display of node height error bars'
+      ImageIndex = 128
+      OnExecute = ActionDisplayErrorBarsExecute
+    end
+    object ActionDisplaySpeciationMarkers: TAction
+      Caption = 'Toggle Display of S&peciation Markers'
+      Hint = 'Toggle the diplay of speciation event markers'
+      ImageIndex = 135
+      OnExecute = ActionDisplaySpeciationMarkersExecute
+    end
+    object ActionDisplayGeneDupMarkers: TAction
+      Caption = 'Toggle Display of &Gene Duplication Markers'
+      Hint = 'Toggle the display of gene duplication markers'
+      ImageIndex = 134
+      OnExecute = ActionDisplayGeneDupMarkersExecute
+    end
+    object ActionTimesFont: TAction
+      Caption = '&Divergence Times Font'
+      ImageIndex = 51
+      OnExecute = ActionTimesFontExecute
+    end
+    object ActionBLenFont: TAction
+      Caption = '&Branch Length Font'
+      ImageIndex = 51
+      OnExecute = ActionBLenFontExecute
+    end
+    object ActionSearchGeneDups: TAction
+      Caption = '&Gene Duplication/Speciation Events'
+      Hint = 'Jump to gene duplication / speciation events'
+      ImageIndex = 93
+      OnExecute = ActionSearchGeneDupsExecute
+    end
+    object ActionExportTimetreeNexus: TAction
+      Caption = 'Export Timetree (Ne&xus)'
+      Hint = 'Export the current timetree to a Nexus file'
+      OnExecute = ActionExportTimetreeNexusExecute
+    end
+    object ActionExportCurrentTreeClock: TAction
+      Caption = 'Export &Timetree (Tabular)'
+      OnExecute = ActionExportCurrentTreeClockExecute
+    end
+    object ActionExportAnalysisSummary: TAction
+      Caption = 'Export Anal&ysis Summary'
+      Hint = 'Export a summary of the analysis to a text file'
+      OnExecute = ActionExportAnalysisSummaryExecute
+    end
+    object ActionExportPartitionList: TAction
+      Caption = 'Exp&ort Partition List'
+      Hint = 'Export the tree partition list to a text file '
+      OnExecute = ActionExportPartitionListExecute
+    end
+    object ActionSaveImageToPdf: TAction
+      Caption = 'Save as PDF file'
+      OnExecute = ActionSaveImageToPdfExecute
+    end
+    object ActionSaveImageToTIFF: TAction
+      Caption = 'Save as &TIFF File'
+      OnExecute = ActionSaveImageToTIFFExecute
+    end
+    object ActionExportGpNames: TAction
+      Caption = '&Export Group Names'
+      OnExecute = ActionExportGpNamesExecute
+    end
+    object ActionImportGpNames: TAction
+      Caption = '&Import Group Names'
+      OnExecute = ActionImportGpNamesExecute
+    end
+    object ActionLoadImages: TAction
+      Caption = '&Load Taxon Images from a Folder'
+      OnExecute = ActionLoadImagesExecute
+    end
+    object ActionScaleBarDisplay: TAction
+      Caption = 'Toggle Display of Scale &Bar'
+      ImageIndex = 127
+      OnExecute = ActionScaleBarDisplayExecute
+    end
+    object ActionMarkerDisplay: TAction
+      Caption = 'Toggle Display of Taxon &Marker'
+      OnExecute = ActionMarkerDisplayExecute
+    end
+    object ActionAncStateExportAllSites: TAction
+      Caption = 'Export A&ll Site Ancestors'
+      Hint = 'Export ancestral states for all sites'
+      OnExecute = ActionAncStateExportAllSitesExecute
+    end
+    object ActionExportTreeTabular: TAction
+      Caption = '&Write Tree in a Table Format'
+      Hint = 'Export the active tree in a tabular format'
+      OnExecute = ActionExportTreeTabularExecute
+    end
+    object ActionPrintSmall: TAction
+      Caption = 'Print in a S&heet'
+      ImageIndex = 0
+      OnExecute = ActionPrintSmallExecute
+    end
+    object ActionPrinterSetup: TAction
+      Caption = 'Printer Set&up...'
+      OnExecute = ActionPrinterSetupExecute
+    end
+    object ActionQuit: TAction
+      Caption = '&Quit Tree Explorer'
+      Hint = 'Close this window'
+      ImageIndex = 59
+      OnExecute = ActionQuitExecute
+      ShortCut = 16465
+    end
+    object CaptionCopyToClipboardAction: TAction
+      Caption = '&Copy to Clipboard'
+      Hint = ' Copy the caption to the system clipboard'
+      ImageIndex = 77
+      OnExecute = CaptionCopyToClipboardActionExecute
+    end
+    object ActionActStateExportMostProbableSequence: TAction
+      Caption = 'Export Most &Probable Sequences'
+      OnExecute = ActionActStateExportMostProbableSequenceExecute
+    end
+    object ActionActStateExportCurrentSite: TAction
+      Caption = 'Export Current &Site Ancestors'
+      OnExecute = ActionActStateExportCurrentSiteExecute
+    end
+    object ActionActStateExportMostProbableSequenceCurrentNode: TAction
+      Caption = 'Export &Most Probable Sequence for Selected Node'
+      OnExecute = ActionActStateExportMostProbableSequenceCurrentNodeExecute
+      Visible = False
+    end
+    object ActionActStateExportChangesList: TAction
+      Caption = 'Export &Changes List'
+      OnExecute = ActionActStateExportChangesListExecute
+    end
+    object ActionAncStateExportPredictLivingSequence: TAction
+      Caption = 'Predict Living Sequence'
+      OnExecute = ActionAncStateExportPredictLivingSequenceExecute
+      Visible = False
+    end
+    object ActionAncStateExportTextExport: TAction
+      Caption = 'Export &Detailed Text '
+      OnExecute = ActionAncStateExportTextExportExecute
+    end
+    object CaptionPrintAction: TAction
+      Category = '&Print Caption...'
+      Caption = '&Print Caption'
+      Hint = 'Print the current caption'
+      ImageIndex = 0
+      OnExecute = CaptionPrintActionExecute
+    end
+    object CaptionShowInNewWindowAction: TAction
+      Caption = 'Display Caption in &New Window'
+      Hint = 'Display the caption in a new window'
+      ImageIndex = 109
+      OnExecute = CaptionShowInNewWindowActionExecute
+    end
+    object CaptionDockInTEAction: TAction
+      Caption = 'Show in &Tree Explorer'
+      Hint = 'Dock the caption in the Tree Explorer window'
+      ImageIndex = 166
+      OnExecute = CaptionDockInTEActionExecute
+    end
+    object CaptionZoomInAction: TAction
+      Caption = 'Zoom &In'
+      Hint = 'Zoom into the caption'
+      ImageIndex = 154
+      OnExecute = CaptionZoomInActionExecute
+    end
+    object CaptionZoomOutAction: TAction
+      Caption = 'Zoom &Out'
+      Hint = 'Zoom the caption out'
+      ImageIndex = 155
+      OnExecute = CaptionZoomOutActionExecute
+    end
+    object CaptionSaveToTextAction: TAction
+      Caption = '&Save to Text File'
+      Hint = 'Save the caption to a text file'
+      ImageIndex = 21
+      OnExecute = CaptionSaveToTextActionExecute
+      ShortCut = 49235
+    end
+    object DebugAction: TAction
+      Caption = 'Developer Debug Action'
+      OnExecute = DebugActionExecute
+      ShortCut = 24644
+    end
+    object ActionSaveImageToPng: TAction
+      Caption = 'Save as PNG file'
+      OnExecute = ActionSaveImageToPngExecute
+    end
+    object ActionSaveImageToSvg: TAction
+      Caption = 'Save as SVG file'
+      OnExecute = ActionSaveImageToSvgExecute
+    end
+    object ActionSaveImageToBmp: TAction
+      Caption = 'Save as BMP file'
+      OnExecute = ActionSaveImageToBmpExecute
+    end
+    object ActionMolecularClock: TAction
+      Caption = 'Calibrate Molecular Clock'
+      Hint = 'Calibrate the tree using a global molecular clock or a divergence time'
+      ImageIndex = 127
+      OnExecute = ActionMolecularClockExecute
+    end
+    object ActionHideOverlappingDivTimes: TAction
+      Caption = 'Hide Overlapping Divergence Times'
+      Checked = True
+      Hint = 'Hide divergence times that overlap with other tree elements'
+      OnExecute = ActionHideOverlappingDivTimesExecute
+    end
+    object ActionSaveImageToEmf: TAction
+      Caption = 'Save as EMF File'
+      Hint = 'Export the current tree to an Enhanced Meta File (EMF)'
+      OnExecute = ActionSaveImageToEmfExecute
+    end
+    object ExportPairwiseDistancesAction: TAction
+      Caption = 'Export Pairwise Distances'
+      Hint = 'Export a matrix of pairwise distances for all leaf nodes in the tree'
+      OnExecute = ExportPairwiseDistancesActionExecute
+    end
+    object ActionSortTreeByYear: TAction
+      Caption = 'By Year'
+      Enabled = False
+      OnExecute = ActionSortTreeByYearExecute
+    end
+    object ActionSortByContinent: TAction
+      Caption = 'By Continent'
+      Enabled = False
+      OnExecute = ActionSortByContinentExecute
+    end
+    object SortTreeByGroup: TAction
+      Caption = 'By Group'
+      Enabled = False
+      OnExecute = SortTreeByGroupExecute
+    end
+    object ActionImportNames: TAction
+      Caption = 'Import Name Translations'
+      Hint = 'Import a file with name=newName key value pairs to replace taxa names'
+      OnExecute = ActionImportNamesExecute
+    end
+    object CorrtestAction: TAction
+      Caption = 'CorrTest'
+      Hint = 'Test for auto-correlation of evolutionary rates'
+      ImageIndex = 195
+      OnExecute = CorrtestActionExecute
+    end
+    object ActionStatsRangeDisplay: TAction
+      Caption = 'Toggle Display of Stats &Range'
+      OnExecute = ActionStatsRangeDisplayExecute
+    end
+    object ActionExportElapsedTimes: TAction
+      Caption = 'Export Timetree (&Elapsed Times)'
+      OnExecute = ActionExportElapsedTimesExecute
+    end
+    object FindMrcaAction: TAction
+      Caption = 'Find &Most Recent Common Ancestor'
+      Hint = 'Find the most recent common ancestor of a group of taxa'
+      ImageIndex = 57
+      OnExecute = FindMrcaActionExecute
+    end
+    object ActionCloneSession: TAction
+      Caption = '&Clone Session to New Window'
+      Hint = 'Clone the current session to a new window'
+      OnExecute = ActionCloneSessionExecute
+    end
+    object DrPhyloAction: TAction
+      Caption = 'Launch DrPhylo'
+      Hint = 'Launch the DrPhylo Tool'
+      ImageIndex = 99
+      OnExecute = DrPhyloActionExecute
+    end
+    object EditNodeLabelAction: TAction
+      Caption = 'Edit Node Label'
+      Hint = 'Edit the label for the selected node'
+      ImageIndex = 133
+      OnExecute = EditNodeLabelActionExecute
+      ShortCut = 16460
+    end
+    object ActionFindLabelledNode: TAction
+      Caption = 'Find &Labelled Node'
+      Hint = 'Find a labelled internal node in the tree'
+      ImageIndex = 2
+      OnExecute = ActionFindLabelledNodeExecute
+      ShortCut = 24646
+    end
+    object EditGroupAction: TAction
+      Caption = 'Edit &Group Name'
+      Hint = 'Edit the group name for the selected node'
+      ImageIndex = 201
+      OnExecute = EditGroupActionExecute
+      ShortCut = 24645
+    end
+    object ActionAlignTaxaNames: TAction
+      Caption = 'Align Taxa Names'
+      Hint = 'Align taxa names on the same axis'
+      OnExecute = ActionAlignTaxaNamesExecute
+    end
+    object ActionEqualBranchLengths: TAction
+      Caption = 'Equal Branch Lengths'
+      Hint = 'Make all branches have equal lengths'
+      OnExecute = ActionEqualBranchLengthsExecute
+    end
+    object ActionEditTaxonName: TAction
+      Caption = 'Edit &Taxon Name'
+      Hint = 'Edit a taxon name'
+      ImageIndex = 133
+      OnExecute = ActionEditTaxonNameExecute
+      ShortCut = 16453
+    end
+    object UseDefaultFontsAction: TAction
+      Caption = 'Use &Default Fonts'
+      Hint = 'Reset all fonts to their default settings'
+      OnExecute = UseDefaultFontsActionExecute
+    end
+    object ActionHorizAutoSize: TAction
+      Caption = 'Auto-size Tree Horizontally'
+      Hint = 'Auto-adjust the display width of the tree to fit the current window width'
+      ImageIndex = 207
+      OnExecute = ActionHorizAutoSizeExecute
+    end
+    object ActionVertAutoSize: TAction
+      Caption = 'Auto-size Tree Vertically'
+      Hint = 'Auto-adjust the tree size to fit in the vertical space of the window'
+      ImageIndex = 208
+      OnExecute = ActionVertAutoSizeExecute
+    end
+    object ActionGlobalFont: TAction
+      Caption = '&Base Font'
+      Hint = 'Set global font properties for all tree elements'
+      ImageIndex = 51
+      OnExecute = ActionGlobalFontExecute
+    end
+    object ActionExportTaxaNames: TAction
+      Caption = 'Export Taxa Names'
+      OnExecute = ActionExportTaxaNamesExecute
+    end
+  end
+  object BranchStyleMenu: TPopupMenu
+    Images = MegaForm.NewIcons
+    Left = 664
+    Top = 96
+    object MenuItem1: TMenuItem
+      Caption = '&Traditional'
+      object MenuItem4: TMenuItem
+        Action = ActionRectangular
+      end
+      object MenuItem5: TMenuItem
+        Action = ActionSlanted
+      end
+      object MenuItem6: TMenuItem
+        Action = ActionCurved
+      end
+    end
+    object MenuItem2: TMenuItem
+      Action = ActionRadial
+    end
+    object MenuItem3: TMenuItem
+      Action = ActionCircular
+    end
+  end
+  object TreePopupMenu: TPopupMenu
+    Images = MegaForm.NewIcons
+    Left = 584
+    Top = 112
+    object MenuItem7: TMenuItem
+      Action = ActionSwap
+    end
+    object MenuItem8: TMenuItem
+      Action = ActionFlip
+    end
+    object MenuItem9: TMenuItem
+      Action = ActionCompress
+    end
+    object MenuItem129: TMenuItem
+      Action = ActionDisplaySeparately
+    end
+    object MenuItem10: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem11: TMenuItem
+      Action = ActionRootOnBranch
+    end
+    object MenuItem115: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem114: TMenuItem
+      Action = ActionMolecularClock
+    end
+    object MenuItem124: TMenuItem
+      Action = DrPhyloAction
+    end
+    object EslSeparator: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem128: TMenuItem
+      Action = ActionEditTaxonName
+    end
+    object MenuItem125: TMenuItem
+      Action = EditNodeLabelAction
+    end
+    object MenuItem127: TMenuItem
+      Action = EditGroupAction
+    end
+    object Separator1: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem130: TMenuItem
+      Action = ActionTaxonFont
+    end
+    object MenuItem131: TMenuItem
+      Action = ActionBLenFont
+    end
+    object MenuItem135: TMenuItem
+      Action = ActionBranchInfoFont
+    end
+    object MenuItem132: TMenuItem
+      Action = ActionAncStateFont
+    end
+    object MenuItem133: TMenuItem
+      Action = ActionTimesFont
+    end
+    object MenuItem134: TMenuItem
+      Action = ActionScaleBarFont
+    end
+  end
+  object CharStatePopupMenu: TPopupMenu
+    Left = 784
+    Top = 112
+    object ShowAllAncPopupItem: TMenuItem
+      Action = ActionAncStateShowAll
+    end
+    object ShowMostProbAncPopupItem: TMenuItem
+      Action = ActionAncStateShowMost
+    end
+    object HideAmbigAncPopupItem: TMenuItem
+      Action = ActionAncStateHideAmbiguous
+    end
+    object NoneAncPopupItem: TMenuItem
+      Action = ActionAncStateShowNone
+    end
+    object MenuItem32: TMenuItem
+      Caption = '-'
+    end
+    object ExtCharAncPopupItem: TMenuItem
+      Action = ActionAncStateExtended
+    end
+  end
+  object FileSaveDialog: TSaveDialog
+    Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
+    Left = 376
+    Top = 272
+  end
+  object FileOpenDialog: TOpenDialog
+    Left = 360
+    Top = 328
+  end
+  object TreeStylePopupMenu: TPopupMenu
+    Left = 378
+    Top = 104
+    object TraditionalPMenuItem: TMenuItem
+      Caption = '&Traditional'
+      object RectangularPMenuItem: TMenuItem
+        Action = ActionRectangular
+      end
+      object MenuItem35: TMenuItem
+        Action = ActionSlanted
+      end
+      object MenuItem36: TMenuItem
+        Action = ActionCurved
+      end
+    end
+    object RadiationPMenuItem: TMenuItem
+      Action = ActionRadial
+    end
+    object CirclePMenuItem: TMenuItem
+      Action = ActionCircular
+    end
+  end
+  object FontDialog: TFontDialog
+    MinFontSize = 0
+    MaxFontSize = 0
+    Options = [fdTrueTypeOnly, fdEffects]
+    PreviewText = 'mega'
+    Left = 272
+    Top = 272
+  end
+  object PrintDialog: TPrintDialog
+    Left = 264
+    Top = 328
+  end
+  object PrinterSetupDialog: TPrinterSetupDialog
+    Left = 746
+    Top = 296
+  end
+  object TreeOptionsPopup: TPopupMenu
+    Left = 480
+    Top = 112
+    object TreeStyleOptionsItem: TMenuItem
+      Caption = 'Tree'
+      OnClick = TreeStyleOptionsItemClick
+    end
+    object FormatBranchesItem: TMenuItem
+      Caption = 'Branches'
+      OnClick = FormatBranchesItemClick
+    end
+    object FormatLabelsItem: TMenuItem
+      Caption = 'Labels'
+      OnClick = FormatLabelsItemClick
+    end
+    object FormatScaleItem: TMenuItem
+      Caption = 'Scale'
+      OnClick = FormatScaleItemClick
+    end
+    object FormatCuttoffItem: TMenuItem
+      Caption = 'Cutoff'
+      OnClick = FormatCuttoffItemClick
+    end
+  end
+  object Buttons: TImageList
+    Height = 30
+    Width = 115
+    Left = 504
+    Top = 424
+    Bitmap = {
+      4C7A04000000730000001E000000950A00000000000078DAED9B5D6C145514C7
+      5F7CF3C5177DF1C5078DF1C1C4C448626294685024F8191E34E0478C22442328
+      268D891F856002820F803E94881F6B841274A52E56D705764B3AD80D74E9B6D0
+      56BA40BBA5DD85968F528A1F2FE3FCEFEC19EECECEECDEDD2E3BB3DB33C93F77
+      E6DC7BEE1DCE6FCE9DBB536E5B6091DEC662B1582C168B3567F4A46F94D03ED7
+      33E9C3FACC7456A703E7B0A1AEBD7589AFEE9755A878749DFEDFBF57053B70EB
+      3BD2A26BE126219CC386036DD09663E6A6859E2A9D8A084EA7FA7FCEE59D733B
+      D4A10D0EF8787DDF2C3BC73F44AE25B4CDCA3EF1E85AE1035F8EA15D4F78A278
+      B459E498C9B176BE8DADC73DD17FFF4E1B7366B0627FF8A28FF6D6E794DAA31D
+      9E81C1E4F7425AF8FDBCFA48F025614729DBC927A16DF22C56EA5A5073212E38
+      DA5B9F556A1F092E13ED63A115960DBE666E6E2AE90F3F796D4CC7643669DD83
+      165E236C28653F1C972FA694EFD55B3D567365D29D42AAEDD3A9B0886924B8B4
+      A27EC01139AC85DFB36C7D47BECCADA3C2E21A75264BB34D2CF4A6F031393EE3
+      499CCAD7A335D7CC74C688E5174A6DB5F0BBB998FF5E50873ED0978A7F42DB58
+      50873E71C8ED50C6426FE4380E191C9FF2244695697ECD65C66C75813D167ADD
+      88DDE23CDB64F698886B24F842417BF461B2701F6B30F98D6B1BF24749E7783E
+      AE735CEC497C2AD7C3359719BF770AEC8821140BBD26AED106C760F26BC77EA8
+      BED858F0756B43FE28E5B1AEB35CE4497C2AD743359739C76E29B06BE1B72D9E
+      09ED53232713B9B5EA42C77ED08739C7BA8F158F7E90E3F57641DD6072476E0D
+      B650D453BB58E8D51CCF93AE63FB530FD65C99748790535D2CF4B288211D83C9
+      AF2AEA87D4DEBAC0E282BEC9AE85DF12F6C96CB7756DB27CCBBA0FF28B049FF7
+      244EE56B5ECD95D0D6E6F2E131C77AD833E99811CB2B45DB986B9AB525C7D3C2
+      2B445FE6B7FA71C1C8FCADF197C1E919AB8DC97285E5170B2DCB7D079E16E75E
+      C4AA3CDDEF8910DB53FD3B8BB689855E74AD83AFC97ABED27868D77764B391E7
+      2D4209ED93BCFA4870B1B0A394EDF1E81A6187AF57B152D77D9E281E5D9DCBAB
+      8FCBF6858FE9FB9167F7EF4FDDEB99D2A9BD22B712DA87CA3EF1E82AE1035F2F
+      EFDD9FBAC753A553C1DCDFBC02C63C38CFB51DEAD0C6FC6E10F4FCBEFDA93B3D
+      573C8AB5C954EE6FD111E3DDB4DE58832C15C2396CE61A644AB4F5C33DFB5377
+      F846096D8DC12D6CAC3547A5FF23322A6CA86B6FBDD757F7EB3FDDCE6A18DDC6
+      6A18DDC26A18DDCC6A18DDC46A106D5E77178BC562B1582C16CB03FDD6D6A40F
+      0D46F4A94B67AD6F7838870D75DB3EBB9FE3E473EDDDBD52FFE76FF3DB3AB81D
+      0CAFD7777FB74C08E7B0E1401BB4E598F953C77B7E129CBABBBE2D9A77A8431B
+      1CF0E1D8F98F23720DF367B939CC3CFD35AFE2288763357C59D517720B7366A5
+      FEF0451FAAEB21B4C33370B863AB10DEC572FDF6ADF3851DA5FDB9819D9F1BF7
+      F52A0E550E882F8E40CBD3796C5473137EF2DA988EF470DCBA07B0C52133861F
+      8E73D97E5E43BB08EB52A8DCF5913D6754FB0147E4B0CC09EB63791D6567098E
+      F0618EA5638B58AAB4A5183BAD75D007FA52F177CA5F7A46EC2C99A3BAEC7399
+      3CA7D96387791071B5E7A41CFF6263E15DE7D646E647E7783E98E3EC59228610
+      BD1729BEE0518C453559A23DB39CFD1C8B78124FCC8994936E31559963E9F78B
+      D3B3439CD13FCFB1D55FFB208E88211D6E39A9BAF6010BE222AF83E9B9C1F352
+      6AEDE334BFB3D47E93C00E46C572B29CDF24C48DBED5D3B9CCA9D86F1279DE67
+      55F6ADA058FC2AF956803999BE15D89F8152DF0A54D7DDFC0DAFB2BCE66F31FC
+      6D9DC57FF362F1DFA2F9FF88F0FF1161B1582C168BC562B9EBE8D1A3AC06D2A5
+      4B9758752E66C92C59CC9255BF2CC7C6C6F4DEDE5EBDABAB4B8F442296700DFB
+      B973E79883CF598211F1EBE8E8D093C9A43E3434A48F8C8C8812D7B0A3FED8B1
+      63FAE4E424F3F021CB3367CEE8070F1E14ACC0EEE2C58BAE0257B43D74E890C8
+      6166E21F96E0815C4B2412FAC4C444518E24B4D3344D30E539D71F2C314F8207
+      E6561586769EC863F83217EF599E387142B054CD47BB301F23A753A994F298A7
+      4F9FD643A190BE67CF1E51E2DA2FB1453C366CD820CA7A63098EB86F990FE2BB
+      6AD52AC148B6E37AF9F2E5626CD98EB919F3ADCA78814040F46117EC7E60D9DD
+      DD2DEE07653DB14CA7D3824F369BCD63D3D9D969C5987812472796C82BD4975A
+      D752BF2D2D2DFAF8F8B8B0A1C43524E7067216DABF7FBFD596620DBB9CDB4E71
+      97EBED7DD0BDD018F2BC50AF2C1133BCEF9CE64E991DE26C67EBD41ECF46B1F1
+      307735353529F186D016657373B3C502B1870DF306EA51E21ABCE43EC82EF741
+      F538A73A6A079F7A67596CCD23F32CC691DA967A67A20FB028755F1457BA47F8
+      21C7649632BB2D5BB6E43D233897F9830BBDFFE027B3B3FB33CBEAB144FCD106
+      392C8F4D7EC452F6916D982FEDAC64811BEAD13F897217F198EB732CD6C02A73
+      2C7205B12B350F63DEC35A88DE67E5B0A43C7663E1C492E425CBCB972FCF4AA3
+      A3A3555DFB5CB870A1E8783217D9BE7DFB7631F7E19CD6B45497C964F27CA80F
+      A77EE91ACF0298D1757F7FBF10CEF7EDDB27DAD2358435389DCB2C671B5F1555
+      8B25E4F49B045C2AF94DA2321EB8D133416B100876D4D36F16D46DDCB8D15A9B
+      94C392DE89F095D739F46C900DFDD3FC0AC6A8C7BF05D728EB8D259ECF6A7D2B
+      501D1371A2F91392738458501DB5A5D8D2B5537F6E63801318CAB90E9B3C06D5
+      E1BB346C28EB8D25E6C56A7CC3ABC5BFBB11452CA7A6A6AA223CA7B3F9B67EFE
+      FCF9AADDCB5C53B55942C3C3C315FDCD0BCF0133993DCB2B57AE5455C8B5783C
+      AEF4B7E89E9E1EC1B5DAF730D774A35892F01BA5AFAFCFE24AC235EC60CE1CAA
+      CB727A7A9A55E7229657AF5E65D5B988E5CCCC0CABCE452CAF5DBBC6AA73F15E
+      1A168BF779B1783F098B59324B16B3E47D5EBCCF8BF779F13E2F16EFF36296BC
+      CF8BF779DDC87D5E99B193FAF1EE5D7A4F7C872871ED97D88E8EF4E81DBFAE11
+      6523ECF3EAEBDEA9FFBA6B893ED0BB37CF3ED01BD0DB02B7EA6786F655BCCFEB
+      68E756A38F450582DD0F2C875387C5FDA06C847D5E43FD915C8C171AFC7ECE71
+      6C35AEEF7664A9BACF2B3560F6DB15DDA04F9C37D74C28710DC9B9819C85067B
+      DBACB6146BD8E5DC768ABB5C6FEF83EE85C690E7857A65596C0F0272122CDB02
+      0B8C38371BE50382E540EFD715EFF3C2DC15FEF11525DE10DAA23CB077A5C502
+      B1870DF306EA51E21ABCE43EC82EF741F538A73A6A079F7A67596CCD63F25C60
+      E811C172A0F78759ED0D428CC0A2D47D515C2947E1871C9359CAEC3AFFF838EF
+      19C1B9CC1F5CE8FD073F999DDD9F59568F25E28F36C861F97D4A7EC452F6916D
+      982FEDACF2F6031ADC508FFE4994BBE03DD7E758D57D5EC815C4AED43C8C790F
+      6B217A9F95C392F2D88D85134B92972C6FD43EAF4AD73EA5F679C95C643BD63D
+      837DBF8873734DBBCDAA9B9C18CBF3A13E9CFAA56B3C0B9AC18CAECF8E248570
+      7E3CB14BB4A56B2835B0DF3A975936C23EAF01E39D52C96F1295F1E206379A37
+      0FB4ADB4CE61177BE60C8E54D7D1FEBEB53649E658261D58DA6D782E687D4463
+      601E359F8D71CB86FE697E0563C1F2D49F264BA3E47D5EA5853821FE24394788
+      05D5515B8A2D5D3BF5E736063881E1F55C1F1736790CAACB8E0F091B4ADEE7C5
+      E27D5EBCCF8BF779F13E2FDEE7C5FBBC789F17EFF362F13E2FDEE7C5E27D5E2C
+      DEE7C59A8DFE07F92E3C64
+    }
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <    
+      item
+        Name = 'otu_font'
+      end    
+      item
+        Name = 'blens_font'
+      end    
+      item
+        Name = 'stats_font'
+      end    
+      item
+        Name = 'charstate_font'
+      end    
+      item
+        Name = 'scale_font'
+      end    
+      item
+        Name = 'times_font'
+      end    
+      item
+        Name = 'caption_font'
+      end    
+      item
+        Name = 'private_font'
+      end>
+    IniSection = 'TTreeViewForm'
+    OnSaveProperties = IniPropStorage1SaveProperties
+    OnRestoreProperties = IniPropStorage1RestoreProperties
+    Left = 872
+    Top = 256
+  end
+  object ArrowBtns: TImageList
+    Left = 440
+    Top = 411
+    Bitmap = {
+      4C7A060000001000000010000000390300000000000078DAED97BF4B23411886
+      2326729D671044D12831855884230462636325D89C9D2088878A450857C6FC03
+      0141D04652A493E35A458BC3C36821168A62A1827048221814315A88A2C9C5EF
+      E659B22092E4764410618B0F7FCC7EB3B33BEFF3BEB322E210BB8C3A3F3F5F28
+      140AADD5AEB9B8B858B8BBBBEB2C37168D46656969E9AA52AF9A7B677C7C5CD2
+      E974A8DCF8D8D898B85C2E4926939BF7F7F79EE7635B5B5B9BC16050FC7EBF9C
+      9C9C94ED8F4422525353234D4D4D92482476CDFFDFDCDC2C070201632C140AC9
+      E9E969D9FECBCBCB6F232323B7B5B5B5E270386476767663757575A3BDBDDDF8
+      BBADAD4DD43A7EAB6BBB2A3DE3F5F5F5E8E0E0A0389D4E69686890E6E666A3B7
+      BBBB5B565656E256F62193C94C0F0C0C187D14EB5E5B5B9B2E168B7556F752BD
+      BFA9A1A121E19DA552A99FAFD143369B9D3F3A3A9A7F7A7A72BE52539F4A65F3
+      F50E859E6102AEC2E1B0C0B7D55E740C0B680F26676666E47FDE6096F2870918
+      80235884E787878716ABBA9D9C9C7C841FB40FC72FBDA09A5ED13CF7853DF8D5
+      795F681D5EB82FDCC2BE4E3F9CC05A7D7DBD3107BE81F7E8EEDBF1F1F1047EC1
+      1CF816DEA7E66ED19903AFC1AFD83F9E4979E699EE3AF03AFC12CF653FF17ECD
+      39BAF05AFC9AAA941B76BD5DB147642C7BC6DE95F24A678E5695CF571E8FC7D0
+      9FD2CEEDDEDEDEE82BB4B38976CDEC23BF74FA55D679B6B7B777DD6EB73187D7
+      EB9583838329DD75C0B099C17000E33A998487E025F4E32D788CD57EE505CB78
+      27BD1D1D1D92CBE5C8614B598A67E29D7819EC7126B0BAE6C3C3C39DC6C646E3
+      BEBDBDBDB0CFB9A3CEEA1990731C99417690213AEF5B6544A7E21CD643CAF343
+      3693EF5768BDA457EDF31BACC10B9A2FE9562BBF94F73CA23FF4DBD3D3239C09
+      ACF4E23566F6C1ADC91E0C94745C35AFF02BAEC737601F7E619075C042353DE3
+      9766E6E23DCF398645C660A292AEF15C7C13EFC3BF5EF20C9370051BE5FA79C6
+      F5F5752997F59C9FD4B7D519E7B84AFDA57C6EB5F08D67E7B05D1FA6E6E6E6BE
+      5356AF5F5C5CFCBABFBFFF85DFE3F1784CB1FF57A79F6B613D168BC5F9D9D7D7
+      97D259AFF2B080CFE7FB43EFF0F0F08F7C3EEFD27D66E575DEFEFEFE5FEAFBE1
+      B3AD01BBECB2CBAEB7AF7F1C4527E4
+    }
+  end
+  object ArrowBtnsSmall: TImageList
+    Height = 9
+    Width = 9
+    Left = 552
+    Top = 432
+    Bitmap = {
+      4C7A020000000900000009000000370000000000000078DA7371716170211EFF
+      07624922D41052F79F0875FFD130A5E64852E8AFC184FFE3C130359238E4D1FD
+      294964384AD2329C001E8EA225
+    }
+  end
+  object ProcessCefMsgTimer: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = ProcessCefMsgTimerTimer
+    Left = 240
+    Top = 160
+  end
+end

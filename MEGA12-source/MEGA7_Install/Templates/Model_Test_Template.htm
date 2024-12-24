@@ -1,0 +1,19 @@
+<HTML>
+<HEAD type="PrimaryResultWindow">
+<TITLE>Find Best-Fit Substitution Model {if TAnalysisInfo.IsModelTamer = True} (ModelTamer){else} (ML){endif} </TITLE>
+<STYLE>{TLegendGenerator.Style}</STYLE>
+</HEAD>
+
+<BODY>
+<span class="figureTitle">Table. Maximum Likelihood analysis of substitution models{if TAnalysisInfo.IsModelTamer = True} (ModelTamer){endif}. </span>
+{TLegendGenerator.MatrixTable}
+
+<div class="note">NOTE.-- This table presents the goodness of fit for multiple substitution models, including their parameter estimates. The Bayesian Information Criterion (BIC) scores are used to select the optimal model. Each model’s Maximum Likelihood value (lnL), Akaike Information Criterion, corrected (AICc) value, BIC, and the number of parameters are presented (refer to Chapter 8 in [{TLegendGenerator.MLCitation:ExpandCitation}] for more information). Evolutionary rate variation among sites was modeled using a discrete Gamma distribution (+<i>G</i>) with {TLegendGenerator.NoOfGammaCat} rate categories [{TLegendGenerator.Yang1994Citation:ExpandCitation}] and a fraction of sites were allowed to be evolutionarily invariant (+<i>I</i>). Estimates of gamma shape parameter and fraction of invariant sites are also shown, as appropriate. {if TAnalysisInfo.isAminoAcid = True} They are followed by amino acid frequencies (<i>f</i>) and rates of amino acid substitutions (<i>r</i>) for each amino acid pair. {else} Assumed or estimated values of transition/transversion bias (<i>R</i>) are shown for each model, as well. They are followed by nucleotide frequencies (<i>f</i>) and rates of base substitutions (<i>r</i>) for each nucleotide pair. {endif} The sum of <i>r</i> estimates is set to 1 for each model making comparisons across models easier. 
+{TLegendGenerator.TreeUsedString} {if TAnalysisInfo.UseSmartFiltersForModelTest = True} {TAnalysisInfo.ModelSelectionCaption} [{TLegendGenerator.MegaCitation:ExpandCitation}].{endif}
+{TAnalysisInfo.DataSubsetSummary}
+{if TAnalysisInfo.IsModelTamer = True} All the evolutionary parameters and goodness of fit scores were calculated using the subsample-upsample datasets, as described in Sharma and Kumar [{TLegendGenerator.ModelTamerCitation:ExpandCitation}]. {endif}
+<br><br>  <i>Abbreviations:</i>
+{if TAnalysisInfo.isAminoAcid = True} LG: Le and Gascuel; JTT: Jones-Taylor-Thornton; rtREV: General Reverse Transcriptase; cpREV: General Reversible Chloroplast; mtREV24: General Reversible Mitochondrial; WAG: Whelan and Goldman. {else} GTR: General Time Reversible; HKY: Hasegawa-Kishino-Yano; TN93: Tamura-Nei; T92: Tamura 3-parameter; K2: Kimura 2-parameter; JC: Jukes-Cantor.{endif} </div>
+<br>
+</BODY>
+</HTML>

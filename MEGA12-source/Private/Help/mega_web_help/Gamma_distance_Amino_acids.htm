@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="DistanceMethods_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Gamma distance (Amino acids)</title>
+<link rel="stylesheet" href="DistanceMethods_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.2.1.2.1.0_3";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Computing Evolutionary Distances > Distance Models > Amino Acid Substitution Models > Gamma Distances" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+<h1 style="margin-left: 0in;"><span style="font-size: 11.0pt;">Gamma distance 
+ (Amino acids)</span></h1>
+<p style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">The 
+ Gamma distance improves upon the Poisson correction distance by taking 
+ care of the inequality of the substitution rates among sites.&#160;&#160;For 
+ this purpose, you will need to provide the</span><a href="Gamma_parameter.htm" 
+													 style="color: #007fbf;"><span 
+	 style="font-size: 11.0pt; color: #007fbf;"> </span><u style="color: #007fbf;"><span 
+	 style="color: #007fbf;">gamma shape parameter</span></u><span style="display: none; 
+	 color: #007fbf;">RH_Gamma_parameter</span></a><span style="font-size: 11.0pt;"> 
+ (<i>a</i>).</span></p>
+<p style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">For 
+ estimating the Dayhoff distance, use <i>a</i> = 2.25 (see </span><a href="Nei_and_Kumar_2000.htm" 
+	 style="color: #007fbf;"><u style="color: #007fbf;"><span style="color: #007fbf;">Nei 
+ and Kumar [2000]</span></u><span style="display: none; color: #007fbf;">Nei_and_Kumar_2000</span></a><span 
+	 style="font-size: 11.0pt;">, page 21 for details).&#160;</span></p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">For 
+ computing Grishin’s distance, use <i>a</i> = 0.65. 23 (see </span><u style="color: #007fbf;"><span 
+	 style="color: #007fbf;"><a href="Nei_and_Kumar_2000.htm" style="color: #007fbf;">Nei 
+ and Kumar [2000]</a></span></u><span style="display: none;">Nei_and_Kumar_2000</span><span 
+	 style="font-size: 11.0pt;">, page 23 for details)</span></p>
+<p style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p><i><span style="font-size: 11.0pt;">MEGA</span></i> <span style="font-size: 11.0pt;">provides 
+ facilities to compute the following quantities:</span></p>
+<table style="margin-left: 5.75pt;" cellspacing="0">
+	<col />
+	<col />
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 style="margin-top: 0in; text-autospace: none;"><b><u><span 
+		 style="font-size: 11.0pt;">Quantity</span></u></b></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 style="margin-top: 0in; text-autospace: none;"><b><u><span 
+		 style="font-size: 11.0pt;">Description</span></u></b></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 style="margin-top: 0in; text-autospace: none;"><i><span style="font-size: 11.0pt;">d</span></i><span 
+		 style="font-size: 11.0pt;">: distance</span></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">Number 
+		 of amino acid substitutions per site.</span></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 style="margin-top: 0in; text-autospace: none;"><i><span style="font-size: 11.0pt;">L</span></i><span 
+		 style="font-size: 11.0pt;">: No of valid common sites</span></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">Number 
+		 of sites compared.</span></p></td>
+	</tr>
+</table>
+<p>&#160;</p>
+<p><span style="font-size: 11.0pt;">Formulas used are:</span></p>
+<table style="margin-left: 5.75pt;" cellspacing="0">
+	<col />
+	<col />
+	<col />
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><b><u><span 
+		 style="font-size: 11.0pt;">Quantity</span></u></b></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><b><u><span 
+		 style="font-size: 11.0pt;">Formula</span></u></b></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><b><u><span 
+		 style="font-size: 11.0pt;">Variance</span></u></b></p></td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><i><span 
+		 style="font-size: 11.0pt;">d</span></i></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><i><span 
+		 style="font-size: 11.0pt;">a[(1 - p)<sup>-1/a</sup> - 1]</span></i></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><i><span 
+		 style="font-size: 11.0pt;">p[(1 - p)<sup>-(1 + 2/a)</sup>]/L</span></i></p></td>
+	</tr>
+</table>
+<p>&#160;</p>
+<p><span style="font-size: 11.0pt;">See also </span><a href="Nei_and_Kumar_2000.htm" 
+														 style="color: #007fbf;"><u 
+	 style="color: #007fbf;"><span style="color: #007fbf;">Nei and Kumar 
+ (2000)</span></u><span style="display: none; color: #007fbf;">Nei_and_Kumar_2000</span><span 
+	 style="font-size: 11.0pt; color: #007fbf;">,</span></a><span style="font-size: 11.0pt;"> 
+ page 23 and </span><a href="Gamma_distance_Amino_acids.htm"><u style="color: #007fbf;"><span 
+	 style="color: #007fbf;">estimating gamma parameter</span></u><span 
+	 style="display: none;">HC_Computing_the_Gamma_Parameter</span></a><span 
+	 style="font-size: 11.0pt;">.</span></p>
+<p>&#160;</p>
+</body>
+</html>

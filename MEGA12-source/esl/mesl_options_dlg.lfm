@@ -1,0 +1,1027 @@
+object EslOptionsDlg: TEslOptionsDlg
+  Left = 463
+  Height = 820
+  Top = 81
+  Width = 933
+  BorderIcons = [biSystemMenu]
+  Caption = 'M12: DrPhylo Settings'
+  ClientHeight = 820
+  ClientWidth = 933
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnResize = FormResize
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  SessionProperties = 'BilevelSparsityCheckbox.Checked;CladeSizeLowerBoundSEdit.Value;CladeSizeUpperBoundSEdit.Value;CrossValidationCheckbox.Checked;CrossValidationSpinEdit.Value;FastaDirectoryEdit.Text;GeneDisplayCutoffFloatSpinEdit.Value;GeneDisplayLimitSpinEdit.Value;Lambda2MaxSpinEdit.Value;Lambda2MinSpinEdit.Value;Lambda2SpinEdit.Value;Lambda2StepSpinEdit.Value;LambdaMaxSpinEdit.Value;LambdaMinSpinEdit.Value;LambdaSpinEdit.Value;LambdaStepSpinEdit.Value;MethodCBox.ItemIndex;ResponseBasedDirectoryEdit.Directory;ResponseBasedLambda1SpinEdit.Value;ResponseBasedLambda2SpinEdit.Value;ResponseBasedMethodCBox.ItemIndex;ResponseFileEdit.InitialDir;SampleBalanceChBox.Checked;SmartSamplingCheckbox.Checked;SmartSamplingSpinEdit.Value;TreeAutoNameNodesCBox.ItemIndex;TreeBasedDirectoryEdit.Directory;TreeBasedLambda2SpinEdit.Value;TreeBasedLambdaSpinEdit.Value;TreeBasedMethodCBox.ItemIndex;TreeFileEdit.InitialDir;TreeSmartSamplingSpinEdit.Value;DrpNumGroupsSpinEdit.Value;DrpNumTaxaSpinEdit.Value;DrpProteinCheckBox.Checked;DrpDnaCheckBox.Checked;DrpFastaDirectoryEdit.Directory'
+  ShowHint = True
+  LCLVersion = '2.2.6.0'
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 637
+    Top = 0
+    Width = 933
+    ActivePage = DrPhyloTab
+    Align = alClient
+    TabIndex = 1
+    TabOrder = 0
+    object TreeBasedTab: TTabSheet
+      Caption = '&Tree-based'
+      ClientHeight = 609
+      ClientWidth = 925
+      TabVisible = False
+      object LambdaSpinEdit: TFloatSpinEdit
+        Left = 129
+        Height = 23
+        Hint = 'Feature sparsity parameter'
+        Top = 179
+        Width = 50
+        Increment = 0.1
+        MaxValue = 1
+        MinValue = 0.1
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 0
+        Value = 0.1
+      end
+      object Lambda2SpinEdit: TFloatSpinEdit
+        Left = 129
+        Height = 23
+        Hint = 'Group sparsity parameter'
+        Top = 210
+        Width = 50
+        Increment = 0.1
+        MaxValue = 1
+        MinValue = 0.1
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 1
+        Value = 0.1
+      end
+      object FastaDirectoryEdit: TDirectoryEdit
+        Left = 205
+        Height = 23
+        Hint = 'Directory containing FASTA formatted gene alignment files'
+        Top = 40
+        Width = 183
+        ShowHidden = False
+        ButtonWidth = 23
+        NumGlyphs = 1
+        MaxLength = 0
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 2
+      end
+      object Label3: TLabel
+        Left = 55
+        Height = 15
+        Top = 48
+        Width = 109
+        Caption = 'FASTA Files Directory'
+        ParentColor = False
+      end
+      object MethodCBox: TComboBox
+        Left = 205
+        Height = 23
+        Hint = 'SGLasso type to use'
+        Top = 260
+        Width = 183
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'logistic'
+          'leastr'
+          ''
+        )
+        OnChange = MethodCBoxChange
+        ParentShowHint = False
+        ReadOnly = True
+        ShowHint = True
+        Style = csDropDownList
+        TabOrder = 3
+        Text = 'logistic'
+      end
+      object SmartSamplingSpinEdit: TSpinEdit
+        Left = 205
+        Height = 23
+        Hint = 'Mode 1: For each selected positive sample, attempt to select a balanced, phylogenetically informed negative sample'
+        Top = 292
+        Width = 50
+        Enabled = False
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 4
+        Value = 1
+      end
+      object Label9: TLabel
+        Left = 55
+        Height = 15
+        Top = 264
+        Width = 122
+        Caption = 'Method (SGLasso type)'
+        ParentColor = False
+      end
+      object Label4: TLabel
+        Left = 37
+        Height = 15
+        Top = 19
+        Width = 89
+        Caption = 'Required Inputs'
+        Font.Style = [fsBold, fsUnderline]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label17: TLabel
+        Left = 37
+        Height = 15
+        Top = 112
+        Width = 114
+        Caption = 'Optional Parameters'
+        Font.Style = [fsBold, fsUnderline]
+        ParentColor = False
+        ParentFont = False
+      end
+      object SmartSamplingCheckbox: TCheckBox
+        Left = 55
+        Height = 19
+        Hint = 'Mode 1: For each selected positive sample, attempt to select a balanced, phylogenetically informed negative sample'
+        Top = 293
+        Width = 104
+        Caption = 'Smart Sampling'
+        Checked = True
+        OnChange = SmartSamplingCheckboxChange
+        ParentShowHint = False
+        ShowHint = True
+        State = cbChecked
+        TabOrder = 5
+      end
+      object Label7: TLabel
+        Left = 68
+        Height = 15
+        Hint = 'Feature Sparsity Parameter'
+        Top = 183
+        Width = 49
+        Caption = 'Lambda1'
+        ParentColor = False
+      end
+      object Label8: TLabel
+        Left = 68
+        Height = 15
+        Hint = 'Group sparcity parameter'
+        Top = 215
+        Width = 49
+        Caption = 'Lambda2'
+        ParentColor = False
+      end
+      object Label19: TLabel
+        Left = 55
+        Height = 15
+        Top = 430
+        Width = 98
+        Caption = 'Gene Display Limit'
+        ParentColor = False
+      end
+      object Label20: TLabel
+        Left = 55
+        Height = 15
+        Top = 461
+        Width = 105
+        Caption = 'Gene Display Cutoff'
+        ParentColor = False
+      end
+      object GeneDisplayLimitSpinEdit: TSpinEdit
+        Left = 205
+        Height = 23
+        Hint = 'Limits the number of genes displayed in the generated graph images'
+        Top = 424
+        Width = 50
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 6
+        Value = 100
+      end
+      object GeneDisplayCutoffFloatSpinEdit: TFloatSpinEdit
+        Left = 205
+        Height = 23
+        Hint = 'Limits genes displayed in the generated graph images to those with sum-of-squares greater than gene_display_cutoff'
+        Top = 456
+        Width = 50
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 7
+      end
+      object HiddenItemsPanel: TPanel
+        Left = 544
+        Height = 609
+        Top = 0
+        Width = 381
+        Align = alRight
+        Caption = 'HiddenItemsPanel'
+        ClientHeight = 609
+        ClientWidth = 381
+        TabOrder = 8
+        Visible = False
+        object EmailEdit: TEdit
+          Left = 8
+          Height = 23
+          Hint = 'A link for downloading results from the MyESL server will sent to this email address'
+          Top = 32
+          Width = 183
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 0
+        end
+        object Label15: TLabel
+          Left = 16
+          Height = 15
+          Top = 16
+          Width = 74
+          Caption = 'Email Address'
+          ParentColor = False
+        end
+        object Label1: TLabel
+          Left = 16
+          Height = 15
+          Top = 72
+          Width = 71
+          Caption = 'Node List File'
+          ParentColor = False
+        end
+        object NodeListFileEdit: TFileNameEdit
+          Left = 8
+          Height = 23
+          Hint = 'File containing list of named internal nodes to test. If no file is specified, each named internal node of input phylogeny will be tested'
+          Top = 88
+          Width = 183
+          FilterIndex = 0
+          HideDirectories = False
+          ButtonWidth = 23
+          NumGlyphs = 1
+          MaxLength = 0
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 1
+        end
+        object AutoNameNodesCbox: TCheckBox
+          Left = 8
+          Height = 19
+          Hint = 'Assign automatically generated names to unnamed internal nodes, causing them to be tested'
+          Top = 128
+          Width = 166
+          Caption = 'Automatically Name Nodes'
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 2
+        end
+        object AutoNameLengthLabel: TLabel
+          Left = 8
+          Height = 15
+          Top = 168
+          Width = 131
+          Caption = 'Automatic Name Length'
+          ParentColor = False
+        end
+        object AutoNameLengthSpinEdit: TSpinEdit
+          Left = 8
+          Height = 23
+          Hint = 'Number of characters to take from sequence IDs when automatically generating internal node labels'
+          Top = 184
+          Width = 50
+          MinValue = 5
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 3
+          Value = 5
+        end
+        object Label2: TLabel
+          Left = 16
+          Height = 15
+          Top = 232
+          Width = 98
+          Caption = 'Gene Penalties File'
+          ParentColor = False
+        end
+        object GenePenaltiesFilenameEdit: TFileNameEdit
+          Left = 8
+          Height = 23
+          Hint = 'File of penalty values (same order as aln_list) to specify penalty score for each gene'
+          Top = 248
+          Width = 183
+          FilterIndex = 0
+          HideDirectories = False
+          ButtonWidth = 23
+          NumGlyphs = 1
+          MaxLength = 0
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 4
+        end
+        object Label18: TLabel
+          Left = 8
+          Height = 15
+          Top = 288
+          Width = 91
+          Caption = 'SLEP Options File'
+          ParentColor = False
+        end
+        object SlepOptionsFilenameEdit: TFileNameEdit
+          Left = 8
+          Height = 23
+          Hint = 'File of tab-separated name-value pairs (one per line) to specify SLEP options'
+          Top = 304
+          Width = 183
+          FilterIndex = 0
+          HideDirectories = False
+          ButtonWidth = 23
+          NumGlyphs = 1
+          MaxLength = 0
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 5
+        end
+        object CladeSizeUpperCbox: TCheckBox
+          Left = 16
+          Height = 19
+          Hint = 'Internal nodes with greater than N terminal descendants will not be tested'
+          Top = 352
+          Width = 145
+          Caption = 'Clade Size Cutoff Upper'
+          Checked = True
+          OnChange = CladeSizeUpperCboxChange
+          ParentShowHint = False
+          ShowHint = True
+          State = cbChecked
+          TabOrder = 6
+        end
+        object CladeSizeUpperBoundSEdit: TSpinEdit
+          Left = 184
+          Height = 23
+          Hint = 'Internal nodes with greater than N terminal descendants will not be tested'
+          Top = 344
+          Width = 50
+          Enabled = False
+          MaxValue = 4
+          MinValue = 4
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 7
+          Value = 8
+        end
+        object CladeSizeLowerCbox: TCheckBox
+          Left = 16
+          Height = 19
+          Hint = 'Internal nodes with fewer than N terminal descendants will not be tested'
+          Top = 384
+          Width = 145
+          Caption = 'Clade Size Cutoff Lower'
+          Checked = True
+          OnChange = CladeSizeLowerCboxChange
+          ParentShowHint = False
+          ShowHint = True
+          State = cbChecked
+          TabOrder = 8
+        end
+        object CladeSizeLowerBoundSEdit: TSpinEdit
+          Left = 192
+          Height = 23
+          Hint = 'Internal nodes with fewer than N terminal descendants will not be tested'
+          Top = 380
+          Width = 50
+          Enabled = False
+          MinValue = 3
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 9
+          Value = 4
+        end
+        object EnsemblePartsCheckbox: TCheckBox
+          Left = 16
+          Height = 19
+          Hint = 'Build gene-wise ensemble models, splitting the set of genes into ensemble_parts partitions for each run'
+          Top = 410
+          Width = 154
+          Caption = 'Num Ensemble Partitions'
+          OnChange = EnsemblePartsCheckboxChange
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 10
+        end
+        object EnsemblePartsSpinEdit: TSpinEdit
+          Left = 120
+          Height = 23
+          Hint = 'Build gene-wise ensemble models, splitting the set of genes into ensemble_parts partitions for each run'
+          Top = 408
+          Width = 50
+          Enabled = False
+          MinValue = 2
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 11
+          Value = 2
+        end
+        object EnsembleCoverageCheckbox: TCheckBox
+          Left = 27
+          Height = 19
+          Hint = 'Number of ensemble models to build. Each gene will be included in this many individual models'
+          Top = 447
+          Width = 143
+          Caption = 'Num Ensemble Models'
+          Checked = True
+          OnChange = EnsembleCoverageCheckboxChange
+          ParentShowHint = False
+          ShowHint = True
+          State = cbChecked
+          TabOrder = 12
+        end
+        object EnsembleCoverageSpinEdit: TSpinEdit
+          Left = 120
+          Height = 23
+          Hint = 'Number of ensemble models to build. Each gene will be included in this many individual models'
+          Top = 445
+          Width = 50
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 13
+          Value = 5
+        end
+        object DownsampleBalanceCheckBox: TCheckBox
+          Left = 32
+          Height = 19
+          Hint = 'Balance positive and negative response sets by downsampling the overpopulated set'
+          Top = 567
+          Width = 133
+          Caption = 'Downsample Balance'
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 14
+        end
+        object UpsampleBalanceCheckBox: TCheckBox
+          Left = 32
+          Height = 19
+          Hint = 'Balance positive and negative response sets by upsampling the underpopulated set'
+          Top = 544
+          Width = 117
+          Caption = 'Upsample Balance'
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 15
+        end
+        object SampleBalanceChBox: TCheckBox
+          Left = 32
+          Height = 19
+          Hint = 'Automatically uses the SLEP option to balance sample weights, only available for non-overlapping, logistic sglasso'
+          Top = 520
+          Width = 131
+          Caption = 'SLEP Sample Balance'
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 16
+        end
+        object SparsifyCheckbox: TCheckBox
+          Left = 32
+          Height = 19
+          Hint = 'Iteratively increase sparsity until selected set of genes fits in one partition'
+          Top = 488
+          Width = 61
+          Caption = 'Sparsify'
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 17
+        end
+        object OrLabel: TLabel
+          Left = 224
+          Height = 15
+          Top = 152
+          Width = 12
+          Caption = 'or'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object ResponseFileLabel: TLabel
+          Left = 200
+          Height = 15
+          Top = 168
+          Width = 71
+          Caption = 'Response File'
+          ParentColor = False
+        end
+        object ResponseFileEdit: TFileNameEdit
+          Left = 192
+          Height = 23
+          Hint = 'Response file'
+          Top = 192
+          Width = 183
+          FilterIndex = 0
+          HideDirectories = False
+          ButtonWidth = 23
+          NumGlyphs = 1
+          MaxLength = 0
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 18
+        end
+        object TreeFileLabel: TLabel
+          Left = 206
+          Height = 15
+          Top = 80
+          Width = 84
+          Caption = 'Newick Tree File'
+          ParentColor = False
+        end
+        object TreeFileEdit: TFileNameEdit
+          Left = 208
+          Height = 23
+          Hint = 'Newick tree file'
+          Top = 96
+          Width = 183
+          FilterIndex = 0
+          HideDirectories = False
+          ButtonWidth = 23
+          NumGlyphs = 1
+          MaxLength = 0
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 19
+        end
+        object NewickLabel: TLabel
+          Left = 220
+          Height = 15
+          Top = 392
+          Width = 161
+          Caption = 'Using a phylogeny with N taxa'
+          ParentColor = False
+        end
+      end
+      object BilevelSparsityCheckbox: TCheckBox
+        Left = 55
+        Height = 19
+        Hint = 'Input alignment files will be concatenated when Bi-level Sparsity is checked'
+        Top = 72
+        Width = 103
+        Caption = 'Bi-level Sparsity'
+        Checked = True
+        State = cbChecked
+        TabOrder = 9
+      end
+      object UnbalancedCheckbox: TCheckBox
+        Left = 55
+        Height = 19
+        Top = 352
+        Width = 83
+        Caption = 'Unbalanced'
+        TabOrder = 10
+      end
+      object CrossValidationCheckbox: TCheckBox
+        Left = 55
+        Height = 19
+        Top = 322
+        Width = 106
+        Caption = 'Cross-validation'
+        TabOrder = 11
+      end
+      object Label5: TLabel
+        Left = 316
+        Height = 15
+        Top = 160
+        Width = 21
+        Caption = 'Min'
+        ParentColor = False
+      end
+      object Label6: TLabel
+        Left = 381
+        Height = 15
+        Top = 160
+        Width = 23
+        Caption = 'Max'
+        ParentColor = False
+      end
+      object Label10: TLabel
+        Left = 444
+        Height = 15
+        Top = 160
+        Width = 23
+        Caption = 'Step'
+        ParentColor = False
+      end
+      object Label11: TLabel
+        Left = 136
+        Height = 15
+        Top = 160
+        Width = 28
+        Caption = 'Value'
+        ParentColor = False
+      end
+      object FixedSparsityParamsCheckbox: TRadioButton
+        Left = 68
+        Height = 19
+        Top = 136
+        Width = 154
+        Caption = 'Fixed Sparsity Parameters'
+        Checked = True
+        OnChange = FixedSparsityParamsCheckboxChange
+        TabOrder = 12
+        TabStop = True
+      end
+      object IntervalSparsityParamsCheckbox: TRadioButton
+        Left = 248
+        Height = 19
+        Top = 136
+        Width = 165
+        Caption = 'Interval Sparsity Parameters'
+        OnChange = FixedSparsityParamsCheckboxChange
+        TabOrder = 13
+      end
+      object LambdaMinSpinEdit: TFloatSpinEdit
+        Left = 307
+        Height = 23
+        Top = 179
+        Width = 50
+        Enabled = False
+        TabOrder = 14
+        Value = 0.1
+      end
+      object Lambda2MinSpinEdit: TFloatSpinEdit
+        Left = 309
+        Height = 23
+        Top = 210
+        Width = 50
+        Enabled = False
+        TabOrder = 15
+        Value = 0.1
+      end
+      object LambdaMaxSpinEdit: TFloatSpinEdit
+        Left = 373
+        Height = 23
+        Top = 179
+        Width = 50
+        Enabled = False
+        TabOrder = 16
+        Value = 1
+      end
+      object Lambda2MaxSpinEdit: TFloatSpinEdit
+        Left = 373
+        Height = 23
+        Top = 210
+        Width = 50
+        Enabled = False
+        TabOrder = 17
+        Value = 1
+      end
+      object LambdaStepSpinEdit: TFloatSpinEdit
+        Left = 437
+        Height = 23
+        Top = 179
+        Width = 50
+        Enabled = False
+        TabOrder = 18
+        Value = 0.05
+      end
+      object Lambda2StepSpinEdit: TFloatSpinEdit
+        Left = 437
+        Height = 23
+        Top = 210
+        Width = 50
+        Enabled = False
+        TabOrder = 19
+        Value = 0.05
+      end
+      object Label12: TLabel
+        Left = 248
+        Height = 15
+        Hint = 'Feature Sparsity Parameter'
+        Top = 183
+        Width = 49
+        Caption = 'Lambda1'
+        ParentColor = False
+      end
+      object Label13: TLabel
+        Left = 248
+        Height = 15
+        Hint = 'Group sparcity parameter'
+        Top = 215
+        Width = 49
+        Caption = 'Lambda2'
+        ParentColor = False
+      end
+      object Panel3: TPanel
+        Left = 230
+        Height = 97
+        Top = 136
+        Width = 4
+        Color = cl3DLight
+        ParentColor = False
+        TabOrder = 20
+      end
+      object CrossValidationSpinEdit: TSpinEdit
+        Left = 205
+        Height = 23
+        Top = 324
+        Width = 50
+        MaxValue = 5
+        MinValue = 1
+        TabOrder = 21
+        Value = 1
+      end
+      object Label14: TLabel
+        Left = 37
+        Height = 15
+        Top = 394
+        Width = 86
+        Caption = 'Output Options'
+        Font.Style = [fsBold, fsUnderline]
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object DrPhyloTab: TTabSheet
+      Caption = 'DrPhylo'
+      ClientHeight = 609
+      ClientWidth = 925
+      TabVisible = False
+      object DrpFastaDirectoryEdit: TDirectoryEdit
+        Left = 96
+        Height = 23
+        Hint = 'Directory containing FASTA formatted gene alignment files'
+        Top = 200
+        Width = 360
+        OnAcceptDirectory = DrpFastaDirectoryEditAcceptDirectory
+        ShowHidden = False
+        ButtonWidth = 23
+        NumGlyphs = 1
+        MaxLength = 0
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 0
+        OnChange = DrpFastaDirectoryEditChange
+      end
+      object Label16: TLabel
+        Left = 96
+        Height = 15
+        Top = 182
+        Width = 51
+        Caption = 'Directory:'
+        ParentColor = False
+      end
+      object DrpDnaCheckBox: TCheckBox
+        Left = 73
+        Height = 19
+        Top = 263
+        Width = 78
+        Caption = 'Nucleotide'
+        TabOrder = 1
+      end
+      object DrpProteinCheckBox: TCheckBox
+        Left = 162
+        Height = 19
+        Top = 263
+        Width = 58
+        Caption = 'Protein'
+        TabOrder = 2
+      end
+      object Label21: TLabel
+        Left = 37
+        Height = 15
+        Top = 13
+        Width = 87
+        Caption = 'Alignment Data'
+        Font.Style = [fsBold, fsUnderline]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label22: TLabel
+        Left = 37
+        Height = 15
+        Top = 302
+        Width = 110
+        Caption = 'Grid Output Format'
+        Font.Style = [fsBold, fsUnderline]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DrpNumTaxaSpinEdit: TSpinEdit
+        Left = 204
+        Height = 23
+        Top = 335
+        Width = 50
+        MinValue = 1
+        TabOrder = 3
+        Value = 1
+      end
+      object DrpNumGroupsSpinEdit: TSpinEdit
+        Left = 204
+        Height = 23
+        Top = 376
+        Width = 50
+        MinValue = 1
+        TabOrder = 4
+        Value = 10
+      end
+      object Label23: TLabel
+        Left = 55
+        Height = 15
+        Top = 337
+        Width = 139
+        Caption = 'No. of Species/Taxa (rows)'
+        ParentColor = False
+      end
+      object Label24: TLabel
+        Left = 55
+        Height = 15
+        Top = 379
+        Width = 131
+        Caption = 'No. of Groups (columns)'
+        ParentColor = False
+      end
+      object Label25: TLabel
+        Left = 55
+        Height = 15
+        Top = 245
+        Width = 139
+        Caption = 'Character Types to Encode'
+        ParentColor = False
+      end
+      object UseGenesDomainsBtn: TRadioButton
+        Left = 55
+        Height = 19
+        Top = 40
+        Width = 247
+        Caption = 'Use Defined Genes/Domains of Active Data'
+        OnChange = UseGenesDomainsBtnChange
+        TabOrder = 5
+      end
+      object PartitionActiveDataBtn: TRadioButton
+        Left = 55
+        Height = 19
+        Top = 76
+        Width = 128
+        Caption = 'Partition Active Data'
+        TabOrder = 6
+      end
+      object NumSitesPerPartitionSpinEdit: TSpinEdit
+        Left = 96
+        Height = 23
+        Top = 115
+        Width = 123
+        OnChange = NumSitesPerPartitionSpinEditChange
+        OnEditingDone = NumSitesPerPartitionSpinEditEditingDone
+        TabOrder = 7
+        Value = 500
+      end
+      object UseFilesInDirectoryBtn: TRadioButton
+        Left = 55
+        Height = 19
+        Top = 161
+        Width = 184
+        Caption = 'Use FASTA Files From Directory'
+        Checked = True
+        TabOrder = 8
+        TabStop = True
+      end
+      object Label26: TLabel
+        Left = 96
+        Height = 15
+        Top = 98
+        Width = 128
+        Caption = 'No. of Sites Per Partition'
+        ParentColor = False
+      end
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 39
+    Top = 781
+    Width = 933
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 39
+    ClientWidth = 933
+    TabOrder = 1
+    object ToolBar1: TToolBar
+      Left = 8
+      Height = 30
+      Top = 5
+      Width = 477
+      Align = alNone
+      AutoSize = True
+      ButtonHeight = 30
+      ButtonWidth = 115
+      Caption = 'ToolBar1'
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      HotImages = ImageForm.DlgButtonsHover
+      Images = ImageForm.DlgButtons
+      TabOrder = 0
+      object ToolButton1: TToolButton
+        Left = 1
+        Top = 0
+        Action = ResetDefaultsAction
+      end
+      object ToolButton2: TToolButton
+        Left = 120
+        Top = 0
+        Action = HelpAction
+      end
+      object ToolButton3: TToolButton
+        Left = 239
+        Top = 0
+        Action = CloseAction
+      end
+      object ToolButton4: TToolButton
+        Left = 358
+        Top = 0
+        Action = LaunchAction
+      end
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 139
+    Top = 642
+    Width = 933
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 139
+    ClientWidth = 933
+    TabOrder = 2
+    Visible = False
+    object ProgressBar1: TProgressBar
+      Left = 0
+      Height = 10
+      Top = 129
+      Width = 933
+      Align = alBottom
+      TabOrder = 0
+    end
+    object ProgressMemo: TMemo
+      Left = 0
+      Height = 129
+      Top = 0
+      Width = 933
+      Align = alClient
+      Lines.Strings = (
+        'Ready'
+      )
+      ScrollBars = ssAutoBoth
+      TabOrder = 1
+      WordWrap = False
+    end
+  end
+  object Splitter1: TSplitter
+    Cursor = crVSplit
+    Left = 0
+    Height = 5
+    Top = 637
+    Width = 933
+    Align = alBottom
+    ResizeAnchor = akBottom
+    Visible = False
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 496
+    Top = 208
+    object CloseAction: TAction
+      Caption = '&Close'
+      ImageIndex = 0
+      OnExecute = CloseActionExecute
+    end
+    object LaunchAction: TAction
+      Caption = 'LaunchAction'
+      ImageIndex = 5
+      OnExecute = LaunchActionExecute
+    end
+    object ResetDefaultsAction: TAction
+      Caption = '&Reset Defaults'
+      ImageIndex = 9
+      OnExecute = ResetDefaultsActionExecute
+    end
+    object HelpAction: TAction
+      Caption = '&Help'
+      ImageIndex = 8
+      OnExecute = HelpActionExecute
+    end
+    object DevAction: TAction
+      Caption = 'Devleloper Action'
+      OnExecute = DevActionExecute
+      ShortCut = 24644
+    end
+  end
+  object ImageList1: TImageList
+    Left = 328
+    Top = 200
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    Left = 464
+    Top = 176
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 200
+    OnTimer = Timer1Timer
+    Left = 432
+    Top = 248
+  end
+end

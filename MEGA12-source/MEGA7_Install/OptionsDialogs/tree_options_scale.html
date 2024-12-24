@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Scale</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--JQuery 3.2.1 Fallback-->
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <!--JQuery 3.4.1-->
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>       
+        <script type="text/javascript" src="js/jquery.validate.min.js"></script> 
+        <script type="text/javascript" src="js/select2.min.js"></script>
+        <script src="js/jquery.fontpicker.min.js"></script>       
+        <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+        <!--Bootstrap 3 Fallback-->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!--Bootstrap 4-->
+        <link href="css/bs4/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/jquery.fontpicker.css" rel="stylesheet" type="text/css"/>
+        <link href="css/default.css" rel="stylesheet" type="text/css" />
+
+        <script>
+            $(document).ready(function () {
+                $('#mainform').validate({
+                    rules: {
+                        tree_options_distance_scale_length: {
+                            required: true,
+                            number: true,
+                            range: [0, 8190]
+                        },
+                        tree_options_distance_tick_interval: {
+                            required: true,
+                            number: true,
+                            range: [0, 8190]
+                        },
+                        tree_options_scale_major_tick: {
+                            required: true,
+                            number: true,
+                            range: [0, 8190]
+                        },
+                        tree_options_scale_minor_tick: {
+                            required: true,
+                            number: true,
+                            range: [0, 8190]
+                        }
+                    },
+                    submitHandler: function (form) {
+                        $('#is_validated').attr("value", "true");
+                    }
+                });
+                var fontVal = "font-family: 'Lucida Console', Arial; \n\
+                  font-size: 13px; \n\
+                  text-decoration: none; \n\
+                  line-height: 2Z00%; \n\
+                  font-variant: small-caps; \n\
+                  letter-spacing: 2px; \n\
+                  font-style: italic;";
+                $("#tree_options_scale_font").value = fontVal;
+                $("#tree_options_scale_font").fontpicker({
+                    showOn: 'all'
+                });
+                var tree_options_distance_scale_length = $('#tree_options_distance_scale_length').spinner({
+                    min: 0,
+                    max: 8190,
+                    step: 1,
+                    spin : function(event,ui){
+                        $(this).val() === ui.value;
+                   }
+                });
+                tree_options_distance_scale_length.spinner();
+                var tree_options_distance_tick_interval = $('#tree_options_distance_tick_interval').spinner({
+                    min: 0,
+                    max: 8190,
+                    step: 1,
+                    spin : function(event,ui){
+                        $(this).val() === ui.value;
+                   }
+                });
+                tree_options_distance_tick_interval.spinner();
+                var tree_options_scale_major_tick = $('#tree_options_scale_major_tick').spinner({
+                    min: 0,
+                    max: 8190,
+                    step: 1,
+                    spin : function(event,ui){
+                        $(this).val() === ui.value;
+                   }
+                });
+                tree_options_scale_major_tick.spinner();
+                var tree_options_scale_minor_tick = $('#tree_options_scale_minor_tick').spinner({
+                    min: 0,
+                    max: 8190,
+                    step: 1,
+                    spin : function(event,ui){
+                        $(this).val() === ui.value;
+                   }
+                });
+                tree_options_scale_minor_tick.spinner();
+                $('.checkbox').checkboxradio({
+                    icon: false
+                });
+                $(':checkbox').change(function () {
+                    var checkbox = $(this);
+                    if (this.checked) {
+                        console.log('it is checked');
+                        $(this).attr('ischecked', true);
+                    } else {
+                        console.log('it is NOT checked');
+                        $(this).attr('ischecked', false);
+                    }
+                });
+                $("#tree_options_scale_lines").select2({
+                     minimumResultsForSearch: Infinity,
+                     templateResult: formatWidth,
+                     templateSelection: formatWidth
+                });
+                    function formatWidth (width) {
+                     if (!width.id) { return width.text; }
+                     var $width = $(
+                      '<span ><img sytle="display: inline-block;" src="img/' + width.element.value.toLowerCase() + '.png" /> ' + width.text + '</span>'
+                     );
+                     return $width;
+                    }
+                //MEGA_JS_TEMPLATE_PLACEHOLDER
+                $('select').trigger("change");
+                $.validator.methods.range = function (value, element, param) {
+                 var globalizedValue = value.replace(",", ".");
+                 return this.optional(element) || (globalizedValue >= param[0] && globalizedValue <= param[1]);
+             };
+                $.validator.methods.number = function (value, element) {
+                 return this.optional(element) || /^-?(?:\d+|\d{1,3}(?:[\s\.,]\d{3})+)(?:[\.,]\d+)?$/.test(value);
+                };
+            });
+        </script>
+    </head>
+    <body>
+      <input type="hidden" name="is_validated" id="is_validated" value="false"/>
+      <div class="container-fluid" id="subtree_options_main-container">
+        <form id="mainform">
+          
+        <div class="boxed">
+          <div class="row">
+            <div class="col-12">
+              <div class="main-heading subtract-left-margin">Formatting</div>
+            </div>
+            <div class="col-12">
+              <div class="grid-col-3 tree-scale-format d-flex align-items-center justify-content-between">
+                <label for="tree_options_scale_lines">Line Width</label>
+                <select id="tree_options_scale_lines" class="tree_options_scale_lines "> 
+                  <option value="1" class="w1">1 pt</option>
+                  <option value="2" class="w2">2 pt</option>
+                  <option value="3" class="w3">3 pt</option>
+                  <option value="4" class="w4">4 pt</option>
+                  <option value="5" class="w5">5 pt</option>
+                </select>
+                <input id="tree_options_scale_font" type="hidden" />
+              </div>
+            </div>
+          </div>
+        </div>
+              
+        <div class="boxed">
+          <div class="row">
+            <div class="col-12">
+              <div class="main-heading subtract-left-margin">Distance Scale</div>
+            </div>
+            <div class="col-12">
+              <input type="checkbox" name="tree_options_scale_distance_scale" value="false" id="tree_options_scale_distance_scale" ischecked="false" />
+              <label for="tree_options_scale_distance_scale" class="mt-2">Show</label>
+            </div>
+          </div>
+
+          <div class="row my-2">
+            <div class="col-12">
+              <div class="tree-scale">
+                <label for="tree_options_scale_name_caption_distance_scale" class="d-flex align-items-center">Caption</label>
+                <input type="text" class="w-100" id="tree_options_scale_name_caption_distance_scale" name="tree_options_scale_name_caption_distance_scale" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row my-2">
+            <div class="col-12">
+              <div class="grid-col-2 tree-scale">
+                <label for="tree_options_distance_scale_length" class="d-flex align-items-center">Scale length</label>
+                <input id="tree_options_distance_scale_length" name="tree_options_distance_scale_length" value="2">
+              </div>
+              <div class="grid-col-1 tree-options-error">
+                <label id="tree_options_distance_scale_length-error" class="error" for="tree_options_distance_scale_length"></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row my-2">
+            <div class="col-12">
+              <div class="grid-col-2 tree-scale">
+                <label for="tree_options_distance_tick_interval" class="d-flex align-items-center">Tick interval</label>
+                <input id="tree_options_distance_tick_interval" name="tree_options_distance_tick_interval" value="0">
+              </div>
+              <div class="grid-col-1 tree-options-error">
+                <label id="tree_options_distance_tick_interval-error" class="error" for="tree_options_distance_tick_interval"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+              
+        <div class="boxed">               
+          <div class="row">
+            <div class="col-12">
+              <div class="main-heading subtract-left-margin">Time Scale</div>
+            </div>
+            <div class="col-12">
+              <input type="checkbox" name="tree_options_scale_time_scale" value="false" id="tree_options_scale_time_scale" ischecked="false"/>
+              <label for="tree_options_scale_time_scale" class="mt-2">Show</label>
+            </div>
+          </div>
+
+          <div class="row my-2">
+            <div class="col-12">
+              <div class="tree-scale">
+                <label for="tree_options_scale_name_caption_time_scale" class="d-flex align-items-center">Caption</label> 
+                <input type="text" class="w-100" id="tree_options_scale_name_caption_time_scale" name="tree_options_scale_name_caption_time_scale"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="row my-2">
+            <div class="col-12">
+              <div class="grid-col-2 tree-scale">
+                <label for="tree_options_scale_major_tick" class="d-flex align-items-center">Major tick interval</label>
+                <input id="tree_options_scale_major_tick" name="tree_options_scale_major_tick" value="0">
+              </div>
+              <div class="grid-col-1 tree-options-error">
+                <label id="tree_options_scale_major_tick-error" class="error" for="tree_options_scale_major_tick"></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row my-2">
+            <div class="col-12">
+              <div class="grid-col-2 tree-scale">
+                <label for="tree_options_scale_minor_tick" class="d-flex align-items-center">Minor tick interval</label>
+                <input id="tree_options_scale_minor_tick" name="tree_options_scale_minor_tick" value="0">
+              </div>
+              <div class="grid-col-1 tree-options-error">
+                <label id="tree_options_scale_minor_tick-error" class="error" for="tree_options_scale_minor_tick"></label>
+              </div>
+            </div>
+            <div class="col-12">
+              <input type="checkbox" name="tree_options_scale_node_height_err" value="false" id="tree_options_scale_node_height_err" ischecked="false"/>
+              <label for="tree_options_scale_node_height_err" class="mt-3">Show Node Height Error Bar (2SE)</label>
+            </div>
+          </div>					
+          
+              
+  
+
+
+      </div>     
+          
+          
+          
+    </form>
+
+          
+    </div>
+      
+  </body>
+</html>

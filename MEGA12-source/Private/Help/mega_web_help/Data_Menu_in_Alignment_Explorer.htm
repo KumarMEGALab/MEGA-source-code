@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+<meta name="OriginalFile" content="AlnBuilder_HC.doc" />
+ <title>Data Menu (in Alignment Explorer)</title>
+<link rel="stylesheet" href="AlnBuilder_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "5.4.1.0_4";
+</script>
+ <meta name="topic-breadcrumbs" content="Part V: Visualizing and Exploring Data > Alignment Explorer > Menu Items" />
+</head>
+<body link="blue" vlink="purple">
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1 style=" margin-left:0in;"><span style=" font-size:11.0pt;">Data Menu (in Alignment Explorer)</span></h1>
+<p>This menu provides commands for creating a new alignment, opening/closing sequence data files, saving alignment sessions to a file, exporting sequence data to a file, changing alignment sequence properties, reverse complementing sequences in the alignment, and exiting <i>Alignment Explorer.&#160;</i> The commands in this menu are:</p>
+<p><b>Create New Alignment</b>:&#160; This tells <i>Alignment Explorer</i> to prepare for a new alignment. Any sequence data currently loaded into <i>Alignment Builder</i> is discarded.</p>
+<p><b>Open:</b> This submenu provides two options: opening an existing sequence <u><span style=" color:green;"><a href="javascript:TextPopup(this)" id="HotSpot31620" class="glossterm">alignment session</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot31620', 'POPUP31620');
+//]]></script><span class="glosstext" id="POPUP31620" style="display: none;"> When working in MEGA’s Alignment Explorer you can choose to save the current state of all data and settings in the alignment explorer to a file so you can archive your work, or save it to resume editing in the future. An alignment session is a binary file format that is saved with the .MAS file extension.</span></span></u><span style=" display:none;">RH_Alignment_session</span> (previously saved from <i>Alignment Explorer</i>), and reading a text file containing sequences in one of many formats (including, MEGA, PAUP, FASTA, NBRF, etc.).&#160; Based on the option you choose, you will be prompted for the file name that you wish to read.</p>
+<p><b>Reopen:</b> Displays a list of recently opened files that can be activated in Alignment Explorer.</p>
+<p><b>Close:</b> This closes the currently active data in the <i>Alignment Explorer</i>.</p>
+<p><b>Phylogenetic Analysis:</b> Clicking this item will prepare the data in the active sequence alignment for further analysis in MEGA so that the alignment does not have to be saved to a file on disk and then reopened for analysis in MEGA.</p>
+<p><b>Save Session:</b> This allows you to save the current sequence alignment to an <u><span style=" color:green;"><a href="javascript:TextPopup(this)" id="HotSpot20398" class="glossterm">alignment session</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot20398', 'POPUP20398');
+//]]></script><span class="glosstext" id="POPUP20398" style="display: none;"> When working in MEGA’s Alignment Explorer you can choose to save the current state of all data and settings in the alignment explorer to a file so you can archive your work, or save it to resume editing in the future. An alignment session is a binary file format that is saved with the .MAS file extension.</span></span></u><span style=" display:none;">RH_Alignment_session</span>.&#160; You will be requested to give a file name to write the data to.</p>
+<p><b>Export Alignment:</b> This allows you to export the current sequence alignment to a file. There are three formats to choose from: <u style=" text-underline:double;"><span style=" color:green;">MEGA</span></u><span style=" display:none;">RH_MEGA_Format</span>, <u style=" text-underline:double;"><span style=" color:green;">FASTA</span></u><span style=" display:none;">RH_Converting_FASTA_format</span> or <u style=" text-underline:double;"><span style=" color:green;">PAUP/NEXUS</span></u><span style=" color:windowtext; display:none;">RH_Converting_Nexus_Format</span> formats. You will be requested to give a file name to write the data to.</p>
+<p><b>DNA Sequences</b>: Use this item to specify that the input data is DNA.&#160; If DNA is selected, then all sites are treated as nucleotides.&#160; The <i>Translated Protein Sequences</i> tab contains the protein sequences.&#160; If the data is non-coding, then ignore the second tab, as it has no affect on the on the DNA sequence tab.&#160; However, any changes you make in the <i>Protein Sequence</i> tab are applied to the <i>DNA Sequences</i> tab window.&#160; Note that you can UNDO these changes by using the undo button.</p>
+<p><b>Protein Sequences</b>: Use this item to specify that the input data is amino acid sequences.&#160; If selected, then all sites are treated as amino acid residues.</p>
+<p><b>Translate/Untranslate</b>:&#160; This item only will be available if protein-coding DNA sequences are available in the alignment grid. It will translate protein-coding DNA sequences into their respective amino acid sequences using the selected genetic code table.</p>
+<p><b>Select Genetic Code Table</b>: This displays the <i>Select Genetic Code</i> dialog window, which can select the genetic code table that is used when translating protein-coding DNA sequence data.</p>
+<p><b>Reverse Complement</b>: This becomes available when an entire sequence of row(s) is selected. It will update the selected rows to contain the reverse compliment of the originally selected sequence(s).</p>
+<p><b>Exit AlnExplorer</b>: This closes the <i>Alignment Explorer</i> window and returns to the main <i>MEGA</i> application window.  When selected, a message box appears asking if you would like to save the current <a href="javascript:TextPopup(this)" id="HotSpot39900" class="glossterm">alignment session</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot39900', 'POPUP39900');
+//]]></script><span class="glosstext" id="POPUP39900" style="display: none;"> When working in MEGA’s Alignment Explorer you can choose to save the current state of all data and settings in the alignment explorer to a file so you can archive your work, or save it to resume editing in the future. An alignment session is a binary file format that is saved with the .MAS file extension.</span> to a file. Then a second message box appears asking if you would like to save the current alignment to a <i>MEGA</i> file. If the current alignment is saved to a <i>MEGA</i> file, a third message box will appear asking if you would like to open the saved <i>MEGA</i> file in the main <i>MEGA</i> application.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<b><span style=" font-size:8.0pt; font-family:'Arial' ,sans-serif; color:#333333; background:white;"><br clear="all" /></span></b>
+</body>
+</html>

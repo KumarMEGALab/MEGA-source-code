@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+<meta name="OriginalFile" content="ContextHelp_HC.doc" />
+ <title>Display Newick Trees from File</title>
+<link rel="stylesheet" href="ContextHelp_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "7.1.7.0_4";
+</script>
+ <meta name="topic-breadcrumbs" content="Appendix B: Main Menu Items and Dialogs Reference > Main MEGA Menus > User Tree Menu" />
+</head>
+<body link="blue" vlink="purple">
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1><span style=" font-size:11.0pt;">Display Newick Trees from File</span></h1>
+<p style="margin-top:6.0pt; margin-right:6.5pt; margin-bottom:2.0pt; margin-left:5.75pt;"><i><span style=" font-size:11.0pt;">User Tree &#160;| Display Newick Tree</span></i></p>
+<p><span style=" font-size:11.0pt;">Use this to retrieve and display one or more trees written in <u style=" text-underline:double;"><span style=" color:green;"><a href="javascript:TextPopup(this)" id="HotSpot29172" class="glossterm">Newick format</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot29172', 'POPUP29172');
+//]]></script><span class="glosstext" id="POPUP29172" style="display: none;"> NEWICK is a simple format used to write out trees in a text file.  While this is a hard-to-read format for humans, it is very useful for exchanging trees between different types of software. An example of the contents of a NEWICK format tree file is given below (note that semi-colon is needed to end the tree).  Further information on this format can be found at Joe Felsenstein’s website.   ((raccoon, bear),((sea_lion,seal),((monkey,cat), weasel)),dog);  The above tree with branch lengths will look as follows:  ((raccoon:19.19959,bear:6.80041):0.84600,((sea_lion:11.99700, seal:12.00300):7.52973,((monkey:100.85930,cat:47.14069):20.59201, weasel:18.87953):2.09460):3.87382,dog:25.46154);  If you wish to specify bootstrap values then they could appear before the branch lengths (e.g., in .DND files produced by CLUSTAL) or after the branch lengths (e.g., in .PHB files produced by CLUSTAL).  In these cases, the format might look like:  ((raccoon:19.19959,bear:6.80041)50:0.84600,((sea_lion:11.99700, seal:12.00300)100:7.52973,((monkey:100.85930,cat:47.14069)80:20.59201, weasel:18.87953)75:2.09460)50:3.87382,dog:25.46154);  or  ((raccoon:19.19959,bear:6.80041):0.84600[50],((sea_lion:11.99700, seal:12.00300):7.52973[100],((monkey:100.85930,cat:47.14069):20.59201[80], weasel:18.87953):2.09460[75]):3.87382[50],dog:25.46154);</span></span></u><span style=" display:none;">RH_Newick_Format</span>.&#160; Multiple trees can be displayed, and their consensus built, in the <i><u style=" text-underline:double;"><span style=" color:green;">Tree Explorer</span></u><span style=" display:none;">HC_Tree_Explorer</span></i>.&#160; <i>MEGA</i> supports the display of <a href="javascript:TextPopup(this)" id="HotSpot20703" class="glossterm">Newick format</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot20703', 'POPUP20703');
+//]]></script><span class="glosstext" id="POPUP20703" style="display: none;"> NEWICK is a simple format used to write out trees in a text file.  While this is a hard-to-read format for humans, it is very useful for exchanging trees between different types of software. An example of the contents of a NEWICK format tree file is given below (note that semi-colon is needed to end the tree).  Further information on this format can be found at Joe Felsenstein’s website.   ((raccoon, bear),((sea_lion,seal),((monkey,cat), weasel)),dog);  The above tree with branch lengths will look as follows:  ((raccoon:19.19959,bear:6.80041):0.84600,((sea_lion:11.99700, seal:12.00300):7.52973,((monkey:100.85930,cat:47.14069):20.59201, weasel:18.87953):2.09460):3.87382,dog:25.46154);  If you wish to specify bootstrap values then they could appear before the branch lengths (e.g., in .DND files produced by CLUSTAL) or after the branch lengths (e.g., in .PHB files produced by CLUSTAL).  In these cases, the format might look like:  ((raccoon:19.19959,bear:6.80041)50:0.84600,((sea_lion:11.99700, seal:12.00300)100:7.52973,((monkey:100.85930,cat:47.14069)80:20.59201, weasel:18.87953)75:2.09460)50:3.87382,dog:25.46154);  or  ((raccoon:19.19959,bear:6.80041):0.84600[50],((sea_lion:11.99700, seal:12.00300):7.52973[100],((monkey:100.85930,cat:47.14069):20.59201[80], weasel:18.87953):2.09460[75]):3.87382[50],dog:25.46154);</span> trees containing <a href="javascript:TextPopup(this)" id="HotSpot47189" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot47189', 'POPUP47189');
+//]]></script><span class="glosstext" id="POPUP47189" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> lengths as well as bootstrap or other counts (note that the Newick formats do not contain the total number of bootstrap replications conducted).</span></p>
+<p><span style=" font-size:11.0pt;">&#160;</span></p>
+<b><span style=" font-size:11.0pt; font-family:'Arial' ,sans-serif;"><br clear="all" /></span></b>
+</body>
+</html>

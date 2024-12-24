@@ -1,0 +1,39 @@
+<HTML>
+<HEAD type="PrimaryResultWindow">
+<STYLE>{TLegendGenerator.Style}</STYLE>
+<TITLE>{TLegendGenerator.Title}</TITLE>
+</HEAD>
+
+<BODY>
+  <span class="figureTitle">
+     Maximum Likelihood Estimate of {TLegendGenerator.Title}
+  </span>
+
+  {if TLegendGenerator.SubstitutionType = 'Matrix'}
+    {TLegendGenerator.MatrixTable}
+      <div class="note">
+        NOTE.-- Each entry is the probability of substitution (<i>r</i>) from
+        {if TAnalysisInfo.isAminoAcid = True}
+          one amino acid (row) to another (column).
+        {else}
+          one base (row) to another base (column).
+        {endif}
+    {TLegendGenerator.MLSubstitutionPatternCaption}
+  {endif}
+
+  {if TLegendGenerator.SubstitutionType = 'TsTvBias'}
+     <br><br>
+     {TLegendGenerator.SubstitutionPatternCaption}
+  {endif}
+
+  {if TLegendGenerator.SubstitutionType = 'Gamma'}
+     <br><br>
+     {TLegendGenerator.SubstitutionPatternCaption}
+  {endif}
+
+
+{IncludeExternalFile=Data_Subset_Template.htm}
+<br>
+<br>
+</body>
+</html>

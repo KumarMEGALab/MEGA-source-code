@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+ <title>Converting Clustal Format</title>
+<link rel="StyleSheet" href="default.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "3.2.1.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part III: Input Data Types and File Formats > Importing Data From Other Formats > Format Specific Notes" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+<h1>Converting Clustal Format</h1>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Converting CLUSTAL Format</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">The sequence alignment 
+ outputs from CLUSTAL software often are given the default extension</font> 
+ <font style="font-size: 11pt; font-family: Arial; font-variant: small-caps;" 
+		 size="2" face="Arial">.aln</font><font style="font-size: 11pt; 
+												 font-family: Arial;" size="2" 
+												 face="Arial">. CLUSTAL 
+ is an interleaved format. In a page-wide arrangement the sequence name 
+ is in the first column and a part of the sequence’s data is right justified. 
+ An example of the CLUSTAL format follows:</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">CLUSTAL X (1.8) multiple 
+ sequence alignment</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="margin-bottom: 0pt; margin-top: 0pt; text-align: left; margin-left: 18pt;"><font 
+	 style="font-size: 8pt; font-family: 'Courier New';" size="2" face="Courier New">Q9Y2J0_Has&#160;&#160;&#160;------------MTDTVFSNSSNRWMYPSDRPLQSNDKEQLQAGWSVHPG</font></p>
+<p style="margin-bottom: 0pt; margin-top: 0pt; text-align: left; margin-left: 18pt;"><font 
+	 style="font-size: 8pt; font-family: 'Courier New';" size="2" face="Courier New">Q06846_RP3A_BOVIN&#160;&#160;------------MTDTVFSSSSSRWMCPSDRPLQSNDKEQLQTGWSVHPS</font></p>
+<p style="margin-bottom: 0pt; margin-top: 0pt; text-align: left; margin-left: 18pt;"><font 
+	 style="font-size: 8pt; font-family: 'Courier New';" size="2" face="Courier New">JX0338_rabphilin-3A-mouse 
+ &#160;------------MTDTVVN----RWMYPGDGPLQSNDKEQLQAGWSVHPG</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="margin-bottom: 0pt; margin-top: 0pt; text-align: left; margin-left: 18pt;"><font 
+	 style="font-size: 8pt; font-family: 'Courier New';" size="2" face="Courier New">Q9Y2J0_Has&#160;&#160;&#160;GQPDRQRKQEELTDEEKEIINRVIARAEKMEEMEQER--IGRLVDRLENM</font></p>
+<p style="margin-bottom: 0pt; margin-top: 0pt; text-align: left; margin-left: 18pt;"><font 
+	 style="font-size: 8pt; font-family: 'Courier New';" size="2" face="Courier New">Q06846_RP3A_BOVIN&#160;&#160;GQPDRQRKQEELTDEEKEIINRVIARAEKMEEMEQER--IGRLVDRLENM</font></p>
+<p style="margin-bottom: 0pt; margin-top: 0pt; text-align: left; margin-left: 18pt;"><font 
+	 style="font-size: 8pt; font-family: 'Courier New';" size="2" face="Courier New">JX0338_rabphilin-3A-mouse&#160;AQTDRQRKQEELTDEEKEIINRVIARAEKMEAMEQER--IGRLVDRLETM</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">The CLUSTAL file above 
+ would be converted by</font> <i><font style="font-size: 11pt; font-family: Arial; 
+										 font-style: italic;" size="2" 
+										 face="Arial">MEGA</font></i> <font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">into 
+ the following format:</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#mega</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Title: Bigrab2.aln</font></p>
+<p style="text-align: center; margin: 0pt 6.5pt 20pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#Q9Y2J0_Hsa</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">------------MTDTVFSNSSNRWMYPSDRPLQSNDKEQLQAGWSVHPG</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">GQPDRQRKQEELTDEEKEIINRVIARAEKMEEMEQER--IGRLVDRLENM</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">RKNVAGDGVNRCILCGEQLGMLGSACVVCEDCKKNVCTKCGVET-NNRLH</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#Q06846_RP3A_BOVIN</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">------------MTDTVFSSSSSRWMCPSDRPLQSNDKEQLQTGWSVHPS</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">GQPDRQRKQEELTDEEKEIINRVIARAEKMEEMEQER--IGRLVDRLENM</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">RKNVAGDGVNRCILCGEQLGMLGSACVVCEDCKKNVCTKCGVETSNNRPH</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#JX0338_rabphilin-3A-mouse</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">------------MTDTVVN----RWMYPGDGPLQSNDKEQLQAGWSVHPG</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">AQTDRQRKQEELTDEEKEIINRVIARAEKMEAMEQER--IGRLVDRLETM</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">RKNVAGDGVNRCILCGEQLGMLGSACVVCEDCKKNVCTKCGVETSNNRPH</font></p>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+ <title>Converting Phylip (Interleaved) Format</title>
+<link rel="StyleSheet" href="default.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "3.2.1.0_8";
+</script>
+ <meta name="topic-breadcrumbs" content="Part III: Input Data Types and File Formats > Importing Data From Other Formats > Format Specific Notes" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+<h1>Converting Phylip (Interleaved) Format</h1>
+<p style="margin-bottom: 0pt; margin-top: 0pt; text-align: left; margin-left: 18pt;"><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Converting 
+ the PHYLIP interleaved file format</font></p>
+<p style="margin-bottom: 0pt; margin-top: 0pt; text-align: left; margin-left: 18pt;"><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">The 
+ PHYLIP format is interleaved, similar to the MSF format. It consists of 
+ a line of numeric data, which is ignored by</font> <i><font style="font-size: 11pt; 
+															 font-family: Arial; 
+															 font-style: italic;" 
+															 size="2" face="Arial">MEGA</font></i><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">, 
+ followed by a group of one or more lines of text. The text begins with 
+ a sequence name in the first column and is followed by the initial part 
+ of each sequence; the group is terminated by a blank line. The number 
+ of lines in subsequent groups of data is similar to the first group. Each 
+ line is a continuation of the identified sequence and begins in the same 
+ position as in the first group. The following might be observed at the 
+ beginning of a PHYLIP data file:</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">2 2000 I</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">G019uabh ATACATCATA ACACTACTTC 
+ CTACCCATAA GCTCCTTTTA ACTTGTTAAA</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">G028uaah CATAAGCTCC TTTTAACTTG 
+ TTAAAGTCTT GCTTGAATTA AAGACTTGTT</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">GTCTTGCTTG AATTAAAGAC TTGTTTAAAC 
+ ACAAAAATTT AGAGTTTTAC</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">TAAACACAAA ATTTAGACTT TTACTCAACA 
+ AAAGTGATTG ATTGATTGAT</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">TCAACAAAAG TGATTGATTG ATTGATTGAT 
+ TGATTGATGG TTTACAGTAG</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">TGATTGATTG ATGGTTTACA GTAGGACTTC 
+ ATTCTAGTCA TTATAGCTGC</font></p>
+<p style="margin-bottom: 0pt; margin-top: 0pt; text-align: left; margin-left: 18pt;">&#160;</p>
+<p style="margin-bottom: 0pt; margin-top: 0pt; text-align: left; margin-left: 18pt;"><i><font 
+	 style="font-size: 11pt; font-family: Arial; font-style: italic;" size="2" 
+	 face="Arial">MEGA</font></i> <font style="font-size: 11pt; font-family: Arial;" 
+										 size="2" face="Arial">would convert 
+ this data as follows:</font></p>
+<p style="text-align: center; margin: 0pt 6.5pt 20pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#mega</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Title: cap-data.phylip</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#G019uabh</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">ATACATCATA ACACTACTTC CTACCCATAA 
+ GCTCCTTTTA ACTTGTTAAA</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">GTCTTGCTTG AATTAAAGAC TTGTTTAAAC 
+ ACAAAAATTT AGAGTTTTAC</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">TCAACAAAAG TGATTGATTG ATTGATTGAT 
+ TGATTGATGG TTTACAGTAG</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">#G028uaah</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">CATAAGCTCC TTTTAACTTG TTAAAGTCTT 
+ GCTTGAATTA AAGACTTGTT</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">TAAACACAAA ATTTAGACTT TTACTCAACA 
+ AAAGTGATTG ATTGATTGAT</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">TGATTGATTG ATGGTTTACA GTAGGACTTC 
+ ATTCTAGTCA TTATAGCTGC</font></p>
+<object id="HHComponentActivator" classid="CLSID:399CB6C4-7312-11D2-B4D9-00105A0422DF" 
+		 width="0" height="0">
+</object> 
+</body>
+</html>

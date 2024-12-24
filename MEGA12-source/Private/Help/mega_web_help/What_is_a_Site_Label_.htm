@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>What is a Site Label?</title>
+<link rel="StyleSheet" href="default.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "3.1.2.3.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part III: Input Data Types and File Formats > MEGA Input Data Formats > Sequence Input Data > Labelling Individual Sites" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1>What is a Site Label?</h1>
+<p style="margin-bottom: 2pt; margin-top: 6pt; text-align: left; margin-right: 6.5pt;"><font 
+	 style="font-size: 11pt;" size="2">The individual sites in nucleotide 
+ or amino acid data can be labeled to construct non-contiguous sets of 
+ sites. The</font> <font style="font-size: 11pt;" size="2"><a href="Setup_Select_Genes_Domains_Dialog.htm">Setup 
+ Genes and Domains</a></font> <font style="font-size: 11pt;" size="2">dialog 
+ can be used to assign or edit site labels, in addition to specifying them 
+ in the input data files. This is shown in the following example of three-sequences 
+ in which the sites in the</font> <font style="font-size: 11pt;" size="2">Third 
+ <a href="javascript:TextPopup(this)" id="HotSpot42945" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot42945', 'POPUP42945');
+//]]></script><span class="glosstext" id="POPUP42945" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span></font> <font style="font-size: 11pt;" size="2">are labeled with a 
+ ‘+’ mark. An underscore marks an absence of any labels.</font></p>
+<p style="margin-bottom: 2pt; margin-top: 6pt; text-align: left; margin-right: 6.5pt;"><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#000000" size="2" 
+	 face="Arial">!<a href="javascript:TextPopup(this)" id="HotSpot23057" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot23057', 'POPUP23057');
+//]]></script><span class="glosstext" id="POPUP23057" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span>=FirstGene Domain=Exon1 Property=Coding;</font></p>
+<p style="margin-bottom: 2pt; margin-top: 6pt; text-align: left; margin-right: 6.5pt;"><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#000000" size="2" 
+	 face="Arial">#Human_{Mammal} ATGGTTTCTAGTCAGGTCACCATGATAGGTCTCAAT</font></p>
+<p style="margin-bottom: 2pt; margin-top: 6pt; text-align: left; margin-right: 6.5pt;"><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#000000" size="2" 
+	 face="Arial">#Mouse_{Mammal} ATGGTTTCTAGTCAGGTCACCATGATAGGTCCCAAT</font></p>
+<p style="margin-bottom: 2pt; margin-top: 6pt; text-align: left; margin-right: 6.5pt;"><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#000000" size="2" 
+	 face="Arial">#Chicken_{Aves} ATGGTTTCTAGTCAGCTCACCATGATAGGTCTCAAT</font></p>
+<p style="margin-bottom: 2pt; margin-top: 6pt; text-align: left; margin-right: 6.5pt;">&#160;</p>
+<p style="margin-bottom: 2pt; margin-top: 6pt; text-align: left; margin-right: 6.5pt;"><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#000000" size="2" 
+	 face="Arial">!<a href="javascript:TextPopup(this)" id="HotSpot6627" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot6627', 'POPUP6627');
+//]]></script><span class="glosstext" id="POPUP6627" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span>=SecondGene Domain=AnIntron Property=Noncoding;</font></p>
+<p style="margin-bottom: 2pt; margin-top: 6pt; text-align: left; margin-right: 6.5pt;"><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#000000" size="2" 
+	 face="Arial">#Human ATTCCCAGGGAATTCCCGGGGGGTTTAAGGCCCCTTTAAAGAAAGAT</font></p>
+<p style="margin-bottom: 2pt; margin-top: 6pt; text-align: left; margin-right: 6.5pt;"><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#000000" size="2" 
+	 face="Arial">#Mouse GTAGCGCGCGTCGTCAGAGCTCCCAAGGGTAGCAGTCACAGAAAGAT</font></p>
+<p style="margin-bottom: 2pt; margin-top: 6pt; text-align: left; margin-right: 6.5pt;"><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#000000" size="2" 
+	 face="Arial">#Chicken GTAAAAAAAAAAGTCAGAGCTCCCCCCAATATATATCACAGAAAGAT</font></p>
+<p style="margin-bottom: 2pt; margin-top: 6pt; text-align: left; margin-right: 6.5pt;">&#160;</p>
+<p style="margin-bottom: 2pt; margin-top: 6pt; text-align: left; margin-right: 6.5pt;"><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#000000" size="2" 
+	 face="Arial">!<a href="javascript:TextPopup(this)" id="HotSpot33134" class="glossterm">Gene</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot33134', 'POPUP33134');
+//]]></script><span class="glosstext" id="POPUP33134" style="display: none;"> A gene is a collection of domains. The domains included in a gene need not be consecutive or of the same type.  Genes and domains can be defined in the input data, and can be defined and edited in the Setup Genes and Domains dialog.  Genes can be selected or unselected from an analysis.  When a gene is unselected, all its domains are automatically unselected. However, a gene can be selected, with some of its domains unselected.</span>=ThirdGene Domain=Exon2 Property=Coding;</font></p>
+<p style="margin-bottom: 2pt; margin-top: 6pt; text-align: left; margin-right: 6.5pt;"><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#000000" size="2" 
+	 face="Arial">#Human ATCTGCTCTCGAGTACTGATACAAATGACTTCTGCGTACAACTGA</font></p>
+<p style="margin-bottom: 2pt; margin-top: 6pt; text-align: left; margin-right: 6.5pt;"><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#000000" size="2" 
+	 face="Arial">#Mouse ATCTGATCTCGTGTGCTGGTACGAATGATTTCTGCGTTCAACTGA</font></p>
+<p style="margin-bottom: 2pt; margin-top: 6pt; text-align: left; margin-right: 6.5pt;"><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#000000" size="2" 
+	 face="Arial">#Chicken ATCTGCTCTCGAGTACTGCTACCAATGACTTCTGCGTACAACTGA</font></p>
+<p style="margin-bottom: 2pt; margin-top: 6pt; text-align: left; margin-right: 6.5pt;"><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#000000" size="2" 
+	 face="Arial">!Label +++__-+++-a-+++-L-+++-k-+++123+++-_-+++---+++;</font></p>
+<p style="margin-bottom: 2pt; margin-top: 6pt; text-align: left; margin-right: 6.5pt;">&#160;</p>
+<p style="margin-bottom: 2pt; margin-top: 6pt; text-align: left; margin-right: 6.5pt;"><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#000000" size="2" 
+	 face="Arial">Each site can be associated with only one label. A label 
+ can be a letter or a number.</font></p>
+<p style="margin-bottom: 2pt; margin-top: 6pt; text-align: left; margin-right: 6.5pt;"><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#000000" size="2" 
+	 face="Arial">For analyses that require</font> <font style="font-size: 11pt; 
+														 font-family: Arial;" 
+														 size="2" face="Arial">codons</font><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#000000" size="2" 
+	 face="Arial">,</font> <i><font style="font-size: 11pt; font-family: Arial; 
+									 font-style: italic;" color="#000000" 
+									 size="2" face="Arial">MEGA</font></i> 
+ <font style="font-size: 11pt; font-family: Arial;" color="#000000" size="2" 
+		 face="Arial">includes only those codons in which all three positions 
+ are given the same</font> <font style="font-size: 11pt; font-family: Arial;" 
+								 size="2" face="Arial">label</font><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#000000" size="2" 
+	 face="Arial">. This site labeling system facilitates the analysis 
+ of specific sites, as often is required for comparing sequences of regulatory 
+ elements, <a href="javascript:TextPopup(this)" id="HotSpot42278" class="glossterm">intron</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot42278', 'POPUP42278');
+//]]></script><span class="glosstext" id="POPUP42278" style="display: none;"> Introns are the non-coding segments of DNA in a gene that are interspersed among the exons.</span>-splice sites, and antigen recognition sites in the genes 
+ of applications such as the Major Histocompatibility Complex.</font></p>
+</body>
+</html>

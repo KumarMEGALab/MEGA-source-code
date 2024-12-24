@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="DistanceMethods_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>No. of differences (Nucleotide)</title>
+<link rel="stylesheet" href="DistanceMethods_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.2.1.1.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Computing Evolutionary Distances > Distance Models > Nucleotide Substitution Models" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1 style="margin-left: 0in; font-size: 11.0pt; font-family: Arial, sans-serif;">No. 
+ of differences (Nucleotide)</h1>
+<p style="margin-top: 0in; text-autospace: none; font-family: Arial, sans-serif;">&#160;</p>
+<p style="margin-top: 0in; text-autospace: none; font-family: Arial, sans-serif;"><span 
+	 style="font-size: 11.0pt;">This distance is the number of sites at 
+ which the two compared sequences differ.&#160;&#160;If you are using the 
+ </span><u><a href="Pairwise-deletion_option.htm" style="font-size: 11pt; 
+				 color: #007fbf; font-family: Arial, sans-serif;">pairwise 
+ deletion option</a></u><span style="display: none;">RH_Pairwise_deletion_option</span><span 
+	 style="font-size: 11.0pt;"> for handling gaps and missing data, it 
+ is important to realize that this count does not normalize the number 
+ of differences based on the number of valid sites compared, if the sequences 
+ contain <a href="javascript:TextPopup(this)" id="HotSpot28839" class="glossterm" style="font-family: Arial, sans-serif;">alignment 
+ gaps</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot28839', 'POPUP28839');
+//]]></script><span class="glosstext" id="POPUP28839" style="display: none;"> Phylogenetic analysis on two or more DNA or amino acid sequences requires that the sequences be aligned so that the substitutions can be accurately enumerated.  During alignment, gaps must be introduced in sequences that have undergone deletions or insertions.  These gaps are known as alignment gaps or indels.</span>.&#160;&#160;Therefore, we recommend that if you use 
+ this distance you use the </span><span style="font-size: 11.0pt; color: #007fbf; 
+										 text-decoration: underline; ">c</span><a 
+	 href="Complete-Deletion_Option.htm" style="font-size: 11pt; color: #007fbf; 
+	 font-family: Arial, sans-serif;">omplete-deletion Option</a><span 
+	 style="font-size: 11.0pt;">.</span></p>
+<p style="margin-top: 0in; text-autospace: none; font-family: Arial, sans-serif;">&#160;</p>
+<p style="font-size: 11.0pt; font-family: Arial, sans-serif;">For this 
+ distance, <i>MEGA</i> provides facilities for computing the following 
+ quantities:</p>
+<p style="margin-top: 0in; font-size: 11.0pt; font-family: Arial, sans-serif;"><b><i>d</i></b><b>: 
+ Transitions + Transversions</b>: Number of different nucleotide sites.</p>
+<p style="margin-top: 0in; font-size: 11.0pt; font-family: Arial, sans-serif;"><b><i>s</i></b><b>: 
+ Transitions only</b>: Number of nucleotide sites with transitional differences.</p>
+<p style="margin-top: 0in; font-size: 11.0pt; font-family: Arial, sans-serif;"><b><i>v</i></b><b>: 
+ Transversions only</b>: Number of nucleotide sites with transversional 
+ differences.</p>
+<p style="margin-top: 0in; font-family: Arial, sans-serif;"><b><i><span 
+	 style="font-size: 11.0pt;">R</span></i></b> <b><span style="font-size: 11.0pt;">= 
+ <i>s</i>/<i>v</i></span></b><span style="font-size: 11.0pt;">: <a href="javascript:TextPopup(this)" id="HotSpot19039" class="glossterm" style="font-family: Arial, sans-serif;">Transition</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot19039', 'POPUP19039');
+//]]></script><span class="glosstext" id="POPUP19039" style="display: none;"> A transition occurs when a purine is substituted by a purine, or a pyrimidine by a pyrimidine.</span>/transversions 
+ ratio.</span></p>
+<p style="margin-top: 0in; font-size: 11.0pt; font-family: Arial, sans-serif;"><b><i>L</i></b><b>: 
+ No of valid common sites</b>: Number of compared sites.</p>
+<p style="font-size: 11.0pt; font-family: Arial, sans-serif;">Formulas 
+ for computing these quantities and their variances are as follows.</p>
+<p style="font-size: 11.0pt; font-family: Arial, sans-serif;">Var(<i>d</i>)&#160;&#160;= 
+ <i>n<sub>d</sub>(L - n<sub>d</sub>)/L</i></p>
+<p style="font-size: 11.0pt; font-family: Arial, sans-serif;">Var(<i>s</i>) 
+ = <i>s(L - s)/L</i></p>
+<p style="font-size: 11.0pt; font-family: Arial, sans-serif;">Var(<i>v</i>) 
+ = <i>v(L - v)/L</i></p>
+<p style="font-family: Arial, sans-serif;"><i><span style="font-size: 11.0pt;">R</span></i> 
+ <span style="font-size: 11.0pt;">= <i>s/v</i></span></p>
+<p style="font-size: 11.0pt; font-family: Arial, sans-serif;">Var(<i>R</i>) 
+ = [<i>c<sub>1</sub><sup>2</sup>P + c<sub>2</sub><sup>2</sup>Q – (c<sub>1</sub>P 
+ + c<sub>2</sub>Q)<sup>2</sup>)</i>]<i>/L</i></p>
+<p style="font-size: 11.0pt; font-family: Arial, sans-serif;">where <i>c<sub>1</sub> 
+ = 1/s</i> and <i>c<sub>2</sub> = -s/v<sup>2</sup></i></p>
+<p style="font-family: Arial, sans-serif;"><i><span style="font-size: 11.0pt;">P</span></i> 
+ <span style="font-size: 11.0pt;">and <i>Q</i> are the proportion of sites 
+ showing transitional and transversional differences, respectively.</span></p>
+<p style="margin-top: 0in; text-autospace: none; font-family: Arial, sans-serif;">&#160;</p>
+<p style="margin-top: 0in; text-autospace: none; font-family: Arial, sans-serif;"><span 
+	 style="font-size: 11.0pt;">See also </span><a href="Nei_and_Kumar_2000.htm" 
+													 style="color: #007fbf; 
+													 font-size: 11pt; font-family: Arial, sans-serif;"><u 
+	 style="font-family: Arial, sans-serif;"><span style="color: #007fbf; 
+													 font-size: 11pt; font-family: Arial, sans-serif;">Nei 
+ and Kumar (2000)</span></u><span style="display: none; color: #007fbf; 
+									 font-size: 11pt; font-family: Arial, sans-serif;">Nei_and_Kumar_2000</span></a><span 
+	 style="font-size: 11.0pt;">, page 33.</span></p>
+<p style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

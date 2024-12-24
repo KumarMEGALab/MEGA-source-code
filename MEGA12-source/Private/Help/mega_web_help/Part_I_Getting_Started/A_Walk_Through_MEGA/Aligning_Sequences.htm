@@ -1,0 +1,453 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Aligning Sequences</title>
+<link rel="StyleSheet" href="../../default.css" type="text/css" />
+ <link rel="StyleSheet" href="../../default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../..";
+gCommonRootRelPath = "../..";
+gTopicId = "1.3.0_3";
+</script>
+ <meta name="topic-breadcrumbs" content="Part I: Getting Started > A Walk Through MEGA" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../ehlpdhtm.js"></script>
+
+
+<h1 style="font-family: Arial, sans-serif;">Aligning Sequences</h1>
+<p style="text-align: left; margin: 4pt 6.5pt 5pt 5.75pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">In this</font> <font style="font-size: 12pt;" 
+															 size="4">tutorial, 
+ we will</font> <font style="font-size: 12pt;" size="4">show how to</font> 
+ <font style="font-size: 12pt;" size="4">create a</font> <font style="font-size: 12pt;" 
+	 size="4">multiple sequence</font> <font style="font-size: 12pt;" size="4">alignment 
+ from protein sequence data that will be imported into the alignment editor 
+ using different methods.</font> <font style="font-size: 12pt;" size="4">All 
+ of the data files used in this tutorial can be found in the</font> <i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">MEGA</font></i><i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">\</font></i><i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">Examples</font></i><i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">\</font></i> 
+ <font style="font-size: 12pt;" size="4">folder</font> <font style="font-size: 12pt;" 
+															 size="4">(The 
+ default location for Windows users is</font> <i><font style="font-size: 12pt; 
+														 font-style: italic;" 
+														 size="4">C:\Users\UserName\Documents\MEGA</font></i><i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">7</font></i><i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">\Examples\</font></i><i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">\</font></i><i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">.</font></i> 
+ <font style="font-size: 12pt;" size="4">The location for Mac users is</font> 
+ <i><font style="font-size: 12pt; font-style: italic;" size="4">$HOME/MEGA/Examples, 
+ where $HOME is the user’s home directory</font></i><font style="font-size: 12pt;" 
+															 size="4">).</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 5pt 5.75pt; font-size: 12pt; 
+	 font-weight: bold; font-family: Arial, sans-serif; text-decoration: underline; "><b><u><font 
+	 style="font-weight: bold; text-decoration: underline; ">Opening an 
+ Alignment</font></u></b></p>
+<p style="text-align: left; margin: 4pt 6.5pt 5pt 5.75pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">The</font> <i><font style="font-size: 12pt; 
+															 font-style: italic;" 
+															 size="4">Alignment 
+ Explorer</font></i> <font style="font-size: 12pt;" size="4">is the tool 
+ for building and editing multiple sequence alignments in</font> <i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">MEGA</font></i><font 
+	 style="font-size: 12pt;" size="4">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt; font-size: 12pt; 
+	 font-weight: bold; font-family: Arial, sans-serif;"><b><font style="font-weight: bold;">Example 
+ 2.1:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">Launch the</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4">Alignment Explorer</font></i> <font 
+	 style="font-size: 12pt;" size="4">by selecting the</font> <b><i><font 
+	 style="font-size: 12pt; font-weight: bold; font-style: italic;" size="4">Align 
+ |</font></i></b> <b><i><font style="font-size: 12pt; font-weight: bold; 
+								 font-style: italic;" size="4">Edit/Build 
+ Alignment</font></i></b> <font style="font-size: 12pt;" size="4">on the 
+ launch bar of the main</font> <i><font style="font-size: 12pt; font-style: italic;" 
+										 size="4">MEGA</font></i> <font 
+	 style="font-size: 12pt;" size="4">window.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">Select</font> <b><i><font style="font-size: 12pt; 
+	 font-weight: bold; font-style: italic;" size="4">Create New Alignment</font></i></b> 
+ <font style="font-size: 12pt;" size="4">and click</font> <b><i><font style="font-size: 12pt; 
+	 font-weight: bold; font-style: italic;" size="4">Ok</font></i></b><font 
+	 style="font-size: 12pt;" size="4">.</font> <font style="font-size: 12pt;" 
+														 size="4">A dialog 
+ will appear asking “Are you building a DNA or Protein sequence alignment?” 
+ Click the button labeled “</font><b><font style="font-size: 12pt; font-weight: bold;" 
+											 size="4">DNA</font></b><i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">”</font></i><font 
+	 style="font-size: 12pt;" size="4">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">From the</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4">Alignment Explorer</font></i> <font 
+	 style="font-size: 12pt;" size="4">main menu, select</font> <b><i><font 
+	 style="font-size: 12pt; font-weight: bold; font-style: italic;" size="4">Data 
+ | Open |</font></i></b> <b><i><font style="font-size: 12pt; font-weight: bold; 
+									 font-style: italic;" size="4">Retrieve 
+ sequences from File</font></i></b><font style="font-size: 12pt;" size="4">. 
+ Select the</font> <font style="font-size: 12pt;" size="4">&quot;hsp20.fas&quot;</font> 
+ <font style="font-size: 12pt;" size="4">file from the MEG/Examples directory.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 4.5pt; font-family: Arial, sans-serif;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt; font-family: Arial, sans-serif;"><b><u><font 
+	 style="font-size: 12pt; font-weight: bold; text-decoration: underline; " 
+	 size="4">Align</font></u></b><b><u><font style="font-size: 12pt; font-weight: bold; 
+												 text-decoration: underline; " 
+												 size="4">ing</font></u></b> 
+ <b><u><font style="font-size: 12pt; font-weight: bold; text-decoration: underline; " 
+			 size="4">Sequences by</font></u></b> <b><u><font style="font-size: 12pt; 
+	 font-weight: bold; text-decoration: underline; " size="4"><a href="javascript:TextPopup(this)" id="HotSpot19087" class="glossterm" style="font-family: Arial, sans-serif;">ClustalW</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot19087', 'POPUP19087');
+//]]></script><span class="glosstext" id="POPUP19087" style="display: none;"> ClustalW is a general purpose multiple sequence alignment program for DNA or proteins. You can learn more about ClustalW by visiting its website (http://www.ebi.ac.uk/clustalw/).</span></font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">You can create a multiple sequence 
+ alignment in</font> <i><font style="font-size: 12pt; font-style: italic;" 
+								 size="4">MEGA</font></i> <font style="font-size: 12pt;" 
+	 size="4">using either the <a href="javascript:TextPopup(this)" id="HotSpot33543" class="glossterm" style="font-family: Arial, sans-serif;">ClustalW</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot33543', 'POPUP33543');
+//]]></script><span class="glosstext" id="POPUP33543" style="display: none;"> ClustalW is a general purpose multiple sequence alignment program for DNA or proteins. You can learn more about ClustalW by visiting its website (http://www.ebi.ac.uk/clustalw/).</span> 
+ or Muscle algorithms. Here we align a set of sequences using the <a href="javascript:TextPopup(this)" id="HotSpot55937" class="glossterm" style="font-family: Arial, sans-serif;">ClustalW</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot55937', 'POPUP55937');
+//]]></script><span class="glosstext" id="POPUP55937" style="display: none;"> ClustalW is a general purpose multiple sequence alignment program for DNA or proteins. You can learn more about ClustalW by visiting its website (http://www.ebi.ac.uk/clustalw/).</span> 
+ option.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt; font-size: 12pt; 
+	 font-weight: bold; font-family: Arial, sans-serif;"><b><font style="font-weight: bold;">Example 
+ 2.2:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-size: 12pt; 
+	 font-family: Arial, sans-serif;">Open the alignment file (using the 
+ instructions above) hsp20.fas.</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">Select the</font> <b><i><font style="font-size: 12pt; 
+	 font-weight: bold; font-style: italic;" size="4">Edit | Select All</font></i></b> 
+ <font style="font-size: 12pt;" size="4">menu command</font> <font style="font-size: 12pt;" 
+	 size="4">to</font> <font style="font-size: 12pt;" size="4">select</font> 
+ <font style="font-size: 12pt;" size="4">all</font> <font style="font-size: 12pt;" 
+															 size="4">sites</font> 
+ <font style="font-size: 12pt;" size="4">for</font> <font style="font-size: 12pt;" 
+															 size="4">every</font> 
+ <font style="font-size: 12pt;" size="4">sequence in the</font> <font style="font-size: 12pt;" 
+	 size="4">data set.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">Select</font> <b><i><font style="font-size: 12pt; 
+	 font-weight: bold; font-style: italic;" size="4">Alignment | Align 
+ by <a href="javascript:TextPopup(this)" id="HotSpot37621" class="glossterm" style="font-family: Arial, sans-serif;">ClustalW</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot37621', 'POPUP37621');
+//]]></script><span class="glosstext" id="POPUP37621" style="display: none;"> ClustalW is a general purpose multiple sequence alignment program for DNA or proteins. You can learn more about ClustalW by visiting its website (http://www.ebi.ac.uk/clustalw/).</span></font></i></b> 
+ <font style="font-size: 12pt;" size="4">from the main menu</font> <font 
+	 style="font-size: 12pt;" size="4">to align the selected sequences 
+ data using the <a href="javascript:TextPopup(this)" id="HotSpot34723" class="glossterm" style="font-family: Arial, sans-serif;">ClustalW</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot34723', 'POPUP34723');
+//]]></script><span class="glosstext" id="POPUP34723" style="display: none;"> ClustalW is a general purpose multiple sequence alignment program for DNA or proteins. You can learn more about ClustalW by visiting its website (http://www.ebi.ac.uk/clustalw/).</span> 
+ algorithm. Click</font> <font style="font-size: 12pt;" size="4">the “</font><b><i><font 
+	 style="font-size: 12pt; font-weight: bold; font-style: italic;" size="4">Ok</font></i></b><font 
+	 style="font-size: 12pt;" size="4">” button to accept the default settings</font> 
+ <font style="font-size: 12pt;" size="4">for <a href="javascript:TextPopup(this)" id="HotSpot13131" class="glossterm" style="font-family: Arial, sans-serif;">ClustalW</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot13131', 'POPUP13131');
+//]]></script><span class="glosstext" id="POPUP13131" style="display: none;"> ClustalW is a general purpose multiple sequence alignment program for DNA or proteins. You can learn more about ClustalW by visiting its website (http://www.ebi.ac.uk/clustalw/).</span>.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">Once the alignment is complete,</font> 
+ <font style="font-size: 12pt;" size="4">save the current <a href="javascript:TextPopup(this)" id="HotSpot29112" class="glossterm" style="font-family: Arial, sans-serif;">alignment session</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot29112', 'POPUP29112');
+//]]></script><span class="glosstext" id="POPUP29112" style="display: none;"> When working in MEGA’s Alignment Explorer you can choose to save the current state of all data and settings in the alignment explorer to a file so you can archive your work, or save it to resume editing in the future. An alignment session is a binary file format that is saved with the .MAS file extension.</span> 
+ by selecting</font> <b><font style="font-size: 12pt; font-weight: bold;" 
+								 size="4">Data</font></b> <b><i><font style="font-size: 12pt; 
+	 font-weight: bold; font-style: italic;" size="4">| Save Session</font></i></b> 
+ <font style="font-size: 12pt;" size="4">from the main</font> <font style="font-size: 12pt;" 
+	 size="4">menu. Give the file an appropriate name, such as &quot;hsp20_Test.mas&quot;.</font> 
+ <font style="font-size: 12pt;" size="4">This will allow the current <a href="javascript:TextPopup(this)" id="HotSpot50068" class="glossterm" style="font-family: Arial, sans-serif;">alignment session</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot50068', 'POPUP50068');
+//]]></script><span class="glosstext" id="POPUP50068" style="display: none;"> When working in MEGA’s Alignment Explorer you can choose to save the current state of all data and settings in the alignment explorer to a file so you can archive your work, or save it to resume editing in the future. An alignment session is a binary file format that is saved with the .MAS file extension.</span> 
+ to be restored for future editing.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">Exit the</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4">Alignment Explorer</font></i> <font 
+	 style="font-size: 12pt;" size="4">by selecting</font> <b><i><font 
+	 style="font-size: 12pt; font-weight: bold; font-style: italic;" size="4">Data 
+ | Exit Aln Explorer</font></i></b> <font style="font-size: 12pt;" size="4">from 
+ the main menu.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 4.5pt; font-family: Arial, sans-serif;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt; font-family: Arial, sans-serif;"><b><u><font 
+	 style="font-size: 12pt; font-weight: bold; text-decoration: underline; " 
+	 size="4">Align</font></u></b><b><u><font style="font-size: 12pt; font-weight: bold; 
+												 text-decoration: underline; " 
+												 size="4">ing Sequences</font></u></b> 
+ <b><u><font style="font-size: 12pt; font-weight: bold; text-decoration: underline; " 
+			 size="4">U</font></u></b><b><u><font style="font-size: 12pt; 
+													 font-weight: bold; 
+													 text-decoration: underline; " 
+													 size="4">sing Muscle</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt; font-size: 12pt; 
+	 font-family: Arial, sans-serif;">Here we describe how to create a 
+ multiple sequence alignment using the Muscle option.</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt; font-size: 12pt; 
+	 font-weight: bold; font-family: Arial, sans-serif;"><b><font style="font-weight: bold;">Example 
+ 2.3:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">Starting from the main</font> <i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">MEGA</font></i> 
+ <font style="font-size: 12pt;" size="4">window,</font> <font style="font-size: 12pt;" 
+	 size="4">select</font> <b><i><font style="font-size: 12pt; font-weight: bold; 
+										 font-style: italic;" size="4">Align 
+ | Edit/Build Alignment</font></i></b> <font style="font-size: 12pt;" size="4">from 
+ the launch bar. Select</font> <b><i><font style="font-size: 12pt; font-weight: bold; 
+											 font-style: italic;" size="4">Create 
+ a new alignment</font></i></b> <font style="font-size: 12pt;" size="4">and 
+ then select</font> <b><i><font style="font-size: 12pt; font-weight: bold; 
+								 font-style: italic;" size="4">DNA</font></i></b><font 
+	 style="font-size: 12pt;" size="4">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">From the</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4">Alignment Explorer</font></i> <font 
+	 style="font-size: 12pt;" size="4">window, select</font> <b><i><font 
+	 style="font-size: 12pt; font-weight: bold; font-style: italic;" size="4">Data 
+ | Open |</font></i></b> <b><i><font style="font-size: 12pt; font-weight: bold; 
+									 font-style: italic;" size="4">Retrieve 
+ sequences from a file</font></i></b> <font style="font-size: 12pt;" size="4">and 
+ select the “Chloroplast_Martin.meg” file from the MEGA/Examples directory.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">On the</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4">Alignment Explorer</font></i> <font 
+	 style="font-size: 12pt;" size="4">main</font> <font style="font-size: 12pt;" 
+														 size="4">menu, 
+ select</font> <b><i><font style="font-size: 12pt; font-weight: bold; font-style: italic;" 
+							 size="4">Edit | Select All</font></i></b><font 
+	 style="font-size: 12pt;" size="4">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">On the</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4">Alignment Explorer</font></i> <font 
+	 style="font-size: 12pt;" size="4">launch bar, you</font> <font style="font-size: 12pt;" 
+	 size="4">will</font> <font style="font-size: 12pt;" size="4">find 
+ an icon that looks like a flexing arm. Click on it</font> <font style="font-size: 12pt;" 
+	 size="4">and select</font> <b><i><font style="font-size: 12pt; font-weight: bold; 
+											 font-style: italic;" size="4">Align 
+ DNA</font></i></b><font style="font-size: 12pt;" size="4">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">Near the bottom of the</font> <i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">MUSCLE - AppLink</font></i> 
+ <font style="font-size: 12pt;" size="4">window, you</font> <font style="font-size: 12pt;" 
+	 size="4">will</font> <font style="font-size: 12pt;" size="4">see</font> 
+ <font style="font-size: 12pt;" size="4">a row called</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4">Alignment Info</font></i><font style="font-size: 12pt;" 
+	 size="4">. You can read</font> <font style="font-size: 12pt;" size="4">information 
+ about the Muscle program.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">Click on the</font> <b><i><font 
+	 style="font-size: 12pt; font-weight: bold; font-style: italic;" size="4">Compute</font></i></b> 
+ <font style="font-size: 12pt;" size="4">button</font> <font style="font-size: 12pt;" 
+															 size="4">(accept 
+ the default settings). A</font> <i><font style="font-size: 12pt; font-style: italic;" 
+											 size="4">Progress</font></i> 
+ <font style="font-size: 12pt;" size="4">window will keep you informed 
+ of Muscle</font> <font style="font-size: 12pt;" size="4">alignment status. 
+ In this window, you can click on the</font> <i><font style="font-size: 12pt; 
+														 font-style: italic;" 
+														 size="4">Command 
+ Line Output</font></i> <font style="font-size: 12pt;" size="4">tab to 
+ see the command-line parameters which were passed to the Muscle program.</font> 
+ <font style="font-size: 12pt;" size="4">Note: The analysis may complete 
+ so fast, that you won’t be able to click on this tab or read it. The information 
+ in this tab isn’t essential, it’s just interesting.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">When the Muscle program has finished, 
+ the aligned sequences will be passed back to</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4">MEGA</font></i> <font style="font-size: 12pt;" 
+														 size="4">and displayed 
+ in the</font> <i><font style="font-size: 12pt; font-style: italic;" size="4">Alignment 
+ Explorer</font></i> <font style="font-size: 12pt;" size="4">window.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">Close the</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4">Alignment Explorer</font></i> <font 
+	 style="font-size: 12pt;" size="4">by selecting</font> <b><i><font 
+	 style="font-size: 12pt; font-weight: bold; font-style: italic;" size="4">Data 
+ | Exit Aln Explorer</font></i></b><font style="font-size: 12pt;" size="4">.</font> 
+ <font style="font-size: 12pt;" size="4">Select</font> <b><i><font style="font-size: 12pt; 
+	 font-weight: bold; font-style: italic;" size="4">No</font></i></b> 
+ <font style="font-size: 12pt;" size="4">when asked if you would like to 
+ save the current <a href="javascript:TextPopup(this)" id="HotSpot39494" class="glossterm" style="font-family: Arial, sans-serif;">alignment 
+ session</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot39494', 'POPUP39494');
+//]]></script><span class="glosstext" id="POPUP39494" style="display: none;"> When working in MEGA’s Alignment Explorer you can choose to save the current state of all data and settings in the alignment explorer to a file so you can archive your work, or save it to resume editing in the future. An alignment session is a binary file format that is saved with the .MAS file extension.</span> to file.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt; font-family: Arial, sans-serif;">&#160;</p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt; font-family: Arial, sans-serif;"><b><u><font 
+	 style="font-size: 12pt; font-weight: bold; text-decoration: underline; " 
+	 size="4">Obtaining Sequence Data</font></u></b> <b><u><font style="font-size: 12pt; 
+	 font-weight: bold; text-decoration: underline; " size="4">from</font></u></b> 
+ <b><u><font style="font-size: 12pt; font-weight: bold; text-decoration: underline; " 
+			 size="4">the Internet (</font></u></b><b><u><font style="font-size: 12pt; 
+	 font-weight: bold; text-decoration: underline; " size="4">GenBank</font></u></b><b><u><font 
+	 style="font-size: 12pt; font-weight: bold; text-decoration: underline; " 
+	 size="4">)</font></u></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">Using</font> <i><font style="font-size: 12pt; 
+															 font-style: italic;" 
+															 size="4">MEGA’s</font></i> 
+ <font style="font-size: 12pt;" size="4">integrated</font> <font style="font-size: 12pt;" 
+	 size="4">web</font> <font style="font-size: 12pt;" size="4">browser 
+ you can fetch GenBank sequence data from the <a href="javascript:TextPopup(this)" id="HotSpot35075" class="glossterm" style="font-family: Arial, sans-serif;">NCBI</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot35075', 'POPUP35075');
+//]]></script><span class="glosstext" id="POPUP35075" style="display: none;"> An acronym that stands for “National Center for Biotechnology Information”. NCBI is a federally funded resource for molecular biology information. NCBI creates databases, conducts research in computational biology, develops software and tools for analyzing genome data, and disseminates biomedical information. You can find out more about NCBI by visiting the NCBI website (http://www.ncbi.nlm.nih.gov).</span> website if 
+ you have an active internet connection.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt; font-size: 12pt; 
+	 font-weight: bold; font-family: Arial, sans-serif;"><b><font style="font-weight: bold;">Example 
+ 2.4:</font></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">From the main</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4">MEGA</font></i> <font style="font-size: 12pt;" 
+														 size="4">window, 
+ select</font> <b><i><font style="font-size: 12pt; font-weight: bold; font-style: italic;" 
+							 size="4">Align |</font></i></b> <b><i><font 
+	 style="font-size: 12pt; font-weight: bold; font-style: italic;" size="4">Edit/Build 
+ Alignment</font></i></b> <font style="font-size: 12pt;" size="4">from 
+ the main menu.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">When prompted,</font> <font style="font-size: 12pt;" 
+	 size="4">select</font> <b><i><font style="font-size: 12pt; font-weight: bold; 
+										 font-style: italic;" size="4">Create 
+ New Alignment</font></i></b> <font style="font-size: 12pt;" size="4">and 
+ click</font> <b><i><font style="font-size: 12pt; font-weight: bold; font-style: italic;" 
+							 size="4">ok</font></i></b><font style="font-size: 12pt;" 
+															 size="4">.</font> 
+ <font style="font-size: 12pt;" size="4">Select</font> <b><i><font style="font-size: 12pt; 
+	 font-weight: bold; font-style: italic;" size="4">DNA</font></i></b></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">Activate</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4">MEGA’s</font></i> <font style="font-size: 12pt;" 
+															 size="4">integrated 
+ browser by</font> <font style="font-size: 12pt;" size="4">selecting</font> 
+ <b><i><font style="font-size: 12pt; font-weight: bold; font-style: italic;" 
+			 size="4">Web | Query Genbank</font></i></b> <font style="font-size: 12pt;" 
+	 size="4">from the</font> <font style="font-size: 12pt;" size="4">main</font> 
+ <font style="font-size: 12pt;" size="4">menu.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">When the</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4"><a href="javascript:TextPopup(this)" id="HotSpot20127" class="glossterm" style="font-family: Arial, sans-serif;">NCBI</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot20127', 'POPUP20127');
+//]]></script><span class="glosstext" id="POPUP20127" style="display: none;"> An acronym that stands for “National Center for Biotechnology Information”. NCBI is a federally funded resource for molecular biology information. NCBI creates databases, conducts research in computational biology, develops software and tools for analyzing genome data, and disseminates biomedical information. You can find out more about NCBI by visiting the NCBI website (http://www.ncbi.nlm.nih.gov).</span></font></i><i><font 
+	 style="font-size: 12pt; font-style: italic;" size="4">:</font></i> 
+ <i><font style="font-size: 12pt; font-style: italic;" size="4">Nucleotide</font></i> 
+ <font style="font-size: 12pt;" size="4">site is loaded, enter</font> <b><font 
+	 style="font-size: 12pt; font-weight: bold;" size="4">CFS</font></b> 
+ <font style="font-size: 12pt;" size="4">as a search term into the search 
+ box</font> <font style="font-size: 12pt;" size="4">at the top of the screen. 
+ Press the</font> <b><i><font style="font-size: 12pt; font-weight: bold; 
+								 font-style: italic;" size="4">Search</font></i></b> 
+ <font style="font-size: 12pt;" size="4">button.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">When the search results are displayed, 
+ check the box next to any item(s) you wish to</font> <font style="font-size: 12pt;" 
+															 size="4">import</font> 
+ <font style="font-size: 12pt;" size="4">into</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4">MEGA</font></i><font style="font-size: 12pt;" 
+														 size="4">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 72pt; font-family: Arial, sans-serif;"><b><font 
+	 style="font-size: 12pt; font-weight: bold;" size="4">If you have checked 
+ more than one box:</font></b> <font style="font-size: 12pt;" size="4">locate 
+ the</font> <b><i><font style="font-size: 12pt; font-weight: bold; font-style: italic;" 
+						 size="4">Display Settings</font></i></b> <font 
+	 style="font-size: 12pt;" size="4">dropdown (located near the top</font> 
+ <font style="font-size: 12pt;" size="4">left hand side</font> <font style="font-size: 12pt;" 
+	 size="4">of the page directly under the tab</font> <font style="font-size: 12pt;" 
+	 size="4">headings). Change the value to</font> <b><i><font style="font-size: 12pt; 
+	 font-weight: bold; font-style: italic;" size="4">FASTA (</font></i></b><b><i><font 
+	 style="font-size: 12pt; font-weight: bold; font-style: italic;" size="4">Text</font></i></b><b><i><font 
+	 style="font-size: 12pt; font-weight: bold; font-style: italic;" size="4">)</font></i></b> 
+ <font style="font-size: 12pt;" size="4">and click the</font> <b><i><font 
+	 style="font-size: 12pt; font-weight: bold; font-style: italic;" size="4">Apply</font></i></b> 
+ <font style="font-size: 12pt;" size="4">button. This will output all the 
+ sequences you selected as a text</font> <font style="font-size: 12pt;" 
+												 size="4">in the FASTA 
+ format.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">Press the</font> <b><i><font style="font-size: 12pt; 
+	 font-weight: bold; font-style: italic;" size="4">Add to Alignment</font></i></b> 
+ <font style="font-size: 12pt;" size="4">button</font> <font style="font-size: 12pt;" 
+															 size="4">(with 
+ the red</font> <b><font style="font-size: 12pt; font-weight: bold;" size="4">+</font></b> 
+ <font style="font-size: 12pt;" size="4">sign) located above the web address 
+ bar. This will import the sequences into the</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4">Alignment Explorer</font></i><font style="font-size: 12pt;" 
+	 size="4">.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">With the data now displayed in the</font> 
+ <i><font style="font-size: 12pt; font-style: italic;" size="4">Alignment 
+ Explorer</font></i><font style="font-size: 12pt;" size="4">, you can close 
+ the</font> <i><font style="font-size: 12pt; font-style: italic;" size="4">Web 
+ Browser</font></i> <font style="font-size: 12pt;" size="4">window.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">Align the</font> <font style="font-size: 12pt;" 
+	 size="4">new</font> <font style="font-size: 12pt;" size="4">data using 
+ the steps detailed in</font> <font style="font-size: 12pt;" size="4">the 
+ previous examples.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 36pt; font-family: Arial, sans-serif;"><font 
+	 style="font-size: 12pt;" size="4">Close the</font> <i><font style="font-size: 12pt; 
+	 font-style: italic;" size="4">Alignment Explorer</font></i> <font 
+	 style="font-size: 12pt;" size="4">window by clicking</font> <b><i><font 
+	 style="font-size: 12pt; font-weight: bold; font-style: italic;" size="4">Data 
+ | Exit Aln Explorer</font></i></b><font style="font-size: 12pt;" size="4">. 
+ Select</font> <b><i><font style="font-size: 12pt; font-weight: bold; font-style: italic;" 
+							 size="4">No</font></i></b> <font style="font-size: 12pt;" 
+	 size="4">when asked if you would like the save the current <a href="javascript:TextPopup(this)" id="HotSpot24574" class="glossterm" style="font-family: Arial, sans-serif;">alignment session</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot24574', 'POPUP24574');
+//]]></script><span class="glosstext" id="POPUP24574" style="display: none;"> When working in MEGA’s Alignment Explorer you can choose to save the current state of all data and settings in the alignment explorer to a file so you can archive your work, or save it to resume editing in the future. An alignment session is a binary file format that is saved with the .MAS file extension.</span> 
+ to file.</font></p>
+<p style="text-align: left; margin: 5pt 6.5pt 5pt 5.75pt; font-family: Arial, sans-serif;"><b><font 
+	 style="font-size: 12pt; font-weight: bold;" size="4">Note</font></b><font 
+	 style="font-size: 12pt;" size="4">:</font> <font style="font-size: 12pt;" 
+														 size="4">We have 
+ aligned some sequences and they are now ready to be analyzed. Whenever 
+ you need to edit/change your sequence data, you will need to open it in 
+ the</font> <i><font style="font-size: 12pt; font-style: italic;" size="4">Alignment 
+ Editor</font></i> <font style="font-size: 12pt;" size="4">and edit or 
+ align it there. Then export it to the</font> <i><font style="font-size: 12pt; 
+														 font-style: italic;" 
+														 size="4">MEGA</font></i> 
+ <font style="font-size: 12pt;" size="4">format and open the resulting 
+ file.</font></p>
+</body>
+</html>

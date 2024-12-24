@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="DistanceMethods_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>p-distance (Nucleotide)</title>
+<link rel="stylesheet" href="DistanceMethods_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.2.1.1.0_2";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Computing Evolutionary Distances > Distance Models > Nucleotide Substitution Models" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1 style="margin-left: 0in;"><span style="font-size: 11.0pt;">p-distance 
+ (Nucleotide)</span></h1>
+<p><span style="font-size: 11.0pt;">This distance is the proportion (<i>p</i>) 
+ of nucleotide sites at which two sequences being compared are different. 
+ It is obtained by dividing the number of nucleotide differences by the 
+ total number of nucleotides compared.&#160;&#160;It does not make any 
+ correction for multiple substitutions at the same site, substitution rate 
+ biases (for example, differences in the </span><span style="font-size: 11pt;">transitiona</span><u><span 
+	 style="font-size: 11.0pt;">l</span></u><span style="font-size: 11.0pt; 
+													 display: none;">RH_Transition</span><span 
+	 style="font-size: 11.0pt;"> and </span><u><span style="font-size: 11.0pt;">transversional</span></u><span 
+	 style="font-size: 11.0pt; display: none;">RH_Transversion</span><span 
+	 style="font-size: 11.0pt;"> rates), or differences in evolutionary 
+ rates among sites.</span></p>
+<p>&#160;</p>
+<p><i><span style="font-size: 11.0pt;">MEGA</span></i> <span style="font-size: 11.0pt;">provides 
+ facilities for computing following <i>p</i>-distances and related quantities:</span></p>
+<p>&#160;</p>
+<p style="margin-top: 0in;"><b><i><span style="font-size: 11.0pt;">d</span></i></b><b><span 
+	 style="font-size: 11.0pt;">: Transitions + Transversions</span></b><span 
+	 style="font-size: 11.0pt;">&#160;&#160;: Proportion of nucleotide 
+ sites that are different.</span></p>
+<p style="margin-top: 0in;"><b><i><span style="font-size: 11.0pt;">s</span></i></b><b><span 
+	 style="font-size: 11.0pt;">: Transitions only</span></b> <span style="font-size: 11.0pt;">: 
+ Proportion of nucleotide sites with transitional differences.</span></p>
+<p style="margin-top: 0in;"><b><i><span style="font-size: 11.0pt;">v</span></i></b><b><span 
+	 style="font-size: 11.0pt;">: Transversions only</span></b> <span style="font-size: 11.0pt;">: 
+ Proportion of nucleotide sites with transversional differences.</span></p>
+<p style="margin-top: 0in;"><b><i><span style="font-size: 11.0pt;">R</span></i></b> 
+ <b><span style="font-size: 11.0pt;">= <i>s</i>/<i>v</i></span></b> <span 
+	 style="font-size: 11.0pt;">: <a href="javascript:TextPopup(this)" id="HotSpot6714" class="glossterm">Transition</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot6714', 'POPUP6714');
+//]]></script><span class="glosstext" id="POPUP6714" style="display: none;"> A transition occurs when a purine is substituted by a purine, or a pyrimidine by a pyrimidine.</span>/transversions ratio.</span></p>
+<p style="margin-top: 0in;"><b><i><span style="font-size: 11.0pt;">L</span></i></b><b><span 
+	 style="font-size: 11.0pt;">: No of valid common sites</span></b><span 
+	 style="font-size: 11.0pt;">: Number of sites compared.</span></p>
+<p>&#160;</p>
+<p><span style="font-size: 11.0pt;">Formulas for computing these quantities 
+ are as follows:</span></p>
+<table style="margin-left: 5.75pt;" cellspacing="0">
+	<col />
+	<col />
+	<col />
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><b><u><span 
+		 style="font-size: 11.0pt;">Quantity</span></u></b></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><b><u><span 
+		 style="font-size: 11.0pt;">Formula</span></u></b></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><b><u><span 
+		 style="font-size: 11.0pt;">Variance</span></u></b></p></td>
+	</tr>
+</table>
+<p><span style="font-size: 11.0pt;">p, &#160;<i>n<sub>d</sub>/L, p(1 – 
+ p)/L</i></span></p>
+<p><i><span style="font-size: 11.0pt;">s</span></i><span style="font-size: 11.0pt;">, 
+ <i>p, s(1 – s)/L</i></span></p>
+<p><i><span style="font-size: 11.0pt;">v</span></i><span style="font-size: 11.0pt;">, 
+ <i>Q, v(1 – v)/L</i></span></p>
+<p><i><span style="font-size: 11.0pt;">R</span></i><span style="font-size: 11.0pt;">, 
+ <i>P/Q</i>, [<i>c<sub>1</sub><sup>2</sup>P + c<sub>2</sub><sup>2</sup>Q 
+ – (c<sub>1</sub>P + c<sub>2</sub>Q)<sup>2</sup>)</i>]<i>/L</i></span></p>
+<p><span style="font-size: 11.0pt;">where <i>c<sub>1</sub> = 1/s</i> and 
+ <i>c<sub>2</sub> = -s/v<sup>2</sup></i></span></p>
+<p><i><span style="font-size: 11.0pt;">P</span></i> <span style="font-size: 11.0pt;">and 
+ <i>Q</i> are the proportion of sites showing transitional and transversional 
+ differences, respectively.</span></p>
+<p>&#160;</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">See 
+ also </span><u><span style="font-size: 11pt;"><a href="Nei_and_Kumar_2000.htm" 
+													 style="color: #007fbf;">Nei 
+ and Kumar (2000)</a></span></u><span style="display: none;">Nei_and_Kumar_2000</span><span 
+	 style="font-size: 11.0pt;">, page 33.</span></p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

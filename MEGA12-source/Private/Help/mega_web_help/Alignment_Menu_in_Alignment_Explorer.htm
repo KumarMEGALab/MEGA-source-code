@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="AlnBuilder_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Alignment Menu (in Alignment Explorer)</title>
+<link rel="stylesheet" href="AlnBuilder_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<style type="text/css">
+<!--
+A:visited { color:#800080; }
+A:link { color:#0000ff; }
+-->
+</style>
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "5.4.1.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part V: Visualizing and Exploring Data > Alignment Explorer > Menu Items" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1 style="margin-left: 0in; font-size: 11.0pt;">Alignment Menu (in Alignment 
+ Explorer)</h1>
+<p class="BlockText" style="color: #000000;">This menu provides access 
+ to commands for editing the sequence data in the alignment grid.&#160;&#160;The 
+ commands are:</p>
+<p class="BlockText" style="color: #000000;"><b>Align by ClustalW</b>: 
+ This option is used to align the DNA or protein sequence included in the 
+ current selection on the alignment grid. You will be prompted for the 
+ alignment parameters (which are context sensitive for <u style="text-underline: double; 
+															 text-decoration: none; "><span 
+	 style="text-decoration: none; ">DNA</span></u><span style="display: none;">HC_CLUSTALW_Options_DNA_Dialog</span> 
+ or <u style="text-underline: double; text-decoration: none; "><span style="text-decoration: none; ">Protein</span></u><span 
+	 style="display: none;">HC_CLUSTALW_Options_Protein_Dialog</span> sequence 
+ data) to be used in <a href="javascript:TextPopup(this)" id="HotSpot30258" class="glossterm" style="color: #000000;">ClustalW</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot30258', 'POPUP30258');
+//]]></script><span class="glosstext" id="POPUP30258" style="display: none;"> ClustalW is a general purpose multiple sequence alignment program for DNA or proteins. You can learn more about ClustalW by visiting its website (http://www.ebi.ac.uk/clustalw/).</span>; 
+ to accept the parameters, press “OK”. This initiates the <a href="javascript:TextPopup(this)" id="HotSpot5013" class="glossterm" style="color: #000000;">ClustalW</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot5013', 'POPUP5013');
+//]]></script><span class="glosstext" id="POPUP5013" style="display: none;"> ClustalW is a general purpose multiple sequence alignment program for DNA or proteins. You can learn more about ClustalW by visiting its website (http://www.ebi.ac.uk/clustalw/).</span> alignment 
+ system. <i>Alignment Builder</i> then aligns the current selection in 
+ the alignment grid using the accepted parameters.</p>
+<p class="BlockText" style="color: #000000;"><b>Align by ClustalW (Codons)</b>: 
+ This option is used to align (via <a href="javascript:TextPopup(this)" id="HotSpot27782" class="glossterm" style="color: #000000;">ClustalW</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot27782', 'POPUP27782');
+//]]></script><span class="glosstext" id="POPUP27782" style="display: none;"> ClustalW is a general purpose multiple sequence alignment program for DNA or proteins. You can learn more about ClustalW by visiting its website (http://www.ebi.ac.uk/clustalw/).</span>) 
+ the coding sequence data in the current selection by first translating 
+ all codons to amino acids, performing the alignment, and finally replacing 
+ the amino acids with the original codons.</p>
+<p class="BlockText" style="color: #000000;"><b>Align by MUSCLE</b>: This 
+ option is used to align the DNA or protein sequence included in the current 
+ selection on the alignment grid.&#160;&#160;You will be prompted for the 
+ alignment parameters (<u style="text-underline: double; text-decoration: none; "><span 
+	 style="text-decoration: none; ">DNA</span></u><span style="display: none;">MUSCLE_Options_DNA_</span> 
+ or <u style="text-underline: double; text-decoration: none; "><span style="text-decoration: none; ">Protein</span></u><span 
+	 style="display: none;">MUSCLE_Options_Protein_</span>) to be used 
+ in MUSCLE; to accept the parameters, press “OK”. This initiates the MUSCLE 
+ alignment system. <i>Alignment Builder</i> then aligns the current selection 
+ in the alignment grid using the accepted parameters.</p>
+<p class="BlockText" style="color: #000000;"><b>Align by MUSCLE (Codons)</b>: 
+ This option is used to align (via MUSCLE) the coding sequence data in 
+ the current selection by first translating all codons to amino acids, 
+ performing the alignment, and finally replacing the amino acids with the 
+ original codons.</p>
+<p class="BlockText" style="color: #000000;"><b>Mark/Unmark Site</b>: This 
+ marks or unmarks a single site in the alignment grid. Each sequence in 
+ the alignment may only have one site marked at a time. Modifications can 
+ be made to the alignment by marking two or more sites and then aligning 
+ them using the <i>Align Marked Sites</i> function.</p>
+<p class="BlockText" style="color: #000000;"><b>Align Marked Sites</b>: 
+ This aligns marked sites. Two or more sites in the alignment must be marked 
+ for this function to have an effect.</p>
+<p class="BlockText" style="color: #000000;"><b>Unmark All Sites</b>: This 
+ item unmark all currently marked sites across all sequences in the alignment 
+ grid.</p>
+<p class="BlockText" style="color: #000000;"><b>Delete Gap-Only Sites</b>: 
+ This item deletes gap-only sites (site columns containing gaps across 
+ all sequences) from the alignment grid.&#160;</p>
+<p class="BlockText" style="color: #000000;"><b>Auto-Fill Gaps</b>: If 
+ this item is checked, then the <i>Alignment Builder</i> will ensure that 
+ all sequences in the alignment grid are the same length by padding shorter 
+ sequences with gaps at the end.</p>
+<p>&#160;</p>
+<b><span style="font-size: 8.0pt; font-family: Arial, sans-serif; background: #ffffff;"><br 
+	 style="clear: all;" clear="all" />
+</span></b><span> </span>
+</body>
+</html>

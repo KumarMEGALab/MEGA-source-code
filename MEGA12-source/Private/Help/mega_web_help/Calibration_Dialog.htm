@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="PhylogeneticTrees_RH.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Calibration Dialog</title>
+<link rel="stylesheet" href="PhylogeneticTrees_RH.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<style type="text/css">
+<!--
+A:visited { color:#954F72; }
+A:link { color:#0000ff; }
+-->
+</style>
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.4.0_2";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Constructing Time Trees" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1 style="font-family: Arial, sans-serif; font-size: 14pt;">Calibration 
+ Dialog</h1>
+<p style="font-family: Arial, sans-serif;">The <span style="font-style: italic;">Calibration 
+ Editor</span> allows you to define multiple divergence time calibration 
+ constraints which will be used for the RelTime analyses.</p>
+<p style="font-family: Arial, sans-serif;">When you select a RelTime analysis, 
+ the <span style="font-style: italic;">Timetree Wizard</span> will be displayed 
+ and you will first be prompted to provide an alignment file (if one is 
+ not already activated) and a tree file which gives the <a href="javascript:TextPopup(this)" id="HotSpot50291" class="glossterm" style="font-family: Arial, sans-serif;">topology</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot50291', 'POPUP50291');
+//]]></script><span class="glosstext" id="POPUP50291" style="display: none;"> The branching pattern of a tree is its topology.</span> 
+ for the time tree, and then specify an outgroup in the tree to place the 
+ root on. Next, you will have the option to specify divergence time calibration 
+ constraints. If you select this option, &#160;the <span style="font-style: italic;">Calibration 
+ Editor</span> will be displayed and it can be used in specify divergence 
+ time calibration constraints.</p>
+<p style="font-family: Arial, sans-serif;"><b>Specifying Constraints</b></p>
+<p style="font-family: Arial, sans-serif;">To specify a calibration constraint 
+ using the <span style="font-style: italic;">Calibration Editor</span>, 
+ select a constraint type (<a href="Time_Trees.htm">see overview</a>) from 
+ the <b>Calibration</b> | <b>Calibrate MRCA <span style="font-weight: normal;">menu</span></b>. 
+ This will create a new calibration constraint and a dialog asking for 
+ constraint parameters will be shown. After entering the constraint parameters, 
+ you specify a <a href="javascript:TextPopup(this)" id="HotSpot38828" class="glossterm" style="font-family: Arial, sans-serif;">node</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot38828', 'POPUP38828');
+//]]></script><span class="glosstext" id="POPUP38828" style="display: none;"> A node in a phylogenetic tree represents a taxon, the external or terminal nodes represent the extant taxa and the internal nodes represent the ancestral taxa.</span> 
+ for which the new calibration applies by selecting two <a href="javascript:TextPopup(this)" id="HotSpot17800" class="glossterm" style="font-family: Arial, sans-serif;">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot17800', 'POPUP17800');
+//]]></script><span class="glosstext" id="POPUP17800" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> 
+ from the Taxon A and Taxon B dropdown lists whose most recent common ancestor 
+ (MRCA) is the node to apply the constraint to. Next, edit the calibration 
+ name if the default name is not satisfactory. You may also edit the node 
+ label name (optional) in the MRCA Node Label edit box. This node label 
+ is useful for interpreting the tabular Time Tree output produced by MEGA’s 
+ Time Tree system so that you can quickly identify calibrated nodes by 
+ name instead of node number. You can edit the selected constraint's values 
+ at any time by clicking the edit button that is next to the constraint 
+ value(s). You can provide min and max times, just a min time, or just 
+ a max time (as long as at least one min time and one max time are provided 
+ among all constraints).</p>
+<p style="font-family: Arial, sans-serif;">To specify a calibration constraint 
+ using the tree display, select an internal node in the tree and then select 
+ a constraint type from the <b>Calibration</b> | <b>Calibrate Selected 
+ Node</b> menu. When you launch this action, a new calibration constraint 
+ will be created in the <span style="font-style: italic;">Calibration Editor</span> 
+ with two taxa already selected from the Taxon A and Taxon B dropdown lists. 
+ Then you can finish providing calibration parameters as described above.</p>
+<p style="font-family: Arial, sans-serif;">Once you are finished specifying 
+ constraints, you can save your changes by clicking the <span style="font-style: italic;">OK</span> 
+ button. This will advance the <span style="font-style: italic;">Timetree 
+ Wizard</span> to the next step.</p>
+<p style="font-family: Arial, sans-serif;">&#160;</p>
+<p style="font-family: Arial, sans-serif;"><b>Importing and Exporting</b></p>
+<p style="font-family: Arial, sans-serif;">Calibration constraints can 
+ be imported from a text file or saved to a text file using the Import 
+ and Export features. Calibration constraints imported from text files 
+ must be formatted according to a set of rules which are <u style="text-underline: double;"><a 
+	 href="Calibration_File_Format.htm" style="color: #007fbf; font-family: Arial, sans-serif;">described 
+ here</a></u><span style="display: none;">Calibration_File_Format</span>. 
+ When you export a set of calibration constraints, they are saved in a 
+ format that can be imported into the <span style="font-style: italic;">Calibration 
+ Editor</span> and also be used by the command-line version of MEGA (<u><span 
+	 style="color: #008000;"><a href="javascript:TextPopup(this)" id="HotSpot7209" class="glossterm" style="font-family: Arial, sans-serif;">MEGA-CC</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot7209', 'POPUP7209');
+//]]></script><span class="glosstext" id="POPUP7209" style="display: none;"> MEGA-CC is the compute core that is used by MEGA and is distributed as a command-line application that is useful for iterative and batch analysis. It can be obtained from www.megasoftware.net .</span></span></u><span 
+	 style="display: none;">MEGA_CC</span>)Also, once a time tree analysis 
+ is complete,</p>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,801 @@
+object AnalysisPrefDlg: TAnalysisPrefDlg
+  Left = 552
+  Height = 657
+  Top = 54
+  Width = 539
+  BorderIcons = []
+  Caption = 'AnalysisPrefDlg'
+  ClientHeight = 657
+  ClientWidth = 539
+  DefaultMonitor = dmMainForm
+  Menu = NecessaryDummyMenu
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnHelp = FormHelp
+  OnResize = FormResize
+  ParentFont = True
+  Position = poMainFormCenter
+  LCLVersion = '3.4.0.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 36
+    Top = 621
+    Width = 539
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 36
+    ClientWidth = 539
+    TabOrder = 0
+    object ButtonsPanel: TPanel
+      Left = 0
+      Height = 36
+      Top = 0
+      Width = 539
+      Align = alClient
+      BevelOuter = bvNone
+      ClientHeight = 36
+      ClientWidth = 539
+      TabOrder = 0
+      object ToolBar1: TToolBar
+        Left = 155
+        Height = 30
+        Top = 2
+        Width = 358
+        Align = alNone
+        AutoSize = True
+        ButtonHeight = 30
+        ButtonWidth = 115
+        Caption = 'ToolBar1'
+        EdgeBorders = []
+        EdgeInner = esNone
+        EdgeOuter = esNone
+        Images = ImageForm.DlgButtons
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 0
+        object HelpButton: TToolButton
+          Left = 1
+          Top = 0
+          Action = HelpAction
+        end
+        object CancelButton: TToolButton
+          Left = 120
+          Top = 0
+          Action = CancelAction
+        end
+        object OkButton: TToolButton
+          Left = 239
+          Top = 0
+          Action = OkAction
+        end
+      end
+    end
+  end
+  object OptionsPageControl: TPageControl
+    Left = 0
+    Height = 621
+    Top = 0
+    Width = 539
+    ActivePage = OptionsSummaryTab
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 1
+    object OptionsSummaryTab: TTabSheet
+      Caption = 'Options Summary'
+      ClientHeight = 593
+      ClientWidth = 531
+      object OptionsChosenGrid: TDrawGrid
+        Left = 0
+        Height = 593
+        Top = 0
+        Width = 531
+        Align = alClient
+        BorderStyle = bsNone
+        ColCount = 3
+        Columns = <        
+          item
+            MinSize = 8
+            MaxSize = 160
+            Title.Caption = 'Option'
+            Width = 174
+          end        
+          item
+            MinSize = 8
+            MaxSize = 160
+            Title.Alignment = taCenter
+            Title.Caption = 'Setting'
+            Width = 175
+          end        
+          item
+            MinSize = 8
+            MaxSize = 160
+            Title.Caption = ' '
+            Width = 80
+          end>
+        DefaultColWidth = 80
+        DefaultDrawing = False
+        DefaultRowHeight = 24
+        ExtendedSelect = False
+        FixedCols = 0
+        FixedRows = 0
+        Flat = True
+        GridLineWidth = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goEditing, goAlwaysShowEditor, goSmoothScroll, goCellHints]
+        ParentShowHint = False
+        ScrollBars = ssAutoVertical
+        ShowHint = True
+        TabOrder = 7
+        TitleStyle = tsNative
+        OnDrawCell = OptionsChosenGridDrawCell
+        OnGetCellHint = OptionsChosenGridGetCellHint
+        OnSelectEditor = OptionsChosenGridSelectEditor
+        OnSelectCell = OptionsChosenGridSelectCell
+        OnTopleftChanged = OptionsChosenGridTopleftChanged
+      end
+      object SelectCodonPosPanel: TPanel
+        Left = 64
+        Height = 19
+        Top = 90
+        Width = 300
+        BevelOuter = bvNone
+        BorderStyle = bsSingle
+        ClientHeight = 15
+        ClientWidth = 296
+        Color = clWhite
+        ParentBackground = False
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 0
+        object Pos1ChkBx: TCheckBox
+          Left = 8
+          Height = 18
+          Top = 1
+          Width = 44
+          AutoSize = False
+          Caption = '1st'
+          Checked = True
+          State = cbChecked
+          TabOrder = 0
+          OnClick = CodPosChkBxClick
+        end
+        object Pos2ChkBx: TCheckBox
+          Left = 54
+          Height = 18
+          Top = 1
+          Width = 51
+          AutoSize = False
+          Caption = '2nd'
+          Checked = True
+          State = cbChecked
+          TabOrder = 1
+          OnClick = CodPosChkBxClick
+        end
+        object Pos3ChkBx: TCheckBox
+          Left = 106
+          Height = 18
+          Top = 1
+          Width = 42
+          AutoSize = False
+          Caption = '3rd'
+          Checked = True
+          State = cbChecked
+          TabOrder = 2
+          OnClick = CodPosChkBxClick
+        end
+        object NoncodingChkBx: TCheckBox
+          Left = 153
+          Height = 18
+          Top = 1
+          Width = 131
+          AutoSize = False
+          Caption = 'Noncoding Sites'
+          Checked = True
+          State = cbChecked
+          TabOrder = 3
+          OnClick = CodPosChkBxClick
+        end
+      end
+      object SelectLabelsPanel: TPanel
+        Left = 192
+        Height = 18
+        Top = 205
+        Width = 136
+        BevelOuter = bvNone
+        BorderStyle = bsSingle
+        ClientHeight = 14
+        ClientWidth = 132
+        Color = clWhite
+        ParentBackground = False
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 1
+        Visible = False
+        object ChkLBx: TCheckListBox
+          Left = 0
+          Height = 14
+          Top = 0
+          Width = 132
+          Align = alClient
+          BorderStyle = bsNone
+          Color = clWhite
+          Columns = 8
+          Items.Strings = (
+            '+'
+          )
+          ItemHeight = 17
+          TabOrder = 0
+          OnClickCheck = ChkLBxClickCheck
+          Data = {
+            0100000000
+          }
+        end
+      end
+      object MaxExecutionTimePanel: TPanel
+        Left = 19
+        Height = 23
+        Top = 128
+        Width = 214
+        ClientHeight = 23
+        ClientWidth = 214
+        Color = clWhite
+        ParentBackground = False
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 2
+        object MaxRuntimeCheckbox: TCheckBox
+          Left = 6
+          Height = 19
+          Top = 0
+          Width = 85
+          Caption = 'Give up after'
+          TabOrder = 0
+          OnClick = MaxRuntimeCheckboxClick
+        end
+        object MaxExecutionTimeEdit: TFloatSpinEdit
+          Left = 93
+          Height = 22
+          Hint = 'Stop execution after this many hours'
+          Top = 0
+          Width = 63
+          Alignment = taRightJustify
+          AutoSize = False
+          MaxValue = 10000
+          TabOrder = 1
+        end
+        object Label1: TLabel
+          Left = 162
+          Height = 15
+          Top = 2
+          Width = 30
+          Caption = 'hours'
+          ParentColor = False
+          ParentFont = False
+        end
+      end
+      object seIntegerSpinEdit: TSpinEdit
+        Left = 26
+        Height = 23
+        Top = 154
+        Width = 40
+        OnChange = seIntegerSpinEditChange
+        OnEnter = seIntegerSpinEditEnter
+        OnExit = seIntegerSpinEditExit
+        TabOrder = 3
+        Value = 1
+      end
+      object seFloatSpinEdit: TFloatSpinEdit
+        Left = 26
+        Height = 23
+        Top = 192
+        Width = 40
+        OnChange = seFloatSpinEditChange
+        OnEnter = seFloatSpinEditEnter
+        OnExit = seFloatSpinEditExit
+        TabOrder = 4
+        Value = 1.5
+      end
+      object FPickListComboBx: TComboBox
+        Left = 9
+        Height = 23
+        Top = 8
+        Width = 214
+        AutoDropDown = True
+        AutoSize = False
+        ItemHeight = 15
+        Style = csDropDownList
+        TabOrder = 5
+        Visible = False
+        OnChange = FPickListComboBxChange
+      end
+      object TreeFileNameEdit: TFileNameEdit
+        Left = 19
+        Height = 22
+        Top = 38
+        Width = 64
+        OnAcceptFileName = TreeFileNameEditAcceptFileName
+        FilterIndex = 0
+        HideDirectories = False
+        ButtonWidth = 18
+        NumGlyphs = 1
+        AutoSize = False
+        MaxLength = 0
+        TabOrder = 6
+        OnExit = TreeFileNameEditExit
+      end
+      object TransposeDataPanel: TPanel
+        Left = 122
+        Height = 23
+        Top = 334
+        Width = 170
+        BevelOuter = bvNone
+        BorderStyle = bsSingle
+        ClientHeight = 19
+        ClientWidth = 166
+        TabOrder = 8
+        object TransposeDataCheckbx: TCheckBox
+          Left = 0
+          Height = 19
+          Top = 3
+          Width = 98
+          Caption = 'Transpose Data'
+          TabOrder = 0
+        end
+      end
+      object NumSamplesPanel: TPanel
+        Left = 189
+        Height = 24
+        Top = 429
+        Width = 177
+        BevelOuter = bvNone
+        BorderStyle = bsSingle
+        ClientHeight = 20
+        ClientWidth = 173
+        Color = clWhite
+        ParentBackground = False
+        ParentColor = False
+        TabOrder = 9
+        object NumSamplesCBox: TComboBox
+          Left = 0
+          Height = 23
+          Top = 0
+          Width = 97
+          Align = alClient
+          Anchors = [akTop, akLeft, akRight]
+          ItemHeight = 15
+          ItemIndex = 0
+          Items.Strings = (
+            'Adaptive'
+            'User-defined'
+          )
+          Style = csDropDownList
+          TabOrder = 0
+          Text = 'Adaptive'
+          OnChange = NumSamplesCBoxChange
+        end
+        object NumSamplesSE: TSpinEdit
+          Left = 97
+          Height = 20
+          Top = 0
+          Width = 76
+          Align = alRight
+          Alignment = taRightJustify
+          Anchors = [akTop, akRight]
+          AutoSize = False
+          Enabled = False
+          TabOrder = 1
+        end
+      end
+      object NumReplicatesPanel: TPanel
+        Left = 189
+        Height = 24
+        Top = 480
+        Width = 177
+        BevelOuter = bvNone
+        BorderStyle = bsSingle
+        ClientHeight = 20
+        ClientWidth = 173
+        Color = clWhite
+        ParentBackground = False
+        ParentColor = False
+        TabOrder = 10
+        object NumReplicatesCBox: TComboBox
+          Left = 0
+          Height = 23
+          Top = 0
+          Width = 97
+          Align = alClient
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = False
+          ItemHeight = 15
+          ItemIndex = 0
+          Items.Strings = (
+            'Adaptive'
+            'User-defined'
+          )
+          Style = csDropDownList
+          TabOrder = 0
+          Text = 'Adaptive'
+          OnChange = NumReplicatesCBoxChange
+        end
+        object NumReplicatesSE: TSpinEdit
+          Left = 97
+          Height = 20
+          Top = 0
+          Width = 76
+          Align = alRight
+          Alignment = taRightJustify
+          Anchors = [akTop, akRight]
+          AutoSize = False
+          Enabled = False
+          TabOrder = 1
+        end
+      end
+      object PercentSitesPanel: TPanel
+        Left = 189
+        Height = 24
+        Top = 367
+        Width = 177
+        BevelOuter = bvNone
+        BorderStyle = bsSingle
+        ClientHeight = 20
+        ClientWidth = 173
+        Color = clWhite
+        ParentBackground = False
+        ParentColor = False
+        TabOrder = 11
+        object PercentSitesCBox: TComboBox
+          Left = 0
+          Height = 23
+          Top = 0
+          Width = 97
+          Align = alClient
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = False
+          Color = clWhite
+          ItemHeight = 15
+          ItemIndex = 0
+          Items.Strings = (
+            'Adaptive'
+            'User-defined'
+          )
+          Style = csDropDownList
+          TabOrder = 0
+          Text = 'Adaptive'
+          OnChange = PercentSitesCBoxChange
+        end
+        object PercentSitesSE: TFloatSpinEdit
+          Left = 97
+          Height = 20
+          Top = 0
+          Width = 76
+          Align = alRight
+          Alignment = taRightJustify
+          Anchors = [akTop, akRight]
+          AutoSize = False
+          Enabled = False
+          TabOrder = 1
+        end
+      end
+    end
+    object AppOptionsSheet: TTabSheet
+      Caption = 'AppOptionsSheet'
+      TabVisible = False
+    end
+    object DataSettingsPage: TTabSheet
+      Caption = 'Gaps/Identical/Missing Data Treatment'
+      ClientHeight = 593
+      ClientWidth = 531
+      ParentFont = False
+      object MissingSymbolEdit: TLabeledEdit
+        Left = 96
+        Height = 23
+        Top = 90
+        Width = 29
+        Alignment = taCenter
+        EditLabel.Height = 15
+        EditLabel.Width = 68
+        EditLabel.Caption = 'Missing Base'
+        EditLabel.ParentColor = False
+        EditLabel.ParentFont = False
+        LabelPosition = lpLeft
+        TabOrder = 0
+        Text = '?'
+      end
+      object IdenticalSymbolEdit: TLabeledEdit
+        Left = 96
+        Height = 23
+        Top = 61
+        Width = 29
+        Alignment = taCenter
+        EditLabel.Height = 15
+        EditLabel.Width = 72
+        EditLabel.Caption = 'Identical Base'
+        EditLabel.ParentColor = False
+        EditLabel.ParentFont = False
+        LabelPosition = lpLeft
+        TabOrder = 1
+        Text = '.'
+      end
+      object GapSymbolEdit: TLabeledEdit
+        Left = 96
+        Height = 23
+        Top = 32
+        Width = 29
+        Alignment = taCenter
+        EditLabel.Height = 15
+        EditLabel.Width = 63
+        EditLabel.Caption = 'Gap Symbol'
+        EditLabel.ParentColor = False
+        EditLabel.ParentFont = False
+        LabelPosition = lpLeft
+        TabOrder = 2
+        Text = '-'
+      end
+      object DataSettingsDefaultsBtn: TButton
+        Left = 10
+        Height = 27
+        Top = 119
+        Width = 130
+        Caption = 'Restore Defaults'
+        TabOrder = 3
+        OnClick = DataSettingsDefaultsBtnClick
+      end
+      object Label2: TLabel
+        Left = 40
+        Height = 15
+        Top = 9
+        Width = 54
+        Caption = 'Data Type:'
+        ParentColor = False
+        ParentFont = False
+      end
+      object DataTypeLabel: TLabel
+        Left = 110
+        Height = 15
+        Top = 9
+        Width = 132
+        Caption = 'Nucleotide (non-coding)'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label3: TLabel
+        Left = 176
+        Height = 102
+        Top = 38
+        Width = 244
+        AutoSize = False
+        Caption = 'Please note that if missing, identical, or gap symbol options are specified in the ''Format'' command of a .meg file, those options will override the options specified here, which are saved in the MEGA Analysis Options (.mao) file.'
+        ParentColor = False
+        ParentFont = False
+        WordWrap = True
+      end
+      object ProtoLabelledSitesCombo: TComboBox
+        Left = 110
+        Height = 23
+        Top = 176
+        Width = 175
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'All Sites'
+          'Labelled Sites'
+          'Unlabelled Sites'
+        )
+        Style = csDropDownList
+        TabOrder = 4
+        Text = 'All Sites'
+        OnChange = ProtoLabelledSitesComboChange
+      end
+      object ProtoLabelsToUseEdit: TEdit
+        Left = 110
+        Height = 23
+        Top = 221
+        Width = 175
+        TabOrder = 5
+      end
+      object Label4: TLabel
+        Left = 17
+        Height = 15
+        Top = 182
+        Width = 80
+        Caption = 'Sites to Include'
+        ParentColor = False
+      end
+      object Label5: TLabel
+        Left = 8
+        Height = 15
+        Top = 225
+        Width = 89
+        Caption = 'Labels to Include'
+        ParentColor = False
+      end
+    end
+    object PrevOptSheet: TTabSheet
+      Caption = 'PrevOptSheet'
+      ClientHeight = 593
+      ClientWidth = 531
+      ParentFont = False
+      object PrevOptionVListEditor: TValueListEditor
+        Left = 0
+        Height = 593
+        Top = 0
+        Width = 531
+        Align = alClient
+        FixedCols = 0
+        ParentFont = False
+        RowCount = 2
+        TabOrder = 0
+        Strings.Strings = (
+          ''
+        )
+        ColWidths = (
+          51
+          459
+        )
+      end
+    end
+  end
+  object SaveAnalysisDlg: TSaveDialog
+    Left = 320
+    Top = 58
+  end
+  object ImageList2: TImageList
+    Height = 30
+    Width = 90
+    Left = 318
+    Top = 177
+    Bitmap = {
+      4C7A060000005A0000001E000000C10900000000000078DAED9CBB6F145718C5
+      FFBFD4E9D321A5A24824AA4494A6845420A571110A52844022053B10C83A09C2
+      363880317E60AC80ED60F37EB4139F0967757CF7CE786677676767F61447BB73
+      EF9DD7EF7EF3DD7D7C3AF3F3F3C9BC35127DF8F0C1AA50E4FCFEFD7BAB4291F3
+      BB77EFAC0A45CE6FDFBEB52A1439BF79F36660BD7CF932D9D8D8488F77E3C68D
+      6466662615DEA30D7DC3384F13352CCEABABABC9D5AB5753AEB76EDD4AEEDFBF
+      9F6C6D6DA5C27BB49139DA2695F3EBD7AFFBD6EDDBB753868B8B8BC9EEEE6EF2
+      E2C58BA8D047DED8679073364D837226E3B5B5B54CBEA13076D25893F3AB57AF
+      4AEBE1C387A51987AC373737FB3A77D3D42FE7E7CF9FA7F97869692993A57E0F
+      DADEDEEEE9470E41BECE3B0F72D1850B177ADA313F682F3A4FCBCBCBC9A953A7
+      D2D726715E5F5F4FE3716F6FAF871FDA8F1F3F9E1C3B76EC90D01EE66BB4E158
+      59E7014BEC1BE38F76BC16B9DEB2E3C78533F6413CC6E2787A7A3A3979F2643A
+      06DBF83C77E2C489F43E63319D77FE329C77767692D9D9D9749FCB972FA7DB59
+      E3310EE2F352E6D91884333EFB961172C6CACACA917918F982F10D85FDF8CC37
+      373797791E720EDB171616D276BC62FBD1A347DD6708738C576CA33D367E6A6A
+      AAFB9C310620B02FCBA288FAE50C76F81C9CC7B8D3E974EF1DF782ED700C38E0
+      5847710617155992DBD9B3670F71C5FCE29C68CFE38C79E6F8D3A74FA7C7681A
+      67DE0BF3474CC3E2CCE745C7B02D8B33147B46C87E1C3817C91B972E5DEA59FB
+      AACA1B31CECAB2A99CB17E65AD8314D63F286F0C8F3328673CF3C81378FE9907
+      D897C559F30C8F316E7923EF731D19736DC9FB1ECECF758372460C6A4C735D60
+      6CE6AD8378CFB510CFE03871DEDFDF3FF27B0AE203CA8B657C4FC93B0FB88075
+      D88E3844BBC623DBA8581FDB9837B03673BCC6FFB87086909F87F1BDBBAA7BCB
+      532C3F57A941384383FE8E54076308DFA5A0A67056D6657F17AD8B711D1A0667
+      E690A2BFF3D7952BDAC0996B233E3B707DD3FFADD096F7B9C29C2D733667CB9C
+      EBE46C59AE17B55C2FEA7A51D78B5AAE1775BDA8EB455D2FEA7A51D78BBA5EB4
+      59F5A29B6B735D3DFBF7495FF5A28F37FE4C966E7EDBD3BEBBBD96B6E3B5C8F5
+      3ED95A4AAEFFFC65FADA967AD1077F5F4C7E3AFF697271FA9343427BD97A51B0
+      C4BE31FE68C76B91EB2D3BBE09F5A2F3BF9F49667FF83C8DE3B496F1E96AF2CB
+      F79FA5F759B65EB40CE7FDBDED64E5EE8FE93EF716CFA7DB59E3310EE2F352E6
+      D918C77A51E40BC63754B6EEEBCE47CE61FBE3F53FFEE776F08AED9D83B9E433
+      F4EBC11CE315DB688F8DBFFED317DDE78C3100AD1C5C6BD3EA18D79667BAF78E
+      7BC176D93A46720617155992DB5FD7A60E71DD7BF6343D27DAF338FFB375A73B
+      BE73E5EBF4184DE3FCDBC77B61FEE8A75EB428673E2F3A866D599CA1D83342F6
+      4DA917BDBBF05DCFDA5755DE887156964DE55CA45E14EB1F3448BD6851CE78E6
+      9127F0FC330FB02F8BB3E6191E63DCF2C651F5A2E0CBB565907AD1A29C11831A
+      D35C17189B79EB20DE732DBCB770BE71F5A29D2B5FA51AA45E145CC03A6C471C
+      A25DE3916D54AC8F6DCC1BEB0F66BAE335FE5D2F3A1CC5F2B3EB452BB8EFCE99
+      54AE17759D8CEB455D2FEABA2FD77D99B3399BB3E57A51CBF5A2AEE974BDA8EB
+      452DD78BB6B55ED4AABE5ED4AABE5ED4AABE5ED4AABE5ED4AABEBEAE1FA9F721
+      3D13EBF2A11C753DF02839D3532A143CA0D4A37214D7014FD7B6730E631CDE5C
+      E7CE9DEBF1B765DCC7629E3EA210EA99C27EB4C57C43712CCC2B843E1C67949C
+      47F1DB6096471ABC15D5130ABE45F407A5DF997A19D18B517D41B3FAE9AF065F
+      2FBD06F5546BDBEFCFBC47CDD1F0FF540EA86B0CB9C1530E6DE8A30F9DFACC21
+      26E90F88F77A3CF510ACCBEBAB2ECEA1C02164CA18572F51B2D578C53C854C43
+      3F52C63D3D032785B37AF7D11791FE7D31CE947A06E33D18877925C6999A54CE
+      F401450EA57F3058847901B9827981C751AF45E61E9D27F562D5782767CC23E7
+      7A12382B27DE33B7C1823982B9853EA28C59F6339E311F6CCBF20DD567463D47
+      DBC2F928AF50BD5FFDDC167A8C83255815ED8F71647F55FEE5FEBFDB7505E66C
+      99B3395BE66CCEE66C99B3EB452DCBF5A2AE17B55C2FEA7A51D78BBA8ED1F5A2
+      AE17B55C2FEA7A51D78B8EE25CEA7D48CFC4BA7C28ABF45EAC9B333D2C43C103
+      4A3D2A47711DF0746D3BE730C6E1CD75F3DA548FBF2DE33E16F3F41185D6577A
+      6B3ED116F30DC5B130AF10FA709CB6D58B6679A4C15B513DA1E05B447F50FA9D
+      A99711BD18D51734AB9FFE6AF0F5D26B504FB5B6FDFECC7B54EF33F87F2A879D
+      8FBE77CA0D9E7268431F7DE8D4670EDEABF407C47B3D9E7A08D6E5F55517E750
+      E01032658CAB9728D96ABC629E42A6A11F29E39E9E8193C259BDFBE88B48FFBE
+      18674A3D83F11E8CC3BC12E34C4D2A67FA802287D23F182CC2BC805CC1BCC0E3
+      A8D722738FCE937AB16ABC9333E691733D099C9513EF99DB60C11CC1DC421F51
+      C62CFB19CF980FB665F986EA33A39EA36DE17C9457A8DE2FF202D7CAD0631C2C
+      C1AA687F8C23FBABF22FF7FFDDAE2B3067CB9CCDD93267733667CB9C5D2F6A59
+      AE1775BDA8E57A51D78BBA5ED4758CAE1775BDA8E57A51D78BBA5EB48E73D333
+      31D607BF23A80DDEA27572869F28FDA462BE96F0FFACC20314738BF34E0A677A
+      7FC18F2BC6939CD563371687DA1FCE17DB3806FBE398EA09396ACEA3FC8D909E
+      75F03D23EFD0930B7D8C77F511557F2EF521E558F5CB54EF349E23F4826CF3EF
+      CFEA010AE6784F9F40E5AC7E7F18070F3BF0543F41E54AEEDC8773A07398E5A1
+      D746CE884FFA212A1FF5468C7953321EC1915E7FE1B1D51390F9A1885761DB38
+      339663D29836E7C18438A6C7B52AF473657ED6188FE58D989FA5E68D2CCEC843
+      A3F216ADC3F73276EFB13E72A74F28D7395D07E9434A7FF2F099889D8BF3430F
+      EED8B5349D33D63DDC977ADF869E9F8C4FF0A4F27C42B53FF4C5CDDA87D78173
+      655D8BFFEF765D8165CEE66CCE96399BB365CEE6EC7A51CB72BDA8E57A51D78B
+      BA5ED472BDA8EB452DD78BBA5ED4F5A25613EB45E99918EB5BE87C93AA0DDEA2
+      7572869F28FDA462BE96F0FFACC20314738BF34E0A677A8DC28F2BC6939CD563
+      371687DA1FCE17DB3806FBE398382FF76973BD283DEBE07B46AFB5D0930B7D8C
+      77F511557F2EF521E558F5CB54EF349E23F4826CF3EFCFEA010AE6784F9F40E5
+      AC7E7F18070F3BF0543F41E54AEEDC8773A07398E5A1D746CE884FFA212A1FF5
+      468C7953321EC1915E7FE1B1D513909EB145BC0ADBC699B11C93C6B4390F26C4
+      31E259BD89A1D0CF95F959633C9637627E969A37B238230F8DCA5BB40EDFCBD8
+      BDC7FAC89D3EA15CE7741DA40F29FDC9C36722762ECE0F3DB863D7D274CE58F7
+      705FEA7D1B7A7E323EC193CAF309D5FED017376B1F5E07CE95752DFEBFDB7505
+      96399BB3395BE66CCE96399BB3EB45AD61E93F5E4420FB
+    }
+  end
+  object ArrowImg16: TImageList
+    Left = 128
+    Top = 264
+    Bitmap = {
+      4C7A010000001000000010000000EC0000000000000078DACD924D8A83401085
+      EB2C39CB9C2DBA8A64FC193493890ADEC513B84D44A388E0CF8088BF2FDD0D42
+      1659C41902593C8A86FEAAAA5F3F008437D7300CD4F7FD9F5943D7F1B9DFA369
+      1A715EC3775D47799ED39761C060AAAAEA618F799E85A669A2711C455DF6AEEB
+      9AC230A4EFC3019669A2288A8FFBF72C77B22CA3344DE91AC71433455124B8CB
+      F94C411090EFFBA4280A744D4359961B3E87F3BF8CF53C0F966581CFF8391E61
+      9F4E701C07AEEBC265D5B16DA8AA0A69BB852C49E09EB46DBB9A976559F0FA1D
+      BF6AFFDD0E1AEBC33D58F65FEB5F92244FE7E1D9FF7B557EFE9BDF57EB06B5F0
+      E92F
+    }
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 341
+    Top = 290
+    object HelpAction: TAction
+      Caption = '&Help'
+      Hint = 'Open the help manual'
+      ImageIndex = 8
+      OnExecute = HelpBtnClick
+      ShortCut = 112
+    end
+    object CancelAction: TAction
+      Caption = '&Cancel'
+      Hint = 'Abort the current action'
+      ImageIndex = 0
+      OnExecute = CancelBtnClick
+      ShortCut = 27
+    end
+    object OkAction: TAction
+      Caption = '&Ok'
+      Hint = 'Save the current settings and continue'
+      ImageIndex = 5
+      OnExecute = OkBtnClick
+      ShortCut = 16467
+    end
+    object SaveSettingsAction: TAction
+      Caption = '&Save Settings'
+      Hint = 'Save the current settings to a .mao control file'
+      ImageIndex = 6
+      OnExecute = SaveSettingsBtnClick
+    end
+  end
+  object ArrowImg32: TImageList
+    Height = 32
+    Width = 32
+    Left = 36
+    Top = 355
+    Bitmap = {
+      4C7A010000002000000020000000DF0000000000000078DAFBFFFF3FC3FF513C
+      A4717E7EBE0010DB0331F700D8AD5A909FFF1288FF03D9F7815899CEF6D783EC
+      866120FF113DDD00B42B06D97E7ABB01680F13104F437743C12070C30084C394
+      513780DD3079D40D60374C22C60DA0320C880F01F14B2AE35758F225861B0AF3
+      F3B76253474B0CB47F2B92FF0FD0DB7EA09F4F20D96F5D8023AC68847F01EDF4
+      424B03AC40CC4B650CAA1BFEA0853BC8EE503AA4FF20903F47A0DD2140FB7E0F
+      16BB0B4680BF4B81760CA0BF3507CADF50FBE306C2DF48F68B01F173A8DD3FE9
+      6937921B2480381C88D547FB63430B03000435EB02
+    }
+  end
+  object NecessaryDummyMenu: TMainMenu
+    Left = 452
+    Top = 104
+    object DummyMenuItem: TMenuItem
+      Visible = False
+    end
+  end
+end

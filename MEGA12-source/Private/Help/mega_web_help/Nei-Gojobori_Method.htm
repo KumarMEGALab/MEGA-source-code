@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="DistanceMethods_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Nei-Gojobori Method</title>
+<link rel="stylesheet" href="DistanceMethods_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.2.1.3.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Computing Evolutionary Distances > Distance Models > Synonymous and Nonsynonymous Substitution Models" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+<h1 style="margin-left: 0in;"><span style="font-size: 11.0pt;">Nei-Gojobori 
+ Method</span></h1>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">This 
+ method computes the numbers of </span><u style="color: #007fbf;"><span 
+	 style="color: #007fbf;"><a href="Synonymous_change.htm" style="color: #007fbf;">synonymous</a></span></u><span 
+	 style="display: none;">RH_Synonymous_change</span><span style="font-size: 11.0pt;"> 
+ and </span><u><span style="color: #008000;"><a href="Nonsynonymous_change.htm">nonsynonymous</a></span></u><span 
+	 style="display: none;">RH_Nonsynonymous_change</span><span style="font-size: 11.0pt;"> 
+ substitutions and the numbers of potentially synonymous and potentially 
+ nonsynonymous sites (</span><a href="Nei_and_Gojobori_1986.htm" style="color: #007fbf;"><u 
+	 style="color: #007fbf;"><span style="color: #007fbf;">Nei and Gojobori 
+ 1986</span></u><span style="display: none; color: #007fbf;">Nei_and_Gojobori_1986</span></a><span 
+	 style="font-size: 11.0pt;">). &#160;Based on these estimates, <i>MEGA</i> 
+ can be asked to produce the following quantities:</span></p>
+<p style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p style="margin-top: 0in; text-indent: 30.25pt; text-autospace: none;"><u><span 
+	 style="font-size: 11.0pt;">Number of differences</span></u> <span 
+	 style="font-size: 11.0pt;">(<i>S<sub>d</sub></i> or <i>N<sub>d</sub></i>)</span></p>
+<p style="margin-top: 0in; margin-right: 6.5pt; margin-bottom: .0001pt; 
+	 margin-left: .5in; text-autospace: none;"><span style="font-size: 11.0pt;">These 
+ are simple counts of the number of synonymous (<i>S<sub>d</sub></i>) and 
+ nonsynonymous (<i>N<sub>d</sub></i>) differences.&#160;&#160;To compare 
+ these two numbers, you must use the p-distance because the number of potential 
+ synonymous sites is much smaller than the number of nonsynonymous sites.</span></p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></p>
+<p style="margin-top: 0in; text-indent: 30.25pt; text-autospace: none;"><i><u><span 
+	 style="font-size: 11.0pt;">p</span></u></i><u><span style="font-size: 11.0pt;">-distance</span></u> 
+ <span style="font-size: 11.0pt;">(<i>p<sub>S</sub></i> or <i>p<sub>N</sub></i>)</span></p>
+<p style="margin-top: 0in; margin-right: 6.5pt; margin-bottom: .0001pt; 
+	 margin-left: .5in; text-autospace: none;"><span style="font-size: 11.0pt;">The 
+ count of the number of synonymous differences (<i>S<sub>d</sub></i>) is 
+ normalized using the possible number of synonymous sites (<i>S</i>).&#160;&#160;A 
+ similar computation can be made for nonsynonymous differences.</span></p>
+<p class="MTDisplayEquation" style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<u>Jukes-Cantor 
+ correction</u> (<i>d<sub>S</sub></i> or <i>d<sub>N</sub></i>)</span></p>
+<p style="margin-top: 0in; margin-right: 6.5pt; margin-bottom: .0001pt; 
+	 margin-left: .5in; text-autospace: none;"><span style="font-size: 11.0pt;">The 
+ <i>p</i>-distances computed above can be corrected to account for multiple 
+ substitutions at the same site.</span></p>
+<p>&#160;</p>
+<p style="margin-left: .5in;"><u><span style="font-size: 11.0pt;">Difference 
+ between synonymous and nonsynonymous distances</span></u></p>
+<p style="margin-left: .5in;"><i><span style="font-size: 11.0pt;">MEGA</span></i> 
+ <span style="font-size: 11.0pt;">can compute differences between the synonymous 
+ and nonsynonymous distances.&#160;&#160;These statistics are useful in 
+ conducting tests for selection.</span></p>
+<p>&#160;</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<u>Number 
+ of Sites</u> (<i>S</i> or <i>N</i>)</span></p>
+<p style="margin-top: 0in; margin-right: 6.5pt; margin-bottom: .0001pt; 
+	 margin-left: .5in; text-autospace: none;"><span style="font-size: 11.0pt;">The 
+ numbers of potential synonymous and nonsynonymous sites can be computed 
+ using this option.&#160;&#160;For each pair of sequences, the average 
+ number of synonymous or nonsynonymous sites is reported.</span></p>
+<p>&#160;</p>
+<p><span style="font-size: 11.0pt;">The formulas for computing these quantities 
+ are:</span></p>
+<p>&#160;</p>
+<table cellspacing="0">
+	<col />
+	<col />
+	<col />
+	<tr>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><b><u><span 
+		 style="font-size: 11.0pt;">Quantity</span></u></b></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><b><u><span 
+		 style="font-size: 11.0pt;">Formula</span></u></b></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><b><u><span 
+		 style="font-size: 11.0pt;">Variance</span></u></b></p></td>
+	</tr>
+	<tr>
+		<td style="padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;"><p><i><span style="font-size: 11.0pt;">P<sub>S</sub></span></i></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><i><span 
+		 style="font-size: 11.0pt;">S<sub>d</sub>/S</span></i></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MTDisplayEquation"><i><span style="font-size: 11.0pt;">V(p<sub>S</sub>) 
+		 = p<sub>S</sub>(1 – p<sub>S</sub>)/S&#160;</span></i></p></td>
+	</tr>
+	<tr>
+		<td style="padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;"><p><i><span style="font-size: 11.0pt;">p<sub>N</sub></span></i></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><i><span 
+		 style="font-size: 11.0pt;">N<sub>d</sub>/N</span></i></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><i><span 
+		 style="font-size: 11.0pt;">V(p<sub>N</sub>) = p<sub>N</sub>(1 
+		 – p<sub>N</sub>)/N</span></i></p></td>
+	</tr>
+	<tr>
+		<td style="padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;"><p><i><span style="font-size: 11.0pt;">d<sub>S</sub></span></i></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><i><span 
+		 style="font-size: 11.0pt;">-<sup>3</sup>/<sub>4</sub>ln(1 – <sup>4</sup>/<sub>3</sub>P<sub>S</sub>)</span></i></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><i><span 
+		 style="font-size: 11.0pt;">V(d<sub>S</sub>) = p<sub>S</sub>(1 
+		 – p<sub>S</sub>)/[(1 – <sup>4</sup>/<sub>3</sub>p<sub>S</sub>)<sup>2</sup>S]</span></i></p></td>
+	</tr>
+	<tr>
+		<td style="padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;"><p><i><span style="font-size: 11.0pt;">dN</span></i></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><i><span 
+		 style="font-size: 11.0pt;">-<sup>3</sup>/<sub>4</sub>ln(1 – <sup>4</sup>/<sub>3</sub>P<sub>N</sub>)</span></i></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><i><span 
+		 style="font-size: 11.0pt;">V(d<sub>N</sub>) = p<sub>N</sub>(1 
+		 – p<sub>N</sub>)/[(1 – <sup>4</sup>/<sub>3</sub>p<sub>N</sub>)<sup>2</sup>N]</span></i></p></td>
+	</tr>
+	<tr>
+		<td style="padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;"><p><i><span style="font-size: 11.0pt;">D<sub>p</sub></span></i></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><i><span 
+		 style="font-size: 11.0pt;">p<sub>N</sub> - p<sub>S</sub></span></i></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><i><span 
+		 style="font-size: 11.0pt;">V(p<sub>N</sub>) + (V(p<sub>S</sub>)</span></i></p></td>
+	</tr>
+	<tr>
+		<td style="padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;"><p><i><span style="font-size: 11.0pt;">D<sub>d</sub></span></i></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><i><span 
+		 style="font-size: 11.0pt;">d<sub>N</sub> - d<sub>S</sub></span></i></p></td>
+		<td style="vertical-align: top; padding: 0in 5.4pt 0in 5.4pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p><i><span 
+		 style="font-size: 11.0pt;">V(d<sub>N</sub>) + (V(d<sub>S</sub>)</span></i></p></td>
+	</tr>
+</table>
+<p>&#160;</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">See 
+ also </span><a href="Nei_and_Kumar_2000.htm" style="color: #007fbf;"><u 
+	 style="color: #007fbf;"><span style="color: #007fbf;">Nei and Kumar 
+ (2000)</span></u><span style="display: none; color: #007fbf;">Nei_and_Kumar_2000</span></a><span 
+	 style="font-size: 11.0pt;">, page 52</span></p>
+<p>&#160;</p>
+</body>
+</html>

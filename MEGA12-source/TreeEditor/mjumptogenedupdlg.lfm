@@ -1,0 +1,273 @@
+object JumpToGeneDupForm: TJumpToGeneDupForm
+  Left = 634
+  Height = 295
+  Top = 295
+  Width = 220
+  Caption = 'Gene Duplication \ Speciation Events'
+  ClientHeight = 295
+  ClientWidth = 220
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  OnActivate = FormActivate
+  OnResize = FormResize
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '2.2.4.0'
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 272
+    Width = 220
+    Panels = <>
+    SimpleText = 'Focused on Gene Duplication Event'
+  end
+  object BitBtn3: TBitBtn
+    Left = 112
+    Height = 30
+    Top = 173
+    Width = 81
+    Action = NextSpeciationAction
+    Layout = blGlyphRight
+    Images = ImageForm.DefaultIcons
+    ImageIndex = 94
+    TabOrder = 1
+  end
+  object BitBtn4: TBitBtn
+    Left = 24
+    Height = 30
+    Top = 173
+    Width = 81
+    Action = PrevSpeciationAction
+    Images = ImageForm.DefaultIcons
+    ImageIndex = 95
+    TabOrder = 2
+  end
+  object Label2: TLabel
+    Left = 41
+    Height = 13
+    Top = 136
+    Width = 33
+    Caption = 'Count:'
+    ParentColor = False
+  end
+  object SpeciationsCountLbl: TLabel
+    Left = 95
+    Height = 13
+    Top = 136
+    Width = 12
+    Alignment = taRightJustify
+    Caption = '10'
+    ParentColor = False
+  end
+  object SpeciationsCurrentLbl: TLabel
+    Left = 99
+    Height = 13
+    Top = 152
+    Width = 6
+    Alignment = taRightJustify
+    Caption = '2'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 16
+    Height = 13
+    Top = 152
+    Width = 72
+    Alignment = taRightJustify
+    Caption = 'Current Index:'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 16
+    Height = 13
+    Top = 48
+    Width = 72
+    Alignment = taRightJustify
+    Caption = 'Current Index:'
+    ParentColor = False
+  end
+  object GeneDupCurrentLbl: TLabel
+    Left = 101
+    Height = 13
+    Top = 48
+    Width = 6
+    Alignment = taRightJustify
+    Caption = '2'
+    ParentColor = False
+  end
+  object GeneDupCountLbl: TLabel
+    Left = 95
+    Height = 13
+    Top = 32
+    Width = 12
+    Alignment = taRightJustify
+    Caption = '10'
+    ParentColor = False
+  end
+  object Label1: TLabel
+    Left = 56
+    Height = 13
+    Top = 32
+    Width = 33
+    Alignment = taRightJustify
+    Caption = 'Count:'
+    ParentColor = False
+  end
+  object BitBtn2: TBitBtn
+    Left = 24
+    Height = 30
+    Top = 72
+    Width = 81
+    Action = PrevGeneDupAction
+    Images = ImageForm.DefaultIcons
+    ImageIndex = 95
+    TabOrder = 3
+  end
+  object BitBtn1: TBitBtn
+    Left = 112
+    Height = 30
+    Top = 72
+    Width = 81
+    Action = NextGeneDupAction
+    Layout = blGlyphRight
+    Images = ImageForm.DefaultIcons
+    ImageIndex = 94
+    TabOrder = 4
+  end
+  object Label5: TLabel
+    Left = 18
+    Height = 13
+    Top = 16
+    Width = 85
+    Caption = 'Gene Duplications'
+    ParentColor = False
+  end
+  object Label6: TLabel
+    Left = 18
+    Height = 13
+    Top = 120
+    Width = 54
+    Caption = 'Speciations'
+    ParentColor = False
+  end
+  object ToolBar1: TToolBar
+    Left = 51
+    Height = 30
+    Top = 232
+    Width = 120
+    Align = alNone
+    AutoSize = True
+    ButtonHeight = 30
+    ButtonWidth = 115
+    Caption = 'ToolBar1'
+    EdgeInner = esNone
+    EdgeOuter = esNone
+    HotImages = ImageForm.DlgButtonsHover
+    Images = ImageForm.DlgButtons
+    TabOrder = 5
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 0
+      Action = CloseAction
+    end
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DefaultIcons
+    Top = 96
+    object NextGeneDupAction: TAction
+      Caption = 'Next'
+      Hint = 'Jump to the next gene duplication event'
+      ImageIndex = 94
+      OnExecute = NextGeneDupActionExecute
+      ShortCut = 114
+    end
+    object PrevGeneDupAction: TAction
+      Caption = 'Previous'
+      Hint = 'Jump to the previous gene duplication event'
+      ImageIndex = 95
+      OnExecute = PrevGeneDupActionExecute
+      ShortCut = 8306
+    end
+    object NextSpeciationAction: TAction
+      Caption = 'Next'
+      Hint = 'Jump to the next speciation event'
+      ImageIndex = 94
+      OnExecute = NextSpeciationActionExecute
+      ShortCut = 116
+    end
+    object PrevSpeciationAction: TAction
+      Caption = 'Previous'
+      Hint = 'Jump to the previous speciation event'
+      ImageIndex = 95
+      OnExecute = PrevSpeciationActionExecute
+      ShortCut = 8308
+    end
+    object QuitAction: TAction
+      Caption = 'Done'
+      Hint = 'Close this dialog'
+      ImageIndex = 59
+      OnExecute = QuitActionExecute
+    end
+  end
+  object ImageList1: TImageList
+    Height = 18
+    Width = 18
+    Left = 136
+    Top = 8
+    Bitmap = {
+      4C7A080000001200000012000000D60400000000000078DAED984D68DB6618C7
+      DF93C96107257582A1E9C1EE28351DA54681CED093837308F42BD0C35C4A59DD
+      B48C3487627618CD2EA58731C40E25F4D0655D13E6329C396CA63623C519A390
+      6C2351C90E6E4B1215521A67618B0FE9A6C30ECFDEE795152B92624B7A090CA2
+      17FE487A3E7EE8CBFFE809217BB7AA0F12609627CEFD38C0AB518025896DF1D8
+      0B47B94739CF2550E76E81FA8E609163CEDD18A8CFEE406D7A888B53F93CC6CE
+      A556487371E4DB51A83DCD803291E2E2CC7E1206652A0DF2DD842B4EF96618CC
+      52722990EF25E87600ECF2769CE270088A1F85A0363704D5A97E26E5511C94FB
+      317A6D71A8E6129A4A03AC0EEB773BA7FC6008F283F4BC9F0E4075226C51AD94
+      6079AC6B755FF29704C852A933F4BEE48486A6632C8E79A7F738FB411B642FB4
+      01CC44010A04603ACC8E31EEF67DCE9C2230769EB2A6436C8BC72EDAC1A8F409
+      02A3A7B5AD39E786D342FB7EF17AA1EE87CC13AB63A0EF7BF142E687AF479907
+      E1568F39667C417F97D40BB117BD50177A34C631EFC40351D8833E68964AFD5A
+      AF69E67F28FCFBC0BC1D3DB534C4FC507994629EA6E4D2CC23F55A7BFF8B027A
+      A051BA1FA29F997358EFE43E19FD90C79FD1F39827523FE4E1A0EFD50A71E683
+      3C1CE689A5B0E6853C1CF4C35288F9210F47F74228214F609EE8C50F33EF6B5E
+      A80B8F7D3FF4979325D0F7B599BCB04CEF8A6B4E3316CF3572BEC39EEE492B06
+      FA45ADCD957FD89E87DAA6C59C725A3D772F7EB6E37C387C712F38FEDA5FF372
+      A87BD6222FF3320FC7382FF3708CF3320FC7F87DE886E3CFCBFEBCEC7F1FFAF3
+      B23F2FB79E9779FCD9382FF3708CF3320FC7382F73710CF3320FC79F97FDE5CF
+      CBFB7B5ED63CA3ECC63F6CCF03FB30E694D3EAB97BF133F3F978F5C5BDE0F88B
+      7F01E73272B6B6FEDD92A4975232F97352149F88CD8435588B3D668E24BD90FA
+      FAE4C8F5EBB5C0F0F0DF6437DDB8F1965CBBB619E8EB5B88608F99934C969357
+      AFFE19B878F13571A2CB97D703D863E6886251BC7265839C3DFB9C09D3FABE5D
+      2C955A25D863E5FC20622E91F88DD5EBC263BBD8993315823D56CE9478EEDC0B
+      72F2E44FE4F0E14956AFAA2A595F5F278AA290A5A525B2B2B242DADBBF245D5D
+      0FC9B16345823D56CEA4D8DFFF3BCD3D21C78FFF480E1CF89AC8B24C16171749
+      A55221CBCBCB94F1806A9CE9D0A1EF08F65839DF8AF4799123478A24189CA4B5
+      B91D8CD5D55516D3150A7D4FB0C7CAF946ECE999231D1D8F69DD630B636D6D8D
+      6C6C6CB01C2A182C11ECB172C6C548E4175A3363BA963C133236373799B0A6A3
+      6386608F95F395D8DD2DD31A6415EA8C42FD588B698C460C7BACEFE1C3E4C183
+      F381F6F645A2A9441AFBD65867E7AF01ECB1FE2ECA52343A1EE9EA5AA0AC97A4
+      993A3B1702478F8E47B0C7C8F98BAEF9F967F323231323BDBD9FF58AE2A76233
+      610DD6620FF6EA9C7FE8FA83AE372E17F660AFEFBC5E561E1A7293DB31E9002A
+      F33180BE6FC9DD546D72560E32FA4F574CF59AD21F56592E75A9DA9243A72618
+      1AAC41BCA75CAF1F631A385F61B14452AEC7B22DAEADDE774181D87B45889F9A
+      85D809FA1D161C837077769BEBEC5E8F022AFC6E110421AB2998053DEEFC9969
+      F5A1609E321A72C791002508455BE9F9E68C3B801284D96D358B35E30882BCAD
+      46BDCE32E7765B299ACBD0BA0ADB6AC74E7276732EFE5F265DDF9AE7DBB85D8E
+      675EFEDFCFCEFF0193AF49B2
+    }
+  end
+  object ActionList2: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 165
+    Top = 143
+    object CloseAction: TAction
+      Caption = 'Close'
+      ImageIndex = 5
+      OnExecute = CloseBtnClick
+      ShortCut = 16467
+    end
+  end
+end

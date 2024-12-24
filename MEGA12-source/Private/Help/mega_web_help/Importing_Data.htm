@@ -1,0 +1,294 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Importing Data</title>
+<link rel="StyleSheet" href="default.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "3.2.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part III: Input Data Types and File Formats > Importing Data From Other Formats" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1>Importing Data</h1>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><i><font style="font-size: 11pt; 
+	 font-family: Arial; font-style: italic;" size="2" face="Arial">MEGA</font></i> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">supports 
+ conversions from several different file formats into</font> <i><font style="font-size: 11pt; 
+	 font-family: Arial; font-style: italic;" size="2" face="Arial">MEGA</font></i> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">formats</font><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">. 
+ Each format is indicated by the file extension used. Supported formats 
+ include:</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<table style="border-top: #000000 0.5pt solid; border-right: #000000 0.5pt solid; 
+		 border-bottom: #000000 0.5pt solid; border-left: #000000 0.5pt solid; 
+		 border-collapse: separate;" cellspacing="0">
+	<col />
+	<col />
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Extension</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">File 
+		 type</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">.</font> 
+		 <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">an</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">CLUSTAL</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">. 
+		 nexus</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">PAUP, 
+		 MacClade</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">. 
+		 phylip</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">PHYLIP 
+		 Interleaved</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">. 
+		 phylip2</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">PHYLIP 
+		 Noninterleaved</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">. 
+		 gcg</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">GCG 
+		 format</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">. 
+		 fasta</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">FASTA 
+		 format</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">. 
+		 pir</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">PIR 
+		 format</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">. 
+		 nbrf</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">NBRF 
+		 format</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">. 
+		 msf</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">MSF 
+		 format</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">. 
+		 ig</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">IG 
+		 format</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">. 
+		 xml</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;" bordercolorlight="Black" bordercolordark="Black"><p 
+			 style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">Internet 
+		 (<a href="javascript:TextPopup(this)" id="HotSpot33242" class="glossterm">NCBI</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot33242', 'POPUP33242');
+//]]></script><span class="glosstext" id="POPUP33242" style="display: none;"> An acronym that stands for “National Center for Biotechnology Information”. NCBI is a federally funded resource for molecular biology information. NCBI creates databases, conducts research in computational biology, develops software and tools for analyzing genome data, and disseminates biomedical information. You can find out more about NCBI by visiting the NCBI website (http://www.ncbi.nlm.nih.gov).</span>) XML format</font></p></td>
+	</tr>
+</table>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">The following sections 
+ briefly describe each of these formats and how</font> <i><font style="font-size: 11pt; 
+	 font-family: Arial; font-style: italic;" size="2" face="Arial">MEGA</font></i> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">handles 
+ their conversion.</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">COMMON FILE CONVERSION 
+ ATTRIBUTES</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">The default input formats 
+ are determined by a file’s extension (e.g., a file with the extension 
+ of “.ig” is initially assumed to be in “IG” input format). However, you 
+ have the option to specify any format for any file; the file extension 
+ is simply used as an initial guide. Note that the specification of an 
+ incorrect file format most often results in an erroneous conversion or 
+ other unexpected error.</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Input file types can include 
+ any of the following characters in their sequence data:</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">The letters: a-z,A-Z for 
+ DNA and protein sequences</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Peroid</font> <font style="font-size: 11pt; 
+	 font-family: 'Courier New';" size="2" face="Courier New">(.)</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Hyphen</font> <font style="font-size: 11pt; 
+	 font-family: 'Courier New';" size="2" face="Courier New">(-)</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">The space character</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Question mark (?).</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Depending on their context, 
+ all other characters encountered in input files are either ignored or 
+ are interpreted as specific non-sequence data, such as comments, headers, 
+ etc.</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">The first line of all converted 
+ files is always:</font> <font style="font-size: 11pt; font-family: 'Courier New';" 
+								 size="2" face="Courier New">#Mega</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">The second line of all 
+ converted file is always:</font> <font style="font-size: 11pt; font-family: 'Courier New';" 
+										 size="2" face="Courier New">!Title: 
+ &lt;filename&gt;</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">where</font> <font style="font-size: 11pt; 
+	 font-family: 'Courier New';" size="2" face="Courier New">&lt;filename&gt;</font> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">is 
+ the name of the input file.</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">The third line of all converted 
+ files is blank.</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;">&#160;</p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Many formats can specify 
+ the length of the sequences contained within them. The</font> <i><font 
+	 style="font-size: 11pt; font-family: Arial; font-style: italic;" size="2" 
+	 face="Arial">MEG</font></i><font style="font-size: 11pt; font-family: Arial;" 
+										 size="2" face="Arial">A conversion 
+ utility ignores these data and does not check to see if the sequences 
+ are as long as they are purported to be.</font></p>
+</body>
+</html>

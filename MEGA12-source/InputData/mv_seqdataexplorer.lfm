@@ -1,0 +1,1830 @@
+object V_SeqDataExplorer: TV_SeqDataExplorer
+  Left = 502
+  Height = 677
+  Top = 157
+  Width = 930
+  HorzScrollBar.Smooth = True
+  VertScrollBar.Smooth = True
+  Caption = 'V_SeqDataExplorer'
+  ClientHeight = 657
+  ClientWidth = 930
+  Menu = SeqDataViewerMenu
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnHelp = FormHelp
+  OnMouseEnter = FormMouseEnter
+  OnResize = FormResize
+  OnShow = FormShow
+  SessionProperties = 'ColorDialog1.Color;FontDialog1.Font;FontDialog1.MaxFontSize;FontDialog1.MinFontSize;FontDialog1.Options;SaveDialog1.FileName;SaveDialog1.InitialDir;searchTypeCbx.ItemIndex;searchTypeCbx.Text'
+  LCLVersion = '2.2.6.0'
+  object DataGrid: TDrawGrid
+    Left = 0
+    Height = 463
+    Top = 110
+    Width = 913
+    Align = alClient
+    DefaultDrawing = False
+    ExtendedSelect = False
+    GridLineWidth = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goRowMoving, goThumbTracking, goSmoothScroll, goCellHints]
+    ParentShowHint = False
+    ScrollBars = ssNone
+    ShowHint = True
+    TabOrder = 0
+    TitleStyle = tsNative
+    OnClick = DataGridClick
+    OnColRowMoved = DataGridColRowMoved
+    OnContextPopup = DataGridContextPopup
+    OnDrawCell = DataGridDrawCell
+    OnGetCellHint = DataGridGetCellHint
+    OnKeyDown = DataGridKeyDown
+    OnKeyUp = DataGridKeyUp
+    OnMouseDown = DataGridMouseDown
+    OnMouseEnter = DataGridMouseEnter
+    OnMouseMove = DataGridMouseMove
+    OnMouseUp = DataGridMouseUp
+    OnSelectCell = DataGridSelectCell
+    OnTopleftChanged = DataGridTopleftChanged
+  end
+  object MainToolbar: TToolBar
+    Left = 0
+    Height = 27
+    Top = 0
+    Width = 930
+    ButtonHeight = 25
+    ButtonWidth = 29
+    Caption = 'MainToolbar'
+    Color = clBtnFace
+    DisabledImages = MegaForm.DisabledIcons
+    Font.Color = clGrayText
+    Images = MegaForm.NewIcons
+    ParentColor = False
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 1
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 2
+      Action = ActionExportData
+      AllowAllUp = True
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object ToolButton2: TToolButton
+      Left = 30
+      Height = 25
+      Top = 2
+      AllowAllUp = True
+      Caption = 'ToolButton2'
+      Style = tbsSeparator
+    end
+    object ExportMegaTBtn: TToolButton
+      Left = 38
+      Hint = 'Export the current data to a preferred format'
+      Top = 2
+      AllowAllUp = True
+      Caption = '&Export Data...'
+      ImageIndex = 22
+      OnClick = ActionExportDataExecute
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object ExportXLTBtn: TToolButton
+      Left = 67
+      Hint = 'Export the current data to a preferred format'
+      Top = 2
+      AllowAllUp = True
+      Caption = '&Export Data...'
+      ImageIndex = 71
+      OnClick = ActionExportDataExecute
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object ExportCSVTBtn: TToolButton
+      Left = 96
+      Hint = 'Export the current data to a preferred format'
+      Top = 2
+      AllowAllUp = True
+      Caption = '&Export Data...'
+      ImageIndex = 72
+      OnClick = ActionExportDataExecute
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object ToolButton6: TToolButton
+      Left = 125
+      Height = 25
+      Top = 2
+      AllowAllUp = True
+      Caption = 'ToolButton6'
+      Style = tbsSeparator
+    end
+    object ToolButton7: TToolButton
+      Left = 133
+      Top = 2
+      Action = ActionEditGroups
+      AllowAllUp = True
+      ParentShowHint = False
+      ShowCaption = False
+      ShowHint = True
+    end
+    object ToolButton8: TToolButton
+      Left = 162
+      Top = 2
+      Action = ActionEditGenesDomains
+      AllowAllUp = True
+      ParentShowHint = False
+      ShowCaption = False
+      ShowHint = True
+    end
+    object ToolButton9: TToolButton
+      Left = 191
+      Height = 25
+      Top = 2
+      AllowAllUp = True
+      Caption = 'ToolButton9'
+      Style = tbsSeparator
+    end
+    object ToolButton10: TToolButton
+      Left = 199
+      Top = 2
+      Action = ActionUseIdenticalSymbol
+      AllowAllUp = True
+      ParentShowHint = False
+      ShowCaption = False
+      ShowHint = True
+      Style = tbsCheck
+    end
+    object ToolButton11: TToolButton
+      Left = 588
+      Height = 25
+      Top = 2
+      AllowAllUp = True
+      Caption = 'ToolButton11'
+      Style = tbsDivider
+    end
+    object ToolButton14: TToolButton
+      Left = 593
+      Top = 2
+      Action = ActionFindSeqName
+      AllowAllUp = True
+      ParentShowHint = False
+      ShowCaption = False
+      ShowHint = True
+    end
+    object ToolButton15: TToolButton
+      Left = 622
+      Top = 2
+      Action = ActionFindMotif
+      AllowAllUp = True
+      ParentShowHint = False
+      ShowCaption = False
+      ShowHint = True
+    end
+    object DiagnoseButton: TToolButton
+      Left = 659
+      Hint = 'Retrieve evolutionary diagnosis predictions for human exome variants'
+      Top = 2
+      Caption = '&Diagnose'
+      DropdownMenu = DiagnoseMenu
+      ImageIndex = 131
+      OnClick = DiagnoseMenuPopup
+      ParentShowHint = False
+      ShowCaption = False
+      ShowHint = True
+      Style = tbsDropDown
+      Visible = False
+    end
+    object ConservedBtn: TToolButton
+      Left = 257
+      Top = 2
+      Action = ActionHighlightConserved
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object VariableBtn: TToolButton
+      Left = 286
+      Top = 2
+      Action = ActionHighlightVariableSites
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object ParsimInfoBtn: TToolButton
+      Left = 315
+      Top = 2
+      Action = ActionHighlightParsimInfoSites
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object SingletonBtn: TToolButton
+      Left = 344
+      Top = 2
+      Action = ActionHighlightSingletonSites
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object ZeroFoldBtn: TToolButton
+      Left = 402
+      Top = 2
+      Action = ActionHighlight0FoldDegenSites
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object TwoFoldBtn: TToolButton
+      Left = 431
+      Top = 2
+      Action = ActionHighlight2FoldDegenSites
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object FourFoldBtn: TToolButton
+      Left = 460
+      Top = 2
+      Action = ActionHighlight4FoldDegenSites
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object TranslateBtn: TToolButton
+      Left = 228
+      Top = 2
+      Action = ActionTranslate
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object SpecialButton: TToolButton
+      Left = 489
+      Top = 2
+      DropdownMenu = SpecialMenu
+      ImageIndex = 172
+      OnClick = SpecialButtonClick
+      ParentShowHint = False
+      PopupMenu = SpecialMenu
+      ShowHint = True
+      Style = tbsDropDown
+    end
+    object ToolButton3: TToolButton
+      Left = 651
+      Height = 25
+      Top = 2
+      Caption = 'ToolButton3'
+      Style = tbsSeparator
+    end
+    object ToolButton4: TToolButton
+      Left = 530
+      Top = 2
+      Action = ActionPreviousHighlight
+    end
+    object ToolButton5: TToolButton
+      Left = 559
+      Top = 2
+      Action = ActionNextHighlight
+    end
+    object LabelledSitesBtn: TToolButton
+      Left = 373
+      Top = 2
+      Action = ActionHighlightLabelledSites
+    end
+    object SetGroupTagButton: TToolButton
+      Left = 700
+      Hint = 'Set the source to be used for defining groups'
+      Top = 2
+      AutoSize = True
+      Caption = 'Group Source'
+      DropdownMenu = SetGroupTagPopup
+      ImageIndex = 206
+      Style = tbsDropDown
+    end
+  end
+  object MainSearchPanel: TPanel
+    Left = 0
+    Height = 38
+    Top = 27
+    Width = 930
+    Align = alTop
+    ClientHeight = 38
+    ClientWidth = 930
+    TabOrder = 2
+    object CloseSearchPanel: TSpeedButton
+      Left = 6
+      Height = 23
+      Top = 4
+      Width = 23
+      Glyph.Data = {
+        46050000424D4605000000000000360000002800000012000000120000000100
+        2000000000001005000064000000640000000000000000000000FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF005146BC005146BC005146BC0B5146
+        BC6A5146BC005146BC005146BC005146BC005146BC005146BC005146BC695146
+        BC175146BC005146BC00FFFFFF00FFFFFF00FFFFFF00FFFFFF005146BC005146
+        BC005146BC7C5146BCF95146BC145146BC005146BC005146BC005146BC005146
+        BC085146BCF85146BC8D5146BC005146BC00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF005146BC225146BC7C5146BCFF5146BCFF5146BCF55146BC1A5146BC005146
+        BC005146BC125146BCE95146BCFF5146BCFF5146BC8A5146BC29FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF005146BC5C5146BCFF5146BCFF5146BCFF5146BCFF5146
+        BCF65146BC055146BC005146BCEE5146BCFF5146BCFF5146BCFF5146BCFF5146
+        BC6BFFFFFF00FFFFFF00FFFFFF00FFFFFF005146BC005146BC025146BCE35146
+        BCFF5146BCFF5146BCFF5146BCE85146BCDF5146BCFF5146BCFF5146BCFF5146
+        BCEC5146BC0C5146BC00FFFFFF00FFFFFF00FFFFFF00FFFFFF005146BC005146
+        BC005146BC085146BCDE5146BCFF5146BCFF5146BCFF5146BCFF5146BCFF5146
+        BCFF5146BCEA5146BC115146BC005146BC00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF005146BC005146BC005146BC005146BC005146BCCC5146BCFF5146BCFF5146
+        BCFF5146BCFF5146BCD85146BC005146BC005146BC005146BC00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF005146BC005146BC005146BC005146BC025146BCD25146
+        BCFF5146BCFF5146BCFF5146BCFF5146BCDC5146BC095146BC005146BC005146
+        BC00FFFFFF00FFFFFF00FFFFFF00FFFFFF005146BC005146BC005146BC115146
+        BCE95146BCFF5146BCFF5146BCFF5146BCFF5146BCFF5146BCFF5146BCF55146
+        BC1A5146BC005146BC00FFFFFF00FFFFFF00FFFFFF00FFFFFF005146BC005146
+        BC0B5146BCF05146BCFF5146BCFF5146BCFF5146BCDC5146BCD25146BCFF5146
+        BCFF5146BCFF5146BCF85146BC175146BC00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF005146BC5E5146BCFF5146BCFF5146BCFF5146BCFF5146BCEA5146BC005146
+        BC005146BCE05146BCFF5146BCFF5146BCFF5146BCFF5146BC6CFFFFFF00FFFF
+        FF00FFFFFF00FFFFFF005146BC185146BC6D5146BCFF5146BCFF5146BCED5146
+        BC0E5146BC005146BC005146BC065146BCE05146BCFF5146BCFF5146BC7B5146
+        BC1EFFFFFF00FFFFFF00FFFFFF00FFFFFF005146BC005146BC005146BC6C5146
+        BCEF5146BC085146BC005146BC005146BC005146BC005146BC005146BCED5146
+        BC7E5146BC005146BC00FFFFFF00FFFFFF00FFFFFF00FFFFFF005146BC005146
+        BC005146BC035146BC5E5146BC005146BC005146BC005146BC005146BC005146
+        BC005146BC5C5146BC0F5146BC005146BC00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00
+      }
+      OnClick = CloseSearchPanelClick
+    end
+    object searchTypeCbx: TComboBox
+      Left = 40
+      Height = 23
+      Hint = 'Select the type of search to perform'
+      Top = 4
+      Width = 100
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'Name'
+        'Group'
+        'Motif'
+      )
+      OnChange = searchTypeCbxChange
+      Style = csDropDownList
+      TabOrder = 0
+      Text = 'Name'
+    end
+    object SearchBox: TComboBox
+      Left = 146
+      Height = 23
+      Top = 4
+      Width = 448
+      Anchors = [akTop, akLeft, akRight]
+      ItemHeight = 15
+      OnChange = SearchBoxChange
+      OnEnter = SearchBoxEnter
+      TabOrder = 1
+    end
+    object FindPrevBtn: TSpeedButton
+      Left = 600
+      Height = 23
+      Top = 4
+      Width = 23
+      Action = ActionFindPrevious
+      Anchors = [akTop, akRight]
+      ShowCaption = False
+    end
+    object FindNextBtn: TSpeedButton
+      Left = 628
+      Height = 23
+      Top = 4
+      Width = 23
+      Action = ActionFindNext
+      Anchors = [akTop, akRight]
+      ShowCaption = False
+    end
+    object SearchBtn: TSpeedButton
+      Left = 599
+      Height = 23
+      Top = 4
+      Width = 61
+      Anchors = [akTop, akRight]
+      Caption = 'Search'
+      OnClick = SearchBtnClick
+    end
+    object MotifCountLabel: TLabel
+      Left = 668
+      Height = 15
+      Top = 8
+      Width = 262
+      Anchors = [akTop, akRight]
+      AutoSize = False
+      Caption = 'Found 1,000 occurrences'
+      ParentColor = False
+    end
+  end
+  object bird: TStringGrid
+    Left = 0
+    Height = 40
+    Top = 590
+    Width = 930
+    Align = alBottom
+    DefaultDrawing = False
+    DefaultRowHeight = 18
+    FixedCols = 0
+    FixedRows = 0
+    Options = [goFixedVertLine, goVertLine, goHorzLine, goSmoothScroll]
+    ParentShowHint = False
+    RowCount = 2
+    ScrollBars = ssNone
+    ShowHint = True
+    TabOrder = 3
+    OnClick = birdClick
+    OnDrawCell = birdDrawCell
+    OnMouseDown = birdMouseDown
+    OnMouseMove = birdMouseMove
+  end
+  object BottomPanel: TPanel
+    Left = 0
+    Height = 27
+    Top = 630
+    Width = 930
+    Align = alBottom
+    Caption = 'BottomPanel'
+    ClientHeight = 27
+    ClientWidth = 930
+    TabOrder = 4
+    object SiteNumSpinEdit: TSpinEdit
+      Left = 30
+      Height = 25
+      Top = 1
+      Width = 121
+      Align = alLeft
+      Alignment = taRightJustify
+      MaxValue = 9999999
+      MinValue = 1
+      OnChange = SiteNumSpinEditChange
+      OnEnter = SiteNumSpinEditEnter
+      OnExit = SiteNumSpinEditExit
+      TabOrder = 0
+      Value = 1
+    end
+    object StatusBar: TStatusBar
+      Left = 151
+      Height = 25
+      Top = 1
+      Width = 778
+      Align = alClient
+      Panels = <      
+        item
+          Width = 200
+        end      
+        item
+          Text = 'Highlighted:'
+          Width = 200
+        end      
+        item
+          Width = 200
+        end      
+        item
+          Width = 200
+        end>
+      SimplePanel = False
+    end
+    object Label1: TLabel
+      Left = 1
+      Height = 25
+      Top = 1
+      Width = 29
+      Align = alLeft
+      AutoSize = False
+      Caption = 'Site# '
+      Color = clDefault
+      Font.Height = 16
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+  end
+  object EditLabelsPanel: TPanel
+    Left = 0
+    Height = 45
+    Top = 65
+    Width = 930
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 5
+    Visible = False
+  end
+  object HorizScrollbar: TScrollBar
+    Left = 0
+    Height = 17
+    Top = 573
+    Width = 930
+    Align = alBottom
+    PageSize = 0
+    TabOrder = 6
+    OnChange = HorizScrollbarChange
+    OnScroll = HorizScrollbarScroll
+  end
+  object VertScrollbar: TScrollBar
+    Left = 913
+    Height = 463
+    Top = 110
+    Width = 17
+    Align = alRight
+    Kind = sbVertical
+    PageSize = 0
+    TabOrder = 7
+    OnChange = VertScrollbarChange
+    OnScroll = VertScrollbarScroll
+  end
+  object SeqDataViewerMenu: TMainMenu
+    Images = MegaForm.NewIcons
+    Left = 544
+    Top = 320
+    object DataMenu: TMenuItem
+      Caption = '&Data'
+      object MenuItem8: TMenuItem
+        Action = ActionSaveSession
+      end
+      object MenuItem1: TMenuItem
+        Action = ActionExportData
+      end
+      object MenuItem2: TMenuItem
+        Action = ActionExportSearchResults
+      end
+      object MenuItem3: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem4: TMenuItem
+        Action = ActionTranslate
+      end
+      object MenuItem5: TMenuItem
+        Action = ActionSelectCodeTable
+      end
+      object MenuItem6: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem7: TMenuItem
+        Action = ActionEditGenesDomains
+      end
+      object MenuItem9: TMenuItem
+        Action = ActionEditGroups
+      end
+      object N4: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem108: TMenuItem
+        Action = ActionAddSiteLabelList
+      end
+      object MenuItem114: TMenuItem
+        Action = ActionAutoLabelSites
+      end
+      object MenuItem113: TMenuItem
+        Action = ActionToggleUnlabeledSites
+      end
+      object MenuItem115: TMenuItem
+        Action = ActionClearSiteLabels
+      end
+      object MenuItem10: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem11: TMenuItem
+        Action = ActionQuit
+      end
+    end
+    object DisplayMenu: TMenuItem
+      Caption = 'D&isplay'
+      object MenuItem12: TMenuItem
+        Action = ActionShowOnlySelected
+      end
+      object MenuItem13: TMenuItem
+        Action = ActionUseIdenticalSymbol
+      end
+      object MenuItem14: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem15: TMenuItem
+        Action = ActionColorCells
+      end
+      object MenuItem16: TMenuItem
+        Action = ActionSelectHighlightColor
+      end
+      object MenuItem17: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem18: TMenuItem
+        Caption = 'S&ort Sequences'
+        Hint = 'Sort sequences by names'
+        object DispSortBySeqNameItem: TMenuItem
+          Caption = 'By Sequence Names'
+          Hint = 'Sort sequences by names'
+          OnClick = DispSortBySeqNameItemClick
+        end
+        object DispSortByGpItem: TMenuItem
+          Action = ActionSortSequences
+          Caption = 'By Group Names'
+          OnClick = DispSortByGpItemClick
+        end
+        object ByGpAndSeqNamesItem: TMenuItem
+          Action = ActionSortSequences
+          Caption = 'By Group and Sequence Names'
+          OnClick = ByGpAndSeqNamesItemClick
+        end
+        object MenuItem27: TMenuItem
+          Caption = '-'
+        end
+        object AsperTaxaGroupOrganizerItem: TMenuItem
+          Caption = '&Restore Input Order'
+          Hint = 'Sort sequences by their original input order'
+          OnClick = AsperTaxaGroupOrganizerItemClick
+        end
+      end
+      object MenuItem19: TMenuItem
+        Action = ActionRestoreInputOrder
+      end
+      object MenuItem20: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem21: TMenuItem
+        Action = ActionDispTaxaNames
+      end
+      object MenuItem23: TMenuItem
+        Action = ActionDispGroupNames
+      end
+      object MenuItem112: TMenuItem
+        Action = ActionDisplayGroupCounts
+      end
+      object MenuItem25: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem26: TMenuItem
+        Action = ActionDispBirdsEyeView
+      end
+      object MenuItem39: TMenuItem
+        Action = ActionShowDomainBoundaries
+      end
+      object MenuItem28: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem29: TMenuItem
+        Action = ActionChangeFont
+      end
+    end
+    object SearchMenu: TMenuItem
+      Caption = '&Search'
+      object MenuItem30: TMenuItem
+        Action = ActionFindSeqName
+      end
+      object MenuItem31: TMenuItem
+        Action = ActionFindNextSeq
+      end
+      object MenuItem32: TMenuItem
+        Action = ActionFindPrevSeq
+      end
+      object MenuItem33: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem34: TMenuItem
+        Action = ActionFindMotif
+      end
+      object MenuItem35: TMenuItem
+        Action = ActionFindNextMotif
+      end
+      object MenuItem36: TMenuItem
+        Action = ActionFindPrevMotif
+        Caption = 'Find Previous Mo&tif'
+      end
+      object MenuItem37: TMenuItem
+        Action = ActionHideMotifSearchResults
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem101: TMenuItem
+        Action = ActionNextHighlight
+      end
+      object MenuItem102: TMenuItem
+        Action = ActionPreviousHighlight
+      end
+    end
+    object GroupsMenu: TMenuItem
+      Caption = '&Groups'
+      object MenuItem38: TMenuItem
+        Action = ActionAddGroup
+      end
+      object SetGroupTagItem: TMenuItem
+        Caption = 'Set Group Tag'
+        object GroupItem: TMenuItem
+          Caption = 'Group'
+          OnClick = SetGroupItemClick
+        end
+        object SpeciesItem: TMenuItem
+          Caption = 'Species'
+          OnClick = SetGroupItemClick
+        end
+        object PopulationItem: TMenuItem
+          Caption = 'Population'
+          OnClick = SetGroupItemClick
+        end
+        object ContinentItem: TMenuItem
+          Caption = 'Continent'
+          OnClick = SetGroupItemClick
+        end
+        object CountryItem: TMenuItem
+          Caption = 'Country'
+          OnClick = SetGroupItemClick
+        end
+        object CityItem: TMenuItem
+          Caption = 'City'
+          OnClick = SetGroupItemClick
+        end
+        object YearItem: TMenuItem
+          Caption = 'Year'
+          OnClick = SetGroupItemClick
+        end
+        object MonthItem: TMenuItem
+          Caption = 'Month'
+          OnClick = SetGroupItemClick
+        end
+        object DayItem: TMenuItem
+          Caption = 'Day'
+          OnClick = SetGroupItemClick
+        end
+        object TimeItem: TMenuItem
+          Caption = 'Time'
+          OnClick = SetGroupItemClick
+        end
+      end
+      object N2: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem22: TMenuItem
+        Action = ActionGroupSeqsByIdentity
+      end
+      object MenuItem100: TMenuItem
+        Action = ActionSelectOneFromEachGroup
+      end
+      object MenuItem104: TMenuItem
+        Action = ActionUnselectUngrouped
+      end
+      object MenuItem109: TMenuItem
+        Action = ActionUnselectSmallGroups
+      end
+      object MenuItem110: TMenuItem
+        Action = ActionSelectLargestGroups
+      end
+      object MenuItem111: TMenuItem
+        Action = ActionSelectEarliestDatedSeqInEachGroup
+      end
+      object N3: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem103: TMenuItem
+        Action = ActionLabelSitesUsedForGroupIdentityComparison
+      end
+      object MenuItem105: TMenuItem
+        Action = ActionAddDomainsForGroupIdentityComparisonSites
+      end
+      object MenuItem106: TMenuItem
+        Action = ActionDisableIndependentSites
+      end
+    end
+    object HighlightSitesMenu: TMenuItem
+      Caption = '&Highlight'
+      object MenuItem40: TMenuItem
+        Action = ActionHighlightConserved
+        ShowAlwaysCheckable = True
+      end
+      object MenuItem41: TMenuItem
+        Action = ActionHighlightVariableSites
+        ShowAlwaysCheckable = True
+      end
+      object MenuItem42: TMenuItem
+        Action = ActionHighlightParsimInfoSites
+        ShowAlwaysCheckable = True
+      end
+      object MenuItem43: TMenuItem
+        Action = ActionHighlightSingletonSites
+        ShowAlwaysCheckable = True
+      end
+      object MenuItem107: TMenuItem
+        Action = ActionHighlightLabelledSites
+      end
+      object MenuItem44: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem45: TMenuItem
+        Action = ActionHighlight0FoldDegenSites
+        ShowAlwaysCheckable = True
+      end
+      object MenuItem46: TMenuItem
+        Action = ActionHighlight2FoldDegenSites
+        ShowAlwaysCheckable = True
+      end
+      object MenuItem47: TMenuItem
+        Action = ActionHighlight4FoldDegenSites
+        ShowAlwaysCheckable = True
+      end
+      object MenuItem48: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem49: TMenuItem
+        Action = ActionCoverage
+        ShowAlwaysCheckable = True
+      end
+      object MenuItem50: TMenuItem
+        Action = ActionCpG
+        ShowAlwaysCheckable = True
+      end
+    end
+    object StatisticsMenu: TMenuItem
+      Caption = 'St&atistics'
+      object MenuItem51: TMenuItem
+        Action = ActionHomology
+      end
+      object MenuItem52: TMenuItem
+        Caption = '-'
+        Visible = False
+      end
+      object MenuItem53: TMenuItem
+        Action = ActionNucComposition
+      end
+      object StatNucPairFreqSubmenu: TMenuItem
+        Caption = 'Nucleotide &Pair Frequencies'
+        object MenuItem54: TMenuItem
+          Action = ActionDirectionalPairs
+        end
+        object MenuItem67: TMenuItem
+          Action = ActionUndirectionalPairs
+        end
+      end
+      object MenuItem55: TMenuItem
+        Action = ActionCodonUsage
+      end
+      object MenuItem56: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem57: TMenuItem
+        Action = ActionAminoAcidComposition
+      end
+      object MenuItem58: TMenuItem
+        Caption = '-'
+        Visible = False
+      end
+      object MenuItem59: TMenuItem
+        Action = ActionMismatchDistribution
+        Visible = False
+      end
+      object MenuItem60: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem61: TMenuItem
+        Action = ActionAllSelectedSites
+      end
+      object MenuItem62: TMenuItem
+        Action = ActionHighlightedSites
+      end
+      object MenuItem63: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem24: TMenuItem
+        Action = ActionStatDispInXls
+      end
+      object MenuItem64: TMenuItem
+        Action = ActionStatDispInXl
+      end
+      object MenuItem70: TMenuItem
+        Action = ActionStatDispInOds
+      end
+      object MenuItem65: TMenuItem
+        Action = ActionStatDispInCsv
+      end
+      object MenuItem66: TMenuItem
+        Action = ActionStatDispInText
+      end
+    end
+    object WindowsMenuItem: TMenuItem
+      Caption = '&Windows'
+    end
+    object HelpMenu: TMenuItem
+      Caption = '&Help '
+      object MenuItem99: TMenuItem
+        Action = ShowHelpAction
+      end
+    end
+    object DeveloperMenu: TMenuItem
+      Caption = 'De&veloper'
+      object MenuItem116: TMenuItem
+        Action = ActionExportNames
+      end
+      object MenuItem117: TMenuItem
+        Action = DeveloperAction
+      end
+      object MenuItem125: TMenuItem
+        Action = DomainInfoSummary
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Images = MegaForm.NewIcons
+    Left = 656
+    Top = 304
+    object ActionSaveSession: TAction
+      Caption = '&Save Session'
+      Hint = 'Save the current data to a MEGA session file'
+      ImageIndex = 35
+      OnExecute = ActionSaveSessionExecute
+      ShortCut = 16467
+    end
+    object ActionExportData: TAction
+      Caption = '&Export Data...'
+      Hint = 'Export the current data to a preferred format'
+      ImageIndex = 35
+      OnExecute = ActionExportDataExecute
+      ShortCut = 49235
+    end
+    object ActionExportSearchResults: TAction
+      Caption = 'E&xport Search Results'
+      Hint = 'Export search results'
+      ImageIndex = 158
+      OnExecute = ActionExportSearchResultsExecute
+      OnUpdate = ActionExportSearchResultsUpdate
+    end
+    object ActionTranslate: TAction
+      Caption = '&Translate Sequences'
+      Hint = 'Translate Sequences'
+      ImageIndex = 7
+      OnExecute = ActionTranslateExecute
+      ShortCut = 84
+    end
+    object ActionSelectCodeTable: TAction
+      Caption = 'Se&lect Code Table...'
+      Hint = 'Select the genetic code table to use for translation'
+      ImageIndex = 11
+      OnExecute = ActionSelectCodeTableExecute
+    end
+    object ActionEditGenesDomains: TAction
+      Caption = 'Select && Edit Genes/&Domains...'
+      Hint = 'Edit/Select genes and domains'
+      ImageIndex = 34
+      OnExecute = ActionEditGenesDomainsExecute
+    end
+    object ActionEditGroups: TAction
+      Caption = 'Select && Edit Taxa/&Groups...'
+      Hint = 'Edit/Select taxa groups'
+      ImageIndex = 36
+      OnExecute = ActionEditGroupsExecute
+    end
+    object ActionQuit: TAction
+      Caption = '&Quit Data Explorer'
+      Hint = 'Close the Sequence Data Explorer'
+      ImageIndex = 59
+      OnExecute = ActionQuitExecute
+      ShortCut = 32883
+    end
+    object ActionShowOnlySelected: TAction
+      Caption = '&Show Only Selected Sequences'
+      Hint = 'Display on the selected sequences'
+      OnExecute = ActionShowOnlySelectedExecute
+    end
+    object ActionUseIdenticalSymbol: TAction
+      Caption = 'Use &Identical Symbol'
+      Hint = 'Use Identical Symbol'
+      ImageIndex = 74
+      OnExecute = ActionUseIdenticalSymbolExecute
+      ShortCut = 16457
+    end
+    object ActionColorCells: TAction
+      Caption = '&Color Cells'
+      Hint = 'Use base-specific background colors'
+      OnExecute = ActionColorCellsExecute
+    end
+    object ActionSelectHighlightColor: TAction
+      Caption = 'S&elect Highlight Color...'
+      Hint = 'Specify the color to use for highlighting selections'
+      OnExecute = ActionSelectHighlightColorExecute
+    end
+    object ActionSortSequences: TAction
+      Caption = 'S&ort Sequences'
+      Hint = 'Sort sequences by names'
+      OnExecute = ActionSortSequencesExecute
+    end
+    object ActionRestoreInputOrder: TAction
+      Caption = '&Restore Input Order'
+      Hint = 'Sort sequences by their original input order'
+      OnExecute = ActionRestoreInputOrderExecute
+    end
+    object ActionDispTaxaNames: TAction
+      Caption = 'Show Sequence &Names'
+      Hint = 'Toggle the display of taxa names'
+      OnExecute = ActionDispTaxaNamesExecute
+    end
+    object ActionDispGroupNames: TAction
+      Caption = 'Show &Group Names'
+      Hint = 'Toggle the display of group names'
+      OnExecute = ActionDispGroupNamesExecute
+    end
+    object ActionDispBirdsEyeView: TAction
+      Caption = 'Show Summary &View'
+      Hint = 'Toggle the display of the bird''s eye view'
+      OnExecute = ActionDispBirdsEyeViewExecute
+    end
+    object ActionChangeFont: TAction
+      Caption = '&Change Font'
+      Hint = 'Customize grid font properties'
+      ImageIndex = 51
+      OnExecute = ActionChangeFontExecute
+    end
+    object ActionFindPrevSeq: TAction
+      Category = 'Search'
+      Caption = 'Find &Previous Name'
+      Hint = 'Find previous sequence'
+      ImageIndex = 157
+      OnExecute = ActionFindPrevSeqExecute
+    end
+    object ActionFindSeqName: TAction
+      Category = 'Search'
+      Caption = 'Find &Sequence Name'
+      Hint = 'Find sequence by name'
+      ImageIndex = 2
+      OnExecute = ActionFindSeqNameExecute
+    end
+    object ActionFindNextSeq: TAction
+      Category = 'Search'
+      Caption = 'Find &Next Name'
+      Hint = 'Find the next sequence'
+      ImageIndex = 156
+      OnExecute = ActionFindNextSeqExecute
+    end
+    object ActionFindMotif: TAction
+      Category = 'Search'
+      Caption = 'Find &Motif'
+      Hint = 'Search for a motif'
+      ImageIndex = 4
+      OnExecute = ActionFindMotifExecute
+    end
+    object ActionFindNextMotif: TAction
+      Category = 'Search'
+      Caption = 'Find Next M&otif'
+      Hint = 'Find next motif'
+      ImageIndex = 156
+      OnExecute = ActionFindNextMotifExecute
+    end
+    object ActionFindPrevMotif: TAction
+      Category = 'Search'
+      Caption = 'Find Next Mo&tif'
+      Hint = 'Find the next motif'
+      ImageIndex = 157
+      OnExecute = ActionFindPrevMotifExecute
+    end
+    object ActionHideMotifSearchResults: TAction
+      Category = 'Search'
+      Caption = '&Hide Motif Search Results'
+      Hint = 'Hide the motif search results'
+      ImageIndex = 161
+      OnExecute = ActionHideMotifSearchResultsExecute
+    end
+    object ActionAddGroup: TAction
+      Category = 'Groups'
+      Caption = 'Add/Edit Group Name'
+      Hint = 'Add a new group name'
+      OnExecute = ActionAddGroupExecute
+    end
+    object ActionHighlightConserved: TAction
+      Category = 'Highlight'
+      Caption = '&Conserved Sites'
+      Hint = 'Highlight conserved sites'
+      ImageIndex = 126
+      OnExecute = ActionHighlightConservedExecute
+      ShortCut = 67
+    end
+    object ActionHighlightVariableSites: TAction
+      Category = 'Highlight'
+      Caption = '&Variable Sites'
+      Hint = 'Highlight variable sites'
+      ImageIndex = 169
+      OnExecute = ActionHighlightVariableSitesExecute
+      ShortCut = 86
+    end
+    object ActionHighlightParsimInfoSites: TAction
+      Category = 'Highlight'
+      Caption = '&Parsim-Info Sites'
+      Hint = 'Highlight parsimony informative sites'
+      ImageIndex = 167
+      OnExecute = ActionHighlightParsimInfoSitesExecute
+      ShortCut = 80
+    end
+    object ActionHighlightSingletonSites: TAction
+      Category = 'Highlight'
+      Caption = '&Singleton Sites'
+      Hint = 'Highlight singleton sites'
+      ImageIndex = 178
+      OnExecute = ActionHighlightSingletonSitesExecute
+      ShortCut = 83
+    end
+    object ActionHighlight0FoldDegenSites: TAction
+      Category = 'Highlight'
+      Caption = '&0-fold Degenerate Sites'
+      Hint = 'Highlight 0-fold degenerate sites'
+      ImageIndex = 170
+      OnExecute = ActionHighlight0FoldDegenSitesExecute
+      ShortCut = 48
+    end
+    object ActionHighlight2FoldDegenSites: TAction
+      Category = 'Highlight'
+      Caption = '&2-fold Degenerate Sites'
+      Hint = 'Highlight 2-fold degenerate sites'
+      ImageIndex = 171
+      OnExecute = ActionHighlight2FoldDegenSitesExecute
+      ShortCut = 50
+    end
+    object ActionHighlight4FoldDegenSites: TAction
+      Category = 'Highlight'
+      Caption = '4-fold Degenerate Sites'
+      Hint = 'Highlight 4-fold degenerate sites'
+      ImageIndex = 137
+      OnExecute = ActionHighlight4FoldDegenSitesExecute
+      ShortCut = 52
+    end
+    object ActionCoverage: TAction
+      Category = 'Highlight'
+      Caption = '&Coverage...'
+      Hint = 'Highlight sites with a given coverage'
+      ImageIndex = 164
+      OnExecute = ActionCoverageExecute
+    end
+    object ActionCpG: TAction
+      Category = 'Highlight'
+      Caption = '&Percent Conservation...'
+      Hint = 'Highlight sites based on percent conservation'
+      OnExecute = ActionCpGExecute
+    end
+    object ActionHomology: TAction
+      Category = 'Statistics'
+      Caption = 'Percent &Homology'
+      Hint = 'Calculate percentage of homology'
+      OnExecute = ActionHomologyExecute
+      Visible = False
+    end
+    object ActionNucComposition: TAction
+      Category = 'Statistics'
+      Caption = '&Nucleotide Composition'
+      Hint = 'Calculate nucleotide composition'
+      ImageIndex = 18
+      OnExecute = ActionNucCompositionExecute
+    end
+    object ActionDirectionalPairs: TAction
+      Category = 'Statistics'
+      Caption = '&Directional (16 Pairs)...'
+      Hint = 'Calculate nucleotide pair frequencies (directional)'
+      OnExecute = ActionDirectionalPairsExecute
+    end
+    object ActionUndirectionalPairs: TAction
+      Category = 'Statistics'
+      Caption = '&Undirectional (10 pairs)...'
+      Hint = 'Calculate nucleotide pair frequencies (unidirectional)'
+      OnExecute = ActionUndirectionalPairsExecute
+    end
+    object ActionCodonUsage: TAction
+      Category = 'Statistics'
+      Caption = '&Codon Usage'
+      Hint = 'Calculate codon usage'
+      ImageIndex = 39
+      OnExecute = ActionCodonUsageExecute
+    end
+    object ActionAminoAcidComposition: TAction
+      Category = 'Statistics'
+      Caption = '&Amino Acid Composition'
+      Hint = 'CalculateAminoAcidComposition'
+      ImageIndex = 17
+      OnExecute = ActionAminoAcidCompositionExecute
+    end
+    object ActionMismatchDistribution: TAction
+      Category = 'Statistics'
+      Caption = '&Mismatch Distribution'
+      Hint = 'Calculate mismatch distribution'
+      OnExecute = ActionMismatchDistributionExecute
+    end
+    object ActionAllSelectedSites: TAction
+      Category = 'Statistics'
+      Caption = '&Use All Selected Sites'
+      Hint = 'Use all selected sites for statistics calculations'
+      OnExecute = ActionAllSelectedSitesExecute
+    end
+    object ActionHighlightedSites: TAction
+      Category = 'Statistics'
+      Caption = 'Use Only &Highlighted Sites'
+      Hint = 'Use only highlighted sites for statistics calculations'
+      OnExecute = ActionHighlightedSitesExecute
+    end
+    object ActionStatDispInXl: TAction
+      Category = 'Statistics'
+      Caption = 'Display Results in Spreadsheet (.x&ls all versions)'
+      Hint = 'Display calculated statistics in the default spreadsheet application'
+      OnExecute = ActionStatDispInXlExecute
+    end
+    object ActionStatDispInCsv: TAction
+      Category = 'Statistics'
+      Caption = 'Display Results as &CSV (comma separated values)'
+      Hint = 'Display calculated statistics as a CSV file'
+      OnExecute = ActionStatDispInCsvExecute
+    end
+    object ActionStatDispInText: TAction
+      Category = 'Statistics'
+      Caption = 'Display Results in &Text Editor'
+      Checked = True
+      Hint = 'Display calculated statistics in the text editor'
+      OnExecute = ActionStatDispInTextExecute
+    end
+    object ActionFindNext: TAction
+      Category = 'Search'
+      Caption = 'Find &Next'
+      ImageIndex = 156
+      OnExecute = ActionFindNextExecute
+    end
+    object ActionFindPrevious: TAction
+      Category = 'Search'
+      Caption = 'Find &Previous'
+      ImageIndex = 157
+      OnExecute = ActionFindPreviousExecute
+    end
+    object ActionShowFind: TAction
+      Category = 'Search'
+      Caption = 'ActionShowFind'
+      OnExecute = ActionShowFindExecute
+      ShortCut = 16454
+    end
+    object ActionHideFind: TAction
+      Category = 'Search'
+      Caption = 'ActionHideFind'
+      ImageIndex = 161
+      OnExecute = ActionHideFindExecute
+    end
+    object ActionFindSeq: TAction
+      Category = 'Search'
+      Caption = 'ActionFindSeq'
+      ImageIndex = 3
+      OnExecute = ActionFindSeqExecute
+    end
+    object ActionFindPrevGrp: TAction
+      Caption = 'ActionFindPrevGrp'
+      ImageIndex = 157
+      OnExecute = ActionFindPrevGrpExecute
+    end
+    object ActionFindNextGrp: TAction
+      Caption = 'ActionFindNextGrp'
+      ImageIndex = 156
+      OnExecute = ActionFindNextGrpExecute
+    end
+    object ActionFindNextSingleMotif: TAction
+      Caption = 'ActionFindNextSingleMotif'
+      ImageIndex = 156
+      OnExecute = ActionFindNextSingleMotifExecute
+    end
+    object ActionFindPrevSingleMotif: TAction
+      Caption = 'ActionFindPrevSingleMotif'
+      ImageIndex = 157
+      OnExecute = ActionFindPrevSingleMotifExecute
+    end
+    object ActionStatDispInXls: TAction
+      Category = 'Statistics'
+      Caption = 'Display Results in Spreadsheet (.&xlsx 2007+)'
+      Hint = 'Display exported results in the MS Excel (2007+) format'
+      OnExecute = ActionStatDispInXlsExecute
+    end
+    object ActionStatDispInOds: TAction
+      Category = 'Statistics'
+      Caption = 'Display Results in Spreadsheet (.ods Libre/Open Office)'
+      Hint = 'Display results in the Open Document format'
+      OnExecute = ActionStatDispInOdsExecute
+    end
+    object ActionAddGene: TAction
+      Caption = '&Add Gene Info'
+      Hint = 'Define a new gene and coordinates'
+      OnExecute = ActionAddGeneExecute
+    end
+    object ActionAddDomain: TAction
+      Caption = 'Add Do&main Info'
+      Hint = 'Define a new domain and coordinates'
+      OnExecute = ActionAddDomainExecute
+    end
+    object ActionDeleteGene: TAction
+      Caption = '&Delete Gene Info'
+      Hint = 'Delete the selected gene information'
+      OnExecute = ActionDeleteGeneExecute
+    end
+    object ActionDeleteDomain: TAction
+      Caption = 'De&lete Domain Info'
+      Hint = 'Delete the information for the selected domain'
+      OnExecute = ActionDeleteDomainExecute
+    end
+    object ActionEditDomain: TAction
+      Caption = 'Edit D&omain Info'
+      Hint = 'Edit the information for the currently selected domain'
+      OnExecute = ActionEditDomainExecute
+    end
+    object ShowHelpAction: TAction
+      Caption = '&Contents'
+      ImageIndex = 68
+      OnExecute = ShowHelpActionExecute
+      ShortCut = 16456
+    end
+    object ActionAddPopulation: TAction
+      Caption = 'Add New Population'
+      OnExecute = ActionAddPopulationExecute
+    end
+    object ActionAddSpecies: TAction
+      Caption = 'Add New Species'
+      OnExecute = ActionAddSpeciesExecute
+    end
+    object ActionNextHighlight: TAction
+      Caption = 'Next Highlighted Site'
+      Hint = 'Move to the next highlighted site'
+      ImageIndex = 94
+      OnExecute = ActionNextHighlightExecute
+      ShortCut = 16455
+    end
+    object ActionPreviousHighlight: TAction
+      Caption = 'Previous Highlighted Site'
+      Hint = 'Move to the previous highlighted site'
+      ImageIndex = 95
+      OnExecute = ActionPreviousHighlightExecute
+      ShortCut = 24647
+    end
+    object ActionGroupSeqsByIdentity: TAction
+      Caption = 'Group Sequences By Identity'
+      Hint = 'Group sequences by similarity where only sites with minimum minor allele frequency are used for comparisons'
+      OnExecute = ActionGroupSeqsByIdentityExecute
+    end
+    object ActionSelectOneFromEachGroup: TAction
+      Caption = 'Unselect All But First of Group'
+      Hint = 'Deselect all sequences in each defined group except for the first sequence'
+      OnExecute = ActionSelectOneFromEachGroupExecute
+    end
+    object ActionLabelSitesUsedForGroupIdentityComparison: TAction
+      Caption = 'Label Sites Used For Auto-Grouping'
+      Hint = 'Label all sites that were used for grouping sequences according to identity'
+      OnExecute = ActionLabelSitesUsedForGroupIdentityComparisonExecute
+    end
+    object ActionUnselectUngrouped: TAction
+      Caption = 'Unselect Un-grouped Sequences'
+      Hint = 'Unselect all sequences that do not belong to a group'
+      OnExecute = ActionUnselectUngroupedExecute
+    end
+    object ActionAddDomainsForGroupIdentityComparisonSites: TAction
+      Caption = 'Add Domains for Group Identity Comparison Sites'
+      Hint = 'For each site used in the group identity comparisons, add a single site domain'
+      OnExecute = ActionAddDomainsForGroupIdentityComparisonSitesExecute
+    end
+    object ActionDisableIndependentSites: TAction
+      Caption = 'Toggle Independent Sites'
+      Hint = 'Disable all sites that do not belong to a gene or domain'
+      OnExecute = ActionDisableIndependentSitesExecute
+    end
+    object ActionHighlightLabelledSites: TAction
+      Caption = 'Labelled Sites'
+      Hint = 'Highlight all sites that have a user-defined label'
+      ImageIndex = 205
+      OnExecute = ActionHighlightLabelledSitesExecute
+      ShortCut = 76
+    end
+    object ActionAddSiteLabelList: TAction
+      Caption = 'Add Labels By Site Number'
+      Hint = 'Add site labels for a comma separated list of sites'
+      OnExecute = ActionAddSiteLabelListExecute
+    end
+    object ActionUnselectSmallGroups: TAction
+      Caption = 'Unselect Small Groups...'
+      Hint = 'Unselect all sequences belonging to groups smaller than a specified size'
+      OnExecute = ActionUnselectSmallGroupsExecute
+    end
+    object ActionSelectLargestGroups: TAction
+      Caption = 'Select n Largest Groups'
+      Hint = 'Un-select sequences that are not in the n largest groups'
+      OnExecute = ActionSelectLargestGroupsExecute
+    end
+    object ActionSelectEarliestDatedSeqInEachGroup: TAction
+      Caption = 'Select Earliest in Each Group'
+      Hint = 'In each group of sequences, select only those that have the earliest timestamp'
+      OnExecute = ActionSelectEarliestDatedSeqInEachGroupExecute
+    end
+    object ActionDisplayGroupCounts: TAction
+      Caption = 'Show Group Size'
+      Checked = True
+      Hint = 'Toggle the display of group size in group names'
+      OnExecute = ActionDisplayGroupCountsExecute
+    end
+    object ActionShowDomainBoundaries: TAction
+      Caption = 'Show Gene/Domain Boundaries'
+      Checked = True
+      Hint = 'Display gene and domain boundaries in the grid display'
+      OnExecute = ActionShowDomainBoundariesExecute
+    end
+    object ActionToggleUnlabeledSites: TAction
+      Caption = 'Use Unlabeled Sites'
+      Hint = 'Toggle the selection of unlabeled sites'
+      OnExecute = ActionToggleUnlabeledSitesExecute
+    end
+    object ActionAutoLabelSites: TAction
+      Caption = 'Auto-label Sites'
+      Hint = 'Automatically label sites based on site attributes'
+      OnExecute = ActionAutoLabelSitesExecute
+    end
+    object ActionClearSiteLabels: TAction
+      Caption = 'Clear Site Labels'
+      Hint = 'Remove all site labels'
+      OnExecute = ActionClearSiteLabelsExecute
+    end
+    object ActionSortBySimilarityToFirstSequence: TAction
+      Caption = 'No. of Differences to First Sequence'
+      OnExecute = ActionSortBySimilarityToFirstSequenceExecute
+    end
+    object ActionSortByNameAsc: TAction
+      Caption = 'Sequence Name (Asc)'
+      OnExecute = ActionSortByNameAscExecute
+    end
+    object ActionSortByNameDesc: TAction
+      Caption = 'Sequence Name (Desc)'
+      OnExecute = ActionSortByNameDescExecute
+    end
+    object ActionSortByTaxaGpsDlg: TAction
+      Caption = 'As Per Taxa/Groups Organizer'
+      Hint = 'Sort sequences in the same order as they appear in the Taxa/Groups dialog'
+      OnExecute = ActionSortByTaxaGpsDlgExecute
+    end
+    object ActionExportNames: TAction
+      Caption = 'Export Taxa Names'
+      OnExecute = ActionExportNamesExecute
+    end
+    object DeveloperAction: TAction
+      Caption = 'Developer Action'
+      OnExecute = DeveloperActionExecute
+      Visible = False
+    end
+    object DomainInfoSummary: TAction
+      Caption = 'Domain Info Summary'
+      OnExecute = DomainInfoSummaryExecute
+    end
+  end
+  object SaveDialog1: TSaveDialog
+    Options = [ofOverwritePrompt, ofPathMustExist, ofEnableSizing, ofViewDetail]
+    Left = 423
+    Top = 249
+  end
+  object EditGroup: TPopupMenu
+    OwnerDraw = True
+    OnDrawItem = EditGroupDrawItem
+    OnPopup = EditGroupPopup
+    Left = 32
+    Top = 56
+  end
+  object EditSpecies: TPopupMenu
+    OwnerDraw = True
+    OnDrawItem = EditSpeciesDrawItem
+    OnPopup = EditSpeciesPopup
+    Left = 32
+    Top = 120
+  end
+  object EditPopulation: TPopupMenu
+    OwnerDraw = True
+    OnDrawItem = EditPopulationDrawItem
+    OnPopup = EditPopulationPopup
+    Left = 32
+    Top = 184
+  end
+  object Column0PopupMenu: TPopupMenu
+    Left = 56
+    Top = 245
+  end
+  object SpecialMenu: TPopupMenu
+    Images = MegaForm.NewIcons
+    Left = 32
+    Top = 320
+    object MenuItem68: TMenuItem
+      Action = ActionCoverage
+    end
+    object MenuItem69: TMenuItem
+      Action = ActionCpG
+    end
+  end
+  object AddEditGeneDomains: TPopupMenu
+    Images = MegaForm.NewIcons
+    OnPopup = AddEditGeneDomainsPopup
+    Left = 144
+    Top = 288
+    object MenuItem71: TMenuItem
+      Action = ActionAddGene
+    end
+    object MenuItem75: TMenuItem
+      Action = ActionDeleteGene
+    end
+    object MenuItem77: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem74: TMenuItem
+      Action = ActionEditDomain
+    end
+    object MenuItem72: TMenuItem
+      Action = ActionAddDomain
+    end
+    object MenuItem76: TMenuItem
+      Action = ActionDeleteDomain
+    end
+  end
+  object DiagnoseMenu: TPopupMenu
+    Left = 272
+    Top = 304
+    object MenuItem73: TMenuItem
+      Caption = 'All'
+      OnClick = DiagnoseButtonClick
+    end
+    object MenuItem78: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem79: TMenuItem
+      Caption = 'A (Alanine)'
+      OnClick = DiagnoseButtonClick
+    end
+    object MenuItem80: TMenuItem
+      Caption = 'R (Arginine)'
+      OnClick = DiagnoseButtonClick
+    end
+    object MenuItem81: TMenuItem
+      Caption = 'N (Asparagine)'
+      OnClick = DiagnoseButtonClick
+    end
+    object MenuItem82: TMenuItem
+      Caption = 'D (Aspartic Acid)'
+      OnClick = DiagnoseButtonClick
+    end
+    object MenuItem83: TMenuItem
+      Caption = 'C (Cysteine)'
+      OnClick = DiagnoseButtonClick
+    end
+    object MenuItem84: TMenuItem
+      Caption = 'Q (Glutamine)'
+      OnClick = DiagnoseButtonClick
+    end
+    object MenuItem85: TMenuItem
+      Caption = 'E (Glutamic Acid)'
+      OnClick = DiagnoseButtonClick
+    end
+    object MenuItem86: TMenuItem
+      Caption = 'G (Glycine)'
+      OnClick = DiagnoseButtonClick
+    end
+    object MenuItem87: TMenuItem
+      Caption = 'H (Histidine)'
+      OnClick = DiagnoseButtonClick
+    end
+    object MenuItem88: TMenuItem
+      Caption = 'I (Isoleucine)'
+      OnClick = DiagnoseButtonClick
+    end
+    object MenuItem89: TMenuItem
+      Caption = 'L (Leucine)'
+      OnClick = DiagnoseButtonClick
+    end
+    object MenuItem90: TMenuItem
+      Caption = 'K (Lysine)'
+      OnClick = DiagnoseButtonClick
+    end
+    object MenuItem91: TMenuItem
+      Caption = 'M (Methionine)'
+      OnClick = DiagnoseButtonClick
+    end
+    object MenuItem92: TMenuItem
+      Caption = 'F (Phenylalanine)'
+      OnClick = DiagnoseButtonClick
+    end
+    object MenuItem93: TMenuItem
+      Caption = 'P (Proline)'
+      OnClick = DiagnoseButtonClick
+    end
+    object MenuItem94: TMenuItem
+      Caption = 'S (Serine)'
+      OnClick = DiagnoseButtonClick
+    end
+    object MenuItem95: TMenuItem
+      Caption = 'T (Threonine)'
+      OnClick = DiagnoseButtonClick
+    end
+    object MenuItem96: TMenuItem
+      Caption = 'W (Tryptophan)'
+      OnClick = DiagnoseButtonClick
+    end
+    object MenuItem97: TMenuItem
+      Caption = 'Y (Tyrosine)'
+      OnClick = DiagnoseButtonClick
+    end
+    object MenuItem98: TMenuItem
+      Caption = 'V (Valine)'
+      OnClick = DiagnoseButtonClick
+    end
+  end
+  object ColumnActions: TActionList
+    Left = 595
+    Top = 170
+  end
+  object ColorDialog1: TColorDialog
+    Color = clBlack
+    CustomColors.Strings = (
+      'ColorA=000000'
+      'ColorB=000080'
+      'ColorC=008000'
+      'ColorD=008080'
+      'ColorE=800000'
+      'ColorF=800080'
+      'ColorG=808000'
+      'ColorH=808080'
+      'ColorI=C0C0C0'
+      'ColorJ=0000FF'
+      'ColorK=00FF00'
+      'ColorL=00FFFF'
+      'ColorM=FF0000'
+      'ColorN=FF00FF'
+      'ColorO=FFFF00'
+      'ColorP=FFFFFF'
+      'ColorQ=C0DCC0'
+      'ColorR=F0CAA6'
+      'ColorS=F0FBFF'
+      'ColorT=A4A0A0'
+    )
+    Left = 708
+    Top = 148
+  end
+  object ImageList1: TImageList
+    Height = 11
+    Scaled = True
+    Width = 11
+    Left = 428
+    Top = 123
+    Bitmap = {
+      4C7A030000000B0000000B000000650000000000000078DAEDD1C10A00200803
+      503FDEFF2E8284928D1654A7042FE31D66B97BF18D55E6DB37F6D69EEA6B6692
+      6D0ED9C8B26336F2EC98450EF5658EDD86DCED3FB6CD693557ABD87EEBD20EEF
+      37D9C8B26376C827C72C72A82F73EC36E4D437CB569D0A5C72DA8C
+    }
+  end
+  object HintTimer: TTimer
+    Enabled = False
+    Interval = 1500
+    OnTimer = HintTimerTimer
+    Left = 434
+    Top = 204
+  end
+  object HintRelease: TTimer
+    Enabled = False
+    Interval = 4000
+    OnTimer = HintReleaseTimer
+    Left = 532
+    Top = 245
+  end
+  object FontDialog1: TFontDialog
+    MinFontSize = 0
+    MaxFontSize = 0
+    PreviewText = 'mega'
+    Left = 308
+    Top = 148
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    IniSection = 'TV_SeqDataExplorer'
+    Left = 379
+    Top = 463
+  end
+  object SetGroupTagPopup: TPopupMenu
+    Left = 454
+    Top = 406
+    object GroupItem2: TMenuItem
+      Caption = 'Group'
+      Checked = True
+      OnClick = SetGroupItemClick
+    end
+    object SpeciesItem2: TMenuItem
+      Caption = 'Species'
+      OnClick = SetGroupItemClick
+    end
+    object PopulationItem2: TMenuItem
+      Caption = 'Population'
+      OnClick = SetGroupItemClick
+    end
+    object ContinentItem2: TMenuItem
+      Caption = 'Continent'
+      OnClick = SetGroupItemClick
+    end
+    object CountryItem2: TMenuItem
+      Caption = 'Country'
+      OnClick = SetGroupItemClick
+    end
+    object CityItem2: TMenuItem
+      Caption = 'City'
+      OnClick = SetGroupItemClick
+    end
+    object YearItem2: TMenuItem
+      Caption = 'Year'
+      OnClick = SetGroupItemClick
+    end
+    object MonthItem2: TMenuItem
+      Caption = 'Month'
+      OnClick = SetGroupItemClick
+    end
+    object DayItem2: TMenuItem
+      Caption = 'Day'
+      OnClick = SetGroupItemClick
+    end
+    object TimeItem2: TMenuItem
+      Caption = 'Time'
+      OnClick = SetGroupItemClick
+    end
+  end
+  object CheckBoxes32: TImageList
+    Height = 32
+    Width = 32
+    Left = 216
+    Top = 208
+    Bitmap = {
+      4C7A030000002000000020000000370200000000000078DAED992F6FC25010C0
+      E7262727097F1409A000458A6248C217180921A000431008DC1C93931812F80C
+      204AE003CC310399E18F214830106EBD8636CB3668FBFAFACAC2FD9253E4DDEF
+      1EEDEB1DF4EE8E20AE9342A100814000BC5E2F53E0DA62B1082CEE6834AAAEAF
+      56ABD06EB7A1DBED5A0A5C53A954C0EFF7432C1603967D8FC763B0CB6834526B
+      28954AA66BD0F6CD8B72B9ACEEC7AC1FAF1D7E7FBCC05C98D38A1FAF212F3017
+      F9C94F7EF293FF7FF8DDEC3FD82B717670ABFFE2CC843303CE0E76190E8796E7
+      0F0467265C87B5B3CE5FB81673C4E371A619106BB63B7F5ADD37411037CD3D3E
+      829568728E8A120F26DC1F4ABC39E07F55E25309CFA5D673723BC58B12F50B9F
+      6BB53A85517EF2939F973FA2C4B34B7E74CB7F3C6F44F8CFB945F82FB99DF61B
+      B959FD1E137DC38C9BD56F94DBACDBCEF77FCE61C56DF7FAFF745975F3B8FF34
+      A7C4E0E675FF4718DDD47FC86F94BF7E9A11DDF23F9E66E4A643F17E3ABB9788
+      3BE87FA29F77D7051004E1388BC50252A914A4D369D86EB7C2DD894442FF4F7A
+      B55AB9E2F6F97C5CDFEB18B15C2E419224DDDDE974C84DEEAB751F8F47E8F7FB
+      309BCD2CAD9BCFE75CCED860305073844221984C2642DDC8743A856030A8E6C2
+      7776985B945B439665FD9D5F329984CD6623FC5EEBF57AFA3BC44C26F3AB5F88
+      B8CF5BAD965E433E9F87C3E120F48CE159A8D56A7A0D8D4643F8F9DEEFF790CB
+      E5F41AC2E1B0F03EB6DBED209BCDEA35887EAE21EBF55A3D0B782E44F6EFEFE0
+      191039B710C42DF0050DEABAFF
+    }
+  end
+  object ImageList2: TImageList
+    Left = 168
+    Top = 386
+    Bitmap = {
+      4C7A0300000010000000100000008C0100000000000078DAED94CF2B445114C7
+      9F88901AB190856267A3AC348F0D1B66457A6267E97F105B5B35250B2B9A9A50
+      FC0BFE062BD94C7E455286859FF17C4F7D5F9D6EEF3DF7BEB7A1E6D6A77977E6
+      7ECEBDF7BC73C6F3BC36CFF3CAA00E424BEA7422F70204C0B724A013ED2B73D7
+      11A833FB197C5FDDA7E137FCAC7EDEFACDDB3F79FB57C6023807DF96FE073801
+      C33CCF2758031396E79F0447E0126C8163CB9C35815E3ECBD99F4085316CC63A
+      78012B9CD71CFC51F0CEFB1F38FAADE094EE03E873F43754EE17D5F7A62FF9E9
+      37DC31BE1F71F78DDF4C7F1BBC8212E7EDE08CEEADCA7D9CDF09EEB9368AB1C9
+      B9D4D56CCCBDCCFD47548C37F0C5E7DD84BCC4E54FC710AE40C1C1D731E4DCD3
+      29EFA59652BF436026C58DEA376FFFE4EDDFFF34E45DDC80E50C6E81B510E560
+      D0D1DF536EC5D19D53EE35E87670A5E7EE541F9512D6B580797EEA71A8F6DE49
+      709B41956BAA2AC69272A5D6BB12FC1EF0ACD64A8C01FED785ECE3A95FEE5934
+      623CAAE7B265AECC1821FBA2C321DF3A86F4E578865A2B72DFD5BFDE503FEBA5
+      D616
+    }
+  end
+  object NamesColumnPopupMenu: TPopupMenu
+    Left = 93
+    Top = 475
+    object MoveToTopItem: TMenuItem
+      Caption = 'Move to Top'
+      OnClick = MoveToTopItemClick
+    end
+    object MoveToBottomItem: TMenuItem
+      Caption = 'Move to Bottom'
+      OnClick = MoveToBottomItemClick
+    end
+    object Separator1: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem118: TMenuItem
+      Caption = 'Sort Sequences'
+      object MenuItem119: TMenuItem
+        Action = ActionSortBySimilarityToFirstSequence
+      end
+      object MenuItem121: TMenuItem
+        Action = ActionSortByNameAsc
+      end
+      object MenuItem122: TMenuItem
+        Action = ActionSortByNameDesc
+      end
+      object MenuItem123: TMenuItem
+        Action = ActionRestoreInputOrder
+      end
+      object MenuItem124: TMenuItem
+        Action = ActionSortByTaxaGpsDlg
+      end
+    end
+    object MenuItem120: TMenuItem
+      Action = ActionRestoreInputOrder
+    end
+  end
+end

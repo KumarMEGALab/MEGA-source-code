@@ -1,0 +1,195 @@
+object SelectGeneticCodeDlg: TSelectGeneticCodeDlg
+  Left = 559
+  Height = 394
+  Top = 182
+  Width = 370
+  Caption = 'Select a Genetic Code'
+  ClientHeight = 394
+  ClientWidth = 370
+  Font.Color = clMedGray
+  Font.Name = 'Arial'
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnHelp = FormHelp
+  OnResize = FormResize
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '2.2.4.0'
+  object CodesLBx: TListBox
+    Left = 45
+    Height = 64
+    Top = 64
+    Width = 80
+    ItemHeight = 0
+    ParentFont = False
+    ScrollWidth = 98
+    TabOrder = 0
+    Visible = False
+  end
+  object TopPanel: TPanel
+    Left = 0
+    Height = 31
+    Top = 0
+    Width = 370
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 31
+    ClientWidth = 370
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+    object AddSBtn: TSpeedButton
+      Left = 6
+      Height = 24
+      Top = 4
+      Width = 64
+      Caption = '&Add'
+      OnClick = AddSBtnClick
+      ParentFont = False
+    end
+    object DeleteSBtn: TSpeedButton
+      Left = 74
+      Height = 24
+      Top = 4
+      Width = 64
+      Caption = '&Delete'
+      OnClick = DeleteSBtnClick
+      ParentFont = False
+    end
+    object EditSBtn: TSpeedButton
+      Left = 142
+      Height = 24
+      Top = 4
+      Width = 64
+      Caption = '&Edit'
+      OnClick = EditSBtnClick
+      ParentFont = False
+    end
+    object ViewSBtn: TSpeedButton
+      Left = 210
+      Height = 24
+      Top = 4
+      Width = 64
+      Caption = '&View'
+      OnClick = ViewSBtnClick
+      ParentFont = False
+    end
+    object ComputeSBtn: TSpeedButton
+      Left = 278
+      Height = 24
+      Top = 4
+      Width = 64
+      Caption = '&Statistics'
+      OnClick = ComputeSBtnClick
+      ParentFont = False
+    end
+  end
+  object BottomPanel: TPanel
+    Left = 0
+    Height = 41
+    Top = 353
+    Width = 370
+    Align = alBottom
+    ClientHeight = 41
+    ClientWidth = 370
+    ParentFont = False
+    TabOrder = 2
+    object ToolBar1: TToolBar
+      Left = 11
+      Height = 30
+      Top = 5
+      Width = 358
+      Align = alNone
+      AutoSize = True
+      ButtonHeight = 30
+      ButtonWidth = 115
+      Caption = 'ToolBar1'
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      HotImages = ImageForm.DlgButtonsHover
+      Images = ImageForm.DlgButtons
+      TabOrder = 0
+      object ToolButton1: TToolButton
+        Left = 1
+        Top = 0
+        Action = HelpAction
+      end
+      object ToolButton2: TToolButton
+        Left = 120
+        Top = 0
+        Action = CancelAction
+      end
+      object ToolButton3: TToolButton
+        Left = 239
+        Top = 0
+        Action = OkAction
+      end
+    end
+  end
+  object ScrollBox1: TScrollBox
+    Left = 0
+    Height = 322
+    Top = 31
+    Width = 370
+    HorzScrollBar.Page = 245
+    VertScrollBar.Page = 180
+    Align = alClient
+    ClientHeight = 318
+    ClientWidth = 366
+    ParentFont = False
+    TabOrder = 3
+    object NamesLBx: TCheckListBox
+      Left = 0
+      Height = 318
+      Top = 0
+      Width = 366
+      Align = alClient
+      BorderStyle = bsNone
+      Color = clMenuBar
+      ExtendedSelect = False
+      Items.Strings = (
+        'Standard'
+        'Mitochondrial'
+        'Bacterial'
+      )
+      ItemHeight = 17
+      ItemIndex = 1
+      OnClickCheck = NamesLBxClickCheck
+      TabOrder = 0
+      Data = {
+        03000000000000
+      }
+    end
+    object CodeSelSEdit: TSpinEdit
+      Left = 195
+      Height = 23
+      Top = 157
+      Width = 50
+      TabOrder = 1
+      Visible = False
+    end
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 131
+    Top = 123
+    object OkAction: TAction
+      Caption = 'OkAction'
+      ImageIndex = 5
+      OnExecute = OkBtnClick
+      ShortCut = 16467
+    end
+    object CancelAction: TAction
+      Caption = 'CancelAction'
+      ImageIndex = 0
+      OnExecute = CancelBtnClick
+      ShortCut = 27
+    end
+    object HelpAction: TAction
+      Caption = 'HelpAction'
+      ImageIndex = 8
+      OnExecute = HelpBtnClick
+      ShortCut = 112
+    end
+  end
+end

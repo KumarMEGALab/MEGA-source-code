@@ -1,0 +1,73 @@
+<HTML>
+<HEAD><TITLE>Maximum Likelihood</TITLE>
+<style>{TLegendGenerator.Style}</style>
+</HEAD>
+
+<BODY>
+
+  <SPAN class="figureTitle">
+    Evolutionary analysis by the {TTreePack.TreeMethodName} method
+  </span>
+
+<br>
+
+<div id ="content">
+
+	  {if TLegendGenerator.AnalyzeUserTree = True}
+		 The user-specified tree topology was analyzed
+	  {else}
+		 The evolutionary history was inferred
+	  {endif}
+	  by using the Little Bootstraps approach [{TLegendGenerator.LittleBootstrapsCitation:ExpandCitation}] with the {TTreePack.TreeMethodName} method and {TAnalysisInfo.DistModelName} substitution model [{TDistPack.MethodCitation:ExpandCitation}].
+		{if TTreeViewForm.StatPosCaption ! ''}
+			The bootstrap confidence limits, which are displayed {TTreeViewForm.StatPosCaption}, were obtained using the Little Bootstraps method [{TLegendGenerator.LittleBootstrapsCitation:ExpandCitation}] where
+                        {if TLittleBootstrapsSummary.NumSamples = 1}
+                        the mean of computed bootstrap values is used.
+                        {else}
+                        the median bootstrap support for each partition among samples is selected.
+                        {endif}
+                        {if TTreeBox.ShowStatsRange = True}
+                        The method described in Sharma and Kumar (2021) [{TLegendGenerator.LittleBootstrapsCitation:ExpandCitation}] was used for computing ranges for confidence limits.
+                        {endif}
+		{endif}
+		Branch lengths for the tree were estimated using the Little Bootstraps method where branch lengths from a random sample of replicate trees are used to derive mean branch lengths.
+		For the analysis {TLittleBootstrapsSummary.NumSamples}
+                {if TLittleBootstrapsSummary.NumSamples = 1}
+                sample with {TLittleBootstrapsSummary.AvgNumConfigsUsed} site patterns and {TLittleBootstrapsSummary.NumReps} replicates was used.
+                {else}
+                samples with {TLittleBootstrapsSummary.AvgNumConfigsUsed} site patterns and {TLittleBootstrapsSummary.NumReps} replicates per sample were used.
+                {endif}
+
+
+	  {if TLegendGenerator.AnalyzeUserTree = True}
+	  {else}
+		{TLegendGenerator.InitialTree}
+	  {endif}
+
+	  {if TLegendGenerator.GammaPara = 'N/A'}
+	  {else}
+		 A discrete Gamma distribution was used to model evolutionary rate differences
+		 among sites ({TLegendGenerator.NoOfGCats} categories (+<i>G</i>,
+		 parameter = {TLegendGenerator.GammaPara})).
+	  {endif}
+
+	  {if TLegendGenerator.PropOfInvariant = 'N/A'}
+	  {else}
+		The rate variation model allowed for some sites to be evolutionarily
+		invariable ([+<i>I</i>], {TLegendGenerator.PropOfInvariant}% sites).
+	  {endif}
+	{if TTreeViewForm.ActiveTabName = 'Original Tree'}
+		The tree is drawn to scale, with branch lengths measured in the
+		{if TTreeViewForm.BLenCaption ! ''}
+		  number of substitutions per site ({TTreeViewForm.BLenCaption}).
+		{else}
+		  number of substitutions per site.
+		{endif}
+	{endif}
+  {IncludeExternalFile=data_coverage_snippet.htm}	 
+  {IncludeExternalFile=Data_Subset_Template.htm}
+</div>
+<br><br>
+</body>
+</html>
+

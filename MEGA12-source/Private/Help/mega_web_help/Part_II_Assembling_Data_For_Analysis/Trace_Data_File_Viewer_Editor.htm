@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Trace Data File Viewer/Editor</title>
+<link rel="StyleSheet" href="../default.css" type="text/css" />
+ <link rel="StyleSheet" href="../default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "..";
+gCommonRootRelPath = "..";
+gTopicId = "2.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part II: Assembling Data for Analysis" />
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js"></script>
+
+
+<h1>Trace Data File Viewer/Editor</h1>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font color="#333333">Using 
+ this function, you can view and edit trace data produced by an automated 
+ DNA sequencer in</font> <font color="#007FBF"><a id="a5036" href="../ABI_File_Format.htm" name="a5036" style="color: #007fbf;" class="BSSCPopup">ABI</a></font> 
+ <font color="#333333">and</font> <a id="a5037" href="../Staden.htm" name="a5037" class="BSSCPopup">Staden</a> <font color="#333333">file 
+ formats. The sequences displayed can be added directly into the</font> 
+ <a href="../Alignment_Explorer.htm">Alignment Explorer</a> <font color="#333333">or 
+ sent to the</font> <a href="Web_Browser_and_Data_Miner.htm">Web Browser</a> 
+ <font color="#333333">for conducting</font> <a href="Building_Sequence_Alignments/BLAST/About_BLAST.htm">BLAST</a> 
+ <font color="#333333">searches.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" color="#333333" size="2" face="Arial">A brief 
+ description of various functions available in the Trace Data file Viewer/Editor 
+ is</font> <font style="font-size: 11pt; font-family: Arial;" color="#333333" 
+				 size="2" face="Arial">as follows:</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><i><u><font 
+	 style="font-size: 11pt; font-family: Arial; font-weight: bold; font-style: italic; 
+	 text-decoration: underline; " color="#333333" size="2" face="Arial">Data 
+ menu</font></u></i></b></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Open 
+ File in New Window</font></b><font style="font-size: 11pt; font-family: Arial;" 
+									 color="#333333" size="2" face="Arial">: 
+ Launches a new instance to view/edit another file.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Open 
+ File</font></b><font style="font-size: 11pt; font-family: Arial;" color="#333333" 
+						 size="2" face="Arial">: Allows you to select another 
+ file to view/edit in the current window.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-weight: bold;" color="#333333" size="2">S</font></b><b><font 
+	 style="font-size: 11pt; font-weight: bold;" color="#333333" size="2">ave 
+ File</font></b><font style="font-size: 11pt;" color="#333333" size="2">: 
+ Save the current data to a file in</font> <font style="font-size: 11pt;" 
+												 size="2"><a id="a5038" href="../Staden.htm" name="a5038" class="BSSCPopup">Staden</a></font> 
+ <font style="font-size: 11pt;" color="#333333" size="2">format.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Print</font></b><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+	 face="Arial">: Prints the current trace data, excluding all masked 
+ regions.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Add 
+ to Alignment Explorer</font></b><font style="font-size: 11pt; font-family: Arial;" 
+										 color="#333333" size="2" face="Arial">: 
+ DNA sequence data, excluding all masked regions, is sent to the</font> 
+ <i><font style="font-size: 11pt; font-family: Arial; font-style: italic;" 
+			 color="#333333" size="2" face="Arial">Alignment Explorer</font></i> 
+ <font style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+		 face="Arial">and appears as a new sequence at the end of the current 
+ alignment.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Export 
+ FASTA File:</font></b> <font style="font-size: 11pt; font-family: Arial;" 
+								 color="#333333" size="2" face="Arial">Save 
+ the active sequence data to a FASTA formatted text file.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Exit</font></b><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+	 face="Arial">: Closes the current window.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><i><u><font 
+	 style="font-size: 11pt; font-family: Arial; font-weight: bold; font-style: italic; 
+	 text-decoration: underline; " color="#333333" size="2" face="Arial">Edit 
+ menu</font></u></i></b></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Undo</font></b><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+	 face="Arial">: Use this command to</font> <font style="font-size: 11pt; 
+													 font-family: Arial;" 
+													 color="#333333" size="2" 
+													 face="Arial">undo</font> 
+ <font style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+		 face="Arial">one or more previous actions.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Copy</font></b><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+	 face="Arial">: This menu provides options to (1) copy DNA sequences 
+ from FASTA or plain text formats to the clipboard and (2) copy the exact 
+ portion you are viewing of the currently displayed trace</font> <font 
+	 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+	 face="Arial">image to</font> <font style="font-size: 11pt; font-family: Arial;" 
+										 color="#333333" size="2" face="Arial">the 
+ clipboard in the Windows Enhanced Meta File format. For FASTA format copying, 
+ both the sequence name and the DNA data will be copied, excluding the 
+ masked regions. To copy only the selected portion of the sequence, use 
+ the plain text copy command (If nothing is selected, then the plain text 
+ command will copy the entire sequence, except for the masked regions).</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Mask 
+ Upstream</font></b><font style="font-size: 11pt; font-family: Arial;" 
+							 color="#333333" size="2" face="Arial">: Mask 
+ or unmask region to the left (upstream) of the cursor.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Mask 
+ Downstream</font></b><font style="font-size: 11pt; font-family: Arial;" 
+							 color="#333333" size="2" face="Arial">: Mask 
+ or unmask region to the right (downstream) of the cursor.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Reverse 
+ Complement</font></b><font style="font-size: 11pt; font-family: Arial;" 
+							 color="#333333" size="2" face="Arial">: Reverse 
+ complements the entire sequence.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><i><u><font 
+	 style="font-size: 11pt; font-family: Arial; font-weight: bold; font-style: italic; 
+	 text-decoration: underline; " color="#333333" size="2" face="Arial">Search 
+ menu</font></u></i></b></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Find</font></b><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+	 face="Arial">: Finds a specified query sequence.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Find 
+ Next</font></b><font style="font-size: 11pt; font-family: Arial;" color="#333333" 
+						 size="2" face="Arial">: Finds the next occurrence 
+ of the query sequence. To specify the query sequence, first use the</font> 
+ <b><font style="font-size: 11pt; font-family: Arial; font-weight: bold;" 
+			 color="#333333" size="2" face="Arial">Find</font></b> <font 
+	 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+	 face="Arial">menu command.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Find 
+ Previous</font></b><font style="font-size: 11pt; font-family: Arial;" 
+							 color="#333333" size="2" face="Arial">: Finds 
+ the previous occurrence of a query sequence. To specify the query sequence, 
+ first use the</font> <b><font style="font-size: 11pt; font-family: Arial; 
+								 font-weight: bold;" color="#333333" size="2" 
+								 face="Arial">Find</font></b> <font style="font-size: 11pt; 
+	 font-family: Arial;" color="#333333" size="2" face="Arial">command.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Next 
+ N</font></b><font style="font-size: 11pt; font-family: Arial;" color="#333333" 
+					 size="2" face="Arial">: Go to the next indeterminate 
+ (N) nucleotide.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Find</font></b> 
+ <b><font style="font-size: 11pt; font-family: Arial; font-weight: bold;" 
+			 color="#333333" size="2" face="Arial">in File</font></b><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+	 face="Arial">: This command searches another file, which you specify, 
+ for the selected sequence in the current window. It can be used when you 
+ are assembling sequence subclones to build a contig.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Do 
+ BLAST Search</font></b><font style="font-size: 11pt; font-family: Arial;" 
+								 color="#333333" size="2" face="Arial">: 
+ Launch web browser to BLAST the currently selected sequence. If nothing 
+ is selected, the entire sequence, excluding the masked regions, will be 
+ used.</font></p>
+
+</body>
+</html>

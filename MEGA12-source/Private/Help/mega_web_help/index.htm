@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=yes" />
+<meta name="generator" content="Adobe Framemaker 2017" />
+<title>MEGAX-Help</title>
+
+<link rel="StyleSheet" href="template/Charcoal_Grey/layout.css" type="text/css" />
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/layout.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/projectdata.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadcsh.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/showhidecontrols.js"></script>
+<script type="text/javascript" src="template/scripts/pageloader.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/layoutfix.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/layout.min.css">
+<script type="text/javascript" src="template/scripts/mhfhost.js"></script>
+<script type="text/javascript" src="template/scripts/search.js"></script>
+<script type="text/javascript" >
+gTopicFrameName = "rh_default_topic_frame_name";
+gDefaultTopic = "#Preface.htm";
+</script>
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+</script>
+</head>
+
+<body class="hide-children loading" data-rhwidget="Basic" data-class="media-desktop: KEY_SCREEN_DESKTOP; media-landscape: KEY_SCREEN_TABLET; media-mobile: KEY_SCREEN_PHONE; ios: KEY_SCREEN_IOS" data-controller="ModernLayoutController: mc; JsLoadingController" data-attr="dir:KEY_DIR">
+<script type="text/javascript" src="ehlpdhtm.js"></script>
+
+
+
+<div class="header" data-class="">
+	<div class="logo" data-attr="title:@KEY_LNG.HomeButton;href:rh.consts('DEFAULT_TOPIC')" data-click="!(@KEY_SCREEN_DESKTOP || @KEY_SCREEN_TABLET) && @KEY_ACTIVE_TAB(null)">
+		&nbsp;
+	</div>
+	<div class="title">
+		<span>MEGAX-Help</span>
+	</div>
+	<div class="brs_next" data-attr="title:@KEY_LNG.Next"><a id="browseSeqNextLandscape" class="wBSNextButton" data-rhwidget="Basic" data-attr="href:.l.brsNext" data-css="visibility: @.l.brsNext?'visible':'hidden'">&nbsp;</a>
+</div>
+	<div class="brs_previous" data-attr="title:@KEY_LNG.Prev"><a id="browseSeqBackLandscape" class="wBSBackButton" data-rhwidget="Basic" data-attr="href:.l.brsBack" data-css="visibility: @.l.brsBack?'visible':'hidden'">&nbsp;</a>
+</div>
+</div>
+<!-- Function bar with TOC/IDS/GLO/FILTER/FTS buttons -->
+<div class="functionbar" data-css="width: sidebar_width | screen: 'desktop'" data-class="sidebar-opened: $mc.isSidebarTab(@KEY_ACTIVE_TAB); desktop-sidebar-hidden: @.l.desktop_sidebar_visible == false || @.l.desktop_sidebar_available === false; ">
+	<div class="nav" data-class="no-filter: !@KEY_FEATURE.filter">
+		<a class="toc" data-if="KEY_FEATURE.toc" data-class="active: @KEY_ACTIVE_TAB == 'toc'" data-click="$mc.toggleActiveTab('toc')" data-attr="title:@KEY_LNG.TableOfContents; href: '#'">&#160;</a>
+		<a class="idx" data-if="KEY_FEATURE.idx" data-class="active: @KEY_ACTIVE_TAB == 'idx'" data-click="$mc.toggleActiveTab('idx')" data-attr="title:@KEY_LNG.Index; href: '#'">&#160;</a>
+		<a class="glo" data-if="KEY_FEATURE.glo" data-class="active: @KEY_ACTIVE_TAB == 'glo'" data-click="$mc.toggleActiveTab('glo')" data-attr="title:@KEY_LNG.Glossary; href: '#'">&#160;</a>
+		<a class="filter" data-if="KEY_FEATURE.filter" data-class="active: @KEY_ACTIVE_TAB == 'filter'; filter-applied: @.l.tag_expression.length"  data-click="$mc.toggleActiveTab('filter')" data-attr="title:@KEY_LNG.Filter; href: '#'">&#160;</a>
+		<a class="fts" data-if="!@KEY_SCREEN_DESKTOP || @KEY_SEARCH_LOCATION == 'tabbar'" data-class="active: @KEY_ACTIVE_TAB == 'fts'; search-sidebar: @KEY_SEARCH_LOCATION == 'tabbar'" data-click="$mc.toggleActiveTab('fts')" data-attr="title:@KEY_LNG.SearchTitle; href: '#'">&#160;</a>
+	</div>
+</div>
+<!-- Table of contents -->
+<div class="toc-holder left-pane" data-css="width: sidebar_width | screen: 'desktop'" data-class="desktop-sidebar-hidden: @.l.desktop_sidebar_visible == false || @.l.desktop_sidebar_available === false; search-sidebar: @KEY_SEARCH_LOCATION == 'tabbar'; search-content: @KEY_SEARCH_LOCATION == 'content'; layout-visible: @KEY_ACTIVE_TAB == 'toc'; drill-down: KEY_TOC_DRILL_DOWN; ; loading: !@EVT_TOC_LOADED">
+	<div class="mobileheader"><span data-text="@KEY_LNG.TableOfContents"></span><div class="totopic" data-click="$mc.toggleActiveTab('')" data-attr="title:@KEY_LNG.Back"></div></div>
+	<ul class="toc" data-rhwidget="List: .p.toc" data-controller="TocController: toc" data-click="$toc.onClick(event)">
+		<li data-rif="item.type === 'item' || item.type === 'remoteitem'" data-i-class="$toc.class(item)" data-class="inactive: @bookid != '#{@pid}'" data-childorder="#{childOrder}" data-rhtags="#{$toc.tags(item)}" data-itemid="#{@id}">
+			<a data-itext="item.name" data-i-href="$toc.url(item, '#{@id}')"></a>
+		</li>
+		<li class="book" data-rif="item.type === 'book'" data-class="active: @bookid == '#{@id}'; inactive: @bookid != '#{@pid}' &amp;&amp; @bookid != '#{@id}'" data-childorder="#{childOrder}"
+			data-itemkey="#{$toc.key(item.absRef, item.key)}" data-itemid="#{@id}" data-itemlevel="#{@level}" data-rhtags="#{$toc.tags(item)}">
+			<a data-itext="item.name" data-i-href="$toc.url(item, '#{@id}')"></a>
+		</li>
+		<li class="child max-height-transition" data-rif="item.key" data-class="show: @show_child#{@id}" data-childorder="#{childOrder}">
+		  <ul class="child" data-child="$toc.key(item.absRef, item.key)"></ul>
+		</li>
+	</ul>
+</div>
+<!-- Index -->
+<div class="idx-holder left-pane" data-css="width: sidebar_width | screen: 'desktop'" data-class="desktop-sidebar-hidden: @.l.desktop_sidebar_visible == false || @.l.desktop_sidebar_available === false; layout-visible: @KEY_ACTIVE_TAB == 'idx'; "  data-scroll="@.l.load_more_index(true) | debounce: 50, delta: 100">
+	<div class="mobileheader"><span data-text="@KEY_LNG.Index"></span><div class="totopic" data-click="$mc.toggleActiveTab('')" data-attr="title:@KEY_LNG.Back"></div></div>
+	<div id="idx" class="Index">
+		<input class="IdxFilter" data-attr="placeholder:@KEY_LNG.IndexFilterKewords" type="text" data-keyup="@.l.idxfilter(node.value)" />
+		<ul class="index-list" data-rhwidget="List: key: PROJECT_INDEX_DATA, , filter: $ic.showItem(item.name), spliton: index % 60 == 59"  data-config="loadmore: '.l.load_more_index'" data-controller="IndexController: ic"> 
+			<li class="treeitem IndexAlphabet" data-rif="$ic.showCategory(item.name, this.path.length)" data-itemlevel="#{@level}"> 
+			  <span class="IndexAlphabetText" data-itext="$ic.alphaText(item.name)"></span> 
+			</li>
+			<li class="treeitem IndexKeyword" data-i-data-rhtags="item['data-rhtags']">
+				<a data-rif="item.topics &amp;&amp; item.topics.length == 1" class="nolink IndexKeywordText" data-i-href="item.topics[0].url" data-itext="item.name"> 
+				</a> 
+				<span class="IndexKeywordText IndexKeyword unselectable" data-itext="item.name" data-rif="item.topics &amp;&amp; item.topics.length != 1" data-i-title="item.name" data-click="@show.#{@id}(!@show.#{@id})"></span> 
+				<ul data-if="@show.#{@id}" style="list-style-type: none;">
+				 <li data-repeat="i, topic:#{@itemkey}.topics" data-rif="item.topics &amp;&amp; item.topics.length > 1" class="IndexChildBlock IndexKeyword"> 
+				  <a class="nolink IndexLink IndexLinkText" data-i-href="$topic.url" data-i-data-rhtags="$topic['data-rhtags']" data-itext="$topic.name" data-i-title="$topic.name"> 
+				  </a> 
+				 </li>
+				</ul>
+				<div class="IndexChildBlock" data-rif="item['keys']"> 
+					<ul class="child" data-child="#{@itemkey}.keys" style="list-style-type: none;"></ul> 
+				</div>
+			</li> 
+		</ul>
+	</div>
+</div>
+<!-- Glossary -->
+<div class="glo-holder left-pane" data-css="width: sidebar_width | screen: 'desktop'" data-class="desktop-sidebar-hidden: @.l.desktop_sidebar_visible == false || @.l.desktop_sidebar_available === false; layout-visible: @KEY_ACTIVE_TAB == 'glo'; ">
+	<div class="mobileheader"><span data-text="@KEY_LNG.Glossary"></span><div class="totopic" data-click="$mc.toggleActiveTab('')" data-attr="title:@KEY_LNG.Back"></div></div>
+	<div id="glo" class="Glossary" data-controller="GlossaryController: gc">
+		<input class="GloFilter" data-attr="placeholder:@KEY_LNG.GlossaryFilterTerms" type="text" data-keyup="$gc.filterGlo(node.value)"/>
+		  <ul style="list-style: none;"> 
+			<div data-repeat="i, glossary: PROJECT_GLOSSARY_DATA"> 
+			  <li class="treeitem GloAlphabet" data-rif="!$gc.exists($glossary.name)&amp;&amp;!$gc.isFiltered($glossary.name)"> 
+				<span class="GloAlphabetText" data-itext="$gc.alphaText($glossary.name)"></span>
+			  </li>
+			  <li class="treeitem"  data-rif="!$gc.isFiltered($glossary.name)"> 
+				<div class="GlossTerm unselectable" data-type="11" data-i-title="$glossary.name" data-term="$glossary.name" data-click="@show.#{@index}(!@show.#{@index})"> 
+				  <span class="GlossaryTermText" data-itext="$glossary.name"></span>
+				</div> 
+				<div class="GlossDefinition unselectable" data-type="12" data-if="@show.#{@index}"> 
+				  <span class="GlossDefinitionText" data-itext="$glossary.value"></span> 
+				</div> 
+			  </li> 
+			</div> 
+		  </ul> 
+	</div>
+</div>
+<!-- Filter -->
+<div class="filter-holder left-pane" data-css="width: sidebar_width | screen: 'desktop'" data-class="sidebar-opened: $mc.isSidebarTab(@KEY_ACTIVE_TAB); desktop-sidebar-hidden: @.l.desktop_sidebar_visible == false || @.l.desktop_sidebar_available === false; layout-visible: @KEY_ACTIVE_TAB == 'filter'; loading: !@KEY_MERGED_FILTER_KEY">
+	<div class="mobile-filter-heading" data-if="KEY_SCREEN_PHONE">
+		<a class="mobile_back" data-click="$mc.filterDone()" data-attr="title:@KEY_LNG.ApplyTip"></a>
+		<div class="page-title" data-text="KEY_PROJECT_FILTER_CAPTION"></div>
+		<a class="reset-button" data-attr="href: '#'; title: @KEY_LNG.Reset" data-click="$mc.setDefaultTagStates()" data-class="layout-visible: $mc.isTagStatesChanged(@KEY_TAG_EXPRESSION)"></a>
+	</div>
+	<p class="filter-title" data-if="(@KEY_SCREEN_TABLET || @KEY_SCREEN_DESKTOP) &amp;&amp; @KEY_MERGED_FILTER_KEY" data-text="KEY_PROJECT_FILTER_CAPTION"></p>
+	<a class="reset-button" data-attr="href: '#'; title: @KEY_LNG.Reset" data-click="$mc.setDefaultTagStates()" data-class="layout-visible: $mc.isTagStatesChanged(@KEY_TAG_EXPRESSION)"></a>
+	<ul class="wFltOpts" data-rhwidget="List:KEY_MERGED_FILTER_KEY" data-controller="FilterController: fc" data-click="$fc.click(event)"
+	data-class="radio: @KEY_PROJECT_FILTER_TYPE == 'radio'; checkbox: @KEY_PROJECT_FILTER_TYPE == 'checkbox'">
+		<li data-i-class="$fc.class(item)" data-itemkey="#{@path}" data-itemvalue="#{name}">
+		  <input data-rif="$fc.inputType(item) == 'checkbox'" data-i-id="'filter#{@id}'" type="checkbox" data-i-value="#{@index}"/>
+		  <input data-rif="$fc.inputType(item) == 'radio'" data-i-id="'filter#{@id}'" type="radio" data-i-name="'filter_name#{@pid}'" data-i-value="'#{@index}'"/>		  
+		  <label data-i-for="'filter#{@id}'" data-i-title="item.display" data-itext="item.display" data-class="tag-parent: #{@itemkey}.children; checked: KEY_PROJECT_TAG_STATES#{@path}"></label>
+		  <ul class="wFltOptsGrp" data-child="#{@itemkey}.children" data-rif="item.children"></ul>
+		</li>
+	 </ul>
+</div>
+<!-- Sidebar sizer -->
+<div class="sidebarsizer left-pane boundry column-resize" data-if="@.l.desktop_sidebar_available === true" data-resize="@.l.desktop_sidebar_visible(@sidebar_width == null || @sidebar_width != '0px') | x: 'sidebar_width', maxx: 0.7, screen: 'desktop'" data-css="left: sidebar_width | screen: 'desktop', dir: 'ltr'; right: sidebar_width | screen: 'desktop', dir: 'rtl'" data-class="desktop-sidebar-hidden: @.l.desktop_sidebar_visible == false;">
+	<a class="sidebartoggle" data-click="@sidebar_width(null) | screen: 'desktop'" data-toggle=".l.desktop_sidebar_visible" data-attr="title: @KEY_LNG.SidebarToggleTip">&nbsp;</a>
+</div>
+<!-- Search field -->
+<div class="searchbar left-pane" data-css="width: sidebar_width | screen: 'desktop'" data-class="searchpage-mode, layout-visible: @KEY_ACTIVE_TAB == 'fts'; search-sidebar: @KEY_SEARCH_LOCATION == 'tabbar'; search-content: @KEY_SEARCH_LOCATION == 'content';searchbar-open:@focusin_main_searchbox && @SEARCH_RESULTS_KEY!== undefined &&  (@SEARCH_RESULTS_KEY).length>0;searchbar-mobile:KEY_SCREEN_PHONE" data-controller="SearchController:sc">
+	<div class="search-input" data-class="search-input-open:@focusin_main_searchbox && @SEARCH_RESULTS_KEY!== undefined &&  (@SEARCH_RESULTS_KEY).length>0" data-if="$mc.isSearchMode(@KEY_ACTIVE_TAB, @active_content)">
+		<input class="wSearchField" type="text" data-class="no-filter: !@KEY_FEATURE.filter" data-attr="placeholder: @KEY_LNG.Search"
+		data-value="KEY_SEARCH_TERM" data-keyup="$mc.newSearch(node.value, event.keyCode, event), $sc.handleKey(event)|debounce:150" data-focus="@focusin_main_searchbox(true)" data-blur="$sc.handleFocusOut('focusin_main_searchbox')|timeout:200" data-value="KEY_SEARCH_TERM" />
+		<a class="wSearchLink" data-click="@EVT_SEARCH_TERM(true)" data-attr="href: '#'" data-if="@KEY_SCREEN_PHONE">&nbsp;</a>	  
+
+		<div data-if="@focusin_main_searchbox && @SEARCH_RESULTS_KEY!== undefined &&  (@SEARCH_RESULTS_KEY).length>0" class="search-list" >
+		  <table data-class="search-table-desktop:KEY_SCREEN_DESKTOP; search-table-mobile:KEY_SCREEN_PHONE; search-table-tablet:KEY_SCREEN_TABLET">
+		    <tr data-repeat="search_results" data-class="search-suggestion:true; search-selected:@selected===#{@index}" data-click="$sc.handleClick(#{@index})">
+		    	<td class="search-text-column"><div class="search-text" data-itext="item.term"></div> </td>
+			    <td>
+			    	<div class="search-delete" data-if="$sc.canDelete(#{@index})" data-click="$sc.handleDelete(#{@index})"></div>
+		 			</td>
+		  	</tr>
+		  </table> 
+		</div>
+	</div> 	
+  </div>
+<!-- Search results -->
+<div class="searchresults left-pane" data-css="width: sidebar_width | screen: 'desktop'; left: sidebar_width | screen: 'desktop', dir: 'ltr'; right: sidebar_width | screen: 'desktop', dir: 'rtl'" data-class="sidebar-opened: $mc.isSidebarTab(@KEY_ACTIVE_TAB); desktop-sidebar-hidden: @.l.desktop_sidebar_visible == false || @.l.desktop_sidebar_available === false; search-sidebar: @KEY_SEARCH_LOCATION == 'tabbar'; search-content: @KEY_SEARCH_LOCATION == 'content'; layout-visible: $mc.isSearchMode(@KEY_ACTIVE_TAB, @active_content); " data-scroll="@.l.load_more_results(true) | debounce: 50, delta: 100">
+	
+	<div class="wSearchResults" id="searchresults">
+		<div class="wSearchResultSettings rh-hide">
+			<div class="wSearchHighlight">
+				<input id="highlightsearch" type="checkbox" checked="" class="wSearchHighlight" onclick="onToggleHighlightSearch()" />
+			</div>
+		</div>
+		<div class="wSearchMessage" data-if="!@EVT_SEARCH_IN_PROGRESS">
+			<span id="searchMsg" class="wSearchMessage"></span>
+		</div>
+		<div data-class="loading: EVT_SEARCH_IN_PROGRESS" data-if="EVT_SEARCH_IN_PROGRESS"></div>
+		<p class="progressbar" data-if="KEY_SEARCH_PROGRESS"><span data-text="KEY_SEARCH_PROGRESS"></span>%</p>
+		<div class="wSearchResultItemsBlock" data-if="!@EVT_SEARCH_IN_PROGRESS">
+			<div data-rhwidget="List: key: @.p.searchresults, spliton: index % @MAX_RESULTS == 14" data-config="loadmore: '.l.load_more_results', loaded: '.l.results_loaded'">
+				<div class="wSearchResultItem">
+					<a class="nolink" data-i-href="item.strUrl+@.p.searchresultparams">
+						<div class="wSearchResultTitle" data-itext="item.strTitle"></div>
+					</a>
+					<div class="wSearchContent">
+						<span class="wSearchContext" data-itext="item.strSummary"></span>
+					</div>
+					<div class="wSearchURL">
+						<span class="wSearchURL" data-itext="item.strBreadcrumbs"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div data-if="@.l.results_loaded && @.p.searchresults.length && !@EVT_SEARCH_IN_PROGRESS" class="wSearchResultsEnd">
+			<span>End of search results.</span>
+		</div>
+	</div>
+</div>
+<!-- Topics -->
+<div class="topic main" data-css="left: sidebar_width | screen: 'desktop', dir: 'ltr'; right: sidebar_width | screen: 'desktop', dir: 'rtl'" data-class="sidebar-opened: $mc.isSidebarTab(@KEY_ACTIVE_TAB); desktop-sidebar-hidden: @.l.desktop_sidebar_visible == false || @.l.desktop_sidebar_available === false; ">
+	<div class="functionholder">
+		<div class="print"><a data-trigger="EVT_PRINT_TOPIC" class="print" data-attr="href: '#'; title:@KEY_LNG.Print">&#160;</a></div>
+		<div class="brs_previous" data-attr="title:@KEY_LNG.Prev"><a id="browseSeqBack" class="wBSBackButton" data-rhwidget="Basic" data-attr="href:.l.brsBack" data-css="visibility: @.l.brsBack?'visible':'hidden'">&nbsp;</a>
+</div>
+		<div class="brs_next" data-attr="title:@KEY_LNG.Next"><a id="browseSeqNext" class="wBSNextButton" data-rhwidget="Basic" data-attr="href:.l.brsNext" data-css="visibility: @.l.brsNext?'visible':'hidden'">&nbsp;</a>
+</div>
+		<!-- Extra search field for desktop -->
+		
+<div class="searchbar-extra" data-if="KEY_SCREEN_DESKTOP" data-mouseover="@mousein_searchbox(true)" data-mouseout="@mousein_searchbox(false)" data-controller="SearchController:sc">
+	<input id="inp" class="wSearchField" type="text" data-class="searchpage-mode: @active_content == 'search'" data-attr="placeholder: @KEY_LNG.Search"
+	data-focus="@focusin_searchbox(true)" data-blur="$sc.handleFocusOut('focusin_searchbox')|timeout:200" data-value="KEY_SEARCH_TERM" data-keyup="$mc.newSearch(node.value, event.keyCode),$sc.handleKey(event)|debounce:150"/>
+	<a class="wSearchLink" data-click="@EVT_SEARCH_TERM(true)" data-attr="href: '#'">&nbsp;</a>
+	<div data-if="@focusin_searchbox && @SEARCH_RESULTS_KEY!== undefined &&  (@SEARCH_RESULTS_KEY).length>0" class="search-list" >
+	  <table>
+	    <tr data-repeat="search_results" data-class="search-suggestion:true; search-selected:@selected===#{@index}" data-click="$sc.handleClick(#{@index})">
+	    	<td class="search-text-column"><div class="search-text" data-itext="item.term"></div> </td>
+		    <td><div class="search-delete" data-if="$sc.canDelete(#{@index})" data-click="$sc.handleDelete(#{@index})"></div></td>
+	  	</tr>
+	  </table> 
+	</div>
+  </div>
+  </div>
+	<div class="topic-state" data-class="loading: EVT_TOPIC_LOADING" data-if="EVT_TOPIC_LOADING"></div>
+	<iframe class="topic" name="rh_default_topic_frame_name"></iframe>
+	<a class="to_top" data-trigger="EVT_SCROLL_TO_TOP" data-attr="title:@KEY_LNG.ToTopTip">&#160;</a> 
+</div>
+<!-- Social media buttons -->
+<div class="social_buttons" data-if="@KEY_FEATURE.social === true && (@KEY_SCREEN_PHONE == false || (@KEY_SCREEN_PHONE == true && $mc.isSidebarTab(@KEY_ACTIVE_TAB) != true && $mc.isSearchMode(@KEY_ACTIVE_TAB, @active_content) != true && @KEY_ACTIVE_TAB != 'filter'))" data-class="opened: @.l.social_opened === true;">
+	<a class="social_buttons_controller" href="javascript:rh.model.publish('l.social_opened', rh.model.get('l.social_opened') === true ? false : true)"></a>
+	<div class="fb-button" data-if="KEY_FEATURE.facebook"><iframe id="bf-iframe" style="border:none; overflow:hidden;"></iframe></div>
+	<div class="twitter-button" id="twitter-holder" data-if="KEY_FEATURE.twitter"></div>
+</div>
+<!-- Scripts -->
+<script src="template/Charcoal_Grey/usersettings.js" type="text/javascript"></script>
+<script>
+if(useTwitter === true) {
+	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+}
+</script>
+<script type="text/javascript" src="whxdata/whtagdata.js"></script>
+</body>
+</html>

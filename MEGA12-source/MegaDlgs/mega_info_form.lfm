@@ -1,0 +1,70 @@
+object MegaInfoForm: TMegaInfoForm
+  Left = 399
+  Height = 236
+  Top = 250
+  Width = 533
+  Caption = 'MegaInfoForm'
+  ClientHeight = 236
+  ClientWidth = 533
+  DefaultMonitor = dmMainForm
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnResize = FormResize
+  Position = poMainFormCenter
+  LCLVersion = '2.2.6.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 43
+    Top = 193
+    Width = 533
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 43
+    ClientWidth = 533
+    TabOrder = 0
+    object ToolBar1: TToolBar
+      Left = 403
+      Height = 30
+      Top = 8
+      Width = 120
+      Align = alNone
+      AutoSize = True
+      ButtonHeight = 30
+      ButtonWidth = 115
+      Caption = 'ToolBar1'
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      HotImages = ImageForm.DlgButtonsHover
+      Images = ImageForm.DlgButtons
+      TabOrder = 0
+      object ToolButton1: TToolButton
+        Left = 1
+        Top = 0
+        Action = OkAction
+      end
+    end
+  end
+  object StaticText1: TStaticText
+    Left = 20
+    Height = 153
+    Top = 20
+    Width = 493
+    Align = alClient
+    AutoSize = True
+    BorderSpacing.Around = 20
+    Caption = 'StaticText1'
+    TabOrder = 1
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 276
+    Top = 86
+    object OkAction: TAction
+      Caption = 'OkAction'
+      ImageIndex = 5
+      OnExecute = Image1Click
+      ShortCut = 16467
+    end
+  end
+end

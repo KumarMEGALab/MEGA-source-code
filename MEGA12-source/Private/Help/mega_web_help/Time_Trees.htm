@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="PhylogeneticTrees_RH.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Time Trees</title>
+<link rel="stylesheet" href="PhylogeneticTrees_RH.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<style type="text/css">
+<!--
+A:visited { color:#954F72; }
+A:link { color:#0000ff; }
+-->
+</style>
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.4.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Constructing Time Trees" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1 style="font-family: Arial, sans-serif;">Time Trees</h1>
+<p style="font-family: Arial, sans-serif;">Time Trees can be computed in 
+ MEGA where divergence times are estimated for all branching points in 
+ a tree using the RelTime method (RelTime is described in <u><span style="color: #008000;">Tamura 
+ et al. 2012</span></u><span style="display: none;">Tamura_et_al_2012</span>) 
+ which&#160;&#160;does not require assumptions for lineage rate variations. 
+ The implementation in MEGA is very fast and expands on the RelTime method 
+ <span style="display: none;">Tamura_e</span>so that multiple calibration 
+ constraints can be provided, in which case MEGA will produce absolute 
+ divergence times along with relative divergence times while respecting 
+ the provided constraints. Additionally, the implementation in MEGA can 
+ compute divergence times without calibration constraints, in which case, 
+ only relative times will be produced.</p>
+<p style="font-family: Arial, sans-serif;">There are several types of calibrations 
+ that can be used in MEGA:</p>
+<p style="font-family: Arial, sans-serif; font-weight: bold;">Calibration 
+ densities:</p>
+<p style="font-family: Arial, sans-serif; margin-left: 40px;"><span style="mso-bidi-font-size: 12.0pt; 
+	 line-height: 150%; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: EN-US; 
+	 mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">Statistical 
+ densities that provide prior belief about the possible location of the 
+ true species divergence time relative to the minimum and/or maximum constraints</span> 
+ can be used. When using this option, <span style="mso-bidi-font-size: 12.0pt; 
+											 line-height: 150%; mso-fareast-font-family: 'Times New Roman'; 
+											 mso-ansi-language: EN-US; 
+											 mso-fareast-language: EN-US; 
+											 mso-bidi-language: AR-SA;">each 
+ calibration density is transformed into a pair of discrete constraints 
+ such that the minimum bound is placed at 2.5% of the density age and the 
+ maximum bound at the 97.5% of the density age</span> .<span style="mso-spacerun: yes;">&#160;</span><span 
+	 style="mso-bidi-font-size: 12.0pt; line-height: 150%; mso-fareast-font-family: 'Times New Roman'; 
+	 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">This 
+ means that the minimum and maximum bounds will cover 95% of the total 
+ probability density.</span> Three statistical distribution can be used 
+ for calibration densities in MEGA:</p>
+<p style="font-family: Arial, sans-serif; margin-left: 40px;"><span style="text-decoration: underline; ">Normal</span> 
+ - requires that a mean and standard deviation be provided and minimum 
+ and maximum constraints will be derived from the distribution. For instance, 
+ a calibration density using a normal distribution with mean=10 and stddev=1 
+ will produce a constraint where minTime=8.04 and maxTime=11.96</p>
+<p style="font-family: Arial, sans-serif; margin-left: 40px;"><span style="text-decoration: underline; ">Exponential</span> 
+ - requires that a divergence time and decay are provided and a minimum 
+ constraint will be derived from the distribution. For instance, a calibration 
+ density using an exponential distribution with mean=10 and decay=0.25 
+ will produce a constraint where minTime=9.9</p>
+<p style="font-family: Arial, sans-serif; margin-left: 40px;"><span style="text-decoration: underline; ">Uniform</span> 
+ - requires that a minTime and maxTime be provided and will produce a constraint 
+ whose minTime and maxTime are those provided.</p>
+<p style="font-family: Arial, sans-serif; margin-left: 40px;"><span style="text-decoration: underline; ">Lognormal</span> 
+ - requires that 3 parameters are provided: offset, mean, and stddev and 
+ minimum and maximum constraints will be derived from the distribution. 
+ For instance, a calibration density using a lognormal distribution with 
+ offset=7, mean=1.5, and stddev=0.15 will produce a constraint where minTime=10.34 
+ and maxTime=13.01</p>
+<p style="font-family: Arial, sans-serif; font-weight: bold;">Minimum Times:</p>
+<p style="font-family: Arial, sans-serif; margin-left: 40px;">Sets a hard 
+ minimum divergence time constraint on the target node.</p>
+<p style="font-family: Arial, sans-serif; font-weight: bold;">Maximum Times:</p>
+<p style="font-family: Arial, sans-serif; margin-left: 40px;">Sets a hard 
+ maximum divergence time constraint on the target node.</p>
+<p style="font-family: Arial, sans-serif; font-weight: bold;">Fixed Times:</p>
+<p style="font-family: Arial, sans-serif; margin-left: 40px;">The divergence 
+ time for the target node will be equal to the provided fixed time.</p>
+<p style="font-family: Arial, sans-serif; font-weight: bold;">Fixed Rate:</p>
+<p style="font-family: Arial, sans-serif; margin-left: 40px;">This option 
+ will define a global evolutionary rate <span style="font-style: italic;">r</span> 
+ <span style="mso-bidi-font-size: 12.0pt; line-height: 150%; mso-fareast-font-family: 'Times New Roman'; 
+		 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">(in 
+ units of substitutions per site per year)</span> &#160;that is used throughout 
+ the tree. For every node in the tree whose height (in units of substitutions 
+ per site) is <span style="font-style: italic;">h</span>, the divergence 
+ time of the node will be set to <span style="font-style: italic;">h/r</span>.</p>
+<p style="font-family: Arial, sans-serif; font-weight: bold;">Tip Dates 
+ (sample times):</p>
+<p style="font-family: Arial, sans-serif; margin-left: 40px;">This option 
+ is only used for the <a href="javascript:TextPopup(this)" id="HotSpot25398" class="glossterm">RTDT (RelTime with 
+ Dated Tips)</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot25398', 'POPUP25398');
+//]]></script><span class="glosstext" id="POPUP25398" style="display: none;"> RelTime method applied using tip dates for calibrating the timetree. To use this method, tip dates must be available for all molecular ingroup taxa. RTDT is suitable for the analysis of DNA or protein sequence from fast evolving pathogens or those generated from ancient data.</span> method. In this case, the tip dates are the 
+ dates at which molecular sequences were sampled. This method is suitable 
+ for <span style="mso-bidi-font-size: 12.0pt; line-height: 150%; mso-fareast-font-family: 'Times New Roman'; 
+			 mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">&#160;the 
+ analysis of DNA and protein sequences from fast evolving pathogens and 
+ those generated from ancient times.</span> </p>
+<p style="font-family: Arial, sans-serif;">See also</p>
+<p style="color: #007fbf; font-family: Arial, sans-serif;"><a href="Part_I_Getting_Started/A_Walk_Through_MEGA/Constructing_a_Timetree_(ML).htm" 
+	 style="color: #007fbf; font-family: Arial, sans-serif;"><u style="text-underline: double;"><span 
+	 style="color: #007fbf; font-family: Arial, sans-serif;">Time Tree 
+ Tutorial</span></u><span style="display: none; color: #007fbf; font-family: Arial, sans-serif;">Constructing_a_Time_Tree_ML_</span></a></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif;"><u style="text-underline: double;"><a 
+	 href="Molecular_Clock_Test_ML.htm" style="color: #007fbf; font-family: Arial, sans-serif;">Molecular 
+ Clock Test (ML)</a></u><span style="display: none;">HC_Molecular_Clock_Test_ML_</span></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif;"><a href="Calibration_Dialog.htm" 
+	 style="color: #007fbf; font-family: Arial, sans-serif;"><u style="text-underline: double;"><span 
+	 style="color: #007fbf; font-family: Arial, sans-serif;">Calibration 
+ Times Editor</span></u><span style="display: none; color: #007fbf; font-family: Arial, sans-serif;">Calibration_Dialog</span></a></p>
+<p>&#160;</p>
+<p>&#160;</p>
+<b><span style="font-size: 10.0pt; font-family: Arial, sans-serif; color: #0000ff;"><br 
+	 style="clear: all;" clear="all" />
+</span></b> 
+</body>
+</html>

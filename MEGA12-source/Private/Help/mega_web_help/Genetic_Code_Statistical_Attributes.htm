@@ -1,0 +1,922 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Genetic Code Statistical Attributes</title>
+<link rel="StyleSheet" href="default.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "3.3.0_3";
+</script>
+ <meta name="topic-breadcrumbs" content="Part III: Input Data Types and File Formats > Genetic Code Tables" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1>Genetic Code Statistical Attributes</h1>
+<p>There is a significant amount of redundancy in the genetic code because 
+ most amino acids are encoded by multiple codons. Therefore, it is interesting 
+ to know the <a href="javascript:TextPopup(this)" id="HotSpot32849" class="glossterm">degeneracy</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot32849', 'POPUP32849');
+//]]></script><span class="glosstext" id="POPUP32849" style="display: none;"> 0-fold degenerate sites are those at which all changes are nonsynonymous.  2-fold degenerate sites are those at which one out of three changes is synonymous.  (All sites at which two out of three changes are synonymous also are included in this category.)  4-fold degenerate sites are those at which all changes are synonymous.</span> of each <a href="javascript:TextPopup(this)" id="HotSpot55605" class="glossterm">codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot55605', 'POPUP55605');
+//]]></script><span class="glosstext" id="POPUP55605" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span> position in all codons. In <span 
+	 style="font-style: italic;">MEGA</span> this information can be computed 
+ for an code table in the Genetic Code Selector. In addition to the <a href="javascript:TextPopup(this)" id="HotSpot39574" class="glossterm">degeneracy</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot39574', 'POPUP39574');
+//]]></script><span class="glosstext" id="POPUP39574" style="display: none;"> 0-fold degenerate sites are those at which all changes are nonsynonymous.  2-fold degenerate sites are those at which one out of three changes is synonymous.  (All sites at which two out of three changes are synonymous also are included in this category.)  4-fold degenerate sites are those at which all changes are synonymous.</span> 
+ of <a href="javascript:TextPopup(this)" id="HotSpot37239" class="glossterm">codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot37239', 'POPUP37239');
+//]]></script><span class="glosstext" id="POPUP37239" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span> positions, <span style="font-style: italic;">MEGA</span> writes 
+ the number of synonymous sites and the number of non-synonymous sites 
+ for each <a href="javascript:TextPopup(this)" id="HotSpot33756" class="glossterm">codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot33756', 'POPUP33756');
+//]]></script><span class="glosstext" id="POPUP33756" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span> using the Nei and Gojobori(1986) method. An example of 
+ the results obtained for the standard genetic code is given below.</p>
+<p>&#160;</p>
+<table class="MsoNormalTable" style="mso-cellspacing: 0in; mso-yfti-tbllook: 1184; 
+		 mso-padding-alt: .3pt .3pt .3pt .3pt;" cellspacing="0">
+	<col />
+	<col />
+	<col />
+	<col />
+	<col />
+	<col />
+	<col />
+	<col />
+	<tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes; mso-row-margin-right: 36.85pt; 
+		 height: 5.1pt;">
+		<td colspan="6" style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">Code 
+		 Table: Standard</span></p></td>
+		<td colspan="2" style="mso-cell-special: placeholder; padding: 0in 0in 0in 0in; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal">&#160;</p></td>
+		
+	</tr>
+	<tr style="mso-yfti-irow: 1; mso-row-margin-right: 36.85pt; height: 5.1pt;">
+		<td colspan="6" style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">Method: 
+		 Nei-Gojobori (1986) methodology</span></p></td>
+		<td colspan="2" style="mso-cell-special: placeholder; padding: 0in 0in 0in 0in; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal">&#160;</p></td>
+		
+	</tr>
+	<tr style="mso-yfti-irow: 2; height: 5.1pt;">
+		<td colspan="4" style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">S 
+		 = No. of synonymous sites</span></p></td>
+		<td colspan="3" style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;">&#160;</p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;">&#160;</p></td>
+	</tr>
+	<tr style="mso-yfti-irow: 3; height: 5.1pt;">
+		<td colspan="7" style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">N 
+		 = No. of nonsynonymous sites</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;">&#160;</p></td>
+	</tr>
+	<tr style="mso-yfti-irow: 4; height: 8.1pt;">
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';"><a href="javascript:TextPopup(this)" id="HotSpot26841" class="glossterm">Codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot26841', 'POPUP26841');
+//]]></script><span class="glosstext" id="POPUP26841" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span></span></p></td>
+		<td colspan="2" style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">No. 
+		 of Sites for <a href="javascript:TextPopup(this)" id="HotSpot23611" class="glossterm">codon</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot23611', 'POPUP23611');
+//]]></script><span class="glosstext" id="POPUP23611" style="display: none;"> A codon is triplet of nucleotides that codes for a specific amino acid.</span></span></p></td>
+		<td colspan="3" style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; 
+			 padding-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">Redundancy</span></p></td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+	</tr>
+	<tr style="mso-yfti-irow: 5; height: 5.1pt;">
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;">&#160;</p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">S</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">N</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">Pos</span></p>
+		<p class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">1st</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">Pos</span></p>
+		<p class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2nd</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">Pos</span></p>
+		<p class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">3rd</span></p></td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+	</tr>
+	<tr style="mso-yfti-irow: 6; height: 5.1pt;">
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">UUU 
+		 (F)</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0.333</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2.667</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2</span></p></td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+	</tr>
+	<tr style="mso-yfti-irow: 7; height: 5.1pt;">
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">UUC 
+		 (F)</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0.333</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2.667</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2</span></p></td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+	</tr>
+	<tr style="mso-yfti-irow: 8; height: 5.1pt;">
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">UUA 
+		 (L)</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0.667</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2.333</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2</span></p></td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+	</tr>
+	<tr style="mso-yfti-irow: 9; height: 5.1pt;">
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">UUG 
+		 (L)</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0.667</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2.333</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2</span></p></td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+	</tr>
+	<tr style="mso-yfti-irow: 10; height: 5.1pt;">
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">UCU 
+		 (S)</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">1</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">4</span></p></td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+	</tr>
+	<tr style="mso-yfti-irow: 11; height: 5.1pt;">
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">UCC 
+		 (S)</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">1</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">4</span></p></td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+	</tr>
+	<tr style="mso-yfti-irow: 12; height: 5.1pt;">
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">UCA 
+		 (S)</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">1</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">4</span></p></td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+	</tr>
+	<tr style="mso-yfti-irow: 13; height: 5.1pt;">
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">UCG 
+		 (S)</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">1</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">4</span></p></td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+	</tr>
+	<tr style="mso-yfti-irow: 14; height: 5.1pt;">
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">UAU 
+		 (Y)</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">1</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2</span></p></td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+	</tr>
+	<tr style="mso-yfti-irow: 15; height: 5.1pt;">
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">UAC 
+		 (Y)</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">1</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2</span></p></td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+	</tr>
+	<tr style="mso-yfti-irow: 16; height: 5.1pt;">
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">UAA 
+		 (*)</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">3</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+	</tr>
+	<tr style="mso-yfti-irow: 17; height: 5.1pt;">
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">UAG 
+		 (*)</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">3</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+	</tr>
+	<tr style="mso-yfti-irow: 18; height: 5.1pt;">
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">UGU 
+		 (C)</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0.5</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2.5</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2</span></p></td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+	</tr>
+	<tr style="mso-yfti-irow: 19; height: 5.1pt;">
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">UGC 
+		 (C)</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0.5</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2.5</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2</span></p></td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+	</tr>
+	<tr style="mso-yfti-irow: 20; height: 5.1pt;">
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">UGA 
+		 (*)</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">3</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+	</tr>
+	<tr style="mso-yfti-irow: 21; height: 5.1pt;">
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">UGG 
+		 (W)</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">3</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+	</tr>
+	<tr style="mso-yfti-irow: 22; height: 5.1pt;">
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">CUU 
+		 (L)</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">1</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">4</span></p></td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+	</tr>
+	<tr style="mso-yfti-irow: 23; height: 5.1pt;">
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">CUC 
+		 (L)</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">1</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">4</span></p></td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+	</tr>
+	<tr style="mso-yfti-irow: 24; mso-yfti-lastrow: yes; height: 5.1pt;">
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">CUA 
+		 (L)</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">1.333</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">1.667</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">2</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">0</span></p></td>
+		<td style="vertical-align: top; padding: .3pt .3pt .3pt .3pt; padding-left: 0px; 
+			 padding-top: 0px; padding-right: 0px; padding-bottom: 0px;"><p 
+			 class="MsoNormal" style="margin-top: 6.0pt; margin-right: 6.5pt; 
+			 margin-bottom: 2.0pt; margin-left: .25in; line-height: normal;"><span 
+		 style="font-family: Arial, sans-serif; mso-fareast-font-family: 'Times New Roman';">4</span></p></td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+		<td style="padding: .3pt .3pt .3pt .3pt; padding-left: 0px; padding-top: 0px; 
+			 padding-right: 0px; padding-bottom: 0px;">&#160;</td>
+	</tr>
+</table>
+<p>&#160;</p>
+</body>
+</html>

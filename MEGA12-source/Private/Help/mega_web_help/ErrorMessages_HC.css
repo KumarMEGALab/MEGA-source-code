@@ -1,0 +1,256 @@
+﻿
+A.expandspot {	color: #008000;	cursor: hand;	font-style: italic;	text-decoration: none;}
+
+SPAN.expandtext {	font-style: italic;	font-weight: normal;	color: #ff0000;}
+
+A.dropspot {  cursor: hand;	color: #008000;	font-style: italic;	text-decoration: none;}
+
+A.glossterm {	color: #800000;	cursor: hand;	font-style: italic;	text-decoration: none;}
+
+SPAN.glosstext {	font-style: italic;	font-weight: normal;	color: #0000ff;}
+
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Arial"   ,sans-serif;
+	font-weight:normal;
+	text-decoration:underline;
+	text-underline:single;
+}
+
+h3 {
+	margin-top:.25in;
+	margin-right:6.5pt;
+	margin-bottom:2.0pt;
+	margin-left:5.75pt;
+	font-size:12.0pt;
+	font-family:"Arial"   ,sans-serif;
+	font-weight:bold;
+}
+
+h4 {
+	margin-top:.25in;
+	margin-right:6.5pt;
+	margin-bottom:2.0pt;
+	margin-left:5.75pt;
+	font-size:9.0pt;
+	font-family:"Arial"   ,sans-serif;
+	text-decoration:underline;
+	text-underline:single;
+	font-weight:bold;
+}
+
+h5 {
+	margin-top:6.0pt;
+	margin-right:6.5pt;
+	margin-bottom:2.0pt;
+	margin-left:.15in;
+	font-size:12.0pt;
+	font-family:"Arial"   ,sans-serif;
+	font-weight:normal;
+	text-decoration:underline;
+	text-underline:single;
+}
+
+h6 {
+	margin-top:6.0pt;
+	margin-right:6.5pt;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Arial"   ,sans-serif;
+	font-weight:normal;
+	text-decoration:underline;
+	text-underline:single;
+}
+
+p.Heading7 {
+	margin-top:6.0pt;
+	margin-right:6.5pt;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Arial"   ,sans-serif;
+	text-decoration:underline;
+	text-underline:single;
+}
+
+p.Heading8 {
+	margin-top:6.0pt;
+	margin-right:6.5pt;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Arial"   ,sans-serif;
+	text-decoration:underline;
+	text-underline:single;
+}
+
+p.Heading9 {
+	margin-top:6.0pt;
+	margin-right:6.5pt;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Arial"   ,sans-serif;
+	text-decoration:underline;
+	text-underline:single;
+}
+
+p.NormalIndent {
+	margin-top:6.0pt;
+	margin-right:6.5pt;
+	margin-bottom:2.0pt;
+	margin-left:.5in;
+	font-size:9.0pt;
+	font-family:"Arial"   ,sans-serif;
+}
+
+p.FootnoteText {
+	margin-top:6.0pt;
+	margin-right:6.5pt;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial"   ,sans-serif;
+}
+
+span.FootnoteReference {
+	vertical-align:super;
+}
+
+span.Hyperlink {
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;
+}
+
+span.HyperlinkFollowed {
+	color:#954F72;
+	text-decoration:underline;
+	text-underline:single;
+}
+
+p.TipNoteHeading {
+	margin-top:6.0pt;
+	margin-right:6.5pt;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	font-size:9.0pt;
+	font-family:"Arial"   ,sans-serif;
+	font-weight:bold;
+}
+
+p.TipNoteText {
+	margin-top:6.0pt;
+	margin-right:6.5pt;
+	margin-bottom:2.0pt;
+	margin-left:15.1pt;
+	font-size:9.0pt;
+	font-family:"Arial"   ,sans-serif;
+}
+
+p.TipNoteTextBulleted {
+	margin-top:6.0pt;
+	margin-right:6.5pt;
+	margin-bottom:2.0pt;
+	margin-left:15.1pt;
+	text-indent:-9.35pt;
+	font-size:9.0pt;
+	font-family:"Arial"   ,sans-serif;
+}
+
+p.TopicTextBulleted {
+	margin-top:4.0pt;
+	margin-right:6.5pt;
+	margin-bottom:2.0pt;
+	margin-left:27.35pt;
+	text-indent:-9.35pt;
+	font-size:9.0pt;
+	font-family:"Arial"   ,sans-serif;
+}
+
+p.TopicTextIndent {
+	margin-top:12.0pt;
+	margin-right:.45in;
+	margin-bottom:8.0pt;
+	margin-left:.45in;
+	font-size:9.0pt;
+	font-family:"Arial"   ,sans-serif;
+}
+
+p.TopicTextNumbered {
+	margin-top:4.0pt;
+	margin-right:6.5pt;
+	margin-bottom:2.0pt;
+	margin-left:27.35pt;
+	text-indent:-9.35pt;
+	font-size:9.0pt;
+	font-family:"Arial"   ,sans-serif;
+}
+
+p.TopicTextOnestep {
+	margin-top:6.0pt;
+	margin-right:6.5pt;
+	margin-bottom:2.0pt;
+	margin-left:15.1pt;
+	text-indent:-9.35pt;
+	font-size:9.0pt;
+	font-family:"Arial"   ,sans-serif;
+}
+
+p.reference {
+	margin-top:6.0pt;
+	margin-right:6.5pt;
+	margin-bottom:2.0pt;
+	margin-left:.75in;
+	text-indent:-.5in;
+	font-size:9.0pt;
+	font-family:"Arial"   ,sans-serif;
+}
+
+p.keyword {
+	margin-top:6.0pt;
+	margin-right:6.5pt;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	font-size:9.0pt;
+	font-family:"Arial"   ,sans-serif;
+	font-style:italic;
+}
+
+p.equation {
+	margin-top:6.0pt;
+	margin-right:6.5pt;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	font-size:9.0pt;
+	font-family:"Courier New";
+}
+
+p.Section {
+	margin-top:6.0pt;
+	margin-right:6.5pt;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:18.0pt;
+	font-family:"Arial"   ,sans-serif;
+}
+
+span.Ins {
+	text-decoration:underline;
+	text-underline:single;
+	color:teal;
+}
+
+OL {
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+UL {
+	margin-top:0px;
+	margin-bottom:0px;
+}
+

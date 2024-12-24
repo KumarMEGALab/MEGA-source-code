@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Web Browser and Data Miner</title>
+<link rel="StyleSheet" href="../default.css" type="text/css" />
+ <link rel="StyleSheet" href="../default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "..";
+gCommonRootRelPath = "..";
+gTopicId = "2.0_2";
+</script>
+ <meta name="topic-breadcrumbs" content="Part II: Assembling Data for Analysis" />
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js"></script>
+
+
+<h1>Web Browser and Data Miner</h1>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><i><font style="font-size: 11pt; 
+	 font-style: italic;" color="#333333" size="2">MEGA</font></i> <font 
+	 style="font-size: 11pt;" color="#333333" size="2">contains a fully 
+ functional</font> <i><font style="font-size: 11pt; font-style: italic;" 
+							 color="#333333" size="2">Web Browser</font></i> 
+ <font style="font-size: 11pt;" color="#333333" size="2">to assist users 
+ in sequence data retrieval and web exploration. The most important feature 
+ that differentiates this web browser from other browsers (e.g.,</font> 
+ <font style="font-size: 11pt;" color="#333333" size="2">FireFox,</font> 
+ <font style="font-size: 11pt;" color="#333333" size="2">Chrome</font> 
+ <font style="font-size: 11pt;" color="#333333" size="2">or Internet Explorer) 
+ is the<img src="../addToAlignment.gif" alt="" style=" border:none; width:100%; max-width:203px;" border="0" /></font> &#160;<font style="font-size: 11pt;" 
+															 color="#333333" 
+															 size="2">button. 
+ Pressing this button causes the</font> <i><font style="font-size: 11pt; 
+												 font-style: italic;" color="#333333" 
+												 size="2">MEGA</font></i> 
+ <i><font style="font-size: 11pt; font-style: italic;" color="#333333" 
+			 size="2">Web Browser</font></i> <font style="font-size: 11pt;" 
+													 color="#333333" size="2">to 
+ extract sequence data from the currently displayed web page and send it 
+ to the</font> <font style="font-size: 11pt;" size="2"><a href="../Alignment_Explorer.htm">Alignment 
+ Explorer</a></font> <font style="font-size: 11pt;" color="#333333" size="2">’s 
+ alignment grid, where it will be inserted as new sequences. At present, 
+ the</font> <i><font style="font-size: 11pt; font-style: italic;" color="#333333" 
+					 size="2">MEGA</font></i> <font style="font-size: 11pt;" 
+													 color="#333333" size="2">web 
+ browser can interpret data displayed in FASTA format or</font> <font style="font-size: 11pt;" 
+	 color="#333333" size="2">Genbank,</font> <font style="font-size: 11pt;" 
+													 color="#333333" size="2">at 
+ the <a href="javascript:TextPopup(this)" id="HotSpot21828" class="glossterm">NCBI</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot21828', 'POPUP21828');
+//]]></script><span class="glosstext" id="POPUP21828" style="display: none;"> An acronym that stands for “National Center for Biotechnology Information”. NCBI is a federally funded resource for molecular biology information. NCBI creates databases, conducts research in computational biology, develops software and tools for analyzing genome data, and disseminates biomedical information. You can find out more about NCBI by visiting the NCBI website (http://www.ncbi.nlm.nih.gov).</span> website.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;">&#160;</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" color="#333333" size="2" face="Arial"><a href="javascript:TextPopup(this)" id="HotSpot17395" class="glossterm">NCBI</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot17395', 'POPUP17395');
+//]]></script><span class="glosstext" id="POPUP17395" style="display: none;"> An acronym that stands for “National Center for Biotechnology Information”. NCBI is a federally funded resource for molecular biology information. NCBI creates databases, conducts research in computational biology, develops software and tools for analyzing genome data, and disseminates biomedical information. You can find out more about NCBI by visiting the NCBI website (http://www.ncbi.nlm.nih.gov).</span> BLAST</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" color="#333333" size="2" face="Arial">To import 
+ from NCBIs Blast, you need to be displaying the sequence on the screen 
+ when you press the ‘Add to Alignment’ button. From the ‘descriptions’ 
+ section on the initial results page, you can checkmark the sequences you 
+ wish to retrieve, then click the link labeled ‘GenBank’ at the top of 
+ the section.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;">&#160;</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><img src="../img1.png" alt="" style=" border:none; width:100%; max-width:1104px;" border="0" /></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;">&#160;</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" color="#333333" size="2" face="Arial">This will 
+ display a list of the selected s</font><font style="font-size: 11pt; font-family: Arial;" 
+												 color="#333333" size="2" 
+												 face="Arial">equences. 
+ On this page, at the upper left corner there will be</font> <font style="font-size: 11pt; 
+	 font-family: Arial;" color="#333333" size="2" face="Arial">a link 
+ labeled ‘Display Settings’. Select either ‘GenBank (full)’ or ‘FASTA (text)’, 
+ and click the Apply button.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><img src="../img2.png" alt="" style=" border:none; width:100%; max-width:1104px;" border="0" /></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;">&#160;</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" color="#333333" size="2" face="Arial">Once the 
+ page has finished loading, click the ‘Add to Alignment’ button.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;">&#160;</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><img src="../img3.png" alt="" style=" border:none; width:100%; max-width:1104px;" border="0" /></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;">&#160;</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" color="#333333" size="2" face="Arial">Furthermore, 
+ the</font> <i><font style="font-size: 11pt; font-family: Arial; font-style: italic;" 
+					 color="#333333" size="2" face="Arial">MEGA</font></i> 
+ <font style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+		 face="Arial">web browser provides a genomics database, exploration 
+ oriented interface for web searching. (In fact this is almost the same 
+ functionality as in the most recent versions of the Internet Explorer.)</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;">&#160;</p>
+<table cellspacing="0">
+	<col />
+	<col />
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="margin-bottom: 0pt; margin-top: 0pt;"><img src="../back.gif" alt="" style=" border:none; width:100%; max-width:61px;" border="0" /></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="margin-bottom: 0pt; margin-top: 0pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+		 face="Arial">This causes the web browser window to navigate back 
+		 to the web location found before the current site in the explorer 
+		 location history.</font><font style="font-size: 11pt; font-family: Arial;" 
+										 color="#333333" size="2" face="Arial"><br />
+		Some webpages don’t allow you to go backwards and will display 
+		 an error. This behavior is due to the website and not the browser 
+		 and cannot be fixed.</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="margin-bottom: 0pt; margin-top: 0pt;"><img src="../forward.gif" alt="" style=" border:none; width:100%; max-width:69px;" border="0" /></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="margin-bottom: 0pt; margin-top: 0pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+		 face="Arial">This causes the web browser window to navigate forward 
+		 to the web location found after the current site in the explorer 
+		 location history.</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="margin-bottom: 0pt; margin-top: 0pt;"><img src="../refresh.gif" alt="" style=" border:none; width:100%; max-width:53px;" border="0" /></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="margin-bottom: 0pt; margin-top: 0pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+		 face="Arial">This causes the web browser to reload the current 
+		 web location.</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="margin-bottom: 0pt; margin-top: 0pt;"><img src="../addToAlignment.gif" alt="" style=" border:none; width:100%; max-width:345px;" border="0" /></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="margin-bottom: 0pt; margin-top: 0pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+		 face="Arial">This causes the web browser to extract sequence data 
+		 from the current web page and send it to</font> <i><font style="font-size: 11pt; 
+		 font-family: Arial; font-style: italic;" color="#333333" size="2" 
+		 face="Arial">Alignment Builder’s</font></i> <font style="font-size: 11pt; 
+															 font-family: Arial;" 
+															 color="#333333" 
+															 size="2" face="Arial">alignment 
+		 grid as new sequence rows. If the web explorer is unable to find 
+		 properly formatted sequence data in the current web page a warning 
+		 box will appear.</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+		 face="Arial">Address</font></p>
+		<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+		 face="Arial">Field</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px; 
+			 padding-bottom: 1px;"><p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font 
+		 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+		 face="Arial">The web location, or address field, is located in 
+		 the second toolbar. This field contains the URL of the current 
+		 web location as well as a pull down list of previously visited 
+		 URLs. If a new URL is entered into the box and the</font> <b><font 
+		 style="font-size: 11pt; font-family: Arial; font-weight: bold;" 
+		 color="#333333" size="2" face="Arial">Enter</font></b> <font style="font-size: 11pt; 
+		 font-family: Arial;" color="#333333" size="2" face="Arial">key 
+		 is pressed, the web explorer will attempt to navigate to the entered 
+		 URL.</font></p></td>
+	</tr>
+</table>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" color="#333333" size="2" face="Arial">There are 
+ number of menus in the web browser, including</font> <b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" color="#333333" size="2" face="Arial">Data</font></b><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+	 face="Arial">,</font> <b><font style="font-size: 11pt; font-family: Arial; 
+									 font-weight: bold;" color="#333333" 
+									 size="2" face="Arial">Edit</font></b><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+	 face="Arial">,</font> <b><font style="font-size: 11pt; font-family: Arial; 
+									 font-weight: bold;" color="#333333" 
+									 size="2" face="Arial">View</font></b><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+	 face="Arial">,</font> <b><font style="font-size: 11pt; font-family: Arial; 
+									 font-weight: bold;" color="#333333" 
+									 size="2" face="Arial">Navigate</font></b><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+	 face="Arial">, and</font> <b><font style="font-size: 11pt; font-family: Arial; 
+										 font-weight: bold;" color="#333333" 
+										 size="2" face="Arial">Help</font></b><font 
+	 style="font-size: 11pt; font-family: Arial;" color="#333333" size="2" 
+	 face="Arial">. These menus provide access to routine functionalities, 
+ which are self-explanatory in use.</font></p>
+</body>
+</html>

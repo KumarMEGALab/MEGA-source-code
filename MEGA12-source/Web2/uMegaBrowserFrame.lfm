@@ -1,0 +1,44 @@
+object BrowserFrame: TBrowserFrame
+  Left = 0
+  Height = 670
+  Top = 0
+  Width = 932
+  ClientHeight = 670
+  ClientWidth = 932
+  TabOrder = 0
+  DesignLeft = 301
+  DesignTop = 321
+  object CEFWindowParent1: TCEFLinkedWindowParent
+    Left = 0
+    Height = 670
+    Top = 0
+    Width = 932
+    Align = alClient
+    TabStop = True
+    TabOrder = 0
+    OnEnter = CEFLinkedWindowParent1Enter
+    OnExit = CEFLinkedWindowParent1Exit
+    Chromium = Chromium1
+  end
+  object Chromium1: TChromium
+    OnProcessMessageReceived = Chromium1ProcessMessageReceived
+    OnLoadError = Chromium1LoadError
+    OnLoadingStateChange = Chromium1LoadingStateChange
+    OnGotFocus = Chromium1GotFocus
+    OnBeforeContextMenu = Chromium1BeforeContextMenu
+    OnContextMenuCommand = Chromium1ContextMenuCommand
+    OnPreKeyEvent = Chromium1PreKeyEvent
+    OnKeyEvent = Chromium1KeyEvent
+    OnAddressChange = Chromium1AddressChange
+    OnTitleChange = Chromium1TitleChange
+    OnStatusMessage = Chromium1StatusMessage
+    OnDownloadUpdated = Chromium1DownloadUpdated
+    OnBeforePopup = Chromium1BeforePopup
+    OnAfterCreated = Chromium1AfterCreated
+    OnBeforeClose = Chromium1BeforeClose
+    OnClose = Chromium1Close
+    OnOpenUrlFromTab = Chromium1OpenUrlFromTab
+    Left = 40
+    Top = 72
+  end
+end

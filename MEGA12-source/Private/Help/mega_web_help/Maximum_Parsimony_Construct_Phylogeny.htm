@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+<meta name="OriginalFile" content="ContextHelp_HC.doc" />
+ <title>Maximum Parsimony (Construct Phylogeny)</title>
+<link rel="stylesheet" href="ContextHelp_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "";
+</script>
+</head>
+<body link="blue" vlink="purple">
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1><span style=" font-size:11.0pt;">Maximum Parsimony (Construct Phylogeny)</span></h1>
+<p class="keyword">Phylogeny | Construct/Test Maximum Parsimony…</p>
+<p><span style=" font-size:11.0pt;">This command is used to construct phylogenetic trees under the maximum parsimony criterion.&#160; For a given <u><span style=" color:green;"><a href="javascript:TextPopup(this)" id="HotSpot49435" class="glossterm">topology</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot49435', 'POPUP49435');
+//]]></script><span class="glosstext" id="POPUP49435" style="display: none;"> The branching pattern of a tree is its topology.</span></span></u><span style=" display:none;">RH_Topology</span>, the sum of the minimum possible substitutions over all sites is known as the <a href="javascript:TextPopup(this)" id="HotSpot33242" class="glossterm">Tree Length</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot33242', 'POPUP33242');
+//]]></script><span class="glosstext" id="POPUP33242" style="display: none;"> Tree length is the criterion used by the Maximum Parsimony method to search for the best tree.  It is defined as the sum of the minimum numbers of substitutions over all sites for the given topology.   To compute the tree length for the unweighted parsimony method, we use the procedure described in Fitch (1971), which is based on the two rules described below.  For a given site these rules are applied to each node and the sum of substitutions over all nodes and over all sites are taken.  Note that the estimation of the minimum number of substitutions is not affected by the position of the root.  Rule 1.  When the two descendent nodes of an ancestral node have some states (nucleotides or amino acids) in common, the ancestral node is assigned to the set of common states.  In this case, the most parsimonious explanation does not require any substitutions.  Rule 2.  When the two descendant nodes have no states in common, then all states in the descendent nodes are combined to form the set of possible states at the ancestral node.  In this case, one substitution is required.</span>.  The <a href="javascript:TextPopup(this)" id="HotSpot39102" class="glossterm">topology</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot39102', 'POPUP39102');
+//]]></script><span class="glosstext" id="POPUP39102" style="display: none;"> The branching pattern of a tree is its topology.</span> with the minimum <a href="javascript:TextPopup(this)" id="HotSpot18851" class="glossterm">tree length</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot18851', 'POPUP18851');
+//]]></script><span class="glosstext" id="POPUP18851" style="display: none;"> Tree length is the criterion used by the Maximum Parsimony method to search for the best tree.  It is defined as the sum of the minimum numbers of substitutions over all sites for the given topology.   To compute the tree length for the unweighted parsimony method, we use the procedure described in Fitch (1971), which is based on the two rules described below.  For a given site these rules are applied to each node and the sum of substitutions over all nodes and over all sites are taken.  Note that the estimation of the minimum number of substitutions is not affected by the position of the root.  Rule 1.  When the two descendent nodes of an ancestral node have some states (nucleotides or amino acids) in common, the ancestral node is assigned to the set of common states.  In this case, the most parsimonious explanation does not require any substitutions.  Rule 2.  When the two descendant nodes have no states in common, then all states in the descendent nodes are combined to form the set of possible states at the ancestral node.  In this case, one substitution is required.</span> is known as the Maximum Parsimony tree.</span></p>
+<p><span style=" font-size:11.0pt;">The phylogenetic tree(s) inferred using this criterion are <u><span style=" color:green;">unrooted trees</span></u><span style=" display:none;">RH_Unrooted_tree</span>, even though, for ease of inspection, they are often displayed in a manner similar to <u><span style=" color:green;">rooted trees</span></u><span style=" display:none;">RH_Rooted_tree</span>.</span></p>
+<p><i><span style=" font-size:11.0pt;">MEGA</span></i> <span style=" font-size:11.0pt;">includes the <u><span style=" color:green;">Max-mini <a href="javascript:TextPopup(this)" id="HotSpot50291" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot50291', 'POPUP50291');
+//]]></script><span class="glosstext" id="POPUP50291" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span>-and-bound</span></u><span style=" display:none;">RH_Max_mini_branch_and_bound_search</span> search, which is guaranteed to find all the MP trees.&#160; However, it is often too time consuming for more than 15 sequences. In those cases, you should use the <u><span style=" color:green;"><a href="javascript:TextPopup(this)" id="HotSpot38828" class="glossterm">Subtree-Pruning-Regrafting (SPR)</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot38828', 'POPUP38828');
+//]]></script><span class="glosstext" id="POPUP38828" style="display: none;"> For any tree searching method, exhaustive search, where all possible topologies are considered is unfeasible for even a small number of taxa. Subtree Pruning And Regrafting is a tree topology search heuristic which reduces the number of topologies searched by performing the following operations on the tree.        First, a subtree of the current best tree is selected and detached (pruned). Second, the detached subtree is regrafted onto another branch of the remaining tree, in such a way that a new topology is created and then likelihood of the new topology is calculated. This procedure is repeated for all regrafting positions that produce new topologies using the pruned subtree. The procedure is also repeated for each subtree (within the designated search level) and if the topology with best likelihood among those scored gives sufficient improvement over the current best tree, that topology becomes the current best tree. This is repeated until no significant further likelihood improvements are obtained.        A single pass of the SPR algorithm examines O(N2) new trees, where N is the number of leaves in the original tree. This is because, for each subtree there are O(N) possible regraftings, and there are O(N) possible subtrees to consider. In contrast, NNI examines O(N) topologies at each pass of the algorithm.</span></span></u><span style=" display:none;">Subtree_Pruning_Regrafting</span>, <u><span style=" color:green;">Tree-Bisection-Reconnection</span></u><span style=" display:none;">Tree_Bisection_Reconnection_TBR_</span>, or <u><span style=" color:green;">Min-mini</span></u><span style=" display:none;">RH_Min_mini_algorithm</span> method.&#160; You can ask <i>MEGA</i> to automatically obtain a set of initial trees by using the <u><span style=" color:green;"><a href="javascript:TextPopup(this)" id="HotSpot17800" class="glossterm">Min-mini algorithm</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot17800', 'POPUP17800');
+//]]></script><span class="glosstext" id="POPUP17800" style="display: none;"> This is a heuristic search algorithm for finding the MP tree, and is somewhat similar to the branch-and bound search method.  However, in this algorithm, many trees that are unlikely to have a small local tree length are eliminated from the computation of their L values. Thus while the algorithm speeds up the search for the MP tree, as compared to the branch-and-bound search, the final tree or trees may not be the true MP tree(s).  The user can specify a search factor to control the extensiveness of the search and MEGA adds the user specified search factor to the current local upper bound.  Of course, the larger the search factor, the slower the search, since many more trees will be examined.     (See also Nei &amp; Kumar (2000), pages 122, 125)</span></span></u><span style=" display:none;">RH_Min_mini_algorithm</span> with a given search factor.&#160; Alternatively, you can produce the initial trees by providing your own <u><span style=" color:green;"><a href="javascript:TextPopup(this)" id="HotSpot7209" class="glossterm">topology</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot7209', 'POPUP7209');
+//]]></script><span class="glosstext" id="POPUP7209" style="display: none;"> The branching pattern of a tree is its topology.</span></span></u><span style=" display:none;">RH_Topology</span> or by using <u><span style=" color:green;">the random addition option</span></u><span style=" display:none;">RH_Random_addition_trees</span>.&#160; These options are available in the <i>Analysis Preferences Dialog</i> and are displayed before the phylogenetic analysis begins. Note that these <a href="javascript:TextPopup(this)" id="HotSpot21483" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot21483', 'POPUP21483');
+//]]></script><span class="glosstext" id="POPUP21483" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span>-swapping procedures may not produce the best MP trees or all the MP trees.</span></p>
+<p><span style=" font-size:11.0pt;">By default, all nucleotide (or amino acid) changes are weighted equally in <i>MEGA</i> (standard parsimony).&#160; However, for nucleotide sequences, you have the option of conducting a <u><span style=" color:green;"><a href="javascript:TextPopup(this)" id="HotSpot10442" class="glossterm">transversion</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot10442', 'POPUP10442');
+//]]></script><span class="glosstext" id="POPUP10442" style="display: none;"> A change from a purine to a pyrimidine, or vice versa, is a transversion.</span> parsimony</span></u><span style=" display:none;">RH_Transversion_Parsimony</span> analysis in which only <u><span style=" color:green;">transversional</span></u><span style=" display:none;">RH_Transversion</span> changes are considered for calculating the <u><span style=" color:green;"><a href="javascript:TextPopup(this)" id="HotSpot49435" class="glossterm">tree length</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot49435', 'POPUP49435');
+//]]></script><span class="glosstext" id="POPUP49435" style="display: none;"> Tree length is the criterion used by the Maximum Parsimony method to search for the best tree.  It is defined as the sum of the minimum numbers of substitutions over all sites for the given topology.   To compute the tree length for the unweighted parsimony method, we use the procedure described in Fitch (1971), which is based on the two rules described below.  For a given site these rules are applied to each node and the sum of substitutions over all nodes and over all sites are taken.  Note that the estimation of the minimum number of substitutions is not affected by the position of the root.  Rule 1.  When the two descendent nodes of an ancestral node have some states (nucleotides or amino acids) in common, the ancestral node is assigned to the set of common states.  In this case, the most parsimonious explanation does not require any substitutions.  Rule 2.  When the two descendant nodes have no states in common, then all states in the descendent nodes are combined to form the set of possible states at the ancestral node.  In this case, one substitution is required.</span></span></u><span style=" display:none;">RH_tree_length</span>.&#160; In addition, through the <i><u style=" text-underline:double;"><span style=" color:green;">Analysis Preferences/Options</span></u></i> <u style=" text-underline:double;"><span style=" color:green;">dialog box,</span></u> you are given options on which subset of sites to include, and whether to conduct a test of the <a href="javascript:TextPopup(this)" id="HotSpot33242" class="glossterm">inferred tree</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot33242', 'POPUP33242');
+//]]></script><span class="glosstext" id="POPUP33242" style="display: none;"> A tree reconstructed from the observed sequence or other appropriate data using any tree-making method (such as UPGMA, NJ, ME, or MP) is known as an inferred or reconstructed tree.</span><span style=" display:none;">HC_MP_Analysis_Option_Dialog</span>.</span></p>
+<p><span style=" font-size:11.0pt;">&#160;</span></p>
+<b><span style=" font-size:11.0pt; font-family:'Arial' ,sans-serif;"><br clear="all" /></span></b>
+</body>
+</html>

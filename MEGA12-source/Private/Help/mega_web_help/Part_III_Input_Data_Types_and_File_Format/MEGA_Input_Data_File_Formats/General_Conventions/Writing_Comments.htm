@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+ <title>Writing Comments</title>
+<link rel="StyleSheet" href="../../../default.css" type="text/css" />
+ <link rel="StyleSheet" href="../../../default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../..";
+gCommonRootRelPath = "../../..";
+gTopicId = "3.1.1.0_2";
+</script>
+ <meta name="topic-breadcrumbs" content="Part III: Input Data Types and File Formats > MEGA Input Data Formats > General Conventions" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../ehlpdhtm.js"></script>
+
+
+<h1>Writing Comments</h1>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">The first line must contain 
+ the keyword</font> <font style="font-size: 11pt; font-family: 'Courier New';" 
+							 size="2" face="Courier New">#MEGA</font> <font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">to 
+ indicate that the data file is in</font> <i><font style="font-size: 11pt; 
+													 font-family: Arial; 
+													 font-style: italic;" 
+													 size="2" face="Arial">MEGA</font></i> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">format. 
+ The data file may contain a succinct description of the data (called Title) 
+ included in the file on the second line. The</font> <font style="font-size: 11pt; 
+															 font-family: 'Courier New';" 
+															 size="2" face="Courier New">Title</font> 
+ <a id="a4728" href="../../../RH_Statements_in_input_files.htm" name="a4728" class="BSSCPopup"><font style="font-size: 11pt; font-family: 'Courier New';" 
+						 size="2" face="Courier New">statement</font></a> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">is 
+ written according to a</font> <a href="../../../RH_Rules_for_Title_Statement.htm"><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">set 
+ of rules</font></a> <font style="font-size: 11pt; font-family: Arial;" 
+							 size="2" face="Arial">and is copied from</font> 
+ <i><font style="font-size: 11pt; font-family: Arial; font-style: italic;" 
+			 size="2" face="Arial">MEGA</font></i> <font style="font-size: 11pt; 
+														 font-family: Arial;" 
+														 size="2" face="Arial">to 
+ every output file. In the long run, an informative title will allow you 
+ to easily recognize your past work.</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">The data file may also 
+ contain a more descriptive multi-line account of the data in the</font> 
+ <font style="font-size: 11pt; font-family: 'Courier New';" size="2" face="Courier New">Description</font> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">statement, 
+ which is written after the</font> <font style="font-size: 11pt; font-family: 'Courier New';" 
+										 size="2" face="Courier New">Title</font> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">statement. 
+ The</font> <font style="font-size: 11pt; font-family: 'Courier New';" 
+					 size="2" face="Courier New">Description</font> <font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">statement 
+ also is written according to a</font> <a href="../../../RH_Rules_for_Description_Statement.htm"><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">set 
+ of rules</font></a><font style="font-size: 11pt; font-family: Arial;" 
+							 size="2" face="Arial">. Unlike the Title statement, 
+ the Description statement is not copied from</font> <i><font style="font-size: 11pt; 
+	 font-family: Arial; font-style: italic;" size="2" face="Arial">MEGA</font></i> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">to 
+ every output file.</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">In addition, the data file 
+ may also contain a</font> <font style="font-size: 11pt; font-family: 'Courier New';" 
+								 size="2" face="Courier New">Format</font> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">statement, 
+ which includes information on the type of data present in the file and 
+ some of its attributes. The</font> <font style="font-size: 11pt; font-family: 'Courier New';" 
+											 size="2" face="Courier New">Format</font> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">statement 
+ should be generally written after the</font> <font style="font-size: 11pt; 
+													 font-family: 'Courier New';" 
+													 size="2" face="Courier New">Title</font> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">or 
+ the</font> <font style="font-size: 11pt; font-family: 'Courier New';" 
+					 size="2" face="Courier New">Description</font> <font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">statement. 
+ Writing a</font> <a href="../../../RH_Rules_for_Format_Statement.htm"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">format statement</font></a> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">requires 
+ knowledge of the</font> <a href="../../../RH_Key_Words.htm"><font style="font-size: 11pt; 
+															 font-family: Arial;" 
+															 size="2" face="Arial">keywords</font></a> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">used 
+ to identify different types of data and data attributes.</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">All <a href="javascript:TextPopup(this)" id="HotSpot14023" class="glossterm">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot14023', 'POPUP14023');
+//]]></script><span class="glosstext" id="POPUP14023" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> names must be 
+ written according to a</font> <a href="../../../RH_Rules_for_Taxa_Names.htm"><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">set 
+ of rules</font></a><font style="font-size: 11pt; font-family: Arial;" 
+							 size="2" face="Arial">.</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Comments can be written 
+ anywhere in the data file and can span multiple lines. They must always 
+ be enclosed in square brackets (</font><font style="font-size: 11pt; font-family: Arial;" 
+												 size="2" face="Arial">[and]</font><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">) 
+ brackets and can be nested.</font></p>
+
+</body>
+</html>

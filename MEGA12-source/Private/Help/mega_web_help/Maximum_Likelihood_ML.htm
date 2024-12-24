@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+<meta name="OriginalFile" content="ContextHelp_HC.doc" />
+ <title>Maximum Likelihood (ML)</title>
+<link rel="stylesheet" href="ContextHelp_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "";
+</script>
+</head>
+<body link="blue" vlink="purple">
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1><span style=" font-size:11.0pt;">Maximum Likelihood (ML)</span></h1>
+<p><i><span style=" font-size:11.0pt;">Phylogeny</span></i> <span style=" font-size:11.0pt;">| <i>Construct/Test Maximum Likelihood Tree (ML)</i></span></p>
+<p><span style=" font-size:11.0pt;">&#160;</span></p>
+<p><span style=" font-size:11.0pt; font-family:'Arial' ,sans-serif;">A phylogenetic tree is constructed for the data by the Maximum Likelihood method.  In this method, an initial tree is first built using a fast but suboptimal method such as Neighbor-Joining, and its <a href="javascript:TextPopup(this)" id="HotSpot18188" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot18188', 'POPUP18188');
+//]]></script><span class="glosstext" id="POPUP18188" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> lengths are adjusted to maximize the likelihood of the data set for that tree <a href="javascript:TextPopup(this)" id="HotSpot26186" class="glossterm">topology</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot26186', 'POPUP26186');
+//]]></script><span class="glosstext" id="POPUP26186" style="display: none;"> The branching pattern of a tree is its topology.</span> under the desired model of evolution. Then variants of the <a href="javascript:TextPopup(this)" id="HotSpot37772" class="glossterm">topology</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot37772', 'POPUP37772');
+//]]></script><span class="glosstext" id="POPUP37772" style="display: none;"> The branching pattern of a tree is its topology.</span> are created using the NNI (nearest neighbor Interchange) method to search for topologies that fit the data better.  Maximum-Likelihood <a href="javascript:TextPopup(this)" id="HotSpot31265" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot31265', 'POPUP31265');
+//]]></script><span class="glosstext" id="POPUP31265" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> lengths are computed for these variant tree topologies and the greatest likelihood retained as the best choice so far.  This search continues until no greater likelihoods are found.  This method can be used for both nucleotide and protein data.  Users may supply their own initial tree instead of having MEGA create a Neighbor-Joining tree.  Users may also select other options besides NNI for searching.</span></p>
+<p><span style=" font-size:11.0pt;">&#160;</span></p>
+<p><span style=" font-size:11.0pt;">&#160;</span></p>
+<p><span style=" font-size:11.0pt;">&#160;</span></p>
+<b><span style=" font-size:8.0pt; font-family:'Arial' ,sans-serif;"><br clear="all" /></span></b>
+</body>
+</html>

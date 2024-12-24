@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="myPEG_RH.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Prediction Data Tab</title>
+<link rel="stylesheet" href="myPEG_RH.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<style type="text/css">
+<!--
+A:visited { color:#954F72; }
+A:link { color:#0000ff; }
+-->
+</style>
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.7.1.0_5";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Exploring the Impact of nsSNVs > MEGA-MD Windows" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+<h1><span style="font-size: 11.0pt;">Prediction Data Tab</span></h1>
+<p style="margin-left: .5in;"><span style="font-size: 10.0pt;">The <i>Predictions</i> 
+ tab displays all prediction data retrieved from the MEGA-MDW server in 
+ a list view. Complete information for the currently active record is displayed 
+ in the </span><u style="text-underline: double; font-size: 11pt; color: #007fbf;"><span 
+	 style="font-size: 11pt; color: #007fbf;"><a href="Mutation_Detail_View.htm" 
+												 style="font-size: 11pt; 
+												 color: #007fbf;">Mutation 
+ Detail View</a></span></u><span style="display: none;">Mutation_Detail_View</span><span 
+	 style="font-size: 10.0pt;">. Columns of data are banded together into 
+ categories:</span></p>
+<p style="margin-left: 1.0in; text-indent: -.25in;"><span style="font-size: 10.0pt; 
+															 font-family: Symbol;">·<span 
+	 style="font: 7.0pt 'Times New Roman';">&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></span>&#160;<u><span 
+	 style="font-size: 10.0pt;">Mutations</span></u> <span style="font-size: 10.0pt;">– 
+ identifiers as well as mutant and reference alleles are given here. Note 
+ – mutant amino acids that are appended with an asterisk (*) have multiple 
+ rows returned by the MEGA-MD server, each row indicating a mutation at 
+ the nucleotide level (look to the Coordinate Info band to see nucleotide 
+ change).</span></p>
+<p style="margin-left: 1.0in; text-indent: -.25in;"><span style="font-size: 10.0pt; 
+															 font-family: Symbol;">·<span 
+	 style="font: 7.0pt 'Times New Roman';">&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></span>&#160;<u><span 
+	 style="font-size: 10.0pt;">Predictions</span></u> <span style="font-size: 10.0pt;">– 
+ consensus, EvoD, PolyPhen-2, and SIFT predictions are given here. Where 
+ both the original and balanced predictions are given for PolyPhen-2 and 
+ SIFT (balanced predictions are described in <u><span style="color: #008000;">Liu 
+ and Kumar 2013</span></u><span style="display: none;">Evolutionary_balancing</span>).</span></p>
+<p style="margin-left: 1.0in; text-indent: -.25in;"><span style="font-size: 10.0pt; 
+															 font-family: Symbol;">·<span 
+	 style="font: 7.0pt 'Times New Roman';">&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></span>&#160;<u><span 
+	 style="font-size: 10.0pt;">Impact</span></u> <span style="font-size: 10.0pt;">– 
+ the impact scores for EvoD, PolyPhen-2, and SIFT predictions are provided 
+ along with the Grantham distance and Blosum62 value.</span></p>
+<p style="margin-left: 1.0in; text-indent: -.25in;"><span style="font-size: 10.0pt; 
+															 font-family: Symbol;">·<span 
+	 style="font: 7.0pt 'Times New Roman';">&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></span>&#160;<u><span 
+	 style="font-size: 10.0pt;">Evolutionary Features</span></u> <span 
+	 style="font-size: 10.0pt;">(hidden by default) – substitution rate, 
+ position time span, and mutation time span are displayed (see below for 
+ a description of how to display this band).</span></p>
+<p style="margin-left: 1.0in; text-indent: -.25in;"><span style="font-size: 10.0pt; 
+															 font-family: Symbol;">·<span 
+	 style="font: 7.0pt 'Times New Roman';">&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></span>&#160;<u><span 
+	 style="font-size: 10.0pt;">Coordinate Info</span></u> <span style="font-size: 10.0pt;">(hidden 
+ by default) – additional coordinate information is shown here, including 
+ chromosome, strand, nucleotide position, amino acid position, wild nucleotide, 
+ and mutant nucleotide (see below for a description of how to display this 
+ band).</span></p>
+<p style="margin-left: 1.0in;">&#160;</p>
+<p style="margin-left: .5in;"><span style="font-size: 10.0pt;">To toggle 
+ on/off the display of a given band, click on the indicator button which 
+ is located to the far left in the band headers row. A popup menu will 
+ appear from which bands can be selected/deselected. Often times when changing 
+ the display of bands, column widths will change in undesirable ways. To 
+ remedy this, you can execute the <i>Best-fit Columns</i> action by clicking 
+ <i>Format-&gt;Resize columns to best-fit</i> or clicking the toolbar button. 
+ Alternatively, columns widths can be adjusted by dragging their header 
+ edges.</span></p>
+<p style="margin-left: .5in;"><span style="font-size: 10.0pt;">The toolbar 
+ and main menu provide access to several actions for importing/exporting 
+ data, formatting the view, sorting, text search, and setting view options.</span></p>
+<p style="margin-left: 0in;">&#160;</p>
+<p style="margin-left: 0in;"><img src="myPEG_RH_files/image006.jpg" alt="" border="0" style="width:100%; max-width:1370px" /></p>
+<p>&#160;</p>
+<b><span style="font-size: 8.0pt; font-family: Arial, sans-serif;"><br 
+	 style="clear: all;" clear="all" />
+</span></b> 
+</body>
+</html>

@@ -1,0 +1,587 @@
+object CalibrationParamsDlg: TCalibrationParamsDlg
+  Left = 768
+  Height = 433
+  Top = 318
+  Width = 372
+  BorderIcons = []
+  Caption = 'Calibration Density Parameters'
+  ClientHeight = 433
+  ClientWidth = 372
+  Menu = NecessaryDummyMenu
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnHelp = FormHelp
+  OnResize = FormResize
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  SessionProperties = 'ExpDistRateEdit.Value;ExpDistTimeEdit.Value;FixedRateEdit.Value;Height;Left;NormalDistMeanEdit.Value;NormalDistStdDevEdit.Value;SingleTimeEdit.Value;Top;UniformDistMaxTimeEdit.Value;UniformDistMinTimeEdit.Value;Width'
+  LCLVersion = '2.2.6.0'
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 144
+    Top = 0
+    Width = 372
+    ActivePage = SingleTimeTab
+    Align = alTop
+    TabIndex = 4
+    TabOrder = 0
+    OnChange = PageControl1Change
+    object UniformDistTab: TTabSheet
+      Caption = 'Uniform'
+      ClientHeight = 116
+      ClientWidth = 364
+      object UniformDistLbl: TLabel
+        Left = 0
+        Height = 15
+        Top = 0
+        Width = 364
+        Align = alTop
+        Alignment = taCenter
+        AutoSize = False
+        Caption = 'Uniform Distribution'
+        Color = clForm
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        Transparent = False
+      end
+      object Panel2: TPanel
+        Left = 0
+        Height = 101
+        Top = 15
+        Width = 364
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 101
+        ClientWidth = 364
+        Color = clForm
+        ParentColor = False
+        TabOrder = 0
+        object UniformDistConstraintsLabel: TLabel
+          Left = 0
+          Height = 35
+          Top = 66
+          Width = 364
+          Align = alBottom
+          Alignment = taCenter
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = False
+          Caption = 'UniformDistConstraintsLabel'
+          Color = clForm
+          ParentColor = False
+          Transparent = False
+        end
+        object UniformDistMinTimeEdit: TFloatSpinEdit
+          Left = 83
+          Height = 23
+          Top = 37
+          Width = 90
+          OnChange = UniformDistMinTimeEditChange
+          TabOrder = 0
+        end
+        object UniformDistMaxTimeEdit: TFloatSpinEdit
+          Left = 189
+          Height = 23
+          Top = 37
+          Width = 90
+          OnChange = UniformDistMaxTimeEditChange
+          TabOrder = 1
+        end
+        object Label8: TLabel
+          Left = 97
+          Height = 15
+          Top = 19
+          Width = 50
+          Caption = 'Min Time'
+          ParentColor = False
+        end
+        object Label9: TLabel
+          Left = 200
+          Height = 15
+          Top = 19
+          Width = 52
+          Caption = 'Max Time'
+          ParentColor = False
+        end
+      end
+    end
+    object ExponentialDistTab: TTabSheet
+      Caption = 'Exponential'
+      ClientHeight = 116
+      ClientWidth = 364
+      object Label2: TLabel
+        Left = 0
+        Height = 15
+        Top = 0
+        Width = 364
+        Align = alTop
+        Alignment = taCenter
+        AutoSize = False
+        Caption = 'Exponential Distribution'
+        Color = clForm
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        Transparent = False
+      end
+      object Panel3: TPanel
+        Left = 0
+        Height = 101
+        Top = 15
+        Width = 364
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 101
+        ClientWidth = 364
+        Color = clForm
+        ParentColor = False
+        TabOrder = 0
+        object ExponentialDistConstraintsLabel: TLabel
+          Left = 0
+          Height = 40
+          Top = 61
+          Width = 364
+          Align = alBottom
+          Alignment = taCenter
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = False
+          Caption = 'ExponentialDistConstraintsLabel'
+          ParentColor = False
+        end
+        object ExpDistTimeEdit: TFloatSpinEdit
+          Left = 84
+          Height = 23
+          Top = 30
+          Width = 90
+          Increment = 10
+          OnChange = ExpDistTimeEditChange
+          TabOrder = 0
+        end
+        object Label4: TLabel
+          Left = 110
+          Height = 15
+          Top = 11
+          Width = 32
+          Caption = 'Offset'
+          ParentColor = False
+        end
+        object Label3: TLabel
+          Left = 209
+          Height = 15
+          Top = 11
+          Width = 43
+          Caption = 'Lambda'
+          ParentColor = False
+        end
+        object ExpDistRateEdit: TFloatSpinEdit
+          Left = 193
+          Height = 23
+          Top = 30
+          Width = 90
+          MaxValue = 1E16
+          MinValue = 1E-8
+          OnChange = ExpDistRateEditChange
+          TabOrder = 1
+          Value = 1
+        end
+      end
+    end
+    object NormalDistTab: TTabSheet
+      Caption = 'Normal'
+      ClientHeight = 116
+      ClientWidth = 364
+      object Label1: TLabel
+        Left = 0
+        Height = 15
+        Top = 0
+        Width = 364
+        Align = alTop
+        Alignment = taCenter
+        AutoSize = False
+        Caption = 'Normal Distribution'
+        Color = clForm
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        Transparent = False
+      end
+      object Panel4: TPanel
+        Left = 0
+        Height = 101
+        Top = 15
+        Width = 364
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 101
+        ClientWidth = 364
+        Color = clForm
+        ParentColor = False
+        TabOrder = 0
+        object NormalDistConstraintsLabel: TLabel
+          Left = 0
+          Height = 39
+          Top = 62
+          Width = 364
+          Align = alBottom
+          Alignment = taCenter
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = False
+          Caption = 'NormalDistConstraintsLabel'
+          ParentColor = False
+        end
+        object NormalDistMeanEdit: TFloatSpinEdit
+          Left = 77
+          Height = 23
+          Top = 33
+          Width = 90
+          OnChange = NormalDistMeanEditChange
+          TabOrder = 0
+        end
+        object Label5: TLabel
+          Left = 101
+          Height = 15
+          Top = 13
+          Width = 30
+          Caption = 'Mean'
+          ParentColor = False
+        end
+        object Label6: TLabel
+          Left = 202
+          Height = 15
+          Top = 13
+          Width = 70
+          Caption = 'Std Deviation'
+          ParentColor = False
+        end
+        object NormalDistStdDevEdit: TFloatSpinEdit
+          Left = 193
+          Height = 23
+          Top = 33
+          Width = 90
+          OnChange = NormalDistStdDevEditChange
+          TabOrder = 1
+        end
+      end
+    end
+    object LogNormalDistTab: TTabSheet
+      Caption = 'Log-normal'
+      ClientHeight = 116
+      ClientWidth = 364
+      object Label12: TLabel
+        Left = 0
+        Height = 15
+        Top = 0
+        Width = 364
+        Align = alTop
+        Alignment = taCenter
+        Caption = 'Log-normal Distribution'
+        Color = clForm
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        Transparent = False
+      end
+      object Panel5: TPanel
+        Left = 0
+        Height = 101
+        Top = 15
+        Width = 364
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 101
+        ClientWidth = 364
+        Color = clForm
+        ParentColor = False
+        TabOrder = 0
+        object LognormalDistConstraintsLabel: TLabel
+          Left = 0
+          Height = 39
+          Top = 62
+          Width = 364
+          Align = alBottom
+          Alignment = taCenter
+          Anchors = [akTop, akLeft, akRight]
+          AutoSize = False
+          Caption = 'LognormalDistConstraintsLabel'
+          ParentColor = False
+        end
+        object Label14: TLabel
+          Left = 54
+          Height = 15
+          Top = 14
+          Width = 32
+          Caption = 'Offset'
+          ParentColor = False
+        end
+        object LogNormalOffsetSpinEdit: TFloatSpinEdit
+          Left = 28
+          Height = 23
+          Hint = 'Offset (time)'
+          Top = 32
+          Width = 90
+          MaxValue = 9999999999999
+          OnChange = LogNormalOffsetSpinEditChange
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 0
+          Value = 1
+        end
+        object Label15: TLabel
+          Left = 157
+          Height = 15
+          Top = 14
+          Width = 30
+          Caption = 'Mean'
+          ParentColor = False
+        end
+        object LogNormalMeanSpinEdit: TFloatSpinEdit
+          Left = 134
+          Height = 23
+          Hint = '(log-scaled) Mean'
+          Top = 32
+          Width = 90
+          OnChange = LogNormalMeanSpinEditChange
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 1
+        end
+        object Label16: TLabel
+          Left = 248
+          Height = 15
+          Top = 14
+          Width = 70
+          Caption = 'Std Deviation'
+          ParentColor = False
+        end
+        object LogNormalStdDevSpinEdit: TFloatSpinEdit
+          Left = 241
+          Height = 23
+          Hint = '(log-scaled) Standard Deviation'
+          Top = 32
+          Width = 90
+          MaxValue = 9999999999
+          MinValue = 0.001
+          OnChange = LogNormalStdDevSpinEditChange
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 2
+          Value = 0.5
+        end
+      end
+    end
+    object SingleTimeTab: TTabSheet
+      Caption = 'Min Time'
+      ClientHeight = 116
+      ClientWidth = 364
+      object Panel6: TPanel
+        Left = 0
+        Height = 116
+        Top = 0
+        Width = 364
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 116
+        ClientWidth = 364
+        Color = clForm
+        ParentColor = False
+        TabOrder = 0
+        object SingleTimeLabel: TLabel
+          Left = 0
+          Height = 15
+          Top = 0
+          Width = 364
+          Align = alTop
+          Alignment = taCenter
+          Caption = 'Min Time'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object SingleTimeEdit: TFloatSpinEdit
+          Left = 136
+          Height = 23
+          Top = 31
+          Width = 90
+          OnChange = SingleTimeEditChange
+          TabOrder = 0
+        end
+      end
+    end
+    object RateTab: TTabSheet
+      Caption = 'Fixed Rate'
+      ClientHeight = 116
+      ClientWidth = 364
+      object Label11: TLabel
+        Left = 0
+        Height = 15
+        Top = 0
+        Width = 364
+        Align = alTop
+        Alignment = taCenter
+        AutoSize = False
+        Caption = 'Fixed Evolutionary Rate'
+        Color = clForm
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        Transparent = False
+      end
+      object Panel7: TPanel
+        Left = 0
+        Height = 101
+        Top = 15
+        Width = 364
+        Align = alClient
+        BevelColor = clForm
+        BevelOuter = bvNone
+        ClientHeight = 101
+        ClientWidth = 364
+        Color = clForm
+        ParentColor = False
+        TabOrder = 0
+        object Label13: TLabel
+          Left = 0
+          Height = 55
+          Top = 46
+          Width = 364
+          Align = alBottom
+          Alignment = taCenter
+          AutoSize = False
+          Caption = 'Note: this option will set a single fixed evolutionary rate (strict molecular clock) to be used throughout the tree and all other calibration constraints will be ignored.'
+          Font.Color = clMaroon
+          ParentColor = False
+          ParentFont = False
+          WordWrap = True
+        end
+        object FixedRateEdit: TFloatSpinEdit
+          Left = 136
+          Height = 23
+          Top = 16
+          Width = 90
+          Increment = 0.1
+          TabOrder = 0
+        end
+      end
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 42
+    Top = 391
+    Width = 372
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 42
+    ClientWidth = 372
+    TabOrder = 1
+    object ToolBar1: TToolBar
+      Left = 4
+      Height = 30
+      Top = 6
+      Width = 358
+      Align = alNone
+      AutoSize = True
+      ButtonHeight = 30
+      ButtonWidth = 115
+      Caption = 'ToolBar1'
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      HotImages = ImageForm.DlgButtonsHover
+      Images = ImageForm.DlgButtons
+      TabOrder = 0
+      object ToolButton1: TToolButton
+        Left = 1
+        Top = 0
+        Action = HelpAction
+      end
+      object ToolButton2: TToolButton
+        Left = 120
+        Top = 0
+        Action = CancelAction
+      end
+      object ToolButton3: TToolButton
+        Left = 239
+        Top = 0
+        Action = OkAction
+      end
+    end
+  end
+  object DistributionChart: TChart
+    Left = 0
+    Height = 247
+    Top = 144
+    Width = 372
+    AxisList = <    
+      item
+        Marks.LabelBrush.Style = bsClear
+        Minors = <>
+        Range.UseMin = True
+        Title.LabelFont.Orientation = 900
+        Title.LabelBrush.Style = bsClear
+      end    
+      item
+        Grid.Style = psClear
+        Alignment = calBottom
+        Marks.LabelBrush.Style = bsClear
+        Minors = <>
+        Title.LabelBrush.Style = bsClear
+      end>
+    Foot.Brush.Color = clBtnFace
+    Foot.Font.Color = clBlue
+    Margins.Bottom = 0
+    Title.Brush.Color = clBtnFace
+    Title.Font.Color = clBlue
+    Title.Text.Strings = (
+      'Normal'
+    )
+    Align = alClient
+    object AreaSeries: TAreaSeries
+      AreaBrush.Color = clSilver
+      AreaLinesPen.Style = psClear
+    end
+    object BarSeries: TBarSeries
+      ZPosition = 1
+      BarBrush.Color = clBlack
+      BarWidthPercent = 1
+    end
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 280
+    Top = 192
+    object DebugAction: TAction
+      Caption = 'DebugAction'
+      OnExecute = DebugActionExecute
+      ShortCut = 24644
+    end
+    object OkAction: TAction
+      Caption = 'OkAction'
+      ImageIndex = 5
+      OnExecute = OkBtnClick
+      ShortCut = 16467
+    end
+    object CancelAction: TAction
+      Caption = 'CancelAction'
+      ImageIndex = 0
+      OnExecute = CancelBtnClick
+      ShortCut = 27
+    end
+    object HelpAction: TAction
+      Caption = 'HelpAction'
+      ImageIndex = 8
+      OnExecute = HelpActionExecute
+      ShortCut = 112
+    end
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    IniSection = 'TCalibrationParamsDlg'
+    Left = 264
+    Top = 112
+  end
+  object NecessaryDummyMenu: TMainMenu
+    Left = 323
+    Top = 65
+  end
+end

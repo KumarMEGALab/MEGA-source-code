@@ -1,0 +1,51 @@
+{
+	Copyright 1992-2024 Sudhir Kumar and Koichiro Tamura
+
+	This file is part of the MEGA (Molecular Evolutionary Genetics Analyis) software.
+
+	MEGA (Molecular Evolutionary Genetics Analysis) is free software:
+	you can redistribute it and/or modify it under the terms of the
+	GNU General Public License as published by the Free Software
+	Foundation, either version 3 of the License, or (at your option)
+	any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+   Contributor(s):   The MEGA source code and software is made available in the hopes that it will be useful. 
+   In keeping with the spirit and intent that the MEGA project is developed under, the authors of MEGA request that before
+   distributing any significant changes to the MEGA source code (or derivatives thereof), you share
+   those changes with the MEGA authors so that they may have the opportunity to test that
+   the changes do not introduce errors into the code or otherwise negatively impact the correctness
+   or performance of the MEGA software.
+   
+	Please email inqiries to s.kumar@temple.edu
+}
+
+<HTML>
+<HEAD>
+<STYLE type="text/css">
+   {TLegendGenerator.Style}
+</STYLE>
+	<TITLE>Estimate Selection for each Codon (HyPhy)</TITLE>
+	
+</HEAD>
+<BODY>
+<div class="figureTitle">Codon-based estimates of natural selection.</div>
+  <div class="note">
+
+NOTE.--For each codon, estimates of the numbers of inferred synonymous (s) and nonsynoymous (n) substitutions are presented along with the numbers of sites that are estimated to be synonymous (S) and nonsyonymous (N).  These estimates are produced using the joint Maximum Likelihood reconstructions of ancestral states under a Muse-Gaut model[{TLegendGenerator.MuseGautCitation:ExpandCitation}] of codon substitution and {TLegendGenerator.ModelName} model [{TDistPack.MethodCitation:ExpandCitation}] of nucleotide substitution. The tree used for this purpose was {if TAnalysisInfo.UserTreeFile = ''}automatically inferred.{else}provided by the user.{endif} d<sub>N</sub> - d<sub>S</sub> is the test statistic used for detecting codons that have undergone positive selection, where dS is the number of synonymous substitutions per site (s/S) and d<sub>N</sub> is the number of nonsynonymous substitutions per site (n/N). A VALUE value for the test statistic is normalized by the total length of the tree (measured in expected substitutions per site). A positive value for the test statistic indicates an overabundance of nonsynonymous substitutions. In this case, the probability of rejecting the null hypothesis of neutral evolution (P-value) is calculated [{TLegendGenerator.Kosakovsky:ExpandCitation}, {TLegendGenerator.SuzukiHyPhy:ExpandCitation}]. Values of P less than 0.05 are considered significant at a 5% level and are highlighted.  
+
+Maximum Likelihood computations were conducted using HyPhy software package [{TLegendGenerator.HyphyCitation:ExpandCitation}] in MEGA [{TLegendGenerator.MegaCitation:ExpandCitation}].
+
+ {IncludeExternalFile=Data_Subset_Template.htm}
+  
+
+ </div>
+</body>
+</html>

@@ -1,0 +1,161 @@
+object DivergenceTimesFrame: TDivergenceTimesFrame
+  Left = 0
+  Height = 197
+  Top = 0
+  Width = 332
+  ClientHeight = 197
+  ClientWidth = 332
+  TabOrder = 0
+  DesignLeft = 591
+  DesignTop = 216
+  object Panel1: TPanel
+    Left = 0
+    Height = 20
+    Top = 0
+    Width = 332
+    Align = alTop
+    ClientHeight = 20
+    ClientWidth = 332
+    TabOrder = 0
+    object Image1: TImage
+      Left = 5
+      Height = 9
+      Top = 5
+      Width = 9
+      Picture.Data = {
+        1754506F727461626C654E6574776F726B477261706869638E03000089504E47
+        0D0A1A0A0000000D49484452000000090000000908040000004A98CE9B000002
+        D97A5458745261772070726F66696C6520747970652065786966000078DAED96
+        4D92E4280C85F79C628E60490889E3607E22FA0673FC7960CA599955DD11D3D3
+        8B5924846D2CCB4FA04F2633F4BF7F8CF0171A65F610D53CE5940EB49863E682
+        811F57BBAE74C475BE5ADE577AB687FB01C324B8CA759BFAF62FB0EBE3058BDB
+        7E3EDB83D5ADE35B886EE1D564469EE3EDE75B48F8B2D3BE0F1F132AF1D372F6
+        C175CB6EF1D7FB68484653E80907EE4272E09C6614B98E8223E2CCE270A26D11
+        9C49E4FBDC857BF892BC7BF492BBA36CBB3CA7221C693BA4971C6D3BE98B5DEE
+        30FC34237A447E7A607C87F892BB319A8FD1AFD5959890A914F6A23E96B24670
+        3C91CA2B1B09DD7028C6B67A46772CB1825803CD13BD06CAC4C8E6A0488D0A0D
+        EAEB5AA9628A913B636ACC5C5996CDC53873958920CE4E834DB2B4200E3615D4
+        0466BEE7422B6E5EF12A392237822713C4086F7CE9E13BE3EFF45B688C59BA44
+        87DFB9C2BC78D634A631C9CD33BC0084C6CEA9AEFCAE1E3ED5CDF109AC80A0AE
+        343B16588EF39238951EB5258BB3C04F8F188EEBD3206B5B0029426CC5644840
+        E048244A89500F6C44C8A3834FC1CC59229F2040AADC280CB011498083AF01B1
+        F18ED1F265E5CB8CAD0520549218D064298015A3A27E2C3A6AA8A8680CAA9AD4
+        D4356B499262D29492A5B94715138BA696CCCC2D5B71F1E8EAC9CDDDB397CC59
+        B085694ED942F69C7329085A205DF076814729279F72C653CF74DAE9673E4B45
+        F9D458B5A66AD56BAEA5719386CFBFA566A179CBAD74EA28A51EBBF6D4AD7BCF
+        BD0CD4DA9011878E346CF8C8A3DCD436D5676AF442EED7D468539BC4E2F2B307
+        3598CD3E24686E273A9981184702719B0450D03C991D4E31F22437991D99F151
+        28831AE984D3681203C1D88975D0CDEE41EE97DC82C67FC58D7F462E4C747F82
+        5C98E836B9AFDCBEA1D6CAFA459105687E8533A7870C6C6CFDE85ED8CBFC49FA
+        FD6BF8AF026FA1B7D05BE82DF4167A0BBD85FE3742F8EB90C33FADA48FF0D34B
+        8A5900000002624B474400893EE918B6000000097048597300002E2300002E23
+        0178A53F760000000774494D4507E4041C11030E7F3F0A500000003A49444154
+        08D765CEC10DC0200C03C023EA12659EEE3F061D037E290D7E9E25CBED511360
+        BA2B313E8C2C13631B1927F54ADDFBA7042ED0F65F0B521F067137E162C90000
+        000049454E44AE426082
+      }
+      Proportional = True
+      Stretch = True
+    end
+    object Label3: TLabel
+      Left = 20
+      Height = 15
+      Top = 2
+      Width = 31
+      Caption = 'Times'
+      ParentColor = False
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 177
+    Top = 20
+    Width = 332
+    Align = alClient
+    Caption = 'Panel2'
+    ClientHeight = 177
+    ClientWidth = 332
+    TabOrder = 1
+    object ScrollBox1: TScrollBox
+      Left = 1
+      Height = 175
+      Top = 1
+      Width = 330
+      HorzScrollBar.Page = 228
+      VertScrollBar.Page = 168
+      Align = alClient
+      BorderStyle = bsNone
+      ClientHeight = 175
+      ClientWidth = 330
+      TabOrder = 0
+      object FontBtn: TButton
+        Left = 19
+        Height = 25
+        Top = 29
+        Width = 50
+        Caption = 'Font...'
+        TabOrder = 0
+      end
+      object DivTimesFontSizeSpinEdit: TSpinEdit
+        Left = 19
+        Height = 23
+        Top = 60
+        Width = 50
+        MaxValue = 96
+        TabOrder = 1
+        Value = 9
+      end
+      object DivTimesPrecisionSpinEdit: TSpinEdit
+        Left = 19
+        Height = 23
+        Top = 90
+        Width = 50
+        MaxValue = 12
+        TabOrder = 2
+        Value = 2
+      end
+      object Label1: TLabel
+        Left = 77
+        Height = 15
+        Top = 64
+        Width = 47
+        Caption = 'Font Size'
+        ParentColor = False
+      end
+      object Label2: TLabel
+        Left = 77
+        Height = 15
+        Top = 94
+        Width = 138
+        Caption = 'Precision (Decimal Places)'
+        ParentColor = False
+      end
+      object HideOverlappingDivTimesCheckBx: TCheckBox
+        Left = 19
+        Height = 19
+        Top = 124
+        Width = 209
+        Caption = 'Hide Overlapping Divergence Times'
+        Checked = True
+        State = cbChecked
+        TabOrder = 3
+      end
+      object ShowNodeHeightErrBarsCheckBx: TCheckBox
+        Left = 19
+        Height = 19
+        Top = 149
+        Width = 202
+        Caption = 'Show Node Height Error Bars (2SE)'
+        TabOrder = 4
+      end
+      object DivTimesDisplayCheckBx: TCheckBox
+        Left = 20
+        Height = 19
+        Top = 5
+        Width = 83
+        Caption = 'Show Times'
+        TabOrder = 5
+      end
+    end
+  end
+end

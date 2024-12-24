@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="TreeExplorer_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Tree Topology Editor</title>
+<link rel="stylesheet" href="TreeExplorer_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "5.3.0_16";
+</script>
+ <meta name="topic-breadcrumbs" content="Part V: Visualizing and Exploring Data > Tree Explorer" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1 style="font-size: 11pt; font-family: Arial, sans-serif;">Tree Topology 
+ Editor</h1>
+<p style="font-size: 11pt; font-family: Arial, sans-serif;">&#160;</p>
+<p style="font-size: 11pt; font-family: Arial, sans-serif;">The tree <a href="javascript:TextPopup(this)" id="HotSpot43187" class="glossterm" style="font-family: Arial, sans-serif;">topology</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot43187', 'POPUP43187');
+//]]></script><span class="glosstext" id="POPUP43187" style="display: none;"> The branching pattern of a tree is its topology.</span> 
+ editor shows a single tree's topology in a way in which you are able to 
+ modify it.&#160;The toolset is very similar to the <a href="TreeExplorer_HC_files/Tree_Explorer.htm" 
+														 style="color: #007fbf; 
+														 font-family: Arial, sans-serif;">Tree 
+ Explorer</a><span class="CommentReference">&#160;</span>, but with some 
+ features added and others removed.&#160;</p>
+<p style="font-size: 11pt; font-family: Arial, sans-serif;">The Topology 
+ Editor is also used during analyses in which the user is supplying their 
+ own tree.&#160;&#160;In some cases the <a href="javascript:TextPopup(this)" id="HotSpot19872" class="glossterm" style="font-family: Arial, sans-serif;">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot19872', 'POPUP19872');
+//]]></script><span class="glosstext" id="POPUP19872" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span> names in 
+ the supplied tree don’t match up exactly with the names in the sequence 
+ file we are using.&#160;&#160;In these cases users will have a chance 
+ to fix the inconsistency by mapping the sequence names to the tree names.&#160;&#160;Further 
+ below, how mapping names works is described.</p>
+<p style="font-size: 11pt; font-family: Arial, sans-serif; font-weight: bold;">Editing 
+ the Topology of a Tree</p>
+<p style="font-size: 11pt; font-family: Arial, sans-serif;">The most basic 
+ use of the Topology Editor is to enable the user to build or edit a tree 
+ file.&#160;The editor can be launched from the main form by clicking User 
+ Tree-&gt;Edit/Draw Tree (Manually).&#160;If you don’t have a tree file 
+ to start off with then you can choose to either start from scratch or 
+ start with a randomly created tree based on your sequence file (this just 
+ saves the time of adding the taxa).</p>
+<p style="font-family: Arial, sans-serif;"><img src="tif-img1.png" alt="" style=" border:none; width:100%; max-width:658px;" border="0" /><br />
+<span style="font-style: italic; font-size: 10pt;">This image is showing 
+ the Tree Topology Editor with the NJ tree for the Crab_rRNA.meg example 
+ file loaded.</span></p>
+<p style="font-family: Arial, sans-serif; font-weight: bold;">Toolbar Explained</p>
+<p style="font-family: Arial, sans-serif;"><img src="image27.gif" alt="" style=" border:none; width:100%; max-width:40px;" border="0" />&#160;- Open 
+ a newick tree file<br />
+<img src="image28.gif" alt="" style=" border:none; width:100%; max-width:39px;" border="0" />- Open 
+ a recently edited tree.&#160;&#160;<i>This is especially useful in the 
+ case where you have a tree file which doesn’t completely match a sequence 
+ file.&#160;&#160;If you have to resolve the differences MEGA remembers 
+ the tree and the mapping of the taxa.&#160;&#160;Just select the recently 
+ edited tree next time you need to use it with that sequence file.</i></p>
+<p style="font-family: Arial, sans-serif;"><i><img src="image29.gif" alt="" style=" border:none; width:100%; max-width:39px;" border="0" />- <span 
+	 style="font-style: normal;">Generate a new tree.</span></i><br />
+<img src="image30.gif" alt="" style=" border:none; width:100%; max-width:39px;" border="0" />&#160;- 
+ Save to newick file format<br />
+<img src="image31.gif" alt="" style=" border:none; width:100%; max-width:39px;" border="0" />&#160;- 
+ Change the taxa font<br />
+<img src="image32.gif" alt="" style=" border:none; width:100%; max-width:39px;" border="0" />- Search 
+ for a taxa by name<br />
+<img src="image33.gif" alt="" style=" border:none; width:100%; max-width:39px;" border="0" />&#160;- 
+ Copy an image of the tree to the clipboard (you can past a picture of 
+ the tree into word, or another program)<br />
+<img src="image34.gif" alt="" style=" border:none; width:100%; max-width:39px;" border="0" />&#160;- 
+ Undo the last change (only applies to topology changes, not taxa name 
+ changes)<br />
+<img src="image35.gif" alt="" style=" border:none; width:100%; max-width:39px;" border="0" />- Add 
+ a new taxa (adds on the currently selected <a href="javascript:TextPopup(this)" id="HotSpot11825" class="glossterm" style="font-family: Arial, sans-serif;">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot11825', 'POPUP11825');
+//]]></script><span class="glosstext" id="POPUP11825" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span>, or if 
+ no branch is selected it adds to the very top subtree)<br />
+<img src="image41.gif" alt="" style=" border:none; width:100%; max-width:33px;" border="0" />&#160;- 
+ Delete a taxon (If a taxon is selected it will be drawn in blue, and this 
+ option will become enabled.&#160;&#160;To select a taxa simply click it’s 
+ name once.)<br />
+<img src="image37.gif" alt="" style=" border:none; width:100%; max-width:39px;" border="0" />- Place 
+ root at selected branch or node<br />
+<img src="image38.gif" alt="" style=" border:none; width:100%; max-width:39px;" border="0" />&#160;- 
+ <a href="javascript:TextPopup(this)" id="HotSpot20200" class="glossterm" style="font-family: Arial, sans-serif;">Swap</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot20200', 'POPUP20200');
+//]]></script><span class="glosstext" id="POPUP20200" style="display: none;"> This command changes the cursor to the 'Flip' icon.  Then, you click on an interior branch, MEGA swaps the two subtrees defined by this branch.  If each of the subtrees is an individual taxon, then Swap is the same as Flip.  The cursor will revert to the arrow if you click on the arrow icon on the left-hand side of the Tree Explorer.</span> 
+ branches of a subtree<br />
+<img src="image39.gif" alt="" style=" border:none; width:100%; max-width:39px;" border="0" />&#160;- 
+ Resize tree to fit the window.&#160;&#160;This is especially useful with 
+ large trees.<br />
+<img src="image40.gif" alt="" style=" border:none; width:100%; max-width:39px;" border="0" />&#160;- 
+ Resize the tree by dragging (select this option, then click and drag on 
+ the tree to resize it)&#160;&#160;Some larger trees will take longer to 
+ resize simply because of their size.</p>
+<p style="font-family: Arial, sans-serif;">&#160;</p>
+<p style="font-family: Arial, sans-serif; font-size: 12pt; font-weight: bold;">Resolving 
+ taxa name discrepancies between a tree and a sequence file</p>
+<p style="font-family: Arial, sans-serif;">Some analyses in MEGA will require 
+ you to specify a tree file.&#160;&#160;The tree should be a tree representative 
+ of the sequence data, or at least contain the sequence names as taxa names 
+ in it.&#160;&#160;If the tree taxa names and the sequence data names don’t 
+ match perfectly or the tree is the wrong size then you are given a chance 
+ to resolve these discrepancies.&#160;The following is an example of creating 
+ an ML tree with an initial tree which doesn’t match the sequence names.</p>
+<p style="font-family: Arial, sans-serif;">We first specify a tree file 
+ in the analysis preferences<br />
+<img src="image42.gif" alt="" style=" border:none; width:100%; max-width:614px;" border="0" /></p>
+<p style="font-family: Arial, sans-serif;">Next we are told that there 
+ is a Taxa Name Mismatch and we are asked how we would like to resolve 
+ this.&#160;&#160;One option is <span style="font-style: italic;">Automatic 
+ Tree </span>which if chosen would simply have MEGA construct a neighbor-joining 
+ tree to use as a starting point for the heuristic search.&#160;&#160;Instead, 
+ select <span style="font-style: italic;">Use Topology Editor </span>so 
+ that MEGA will display the Tree Topology Editor</p>
+<p style="font-family: Arial, sans-serif;"><img src="tif-img2.png" alt="" style=" border:none; width:100%; max-width:890px;" border="0" /><br />
+This is the dialog where we will <span style="font-style: italic;">map</span> 
+ the taxa names from our sequence data file onto the tree.&#160;&#160;It’s 
+ important to remember that the tree must have the same # of taxa as your 
+ sequence data.&#160;&#160;We will call the sequence data names <span style="font-style: italic;">Active 
+ Data Names</span>.&#160;&#160;In this example there is 1 extra taxon which 
+ will need to be removed at the end.</p>
+<p style="font-family: Arial, sans-serif;"><img src="tif-img3.png" alt="" style=" border:none; width:100%; max-width:890px;" border="0" /><br />
+At this point 4 of the 13 taxa have been mapped.&#160;&#160;Notice that 
+ on the left hand side when a taxon has been mapped it has an entry associated 
+ with it under the M<span style="font-style: italic;">ap to User Tree Name</span> 
+ column.&#160;&#160;Mapped taxa also show up in the tree with black text, 
+ and no longer say <unmapped>.&#160;</p>
+<p style="font-family: Arial, sans-serif;">There are two ways to map an 
+ active data name to a tree name.&#160;&#160;The first is simply dragging 
+ the active data name from the left hand side (by clicking and dragging) 
+ and dropping it on the tree over the tree name you would like to map it 
+ to.<br />
+The second way to map taxa is to click on the space in the <span style="font-style: italic;">Map 
+ to User Tree Name</span> which across from the <span style="font-style: italic;">Active 
+ Data Name</span> you wish to map.&#160;&#160;This will bring up a selection 
+ box where you can click the tree name you want to associate with it.&#160;Below 
+ is a screen shot of the second method.</p>
+<p style="font-family: Arial, sans-serif;"><img src="img4.png" alt="" style=" border:none; width:100%; max-width:890px;" border="0" /><br />
+<br />
+</p>
+<p style="font-family: Arial, sans-serif;">We will now map the rest of 
+ the taxa.</p>
+<p style="font-family: Arial, sans-serif;"><img src="img5.png" alt="" style=" border:none; width:100%; max-width:890px;" border="0" /><br />
+Noticde that one taxon on the tree which isn’t mapped, but no “Active data 
+ Names” to map to it.&#160;&#160;This is an extra taxon in the tree, and 
+ we will delete it.&#160;&#160;Simply right click on the name and select 
+ <span style="font-style: italic;">Remove OTU</span>.</p>
+<p style="font-family: Arial, sans-serif;">Our mapping process is now complete!&#160;&#160;Click 
+ the “OK” button.&#160;&#160;If you are going to be using this tree file 
+ and data set for a number of analyses, you may want to note the “Recent 
+ Trees” feature, which keeps track of these associations.&#160;&#160;Next 
+ time you will just find the tree under “recent trees” and be done.</p>
+<p style="font-family: Arial, sans-serif;"><img src="img6.png" alt="" style=" border:none; width:100%; max-width:890px;" border="0" /></p>
+<p style="font-family: Arial, sans-serif;">&#160;</p>
+<p style="font-family: Arial, sans-serif;">&#160;</p>
+<p style="font-family: Arial, sans-serif;">&#160;</p>
+<b><span style="font-size: 8.0pt; font-family: Arial, sans-serif;"><br 
+	 style="clear: all;" clear="all" />
+</span></b><span style="font-family: Arial, sans-serif;"> </span>
+</body>
+</html>

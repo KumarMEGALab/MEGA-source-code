@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="DataExplorerHelp_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Average Menu (in Distance Matrix Explorer)</title>
+<link rel="stylesheet" href="DataExplorerHelp_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "5.1.0_2";
+</script>
+ <meta name="topic-breadcrumbs" content="Part V: Visualizing and Exploring Data > Distance Matrix Explorer" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1 style="margin-left: 0in; font-size: 12pt; font-family: Arial, sans-serif;">Average 
+ Menu (in Distance Matrix Explorer)</h1>
+<p style="font-size: 12pt; font-family: Arial, sans-serif;">With this menu, 
+ you can compute the following average values:</p>
+<p style="font-size: 12pt; font-family: Arial, sans-serif;"><i>Overall</i>:&#160;&#160;Computes 
+ and displays the overall average.</p>
+<p style="font-size: 12pt; font-family: Arial, sans-serif;"><i>Within groups</i>:&#160;&#160;This 
+ item is enabled only if at least one group is defined.&#160;&#160;For 
+ each group, an arithmetic average is computed for all valid pairwise comparisons 
+ and the results are displayed in the <i>Distance Matrix Explorer</i>.&#160;&#160;All 
+ incalculable within-group averages are shown with an “n/c” in red.</p>
+<p style="font-size: 12pt; font-family: Arial, sans-serif;"><i>Between 
+ Groups</i>:&#160;&#160;This item is enabled only if at least two <a href="javascript:TextPopup(this)" id="HotSpot35051" class="glossterm" style="font-family: Arial, sans-serif;">groups of taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot35051', 'POPUP35051');
+//]]></script><span class="glosstext" id="POPUP35051" style="display: none;"> A group of taxa is a set of one or more taxa. Members of a group can be specified in the input data file, and created and edited in the Setup Taxa and Groups dialog.  Groups of taxa often are constructed based on their evolutionary relatedness.  For example, sequences may be grouped based on the geographic origin of the source individual, or sequences from a multi-gene family may be arranged into groups consisting of orthologous sequences.</span> 
+ are defined.&#160;&#160;For each between-group average, an arithmetic 
+ average is computed for all valid inter-group pairwise comparisons and 
+ results are displayed in the <i>Distance Matrix Explorer</i>.&#160;&#160;All 
+ incalculable within-group averages are shown with an “n/c” in red.</p>
+<p style="font-size: 12pt; font-family: Arial, sans-serif;"><i>Net Between 
+ Groups</i>:&#160;&#160;This item is enabled only if at least two <a href="javascript:TextPopup(this)" id="HotSpot40593" class="glossterm" style="font-family: Arial, sans-serif;">groups of taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot40593', 'POPUP40593');
+//]]></script><span class="glosstext" id="POPUP40593" style="display: none;"> A group of taxa is a set of one or more taxa. Members of a group can be specified in the input data file, and created and edited in the Setup Taxa and Groups dialog.  Groups of taxa often are constructed based on their evolutionary relatedness.  For example, sequences may be grouped based on the geographic origin of the source individual, or sequences from a multi-gene family may be arranged into groups consisting of orthologous sequences.</span> 
+ are defined.&#160;&#160;It computes <b><i>net</i></b> average distances 
+ between <u><a href="Groups_of_taxa.htm" style="color: #007fbf; font-family: Arial, sans-serif;">groups 
+ of taxa</a></u><span style="display: none;">RH_Groups_of_taxa</span>.&#160;&#160;This 
+ value is given by</p>
+<p style="font-size: 12pt; font-family: Arial, sans-serif;"><i>d</i><sub>A</sub> 
+ = <i>d</i><sub>XY</sub> – (<i>d</i><sub>X</sub> + <i>d</i><sub>Y</sub>)/2</p>
+<p style="font-size: 12pt; font-family: Arial, sans-serif;">where <i>d</i><sub>XY</sub> 
+ is the average distance between groups X and Y, and <i>d</i><sub>X</sub> 
+ and <i>d</i><sub>Y</sub> are the mean within-group distances.&#160;&#160;&#160;You 
+ must have at least two <a href="javascript:TextPopup(this)" id="HotSpot16735" class="glossterm" style="font-family: Arial, sans-serif;">groups 
+ of taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot16735', 'POPUP16735');
+//]]></script><span class="glosstext" id="POPUP16735" style="display: none;"> A group of taxa is a set of one or more taxa. Members of a group can be specified in the input data file, and created and edited in the Setup Taxa and Groups dialog.  Groups of taxa often are constructed based on their evolutionary relatedness.  For example, sequences may be grouped based on the geographic origin of the source individual, or sequences from a multi-gene family may be arranged into groups consisting of orthologous sequences.</span> with a minimum of two taxa each for this option 
+ to work.&#160;&#160;All incalculable within-group averages are shown with 
+ a red “n/c”.</p>
+<p style="font-size: 12pt;">&#160;</p>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="DistanceMethods_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Models for estimating distances</title>
+<link rel="stylesheet" href="DistanceMethods_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.2.1.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Computing Evolutionary Distances > Distance Models" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+<h1 style="margin-left: 0in; font-family: Arial, sans-serif; font-size: 12pt;">Models 
+ for estimating distances</h1>
+<p style="font-family: Arial, sans-serif;">The evolutionary distance between 
+ a pair of sequences usually is measured by the number of nucleotide (or 
+ amino acid) substitutions occurring between them. Evolutionary distances 
+ are fundamental for the study of molecular evolution and are useful for 
+ phylogenetic reconstructions and the estimation of divergence times. Most 
+ of the widely used methods for distance estimation for nucleotide and 
+ amino acid sequences are included in <i>MEGA</i>. In the following three 
+ sections, we present a brief discussion of these methods: nucleotide substitutions, 
+ synonymous-nonsynonymous substitutions, and amino acid substitutions. 
+ Further details of these methods and general guidelines for the use of 
+ these methods are given in <u><a href="Nei_and_Kumar_2000.htm" style="color: #007fbf; 
+									 font-family: Arial, sans-serif; font-size: 12pt;">Nei 
+ and Kumar (2000)</a></u><span style="display: none;">Nei_and_Kumar_2000</span>.&#160;&#160;Note 
+ that in addition to the distance estimates, <i>MEGA</i> also computes 
+ the standard errors of the estimates using the analytical formulas and 
+ the <u style="text-underline: double;"><a href="Bootstrap_Test_of_Phylogeny.htm" 
+											 style="color: #007fbf; font-family: Arial, sans-serif; 
+											 font-size: 12pt;">bootstrap 
+ method</a></u><span style="display: none;">HC_bootstrap_method_to_compute_standard_error</span>.</p>
+<p class="BlockText" style="font-size: 12pt;">Distance methods included 
+ in <i>MEGA</i> in divided in three categories (Nucleotide, Syn-nonsynonymous, 
+ and Amino acid):</p>
+<p class="BlockText" style="font-size: 12pt;"><b>Nucleotide</b></p>
+<p style="font-family: Arial, sans-serif; font-size: 12pt;">Sequences are 
+ compared nucleotide-by-nucleotide.&#160;&#160;These distances can be computed 
+ for protein coding and non-coding nucleotide sequences.</p>
+<p style="font-family: Arial, sans-serif;">&#160;&#160;&#160;&#160;&#160;&#160;<a 
+	 href="No_of_differences_Nucleotide.htm" style="font-style: italic; 
+	 color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">No. 
+ of differences</a></p>
+<p style="font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;<span 
+	 style="color: #007fbf;">&#160;&#160;</span><i><u style="text-underline: double;"><a 
+	 href="p-distance_Nucleotide.htm" style="color: #007fbf; font-family: Arial, sans-serif; 
+	 font-size: 12pt;">p-distance</a></u></i></p>
+<p style="font-family: Arial, sans-serif; font-size: 12pt;"><i>&#160;&#160;&#160;&#160;&#160;&#160;<b>Jukes-Cantor</b> 
+ Model</i></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<a 
+	 href="Jukes-Cantor_distance.htm" style="font-family: Arial, sans-serif; 
+	 font-size: 12pt;"><u style="text-underline: double; font-family: Arial, sans-serif; 
+							 font-size: 12pt;"><span style="color: #007fbf; 
+													 font-family: Arial, sans-serif; 
+													 font-size: 12pt;">with 
+ Rate Uniformity Among Sites</span></u></a></i></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<u 
+	 style="text-underline: double;"><a href="Jukes-Cantor_Gamma_distance.htm" 
+										 style="color: #007fbf; font-family: Arial, sans-serif; 
+										 font-size: 12pt;">with Rate Variation 
+ Among Sites</a></u></i></p>
+<p style="font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;<i><b>Tajima-Nei 
+ </b>Model</i></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<i><a 
+	 href="Tajima-Nei_distance.htm" style="font-family: Arial, sans-serif; 
+	 font-size: 12pt;"><u style="text-underline: double; font-family: Arial, sans-serif; 
+							 font-size: 12pt;"><span style="color: #007fbf; 
+													 font-family: Arial, sans-serif; 
+													 font-size: 12pt;">with 
+ Rate Uniformity and Pattern Homogeneity</span></u></a></i></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<u 
+	 style="text-underline: double;"><a href="Tajima_Nei_distance_Gamma_rates.htm" 
+										 style="color: #007fbf; font-family: Arial, sans-serif; 
+										 font-size: 12pt;">with Rate Variation 
+ Among Sites</a></u></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<u 
+	 style="text-underline: double;"><a href="Tajima_Nei_Distance_Heterogeneous_patterns.htm" 
+										 style="color: #007fbf; font-family: Arial, sans-serif; 
+										 font-size: 12pt;">with Pattern 
+ Heterogeneity Between Lineages</a></u></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<a 
+	 href="Tajima_Nei_Distance_Gamma_Rates_and_Heterogeneous_patterns.htm" 
+	 style="font-family: Arial, sans-serif; font-size: 12pt;"><u style="text-underline: double; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"><span style="color: #007fbf; 
+															 font-family: Arial, sans-serif; 
+															 font-size: 12pt;">with 
+ Rate Variation and Pattern Heterogeneity</span></u></a></p>
+<p style="font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;<b><i>Kimura 
+ 2-Parameter</i></b> <i>Model</i></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<i><a 
+	 href="Kimura_2-parameter_distance.htm" style="font-family: Arial, sans-serif; 
+	 font-size: 12pt;"><u style="text-underline: double; font-family: Arial, sans-serif; 
+							 font-size: 12pt;"><span style="color: #007fbf; 
+													 font-family: Arial, sans-serif; 
+													 font-size: 12pt;">with 
+ Same Rate Among Sites</span></u></a></i></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<u 
+	 style="text-underline: double;"><a href="Kimura_gamma_distance.htm" 
+										 style="color: #007fbf; font-family: Arial, sans-serif; 
+										 font-size: 12pt;">with Rate Variation 
+ Among Sites</a></u></i></p>
+<p class="MTDisplayEquation" style="font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;<b><i>Tamura 
+ 3-Parameter</i></b> <i>Model</i></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<i><a 
+	 href="Tamura_3-parameter_distance.htm" style="font-family: Arial, sans-serif; 
+	 font-size: 12pt;"><u style="text-underline: double; font-family: Arial, sans-serif; 
+							 font-size: 12pt;"><span style="color: #007fbf; 
+													 font-family: Arial, sans-serif; 
+													 font-size: 12pt;">with 
+ Rate Uniformity and Pattern Homogeneity</span></u></a></i></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<u 
+	 style="text-underline: double;"><a href="Tamura_3-parameter_Gamma.htm" 
+										 style="color: #007fbf; font-family: Arial, sans-serif; 
+										 font-size: 12pt;">with Rate Variation 
+ Among Sites</a></u></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<u 
+	 style="text-underline: double;"><a href="Tamura_3_parameter_Heterogeneous_patterns.htm" 
+										 style="color: #007fbf; font-family: Arial, sans-serif; 
+										 font-size: 12pt;">with Pattern 
+ Heterogeneity Between Lineages</a></u></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<u 
+	 style="text-underline: double;"><a href="Tamura_3_parameter_Gamma_rates_and_Heterogeneous_patterns.htm" 
+										 style="color: #007fbf; font-family: Arial, sans-serif; 
+										 font-size: 12pt;">with Rate Variation 
+ and Pattern Heterogeneity</a></u></p>
+<p style="font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;<i><b>Tamura-Nei 
+ </b>Model</i></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<i><u 
+	 style="text-underline: double;"><a href="Tamura-Nei_distance.htm" 
+										 style="color: #007fbf; font-family: Arial, sans-serif; 
+										 font-size: 12pt;">With Rate Uniformity 
+ and Pattern Homogeneity</a></u></i></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;"><i>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<u 
+	 style="text-underline: double;"><a href="Tamura-Nei_gamma_distance.htm" 
+										 style="color: #007fbf; font-family: Arial, sans-serif; 
+										 font-size: 12pt;">with Rate Variation 
+ Among Sites</a></u></i></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<u 
+	 style="text-underline: double;"><a href="Tamura-Nei_distance_Heterogeneous_Patterns.htm" 
+										 style="color: #007fbf; font-family: Arial, sans-serif; 
+										 font-size: 12pt;">with Pattern 
+ Heterogeneity Between Lineages</a></u></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<u 
+	 style="text-underline: double;"><a href="Tamura-Nei_distance_Gamma_rates_and_Heterogeneous_patterns.htm" 
+										 style="color: #007fbf; font-family: Arial, sans-serif; 
+										 font-size: 12pt;">with Rate Variation 
+ and Pattern Heterogeneity</a></u></p>
+<p style="font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;<b><i>Log-Det</i></b> 
+ <i>Method</i></p>
+<p style="font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;with 
+ Pattern Heterogeneity Between Lineages</p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;<span 
+	 style="color: #000000;"><b><i style="color: #000000;">Maximum Composite 
+ Likelihood</i></b> <i style="color: #000000;">Model</i></span></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<u 
+	 style="text-underline: double;"><a href="Maximum_Composite_Likelihood_Method.htm" 
+										 style="color: #007fbf; font-family: Arial, sans-serif; 
+										 font-size: 12pt;">with Rate Uniformity 
+ and Pattern Homogeneity</a></u></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<u 
+	 style="text-underline: double;"><a href="Maximum_Composite_Likelihood_Gamma_Rates.htm" 
+										 style="color: #007fbf; font-family: Arial, sans-serif; 
+										 font-size: 12pt;">with Rate Variation 
+ Among Sites</a></u></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<u 
+	 style="text-underline: double;"><a href="Maximum_Composite_Likelihood_Heterogeneous_Patterns.htm" 
+										 style="color: #007fbf; font-family: Arial, sans-serif; 
+										 font-size: 12pt;">with Pattern 
+ Heterogeneity Between Lineages</a></u></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<a 
+	 href="Maximum_Composite_Likelihood_Gamma_Rates_and_Heterogeneous_Patterns.htm" 
+	 style="font-family: Arial, sans-serif; font-size: 12pt;"><u style="text-underline: double; 
+	 font-family: Arial, sans-serif; font-size: 12pt;"><span style="color: #007fbf; 
+															 font-family: Arial, sans-serif; 
+															 font-size: 12pt;">with 
+ Rate Variation and Pattern Heterogeneity</span></u></a></p>
+<h1 style="margin-top: 4.0pt; margin-right: 6.5pt; margin-bottom: .0001pt; 
+	 margin-left: 5.75pt;">&#160;</h1>
+</body>
+</html>

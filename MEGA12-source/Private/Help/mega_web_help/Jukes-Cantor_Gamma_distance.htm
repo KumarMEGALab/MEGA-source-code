@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="DistanceMethods_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Jukes-Cantor Gamma distance</title>
+<link rel="stylesheet" href="DistanceMethods_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.2.1.1.1.0_3";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Computing Evolutionary Distances > Distance Models > Nucleotide Substitution Models > Gamma Distances" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1 style="margin-left: 0in;"><span style="font-size: 11.0pt;">Jukes-Cantor 
+ Gamma distance</span></h1>
+<p class="MTDisplayEquation" style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">In 
+ the </span><u style="color: #007fbf;"><span style="color: #007fbf;"><a 
+	 href="Jukes_and_Cantor_1969.htm" style="color: #007fbf;">Jukes and 
+ Cantor (1969)</a></span></u><span style="display: none;">Jukes_and_Cantor_1969</span><span 
+	 style="font-size: 11.0pt;"> model, the rate of nucleotide substitution 
+ is the same for all pairs of the four nucleotides A, T, C, and G.&#160;&#160;The 
+ multiple hit correction equation for this model, which is given below, 
+ produces a maximum likelihood estimate of the number of nucleotide substitutions 
+ between two sequences, while relaxing the assumption that all sites are 
+ evolving at the same rate.&#160;&#160;However, it assumes equal nucleotide 
+ frequencies and does not correct for higher rate of </span><u style="text-decoration: none; "><span 
+	 style="text-decoration: none; ">transition</span></u><span style="display: none;">RH_Transition</span><span 
+	 style="font-size: 11.0pt;">al substitutions as compared to </span><u 
+	 style="text-decoration: none; ">transversion</u><span style="display: none;">RH_Transversion</span><span 
+	 style="font-size: 11.0pt;">al substitutions.&#160;&#160;If the rate 
+ variation among sites is modeled using the Gamma distribution, you will 
+ need to provide a </span><u><span style="color: #008000;"><a href="javascript:TextPopup(this)" id="HotSpot50390" class="glossterm">gamma parameter</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot50390', 'POPUP50390');
+//]]></script><span class="glosstext" id="POPUP50390" style="display: none;"> According to the gamma distribution, the substitution rate often varies from site to site within a sequence.  The shape of this distribution is determined by a value known as the gamma parameter, which is also known as the shape parameter.</span></span></u><span style="display: none;">RH_Gamma_parameter</span><span 
+	 style="font-size: 11.0pt;"> (<i>a</i>) for computing this distance.</span></p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;">The 
+ Jukes-Cantor model</span></p>
+<p style="margin-top: 0in; text-autospace: none;"><span style="font-size: 11.0pt;"><img src="DistanceMethods_HC_files/image007.jpg" alt="" border="0" style="width:100%; max-width:693px" /></span></p>
+<p style="margin-top: 0in; text-autospace: none;">&#160;</p>
+<p><i><span style="font-size: 11.0pt;">MEGA</span></i> <span style="font-size: 11.0pt;">provides 
+ facilities for computing the following <i>p</i>-distances and related 
+ quantities:</span></p>
+<p style="margin-top: 0in;">&#160;</p>
+<p style="margin-top: 0in;"><b><i><span style="font-size: 11.0pt;">d</span></i></b><b><span 
+	 style="font-size: 11.0pt;">: Transitions + Transversions</span></b><span 
+	 style="font-size: 11.0pt;">&#160;&#160;: Number of nucleotide substitutions 
+ per site.</span></p>
+<p style="margin-top: 0in;"><b><i><span style="font-size: 11.0pt;">L</span></i></b><b><span 
+	 style="font-size: 11.0pt;">: No of valid common sites</span></b><span 
+	 style="font-size: 11.0pt;">: Number of sites compared.</span></p>
+<p>&#160;</p>
+<p><span style="font-size: 11.0pt;">The formulas for computing these quantities 
+ are as follows:</span></p>
+<p><b><span style="font-size: 11.0pt;">Distance</span></b></p>
+<p><b><span style="font-size: 11.0pt;"><img src="DistanceMethods_HC_files/image009.jpg" alt="" border="0" style="width:100%; max-width:393px" /></span></b></p>
+<p><span style="font-size: 11.0pt;">where</span> <i><span style="font-size: 11.0pt;">p</span></i> 
+ <span style="font-size: 11.0pt;">is the proportion of sites with different 
+ nucleotides</span> <span style="font-size: 11.0pt;">and <i>a</i> is the 
+ <a href="javascript:TextPopup(this)" id="HotSpot29649" class="glossterm">gamma parameter</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot29649', 'POPUP29649');
+//]]></script><span class="glosstext" id="POPUP29649" style="display: none;"> According to the gamma distribution, the substitution rate often varies from site to site within a sequence.  The shape of this distribution is determined by a value known as the gamma parameter, which is also known as the shape parameter.</span></span><span 
+	 style="font-size: 11.0pt;">.</span></p>
+<p><b><span style="font-size: 11.0pt;">Variance</span></b></p>
+<p class="MTDisplayEquation"><span style="font-size: 11.0pt;"><img src="DistanceMethods_HC_files/image011.jpg" alt="" border="0" style="width:100%; max-width:545px" /></span></p>
+<p><span style="font-size: 11.0pt;">See also </span><u style="color: #007fbf;"><span 
+	 style="color: #007fbf;"><a href="Nei_and_Kumar_2000.htm" style="color: #007fbf;">Nei 
+ and Kumar (2000)</a></span></u><span style="display: none;">Nei_and_Kumar_2000</span><span 
+	 style="font-size: 11.0pt;">, page 36 and </span><a href="Computing_the_Gamma_Parameter_a.htm" 
+														 style="font-size: 11pt; 
+														 color: #007fbf;"><u><span 
+	 style="font-size: 11pt; color: #007fbf;">estimating gamma parameter</span></u><span 
+	 style="display: none; font-size: 11pt; color: #007fbf;">HC_Computing_the_Gamma_Parameter</span></a><span 
+	 style="font-size: 11.0pt;">.</span></p>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,130 @@
+object UpdatesDlg: TUpdatesDlg
+  Left = 646
+  Height = 216
+  Top = 307
+  Width = 408
+  Caption = 'MEGA Update Check'
+  ClientHeight = 216
+  ClientWidth = 408
+  DefaultMonitor = dmMainForm
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnResize = FormResize
+  Position = poMainFormCenter
+  LCLVersion = '2.2.4.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 216
+    Top = 0
+    Width = 408
+    Align = alClient
+    ClientHeight = 216
+    ClientWidth = 408
+    TabOrder = 0
+    object Panel2: TPanel
+      Left = 1
+      Height = 39
+      Top = 1
+      Width = 406
+      Align = alTop
+      BevelOuter = bvNone
+      ClientHeight = 39
+      ClientWidth = 406
+      TabOrder = 0
+      object HeaderLbl: TLabel
+        Left = 0
+        Height = 39
+        Top = 0
+        Width = 406
+        Align = alClient
+        Alignment = taCenter
+        Caption = 'An Update (7.0.8) for MEGA is Available'
+        Font.Color = 5321166
+        Font.Height = -16
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        Layout = tlCenter
+        ParentColor = False
+        ParentFont = False
+        WordWrap = True
+      end
+    end
+    object Panel3: TPanel
+      Left = 1
+      Height = 40
+      Top = 175
+      Width = 406
+      Align = alBottom
+      ClientHeight = 40
+      ClientWidth = 406
+      TabOrder = 1
+      object IgnoreUpdateCheckBox: TCheckBox
+        Left = 14
+        Height = 19
+        Top = 10
+        Width = 116
+        Caption = 'Ignore this update'
+        TabOrder = 0
+      end
+      object ToolBar1: TToolBar
+        Left = 154
+        Height = 30
+        Top = 5
+        Width = 239
+        Align = alNone
+        AutoSize = True
+        ButtonHeight = 30
+        ButtonWidth = 115
+        Caption = 'ToolBar1'
+        EdgeInner = esNone
+        EdgeOuter = esNone
+        HotImages = ImageForm.DlgButtonsHover
+        Images = ImageForm.DlgButtons
+        TabOrder = 1
+        object ToolButton1: TToolButton
+          Left = 1
+          Top = 0
+          Action = CancelAction
+        end
+        object ToolButton2: TToolButton
+          Left = 120
+          Top = 0
+          Action = DownloadAction
+        end
+      end
+    end
+    object MessagesMemo: TMemo
+      Left = 1
+      Height = 135
+      Top = 40
+      Width = 406
+      Align = alClient
+      BorderStyle = bsNone
+      Font.Color = clWindowText
+      Lines.Strings = (
+        'Notes:'
+        '#9 + This version optimizes variance estimation for the reltime analysis and also includes some minor bug fixes.'
+      )
+      ParentColor = True
+      ParentFont = False
+      ScrollBars = ssAutoBoth
+      TabOrder = 2
+    end
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 246
+    Top = 108
+    object DownloadAction: TAction
+      Caption = 'DownloadAction'
+      ImageIndex = 2
+      OnExecute = DownloadBtnClick
+    end
+    object CancelAction: TAction
+      Caption = 'CancelAction'
+      ImageIndex = 0
+      OnExecute = CancelBtnClick
+      ShortCut = 27
+    end
+  end
+end

@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+ <title>About ClustalW</title>
+<link rel="StyleSheet" href="../../../default.css" type="text/css" />
+ <link rel="StyleSheet" href="../../../default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../..";
+gCommonRootRelPath = "../../..";
+gTopicId = "2.2.2.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part II: Assembling Data for Analysis > Building Sequence Alignments > ClustalW" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../ehlpdhtm.js"></script>
+
+
+<h1>About ClustalW</h1>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial" color="#333333"><a href="javascript:TextPopup(this)" id="HotSpot31433" class="glossterm">ClustalW</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot31433', 'POPUP31433');
+//]]></script><span class="glosstext" id="POPUP31433" style="display: none;"> ClustalW is a general purpose multiple sequence alignment program for DNA or proteins. You can learn more about ClustalW by visiting its website (http://www.ebi.ac.uk/clustalw/).</span> 
+ is a widely used system for aligning any number of homologous nucleotide 
+ or protein sequences. For multi-sequence alignments, <a href="javascript:TextPopup(this)" id="HotSpot52061" class="glossterm">ClustalW</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot52061', 'POPUP52061');
+//]]></script><span class="glosstext" id="POPUP52061" style="display: none;"> ClustalW is a general purpose multiple sequence alignment program for DNA or proteins. You can learn more about ClustalW by visiting its website (http://www.ebi.ac.uk/clustalw/).</span> uses progressive 
+ alignment methods. In these, the most similar sequences, that is, those 
+ with the best alignment</font> <font style="font-size: 11pt; font-family: Arial;" 
+										 size="2" face="Arial" color="#333333">score</font> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial" 
+		 color="#333333">are aligned first. Then progressively more distant 
+ groups of sequences are aligned until a global alignment is obtained. 
+ This heuristic approach is necessary because finding the global optimal 
+ solution is prohibitive in both memory and time requirements. <a href="javascript:TextPopup(this)" id="HotSpot4254" class="glossterm">ClustalW</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot4254', 'POPUP4254');
+//]]></script><span class="glosstext" id="POPUP4254" style="display: none;"> ClustalW is a general purpose multiple sequence alignment program for DNA or proteins. You can learn more about ClustalW by visiting its website (http://www.ebi.ac.uk/clustalw/).</span> 
+ performs very well in practice. The algorithm starts by computing a rough 
+ distance matrix between each pair of sequences based on pairwise sequence 
+ alignment scores. These scores are computed using the pairwise alignment 
+ parameters for</font> <a href="../../../HC_CLUSTALW_Options_DNA_Dialog.htm"><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">DNA</font></a> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial" 
+		 color="#333333">and</font> <a href="../../../HC_CLUSTALW_Options_Protein_Dialog.htm"><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">protein</font></a> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial" 
+		 color="#333333">sequences. Next, the algorithm uses the</font> 
+ <a id="a5035" href="../../../Saitou_and_Nei_1987.htm" name="a5035" class="BSSCPopup"><font style="font-size: 11pt; font-family: Arial;" size="2" 
+						 face="Arial">neighbor-joining method</font></a> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial" 
+		 color="#333333">with midpoint rooting to create a guide tree, 
+ which is used to generate a global alignment</font> <font style="font-size: 11pt; 
+															 font-family: Arial;" 
+															 size="2" face="Arial" 
+															 color="#333333">(alternatively, 
+ a guide tree in <a href="javascript:TextPopup(this)" id="HotSpot46773" class="glossterm">Newick format</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot46773', 'POPUP46773');
+//]]></script><span class="glosstext" id="POPUP46773" style="display: none;"> NEWICK is a simple format used to write out trees in a text file.  While this is a hard-to-read format for humans, it is very useful for exchanging trees between different types of software. An example of the contents of a NEWICK format tree file is given below (note that semi-colon is needed to end the tree).  Further information on this format can be found at Joe Felsenstein’s website.   ((raccoon, bear),((sea_lion,seal),((monkey,cat), weasel)),dog);  The above tree with branch lengths will look as follows:  ((raccoon:19.19959,bear:6.80041):0.84600,((sea_lion:11.99700, seal:12.00300):7.52973,((monkey:100.85930,cat:47.14069):20.59201, weasel:18.87953):2.09460):3.87382,dog:25.46154);  If you wish to specify bootstrap values then they could appear before the branch lengths (e.g., in .DND files produced by CLUSTAL) or after the branch lengths (e.g., in .PHB files produced by CLUSTAL).  In these cases, the format might look like:  ((raccoon:19.19959,bear:6.80041)50:0.84600,((sea_lion:11.99700, seal:12.00300)100:7.52973,((monkey:100.85930,cat:47.14069)80:20.59201, weasel:18.87953)75:2.09460)50:3.87382,dog:25.46154);  or  ((raccoon:19.19959,bear:6.80041):0.84600[50],((sea_lion:11.99700, seal:12.00300):7.52973[100],((monkey:100.85930,cat:47.14069):20.59201[80], weasel:18.87953):2.09460[75]):3.87382[50],dog:25.46154);</span> can be provided)</font><font style="font-size: 11pt; 
+															 font-family: Arial;" 
+															 size="2" face="Arial" 
+															 color="#333333">. 
+ The guide tree serves as a rough template for clades that tend to share 
+ insertion and deletion features. This generally provides a close-to-optimal 
+ result, especially when the data set contains sequences with varied degrees 
+ of divergence, so the guide tree is less sensitive to noise.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;">&#160;</p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial" color="#333333">See:</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial" color="#333333">Higgins 
+ D., Thompson J., Gibson T. Thompson J. D., Higgins D. G., Gibson T. J.<br />
+CLUSTAL W: improving the sensitivity of progressive multiple sequence alignment 
+ through sequence weighting, position-specific gap penalties and weight 
+ matrix choice.<br />
+Nucleic Acids Res. 22:4673-4680. (1994)</font></p>
+
+</body>
+</html>

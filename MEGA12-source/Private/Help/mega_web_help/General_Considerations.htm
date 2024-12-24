@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>General Considerations</title>
+<link rel="StyleSheet" href="default.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "3.1.2.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part III: Input Data Types and File Formats > MEGA Input Data Formats > Sequence Input Data" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1>General Considerations</h1>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt;" 
+	 size="2">The sequence data must consist of two or more sequences of 
+ equal length. All sequences must be aligned and you may use the in-built</font> 
+ <font style="font-size: 11pt;" size="2"><a href="Alignment_Explorer.htm">alignment</a></font> 
+ <font style="font-size: 11pt;" size="2">system for this purpose. Nucleotide 
+ and amino acid sequences should be written in</font> <font style="font-size: 11pt;" 
+															 size="2"><a 
+	 href="IUPAC_Single_Letter_Codes.htm">IUPAC</a></font> <font style="font-size: 11pt;" 
+	 size="2">single-letter codes. Sequences can be written in any combination 
+ of upper- and lower-case letters. Special symbols for <a href="javascript:TextPopup(this)" id="HotSpot14748" class="glossterm">alignment gaps</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot14748', 'POPUP14748');
+//]]></script><span class="glosstext" id="POPUP14748" style="display: none;"> Phylogenetic analysis on two or more DNA or amino acid sequences requires that the sequences be aligned so that the substitutions can be accurately enumerated.  During alignment, gaps must be introduced in sequences that have undergone deletions or insertions.  These gaps are known as alignment gaps or indels.</span>, 
+ missing data, and identical sites also can be included in the sequences.</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Special Symbols</font></p>
+<p style="text-align: left; margin: 6pt 6.5pt 2pt 18pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">Blank spaces and tabs are 
+ frequently used to format data files, so they are simply ignored by</font> 
+ <i><font style="font-size: 11pt; font-family: Arial; font-style: italic;" 
+			 size="2" face="Arial">MEGA</font></i><font style="font-size: 11pt; 
+														 font-family: Arial;" 
+														 size="2" face="Arial">. 
+ ASCII characters such as the period (</font><b><font style="font-size: 11pt; 
+														 font-family: Arial; 
+														 font-weight: bold;" 
+														 size="2" face="Arial">.</font></b><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial">), 
+ dash (</font><b><font style="font-size: 11pt; font-family: Arial; font-weight: bold;" 
+						 size="2" face="Arial">-</font></b><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial">), and question mark (</font><b><font 
+	 style="font-size: 11pt; font-family: Arial; font-weight: bold;" size="2" 
+	 face="Arial">?</font></b><font style="font-size: 11pt; font-family: Arial;" 
+									 size="2" face="Arial">), are generally 
+ used as special symbols to represent identity to the first sequence, alignment 
+ gaps, and missing data, respectively.</font></p>
+</body>
+</html>

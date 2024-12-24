@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="DistanceMethods_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Maximum Composite Likelihood (Gamma Rates)</title>
+<link rel="stylesheet" href="DistanceMethods_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.2.1.1.1.0_8";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Computing Evolutionary Distances > Distance Models > Nucleotide Substitution Models > Gamma Distances" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1 style="margin-left: 0in;"><span style="font-size: 11.0pt;">Maximum 
+ Composite Likelihood (Gamma Rates)</span></h1>
+<p style="margin-left: 0in;"><span style="font-size: 11.0pt;">The </span><a 
+	 href="Tamura_and_Nei_1993.htm" style="color: #007fbf;"><u style="color: #007fbf;"><span 
+	 style="font-size: 11pt; color: #007fbf;">Tamura-Nei (1993)</span></u><span 
+	 style="display: none; color: #007fbf;">Tamura_and_Nei_1993</span></a><span 
+	 style="font-size: 11.0pt;"> distance with the gamma model estimated 
+ by the composite likelihood method (</span><a href="Tamura_et_al_2004.htm" 
+												 style="color: #007fbf;"><u 
+	 style="color: #007fbf;"><span style="color: #007fbf;">Tamura et al. 
+ 2004</span></u><span style="display: none; color: #007fbf;">Tamura_et_al_2004</span></a><span 
+	 style="font-size: 11.0pt;">) corrects for multiple hits, taking into 
+ account the different rates of substitution between nucleotides and the 
+ inequality of nucleotide frequencies.&#160;&#160;In this distance, evolutionary 
+ rates among sites are modeled using the gamma distribution.&#160;&#160;You 
+ will need to provide a </span><u style="text-underline: double;"><span 
+	 style="color: #008000;"><a href="javascript:TextPopup(this)" id="HotSpot15115" class="glossterm">gamma parameter</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot15115', 'POPUP15115');
+//]]></script><span class="glosstext" id="POPUP15115" style="display: none;"> According to the gamma distribution, the substitution rate often varies from site to site within a sequence.  The shape of this distribution is determined by a value known as the gamma parameter, which is also known as the shape parameter.</span></span></u><span 
+	 style="display: none;">RH_Gamma_parameter</span><span style="font-size: 11.0pt;"> 
+ for computing this distance. See related </span><a href="Tamura-Nei_gamma_distance.htm" 
+													 style="font-size: 11pt; 
+													 color: #007fbf;"><u 
+	 style="text-underline: double;"><span style="font-size: 11pt; color: #007fbf;">Tamura-Nei 
+ gamma distance</span></u><span style="display: none; font-size: 11pt; 
+								 color: #007fbf;">HC_Tamura_Nei_distance_with_Gamma_model</span></a><span 
+	 style="font-size: 11.0pt;">.</span></p>
+<p style="margin-left: 0in;">&#160;</p>
+<p style="margin-left: 0in;">&#160;</p>
+</body>
+</html>

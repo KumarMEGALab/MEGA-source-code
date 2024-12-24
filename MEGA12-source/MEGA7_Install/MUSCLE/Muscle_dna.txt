@@ -1,0 +1,64 @@
+{
+	Copyright 1992-2024 Sudhir Kumar and Koichiro Tamura
+
+	This file is part of the MEGA (Molecular Evolutionary Genetics Analyis) software.
+
+	MEGA (Molecular Evolutionary Genetics Analysis) is free software:
+	you can redistribute it and/or modify it under the terms of the
+	GNU General Public License as published by the Free Software
+	Foundation, either version 3 of the License, or (at your option)
+	any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+   Contributor(s):   The MEGA source code and software is made available in the hopes that it will be useful. 
+   In keeping with the spirit and intent that the MEGA project is developed under, the authors of MEGA request that before
+   distributing any significant changes to the MEGA source code (or derivatives thereof), you share
+   those changes with the MEGA authors so that they may have the opportunity to test that
+   the changes do not introduce errors into the code or otherwise negatively impact the correctness
+   or performance of the MEGA software.
+   
+	Please email inqiries to s.kumar@temple.edu
+}
+
+<AppLinker name="MUSCLE">
+
+<info>MUSCLE stands for multiple sequence comparison by log-expectation. It is a public domain multiple alignment software for protein and nucleotide sequences (Edgar 2004).
+MUSCLE Citation: Edgar, Robert C. (2004), MUSCLE: multiple sequence alignment with high accuracy and high throughput, Nucleic Acids Research 32(5), 1792-1797. </info>
+
+<help>No help has been written by the MEGA team at this time.  Please refer to MUSCLE's help documentation.</help>
+<dropdown name="     Presets" checked="unchecked">
+	<item name="None"></item>
+	<item name="Large Alignment (Max iterations = 2)" cmd="-maxiters 2"></item>
+	<item name="Fast Speed (Max iterations = 1 and diagonals)" cmd="-maxiters 1 -diags"></item>
+	<item name="Refining Alignment" cmd="-refine"></item>
+</dropdown>
+<divider name="Gap Penalties"></divider>
+  <double name="     Gap Open" checked="none" negonly="true" cmd="-gapopen" desc="The penalty for opening a gap usually higher than to extend.">-400</double>
+  <double name="     Gap Extend" checked="none" negonly="true" cmd="-gapextend" desc="The penalty for extending an already open gap, usually less than opening.">0</double>
+  <constant name="Hydrophobicity Multiplier" checked="none" desc="This is only applicable to protein alignments">Not Applicable</constant>
+<divider name="Memory/Iterations"></divider>
+  <integer name="     Max Memory in MB" checked="none" posonly="true" cmd="-maxmb" desc="MUSCLE limits how much system memory it will use.  By default we pick a number which represents the max available memory you have at the moment.  If you get an error, try increasing this option by a lot.">0</integer>
+  <integer name="     Max Iterations" checked="none" posonly="true" cmd="-maxiters" desc="The maximum number of iterations which MUSCLE will run before finishing.">8</integer>
+
+<divider name="More Advanced Options"></divider>
+  <dropdown name="     Clustering Method (Iteration 1,2)" checked="none" desc="This clustering method is used for the first 2 iterations.  In Muscle it is known as clustering method (1)">
+       <item name="UPGMA" cmd="-cluster1 upgma"></item>
+       <item name="UPGMB" checked="true" cmd="-cluster1 upgmb"></item>
+       <item name="Neighbor Joining" cmd="-cluster1 neighborjoining"></item>
+  </dropdown>
+  <dropdown name="     Clustering Method (Other Iterations)" checked="none" desc="This clustering method is used for all iterations after the first 2.  In Muscle it is known as clustering method (2)">
+       <item name="UPGMA" cmd="-cluster2 upgma"></item>
+       <item name="UPGMB" checked="true" cmd="-cluster2 upgmb"></item>
+       <item name="neighbor joining" cmd="-cluster2 neighborjoining"></item>
+  </dropdown>
+  <integer name="     Min Diag Length (lambda)" checked="none" posonly="true" cmd="-diaglength" desc="The minimum diagional length (lambda)">24</integer>
+  <string name="     Additional MUSCLE Options" checked="unchecked" rawinput="true" desc="You can type additional MUSCLE command line options here which will be appended to the rest of the options.  An example of this might be setting a maximum runtime using the max time option."></string>
+  <constant name="Alignment Info" checked="none">MUSCLE Citation: Edgar, Robert C. (2004), MUSCLE: multiple sequence alignment with high accuracy and high throughput, Nucleic Acids Research 32(5), 1792-1797.</constant>
+</AppLinker>

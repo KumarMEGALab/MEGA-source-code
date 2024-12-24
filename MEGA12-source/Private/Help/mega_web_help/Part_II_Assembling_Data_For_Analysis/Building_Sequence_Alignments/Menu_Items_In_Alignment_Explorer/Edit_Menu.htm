@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="generator" content="Adobe RoboHelp 2017" />
+ <title>Edit Menu</title>
+<link rel="StyleSheet" href="../../../default.css" type="text/css" />
+ <link rel="StyleSheet" href="../../../default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="../../../template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/common.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="../../../template/scripts/constants.js"></script>
+<script type="text/javascript" src="../../../template/scripts/utils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhver.js"></script>
+<script type="text/javascript" src="../../../template/scripts/settings.js"></script>
+<script type="text/javascript" src="../../../template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="../../../template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="../../../template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="../../../template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = "../../..";
+gCommonRootRelPath = "../../..";
+gTopicId = "2.2.4.0_4";
+</script>
+ <meta name="topic-breadcrumbs" content="Part II: Assembling Data for Analysis > Building Sequence Alignments > Menu Items in the Alignment Explorer" />
+</head>
+
+<body>
+<script type="text/javascript" src="../../../ehlpdhtm.js"></script>
+
+<h1>Edit Menu</h1>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><font style="font-size: 11pt; 
+	 font-family: Arial;" size="2" face="Arial" color="#333333">This menu 
+ provides access to commands for editing the sequence data in the alignment 
+ grid</font><i><font style="font-size: 11pt; font-family: Arial; font-style: italic;" 
+					 size="2" face="Arial" color="#333333">.</font></i> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial" 
+		 color="#333333">The commands in this menu are:</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" size="2" face="Arial" color="#333333">Undo</font></b><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial" 
+	 color="#333333">: This undoes the last</font> <i><font style="font-size: 11pt; 
+															 font-family: Arial; 
+															 font-style: italic;" 
+															 size="2" face="Arial" 
+															 color="#333333">Alignment 
+ Explorer</font></i> <font style="font-size: 11pt; font-family: Arial;" 
+							 size="2" face="Arial" color="#333333">action.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" size="2" face="Arial" color="#333333">Copy</font></b><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial" 
+	 color="#333333">: This copies the current selection to the clipboard. 
+ It may be used to copy a single base, a block of bases, or entire sequences.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" size="2" face="Arial" color="#333333">Cut</font></b><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial" 
+	 color="#333333">: This removes the current selection from the</font> 
+ <i><font style="font-size: 11pt; font-family: Arial; font-style: italic;" 
+			 size="2" face="Arial" color="#333333">Alignment Explorer</font></i> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial" 
+		 color="#333333">and sends it to the clipboard. This function can 
+ affect a single base, a block of bases, or entire sequences.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" size="2" face="Arial" color="#333333">Paste</font></b><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial" 
+	 color="#333333">: This pastes the contents of the clipboard into the</font> 
+ <i><font style="font-size: 11pt; font-family: Arial; font-style: italic;" 
+			 size="2" face="Arial" color="#333333">Alignment Explorer.</font></i> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial" 
+		 color="#333333">If the clipboard contains a block of bases, they 
+ will be pasted into the builder, starting at the point of the current 
+ selection. If the clipboard contains complete sequences, they will be 
+ added to the current alignment. For example, if the contents of a FASTA 
+ file are copied from a web browser to the clipboard, they will be pasted 
+ into the</font> <i><font style="font-size: 11pt; font-family: Arial; font-style: italic;" 
+							 size="2" face="Arial" color="#333333">Alignment 
+ Explorer</font></i> <font style="font-size: 11pt; font-family: Arial;" 
+							 size="2" face="Arial" color="#333333">as a 
+ new sequence in the alignment.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" size="2" face="Arial" color="#333333">Delete</font></b><font 
+	 style="font-size: 11pt; font-family: Arial;" size="2" face="Arial" 
+	 color="#333333">: This deletes a block of selected bases from the 
+ alignment grid.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" size="2" face="Arial" color="#333333">Delete 
+ Gaps</font></b><font style="font-size: 11pt; font-family: Arial;" size="2" 
+						 face="Arial" color="#333333">: This deletes gaps 
+ from a selected block of bases.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" size="2" face="Arial" color="#333333">Insert 
+ Blank Sequence</font></b><font style="font-size: 11pt; font-family: Arial;" 
+								 size="2" face="Arial" color="#333333">: 
+ This creates a new, empty sequence row in the alignment grid. A label 
+ and sequence data must be provided for this new row.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" size="2" face="Arial" color="#333333">Insert 
+ Sequence From File</font></b><font style="font-size: 11pt; font-family: Arial;" 
+									 size="2" face="Arial" color="#333333">: 
+ This activates an</font> <i><font style="font-size: 11pt; font-family: Arial; 
+									 font-style: italic;" size="2" face="Arial" 
+									 color="#333333">Open File</font></i> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial" 
+		 color="#333333">dialog box that allows for the selection of a 
+ sequence data file. Once a suitable sequence data file is selected, its 
+ contents will be imported into</font> <i><font style="font-size: 11pt; 
+												 font-family: Arial; font-style: italic;" 
+												 size="2" face="Arial" 
+												 color="#333333">Alignment 
+ Explorer</font></i> <font style="font-size: 11pt; font-family: Arial;" 
+							 size="2" face="Arial" color="#333333">as new 
+ sequence rows in the alignment grid.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" size="2" face="Arial" color="#333333">Select 
+ Site(s)</font></b><font style="font-size: 11pt; font-family: Arial;" size="2" 
+						 face="Arial" color="#333333">: This selects the 
+ entire site column for each site within the current selection in the alignment 
+ grid.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" size="2" face="Arial" color="#333333">Select 
+ Sequences</font></b><font style="font-size: 11pt; font-family: Arial;" 
+							 size="2" face="Arial" color="#333333">: This 
+ selects the entire sequence for each site within the current selection 
+ in the alignment grid.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" size="2" face="Arial" color="#333333">Select 
+ all</font></b><font style="font-size: 11pt; font-family: Arial;" size="2" 
+					 face="Arial" color="#333333">: This selects all of 
+ the sites in the alignment grid.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" size="2" face="Arial" color="#333333">Allow 
+ Base Editing</font></b><font style="font-size: 11pt; font-family: Arial;" 
+								 size="2" face="Arial" color="#333333">: 
+ If this item is checked, it changes the base values for all cells in the 
+ alignment grid. If it is not checked, then all bases in the alignment 
+ grid are treated as read-only.</font></p>
+<p style="text-align: left; margin: 4pt 6.5pt 0pt 36pt;"><b><font style="font-size: 11pt; 
+	 font-family: Arial; font-weight: bold;" size="2" face="Arial" color="#333333">Modify 
+ All Bases to Uppercase</font></b><font style="font-size: 11pt; font-family: Arial;" 
+										 size="2" face="Arial" color="#333333">:</font> 
+ <font style="font-size: 11pt; font-family: Arial;" size="2" face="Arial" 
+		 color="#333333">Changes any bases written in lowercase to uppercase.</font></p>
+</body>
+</html>

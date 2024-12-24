@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="TreeExplorer_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Time Tree Tool</title>
+<link rel="stylesheet" href="TreeExplorer_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.4.0_3";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Constructing Time Trees" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1 style="font-family: Arial, sans-serif; font-size: 14pt;">Time Tree 
+ Tool</h1>
+<p style="font-family: Arial, sans-serif; font-size: 12pt;">The Timetree 
+ tool in the <span style="font-style: italic;">Tree Explorer</span> is 
+ used for calculating relative and absolute divergence times for all branching 
+ points in the tree. Using the Timetree tool will produce a time tree with 
+ the same <a href="javascript:TextPopup(this)" id="HotSpot36711" class="glossterm" style="font-family: Arial, sans-serif; 
+ font-size: 12pt;">topology</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot36711', 'POPUP36711');
+//]]></script><span class="glosstext" id="POPUP36711" style="display: none;"> The branching pattern of a tree is its topology.</span> as the active tree, where MEGA 
+ estimates local clock rates and divergence times for all branching points 
+ in the tree using the RelTime (see <u><a href="Tamura_et_al_2012.htm" 
+											 style="color: #007fbf; font-family: Arial, sans-serif; 
+											 font-size: 12pt;">Tamura et 
+ al. 2012</a></u><span style="display: none;">Tamura_et_al_2012</span>) 
+ method. When using this tool, all divergence time estimates are based 
+ solely on the <a href="javascript:TextPopup(this)" id="HotSpot50573" class="glossterm" style="font-family: Arial, sans-serif; 
+ font-size: 12pt;">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot50573', 'POPUP50573');
+//]]></script><span class="glosstext" id="POPUP50573" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> lengths in the active tree (MEGA 
+ provides options to pre-compute branch lengths (e.g. using the <u style="text-underline: double;"><a 
+	 href="Part_I_Getting_Started/A_Walk_Through_MEGA/Constructing_a_Timetree_(ML).htm" 
+	 style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">likelihood-based 
+ tool</a>)</u><span style="display: none;">Constructing_a_Time_Tree_ML_</span> 
+ from the Clocks menu on the main MEGA form).</p>
+<p style="font-family: Arial, sans-serif; font-size: 12pt;">To use the 
+ Timetree Tool in <i>Tree Explorer</i>, select <span style="font-weight: bold;">Compute 
+ | Compute Time Tree</span> (or click the Time Tree Tool button which looks 
+ like a clock). The <span style="font-style: italic;">Timetree Wizard</span>, 
+ which specifies the steps for creating a timetree, will then be displayed.</p>
+<p style="font-family: Arial, sans-serif; font-size: 12pt;">Once the Time 
+ Tree tool is finished, estimated divergence times and local clock rates 
+ can be exported to a text file (<span style="font-weight: bold;">File 
+ | Export Current Tree (Time Tree)</span>) or viewed in the information 
+ window (<span style="font-weight: bold;">File | Show Information</span>).</p>
+<p style="font-family: Arial, sans-serif; font-size: 12pt;">See also</p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<u 
+	 style="text-underline: double;"><a href="Time_Trees.htm" style="color: #007fbf; 
+										 font-family: Arial, sans-serif; 
+										 font-size: 12pt;">Time Trees</a></u><span 
+	 style="display: none;">Overview</span>&#160;</p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<a 
+	 href="Part_I_Getting_Started/A_Walk_Through_MEGA/Constructing_a_Timetree_(ML).htm" 
+	 style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;"><u 
+	 style="text-underline: double;"><span style="color: #007fbf; font-family: Arial, sans-serif; 
+											 font-size: 12pt;">Time Tree 
+ (ML) tutorial</span></u><span style="display: none; color: #007fbf; font-family: Arial, sans-serif; 
+								 font-size: 12pt;">Constructing_a_Time_Tree_ML_</span></a></p>
+<p style="color: #007fbf; font-family: Arial, sans-serif; font-size: 12pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<a 
+	 href="Molecular_Clock_Test_ML.htm" style="color: #007fbf; font-family: Arial, sans-serif; 
+	 font-size: 12pt;"><u style="text-underline: double;"><span style="color: #007fbf; 
+	 font-family: Arial, sans-serif; font-size: 12pt;">Molecular Clock 
+ Test</span></u><span style="display: none; color: #007fbf; font-family: Arial, sans-serif; 
+						 font-size: 12pt;">HC_Molecular_Clock_Test_ML_</span></a></p>
+</body>
+</html>

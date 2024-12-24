@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="TreeExplorer_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Information Box</title>
+<link rel="stylesheet" href="TreeExplorer_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "5.3.0_2";
+</script>
+ <meta name="topic-breadcrumbs" content="Part V: Visualizing and Exploring Data > Tree Explorer" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1 style="font-size: 12pt; font-family: Arial, sans-serif;">Information 
+ Box</h1>
+<p style="font-size: 12pt; font-family: Arial, sans-serif;">The information 
+ box in the <i>Tree Explorer</i> lists the various statistical attributes 
+ of the displayed tree with the <a href="javascript:TextPopup(this)" id="HotSpot40693" class="glossterm" style="font-family: Arial, sans-serif;">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot40693', 'POPUP40693');
+//]]></script><span class="glosstext" id="POPUP40693" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> 
+ or <a href="javascript:TextPopup(this)" id="HotSpot60199" class="glossterm" style="font-family: Arial, sans-serif;">node</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot60199', 'POPUP60199');
+//]]></script><span class="glosstext" id="POPUP60199" style="display: none;"> A node in a phylogenetic tree represents a taxon, the external or terminal nodes represent the extant taxa and the internal nodes represent the ancestral taxa.</span> 
+ highlighted.&#160;&#160;It usually contains multiple tabs.</p>
+<p style="font-size: 12pt; font-family: Arial, sans-serif;"><b>General:</b> 
+ This reminds the user of the number of <u><span style="color: #008000;"><a href="javascript:TextPopup(this)" id="HotSpot53064" class="glossterm" style="font-family: Arial, sans-serif;">taxa</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot53064', 'POPUP53064');
+//]]></script><span class="glosstext" id="POPUP53064" style="display: none;"> A taxon is the individual unit whose evolutionary relationship is being investigated.  Depending on the study, “taxa” may refer to species, populations, individuals, or sequences within an individual.</span></span></u><span 
+	 style="display: none;">RH_Taxa</span> (and <u style="text-decoration: none; ">groups</u><span 
+	 style="display: none;">RH_Groups_of_taxa</span>, if any) and of the 
+ strategy used to deal with gaps and missing data.</p>
+<p style="font-size: 12pt; font-family: Arial, sans-serif;"><b>Tree:</b>&#160;&#160;This 
+ contains information about the type of tree –<u style="text-decoration: none; ">rooted</u><span 
+	 style="display: none;">RH_Rooted_tree</span>/<u style="text-decoration: none; ">unrooted</u><span 
+	 style="display: none;">RH_Unrooted_tree</span>, and the sum of branch 
+ lengths, SBL, or the tree-length.&#160;&#160;In addition, information 
+ about the total number of trees and the tree number of the current tree 
+ is displayed.</p>
+<p style="font-size: 12pt; font-family: Arial, sans-serif;"><b>Branch:</b>&#160;&#160;&#160;In 
+ the <i>Tree Explorer</i> window you may click on a <u><span style="color: #008000;">branch</span></u><span 
+	 style="display: none;">RH_Branch</span> or on a <u><span style="color: #008000;">node</span></u><span 
+	 style="display: none;">RH_Node</span> of the tree.&#160;&#160;If you 
+ click on a branch, this tab displays its location in terms of the two 
+ nodes it connects.&#160;&#160;(Leaf taxa are numbered in the order in 
+ which they appear in the input data file.)&#160;&#160;This window also 
+ displays the length of the selected branch.&#160;&#160;If you click on 
+ a node, the internal identification number of that node is displayed.</p>
+<p style="font-size: 12pt; font-family: Arial, sans-serif;">&#160;</p>
+<p style="font-size: 12pt; font-family: Arial, sans-serif;">&#160;</p>
+<span style="font-family: Arial, sans-serif;"><b style="font-family: Arial, sans-serif;"><br 
+	 style="clear: all;" clear="all" />
+</b> </span>
+</body>
+</html>

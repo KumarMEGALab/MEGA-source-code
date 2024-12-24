@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="OriginalFile" content="ContextHelp_HC.doc" />
+<meta name="generator" content="Adobe RoboHelp 2017" />
+<title>Bootstrap Test of Phylogeny</title>
+<link rel="stylesheet" href="ContextHelp_HC.css" type="text/css" />
+ <link rel="StyleSheet" href="default.css" type="text/css" />
+<style type="text/css">
+<!--
+A:visited { color:#800080; }
+A:link { color:#0000ff; }
+-->
+</style>
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+p.WebHelpNavBar { text-align:right; }
+-->
+</style>
+
+<script type="text/javascript" src="template/scripts/rh.min.js"></script>
+<script type="text/javascript" src="template/scripts/common.min.js"></script>
+<script type="text/javascript" src="template/scripts/topic.min.js"></script>
+<script type="text/javascript" src="template/scripts/constants.js"></script>
+<script type="text/javascript" src="template/scripts/utils.js"></script>
+<script type="text/javascript" src="template/scripts/mhutils.js"></script>
+<script type="text/javascript" src="template/scripts/mhlang.js"></script>
+<script type="text/javascript" src="template/scripts/mhver.js"></script>
+<script type="text/javascript" src="template/scripts/settings.js"></script>
+<script type="text/javascript" src="template/scripts/XmlJsReader.js"></script>
+<script type="text/javascript" src="template/scripts/loadparentdata.js"></script>
+<script type="text/javascript" src="template/scripts/loadscreen.js"></script>
+<script type="text/javascript" src="template/scripts/loadprojdata.js"></script>
+<script type="text/javascript" src="template/scripts/mhtopic.js"></script>
+ <link rel="stylesheet" type="text/css" href="template/styles/widgets.min.css">
+ <link rel="stylesheet" type="text/css" href="template/styles/topic.min.css">
+<script type="text/javascript" >
+gRootRelPath = ".";
+gCommonRootRelPath = ".";
+gTopicId = "4.3.5.2.0_1";
+</script>
+ <meta name="topic-breadcrumbs" content="Part IV: Evolutionary Analysis > Constructing Phylogenetic Trees > Statistical Tests of a Tree Obtained > Bootstrap Tests" />
+</head>
+
+<body>
+<script type="text/javascript" src="./ehlpdhtm.js"></script>
+
+
+<h1><span style="font-size: 11.0pt;">Bootstrap Test of Phylogeny</span></h1>
+<p class="keyword">Phylogeny | Construct/Test Neighbor-Joining Tree</p>
+<p>Or</p>
+<p class="keyword">Phylogeny | Construct/Test Minimum-Evolution Tree</p>
+<p>Or</p>
+<p class="keyword">Phylogeny | Construct/Test UPGMA Tree</p>
+<p>Or</p>
+<p class="keyword">Phylogeny | Construct/Test Maximum Likelihood Tree</p>
+<p>Or</p>
+<p class="keyword">Phylogeny | Construct/Test Maximum Parsimony Tree(s)</p>
+<p>&#160;</p>
+<p><span style="font-size: 11.0pt;">One of the most commonly used tests 
+ of the reliability of an </span><u><span style="color: #008000;"><a href="javascript:TextPopup(this)" id="HotSpot11442" class="glossterm">inferred tree</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot11442', 'POPUP11442');
+//]]></script><span class="glosstext" id="POPUP11442" style="display: none;"> A tree reconstructed from the observed sequence or other appropriate data using any tree-making method (such as UPGMA, NJ, ME, or MP) is known as an inferred or reconstructed tree.</span></span></u><span style="display: none;">RH_Inferred_tree</span><span 
+	 style="font-size: 11.0pt;"> is </span><u style="color: #007fbf;"><span 
+	 style="color: #007fbf;"><a href="Felsenstein_1985.htm" style="color: #007fbf;">Felsenstein's 
+ (1985)</a></span></u><span style="display: none;">Felsenstein_1985</span><span 
+	 style="font-size: 11.0pt;"> bootstrap test, which is evaluated using 
+ </span><u style="color: #007fbf;"><span style="color: #007fbf;"><a href="Efron_1982.htm" 
+	 style="color: #007fbf;">Efron's (1982)</a></span></u><span style="display: none;">Efron_1982</span><span 
+	 style="font-size: 11.0pt;"> bootstrap resampling technique.&#160;&#160;If 
+ there are <i>m</i> sequences, each with <i>n</i> nucleotides (or codons 
+ or amino acids), a phylogenetic tree can be reconstructed using some tree 
+ building method.&#160;&#160;From each sequence, <i>n</i> nucleotides are 
+ randomly chosen with replacements, giving rise to <i>m</i> rows of <i>n</i> 
+ columns each.&#160;&#160;These now constitute a new set of sequences.&#160;&#160;A 
+ tree is then reconstructed with these new sequences using the same tree 
+ building method as before.&#160;&#160;Next the </span><u><span style="color: #008000;"><a href="javascript:TextPopup(this)" id="HotSpot32328" class="glossterm">topology</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot32328', 'POPUP32328');
+//]]></script><span class="glosstext" id="POPUP32328" style="display: none;"> The branching pattern of a tree is its topology.</span></span></u><span style="display: none;">RH_Topology</span><span 
+	 style="font-size: 11.0pt;"> of this tree is compared to that of the 
+ original tree.&#160;&#160;Each interior <a href="javascript:TextPopup(this)" id="HotSpot35586" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot35586', 'POPUP35586');
+//]]></script><span class="glosstext" id="POPUP35586" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> 
+ of the original tree that is different from the bootstrap tree the sequence 
+ it partitions is given a score of 0; all other interior branches are given 
+ the value 1.&#160;&#160;This procedure of resampling the sites and the 
+ subsequent tree reconstruction is repeated several hundred times, and 
+ the percentage of times each interior <a href="javascript:TextPopup(this)" id="HotSpot25981" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot25981', 'POPUP25981');
+//]]></script><span class="glosstext" id="POPUP25981" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> 
+ is given a value of 1 is noted.&#160;&#160;This is known as the bootstrap 
+ value.&#160;&#160;As a general rule, if the bootstrap value for a given 
+ interior <a href="javascript:TextPopup(this)" id="HotSpot22834" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot22834', 'POPUP22834');
+//]]></script><span class="glosstext" id="POPUP22834" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> is 95% 
+ or higher, then the <a href="javascript:TextPopup(this)" id="HotSpot38802" class="glossterm">topology</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot38802', 'POPUP38802');
+//]]></script><span class="glosstext" id="POPUP38802" style="display: none;"> The branching pattern of a tree is its topology.</span> 
+ at that <a href="javascript:TextPopup(this)" id="HotSpot50106" class="glossterm">branch</a><script type="text/javascript">//<![CDATA[
+TextPopupInit('HotSpot50106', 'POPUP50106');
+//]]></script><span class="glosstext" id="POPUP50106" style="display: none;"> A branch is a line connecting either two internal nodes to each other or an external node to an internal node in a phylogenetic tree.  The length of a branch denotes the genetic distance (e.g., number of substitutions per unit time) between the two taxa it connects.</span> is considered 
+ &quot;correct&quot;.&#160;&#160;See </span><u style="color: #007fbf;"><span 
+	 style="color: #007fbf;"><a href="Nei_and_Kumar_2000.htm" style="color: #007fbf;">Nei 
+ and Kumar (2000)</a></span></u><span style="display: none;">Nei_and_Kumar_2000</span><span 
+	 style="font-size: 11.0pt;"> (chapter 9) for further details.</span></p>
+<p><span style="font-size: 11.0pt;">This test is available for four different 
+ methods: </span><u style="text-underline: double; color: #007fbf;"><span 
+	 style="color: #007fbf;"><a href="Neighbor-Joining_NJ_Method.htm" style="color: #007fbf;">Neighbor 
+ Joining</a></span></u><span style="display: none;">HC_Neighbor_Joining</span><span 
+	 style="font-size: 11.0pt;">, </span><u style="text-underline: double; 
+											 color: #007fbf;"><span style="color: #007fbf;"><a 
+	 href="Minimum_Evolution.htm" style="color: #007fbf;">Minimum Evolution</a></span></u><span 
+	 style="display: none; color: #007fbf;">HC_Minimum_Evolution</span><span 
+	 style="font-size: 11.0pt;">, </span><a href="Maximum_Parsimony_MP_Method.htm" 
+											 style="color: #007fbf;"><u 
+	 style="text-underline: double; color: #007fbf;"><span style="color: #007fbf;">Maximum 
+ Parsimony</span></u><span style="display: none; color: #007fbf;">HC_Maximum_Parsimony</span></a><span 
+	 style="font-size: 11.0pt;">, </span><u style="text-underline: double; 
+											 color: #007fbf;"><span style="color: #007fbf;"><a 
+	 href="UPGMA.htm" style="color: #007fbf;">UPGMA</a></span></u><span 
+	 style="display: none;">HC_UPGMA</span><span style="font-size: 11.0pt;">, 
+ and <a href="Maximum_Likelihood_ML.htm" style="color: #007fbf;">Maximum 
+ Likelihood</a>.</span></p>
+<p>&#160;</p>
+<b><span style="font-size: 11.0pt; font-family: Arial, sans-serif;"><br 
+	 style="clear: all;" clear="all" />
+</span></b> 
+</body>
+</html>

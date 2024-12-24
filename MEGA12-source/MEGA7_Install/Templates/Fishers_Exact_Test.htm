@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+        <TITLE>Fisher&#39;s Exact Test</TITLE>
+<style type="text/css">
+        {TLegendGenerator.Style}
+</style>
+</HEAD>
+<BODY>
+<span class="figureTitle">
+	<i><u>Table</u></i>. Results from Fisher&#39;s Exact Test of Neutrality for Sequence Pairs
+</span>
+<div id ="content">
+The probability (<i>P</i>) of rejecting the null hypothesis of strict-neutrality in favor of the alternative hypothesis of positive selection is shown for each sequence pair [{TLegendGenerator.FisherExact:ExpandCitation}]. <i>P</i> values smaller than 0.05 are considered significant at the 5% level and are highlighted. The numbers of synonymous and nonsynonymous differences between sequences were estimated using the {TAnalysisInfo.DistModelName} method [{TDistPack.MethodCitation:ExpandCitation}].
+
+
+{if TDisplayMatrixDlg.HasInvalidData = True}
+	The presence of <b>n/c</b> in the results denotes cases in which it was not possible to estimate evolutionary distances.
+{endif}
+
+ {IncludeExternalFile=Data_Subset_Template.htm}
+
+</div>
+</body>
+</html>
+
+
