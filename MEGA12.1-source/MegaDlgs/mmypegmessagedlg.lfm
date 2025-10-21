@@ -1,0 +1,79 @@
+object MyPegMessageDlg: TMyPegMessageDlg
+  Left = 710
+  Height = 299
+  Top = 262
+  Width = 401
+  Caption = 'MEGA-MD: Messages'
+  ClientHeight = 299
+  ClientWidth = 401
+  Color = clBtnFace
+  DefaultMonitor = dmMainForm
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Tahoma'
+  OnActivate = FormActivate
+  OnResize = FormResize
+  Position = poMainFormCenter
+  LCLVersion = '2.2.4.0'
+  object Memo1: TMemo
+    Left = 0
+    Height = 258
+    Top = 0
+    Width = 401
+    Align = alTop
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderStyle = bsNone
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Lines.Strings = (
+      ''
+    )
+    ParentFont = False
+    ScrollBars = ssBoth
+    TabOrder = 0
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 41
+    Top = 258
+    Width = 401
+    Align = alClient
+    ClientHeight = 41
+    ClientWidth = 401
+    TabOrder = 1
+    object ToolBar1: TToolBar
+      Left = 121
+      Height = 30
+      Top = 5
+      Width = 120
+      Align = alNone
+      AutoSize = True
+      ButtonHeight = 30
+      ButtonWidth = 115
+      Caption = 'ToolBar1'
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      HotImages = ImageForm.DlgButtonsHover
+      Images = ImageForm.DlgButtons
+      TabOrder = 0
+      object ToolButton1: TToolButton
+        Left = 1
+        Top = 0
+        Action = CloseAction
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 169
+    Top = 44
+    object CloseAction: TAction
+      Caption = 'CloseAction'
+      ImageIndex = 5
+      OnExecute = CloseActionExecute
+      ShortCut = 27
+    end
+  end
+end

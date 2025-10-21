@@ -1,0 +1,291 @@
+object TimetreeSearchFrame: TTimetreeSearchFrame
+  Left = 0
+  Height = 437
+  Top = 0
+  Width = 531
+  ClientHeight = 437
+  ClientWidth = 531
+  TabOrder = 0
+  DesignLeft = 408
+  DesignTop = 201
+  object Label3: TLabel
+    Left = 8
+    Height = 15
+    Top = 10
+    Width = 128
+    Caption = 'Target node is MRCA of:'
+    ParentColor = False
+  end
+  object MrcaSearchDrawGrid: TDrawGrid
+    Left = 8
+    Height = 133
+    Top = 28
+    Width = 514
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    AutoFillColumns = True
+    BorderStyle = bsNone
+    ColCount = 4
+    DefaultDrawing = False
+    ExtendedSelect = False
+    FixedCols = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goRowSelect, goSmoothScroll]
+    ParentColor = True
+    TabOrder = 0
+    OnDrawCell = MrcaSearchDrawGridDrawCell
+    ColWidths = (
+      128
+      128
+      128
+      130
+    )
+  end
+  object TimeSearchFeedbackLabel: TLabel
+    Left = 8
+    Height = 19
+    Top = 203
+    Width = 517
+    Anchors = [akLeft, akRight, akBottom]
+    AutoSize = False
+    Caption = 'The target node can be calibrated using the time estimate below:'
+    Font.Color = clBlue
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+  end
+  object Panel3: TPanel
+    Left = 8
+    Height = 60
+    Top = 225
+    Width = 514
+    Anchors = [akLeft, akRight, akBottom]
+    BevelOuter = bvNone
+    BorderWidth = 1
+    BorderStyle = bsSingle
+    ClientHeight = 56
+    ClientWidth = 510
+    TabOrder = 1
+    object Label4: TLabel
+      Left = 1
+      Height = 15
+      Top = 1
+      Width = 508
+      Align = alTop
+      Alignment = taCenter
+      Caption = 'Calibrate Using CI Bounds'
+      ParentColor = False
+    end
+    object UniformDistRadioBtn: TRadioButton
+      Left = 8
+      Height = 19
+      Top = 21
+      Width = 129
+      Caption = 'Uniform Distribution'
+      Checked = True
+      OnChange = CalibrationTypeRadioBtnChange
+      TabOrder = 0
+      TabStop = True
+    end
+    object Label9: TLabel
+      Left = 296
+      Height = 15
+      Top = 23
+      Width = 25
+      Caption = 'MYA'
+      ParentColor = False
+    end
+    object ConfidenceIntervalEdit: TEdit
+      Left = 187
+      Height = 23
+      Top = 20
+      Width = 100
+      Alignment = taCenter
+      ReadOnly = True
+      TabOrder = 1
+      Text = '7.5 - 9.3'
+    end
+    object Label7: TLabel
+      Left = 168
+      Height = 15
+      Top = 23
+      Width = 14
+      Caption = 'CI:'
+      ParentColor = False
+    end
+  end
+  object Label1: TLabel
+    Left = 248
+    Height = 15
+    Top = 287
+    Width = 12
+    Anchors = [akLeft, akBottom]
+    Caption = 'or'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Panel2: TPanel
+    Left = 8
+    Height = 86
+    Top = 308
+    Width = 514
+    Anchors = [akLeft, akRight, akBottom]
+    BevelOuter = bvNone
+    BorderWidth = 1
+    BorderStyle = bsSingle
+    ClientHeight = 82
+    ClientWidth = 510
+    TabOrder = 2
+    object MinTimeRadioBtn: TRadioButton
+      Left = 8
+      Height = 19
+      Top = 18
+      Width = 71
+      Caption = 'Min Time'
+      Checked = True
+      OnChange = CalibrationTypeRadioBtnChange
+      TabOrder = 0
+      TabStop = True
+    end
+    object MaxTimeRadioBtn: TRadioButton
+      Left = 8
+      Height = 19
+      Top = 40
+      Width = 72
+      Caption = 'Max Time'
+      OnChange = CalibrationTypeRadioBtnChange
+      TabOrder = 1
+    end
+    object FixedTimeRadioBtn: TRadioButton
+      Left = 8
+      Height = 19
+      Top = 62
+      Width = 77
+      Caption = 'Fixed Time'
+      OnChange = CalibrationTypeRadioBtnChange
+      TabOrder = 2
+    end
+    object Label6: TLabel
+      Left = 1
+      Height = 15
+      Top = 1
+      Width = 508
+      Align = alTop
+      Alignment = taCenter
+      Caption = 'Calibrate Using Median Time'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 104
+      Height = 15
+      Top = 43
+      Width = 73
+      Anchors = [akLeft, akBottom]
+      Caption = 'Median Time:'
+      ParentColor = False
+    end
+    object MedianTimeEdit: TEdit
+      Left = 187
+      Height = 23
+      Top = 41
+      Width = 100
+      Alignment = taCenter
+      Anchors = [akLeft, akBottom]
+      ReadOnly = True
+      TabOrder = 3
+      Text = '8.2'
+    end
+    object Label8: TLabel
+      Left = 296
+      Height = 15
+      Top = 43
+      Width = 25
+      Anchors = [akLeft, akBottom]
+      Caption = 'MYA'
+      ParentColor = False
+    end
+  end
+  object CalibrateNodeBtn: TSpeedButton
+    Left = 8
+    Height = 22
+    Top = 408
+    Width = 426
+    Anchors = [akLeft, akRight, akBottom]
+    OnClick = CalibrateNodeBtnClick
+    OnMouseEnter = CalibrateNodeBtnMouseEnter
+    OnMouseLeave = CalibrateNodeBtnMouseLeave
+    OnPaint = CalibrateNodeBtnPaint
+  end
+  object CloseBtn: TSpeedButton
+    Left = 445
+    Height = 22
+    Top = 408
+    Width = 77
+    Anchors = [akRight, akBottom]
+    OnClick = CloseBtnClick
+    OnMouseEnter = CloseBtnMouseEnter
+    OnMouseLeave = CloseBtnMouseLeave
+    OnPaint = CloseBtnPaint
+  end
+  object StayOnTopCheckbox: TCheckBox
+    Left = 427
+    Height = 19
+    Top = 5
+    Width = 80
+    Caption = 'Stay on top'
+    OnChange = StayOnTopCheckboxChange
+    TabOrder = 3
+  end
+  object SearchButton: TSpeedButton
+    Left = 8
+    Height = 22
+    Top = 176
+    Width = 192
+    Anchors = [akLeft, akBottom]
+    OnClick = SearchButtonClick
+    OnMouseEnter = SearchButtonMouseEnter
+    OnMouseLeave = SearchButtonMouseLeave
+    OnPaint = SearchButtonPaint
+  end
+  object StudiesBtn: TSpeedButton
+    Left = 216
+    Height = 22
+    Top = 176
+    Width = 149
+    Anchors = [akLeft, akBottom]
+    OnClick = StudiesBtnClick
+    OnMouseEnter = StudiesBtnMouseEnter
+    OnMouseLeave = StudiesBtnMouseLeave
+    OnPaint = StudiesBtnPaint
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DefaultIcons
+    Left = 192
+    Top = 112
+    object TimeSearchAction: TAction
+      Caption = '&Time Search'
+      Hint = 'Search the TimeTree database for the estimated divergence time for the MRCA of the listed tip nodes'
+      OnExecute = TimeSearchActionExecute
+    end
+    object ApplyCalibrationAction: TAction
+      Caption = 'Calibrate Target Node (Uniform Distribution)'
+      Hint = 'Generate a calibration constraint for the selected node'
+      OnExecute = ApplyCalibrationActionExecute
+    end
+  end
+  object ProgressTimer: TTimer
+    Enabled = False
+    Interval = 200
+    OnTimer = ProgressTimerTimer
+    Left = 296
+    Top = 96
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 472
+    Top = 120
+    object MenuItem1: TMenuItem
+      Caption = 'Apply Selected Name'
+      Hint = 'Apply the Timetree search results to the selected node'
+    end
+  end
+end

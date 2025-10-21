@@ -1,0 +1,18 @@
+#mega
+!Title A single site for parsimony analysis;
+!Format 
+  datatype=nucleotide
+  NTaxa=6 NSites=1;
+
+[
+M. Nei and S. Kumar (2000) Molecular Evolution and Phylogenetics.  
+Oxford University Press. New York.
+Data for Figure 7.1.
+]
+
+#1  C
+#2  T
+#3  T
+#4  T
+#5  A
+#6  A

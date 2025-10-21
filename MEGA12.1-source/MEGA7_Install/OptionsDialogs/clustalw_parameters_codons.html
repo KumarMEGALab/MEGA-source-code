@@ -1,0 +1,2580 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Clustal W Parameters Codons</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--JQuery 3.2.1 Fallback-->
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <!--JQuery 3.4.1-->
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>       
+        <script type="text/javascript" src="js/jquery.validate.min.js"></script> 
+        <script type="text/javascript" src="js/evol-colorpicker.min.js" charset="utf-8"></script>
+        <script type="text/javascript" src="js/jquery.fontpicker.min.js"></script>
+        <script type="text/javascript" src="js/jquery.ui.fontpicker-en.js"></script>
+        <script type="text/javascript" src="js/select2.min.js"></script>
+        <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+        <!--Bootstrap 3 Fallback-->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!--Bootstrap 4-->
+        <link href="css/bs4/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/evol-colorpicker.css" rel="stylesheet" type="text/css"/>   
+        <link href="css/jquery.fontpicker.css" rel="stylesheet" type="text/css"/>
+        <link href="css/select2.min.css" rel="stylesheet" type="text/css" /> 
+        <link href="css/default.css" rel="stylesheet" type="text/css" />
+        <script>
+            $(document).ready(function () {
+                $('#mainform').validate({
+                    rules: {
+                        clustalw_codons_pairwise_gap_opening_penalty: {
+                            required: true,
+                            number: true,
+                            range: [0, 100]
+                        },
+                        clustalw_codons_pairwise_gap_extension_penalty: {
+                            required: true,
+                            number: true,
+                            range: [0, 100]
+                        },
+                        clustalw_codons_multiple_gap_opening_penalty: {
+                            required: true,
+                            number: true,
+                            range: [0, 100]
+                        },
+                        clustalw_codons_multiple_gap_extension_penalty: {
+                            required: true,
+                            number: true,
+                            range: [0, 100]
+                        },
+                        clustalw_codons_gap_separation: {
+                            required: true,
+                            number: true,
+                            range: [0, 100]
+                        },
+                        clustalw_codons_divergent_cutoff: {
+                            required: true,
+                            number: true,
+                            range: [0, 100]
+                        }
+                    },
+                    submitHandler: function (form) {
+                        $('#is_validated').attr("value", "true");
+                    }
+                });
+                $("#accordion").accordion({
+                    heightStyle: "content"
+                });
+                $('.checkbox').checkboxradio({
+                    icon: false
+                });
+                $(':checkbox').change(function () {
+                    var checkbox = $(this);
+                    if (this.checked) {
+                        $(this).attr('ischecked', true);
+                    } else {
+                        $(this).attr('ischecked', false);
+                    }
+                });
+                $("form").submit(function (event) {
+                    event.preventDefault();
+                });
+                $("#clustalw_codons_protein_weight_matrix").select2({
+                    minimumResultsForSearch: Infinity
+                });
+                $("#clustalw_codons_residue_specific_pentalties").select2({
+                    minimumResultsForSearch: Infinity
+                });
+                $("#clustalw_codons_hydrophilic_penalties").select2({
+                    minimumResultsForSearch: Infinity
+                });
+                $("#clustalw_codons_end_gap_separation").select2({
+                    minimumResultsForSearch: Infinity
+                });
+                $("#clustalw_codons_use_negative_matrix").select2({
+                    minimumResultsForSearch: Infinity
+                });
+                $(':checkbox[name=code]').on('change', function () {
+                    $(':checkbox[name=code]').not(this).prop('checked', false);
+                });
+                $("#genetic_code_table_dlg").hide();
+                $("#select_genetic_code").on("click", function() {
+                    $("#mainform").hide();
+                    $("#genetic_code_table_dlg").show();
+                });       
+                $("#select_genetic_code").click(function () {
+                    var codeName = localStorage.getItem("genetic_code_value");
+                    var codeTable = localStorage.getItem("genetic_code_table");
+                    if ((codeName === 'null') | (codeName === '')) {
+                        $("#select_genetic_code").attr("codeName", "Standard");
+                        $("#select_genetic_code").attr("codeTable", "FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG");
+                        $("#select_genetic_code").val("Standard");
+                    }
+                    else {
+                        $("#select_genetic_code").attr("codeName", codeName);
+                        $("#select_genetic_code").attr("codeTable", codeTable);
+                        $("#select_genetic_code").val(codeName);
+                    }
+                    });
+                    $("#select_genetic_code").attr("codeName", localStorage.getItem("genetic_code_value"));
+                    $("#select_genetic_code").attr("codeTable", localStorage.getItem("genetic_code_table"));
+                    $("#select_genetic_code").val(localStorage.getItem("genetic_code_value"));
+                    var exportTableChecked = localStorage.getItem("genetic_code_export_table_checked");
+                    var exportStatisticsChecked = localStorage.getItem("genetic_code_export_statistics_checked");
+                    $("#clustalw_genetic_code_export_table").attr("ischecked", exportTableChecked);
+                    $("#clustalw_genetic_code_export_statistics").attr("ischecked", exportStatisticsChecked);
+
+                    var statsExportType = localStorage.getItem("genetics_code_statistics_filetype");
+                    var viewExportType = localStorage.getItem("genetics_code_view_table_filetype");
+                    if ((statsExportType === 'null') | (statsExportType === '')) {
+                        $("#clustalw_genetic_code_stats_export_type").val("EXexcelDisp");
+                    }
+                    else {
+                        $("#clustalw_genetic_code_stats_export_type").val(statsExportType);
+                    }
+                    if ((viewExportType === 'null') | (viewExportType === '')) {
+                        $("#clustalw_genetic_code_view_export_type").val("EXexcelDisp");
+                    }
+                    else {
+                        $("#clustalw_genetic_code_view_export_type").val(viewExportType);
+                    }     
+                    $("#clustalw_codons_upload_guide_tree_file").click(function() {
+                        $(this).attr("UploadGuideTree", "true");
+                    }); 
+                    $("#clustalw_select_genetic_code_export_table").click(function () {
+                       $(this).attr("ClustalWExportTable", "true");
+                    });
+                    $("#clustalw_select_genetic_code_export_statistics").click(function () {
+                       $(this).attr("ClustalWExportStats", "true");
+                    });
+                
+                //MEGA_JS_TEMPLATE_PLACEHOLDER
+                $('select').trigger("change");
+                $.validator.methods.range = function (value, element, param) {
+                    var globalizedValue = value.replace(",", ".");
+                    return this.optional(element) || (globalizedValue >= param[0] && globalizedValue <= param[1]);
+                };
+                $.validator.methods.number = function (value, element) {
+                    return this.optional(element) || /^-?(?:\d+|\d{1,3}(?:[\s\.,]\d{3})+)(?:[\.,]\d+)?$/.test(value);
+                };
+            });
+        </script>
+    </head>
+    <body>
+        <input type="hidden" name="is_validated" id="is_validated" value="false"/>
+        <div class="container-fluid px-0" id="subtree_options_main-container">
+            <form id="mainform">
+                <div id="accordion">
+                  <h3>Alignment</h3>
+                  <div>                
+                    <div class="accordion_box">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="main-heading subtract-left-margin">Pairwise Alignment</div>
+                        </div>
+                      </div>
+                      <div class="grid-col-2 my-2">
+                        <label for="clustalw_codons_pairwise_gap_opening_penalty" class="d-flex align-items-center">Gap Opening Penalty</label>
+                        <input type="text" class="gap_input" id="clustalw_codons_pairwise_gap_opening_penalty" name="clustalw_codons_pairwise_gap_opening_penalty" value="10" />
+                      </div>
+                      <div class="grid-col-2">
+                        <label for="clustalw_codons_pairwise_gap_extension_penalty" class="d-flex align-items-center">Gap Extension Penalty</label>
+                        <input type="text" class="gap_input" id="clustalw_codons_pairwise_gap_extension_penalty" name="clustalw_codons_pairwise_gap_extension_penalty" value="0.1" />
+                      </div>
+                    </div>
+                    <div class="accordion_box">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="main-heading subtract-left-margin">Multiple Alignment</div>
+                        </div>
+                      </div>
+                      <div class="grid-col-2">
+                        <label for="clustalw_codons_multiple_gap_opening_penalty" class="d-flex align-items-center">Gap Opening Penalty</label>
+                        <input type="text" class="gap_input" id="clustalw_codons_multiple_gap_opening_penalty" name="clustalw_codons_multiple_gap_opening_penalty" value="10" />   
+                      </div>
+                      <div class="grid-col-2 my-2">
+                        <label for="clustalw_codons_multiple_gap_extension_penalty" class="d-flex align-items-center">Gap Extension Penalty</label>
+                        <input type="text" class="gap_input" id="clustalw_codons_multiple_gap_extension_penalty" name="clustalw_codons_multiple_gap_extension_penalty" value="0.2" />
+                      </div>
+                    </div>
+                  </div>
+                  <h3>Weight</h3>
+                  <div>
+                    <div class="accordion_box">
+                      <div class="grid-col-2">
+                        <label for="clustalw_codons_protein_weight_matrix" class="d-flex align-items-center">Protein Weight Matrix</label>
+                        <select name="clustalw_codons_protein_weight_matrix" id="clustalw_codons_protein_weight_matrix" class="form-control width_100">
+                          <option value="Blosum">BLOSUM</option>
+                          <option value="Pam">PAM</option>
+                          <option value="Gonnet">Gonnet</option>
+                          <option value="Identity">Identity</option>
+                        </select>
+                        <label for="clustalw_codons_residue_specific_pentalties" class="d-flex align-items-center">Residue-specific Penalties</label>
+                        <select name="clustalw_codons_residue_specific_pentalties" id="clustalw_codons_residue_specific_pentalties" class="form-control width_100" >
+                          <option value="ON">ON</option>
+                          <option value="OFF">OFF</option>
+                        </select>
+                        <label for="clustalw_codons_hydrophilic_penalties" class="d-flex align-items-center">Hydrophilic Penalties</label>
+                        <select name="clustalw_codons_hydrophilic_penalties" class="form-control width_100" id="clustalw_codons_hydrophilic_penalties">
+                          <option value="ON">ON</option>
+                          <option value="OFF">OFF</option>
+                        </select>
+                        <label for="clustalw_codons_gap_separation" class="d-flex align-items-center">Gap Separation Matrix</label>
+                        <input type="text" class="width_100" id="clustalw_codons_gap_separation" name="clustalw_codons_gap_separation" value="4"/>
+                        <label for="clustalw_codons_end_gap_separation" class="d-flex align-items-center">End Gap Separation</label>
+                        <select name="clustalw_codons_end_gap_separation" class="form-control width_100" id="clustalw_codons_end_gap_separation">
+                          <option value="ON">ON</option>
+                          <option value="OFF">OFF</option>
+                        </select>
+                        <label for="select_genetic_code" class="d-flex align-items-center">Genetic Code Table</label>
+                        <input id="select_genetic_code" type="button" class="width_100 " value="Standard" codeName="Standard" codeTable="FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG"/>
+                        <input type="hidden" id="clustalw_genetic_code_export_table" ischecked="false">
+                        <input type="hidden" id="clustalw_genetic_code_export_statistics" ischecked="false">
+                        <input type="hidden" id="clustalw_genetic_code_stats_export_type" value="EXexcelDisp">
+                        <input type="hidden" id="clustalw_genetic_code_view_export_type" value="EXexcelDisp">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="box_outside_accordion">
+                  <div class="grid-col-2">
+                    <label for="clustalw_codons_use_negative_matrix" class="d-flex align-items-center">Use Negative Matrix</label>
+                    <select name="clustalw_codons_use_negative_matrix" class="form-control width_100" id="clustalw_codons_use_negative_matrix">
+                      <option value="ON">ON</option>
+                      <option value="OFF">OFF</option>
+                    </select>
+                    <label for="clustalw_codons_divergent_cutoff" class="d-flex align-items-center">Delay Divergent Cutoff (%)</label>
+                    <input type="text" class="width_100" id="clustalw_codons_divergent_cutoff" name="clustalw_codons_divergent_cutoff" value="30"/>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 my-3">
+                      <fieldset>
+                        <input type="checkbox" name="clustalw_codons_predefined_gap" id="clustalw_codons_predefined_gap" ischecked="false"/>
+                        <label for="clustalw_codons_predefined_gap" class="my-2 mb-4">Keep Predefined Gap</label>
+                      </fieldset>
+                      <fieldset>
+                        <label for="clustalw_codons_upload_guide_tree_file" class="mb-2">Specify Guide Tree</label>
+                        <input type="file" name="clustalw_codons_upload_guide_tree_file" id="clustalw_codons_upload_guide_tree_file" UploadGuideTree="false"/>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+            </form>
+        <script>
+            $(document).ready(function () {
+                $('#mainform').validate({
+                    rules: {
+                        clustalw_codons_pairwise_gap_opening_penalty: {
+                            required: true,
+                            number: true,
+                            range: [0, 100]
+                        },
+                        clustalw_codons_pairwise_gap_extension_penalty: {
+                            required: true,
+                            number: true,
+                            range: [0, 100]
+                        },
+                        clustalw_codons_multiple_gap_opening_penalty: {
+                            required: true,
+                            number: true,
+                            range: [0, 100]
+                        },
+                        clustalw_codons_multiple_gap_extension_penalty: {
+                            required: true,
+                            number: true,
+                            range: [0, 100]
+                        },
+                        clustalw_codons_gap_separation: {
+                            required: true,
+                            number: true,
+                            range: [0, 100]
+                        },
+                        clustalw_codons_divergent_cutoff: {
+                            required: true,
+                            number: true,
+                            range: [0, 100]
+                        },
+                        genetic_code_output_filename: {
+                            required: true,
+                            minlength: 2
+                        },
+                        genetic_code_view_option_filename: {
+                            required: true,
+                            minlength: 2
+                        },
+                        genetic_code_title: {
+                            required: true,
+                            minlength: 2
+                        }
+                    },
+                    submitHandler: function (form) {
+                        $('#is_validated').attr("value", "true");
+                    }
+                });
+                $("#accordion").accordion({
+                    heightStyle: "content"
+                });
+                $("#genetic_code_title").change(function () {
+                   var $newCode = ($("#genetic_code_title").val());
+                   var $codeName = '<input type="checkbox" name="code" value="'+$newCode+'" id="'+$newCode+'" ischecked="true" codeTable="FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG"/>';
+                   var $label = '<label for="'+$newCode+'" class="font_weight_normal">'+$newCode+'</label> <br>';
+                   var $newCheckboxItem = $codeName+$label;
+                   $(".codeItems").append($newCheckboxItem);
+               });
+                $('.checkbox').checkboxradio({
+                    icon: false
+                });
+                $(':checkbox').change(function () {
+                    var checkbox = $(this);
+                    if (this.checked) {
+                        $(this).attr('ischecked', true);
+                    } else {
+                        $(this).attr('ischecked', false);
+                    }
+                });
+                $("form").submit(function (event) {
+                    event.preventDefault();
+                });
+                $("#clustalw_codons_protein_weight_matrix").select2({
+                    minimumResultsForSearch: Infinity
+                });
+                $("#clustalw_codons_residue_specific_pentalties").select2({
+                    minimumResultsForSearch: Infinity
+                });
+                $("#clustalw_codons_hydrophilic_penalties").select2({
+                    minimumResultsForSearch: Infinity
+                });
+                $("#clustalw_codons_end_gap_separation").select2({
+                    minimumResultsForSearch: Infinity
+                });
+                $("#clustalw_codons_use_negative_matrix").select2({
+                    minimumResultsForSearch: Infinity
+                });
+                $('#code_table_dialog').css('overflow', 'hidden');
+                $(".backBtn0").button({
+                   icon: "ui-icon-arrowreturnthick-1-w" 
+               });
+               $("#backBtn0").click(function() {
+                   $("#genetic_code_table_dlg").hide();
+                   $("#mainform").show();
+               });
+                var codeName = localStorage.getItem("genetic_code_value");
+                var codeTable = localStorage.getItem("genetic_code_table");
+                
+                if (codeName === null) {
+                    $(':checkbox[value=standard]').prop('checked', true);
+                    $("#codeData").val('Standard');
+                    $("#codeData").attr("codeName", 'Standard');
+                    $("#codeData").attr("codeTable", 'FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG');
+                } else {
+                    $(':checkbox[name=codeName]').filter(function () {
+                        $("#codeData").val(codeName); 
+                        $("#codeData").attr("codeName", codeName);
+                        $("#codeData").attr("codeTable", codeTable);
+                        return this.value === codeName;
+                    }).prop('checked', true);
+                } 
+                $(':checkbox[name=codeName]').change(function () {
+                    if (this.checked) {                        
+                        localStorage.setItem("genetic_code_value", $(this).val());
+                        localStorage.setItem("genetic_code_table", $(this).attr('codeTable'));
+                        $("#genetic_code_table").attr("codeTable", $(this).attr('codeTable'));
+						$("#select_genetic_code").val($(this).val());
+                    }
+                    
+                    $(':checkbox[name=codeName]').not($(this)).prop('checked', false);
+                    $(':checkbox[name=codeName]').not($(this)).attr('ischecked', false);
+                    
+                    $("#codeData").val(localStorage.getItem("genetic_code_value"));
+                    $("#codeData").attr("codeName", localStorage.getItem("genetic_code_value"));
+                });
+
+                $("select_code").submit(function (event) {
+                    event.preventDefault();
+                });
+                $("#delete_code_table").click(function () {
+                    if ($(":checkbox").is(':checked')) {
+                        var codeVal = $('input:checkbox:checked').val();
+                        $("label[for="+codeVal+"]").remove();
+                        $('input:checkbox:checked').remove();
+                    } 
+                });
+                $.validator.methods.range = function (value, element, param) {
+                    var globalizedValue = value.replace(",", ".");
+                    return this.optional(element) || (globalizedValue >= param[0] && globalizedValue <= param[1]);
+                };
+                $.validator.methods.number = function (value, element) {
+                    return this.optional(element) || /^-?(?:\d+|\d{1,3}(?:[\s\.,]\d{3})+)(?:[\.,]\d+)?$/.test(value);
+                };
+     
+                $("#genetic_code_output_option").select2({
+                     minimumResultsForSearch: Infinity
+                });
+                $("#genetic_code_view_option").select2({
+                     minimumResultsForSearch: Infinity
+                });
+                localStorage.setItem("genetics_code_statistics_filetype", "EXexcelDisp");
+                $("#genetic_code_output_option").change(function() {
+                    var str;
+                    $("#genetic_code_output_option option:selected").each(function() {
+                        str = $(this).val();
+                    });
+                    if (str === 'EXexcelDisp') {
+                        $("#genetic_code_output_filename").val("Result.xls");
+                        localStorage.setItem("genetics_code_statistics_filetype", "EXexcelDisp");
+                    }
+                    if (str === 'EXexcelSave') {
+                        $("#genetic_code_output_filename").val("Result.xls");
+                        localStorage.setItem("genetics_code_statistics_filetype", "EXexcelSave");
+                    }
+                    if (str === 'EXcsvSave') {
+                        $("#genetic_code_output_filename").val("Result.csv");
+                        localStorage.setItem("genetics_code_statistics_filetype", "EXcsvSave");
+                    }
+                    if (str === 'EXtext') {
+                        $("#genetic_code_output_filename").val("Result");
+                        localStorage.setItem("genetics_code_statistics_filetype", "EXtext");
+                    }
+                });
+                localStorage.setItem("genetics_code_view_table_filetype", "EXexcelDisp");
+                $("#genetic_code_view_option").change(function() {
+                    var str;
+                    $("#genetic_code_view_option option:selected").each(function() {
+                        str = $(this).val();
+                    });
+                    if (str === 'EXexcelDisp') {
+                        $("#genetic_code_view_option_filename").val("Result.xls");
+                        localStorage.setItem("genetics_code_view_table_filetype", "EXexcelDisp");
+                    }
+                    if (str === 'EXexcelSave') {
+                        $("#genetic_code_view_option_filename").val("Result.xls");
+                        localStorage.setItem("genetics_code_view_table_filetype", "EXexcelSave");
+                    }
+                    if (str === 'EXcsvSave') {
+                        $("#genetic_code_view_option_filename").val("Result.csv");
+                        localStorage.setItem("genetics_code_view_table_filetype", "EXcsvSave");
+                    }
+                    if (str === 'EXtext') {
+                        $("#genetic_code_view_option_filename").val("Result");
+                        localStorage.setItem("genetics_code_view_table_filetype", "EXtext");
+                    }
+                });
+                $("#genetic_code_output_page").hide();
+                $("#codon_table_page").hide();
+                $("#genetic_code_view_table").hide();
+               $("#viewBtn").click(function() {
+                   $("#code_table_dialog").hide();
+                   $("#codon_table_page").hide();
+                   $("#genetic_code_output_page").hide();
+                   $("#genetic_code_view_table").show();
+               });
+               $("#StatisticsBtn").click(function() {
+                   $("#code_table_dialog").hide();
+                   $("#codon_table_page").hide();
+                   $("#genetic_code_view_table").hide();
+                   $("#genetic_code_output_page").show();
+               });
+               $(".backBtn").button({
+                   icon: "ui-icon-arrowreturnthick-1-w" 
+               });
+               $("#backBtn").click(function() {
+                   $("#genetic_code_output_page").hide();
+                   $("#codon_table_page").hide();
+                   $("#genetic_code_view_table").hide();
+                   $("#code_table_dialog").show();
+               });
+               $(".backBtn4").button({
+                   icon: "ui-icon-arrowreturnthick-1-w" 
+               });
+               $("#backBtn4").click(function() {
+                   $("#genetic_code_output_page").hide();
+                   $("#codon_table_page").hide();
+                   $("#genetic_code_view_table").hide();
+                   $("#code_table_dialog").show();
+               });               
+               if( $(this).is(':checked') ) {
+                       localStorage.setItem("genetic_code_export_statistics_checked", "true");
+                }
+                else {
+                   localStorage.setItem("genetic_code_export_statistics_checked", "false"); 
+                }
+                if( $(this).is(':checked') ) {
+                    localStorage.setItem("genetic_code_export_table_checked", "true");
+                }  
+                else {
+                    localStorage.setItem("genetic_code_export_table_checked", "false");
+                }
+               $("#clustalw_select_genetic_code_export_statistics").click(function() {
+                   if( $(this).is(':checked') ) {
+                       localStorage.setItem("genetic_code_export_statistics_checked", "true");
+                   }
+                   else {
+                      localStorage.setItem("genetic_code_export_statistics_checked", "false"); 
+                   }
+               });
+               $("#clustalw_select_genetic_code_export_table").click(function() {
+                   if( $(this).is(':checked') ) {
+                       localStorage.setItem("genetic_code_export_table_checked", "true");
+                   }  
+                   else {
+                       localStorage.setItem("genetic_code_export_table_checked", "false");
+                   }
+               });
+
+                $('#codon_table_page').css('overflow', 'hidden');
+                $(".backBtn2").button({
+                   icon: "ui-icon-arrowreturnthick-1-w" 
+               });
+               $("#backBtn2").click(function() {
+                   $("#genetic_code_output_page").hide();
+                   $("#codon_table_page").hide();
+                   $("#code_table_dialog").show();
+               });
+               $(".select_codon").select2({
+                   minimumResultsForSearch: Infinity
+               });
+               
+               var codeItemsArr = $('[name="codeName"]').toArray();
+               var codeTableArr = $('[name="codeTable"]').toArray();
+               var tableIndex = [];
+               var amino = [];
+               var code = [];
+                $('td').each(function(){
+                      var row_index = $(this).parent().index();
+                      var col_index = $(this).index();
+                      var tableNum = (row_index+','+col_index);
+                      if (tableNum === '0,1') { tableIndex.push('UUU'); }
+                      if (tableNum === '0,2') { tableIndex.push('UCU'); }
+                      if (tableNum === '0,3') { tableIndex.push('UAU'); }
+                      if (tableNum === '0,4') { tableIndex.push('UGU'); }
+                      if (tableNum === '1,1') { tableIndex.push('UUC'); }
+                      if (tableNum === '1,2') { tableIndex.push('UCC'); }
+                      if (tableNum === '1,3') { tableIndex.push('UAC'); }
+                      if (tableNum === '1,4') { tableIndex.push('UGC'); }
+                      if (tableNum === '2,1') { tableIndex.push('UUA'); }
+                      if (tableNum === '2,2') { tableIndex.push('UCA'); }
+                      if (tableNum === '2,3') { tableIndex.push('UAA'); }
+                      if (tableNum === '2,4') { tableIndex.push('UGA'); }
+                      if (tableNum === '3,1') { tableIndex.push('UUG'); }
+                      if (tableNum === '3,2') { tableIndex.push('UCG'); }
+                      if (tableNum === '3,3') { tableIndex.push('UAG'); }
+                      if (tableNum === '3,4') { tableIndex.push('UGG'); }
+                      if (tableNum === '4,1') { tableIndex.push('CUU'); }
+                      if (tableNum === '4,2') { tableIndex.push('CCU'); }
+                      if (tableNum === '4,3') { tableIndex.push('CAU'); }
+                      if (tableNum === '4,4') { tableIndex.push('CGU'); }
+                      if (tableNum === '5,1') { tableIndex.push('CUC'); }
+                      if (tableNum === '5,2') { tableIndex.push('CCC'); }
+                      if (tableNum === '5,3') { tableIndex.push('CAC'); }
+                      if (tableNum === '5,4') { tableIndex.push('CGC'); }
+                      if (tableNum === '6,1') { tableIndex.push('CUA'); }
+                      if (tableNum === '6,2') { tableIndex.push('CCA'); }
+                      if (tableNum === '6,3') { tableIndex.push('CAA'); }
+                      if (tableNum === '6,4') { tableIndex.push('CGA'); }
+                      if (tableNum === '7,1') { tableIndex.push('CUG'); }
+                      if (tableNum === '7,2') { tableIndex.push('CCG'); }
+                      if (tableNum === '7,3') { tableIndex.push('CAG'); }
+                      if (tableNum === '7,4') { tableIndex.push('CGG'); }
+                      if (tableNum === '8,1') { tableIndex.push('AUU'); }
+                      if (tableNum === '8,2') { tableIndex.push('ACU'); }
+                      if (tableNum === '8,3') { tableIndex.push('AAU'); }
+                      if (tableNum === '8,4') { tableIndex.push('AGU'); }
+                      if (tableNum === '9,1') { tableIndex.push('AUC'); }
+                      if (tableNum === '9,2') { tableIndex.push('ACC'); }
+                      if (tableNum === '9,3') { tableIndex.push('AAC'); }
+                      if (tableNum === '9,4') { tableIndex.push('AGC'); }
+                      if (tableNum === '10,1') { tableIndex.push('AUA'); }
+                      if (tableNum === '10,2') { tableIndex.push('ACA'); }
+                      if (tableNum === '10,3') { tableIndex.push('AAA'); }
+                      if (tableNum === '10,4') { tableIndex.push('AGA'); }
+                      if (tableNum === '11,1') { tableIndex.push('AUG'); }
+                      if (tableNum === '11,2') { tableIndex.push('ACG'); }
+                      if (tableNum === '11,3') { tableIndex.push('AAG'); }
+                      if (tableNum === '11,4') { tableIndex.push('AGG'); }
+                      if (tableNum === '12,1') { tableIndex.push('GUU'); }
+                      if (tableNum === '12,2') { tableIndex.push('GCU'); }
+                      if (tableNum === '12,3') { tableIndex.push('GAU'); }
+                      if (tableNum === '12,4') { tableIndex.push('GGU'); }
+                      if (tableNum === '13,1') { tableIndex.push('GUC'); }
+                      if (tableNum === '13,2') { tableIndex.push('GCC'); }
+                      if (tableNum === '13,3') { tableIndex.push('GAC'); }
+                      if (tableNum === '13,4') { tableIndex.push('GGC'); }
+                      if (tableNum === '14,1') { tableIndex.push('GUA'); }
+                      if (tableNum === '14,2') { tableIndex.push('GCA'); }
+                      if (tableNum === '14,3') { tableIndex.push('GAA'); }
+                      if (tableNum === '14,4') { tableIndex.push('GGA'); }
+                      if (tableNum === '15,1') { tableIndex.push('GUG'); }
+                      if (tableNum === '15,2') { tableIndex.push('GCG'); }
+                      if (tableNum === '15,3') { tableIndex.push('GAG'); }
+                      if (tableNum === '15,4') { tableIndex.push('GGG'); }
+                  }); 
+               $(".select_codon option:selected").each(function() {
+                   if ($(this).text() === '***') {
+                        amino.push('*');
+                        code.push('***');
+                   }
+                   if ($(this).text() === 'Ala') {
+                       amino.push('A');
+                       code.push('Ala');
+                   }
+                   if ($(this).text() === 'Arg') {
+                       amino.push('R');
+                       code.push('Arg');
+                   }
+                   if ($(this).text() === 'Asn') {
+                       amino.push('N');
+                       code.push('Asn');
+                   }
+                   if ($(this).text() === 'Asp') {
+                       amino.push('D');
+                       code.push('Asp');
+                   }
+                   if ($(this).text() === 'Cys') {
+                       amino.push('C');
+                       code.push('Cys');
+                   }
+                   if ($(this).text() === 'Gln') {
+                       amino.push('Q');
+                       code.push('Gln');
+                   }
+                   if ($(this).text() === 'Glu') {
+                       amino.push('E');
+                       code.push('Glu');
+                   }
+                   if ($(this).text() === 'Gly') {
+                       amino.push('G');
+                       code.push('Gly');
+                   }
+                   if ($(this).text() === 'His') {
+                       amino.push('H');
+                       code.push('His');
+                   }
+                   if ($(this).text() === 'Ile') {
+                       amino.push('I');
+                       code.push('Ile');
+                   }
+                   if ($(this).text() === 'Leu') {
+                       amino.push('L');
+                       code.push('Leu');
+                   }
+                   if ($(this).text() === 'Lys') {
+                       amino.push('K');
+                       code.push('Lys');
+                   }
+                   if ($(this).text() === 'Met') {
+                       amino.push('M');
+                       code.push('Met');
+                   }
+                   if ($(this).text() === 'Phe') {
+                       amino.push('F');
+                       code.push('Phe');
+                   }
+                   if ($(this).text() === 'Pro') {
+                       amino.push('P');
+                       code.push('Pro');
+                   }
+                   if ($(this).text() === 'Ser') {
+                       amino.push('S');
+                       code.push('Ser');
+                   }
+                   if ($(this).text() === 'Thr') {
+                       amino.push('T');
+                       code.push('Thr');
+                   }
+                   if ($(this).text() === 'Trp') {
+                       amino.push('W');
+                       code.push('Trp');
+                   }
+                   if ($(this).text() === 'Tyr') {
+                       amino.push('Y');
+                       code.push('Tyr');
+                   }
+                   if ($(this).text() === 'Val') {
+                       amino.push('V');
+                       code.push('Val');
+                   }
+               });
+               
+            var codeOutput = [];
+            for(var i=0,len=tableIndex.length;i<len;i++){
+                codeOutput[codeOutput.length] = tableIndex[i];
+                codeOutput[codeOutput.length] = code[i];
+            }  
+                $('select').trigger("change");
+               
+            });
+        </script>
+        <div id="genetic_code_table_dlg">
+        <input type="hidden" name="is_validated" id="is_validated" value="false"/>
+        <div class="container-fluid">
+        <div id="code_table_dialog" class="code_table_dialog boxed" title="Select Genetic Code Table">
+            <div class="row">
+				<div class="col-offset-10 padding-0">
+					<button id="backBtn0" class="backBtn0">Back to Alignment Options</button>
+				</div>
+			</div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="scrollbox">
+                            <form name="select_code" id="select_code">
+                                <fieldset name="codeItems">
+                                    <input type="checkbox" name="codeName" value="standard" id="standard" ischecked ="false" codeTable="FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG"/>
+                                    <label for="standard" class="font_weight_normal">Standard</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="standardCodeTable" value="FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="vertebrate_mitochondrial" id="vertebrate_mitochondrial" ischecked ="false" codeTable="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIMMTTTTNNKKSS**VVVVAAAADDEEGGGG" />
+                                    <label for="vertebrate_mitochondrial" class="font_weight_normal">Vertebrate Mitochondrial</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="vertebrateMitochondrialCodeTable" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIMMTTTTNNKKSS**VVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="invertebrate_mitochondrial" id="invertebrate_mitochondrial" ischecked ="false" codeTable="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIMMTTTTNNKKSSSSVVVVAAAADDEEGGGG"/>
+                                    <label for="invertebrate_mitochondrial" class="font_weight_normal">Invertebrate Mitochondrial</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="invertebrateMitochondrialCodeTable" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIMMTTTTNNKKSSSSVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="yeast_mitochondrial" id="yeast_mitochondrial" ischecked ="false" codeTable="FFLLSSSSYY**CCWWTTTTPPPPHHQQRRRRIIMMTTTTNNKKSSRRVVVVAAAADDEEGGGG"/>
+                                    <label for="yeast_mitochondrial" class="font_weight_normal">Yeast Mitochondrial</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="yeastMitochondrialCodeTable" value="FFLLSSSSYY**CCWWTTTTPPPPHHQQRRRRIIMMTTTTNNKKSSRRVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="mold_mitochondrial" id="mold_mitochondrial" ischecked ="false" codeTable="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG"/>
+                                    <label for="mold_mitochondrial" class="font_weight_normal">Mold Mitochondrial</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="moldMitochondrialCodeTable" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="protozoan_mitochondrial" id="protozoan_mitochondrial" ischecked ="false" codeTable="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG"/>
+                                    <label for="protozoan_mitochondrial" class="font_weight_normal">Protozoan Mitochondrial</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="protozoanMitochondrialCodeTable" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="coelenterate_mitochondrial" id="coelenterate_mitochondrial" ischecked ="false" codeTable="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG"/>
+                                    <label for="coelenterate_mitochondrial" class="font_weight_normal">Coelenterate Mitochondrial</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="coelenterateMitochondrialCodeTable" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="mycoplasma" id="mycoplasma" ischecked ="false" codeTable="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG"/>
+                                    <label for="mycoplasma" class="font_weight_normal">Mycoplasma</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="mycoplasmaCodeTable" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="spiroplasma" id="spiroplasma" ischecked ="false" codeTable="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG"/>
+                                    <label for="spiroplasma" class="font_weight_normal">Spiroplasma</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="spiroplasmaCodeTable" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="ciliate_nuclear" id="ciliate_nuclear" ischecked ="false" codeTable="FFLLSSSSYYQQCC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG"/>
+                                    <label for="ciliate_nuclear" class="font_weight_normal">Ciliate Nuclear</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="ciliateNuclearCodeTable" value="FFLLSSSSYYQQCC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="dasycladacean_nuclear" id="dasycladacean_nuclear" ischecked ="false" codeTable="FFLLSSSSYYQQCC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG"/>
+                                    <label for="dasycladacean_nuclear" class="font_weight_normal">Dasycladacean Nuclear</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="dasycladaceanNuclearCodeTable" value="FFLLSSSSYYQQCC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="hexamita_nuclear" id="hexamita_nuclear" ischecked ="false" codeTable="FFLLSSSSYYQQCC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG"/>
+                                    <label for="hexamita_nuclear" class="font_weight_normal">Hexamita Nuclear</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="hexamitaNuclearCodeTable" value="FFLLSSSSYYQQCC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="echinoderm_mitochondrial" id="echinoderm_mitochondrial" ischecked ="false" codeTable="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIIMTTTTNNNKSSSSVVVVAAAADDEEGGGG"/>
+                                    <label for="echinoderm_mitochondrial" class="font_weight_normal">Echinoderm Mitochondrial</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="echinodermMitochondrialCodeTable" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIIMTTTTNNNKSSSSVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="euplotid_nuclear" id="euplotid_nuclear" ischecked ="false" codeTable="FFLLSSSSYY**CCCWLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG"/>
+                                    <label for="euplotid_nuclear" class="font_weight_normal">Euplotid Nuclear</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="euplotidNuclearCodeTable" value="FFLLSSSSYY**CCCWLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="bacterial_plastid" id="bacterial_plastid" ischecked ="false" codeTable="FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG"/>
+                                    <label for="bacterial_plastid" class="font_weight_normal">Bacterial Plastid</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="bacterialPlastidCodeTable" value="FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="plant_plastid" id="plant_plastid" ischecked ="false" codeTable="FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG"/>
+                                    <label for="plant_plastid" class="font_weight_normal">Plant Plastid</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="plantPlastidCodeTable" value="FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="alternative_yeast_nuclear" id="alternative_yeast_nuclear" ischecked ="false" codeTable="FFLLSSSSYY**CC*WLLLSPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG"/>
+                                    <label for="alternative_yeast_nuclear" class="font_weight_normal">Alternative Yeast Nuclear</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="alternativeYeastNuclearCodeTable" value="FFLLSSSSYY**CC*WLLLSPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="ascidian_mitochondrial" id="ascidian_mitochondrial" ischecked ="false" codeTable="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIMMTTTTNNKKSSGGVVVVAAAADDEEGGGG"/>
+                                    <label for="ascidian_mitochondrial" class="font_weight_normal">Ascidian Mitochondrial</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="ascidianMitochondrialCodeTable" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIMMTTTTNNKKSSGGVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="flatworm_mitochondrial" id="flatworm_mitochondrial" ischecked ="false" codeTable="FFLLSSSSYYY*CCWWLLLLPPPPHHQQRRRRIIIMTTTTNNNKSSSSVVVVAAAADDEEGGGG"/>
+                                    <label for="flatworm_mitochondrial" class="font_weight_normal">Flatworm Mitochondrial</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="flatwormMitochondrialCodeTable" value="FFLLSSSSYYY*CCWWLLLLPPPPHHQQRRRRIIIMTTTTNNNKSSSSVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="blepharisma_macronuclear" id="blepharisma_macronuclear" ischecked ="false" codeTable="FFLLSSSSYY*QCC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG"/>
+                                    <label for="blepharisma_macronuclear" class="font_weight_normal">Blepharisma Macronuclear</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="blepharismaMacronuclearCodeTable" value="FFLLSSSSYY*QCC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="chlorophycean_mitochondrial" id="chlorophycean_mitochondrial" ischecked ="false" codeTable="FFLLSSSSYY*LCC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG"/>
+                                    <label for="chlorophycean_mitochondrial" class="font_weight_normal">Chlorophycean Mitochondrial</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="chlorophyceanMitochondrialCodeTable" value="FFLLSSSSYY*LCC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="trematode_mitochondrial" id="trematode_mitochondrial" ischecked ="false" codeTable="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIMMTTTTNNNKSSSSVVVVAAAADDEEGGGG"/>
+                                    <label for="trematode_mitochondrial" class="font_weight_normal">Trematode Mitochondrial</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="trematodeMitochondrialCodeTable" value="FFLLSSSSYY**CCWWLLLLPPPPHHQQRRRRIIMMTTTTNNNKSSSSVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="scenedesmus_obliquus_mitochondrial" id="scenedesmus_obliquus_mitochondrial" ischecked ="false" codeTable="FFLLSS*SYY*LCC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG"/>
+                                    <label for="scenedesmus_obliquus_mitochondrial" class="font_weight_normal">Scenedesmus Obliquus Mitochondrial</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="scenedesmusObliquusMitochondrialCodeTable" value="FFLLSS*SYY*LCC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG">-->
+                                    <input type="checkbox" name="codeName" value="thraustochytrium_mitochondrial" id="thraustochytrium_mitochondrial" ischecked ="false" codeTable="FF*LSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG"/>
+                                    <label for="thraustochytrium_mitochondrial" class="font_weight_normal">Thraustochytrium Mitochondrial</label> <br>
+                                    <!--<input type="hidden" name="codeTable" id="thraustochytriumMitochondrialCodeTable" value="FF*LSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG">-->
+                                </fieldset>
+                                <input type="hidden" id="codeData" codeName="Standard" codeTable="FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG">
+                                <input type="hidden" value="Submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div class="container-fluid">
+    <div id="genetic_code_view_table" class="boxed genetic_code_view_table" >
+            <div class="row">                                                      
+                <div class=" col-10">Select an Output Option</div>
+                <div class="col-2 padding-0"><button id="backBtn4" class="backBtn4"></button></div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <select class="genetic_code_view_option" id="genetic_code_view_option">
+                        <option value="EXexcelDisp" selected>Microsoft Excel/Open Office (Display)</option>
+                        <option value="EXexcelSave">Microsoft Excel/Open Office (Write to File)</option>
+                        <option value="EXcsvSave">Comma-delimited File, CSV (Write to File)</option>
+                        <option value="EXtext">Text Editor (Display)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row"></div>
+            <div class="boxed">
+                <div class="row">
+                    <div class=" col-12">Output Filename</div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <input type="text" id="genetic_code_view_option_filename" class="genetic_code_output_filename" name="genetic_code_view_option_filename" value="Result.xls"/>
+                    </div>
+                </div>
+                <div class="row add-bottom-margin"></div>
+                <div class="row">
+                    <div class="col-12">
+                        <label for="clustalw_select_genetic_code_export_table" class="font_weight_normal">Export</label>
+                        <input type="file" name="clustalw_select_genetic_code_export_table" id="clsutalw_select_genetic_code_export_table" ClustalWExportTable="false"/>          
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        
+            <div class="container-fluid">
+    <div id="genetic_code_output_page" class="boxed genetic_code_output_page" >
+            <div class="row">                                                      
+                <div class=" col-10">Select an Output Option</div>
+                <div class="col-2 padding-0"><button id="backBtn" class="backBtn"></button></div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <select class="genetic_code_output_option" id="genetic_code_output_option">
+                        <option value="EXexcelDisp" selected>Microsoft Excel/Open Office (Display)</option>
+                        <option value="EXexcelSave">Microsoft Excel/Open Office (Write to File)</option>
+                        <option value="EXcsvSave">Comma-delimited File, CSV (Write to File)</option>
+                        <option value="EXtext">Text Editor (Display)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="boxed">
+                <div class="row">
+                    <div class=" col-12">Output Filename</div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <input type="text" id="genetic_code_output_filename" class="genetic_code_output_filename" name="genetic_code_output_filename" value="Result.xls"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label for="clustalw_select_genetic_code_export_statistics" class="font_weight_normal">Export</label>
+                        <input type="file" name="clustalw_select_genetic_code_export_statistics" id="clustalw_select_genetic_code_export_statistics" ClustalWExportStats="false"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        
+    <div class="container">
+    <div id="codon_table_page" class="codon_table_page boxed">
+            <div class="row">
+                <div class="col-2 codon_name_label ">Name</div>
+                <div class="col-8">
+                    <form id="mainform" method="post" action="">
+                    <input type="text" id="genetic_code_title" class="genetic_code_title" name="genetic_code_title" placeholder="Enter Genetic Code Name"/>
+                    </form>
+                </div>
+                <div class="col-2 padding-0"><button id="backBtn2" class="backBtn2"></button></div>
+                </div>
+            <div id="box">
+            <table id="codon_table">
+                <span class=" vertical">1st Position</span>
+                <span class=" col-offset-4">2nd Position</span>
+                <tr class="boxed">
+                    <th scope="col"></th>
+                    <th scope="col" >U</th>
+                    <th scope="col" >C</th>
+                    <th scope="col" >A</th>
+                    <th scope="col" >G</th>
+                    <th scope="col"></th>
+                    <th scope="col" class="vertical2">3rd Position</th>
+                </tr>
+                <colgroup>
+                    <col span="1" class="boxed">
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col span="1" class="boxed">
+                </colgroup>
+                <tr id="table_row">
+                    <th row>U</th>
+                    <td>
+                        <select class="select_codon" id="codon00">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option selected>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon01">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option selected>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon02">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option selected>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon03">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option selected>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">U</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="codon10">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option selected>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon11">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option selected>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon12">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option selected>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon13">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option selected>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">C</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="codon20">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option selected>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon21">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option selected>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon22">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon23">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option selected>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">A</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="codon30">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option selected>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon31">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option selected>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon32">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon33">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option selected>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">G</th> 
+                </tr>
+                <tr>
+                    <th scope="row">C</th>
+                    <td>
+                        <select class="select_codon" id="codon40">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option selected>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon41">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option selected>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon42">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option selected>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon43"> 
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option selected>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">U</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="codon50">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option selected>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon51">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option selected>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon52">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option selected>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon53">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option selected>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">C</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="codon60">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option selected>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon61">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option selected>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon62">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option selected>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon63">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option selected>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">A</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="codon70">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option selected>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon71">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option selected>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon72">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option selected>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon73">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option selected>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">G</th> 
+                </tr>
+                <tr>
+                    <th scope="row">A</th>
+                    <td>
+                        <select class="select_codon" id="codon80">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option selected>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon81">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option selected>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon82">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option selected>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon83">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option selected>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">U</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="codon90">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option selected>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon91">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option selected>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon92">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option selected>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon93">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option selected>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">C</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="codon100">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option selected>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon101">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option selected>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon102"> 
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option selected>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon103">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">A</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="codon110">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option selected>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon111">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option selected>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon112">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option selected>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon113">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">G</th> 
+                </tr>
+                <tr>
+                    <th scope="row">G</th>
+                    <td>
+                        <select class="select_codon" id="codon120">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option selected>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon121">
+                            <option>***</option>
+                            <option selected>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon122">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option selected>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon123">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option selected>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">U</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="codon130">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option selected>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon131">
+                            <option>***</option>
+                            <option selected>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon132">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option selected>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon133">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option selected>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">C</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="codon140">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option selected>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon141">
+                            <option>***</option>
+                            <option selected>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon142">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option selected>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon143">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option selected>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">A</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="codon150">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option selected>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon151">
+                            <option>***</option>
+                            <option selected>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon152">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option selected>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="codon153">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option selected>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">G</th> 
+                </tr>
+            </table>
+            </div>
+    </div>
+        </div>
+        </div>
+        </div>
+    </body>
+</html>

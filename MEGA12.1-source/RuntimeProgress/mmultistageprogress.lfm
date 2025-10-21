@@ -1,0 +1,181 @@
+object MultiStageProgressForm: TMultiStageProgressForm
+  Left = 681
+  Height = 251
+  Top = 236
+  Width = 619
+  BorderIcons = []
+  Caption = 'Progress'
+  ClientHeight = 251
+  ClientWidth = 619
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Tahoma'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poScreenCenter
+  LCLVersion = '2.0.2.0'
+  object GroupBox1: TGroupBox
+    Left = 0
+    Height = 116
+    Top = 0
+    Width = 619
+    Align = alTop
+    Caption = 'OVERALL'
+    ClientHeight = 95
+    ClientWidth = 615
+    TabOrder = 0
+    object OverallProgressPanel: TPanel
+      Left = 0
+      Height = 25
+      Top = 0
+      Width = 615
+      Align = alTop
+      BevelOuter = bvNone
+      ClientHeight = 25
+      ClientWidth = 615
+      TabOrder = 0
+      object OverallProgressLabel: TLabel
+        Left = 40
+        Height = 16
+        Top = 3
+        Width = 19
+        Alignment = taRightJustify
+        Caption = '0%'
+        ParentColor = False
+      end
+      object OverallProgressBar: TProgressBar
+        Left = 71
+        Height = 20
+        Top = 0
+        Width = 540
+        Anchors = [akTop, akLeft, akRight]
+        Position = 60
+        Smooth = True
+        TabOrder = 0
+      end
+    end
+    object OverallStatusPanel: TPanel
+      Left = 0
+      Height = 70
+      Top = 25
+      Width = 615
+      Align = alClient
+      BevelOuter = bvNone
+      ClientHeight = 70
+      ClientWidth = 615
+      TabOrder = 1
+      object OverallProgressGrid: TStringGrid
+        Left = 3
+        Height = 70
+        Top = 1
+        Width = 608
+        Anchors = [akTop, akLeft, akRight]
+        ColCount = 2
+        FixedRows = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine]
+        RowCount = 2
+        ScrollBars = ssNone
+        TabOrder = 0
+        TabStop = False
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -13
+        TitleFont.Name = 'Tahoma'
+        OnDrawCell = OverallProgressGridDrawCell
+      end
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 0
+    Height = 95
+    Top = 116
+    Width = 619
+    Align = alTop
+    Caption = 'CURRENT OPERATION'
+    ClientHeight = 74
+    ClientWidth = 615
+    TabOrder = 1
+    object CurrentOpProgressPanel: TPanel
+      Left = 0
+      Height = 28
+      Top = 0
+      Width = 615
+      Align = alTop
+      BevelOuter = bvNone
+      ClientHeight = 28
+      ClientWidth = 615
+      TabOrder = 0
+      object CurrentOpProgressLabel: TLabel
+        Left = 40
+        Height = 16
+        Top = 11
+        Width = 19
+        Alignment = taRightJustify
+        Caption = '0%'
+        ParentColor = False
+      end
+      object CurrentOpProgressBar: TProgressBar
+        Left = 71
+        Height = 20
+        Top = 4
+        Width = 540
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 0
+      end
+    end
+    object CurrentOpStatusPanel: TPanel
+      Left = 0
+      Height = 46
+      Top = 28
+      Width = 615
+      Align = alClient
+      BevelOuter = bvNone
+      ClientHeight = 46
+      ClientWidth = 615
+      TabOrder = 1
+      object CurrentOpProgressGrid: TStringGrid
+        Left = 3
+        Height = 36
+        Top = 7
+        Width = 608
+        Anchors = [akTop, akLeft, akRight]
+        ColCount = 2
+        FixedRows = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine]
+        RowCount = 1
+        ScrollBars = ssNone
+        TabOrder = 0
+        TabStop = False
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -13
+        TitleFont.Name = 'Tahoma'
+        OnDrawCell = CurrentOpProgressGridDrawCell
+      end
+    end
+  end
+  object CancelButton: TBitBtn
+    Left = 515
+    Height = 38
+    Top = 211
+    Width = 94
+    Anchors = [akRight, akBottom]
+    Cancel = True
+    Caption = 'CANCEL'
+    Kind = bkCancel
+    ModalResult = 2
+    OnClick = CancelButtonClick
+    TabOrder = 2
+  end
+  object OverallProgressTimer: TTimer
+    OnTimer = OverallProgressTimerTimer
+    left = 496
+    top = 88
+  end
+  object MarqueeTimer: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = MarqueeTimerTimer
+    left = 480
+    top = 16
+  end
+end

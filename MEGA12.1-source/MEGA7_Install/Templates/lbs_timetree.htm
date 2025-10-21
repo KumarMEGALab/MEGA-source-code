@@ -1,0 +1,59 @@
+<HTML>
+<HEAD><TITLE>Maximum Likelihood</TITLE>
+<style>{TLegendGenerator.Style}</style>
+</HEAD>
+
+<BODY>
+
+  <SPAN class="figureTitle">
+    DEPRECATED - Divergence times by Little Bootstraps method
+  </span>
+
+<br>
+
+<div id ="content">
+	{if TLegendGenerator.AnalyzeUserTree = True}
+	 The user-specified tree topology was analyzed
+	{else}
+	 The evolutionary history was inferred
+	{endif}
+	by using the Little Bootstraps [{TLegendGenerator.LittleBootstrapsCitation:ExpandCitation}] algorithm and the {TTreePack.TreeMethodName} method and
+	{TAnalysisInfo.DistModelName} model [{TDistPack.MethodCitation:ExpandCitation}].
+	{if TLegendGenerator.IsBlensTimingMethod = True}
+	{if TTreeBox.NumCalibrations > 0} Divergence {else} Relative {endif} time estimates were obtained by applying the RelTime method [{TLegendGenerator.ReltimeCitation:ExpandCitation}] [{TLegendGenerator.ReltimeCitation2:ExpandCitation}]
+	to the {if TLegendGenerator.InferTree = True} inferred {else} user-supplied {endif} topology using the branch lengths and variance of branch lengths estimated
+	using the Little Bootstraps algorithm.
+	{else}
+	{if TTreeBox.NumCalibrations > 0} Divergence {else} Relative {endif} time estimates were obtained by applying the RelTime method [{TLegendGenerator.ReltimeCitation:ExpandCitation}] [{TLegendGenerator.ReltimeCitation2:ExpandCitation}]
+	to each bootstrap replicate and taking the mean time estimate for each partition in the tree.
+	{endif}
+	{if TAnalysisInfo.NumSubSamples = 1}
+	The variance for time estimates was calculated using 1 sub-sample with {TAnalysisInfo.NumRepsPerSubSample} replicates and {TAnalysisInfo.PercentSitesPerSubSample}% of unique site patterns.
+	{else}
+	The variance for time estimates was calculated using {TAnalysisInfo.NumSubSamples} sub-samples with {TAnalysisInfo.NumRepsPerSubSample} reps per sub-sample and {TAnalysisInfo.PercentSitesPerSubSample} % of unique site patterns.
+	{endif}
+	{if TTreeBox.ShowHeightErrBar = True}
+	Bars around each node represent 95% confidence intervals which were computed using the method described in Sharma and Kumar (2021) [{TLegendGenerator.LittleBootstrapsCitation:ExpandCitation}].
+	{endif}		
+	Times were not estimated for outgroup nodes because the Reltime method uses evolutionary rates from the ingroup to calculate divergence times and does not 
+	assume that evolutionary rates in the ingroup clade apply to the outgroup.
+	{if TLegendGenerator.GammaPara = 'N/A'}
+	{else}
+	 A discrete Gamma distribution was used to model evolutionary rate differences
+	 among sites ({TLegendGenerator.NoOfGCats} categories (+<i>G</i>,
+	 parameter = {TLegendGenerator.GammaPara})).
+	{endif}
+
+	{if TLegendGenerator.PropOfInvariant = 'N/A'}
+	{else}
+	The rate variation model allowed for some sites to be evolutionarily
+	invariable ([+<i>I</i>], {TLegendGenerator.PropOfInvariant}% sites).
+	{endif} 
+
+	{IncludeExternalFile=Data_Subset_Template.htm}
+
+</div>
+<br><br>
+</body>
+</html>
+

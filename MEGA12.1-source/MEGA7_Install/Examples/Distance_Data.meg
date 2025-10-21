@@ -1,0 +1,28 @@
+#mega
+!Title: Concatenated Files;
+!Format DataType=Distance DataFormat=LowerLeft NTaxa=6;
+!Description
+  No. of Taxa : 20
+  No. of Groups : 6
+  Gaps/Missing data : Pairwise Deletion
+  Codon Positions : 1st+2nd+3nd+Noncoding
+  Distance method : Nucleotide: Tamura-Nei  [Pairwise distances]
+  No. of Sites : 1369989
+  d : Estimate
+;
+
+[1] #Rodent
+[2] #Primate
+[3] #Lagomorpha
+[4] #Artiodactyla
+[5] #Carnivora
+[6] #Perissodactyla
+
+[       1     2     3     4     5     6 ]
+[1]        
+[2]  0.514       
+[3]  0.535 0.436       
+[4]  0.530 0.388 0.418       
+[5]  0.521 0.353 0.417 0.345       
+[6]  0.500 0.331 0.402 0.327 0.349       
+

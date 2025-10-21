@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>M7: Exporting Sequence Data</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>       
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script> 
+    <script type="text/javascript" src="js/select2.min.js"></script>
+    <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    <!--Bootstrap 3 Fallback-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!--Bootstrap 4-->
+    <link href="css/bs4/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/default.css" rel="stylesheet" type="text/css" />
+      
+    <script>
+        $(document).ready(function () {
+            $('#mainform').validate({
+                rules: {
+                    sites_per_line: {
+                        required: true,
+                        number: true,
+                        range: [0, 500000000]
+                    }
+                },
+                submitHandler: function (form) {
+                    $('#is_validated').attr("value", "true");
+                }
+            });
+            var spinner = $('#sites_per_line').spinner({
+                min: 0,
+                max: 500000000,
+                step: 10,
+                spin: function (event, ui) {
+                    $(this).val() === ui.value;
+                }
+            });
+            spinner.spinner("value", 80);
+            $('.checkbox').checkboxradio({
+                icon: false
+            });
+            $(':checkbox').change(function () {
+                var checkbox = $(this);
+				var cbox_id = $(this).attr('id');
+                if (this.checked) {
+                $(this).attr('ischecked', true);						
+                if (cbox_id == 'is_interleaved') {
+                    $("#seqdata_export_site_numbers option[value='for Each Site']").prop("disabled", false);
+                    $("#seqdata_export_site_numbers").select2({
+                            minimumResultsForSearch: Infinity
+                    });							
+                }
+				else if (cbox_id == 'full_codons') {
+					$('#codon_positions').children().attr("disabled", true);
+				}
+            } else {
+                $(this).attr('ischecked', false);
+                if (cbox_id == 'is_interleaved') {							
+                    var site_nums = $("#seqdata_export_site_numbers").val();
+                    if (site_nums == 'for Each Site') {
+                            $("#seqdata_export_site_numbers").val("At The End Of Line");
+                            $("#seqdata_export_site_numbers").trigger('change');
+                    }
+                    $("#seqdata_export_site_numbers option[value='for Each Site']").prop("disabled", true);
+                    $("#seqdata_export_site_numbers").select2({
+                            minimumResultsForSearch: Infinity
+                    });								
+                }
+				else if (cbox_id == 'full_codons') {
+					var can_choose_bases = $('#is_choose_bases').val();
+					if (can_choose_bases == 'true') {			
+						$('#codon_positions').children().attr("disabled", false);
+					};
+				}
+            }
+            });
+            $("#seqdata_export_format").select2({
+                minimumResultsForSearch: Infinity
+            });
+            $("#seqdata_export_format").on('select2:select', function(e) {
+            var selection = e.params.data;
+            var t = selection.text;
+            if (t === 'Fasta') {
+                    $("#is_interleaved").prop("checked", false);
+                    $("#is_interleaved").prop("disabled", true);
+                    $("#seqdata_export_site_numbers").val("None");
+                    $("#seqdata_export_site_numbers").trigger('change');
+                    $("#seqdata_export_site_numbers").prop("disabled", true);						
+            }
+            else if ((t === 'Excel Workbook (.xlsx 2007+)') || (t === 'Excel Workbook (.xls all versions)') || (t === 'Open/Libre Office Workbook (.ods)')) {
+                    $("#seqdata_export_site_numbers").prop("disabled", false);						
+            }
+            else {
+                    $("#is_interleaved").prop("disabled", false);
+                    $("#seqdata_export_site_numbers").prop("disabled", false);
+            }
+            });
+            $("#seqdata_export_site_numbers").select2({
+                minimumResultsForSearch: Infinity
+            });
+            $("#seqdata_export_gap_treatment").select2({
+                minimumResultsForSearch: Infinity
+            });
+            $("#seqdata_export_included_sites").select2({
+                minimumResultsForSearch: Infinity
+            });
+            //MEGA_JS_TEMPLATE_PLACEHOLDER
+            $('select').trigger("change");
+            $.validator.methods.range = function (value, element, param) {
+                var globalizedValue = value.replace(",", ".");
+                return this.optional(element) || (globalizedValue >= param[0] && globalizedValue <= param[1]);
+            };
+            $.validator.methods.number = function (value, element) {
+                return this.optional(element) || /^-?(?:\d+|\d{1,3}(?:[\s\.,]\d{3})+)(?:[\.,]\d+)?$/.test(value);
+            };
+        });
+    </script>
+  </head>
+  
+  <body>        
+    <input type="hidden" name="is_validated" id="is_validated" value="false"/>
+    <input type="hidden" name="is_nuc_data" id="is_nuc_data" value="false"/>
+    <input type="hidden" name="is_choose_bases" id="is_choose_bases" value="true"/>
+    <div class="container-fluid">
+      <form id="mainform">
+        <div class="boxed"> 
+          <div class="row">
+            <div class="col-12">
+              <div class="main-heading subtract-left-margin">Title</div>
+            </div>
+            <div class="col-12">
+              <input type="text" id="seqdata_export_title" class="w-100 seqdata_export_title padding-0" name="seqdata_export_title"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="main-heading subtract-left-margin">Description</div>
+            </div>
+            <div class="col-12">
+              <textarea rows="2" class="w-100 seqdata_export_description padding-0" id="seqdata_export_description" name="seqdata_export_description"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="boxed">
+          <div class="row">
+            <div class="col-12">
+              <div class="main-heading subtract-left-margin">Format</div>
+            </div>
+            <div class="col-12">
+              <select name="seqdata_export_format" id="seqdata_export_format" class="w-100">
+                <option value="MEGA">MEGA</option>
+                <option value="Nexus (PAUP 4.0)">Nexus (PAUP 4.0)</option>
+                <option value="Nexus (PAUP 3.0/MacClade)">Nexus (PAUP 3.0/MacClade)</option>
+                <option value="Phylip 3.0">Phylip 3.0</option>
+                <option value="Fasta">Fasta</option>
+                <option value="Excel Workbook (.xlsx 2007+)">Excel Workbook (.xlsx 2007+)</option>
+                <option value="Excel Workbook (.xls all versions)">Excel Workbook (.xls all versions)</option>
+                <option value="Open/Libre Office Workbook (.ods)">Open/Libre Office Workbook (.ods)</option>
+                <option value="CSV (Comma Separated Values)">CSV (Comma Separated Values)</option>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <div class="main-heading subtract-left-margin">Writing Site Numbers</div>
+            </div>
+            <div class="col-12">
+              <select name="seqdata_export_site_numbers" id="seqdata_export_site_numbers" class="w-100">
+                <option value="None">None</option>
+                <option value="for Each Site">for Each Site</option>
+                <option value="At The End Of Line">At The End Of Line</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+        <div class="boxed">
+          <div class="row">
+            <div class="col-12">
+              <div class="d-flex align-items-center px-2 my-2">
+                <label>Sites per line</label>
+                <input id="sites_per_line" name="sites_per_line"> 
+                <fieldset>
+                  <input type="checkbox" name="is_interleaved" value="interleave_output" id="is_interleaved"  ischecked="true" checked />
+                  <label for="is_interleaved" class="ml-2">Interleaved Output</label>
+                </fieldset>
+              </div>
+            </div>
+            <div class="col-12 d-flex">
+              <label id="sites_per_line-error" class="error" for="sites_per_line"></label>
+            </div>
+            <div class="col-12">
+              <div class="main-heading subtract-left-margin">Include Codon Positions</div>
+            </div>
+            <div class="col-12">
+              <div class="d-flex" id="codon_positions">             
+                <input type="checkbox" name="first_position" value="first_position" id="first_position" ischecked="true" checked />
+                <label for="first_position" class="">1st</label>
+                <input type="checkbox" name="second_position" value="second_position" id="second_position" ischecked="true" checked/>
+                <label for="second_position" class="ml-2">2nd</label>
+                <input type="checkbox"  name="third_position" value="third_position" id="third_position" ischecked="true" checked/>
+                <label for="third_position" class="ml-2">3rd</label>
+                <input type="checkbox" name="noncoding_positions" value="noncoding_positions" id="noncoding_positions" ischecked="true" checked/>
+                <label for="noncoding_positions" class="ml-2">Non-coding</label>
+              </div>
+			<div class="d-flex">
+				</br>
+				<input type="checkbox" name="full_codons" value="full_codons" id="full_codons" ischecked="false" />
+                <label for="full_codons" class="">Keep Full Codons</label>
+			</div>			  
+            </div>
+          </div>
+        </div> 
+
+        <div class="boxed">
+          <div class="row">
+            <div class="col-12">
+              <div class="main-heading subtract-left-margin">Missing Data and Alignment Gaps</div>
+            </div>
+            <div class="col-12">
+              <select name="seqdata_export_gap_treatment" id="seqdata_export_gap_treatment" class="w-100">
+                <option value="Include Sites With Missing/Ambiguous Data And Gaps">Include Sites With Missing/Ambiguous Data And Gaps</option>
+                <option value="Exclude Sites With Missing/Ambiguous Data And Gaps">Exclude Sites With Missing/Ambiguous Data And Gaps</option>
+                <option value="Exclude Sites With Missing/Ambiguous Data Only">Exclude Sites With Missing/Ambiguous Data Only</option>
+                <option value="Exclude Sites With Alignment Gaps Only">Exclude Sites With Alignment Gaps Only</option>
+              </select>
+            </div>
+          </div>
+        </div>   
+         
+        <div class="boxed">
+          <div class="row" id="sites_to_include_box">
+            <div class="col-12">
+              <div class="main-heading subtract-left-margin">Selected Sites to Include</div>
+            </div>
+            <div class="col-12">
+              <select name="seqdata_export_included_sites" id="seqdata_export_included_sites" class="w-100">
+              <option value="All Sites">All Sites</option>
+              <option value="Only Highlighted Sites">Only Highlighted Sites</option>
+              <option value="Only Un-highlighted Sites">Only Un-highlighted Sites</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </body>
+</html>

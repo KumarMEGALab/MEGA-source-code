@@ -1,0 +1,21 @@
+object TimetreeCalibrationDlg: TTimetreeCalibrationDlg
+  Left = 585
+  Height = 396
+  Top = 248
+  Width = 590
+  BorderIcons = []
+  BorderStyle = bsSizeToolWin
+  Caption = 'TimetreeCalibrationDlg'
+  ClientHeight = 396
+  ClientWidth = 590
+  OnCreate = FormCreate
+  LCLVersion = '2.2.6.0'
+  object ProgressBar: TProgressBar
+    Left = 0
+    Height = 10
+    Top = 386
+    Width = 590
+    Align = alBottom
+    TabOrder = 0
+  end
+end

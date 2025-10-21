@@ -1,0 +1,171 @@
+object InputDataOptionsDlg: TInputDataOptionsDlg
+  Left = 504
+  Height = 222
+  Top = 260
+  Width = 376
+  BorderIcons = []
+  Caption = 'Input Data'
+  ClientHeight = 222
+  ClientWidth = 376
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnResize = FormResize
+  Position = poOwnerFormCenter
+  SessionProperties = 'DataTypeLBx.ItemIndex;GapSymEdit.Text;IdenticalSymEdit.Text;MissingSymEdit.Text;MatrixRdGp.ItemIndex'
+  LCLVersion = '2.2.4.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 45
+    Top = 177
+    Width = 376
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 45
+    ClientWidth = 376
+    TabOrder = 0
+    object ToolBar1: TToolBar
+      Left = 8
+      Height = 30
+      Top = 7
+      Width = 358
+      Align = alNone
+      AutoSize = True
+      ButtonHeight = 30
+      ButtonWidth = 115
+      Caption = 'ToolBar1'
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      HotImages = ImageForm.DlgButtonsHover
+      Images = ImageForm.DlgButtons
+      TabOrder = 0
+      object ToolButton1: TToolButton
+        Left = 1
+        Top = 0
+        Action = HelpAction
+      end
+      object ToolButton2: TToolButton
+        Left = 120
+        Top = 0
+        Action = CancelAction
+      end
+      object ToolButton3: TToolButton
+        Left = 239
+        Top = 0
+        Action = OkAction
+      end
+    end
+  end
+  object Label1: TLabel
+    Left = 223
+    Height = 15
+    Top = 9
+    Width = 68
+    Caption = 'Missing Data'
+    ParentColor = False
+  end
+  object MissingSymEdit: TEdit
+    Left = 338
+    Height = 23
+    Top = 6
+    Width = 28
+    Alignment = taCenter
+    TabOrder = 1
+    Text = '?'
+  end
+  object Label2: TLabel
+    Left = 223
+    Height = 15
+    Top = 42
+    Width = 80
+    Caption = 'Alignment Gap'
+    ParentColor = False
+  end
+  object GapSymEdit: TEdit
+    Left = 338
+    Height = 23
+    Top = 38
+    Width = 28
+    Alignment = taCenter
+    TabOrder = 2
+    Text = '-'
+  end
+  object Label3: TLabel
+    Left = 223
+    Height = 15
+    Top = 76
+    Width = 88
+    Caption = 'Identical Symbol'
+    ParentColor = False
+  end
+  object IdenticalSymEdit: TEdit
+    Left = 338
+    Height = 23
+    Top = 71
+    Width = 28
+    Alignment = taCenter
+    TabOrder = 3
+    Text = '.'
+  end
+  object DataTypeLBx: TListBox
+    Left = 9
+    Height = 164
+    Top = 6
+    Width = 184
+    ExtendedSelect = False
+    Items.Strings = (
+      'Nucleotide Sequences'
+      'Protein Sequences'
+      'Pairwise Distance'
+    )
+    ItemHeight = 15
+    OnClick = DataTypeLBxClick
+    ScrollWidth = 180
+    TabOrder = 4
+  end
+  object LowerLeftBtn: TRadioButton
+    Left = 223
+    Height = 19
+    Top = 121
+    Width = 112
+    Caption = 'Lower Left Matrix'
+    Checked = True
+    TabOrder = 6
+    TabStop = True
+  end
+  object UpperRightBtn: TRadioButton
+    Left = 223
+    Height = 19
+    Top = 150
+    Width = 120
+    Caption = 'Upper Right Matrix'
+    TabOrder = 5
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    Left = 192
+    Top = 24
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 184
+    Top = 64
+    object OkAction: TAction
+      Caption = 'OkAction'
+      ImageIndex = 5
+      OnExecute = OkBtnClick
+      ShortCut = 16467
+    end
+    object CancelAction: TAction
+      Caption = 'CancelAction'
+      ImageIndex = 0
+      OnExecute = Image2Click
+      ShortCut = 27
+    end
+    object HelpAction: TAction
+      Caption = 'HelpAction'
+      ImageIndex = 8
+      OnExecute = Image1Click
+      ShortCut = 112
+    end
+  end
+end

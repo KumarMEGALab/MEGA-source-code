@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html><head>
+        <title>Sequence Name Option</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>       
+        <script type="text/javascript" src="js/jquery.validate.min.js"></script> 
+        <script type="text/javascript" src="js/select2.min.js"></script>
+        <!--Bootstrap 3 Fallback-->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!--Bootstrap 4-->
+        <link href="css/bs4/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/evol-colorpicker.css" rel="stylesheet" type="text/css"/>   
+        <link href="css/jquery.fontpicker.css" rel="stylesheet" type="text/css"/>
+        <link href="css/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/default.css" rel="stylesheet" type="text/css" />
+        <script>
+		   function filterSelectOptions() {
+                $("#seqname_first option:not(:first)")
+                .filter(function() {
+                    return $.trim(this.text).length === 0;
+                }).remove();
+                $("#seqname_second option:not(:first)")
+                .filter(function() {
+                    return $.trim(this.text).length === 0;
+                }).remove();
+                $("#seqname_third option:not(:first)")
+                .filter(function() {
+                    return $.trim(this.text).length === 0;
+                }).remove();
+                $("#seqname_fourth option:not(:first)")
+                .filter(function() {
+                    return $.trim(this.text).length === 0;
+                }).remove();		   
+		   }
+		   function getSelectOptions(str) {
+				var options = {minimumResultsForSearch: Infinity, width: 340, data: [{id:"empty",text:""}, {id:"species",text:str}, {id:"subspecies",text:$("#subspecies").val()}, {id:"strain",text:$("#strain").val()}, {id:"host",text:$("#host").val()}, {id:"senotype",text:$("#senotype").val()}, {id:"gene",text:$("#gene").val()}, {id:"allele",text:$("#allele").val()}, {id:"uids",text:$("#uids").val()}]};
+				return options;
+		   }
+		   function seqNameLabelString() {
+				var str = '';
+				$("select option:selected").each(function () {
+					str += $(this).text() + " ";
+					});
+					str = str.trimRight();		   
+					return str;
+		   }
+           $(document).ready(function () {
+                $.validator.addMethod("notEqualTo",
+                function(value, element, param) {
+                    var notEqual = true;
+                    value = $.trim(value);
+                    for (i = 0; i < param.length; i++) {
+                        if (value == $.trim($(param[i]).val())) { notEqual = false; }
+                    }
+                    $('#is_validated').attr("value", "true");
+                    return this.optional(element) || notEqual;
+                },
+                "Warning: Duplicate text!"
+                );
+                $('#mainform').validate({
+                    rules: {
+                        seqname_full_info: {
+                            required: true,
+                            minlength: 2
+                        },
+                        seqname_seq_label: {
+                            required: true,
+                            minlength: 2
+                        },
+                        seqname_first: {
+                            required: false,
+                            notEqualTo: ['#seqname_second', '#seqname_third', '#seqname_fourth']
+                        },
+                        seqname_second: {
+                            required: false,
+                            notEqualTo: ['#seqname_first', '#seqname_third', '#seqname_fourth']
+                        },
+                        seqname_third: {
+                            required: false,
+                            notEqualTo: ['#seqname_second', '#seqname_first', '#seqname_fourth']
+                        },
+                        seqname_fourth: {
+                            required: false,
+                            notEqualTo: ['#seqname_second', '#seqname_first', '#seqname_third'] 
+                        }
+                    },
+                    submitHandler: function (form) {
+                        $('#is_validated').attr("value", "true");
+                    }
+                });
+                $('select').on('change', function() { 
+                    $(this).valid();
+                });
+                $('.checkbox').checkboxradio({
+                    icon: false
+                });
+                $(':checkbox').change(function () {
+                    var checkbox = $(this);
+                    if (this.checked) {
+                        console.log('it is checked');
+                        $(this).attr('ischecked', true);
+                    } else {
+                        console.log('it is NOT checked');
+                        $(this).attr('ischecked', false);
+                    }
+                });
+                $("#main-container").click(function () {
+                    if (this.id !== 'seqname_first') {
+                        $("#seqname_first").hide();
+                    }
+                });
+				$("#seqname_use_initial").change(function() {
+					var str = "";
+					if (this.checked) {
+						str = $("#abbreviated_name").val();
+					}
+					else {
+						str = $("#full_name").val();
+					}					
+					var option1 = $("#seqname_first").val();
+					var option2 = $("#seqname_second").val();
+					var option3 = $("#seqname_third").val();
+					var option4 = $("#seqname_fourth").val();
+					var selectOptions = getSelectOptions(str);
+					$("#seqname_first").select2('destroy').empty().select2(selectOptions);
+					$("#seqname_second").select2('destroy').empty().select2(selectOptions);
+					$("#seqname_third").select2('destroy').empty().select2(selectOptions);
+					$("#seqname_fourth").select2('destroy').empty().select2(selectOptions);
+					filterSelectOptions();
+					$("#seqname_first").val(option1);
+					$("#seqname_first").trigger("change");
+					$("#seqname_second").val(option2);
+					$("#seqname_second").trigger("change");
+					$("#seqname_third").val(option3);
+					$("#seqname_third").trigger("change");
+					$("#seqname_fourth").val(option4);
+					$("#seqname_fourth").trigger("change");
+					str = seqNameLabelString();
+					if (str != '')
+						$("#seqname_seq_label").val(str);
+				});
+                $('#seqname_first').on('select2:select', function (e) {
+                    var str = seqNameLabelString();
+                    $("#seqname_seq_label").val(str);
+                    }).change();
+                 $('#seqname_second').on('select2:select', function (e) {
+                    var str = seqNameLabelString();
+                    $("#seqname_seq_label").val(str);
+                    }).change();
+                 $('#seqname_third').on('select2:select', function (e) {
+                    var str = seqNameLabelString();
+                    $("#seqname_seq_label").val(str);
+                    }).change();
+                 $('#seqname_fourth').on('select2:select', function (e) {
+                     var str = seqNameLabelString();
+                    $("#seqname_seq_label").val(str);
+                    }).change();
+                              
+                //MEGA_JS_TEMPLATE_PLACEHOLDER
+                
+				filterSelectOptions();
+            });
+        </script>
+
+    </head>
+    <body>
+        <input type="hidden" name="is_validated" id="is_validated" value="false">
+		<input type="hidden" name="abbreviated_name" id="abbreviated_name" value="">		
+		<input type="hidden" name="full_name" id="full_name" value="">		
+		<input type="hidden" name="subspecies" id="subspecies" value="">
+		<input type="hidden" name="strain" id="strain" value="">
+		<input type="hidden" name="host" id="host" value="">
+		<input type="hidden" name="senotype" id="senotype" value="">
+		<input type="hidden" name="gene" id="gene" value="">
+		<input type="hidden" name="allele" id="allele" value="">
+		<input type="hidden" name="uids" id="uids" value="">
+		
+        <div class="container-fluid" id="main-container">
+            <form id="mainform">
+                <div class="row add-top-margin"> </div>
+                <div class="col-12 boxed">
+                    <span class="section-label main-heading">First Word</span>
+                    <select class="col-12 mb-2" name="seqname_first" id="seqname_first" style="display: none;">
+                        <option></option>  
+                    </select>
+                    <input type="hidden" id="seqname_first_value" value="species">
+                    <br><br>
+                    <span class="section-label main-heading">Second Word</span>
+                    <select class="col-12 mb-2" name="seqname_second" id="seqname_second">
+                        <option></option>
+                    </select>
+                    <input type="hidden" id="seqname_second_value" value="species">
+                    
+                    <span class="section-label main-heading">Third Word</span>
+                    <select class="col-12 mb-2" name="seqname_third" id="seqname_third">
+                        <option></option>
+                    </select>
+                    <input type="hidden" id="seqname_third_value" value="species">
+                    
+                    <span class="section-label main-heading">Fourth Word</span>
+                    <select class="col-12 mb-2" name="seqname_fourth" id="seqname_fourth">
+                        <option></option>
+                    </select>
+                    <input type="hidden" id="seqname_fourth_value" value="species">
+                    <div class="col-12 px-0 mb-2">
+                        <fieldset>
+                            <input type="checkbox" name="seqname_use_initial" value="seqname_use_initial" id="seqname_use_initial" checked="false" ischecked="false">
+                            <label for="seqname_use_initial" class="font_weight_normal"> Use Initial for Genus Name</label>
+                        </fieldset>
+                    </div>
+                    <div class="col-12 section-label px-0 main-heading">Full Information</div>
+                    <textarea rows="2" class="col-12 seqname_full_info px-0 mb-2" id="seqname_full_info" name="seqname_full_info"></textarea>
+                    <div class="col-12 section-label px-0 main-heading">Sequence Label (manually editable)</div>
+                    <input class="col-12 seqname_seq_label px-0" id="seqname_seq_label" name="seqname_seq_label">
+                </div>
+            </form>
+        </div>
+</body></html>

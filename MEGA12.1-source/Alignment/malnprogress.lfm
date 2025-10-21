@@ -1,0 +1,97 @@
+object ClustalWProgressDlg: TClustalWProgressDlg
+  Left = 689
+  Height = 201
+  Top = 271
+  Width = 363
+  BorderIcons = []
+  Caption = 'ClustalW Progress'
+  ClientHeight = 201
+  ClientWidth = 363
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnResize = FormResize
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '2.2.4.0'
+  object PairwiseProgressBar: TProgressBar
+    Left = 33
+    Height = 20
+    Top = 62
+    Width = 300
+    Smooth = True
+    TabOrder = 0
+  end
+  object MultipleProgressBar: TProgressBar
+    Left = 33
+    Height = 20
+    Top = 132
+    Width = 300
+    Smooth = True
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 15
+    Height = 15
+    Top = 35
+    Width = 102
+    Caption = 'Pairwise Alignment'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 15
+    Height = 15
+    Top = 109
+    Width = 103
+    Caption = 'Multiple Alignment'
+    ParentColor = False
+  end
+  object TimeLabel: TLabel
+    Left = 0
+    Height = 20
+    Top = 0
+    Width = 363
+    Align = alTop
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Alignment by ClustalW (00:00:00)'
+    ParentColor = False
+  end
+  object ToolBar1: TToolBar
+    Left = 104
+    Height = 30
+    Top = 164
+    Width = 120
+    Align = alNone
+    AutoSize = True
+    ButtonHeight = 30
+    ButtonWidth = 115
+    Caption = 'ToolBar1'
+    EdgeInner = esNone
+    EdgeOuter = esNone
+    HotImages = ImageForm.DlgButtonsHover
+    Images = ImageForm.DlgButtons
+    TabOrder = 2
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 0
+      Action = CancelAction
+    end
+  end
+  object Timer1: TTimer
+    Enabled = False
+    OnTimer = Timer1Timer
+    Left = 208
+    Top = 88
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 244
+    Top = 47
+    object CancelAction: TAction
+      Caption = 'CancelAction'
+      ImageIndex = 0
+      OnExecute = CancelBtnClick
+    end
+  end
+end

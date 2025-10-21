@@ -1,0 +1,81 @@
+#mega
+!Title  Brown,W.M., Prager,E.M., Wang,A. and Wilson,A.C. (JME 18 225-239 (1982));
+!Format 
+    DataType=Nucleotide
+    Identical=. Missing=? Indel=-;
+
+[
+M. Nei and S. Kumar (2000) Molecular Evolution and Phylogenetics.  
+Oxford University Press. New York.
+Data for Example 8.1.
+]
+
+#Human
+aagcttcacc ggcgcagtca ttctcataat cgcccacgga cttacatcct cattactatt
+ctgcctagca aactcaaact acgaacgcac tcacagtcgc atcataatcc tctctcaagg
+acttcaaact ctactcccac taatagcttt ttgatgactt ctagcaagcc tcgctaacct
+cgccttaccc cccactatta acctactggg agaactctct gtgctagtaa ccacgttctc
+ctgatcaaat atcactctcc tacttacagg actcaacata ctagtcacag ccctatactc
+cctctacata tttaccacaa cacaatgggg ctcactcacc caccacatta acaacataaa
+accctcattc acacgagaaa acaccctcat gttcatacac ctatccccca ttctcctcct
+atccctcaac cccgacatca ttaccgggtt ttcctcttgt aaatatagtt taaccaaaac
+atcagattgt gaatctgaca acagaggctt acgacccctt atttaccgag aaagctcaca
+agaactgcta actcatgccc ccatgtctga caacatggct ttctcaactt ttaaaggata
+acagctatcc attggtctta ggccccaaaa attttggtgc aactccaaat aaaagtaata
+accatgcaca ctactataac caccctaacc ctgacttccc taattccccc catccttacc
+accctcgtta accctaacaa aaaaaactca tacccccatt atgtaaaatc cattgtcgca
+tccaccttta ttatcagtct cttccccaca acaatattca tgtgcctaga ccaagaagtt
+attatctcga actgacactg agccacaacc caaacaaccc agctctccct aagctt
+
+#Chimpanzee
+aagcttcacc ggcgcaatta tcctcataat cgcccacgga cttacatcct cattattatt
+ctgcctagca aactcaaatt atgaacgcac ccacagtcgc atcataattc tctcccaagg
+acttcaaact ctactcccac taatagcctt ttgatgactc ctagcaagcc tcgctaacct
+cgccctaccc cctaccatta atctcctagg ggaactctcc gtgctagtaa cctcattctc
+ctgatcaaat accactctcc tactcacagg attcaacata ctaatcacag ccctgtactc
+cctctacatg tttaccacaa cacaatgagg ctcactcacc caccacatta ataacataaa
+gccctcattc acacgagaaa atactctcat atttttacac ctatccccca tcctccttct
+atccctcaat cctgatatca tcactggatt cacctcctgt aaatatagtt taaccaaaac
+atcagattgt gaatctgaca acagaggctc acgacccctt atttaccgag aaagcttata
+agaactgcta attcatatcc ccatgcctga caacatggct ttctcaactt ttaaaggata
+acagccatcc gttggtctta ggccccaaaa attttggtgc aactccaaat aaaagtaata
+accatgtata ctaccataac caccttaacc ctaactccct taattctccc catcctcacc
+accctcatta accctaacaa aaaaaactca tatccccatt atgtgaaatc cattatcgcg
+tccaccttta tcattagcct tttccccaca acaatattca tatgcctaga ccaagaagct
+attatctcaa actggcactg agcaacaacc caaacaaccc agctctccct aagctt
+
+
+#Gorilla
+aagcttcacc ggcgcagttg ttcttataat tgcccacgga cttacatcat cattattatt
+ctgcctagca aactcaaact acgaacgaac ccacagccgc atcataattc tctctcaagg
+actccaaacc ctactcccac taatagccct ttgatgactt ctggcaagcc tcgccaacct
+cgccttaccc cccaccatta acctactagg agagctctcc gtactagtaa ccacattctc
+ctgatcaaac accacccttt tacttacagg atctaacata ctaattacag ccctgtactc
+cctttatata tttaccacaa cacaatgagg cccactcaca caccacatca ccaacataaa
+accctcattt acacgagaaa acatcctcat attcatgcac ctatccccca tcctcctcct
+atccctcaac cccgatatta tcaccgggtt cacctcctgt aaatatagtt taaccaaaac
+atcagattgt gaatctgata acagaggctc acaacccctt atttaccgag aaagctcgta
+agagctgcta actcataccc ccgtgcttga caacatggct ttctcaactt ttaaaggata
+acagctatcc attggtctta ggacccaaaa attttggtgc aactccaaat aaaagtaata
+actatgtacg ctaccataac caccttagcc ctaacttcct taattccccc tatccttacc
+accttcatca atcctaacaa aaaaagctca tacccccatt acgtaaaatc tatcgtcgca
+tccaccttta tcatcagcct cttccccaca acaatatttc tatgcctaga ccaagaagct
+attatctcaa gctgacactg agcaacaacc caaacaattc aactctccct aagctt
+
+#Orangutan
+aagcttcacc ggcgcaacca ccctcatgat tgcccatgga ctcacatcct ccctactgtt
+ctgcctagca aactcaaact acgaacgaac ccacagccgc atcataatcc tctctcaagg
+ccttcaaact ctactccccc taatagccct ctgatgactt ctagcaagcc tcactaacct
+tgccctacca cccaccatca accttctagg agaactctcc gtactaatag ccatattctc
+ttgatctaac atcaccatcc tactaacagg actcaacata ctaatcacaa ccctatactc
+tctctatata ttcaccacaa cacaacgagg tacacccaca caccacatca acaacataaa
+accttctttc acacgcgaaa ataccctcat gctcatacac ctatccccca tcctcctctt
+atccctcaac cccagcatca tcgctgggtt cgcctactgt aaatatagtt taaccaaaac
+attagattgt gaatctaata atagggcccc acaacccctt atttaccgag aaagctcaca
+agaactgcta actctcact-c catgtgtgac aacatggctt tctcagcttt taaaggataa
+cagctatccc ttggtcttag gatccaaaaa ttttggtgca actccaaata aaagtaacag
+ccatgtttac caccataact gccctcacct taacttccct aatccccccc attaccgcta
+ccctcattaa ccccaacaaa aaaaacccat acccccacta tgtaaaaacg gccatcgcat
+ccgcctttac tatcagcctt atcccaacaa caatatttat ctgcctagga caagaaacca
+tcgtcacaaa ctgatgctga acaaccaccc agacactaca actctcacta agctt
+

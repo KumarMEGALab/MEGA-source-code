@@ -1,0 +1,204 @@
+object MegaFontDialog: TMegaFontDialog
+  Left = 2891
+  Height = 411
+  Top = 244
+  Width = 398
+  BorderIcons = []
+  Caption = 'Font'
+  ClientHeight = 411
+  ClientWidth = 398
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '3.4.0.0'
+  object edtFont: TLabeledEdit
+    Left = 8
+    Height = 26
+    Top = 24
+    Width = 198
+    EditLabel.Height = 16
+    EditLabel.Width = 198
+    EditLabel.Caption = 'Font:'
+    TabOrder = 0
+    OnChange = edtFilterChange
+  end
+  object edtStyle: TLabeledEdit
+    Left = 222
+    Height = 26
+    Top = 24
+    Width = 100
+    EditLabel.Height = 16
+    EditLabel.Width = 100
+    EditLabel.Caption = 'Style:'
+    TabOrder = 1
+    OnChange = edtFilterChange
+  end
+  object edtSize: TLabeledEdit
+    Left = 336
+    Height = 26
+    Top = 24
+    Width = 52
+    EditLabel.Height = 16
+    EditLabel.Width = 52
+    EditLabel.Caption = 'Size:'
+    TabOrder = 2
+    OnChange = edtFilterChange
+  end
+  object lbFonts: TListBox
+    Left = 8
+    Height = 174
+    Top = 54
+    Width = 200
+    Anchors = [akTop, akLeft, akBottom]
+    ItemHeight = 0
+    TabOrder = 3
+    TopIndex = -1
+    OnClick = ListBoxSelectionChange
+  end
+  object lbStyles: TListBox
+    Left = 222
+    Height = 174
+    Top = 54
+    Width = 100
+    Anchors = [akTop, akLeft, akBottom]
+    Items.Strings = (
+      'Regular'
+      'Bold'
+      'Italic'
+      'Bold Italic'
+    )
+    ItemHeight = 22
+    TabOrder = 4
+    OnClick = ListBoxSelectionChange
+  end
+  object lbSizes: TListBox
+    Left = 336
+    Height = 174
+    Top = 54
+    Width = 52
+    Anchors = [akTop, akLeft, akBottom]
+    ItemHeight = 0
+    TabOrder = 5
+    TopIndex = -1
+    OnClick = ListBoxSelectionChange
+  end
+  object BottomPanel: TPanel
+    Left = 0
+    Height = 48
+    Top = 363
+    Width = 398
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 48
+    ClientWidth = 398
+    TabOrder = 6
+    object ToolBar1: TToolBar
+      Left = 70
+      Height = 30
+      Top = 8
+      Width = 239
+      Align = alNone
+      AutoSize = True
+      ButtonHeight = 30
+      ButtonWidth = 115
+      Caption = 'ToolBar1'
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      Images = ImageForm.DlgButtons
+      TabOrder = 0
+      object ToolButton1: TToolButton
+        Left = 1
+        Top = 0
+        Action = CancelAction
+      end
+      object ToolButton2: TToolButton
+        Left = 120
+        Top = 0
+        Action = SaveAction
+      end
+    end
+  end
+  object GroupBox1: TGroupBox
+    Left = 8
+    Height = 105
+    Top = 254
+    Width = 198
+    Anchors = [akLeft, akBottom]
+    Caption = 'Effects'
+    ClientHeight = 88
+    ClientWidth = 196
+    TabOrder = 7
+    object StrikethroughCheckbox: TCheckBox
+      Left = 8
+      Height = 22
+      Top = 9
+      Width = 108
+      Caption = 'Strikethrough'
+      TabOrder = 0
+      OnChange = CheckboxChange
+    end
+    object UnderlineCheckbox: TCheckBox
+      Left = 8
+      Height = 22
+      Top = 32
+      Width = 82
+      Caption = 'Underline'
+      TabOrder = 1
+      OnChange = CheckboxChange
+    end
+    object ColorButton: TColorButton
+      Left = 8
+      Height = 25
+      Top = 56
+      Width = 75
+      BorderWidth = 2
+      ButtonColorSize = 16
+      ButtonColor = clBlack
+      OnColorChanged = ColorButtonColorChanged
+    end
+    object ColorLabel: TLabel
+      Left = 94
+      Height = 16
+      Top = 61
+      Width = 32
+      Caption = 'Black'
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 222
+    Height = 105
+    Top = 254
+    Width = 166
+    Anchors = [akLeft, akRight, akBottom]
+    Caption = 'Sample'
+    ClientHeight = 88
+    ClientWidth = 164
+    TabOrder = 8
+    object SampleLabel: TLabel
+      Left = 40
+      Height = 16
+      Top = 32
+      Width = 60
+      Caption = 'AaBbYyZz'
+      WordWrap = True
+    end
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 160
+    Top = 24
+    object SaveAction: TAction
+      Caption = 'Ok'
+      Hint = 'Apply the current font settings'
+      ImageIndex = 5
+      OnExecute = SaveActionExecute
+      ShortCut = 16467
+    end
+    object CancelAction: TAction
+      Caption = 'CancelAction'
+      Hint = 'Discard changes'
+      ImageIndex = 0
+      OnExecute = CancelActionExecute
+      ShortCut = 27
+    end
+  end
+end

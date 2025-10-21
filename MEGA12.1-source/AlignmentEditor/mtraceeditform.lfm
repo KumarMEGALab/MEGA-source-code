@@ -1,0 +1,657 @@
+object TraceEditForm: TTraceEditForm
+  Left = 779
+  Height = 246
+  Top = 360
+  Width = 665
+  Caption = 'Trace Data Viewer/Editor'
+  ClientHeight = 226
+  ClientWidth = 665
+  Color = clBtnFace
+  Constraints.MinHeight = 246
+  Constraints.MinWidth = 665
+  Menu = MainMenu1
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnHelp = FormHelp
+  OnShow = FormShow
+  ParentFont = True
+  Position = poMainFormCenter
+  SessionProperties = 'ExportDlg.FileName;ExportDlg.InitialDir;FontDlg.HelpContext;FontDlg.MaxFontSize;FontDlg.MinFontSize;FontDlg.Name;OpenDialog1.FileName;OpenDialog1.InitialDir;OpenDlg.FileName;OpenDlg.InitialDir;PrintSetupDlg.Name;SaveDlg.FileName;SaveDlg.InitialDir'
+  ShowHint = True
+  LCLVersion = '2.2.4.0'
+  object Bevel1: TBevel
+    Left = 0
+    Height = 2
+    Top = 0
+    Width = 665
+    Align = alTop
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 31
+    Top = 2
+    Width = 665
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 31
+    ClientWidth = 665
+    Constraints.MaxHeight = 38
+    Constraints.MinHeight = 31
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 1
+    object ToolBar1: TToolBar
+      Left = 0
+      Height = 31
+      Top = 0
+      Width = 511
+      Align = alClient
+      AutoSize = True
+      ButtonHeight = 28
+      ButtonWidth = 28
+      Color = clWhite
+      DisabledImages = MegaForm.DisabledIcons
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      Images = MegaForm.NewIcons
+      ParentColor = False
+      TabOrder = 0
+      object ToolButton1: TToolButton
+        Left = 1
+        Top = 0
+        Action = ActionOpenNewWindow
+      end
+      object ToolButton2: TToolButton
+        Left = 29
+        Top = 0
+        Action = ActionOpen
+      end
+      object ToolButton3: TToolButton
+        Left = 57
+        Top = 0
+        Action = ActionSave
+      end
+      object ToolButton4: TToolButton
+        Left = 85
+        Top = 0
+        Action = ActionPrint
+      end
+      object ToolButton5: TToolButton
+        Left = 113
+        Top = 0
+        Action = ActionSend
+      end
+      object ToolButton6: TToolButton
+        Left = 141
+        Height = 28
+        Top = 0
+        Caption = 'ToolButton6'
+        Enabled = False
+        ImageIndex = 3
+        Style = tbsSeparator
+      end
+      object ToolButton7: TToolButton
+        Left = 149
+        Top = 0
+        Action = ActionUndo
+      end
+      object ToolButton8: TToolButton
+        Left = 177
+        Top = 0
+        Action = ActionMaskLeft
+      end
+      object ToolButton9: TToolButton
+        Left = 205
+        Top = 0
+        Action = ActionMaskRight
+      end
+      object ToolButton10: TToolButton
+        Left = 233
+        Top = 0
+        Action = ActionReverse
+      end
+      object ToolButton11: TToolButton
+        Left = 261
+        Height = 28
+        Top = 0
+        Caption = 'ToolButton11'
+        ImageIndex = 9
+        Style = tbsSeparator
+      end
+      object ToolButton12: TToolButton
+        Left = 269
+        Top = 0
+        Action = ActionFind
+      end
+      object ToolButton13: TToolButton
+        Left = 297
+        Top = 0
+        Action = ActionFindNext
+      end
+      object ToolButton14: TToolButton
+        Left = 325
+        Top = 0
+        Action = ActionFindPrev
+      end
+      object ToolButton15: TToolButton
+        Left = 353
+        Top = 0
+        Action = ActionNextN
+      end
+      object ToolButton16: TToolButton
+        Left = 381
+        Height = 28
+        Top = 0
+        Caption = 'ToolButton16'
+        ImageIndex = 13
+        Style = tbsSeparator
+      end
+      object ToolButton17: TToolButton
+        Left = 389
+        Top = 0
+        Action = ActionFindInFile
+      end
+      object ToolButton18: TToolButton
+        Left = 417
+        Top = 0
+        Action = ActionBLAST
+      end
+    end
+    object HorzTrackBar: TTrackBar
+      Left = 511
+      Height = 31
+      Hint = 'Control wave length'
+      Top = 0
+      Width = 123
+      Min = 1
+      OnChange = HorzTrackBarChange
+      PageSize = 1
+      Position = 5
+      TabStop = False
+      Align = alRight
+      Color = clWhite
+      Constraints.MaxWidth = 151
+      Constraints.MinWidth = 123
+      ParentColor = False
+      TabOrder = 1
+    end
+    object Panel1: TPanel
+      Left = 634
+      Height = 31
+      Top = 0
+      Width = 31
+      Align = alRight
+      BevelOuter = bvNone
+      Color = clWhite
+      Constraints.MaxHeight = 38
+      Constraints.MaxWidth = 38
+      Constraints.MinHeight = 31
+      Constraints.MinWidth = 31
+      ParentColor = False
+      TabOrder = 2
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 24
+    Top = 202
+    Width = 665
+    Constraints.MaxHeight = 31
+    Constraints.MinHeight = 24
+    Panels = <>
+    UseSystemFont = False
+  end
+  object Panel2: TPanel
+    Left = 634
+    Height = 169
+    Top = 33
+    Width = 31
+    Align = alRight
+    BevelOuter = bvNone
+    ClientHeight = 169
+    ClientWidth = 31
+    Color = clWhite
+    Constraints.MaxWidth = 38
+    Constraints.MinWidth = 31
+    ParentColor = False
+    TabOrder = 2
+    object VertTrackBar: TTrackBar
+      Left = 0
+      Height = 123
+      Hint = 'Control wave height'
+      Top = 0
+      Width = 31
+      Min = 1
+      OnChange = VertTrackBarChange
+      Orientation = trVertical
+      PageSize = 1
+      Position = 9
+      TabStop = False
+      TickMarks = tmTopLeft
+      Align = alTop
+      Constraints.MaxHeight = 151
+      Constraints.MinHeight = 123
+      TabOrder = 0
+    end
+  end
+  object OpenDlg: TOpenDialog
+    Filter = 'ABI File (*.abi, *.ab1)|*.abi;*.ab1|Staden File (*.scf)|*.scf|All Files (*.*)|*.*'
+    Left = 344
+    Top = 56
+  end
+  object SaveDlg: TSaveDialog
+    Filter = 'SCF files (*.scf)|*.scf|All files (*.*)|*.*'
+    Options = [ofOverwritePrompt, ofHideReadOnly, ofEnableSizing]
+    Left = 424
+    Top = 88
+  end
+  object ActionList1: TActionList
+    Images = MegaForm.NewIcons
+    Left = 208
+    Top = 104
+    object ActionUndo: TAction
+      Category = 'Edit'
+      Caption = 'Undo'
+      Enabled = False
+      Hint = 'Undo the last edit action'
+      ImageIndex = 45
+      OnExecute = ActionUndoExecute
+      OnUpdate = ActionUpdate
+      ShortCut = 16474
+    end
+    object ActionFind: TAction
+      Category = 'Search'
+      Caption = 'Find'
+      Enabled = False
+      Hint = 'Find the first position of the specified sequence.'
+      ImageIndex = 57
+      OnExecute = ActionFindExecute
+      OnUpdate = ActionUpdate
+      ShortCut = 16454
+    end
+    object ActionFindNext: TAction
+      Category = 'Search'
+      Caption = 'Find Next'
+      Enabled = False
+      Hint = 'Find the next specified sequence from cursor'
+      ImageIndex = 156
+      OnExecute = ActionFindNextExecute
+      OnUpdate = ActionUpdate
+      ShortCut = 114
+    end
+    object ActionFindPrev: TAction
+      Category = 'Search'
+      Caption = 'Find Previous'
+      Enabled = False
+      Hint = 'Find the previous specified sequence from cursor'
+      ImageIndex = 157
+      OnExecute = ActionFindPrevExecute
+      OnUpdate = ActionUpdate
+      ShortCut = 8306
+    end
+    object ActionNextN: TAction
+      Category = 'Search'
+      Caption = 'Next N'
+      Enabled = False
+      Hint = 'Jump to next N site from cursor'
+      ImageIndex = 120
+      OnExecute = ActionNextNExecute
+      OnUpdate = ActionUpdate
+      ShortCut = 16462
+    end
+    object ActionCopyFASTA: TAction
+      Category = 'Edit'
+      Caption = 'FASTA format'
+      Enabled = False
+      Hint = 'Copy unmasked sequence and its name to Clipboard in FASTA format'
+      OnExecute = ActionCopyFASTAExecute
+      OnUpdate = ActionUpdate
+      ShortCut = 16450
+    end
+    object ActionCopyText: TAction
+      Category = 'Edit'
+      Caption = 'Plain Text'
+      Enabled = False
+      Hint = 'Copy unmasked sequence to Clipboard'
+      ImageIndex = 77
+      OnExecute = ActionCopyTextExecute
+      OnUpdate = ActionUpdate
+      ShortCut = 16451
+    end
+    object ActionCopyImage: TAction
+      Category = 'Edit'
+      Caption = 'Trace Image in Window'
+      Enabled = False
+      OnExecute = ActionCopyImageExecute
+      OnUpdate = ActionUpdate
+    end
+    object ActionMaskLeft: TAction
+      Category = 'Edit'
+      Caption = 'Mask Upstream'
+      Enabled = False
+      Hint = 'Mask upstream of the cursor'
+      ImageIndex = 122
+      OnExecute = ActionMaskLeftExecute
+      OnUpdate = ActionUpdate
+    end
+    object ActionMaskRight: TAction
+      Category = 'Edit'
+      Caption = 'Mask Downstream'
+      Enabled = False
+      Hint = 'Mask downstream of the cursor'
+      ImageIndex = 121
+      OnExecute = ActionMaskRightExecute
+      OnUpdate = ActionUpdate
+    end
+    object ActionClearMask: TAction
+      Category = 'Edit'
+      Caption = 'Clear Mask'
+      Enabled = False
+      Hint = 'Clear masked area'
+      ImageIndex = 80
+      OnExecute = ActionClearMaskExecute
+      OnUpdate = ActionUpdate
+    end
+    object ActionOpen: TAction
+      Category = 'Data'
+      Caption = 'Open File'
+      Enabled = False
+      Hint = 'Open ABI or Staden file'
+      ImageIndex = 1
+      OnExecute = ActionOpenExecute
+      ShortCut = 16463
+    end
+    object ActionOpenNewWindow: TAction
+      Category = 'Data'
+      Caption = 'Open File in New Window'
+      Enabled = False
+      Hint = 'Open file in a new window'
+      ImageIndex = 25
+      OnExecute = ActionOpenNewWindowExecute
+      OnUpdate = ActionUpdate
+    end
+    object ActionSave: TAction
+      Category = 'Data'
+      Caption = 'Save File'
+      Enabled = False
+      Hint = 'Save as Staden file'
+      ImageIndex = 35
+      OnExecute = ActionSaveExecute
+      OnUpdate = ActionUpdate
+      ShortCut = 16467
+    end
+    object ActionSend: TAction
+      Category = 'Data'
+      Caption = 'Add to AlnExplorer'
+      Enabled = False
+      Hint = 'Add unmasked sequence to Alignment Explorer'
+      ImageIndex = 111
+      OnExecute = ActionSendExecute
+      OnUpdate = ActionUpdate
+      ShortCut = 16449
+    end
+    object ActionExit: TAction
+      Category = 'Data'
+      Caption = 'Exit'
+      Enabled = False
+      Hint = 'Exit TracePad'
+      ImageIndex = 59
+      OnExecute = ActionExitExecute
+      OnUpdate = ActionUpdate
+    end
+    object ActionReverse: TAction
+      Category = 'Edit'
+      Caption = 'Reverse Complement'
+      Enabled = False
+      Hint = 'Reverse complement sequence'
+      ImageIndex = 119
+      OnExecute = ActionReverseExecute
+      OnUpdate = ActionUpdate
+    end
+    object ActionFont: TAction
+      Category = 'Display'
+      Caption = 'Font'
+      Enabled = False
+      Hint = 'Select font for sequence'
+      ImageIndex = 51
+      OnExecute = ActionFontExecute
+      OnUpdate = ActionUpdate
+    end
+    object ActionThickLine: TAction
+      Category = 'Display'
+      Caption = '2 pixels'
+      Enabled = False
+      OnExecute = ActionThickLineExecute
+      OnUpdate = ActionUpdate
+    end
+    object ActionThickerLine: TAction
+      Category = 'Display'
+      Caption = '3 pixels'
+      Enabled = False
+      OnExecute = ActionThickerLineExecute
+      OnUpdate = ActionUpdate
+    end
+    object ActionThinLine: TAction
+      Category = 'Display'
+      Caption = '1 pixel'
+      Enabled = False
+      OnExecute = ActionThinLineExecute
+      OnUpdate = ActionUpdate
+    end
+    object ActionPrint: TAction
+      Category = 'Data'
+      Caption = 'Print'
+      Enabled = False
+      Hint = 'Print unmarked trace data.'
+      ImageIndex = 0
+      OnExecute = ActionPrintExecute
+      OnUpdate = ActionUpdate
+      ShortCut = 16464
+    end
+    object ActionPrintSetup: TAction
+      Category = 'Data'
+      Caption = 'ActionPrintSetup'
+      OnExecute = ActionPrintSetupExecute
+    end
+    object ActionPaste: TAction
+      Category = 'Data'
+      Caption = 'ActionPaste'
+      Hint = 'Copy unmasked sequence and paste on AlignmentExplorer'
+      ImageIndex = 64
+    end
+    object ActionFindInFile: TAction
+      Category = 'Data'
+      Caption = 'Open New File and Find'
+      Enabled = False
+      Hint = 'Find the specified sequence in a separate file.'
+      ImageIndex = 52
+      OnExecute = ActionFindInFileExecute
+      OnUpdate = ActionUpdate
+    end
+    object ActionBLAST: TAction
+      Category = 'Data'
+      Caption = 'ActionBLAST'
+      Enabled = False
+      Hint = 'Do BLAST search for the specified sequence.'
+      ImageIndex = 28
+      OnExecute = ActionBLASTExecute
+      OnUpdate = ActionUpdate
+    end
+    object ActionExport: TAction
+      Category = 'Data'
+      Caption = 'Export FASTA File'
+      Enabled = False
+      ImageIndex = 91
+      OnExecute = ActionExportExecute
+      OnUpdate = ActionUpdate
+      ShortCut = 16453
+    end
+  end
+  object FontDlg: TFontDialog
+    Font.CharSet = SHIFTJIS_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'MS P????'
+    MinFontSize = 0
+    MaxFontSize = 0
+    Options = [fdAnsiOnly, fdForceFontExist]
+    Left = 536
+    Top = 120
+  end
+  object PrintSetupDlg: TPrinterSetupDialog
+    Left = 456
+    Top = 56
+  end
+  object MainMenu1: TMainMenu
+    Images = MegaForm.NewIcons
+    Left = 280
+    Top = 72
+    object Data1: TMenuItem
+      Caption = '&Data'
+      object ActionOpenNewWindow1: TMenuItem
+        Action = ActionOpenNewWindow
+      end
+      object OpenFile1: TMenuItem
+        Action = ActionOpen
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object SaveFile1: TMenuItem
+        Action = ActionSave
+      end
+      object Print1: TMenuItem
+        Action = ActionPrint
+      end
+      object AddtoAlignPad1: TMenuItem
+        Action = ActionSend
+        Caption = 'Add to Alignment Explorer'
+      end
+      object ExportFASTAFile1: TMenuItem
+        Action = ActionExport
+      end
+      object N3: TMenuItem
+        Caption = '-'
+      end
+      object Exit1: TMenuItem
+        Action = ActionExit
+      end
+    end
+    object Edit1: TMenuItem
+      Caption = '&Edit '
+      object Undo1: TMenuItem
+        Action = ActionUndo
+      end
+      object N4: TMenuItem
+        Caption = '-'
+      end
+      object Copy1: TMenuItem
+        Caption = 'Copy'
+        Hint = 'Copy sequence to Clipboard'
+        ImageIndex = 77
+        object FASTformat1: TMenuItem
+          Action = ActionCopyFASTA
+        end
+        object PlainText1: TMenuItem
+          Action = ActionCopyText
+        end
+        object N5: TMenuItem
+          Caption = '-'
+        end
+        object raceImageinWindow1: TMenuItem
+          Action = ActionCopyImage
+        end
+      end
+      object MaskUpstream1: TMenuItem
+        Action = ActionMaskLeft
+      end
+      object MaskDownstream1: TMenuItem
+        Action = ActionMaskRight
+      end
+      object N6: TMenuItem
+        Caption = '-'
+      end
+      object ReverseComplement1: TMenuItem
+        Action = ActionReverse
+      end
+    end
+    object Search1: TMenuItem
+      Caption = '&Search'
+      object Find1: TMenuItem
+        Action = ActionFind
+      end
+      object FindNext1: TMenuItem
+        Action = ActionFindNext
+      end
+      object FindNext2: TMenuItem
+        Action = ActionFindPrev
+      end
+      object N7: TMenuItem
+        Caption = '-'
+      end
+      object NextN1: TMenuItem
+        Action = ActionNextN
+      end
+      object N2: TMenuItem
+        Caption = '-'
+      end
+      object FindinFile1: TMenuItem
+        Action = ActionFindInFile
+        Caption = 'Find in File'
+      end
+      object ActionBLAST1: TMenuItem
+        Action = ActionBLAST
+        Caption = 'Do BLAST Search'
+      end
+    end
+    object Display1: TMenuItem
+      Caption = 'D&isplay'
+      object Font1: TMenuItem
+        Action = ActionFont
+      end
+      object LineWidth1: TMenuItem
+        Caption = 'Line Width'
+        object N1pixel1: TMenuItem
+          Action = ActionThinLine
+        end
+        object N2pixels1: TMenuItem
+          Action = ActionThickLine
+        end
+        object N3pixels1: TMenuItem
+          Action = ActionThickerLine
+        end
+      end
+    end
+    object WindowsMenuItem: TMenuItem
+      Caption = '&Windows'
+    end
+    object Help1: TMenuItem
+      Caption = '&Help '
+      object MenuItem1: TMenuItem
+        Caption = '&Contents'
+        Hint = 'Activate the alignment for phylogenetic analysis'
+        OnClick = Help1Click
+      end
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 400
+    Top = 40
+  end
+  object ExportDlg: TSaveDialog
+    Filter = 'FASTA File (*.fas;*.fst;*.fta,*.fasta)|*.fas;*.fst;*.fta,*.fasta|All Files|*.*'
+    Options = [ofOverwritePrompt, ofHideReadOnly, ofEnableSizing]
+    Left = 536
+    Top = 64
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    IniSection = 'TTraceEditForm'
+    OnSaveProperties = IniPropStorage1SaveProperties
+    OnRestoreProperties = IniPropStorage1RestoreProperties
+    Left = 176
+    Top = 56
+  end
+end

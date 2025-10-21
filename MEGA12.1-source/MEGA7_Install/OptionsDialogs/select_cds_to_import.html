@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add To Alignment - Options</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--JQuery 3.2.1 Fallback-->
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <!--JQuery 3.4.1-->
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>      
+        <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+        <!--Bootstrap 3 Fallback-->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!--Bootstrap 4-->
+        <link href="css/bs4/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/default.css" rel="stylesheet" type="text/css" />
+
+        <script>
+            $(document).ready(function () {
+				//MEGA_JS_TEMPLATE_PLACEHOLDER
+                $("#accordion").accordion();
+                $(':checkbox').change(function () {
+                    var checkbox = $(this);
+                    if (this.checked) {
+                        $(this).attr('ischecked', true);
+                    } else {
+                        $(this).attr('ischecked', false);
+                    }
+                });
+                $(':radio').change(function() {
+                        $(':radio').attr('ischecked', false);
+                        if (this.checked) {
+                                $(this).attr('ischecked', true);
+                        }
+                        else {
+                                $(this).attr('ischecked', false);
+                        }
+                });                
+            });
+        </script>
+    </head>
+    <body>
+      <input type="hidden" name="is_validated" id="is_validated" value="true"/>
+      <div class="container-fluid">
+        <div class="boxed">
+          <div class="main-heading subtract-left-margin">CDS(s) Found in Genbank Data</div>
+          <div class="row">
+            <div class="col-12">
+              <div class="grid-col-2-aside">
+                <input class="m-0" type="radio" name="cds_option" value="import_only_cds" id="import_only_cds" ischecked="true" checked/>
+                <label for="import_only_cds" class="d-flex align-items-center">Import Only CDS(s)</label>
+              </div>
+              <div class="grid-col-2-aside">
+                <input class="m-0" type="radio" name="cds_option" value="import_all_data" id="import_all_data" ischecked="false" />
+                <label for="import_all_data" class="d-flex align-items-center">Import Full Sequence(s)</label>
+              </div>
+            </div>
+          </div>
+          <div class="accordion_box overflow-auto cds-panel">
+            <fieldset id="cds_fieldset"></fieldset>                                
+          </div>            
+        </div>
+      </div>
+    </body>
+</html>

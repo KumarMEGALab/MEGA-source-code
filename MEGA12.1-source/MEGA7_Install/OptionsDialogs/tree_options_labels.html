@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Labels</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--JQuery 3.2.1 Fallback-->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <!--JQuery 3.4.1-->
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>   
+    <script type="text/javascript" src="js/evol-colorpicker.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery.fontpicker.min.js"></script>
+    <script type="text/javascript" src="js/select2.min.js"></script>
+    <script type="text/javascript" src="js/clusterize.min.js"></script>
+    <script type="text/javascript" src="js/multiselect.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    <!--Bootstrap 3 Fallback-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!--Bootstrap 4-->
+    <link href="css/bs4/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/default.css" rel="stylesheet" type="text/css" />
+    <link href="css/evol-colorpicker.css" rel="stylesheet" type="text/css"/>    
+    <link href="css/jquery.fontpicker.css" rel="stylesheet" type="text/css"/>
+    <link href="css/clusterize.css" rel="stylesheet" type="text/css" />
+
+    <script>
+        $(document).ready(function () {
+            var fontVal = "font-family: 'Lucida Console', Arial; \n\
+              font-size: 13px; \n\
+              text-decoration: none; \n\
+              line-height: 2Z00%; \n\
+              font-variant: small-caps; \n\
+              letter-spacing: 2px; \n\
+              font-style: italic;";
+            $("#tree_options_branch_labels_font").value = fontVal;
+            $("#tree_options_branch_labels_font").fontpicker({
+                showOn: 'all',
+                underline: 'ui-fontpicker-settings-underline-0',
+                linethrough: 'ui-fontpicker-settings-linethrough-0',
+                parts: 'full',
+                altField: 'ui-fontpicker-preview-text',
+                altOnChange: true
+            });
+            $("#tree_options_branch_labels_color_div").colorpicker({
+                container: true
+            }).on('change.color', function (evt, color) {
+                $('#tree_options_branch_labels_color').val(color);
+                $('#tree_options_branch_labels_color_dialog').val(color);
+                $('#tree_options_branch_labels_color_dialog').css('background-color', color);
+                $('#tree_options_branch_labels_color_dialog').css('color', color);
+                $('#tree_options_branch_labels_color_div').css('color', color);
+                $("#tree_options_branch_labels_color_form").dialog("close");
+            });
+            $("#tree_options_branch_labels_color_dialog").button().click(function () {
+                $("#tree_options_branch_labels_color_form").dialog("open");
+            });
+            $(function () {
+                $("#tree_options_branch_labels_color_form").dialog({
+                    autoOpen: false,
+                    maxWidth: 250,
+                    maxHeight: 300,
+                    width: 250,
+                    height: 300,
+                    modal: true
+                });
+            });
+            $("#tree_options_labels_shape_options").select2({
+                minimumResultsForSearch: Infinity
+            });
+            $("#marker_color_dialog").css('background-color', $("#marker_color_hidden").val());
+            $("#marker_color_dialog").css('color', $("#marker_color_hidden").val());
+
+            var clusterize = new Clusterize({
+                scrollId: 'scrollArea',
+                contentId: 'taxon_markers_list'
+            });
+
+            //MEGA_JS_TEMPLATE_PLACEHOLDER
+
+            $("table").multiselect({
+                children: "tr", // Elements to target (default: "tbody tr")
+                className: "td_selected" // Desired CSS class  (default: "selected")
+            });
+            $('td:first-child').each(function () {
+                var $td = $(this);
+                $td.html('<a href="#">' + $td.text() + '</a>');
+            });
+            $('a').each(function () {
+                $(this).css('color', "'" + $(this).parents("tr").attr('color') + "'");
+                $("#marker_color_dialog").css('color', "'" + $('a').parents("tr").attr('color') + "'");
+                $("#marker_color_dialog").css('background-color', "'" + $('a').parents("tr").attr('color') + "'");
+            });
+            $("#marker_color").colorpicker({
+                container: true
+            }).on('change.color', function (evt, color) {
+                $(".td_selected").find("a").css('color', color);
+                $('#marker_color_dialog').val(color);
+                $('#marker_color_dialog').css('background-color', color);
+                $('#marker_color_dialog').val(color).css('color', color);
+                $(".td_selected").attr("color", color);
+                $("tr selected").attr("color", color);
+                $('#marker_color_hidden').val(color);
+                $("#marker_color_form").dialog("close");
+            })
+                    .on('mouseover.color', function (evt, color) {
+                        if (color) {
+                            $('#marker_color_dialog').css('background-color', color);
+                            $('.taxon_markers_list .td_selected').attr("color", color);
+                        }
+                    });
+            $(function () {
+                $("#marker_color_form").dialog({
+                    autoOpen: false,
+                    maxWidth: 250,
+                    maxHeight: 300,
+                    width: 250,
+                    height: 300,
+                    modal: true
+                });
+            });
+            $("#marker_color_dialog")
+                    .button()
+                    .click(function () {
+                        $("#marker_color_form").dialog("open");
+                    });
+            $(".td_selected a").css('color', $('#marker_color_dialog').val());
+            $("#tree_options_labels_shape_options").change(function () {
+                $('#tree_options_labels_shape_options option[value="msNone"]').text(" ");
+                $(".td_selected").find("a").css('color', $('#marker_color_dialog').val());
+                $(".td_selected").find("a").click().text($("#tree_options_labels_shape_options option:selected").text());
+                $(".td_selected").attr("marker_shape", $("#tree_options_labels_shape_options option:selected").val());
+                $('#marker_color_hidden').val($(".td_selected a").css("color"));
+            });
+            $("tr").click(function () {
+                $(this).find("a").css('color', $('#marker_color_dialog').val());
+                $(this).find("a").text($("#tree_options_labels_shape_options option:selected").text());
+                $(".td_selected").attr("marker_shape", $("#tree_options_labels_shape_options option:selected").val());
+                $(".td_selected").attr("color", $('#marker_color_dialog').val());
+                $('#marker_color_hidden').val($(".td_selected a").css("color"));
+            });
+            $('select').trigger("change");
+            $(':checkbox').change(function () {
+                var checkbox = $(this);
+                if (this.checked) {
+                    $(this).attr('ischecked', true);
+                } else {
+                    $(this).attr('ischecked', false);
+                }
+            });
+            $('#tree_options_branch_labels_color_dialog').css('background-color', $('#tree_options_branch_labels_color').val()); 
+        });
+    </script>
+  </head>
+  <body>
+    <input type="hidden" name="is_validated" id="is_validated" value="true">
+    <div class="container" id="subtree_options_main-container">
+                  
+      <div class="row mb-2">
+        <div class="col-12">
+          <div class="boxed mt-3">
+            <fieldset>
+              <input type="checkbox" name="tree_options_labels_display_taxon_names" value="true" id="tree_options_labels_display_taxon_names" ischecked="true" checked/>
+              <label for="tree_options_labels_display_taxon_names" class="font_weight_normal mb-2">Display Taxon Names</label>
+            </fieldset>
+            <input id="tree_options_branch_labels_font" type="hidden"/>
+            <label for="tree_options_branch_labels_color" class="ml-4">Color</label>
+            <div id="tree_options_branch_labels_color_form" title="Select Color">   
+              <div id="tree_options_branch_labels_color_div"></div>
+            </div>
+            <input id="tree_options_branch_labels_color_dialog" class="color_input" />  
+            <input type="hidden" id="tree_options_branch_labels_color" value="#000000"/>
+          </div>
+        </div>
+      </div>
+          
+      <div class="row">
+        <div class="col-12">
+          <div class="boxed mt-3">
+          <fieldset>
+            <input type="checkbox" name="tree_options_labels_display_taxon_markers" value="true" id="tree_options_labels_display_taxon_markers" ischecked="true" checked/>
+            <label for="tree_options_labels_display_taxon_markers" class="font_weight_normal">Display Taxon Markers</label>
+          </fieldset>
+
+          <label>Shape</label>
+          <select id="tree_options_labels_shape_options" name="tree_options_labels_shape_options" class="tree_options_labels_shape_options" >
+            <option value="msNone">None</option>
+            <option value="msOpenCircle">&#9675</option>
+            <option value="msFilledCircle">&#9679</option>
+            <option value="msOpenSquare">&#9633</option>
+            <option value="msFilledSquare">&#9632</option>
+            <option value="msOpenUpTriangle">&#9651</option>
+            <option value="msFilledUpTriangle">&#9650</option>
+            <option value="msOpenDownTriangle">&#96761</option>
+            <option value="msFilledDownTriangle">&#9660</option>
+            <option value="msOpenDiamond">&#9671</option>
+            <option value="msFilledDiamond">&#9670</option>	  
+          </select>
+
+          <label for="marker_color_form" class="ml-4">Color</label>
+          <div id="marker_color_form" title="Select Color">   
+            <div id="marker_color"></div>
+          </div>
+          <input id="marker_color_dialog" class="color_input"/>
+          <input id="marker_color_hidden" type="hidden" value="#000000">
+        </div>
+      </div>
+    </div>
+          
+          
+      <div class="row mt-3">
+        <div class="col-12">
+          <div class="boxed">
+            <div class="clusterize">
+              <table>
+                <thead>
+                </thead>
+              </table>
+              <div id="scrollArea" class="clusterize-scroll">
+                <table id="table_1">
+                  <tbody id="taxon_markers_list" class="clusterize-content">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          
+    </div>
+  </body>
+</html>

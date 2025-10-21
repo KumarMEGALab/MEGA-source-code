@@ -1,0 +1,71 @@
+object ConfirmReplaceDialog: TConfirmReplaceDialog
+  Left = 646
+  Height = 121
+  Top = 324
+  Width = 404
+  BorderStyle = bsDialog
+  Caption = 'Confirm replace'
+  ClientHeight = 121
+  ClientWidth = 404
+  Color = clBtnFace
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -14
+  Font.Name = 'MS Sans Serif'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '1.6.2.0'
+  object lblConfirmation: TLabel
+    Left = 74
+    Height = 54
+    Top = 15
+    Width = 321
+    AutoSize = False
+    ParentColor = False
+    WordWrap = True
+  end
+  object Image1: TImage
+    Left = 20
+    Height = 39
+    Top = 20
+    Width = 39
+  end
+  object btnReplace: TButton
+    Left = 10
+    Height = 29
+    Top = 82
+    Width = 92
+    Caption = '&Yes'
+    Default = True
+    ModalResult = 6
+    TabOrder = 0
+  end
+  object btnSkip: TButton
+    Left = 107
+    Height = 29
+    Top = 82
+    Width = 92
+    Caption = '&No'
+    ModalResult = 7
+    TabOrder = 1
+  end
+  object btnCancel: TButton
+    Left = 204
+    Height = 29
+    Top = 82
+    Width = 93
+    Cancel = True
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 2
+  end
+  object btnReplaceAll: TButton
+    Left = 302
+    Height = 29
+    Top = 82
+    Width = 92
+    Caption = 'Yes to &all'
+    ModalResult = 10
+    TabOrder = 3
+  end
+end

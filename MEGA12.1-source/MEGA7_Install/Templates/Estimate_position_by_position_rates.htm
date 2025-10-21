@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<STYLE>{TLegendGenerator.Style}</STYLE>
+<TITLE>Estimates of Rates for Each Position</TITLE>
+</HEAD>
+
+<BODY>
+
+<div class="note">
+ NOTE:-- Mean (relative) evolutionary rate are shown for each site next to the site number.
+    These rates are scaled such that the average evolutonary rate across all sites is 1.
+    This means that sites showing a rate < 1 are evolving slower than average, and those
+    with a rate > 1 are evolving faster than average. These relative rate were estimated under
+    the {TLegendGenerator.ModelName} [{TDistPack.MethodCitation:ExpandCitation}].
+
+    {if TLegendGenerator.GammaPara = 'N/A'}
+    {else}
+       A discrete Gamma (+G) distribution was used to model evolutionary rate differences
+       among sites ({TLegendGenerator.NoOfGCats} categories).
+    {endif}
+
+    
+    {if TLegendGenerator.PropOfInvariant = 'N/A'}
+    {else}
+       Some sites were allowed to stay invariant (+I).
+       Next to the mean rate for the site, the probability that it belongs to the
+       invariant class is shown (Invar). The estimate of the proportion of invariant sites
+       is ({TLegendGenerator.PropOfInvariant}% sites).
+    {endif}
+
+    {if TLegendGenerator.GammaPara = 'N/A'}
+    {else}
+      The probability of classification of a site in each discrete rate category in Gamma
+      is shown. Mean relative evolutionary rates in discrete Gamma categories are shown
+      in the column headers. The ML estimate of the gamma shape parameter is
+      {TLegendGenerator.GammaPara}.
+    {endif}
+
+    The maximum Log likelihood for this computation was {TLegendGenerator.LogL}.
+
+    {IncludeExternalFile=Data_Subset_Template.htm}
+
+</div>
+<br>
+</body>
+</html>

@@ -1,0 +1,264 @@
+object NewickExportOptionsForm: TNewickExportOptionsForm
+  Left = 544
+  Height = 465
+  Top = 203
+  Width = 354
+  BorderIcons = []
+  Caption = 'Newick Export Options'
+  ClientHeight = 465
+  ClientWidth = 354
+  Color = clWhite
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Tahoma'
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnResize = FormResize
+  Position = poOwnerFormCenter
+  LCLVersion = '2.2.6.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 198
+    Top = 0
+    Width = 354
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 198
+    ClientWidth = 354
+    Color = clWhite
+    ParentColor = False
+    TabOrder = 0
+    object GeneralOptionsHeader: TPanel
+      Left = 0
+      Height = 30
+      Top = 0
+      Width = 354
+      Align = alTop
+      BevelOuter = bvNone
+      ClientHeight = 30
+      ClientWidth = 354
+      Color = clTeal
+      ParentColor = False
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 16
+        Height = 16
+        Top = 6
+        Width = 49
+        Caption = 'General'
+        Font.Color = clWhite
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object NodeLabelsCheckbox: TCheckBox
+      Left = 33
+      Height = 20
+      Top = 140
+      Width = 89
+      Caption = '&Node Labels'
+      OnChange = NodeLabelsCheckboxChange
+      TabOrder = 1
+    end
+    object BootstrapValuesCheckbox: TCheckBox
+      Left = 33
+      Height = 20
+      Top = 79
+      Width = 116
+      Caption = 'Bootstrap &Values'
+      TabOrder = 2
+    end
+    object BranchLengthsCheckbox: TCheckBox
+      Left = 33
+      Height = 20
+      Top = 47
+      Width = 107
+      Caption = 'Branch &Lengths'
+      TabOrder = 3
+    end
+    object QuotedNodeLabelsCheckbox: TCheckBox
+      Left = 33
+      Height = 20
+      Hint = 'Surround internal node labels with single quotes (default)'
+      Top = 171
+      Width = 127
+      Caption = 'Quote Node Labels'
+      Checked = True
+      State = cbChecked
+      TabOrder = 4
+    end
+    object BootstrapStdDevCheckbox: TCheckBox
+      Left = 33
+      Height = 20
+      Top = 110
+      Width = 122
+      Caption = 'Bootstrap Std Dev'
+      TabOrder = 5
+    end
+  end
+  object TimesPanel: TPanel
+    Left = 0
+    Height = 109
+    Top = 198
+    Width = 354
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 109
+    ClientWidth = 354
+    TabOrder = 1
+    object TimetreeOptionsHeader: TPanel
+      Left = 0
+      Height = 30
+      Top = 0
+      Width = 354
+      Align = alTop
+      BevelOuter = bvNone
+      ClientHeight = 30
+      ClientWidth = 354
+      Color = clTeal
+      ParentColor = False
+      TabOrder = 0
+      object Label2: TLabel
+        Left = 16
+        Height = 16
+        Top = 7
+        Width = 62
+        Caption = 'Time Tree'
+        Font.Color = clWhite
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object RelativeTimesBtn: TRadioButton
+      Left = 33
+      Height = 20
+      Top = 48
+      Width = 104
+      Caption = 'Relative Times'
+      TabOrder = 1
+    end
+    object AbsoluteTimesBtn: TRadioButton
+      Left = 33
+      Height = 20
+      Top = 78
+      Width = 122
+      Caption = 'Divergence Times'
+      TabOrder = 2
+    end
+  end
+  object Panel5: TPanel
+    Left = 0
+    Height = 117
+    Top = 307
+    Width = 354
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 117
+    ClientWidth = 354
+    TabOrder = 2
+    object GeneTreeOptionsHeader: TPanel
+      Left = 0
+      Height = 30
+      Top = 0
+      Width = 354
+      Align = alTop
+      BevelOuter = bvNone
+      ClientHeight = 30
+      ClientWidth = 354
+      Color = clTeal
+      ParentColor = False
+      TabOrder = 0
+      object Label3: TLabel
+        Left = 16
+        Height = 16
+        Top = 6
+        Width = 65
+        Caption = 'Gene Tree'
+        Font.Color = clWhite
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object SpeciationsCheckbox: TCheckBox
+      Left = 33
+      Height = 20
+      Top = 81
+      Width = 85
+      Caption = 'S&peciations'
+      TabOrder = 1
+    end
+    object GeneDuplicationsCheckbox: TCheckBox
+      Left = 33
+      Height = 20
+      Top = 49
+      Width = 121
+      Caption = '&Gene Duplications'
+      TabOrder = 2
+    end
+  end
+  object Panel7: TPanel
+    Left = 0
+    Height = 42
+    Top = 423
+    Width = 354
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 42
+    ClientWidth = 354
+    TabOrder = 3
+    object ToolBar1: TToolBar
+      Left = 56
+      Height = 30
+      Top = 5
+      Width = 239
+      Align = alNone
+      AutoSize = True
+      ButtonHeight = 30
+      ButtonWidth = 115
+      Caption = 'ToolBar1'
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      HotImages = ImageForm.DlgButtonsHover
+      Images = ImageForm.DlgButtons
+      TabOrder = 0
+      object ToolButton1: TToolButton
+        Left = 1
+        Top = 0
+        Action = CancelAction
+      end
+      object ToolButton2: TToolButton
+        Left = 120
+        Top = 0
+        Action = SaveAction
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 184
+    Top = 56
+    object SaveAction: TAction
+      Caption = '&Export'
+      Hint = 'Execute the save operation'
+      ImageIndex = 5
+      OnExecute = SaveActionExecute
+      ShortCut = 16467
+    end
+    object CancelAction: TAction
+      Caption = '&Cancel'
+      Hint = 'Close this window without exporting the newick file'
+      ImageIndex = 0
+      OnExecute = CancelActionExecute
+      ShortCut = 27
+    end
+  end
+end

@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+	<TITLE>{TTreeViewForm.AnalysisType}</TITLE>
+<style type="text/css">
+	{TLegendGenerator.Style}
+</style>
+</HEAD>
+<BODY>
+<span class="figureTitle" >
+     {if TTreeViewForm.ActiveTabName  = 'Timetree'}
+        Timetree analysis using the RelTime method
+     {else}
+	Inferred Ancestral Sequences
+     {endif}
+
+</span>
+<br>
+<div id ="content">
+     {if TTreeViewForm.ActiveTabName  = 'Timetree'}
+        {TLegendGenerator.ReltimeCaption}
+     {else}
+	{TLegendGenerator.AncestralStatesCaption}
+     {endif}
+</div>
+<br/>
+</BODY>
+</HTML>

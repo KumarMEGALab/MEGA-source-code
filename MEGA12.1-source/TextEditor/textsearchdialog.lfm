@@ -1,0 +1,189 @@
+object TextSearchDialog: TTextSearchDialog
+  Left = 703
+  Height = 213
+  Top = 308
+  Width = 442
+  Caption = 'Search Text'
+  ClientHeight = 213
+  ClientWidth = 442
+  Color = clBtnFace
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -14
+  Font.Name = 'MS Sans Serif'
+  FormStyle = fsStayOnTop
+  OnClose = FormClose
+  OnCreate = FormCreate
+  SessionProperties = 'cbRegularExpression.Checked;cbSearchCaseSensitive.Checked;cbSearchFromCursor.Checked;cbSearchSelectedOnly.Checked;cbSearchWholeWords.Checked;Height;Width'
+  LCLVersion = '2.0.2.0'
+  object Label1: TLabel
+    Left = 10
+    Height = 16
+    Top = 15
+    Width = 64
+    Caption = '&Search for:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -14
+    Font.Name = 'MS Sans Serif'
+    ParentColor = False
+    ParentFont = False
+  end
+  object cbSearchText: TComboBox
+    Left = 118
+    Height = 24
+    Top = 10
+    Width = 314
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -14
+    Font.Name = 'MS Sans Serif'
+    ItemHeight = 16
+    ParentFont = False
+    TabOrder = 0
+  end
+  object gbSearchOptions: TGroupBox
+    Left = 10
+    Height = 133
+    Top = 49
+    Width = 220
+    Caption = 'Options'
+    ClientHeight = 112
+    ClientWidth = 216
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -14
+    Font.Name = 'MS Sans Serif'
+    ParentFont = False
+    TabOrder = 1
+    object cbSearchCaseSensitive: TCheckBox
+      Left = 10
+      Height = 20
+      Top = 5
+      Width = 113
+      Caption = 'C&ase sensitivity'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -14
+      Font.Name = 'MS Sans Serif'
+      ParentFont = False
+      TabOrder = 0
+    end
+    object cbSearchWholeWords: TCheckBox
+      Left = 10
+      Height = 20
+      Top = 31
+      Width = 126
+      Caption = '&Whole words only'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -14
+      Font.Name = 'MS Sans Serif'
+      ParentFont = False
+      TabOrder = 1
+    end
+    object cbSearchFromStart: TCheckBox
+      Left = 10
+      Height = 20
+      Top = 58
+      Width = 120
+      Caption = 'Search from &start'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -14
+      Font.Name = 'MS Sans Serif'
+      ParentFont = False
+      TabOrder = 2
+    end
+    object cbSearchSelectedOnly: TCheckBox
+      Left = 10
+      Height = 20
+      Top = 84
+      Width = 125
+      Caption = '&Selected text only'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -14
+      Font.Name = 'MS Sans Serif'
+      ParentFont = False
+      TabOrder = 3
+    end
+  end
+  object rgSearchDirection: TRadioGroup
+    Left = 242
+    Height = 80
+    Top = 49
+    Width = 190
+    AutoFill = True
+    Caption = 'Direction'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 59
+    ClientWidth = 186
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -14
+    Font.Name = 'MS Sans Serif'
+    ItemIndex = 0
+    Items.Strings = (
+      '&Forward'
+      '&Backward'
+    )
+    ParentFont = False
+    TabOrder = 2
+  end
+  object btnOK: TButton
+    Left = 238
+    Height = 29
+    Top = 153
+    Width = 93
+    Caption = 'Search'
+    Default = True
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -14
+    Font.Name = 'MS Sans Serif'
+    OnClick = btnOKClick
+    ParentFont = False
+    TabOrder = 3
+  end
+  object btnCancel: TButton
+    Left = 339
+    Height = 29
+    Top = 153
+    Width = 93
+    Cancel = True
+    Caption = 'Cancel'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -14
+    Font.Name = 'MS Sans Serif'
+    ModalResult = 2
+    OnClick = btnCancelClick
+    ParentFont = False
+    TabOrder = 4
+  end
+  object CountStatusBar: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 190
+    Width = 442
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -14
+    Font.Name = 'MS Sans Serif'
+    Panels = <>
+    ParentFont = False
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    IniSection = 'TTextSearchDialog'
+    left = 376
+    top = 80
+  end
+end

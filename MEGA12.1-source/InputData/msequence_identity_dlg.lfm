@@ -1,0 +1,144 @@
+object SequenceIdentityOptionsDlg: TSequenceIdentityOptionsDlg
+  Left = 595
+  Height = 205
+  Top = 249
+  Width = 482
+  BorderIcons = []
+  Caption = 'Sequence Identity Options'
+  ClientHeight = 205
+  ClientWidth = 482
+  OnActivate = FormActivate
+  OnResize = FormResize
+  OnShow = FormShow
+  LCLVersion = '2.0.2.0'
+  object UseFirstSeqBtn: TRadioButton
+    Left = 16
+    Height = 19
+    Top = 122
+    Width = 301
+    Caption = 'First Selected Sequence is Reference (for Major Allele)'
+    TabOrder = 0
+  end
+  object AutoFindMajorAllele: TRadioButton
+    Left = 16
+    Height = 19
+    Top = 99
+    Width = 267
+    Caption = 'Major Allele is Most Frequently Occuring Allele'
+    Checked = True
+    TabOrder = 1
+    TabStop = True
+  end
+  object Label1: TLabel
+    Left = 0
+    Height = 15
+    Top = 15
+    Width = 482
+    Align = alTop
+    Alignment = taCenter
+    Caption = 'Minor Allele Frequency Range (0%-100%)'
+    ParentColor = False
+  end
+  object MinCutoffEdit: TFloatSpinEdit
+    Left = 16
+    Height = 23
+    Top = 56
+    Width = 56
+    MinValue = 0
+    OnChange = AlleleFreqCutoffEditChange
+    TabOrder = 2
+    Value = 1
+  end
+  object MaxCutoffEdit: TFloatSpinEdit
+    Left = 86
+    Height = 23
+    Top = 56
+    Width = 56
+    MinValue = 0
+    OnChange = AlleleFreqCutoffEditChange
+    TabOrder = 3
+    Value = 100
+  end
+  object Label2: TLabel
+    Left = 34
+    Height = 15
+    Top = 36
+    Width = 21
+    Caption = 'Min'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 102
+    Height = 15
+    Top = 36
+    Width = 23
+    Caption = 'Max'
+    ParentColor = False
+  end
+  object IncludeReferenceCheckbx: TCheckBox
+    Left = 152
+    Height = 19
+    Top = 58
+    Width = 282
+    Caption = 'Use Reference Sequence in Frequency Calculation'
+    TabOrder = 4
+  end
+  object ErrorMsg: TLabel
+    Left = 0
+    Height = 15
+    Top = 0
+    Width = 482
+    Align = alTop
+    Alignment = taCenter
+    Caption = 'Min cannot be greater than max value'
+    Color = clBtnFace
+    Font.Color = clRed
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+  object ToolBar1: TToolBar
+    Left = 114
+    Height = 30
+    Top = 167
+    Width = 231
+    Align = alNone
+    AutoSize = True
+    ButtonHeight = 30
+    ButtonWidth = 115
+    Caption = 'ToolBar1'
+    EdgeInner = esNone
+    EdgeOuter = esNone
+    HotImages = ImageForm.DlgButtonsHover
+    Images = ImageForm.DlgButtons
+    TabOrder = 5
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 0
+      Action = CancelAction
+    end
+    object ToolButton2: TToolButton
+      Left = 116
+      Top = 0
+      Action = OkAction
+    end
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    left = 275
+    top = 71
+    object OkAction: TAction
+      Caption = 'OkAction'
+      ImageIndex = 5
+      OnExecute = OkBtnClick
+      ShortCut = 16467
+    end
+    object CancelAction: TAction
+      Caption = 'CancelAction'
+      ImageIndex = 0
+      OnExecute = CancelBtnClick
+      ShortCut = 27
+    end
+  end
+end

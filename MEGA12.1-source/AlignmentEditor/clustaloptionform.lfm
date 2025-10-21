@@ -1,0 +1,694 @@
+object ClustalSetupDlg: TClustalSetupDlg
+  Left = 406
+  Height = 637
+  Top = 195
+  Width = 501
+  Caption = 'ClustalW Parameters'
+  ClientHeight = 637
+  ClientWidth = 501
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnResize = FormResize
+  Position = poOwnerFormCenter
+  LCLVersion = '2.2.6.0'
+  object BottomPanel: TPanel
+    Left = 0
+    Height = 38
+    Top = 599
+    Width = 501
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 38
+    ClientWidth = 501
+    TabOrder = 0
+    object ToolBar1: TToolBar
+      Left = 10
+      Height = 30
+      Top = 2
+      Width = 477
+      Align = alNone
+      AutoSize = True
+      ButtonHeight = 30
+      ButtonWidth = 115
+      Caption = 'ToolBar1'
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      HotImages = ImageForm.DlgButtonsHover
+      Images = ImageForm.DlgButtons
+      TabOrder = 0
+      object ToolButton1: TToolButton
+        Left = 1
+        Top = 0
+        Action = HelpAction
+      end
+      object ToolButton2: TToolButton
+        Left = 239
+        Top = 0
+        Action = CancelAction
+      end
+      object ToolButton3: TToolButton
+        Left = 358
+        Top = 0
+        Action = OkAction
+      end
+      object ToolButton4: TToolButton
+        Left = 120
+        Top = 0
+        Action = ResetAction
+      end
+    end
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 599
+    Top = 0
+    Width = 501
+    ActivePage = DNATabSheet
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 1
+    object DNATabSheet: TTabSheet
+      Caption = 'DNA'
+      ClientHeight = 571
+      ClientWidth = 493
+      object DnaAlignmentPanel: TPanel
+        Left = 0
+        Height = 240
+        Top = 0
+        Width = 493
+        Align = alTop
+        ClientHeight = 240
+        ClientWidth = 493
+        TabOrder = 0
+        object DnaAlignmentHeader: TPanel
+          Left = 1
+          Height = 35
+          Top = 1
+          Width = 491
+          Align = alTop
+          BevelOuter = bvNone
+          ClientHeight = 35
+          ClientWidth = 491
+          Color = clTeal
+          ParentColor = False
+          TabOrder = 0
+          object Label17: TLabel
+            Left = 16
+            Height = 15
+            Top = 9
+            Width = 58
+            Caption = 'Alignment'
+            Font.Color = clWhite
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+        object AlignmentControlsPanel: TPanel
+          Left = 1
+          Height = 203
+          Top = 36
+          Width = 491
+          Align = alClient
+          BevelOuter = bvNone
+          ClientHeight = 203
+          ClientWidth = 491
+          TabOrder = 1
+          object Label20: TLabel
+            Left = 15
+            Height = 15
+            Top = 7
+            Width = 107
+            Caption = 'Pairwise Alignment'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object Label21: TLabel
+            Left = 15
+            Height = 15
+            Top = 101
+            Width = 107
+            Caption = 'Multiple Alignment'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object Label4: TLabel
+            Left = 24
+            Height = 15
+            Top = 27
+            Width = 112
+            Caption = 'Gap Opening Penalty'
+            ParentColor = False
+          end
+          object DNAPWGapOpenNEdit: TFloatSpinEdit
+            Left = 178
+            Height = 23
+            Top = 24
+            Width = 90
+            TabOrder = 0
+            Value = 15
+          end
+          object Label5: TLabel
+            Left = 24
+            Height = 15
+            Top = 70
+            Width = 117
+            Caption = 'Gap Extension Penalty'
+            ParentColor = False
+          end
+          object DNAPWGapExtendNEdit: TFloatSpinEdit
+            Left = 178
+            Height = 23
+            Top = 64
+            Width = 90
+            TabOrder = 1
+            Value = 6.66
+          end
+          object Label6: TLabel
+            Left = 24
+            Height = 15
+            Top = 127
+            Width = 112
+            Caption = 'Gap Opening Penalty'
+            ParentColor = False
+          end
+          object DNAGapOpenNEdit: TFloatSpinEdit
+            Left = 178
+            Height = 23
+            Top = 119
+            Width = 90
+            TabOrder = 2
+            Value = 15
+          end
+          object Label7: TLabel
+            Left = 24
+            Height = 15
+            Top = 164
+            Width = 117
+            Caption = 'Gap Extension Penalty'
+            ParentColor = False
+          end
+          object DNAGapExtendNEdit: TFloatSpinEdit
+            Left = 178
+            Height = 23
+            Top = 158
+            Width = 90
+            TabOrder = 3
+            Value = 6.66
+          end
+        end
+      end
+      object Panel3: TPanel
+        Left = 0
+        Height = 331
+        Top = 240
+        Width = 493
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 331
+        ClientWidth = 493
+        TabOrder = 1
+        object DnaMatrixHeader: TPanel
+          Left = 0
+          Height = 35
+          Top = 0
+          Width = 493
+          Align = alTop
+          BevelOuter = bvNone
+          ClientHeight = 35
+          ClientWidth = 493
+          Color = clTeal
+          ParentColor = False
+          TabOrder = 0
+          object Label22: TLabel
+            Left = 16
+            Height = 15
+            Top = 8
+            Width = 37
+            Caption = 'Matrix'
+            Font.Color = clWhite
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+        object DnaMatrixScrollBox: TScrollBox
+          Left = 0
+          Height = 296
+          Top = 35
+          Width = 493
+          HorzScrollBar.Page = 288
+          VertScrollBar.Page = 287
+          Align = alClient
+          BorderStyle = bsNone
+          ClientHeight = 296
+          ClientWidth = 493
+          TabOrder = 1
+          OnClick = DnaMatrixScrollBoxClick
+          object Label8: TLabel
+            Left = 24
+            Height = 15
+            Top = 15
+            Width = 103
+            Caption = 'DNA Weight Matrix'
+            ParentColor = False
+          end
+          object Label9: TLabel
+            Left = 24
+            Height = 15
+            Top = 51
+            Width = 92
+            Caption = 'Transition Weight'
+            ParentColor = False
+          end
+          object DNAMatrixCBx: TComboBox
+            Left = 179
+            Height = 23
+            Top = 13
+            Width = 90
+            ItemHeight = 15
+            ItemIndex = 0
+            Items.Strings = (
+              'IUB'
+              'ClustalW (1.6)'
+            )
+            ReadOnly = True
+            TabOrder = 0
+            Text = 'IUB'
+          end
+          object MatrixSettingsPanel: TPanel
+            Left = 0
+            Height = 188
+            Top = 99
+            Width = 288
+            BevelOuter = bvNone
+            ClientHeight = 188
+            ClientWidth = 288
+            TabOrder = 1
+            object Label1: TLabel
+              Left = 24
+              Height = 15
+              Top = 11
+              Width = 106
+              Caption = 'Use Negative Matrix'
+              ParentColor = False
+            end
+            object Label2: TLabel
+              Left = 24
+              Height = 15
+              Top = 54
+              Width = 141
+              Caption = 'Delay Divergent Cutoff (%)'
+              ParentColor = False
+            end
+            object Label3: TLabel
+              Left = 24
+              Height = 15
+              Top = 114
+              Width = 55
+              Caption = 'Guide Tree'
+              ParentColor = False
+            end
+            object UseNegativeCBx: TComboBox
+              Left = 178
+              Height = 23
+              Top = 8
+              Width = 90
+              ItemHeight = 15
+              ItemIndex = 1
+              Items.Strings = (
+                'ON'
+                'OFF'
+              )
+              ReadOnly = True
+              TabOrder = 0
+              Text = 'OFF'
+            end
+            object KeepGapsCBx: TCheckBox
+              Left = 24
+              Height = 19
+              Top = 83
+              Width = 135
+              Alignment = taLeftJustify
+              Caption = 'Keep Predefined Gaps'
+              TabOrder = 1
+            end
+            object DivergentCutoffNEdit: TSpinEdit
+              Left = 178
+              Height = 23
+              Top = 46
+              Width = 90
+              TabOrder = 2
+              Value = 30
+            end
+            object SelectedGuideTreeEdit: TEdit
+              Left = 36
+              Height = 23
+              Top = 135
+              Width = 192
+              TabOrder = 3
+            end
+            object SelectGuideTreeBtn: TButton
+              Left = 236
+              Height = 28
+              Top = 133
+              Width = 32
+              Caption = '...'
+              OnClick = SelectGuideTreeBtnClick
+              TabOrder = 4
+            end
+          end
+          object TransitionWeightNEdit: TFloatSpinEdit
+            Left = 179
+            Height = 23
+            Top = 46
+            Width = 90
+            TabOrder = 2
+            Value = 6.66
+          end
+        end
+      end
+    end
+    object ProteinTabSheet: TTabSheet
+      Caption = 'Protein'
+      ClientHeight = 571
+      ClientWidth = 493
+      object ProteinMatrixScrollBox: TScrollBox
+        Left = 0
+        Height = 331
+        Top = 240
+        Width = 493
+        HorzScrollBar.Page = 328
+        VertScrollBar.Page = 235
+        Align = alClient
+        BorderStyle = bsNone
+        ClientHeight = 331
+        ClientWidth = 493
+        TabOrder = 0
+        object GeneticCodeLabel: TLabel
+          Left = 24
+          Height = 15
+          Top = 216
+          Width = 101
+          Caption = 'Genetic Code Table'
+          ParentColor = False
+        end
+        object Label19: TLabel
+          Left = 24
+          Height = 15
+          Top = 181
+          Width = 103
+          Caption = 'End Gap Separation'
+          ParentColor = False
+        end
+        object Label16: TLabel
+          Left = 24
+          Height = 15
+          Top = 146
+          Width = 128
+          Caption = 'Gap Separation Distance'
+          ParentColor = False
+        end
+        object Label15: TLabel
+          Left = 24
+          Height = 15
+          Top = 113
+          Width = 112
+          Caption = 'Hydrophilic Penalties'
+          ParentColor = False
+        end
+        object Label14: TLabel
+          Left = 24
+          Height = 15
+          Top = 81
+          Width = 136
+          Caption = 'Residue-specific Penalties'
+          ParentColor = False
+        end
+        object Label18: TLabel
+          Left = 24
+          Height = 15
+          Top = 51
+          Width = 116
+          Caption = 'Protein Weight Matrix'
+          ParentColor = False
+        end
+        object ProteinMatrixCBx: TComboBox
+          Left = 178
+          Height = 23
+          Top = 48
+          Width = 90
+          ItemHeight = 15
+          ItemIndex = 0
+          Items.Strings = (
+            'BLOSUM'
+            'PAM'
+            'Gonnet'
+            'Identity'
+          )
+          TabOrder = 0
+          Text = 'BLOSUM'
+        end
+        object ResidueSpecificCBx: TComboBox
+          Left = 178
+          Height = 23
+          Top = 79
+          Width = 90
+          ItemHeight = 15
+          ItemIndex = 1
+          Items.Strings = (
+            'ON'
+            'OFF'
+          )
+          TabOrder = 1
+          Text = 'OFF'
+        end
+        object HidrophilicCBx: TComboBox
+          Left = 178
+          Height = 23
+          Top = 110
+          Width = 90
+          ItemHeight = 15
+          ItemIndex = 1
+          Items.Strings = (
+            'ON'
+            'OFF'
+          )
+          TabOrder = 2
+          Text = 'OFF'
+        end
+        object EndGapSeparationCBx: TComboBox
+          Left = 178
+          Height = 23
+          Top = 180
+          Width = 90
+          ItemHeight = 15
+          ItemIndex = 1
+          Items.Strings = (
+            'ON'
+            'OFF'
+          )
+          TabOrder = 3
+          Text = 'OFF'
+        end
+        object GeneticCodeCombo: TComboBox
+          Left = 178
+          Height = 23
+          Top = 212
+          Width = 150
+          ItemHeight = 15
+          ItemIndex = 0
+          Items.Strings = (
+            'Standard'
+          )
+          OnDropDown = GeneticCodeComboDropDown
+          TabOrder = 4
+          Text = 'Standard'
+        end
+        object GapSeparationDistNEdit: TSpinEdit
+          Left = 178
+          Height = 23
+          Top = 142
+          Width = 90
+          TabOrder = 5
+          Value = 1
+        end
+        object ProteinMatrixHeader: TPanel
+          Left = 0
+          Height = 35
+          Top = 0
+          Width = 493
+          Align = alTop
+          BevelOuter = bvNone
+          ClientHeight = 35
+          ClientWidth = 493
+          Color = clTeal
+          ParentColor = False
+          TabOrder = 6
+          object Label26: TLabel
+            Left = 16
+            Height = 15
+            Top = 12
+            Width = 37
+            Caption = 'Matrix'
+            Font.Color = clWhite
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+      end
+      object ProteinAlignmentPanel: TPanel
+        Left = 0
+        Height = 240
+        Top = 0
+        Width = 493
+        Align = alTop
+        BevelOuter = bvNone
+        ClientHeight = 240
+        ClientWidth = 493
+        TabOrder = 1
+        object ProteinAlignmentHeader: TPanel
+          Left = 0
+          Height = 35
+          Top = 0
+          Width = 493
+          Align = alTop
+          BevelOuter = bvNone
+          ClientHeight = 35
+          ClientWidth = 493
+          Color = clTeal
+          ParentColor = False
+          TabOrder = 0
+          object Label23: TLabel
+            Left = 16
+            Height = 15
+            Top = 12
+            Width = 58
+            Caption = 'Alignment'
+            Font.Color = clWhite
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+        object Label24: TLabel
+          Left = 15
+          Height = 15
+          Top = 46
+          Width = 107
+          Caption = 'Pairwise Alignment'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label25: TLabel
+          Left = 15
+          Height = 15
+          Top = 141
+          Width = 107
+          Caption = 'Multiple Alignment'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label10: TLabel
+          Left = 24
+          Height = 15
+          Top = 71
+          Width = 112
+          Caption = 'Gap Opening Penalty'
+          ParentColor = False
+        end
+        object ProteinPWGapOpenNEdit: TFloatSpinEdit
+          Left = 178
+          Height = 23
+          Top = 65
+          Width = 83
+          TabOrder = 1
+          Value = 15
+        end
+        object Label11: TLabel
+          Left = 24
+          Height = 15
+          Top = 109
+          Width = 117
+          Caption = 'Gap Extension Penalty'
+          ParentColor = False
+        end
+        object ProteinPWGapExtendNEdit: TFloatSpinEdit
+          Left = 178
+          Height = 23
+          Top = 104
+          Width = 83
+          TabOrder = 2
+          Value = 6.66
+        end
+        object Label12: TLabel
+          Left = 24
+          Height = 15
+          Top = 166
+          Width = 112
+          Caption = 'Gap Opening Penalty'
+          ParentColor = False
+        end
+        object ProteinGapOpenNEdit: TFloatSpinEdit
+          Left = 178
+          Height = 23
+          Top = 159
+          Width = 83
+          TabOrder = 3
+          Value = 15
+        end
+        object Label13: TLabel
+          Left = 24
+          Height = 15
+          Top = 205
+          Width = 117
+          Caption = 'Gap Extension Penalty'
+          ParentColor = False
+        end
+        object ProteinGapExtendNEdit: TFloatSpinEdit
+          Left = 178
+          Height = 23
+          Top = 198
+          Width = 83
+          TabOrder = 4
+          Value = 6.66
+        end
+      end
+    end
+  end
+  object OpenGuideTreeDlg: TOpenDialog
+    Left = 288
+    Top = 176
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 264
+    Top = 112
+    object OkAction: TAction
+      Caption = 'OkAction'
+      ImageIndex = 5
+      OnExecute = OkActionExecute
+    end
+    object CancelAction: TAction
+      Caption = 'CancelAction'
+      ImageIndex = 0
+      OnExecute = CancelActionExecute
+    end
+    object HelpAction: TAction
+      Caption = 'HelpAction'
+      ImageIndex = 8
+      OnExecute = HelpActionExecute
+    end
+    object ResetAction: TAction
+      Caption = '&Reset'
+      Hint = 'Reset this form to use the default values'
+      ImageIndex = 9
+      OnExecute = ResetActionExecute
+    end
+  end
+end

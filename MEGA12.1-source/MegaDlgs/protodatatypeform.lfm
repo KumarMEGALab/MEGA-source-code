@@ -1,0 +1,78 @@
+object ProtoDataTypeDlg: TProtoDataTypeDlg
+  Left = 695
+  Height = 121
+  Top = 317
+  Width = 321
+  BorderIcons = [biSystemMenu]
+  Caption = 'MX: Prototyper Data Type'
+  ClientHeight = 121
+  ClientWidth = 321
+  DefaultMonitor = dmMainForm
+  OnActivate = FormActivate
+  OnResize = FormResize
+  Position = poMainFormCenter
+  LCLVersion = '2.2.4.0'
+  object DataTypeComboBox: TComboBox
+    Left = 13
+    Height = 23
+    Top = 45
+    Width = 294
+    ItemHeight = 15
+    ItemIndex = 0
+    Items.Strings = (
+      'Nucleotide (Non-coding)'
+      'Nucleotide (Coding)'
+      'Protein (Amino Acid)'
+      'Pairwise Distances (MEGA Format)'
+      'Newick Tree w/ Branch Lengths'
+    )
+    ParentFont = False
+    Style = csDropDownList
+    TabOrder = 0
+    Text = 'Nucleotide (Non-coding)'
+  end
+  object Label1: TLabel
+    Left = 2
+    Height = 30
+    Top = 2
+    Width = 317
+    Align = alTop
+    Alignment = taCenter
+    BorderSpacing.Around = 2
+    Caption = 'The MEGA prototyper requires that the data input file type be specified. Please select from the options below. '
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+  end
+  object ToolBar1: TToolBar
+    Left = 187
+    Height = 30
+    Top = 84
+    Width = 120
+    Align = alNone
+    AutoSize = True
+    ButtonHeight = 30
+    ButtonWidth = 115
+    Caption = 'ToolBar1'
+    EdgeInner = esNone
+    EdgeOuter = esNone
+    HotImages = ImageForm.DlgButtonsHover
+    Images = ImageForm.DlgButtons
+    TabOrder = 1
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 0
+      Action = OkAction
+    end
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 234
+    Top = 32
+    object OkAction: TAction
+      Caption = 'OkAction'
+      ImageIndex = 5
+      OnExecute = Image1Click
+    end
+  end
+end

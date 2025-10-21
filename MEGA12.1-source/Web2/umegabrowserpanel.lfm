@@ -1,0 +1,49 @@
+object MegaBrowserPanel: TMegaBrowserPanel
+  Left = 0
+  Height = 240
+  Top = 0
+  Width = 578
+  ClientHeight = 240
+  ClientWidth = 578
+  TabOrder = 0
+  DesignLeft = 600
+  DesignTop = 440
+  object Tabs: TATTabs
+    Left = 0
+    Height = 35
+    Top = 0
+    Width = 578
+    Align = alTop
+    ParentColor = False
+    Tabs = <>
+    DoubleBuffered = True
+    TabIndex = -1
+    OptButtonLayout = '<>,v'
+    OptShowPinnedText = '!'
+    OptHintForX = 'Close tab'
+    OptHintForPlus = 'Add tab'
+    OptHintForArrowLeft = 'Scroll tabs left'
+    OptHintForArrowRight = 'Scroll tabs right'
+    OptHintForArrowMenu = 'Show tabs list'
+    OptHintForUser0 = '0'
+    OptHintForUser1 = '1'
+    OptHintForUser2 = '2'
+    OptHintForUser3 = '3'
+    OptHintForUser4 = '4'
+    OnTabChanged = ATTabs1TabChanged
+    OnTabPlusClick = TabsTabPlusClick
+    OnTabClose = TabsTabClose
+    OnTabMove = TabsTabMove
+    OnTabChangeQuery = ATTabs1TabChangeQuery
+    OnTabGetCloseAction = TabsTabGetCloseAction
+  end
+  object BrowserPanel: TPanel
+    Left = 0
+    Height = 205
+    Top = 35
+    Width = 578
+    Align = alClient
+    Caption = 'BrowserPanel'
+    TabOrder = 1
+  end
+end

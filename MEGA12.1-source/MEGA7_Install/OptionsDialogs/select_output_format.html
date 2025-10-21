@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Select Output Format</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--JQuery 3.2.1 Fallback-->
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <!--JQuery 3.4.1-->
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>       
+        <script type="text/javascript" src="js/jquery.validate.min.js"></script> 
+        <script type="text/javascript" src="js/select2.min.js"></script>
+        <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+        <!--Bootstrap 3 Fallback-->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!--Bootstrap 4-->
+        <link href="css/bs4/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/default.css" rel="stylesheet" type="text/css" />
+
+        <script>
+            $(document).ready(function () {
+                $('#mainform').validate({
+                    rules: {
+                        code_output_filename: {
+                            required: true,
+                            minlength: 2
+                        }
+                    },
+                    submitHandler: function (form) {
+                        $('#is_validated').attr("value", "true");
+                    }
+                });
+                $("#output_format").select2({
+                    minimumResultsForSearch: Infinity
+                });
+                $("#choose_sites").select2({
+                    minimumResultsForSearch: Infinity
+                });
+                $('#code_output_upload_button').click(function () {
+                    $('#code_output_upload_file').click();
+                });
+                handleStatusChanged();
+            });
+            function handleStatusChanged() {
+                $('#display_results').on('change', function () {
+                    toggleStatus();
+                });
+                $('#save_to_disk').on('change', function () {
+                    toggleStatus();
+                });
+            }
+
+            function toggleStatus() {
+                if ($('#display_results').is(':checked')) {
+                    $('#disabled_content :input').attr('disabled', true);
+                } 
+                if ($('#save_to_disk').is(':checked')) {
+                    $('#disabled_content :input').attr('disabled', false);
+                }
+                $('select').trigger("change");
+            }
+        </script>
+    </head>
+    <body>
+        <input type="hidden" name="is_validated" id="is_validated" value="false"/>
+        <div class="container-fluid">
+          <div class="boxed">
+            <div class="row">
+              <div class="col-12">
+                <div class="main-heading subtract-left-margin">Select Output Format</div>
+              </div>
+              <div class="col-12">
+                <select class="output_format" id="output_format">
+                  <option>XLSX: MS Excel Workbook (2007+)</option>
+                  <option>XLS: MS Excel Workbook (all versions)</option>
+                  <option>ODS: Open/Libre Office Workbook</option>
+                  <option>CSV: Comma-Separated-Values</option>
+                  <option selected>TXT: Text File</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <div class="grid-col-2-aside">
+                  <input type="radio" name="select_option" value="create_new_alignment" id="save_to_disk" onchange="toggleStatus()" ischecked="true" checked/>
+                  <label for="save_to_disk" class="d-flex align-items-center">Save to Disk</label>
+                </div>
+                <div class="grid-col-2-aside">
+                  <input type="radio" name="select_option" value="open_saved_alignment" id="display_results" ischecked="false" onchange="toggleStatus()" />
+                  <label for="display_results" class="d-flex align-items-center">Display Results</label>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div id="disabled_content" class="disabled_content">
+              <div class="boxed">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="main-heading subtract-left-margin">Output Filename</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <form id="mainform">
+                    <input type="text" id="code_output_filename" class="code_output_filename" name="code_output_filename" value="Result.txt"/>
+                    </form>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="main-heading subtract-left-margin">Directory</div>
+                  </div>
+                  <div class="col-12">
+                    <input type="button" class="width_170 section-label" id="code_output_upload_button" value="Upload">
+                    <input type="file" name="code_output_upload_file" id="code_output_upload_file">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="main-heading subtract-left-margin">Sites to Choose for Analysis</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <select class="choose_sites" id="choose_sites">
+                      <option>Use all sites</option>
+                      <option>Use highlighted sites</option>
+                      <option>Use unhighlighted sites</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </body>
+</html>

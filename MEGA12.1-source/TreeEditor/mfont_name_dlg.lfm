@@ -1,0 +1,130 @@
+object MegaFontNameDialog: TMegaFontNameDialog
+  Left = 4448
+  Height = 446
+  Top = 301
+  Width = 331
+  BorderIcons = []
+  Caption = 'M12: Tree Explorer Global Font'
+  ClientHeight = 446
+  ClientWidth = 331
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnResize = FormResize
+  Position = poOwnerFormCenter
+  LCLVersion = '2.2.6.0'
+  object Label1: TLabel
+    Left = 12
+    Height = 15
+    Top = 10
+    Width = 80
+    Caption = 'Available Fonts'
+    ParentColor = False
+  end
+  object FontsListBox: TListBox
+    Left = 12
+    Height = 217
+    Top = 54
+    Width = 308
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    ItemHeight = 0
+    OnSelectionChange = FontsListBoxSelectionChange
+    TabOrder = 0
+  end
+  object PreviewPanel: TPanel
+    Left = 12
+    Height = 50
+    Top = 351
+    Width = 308
+    Anchors = [akLeft, akRight, akBottom]
+    BevelColor = clActiveBorder
+    Caption = 'AaBbYyZz 0123456789'
+    Color = clWhite
+    ParentColor = False
+    TabOrder = 1
+  end
+  object ToolBar1: TToolBar
+    Left = 72
+    Top = 411
+    Width = 189
+    Align = alNone
+    Anchors = [akLeft, akBottom]
+    AutoSize = True
+    ButtonHeight = 32
+    ButtonWidth = 90
+    Caption = 'ToolBar1'
+    EdgeInner = esNone
+    EdgeOuter = esNone
+    HotImages = ImageForm.Buttons_90x30_hover
+    Images = ImageForm.Buttons_90x30
+    TabOrder = 2
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 0
+      Action = CancelAction
+    end
+    object ToolButton2: TToolButton
+      Left = 95
+      Top = 0
+      Action = OkAction
+    end
+  end
+  object Label2: TLabel
+    Left = 12
+    Height = 15
+    Top = 330
+    Width = 41
+    Anchors = [akLeft, akBottom]
+    Caption = 'Preview'
+    ParentColor = False
+  end
+  object SearchEdit: TEdit
+    Left = 12
+    Height = 23
+    Top = 27
+    Width = 308
+    Anchors = [akTop, akLeft, akRight]
+    OnChange = SearchEditChange
+    TabOrder = 3
+  end
+  object OverwriteNodeFontsCheckbox: TCheckBox
+    Left = 28
+    Height = 19
+    Hint = 'Overwrite font names that have been changed for specific subtrees'
+    Top = 280
+    Width = 191
+    Anchors = [akLeft, akBottom]
+    Caption = 'Overwrite Subtree-specific Fonts'
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 4
+  end
+  object OverwriteGroupFontsCheckbox: TCheckBox
+    Left = 28
+    Height = 19
+    Hint = 'Overwrite font names that have been changed for groups in the tree'
+    Top = 303
+    Width = 184
+    Anchors = [akLeft, akBottom]
+    Caption = 'Overwrite Group-specific Fonts'
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 5
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.Buttons_90x30
+    Left = 200
+    Top = 32
+    object OkAction: TAction
+      Caption = '&Ok'
+      ImageIndex = 11
+      OnExecute = OkActionExecute
+      ShortCut = 16467
+    end
+    object CancelAction: TAction
+      Caption = 'CancelAction'
+      ImageIndex = 10
+      OnExecute = CancelActionExecute
+      ShortCut = 27
+    end
+  end
+end

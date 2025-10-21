@@ -1,0 +1,65 @@
+body { 
+	font-family: 'Open Sans', arial,sans-serif; 
+	background-color: white;
+	margin-left: 40px;
+	margin-right: 40px;	
+}
+
+#content { 
+	text-align: justify; 
+}
+
+.reference { 
+	font-size: 12px; 
+	margin: 2px 0px 2px 0px; 
+	text-indent: -1em; 
+	padding-left: 1em; 
+}
+
+table {
+	border-collapse: collapse;
+	width: 480px;
+	font-family: 'Open Sans', arial,sans-serif;
+}
+
+th {
+	border-top: 2px solid black;
+	border-bottom: 1px solid black;
+}
+
+td {
+	padding: 5px;
+	text-align: center;
+}
+
+.rowHeader { 
+	font-weight: bold; 
+}
+
+.lastRow td { 
+	border-bottom: 2px solid black; 
+}
+
+.figureTitle {
+	font-weight: bold;
+	font-family: 'Open Sans', arial,sans-serif;
+	font-size: 16px;
+	padding: 2px;
+	text-align: left;
+}
+
+.note {
+	font-size: 14px;
+	padding: 2px;
+	text-align: justify;
+}
+
+.highlighted {
+	font-weight:bold;
+}
+
+.preventwrap td {
+	white-space:nowrap;
+}
+
+

@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Codon Table</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>       
+        <script type="text/javascript" src="js/jquery.validate.min.js"></script> 
+        <script type="text/javascript" src="js/select2.min.js"></script>        
+        <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/jquery-ui.structure.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/jquery-ui.theme.min.css" rel="stylesheet" type="text/css" />
+        <!--Bootstrap 3 Fallback-->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!--Bootstrap 4-->
+        <link href="css/bs4/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/default.css" rel="stylesheet" type="text/css" />
+        
+      <script>
+            $(document).ready(function () {
+                 $('#mainform').validate({
+                    rules: {
+                        genetic_code_title: {
+                            required: true,
+                            minlength: 2
+                        }
+                    },
+                    submitHandler: function (form) {
+                        $('#is_validated').attr("value", "true");
+                    }
+                });
+                $("#codon_table_page").dialog({
+                    autoOpen: true,
+                    width: 400,
+                    height: 600,
+                    maxWidth: 400,
+                    title: 'Edit Genetic Code',
+                    create: function(event, ui) { 
+                        var widget = $(this).dialog("widget");
+                        $(".ui-dialog-titlebar-close span", widget).removeClass("ui-icon-closethick").addClass("ui-icon-arrowreturnthick-1-w");
+                        $(".ui-icon-arrowreturnthick-1-w").click(function() {
+                            window.location.href = "select_genetic_code.html";
+                        });
+                    }
+                });
+                $("ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-draggable ui-resizable").css({
+                    "width": "400",
+                    "max-width": "400"
+                });
+                $('#codon_table_page').css('overflow', 'hidden');
+            });
+        </script>
+
+    </head>
+    <body>
+        <input type="hidden" name="is_validated" id="is_validated" value="false"/>
+        <div id="codon_table_page" class="codon_table_page">
+        <div class="container">
+                <div class="col-xs-2 codon_name_label section-label">Name</div>
+                <div class="col-xs-4">
+                    <form id="mainform" method="post" action="">
+                    <input type="text" id="genetic_code_title" class="genetic_code_title" name="genetic_code_title" placeholder="Enter Genetic Code Name"/>
+                    </form>
+            </div>
+            <div id="box">
+            <table id="codon_table">
+                <span class="section-label vertical">1st Position</span>
+                <span class="section-label col-xs-offset-4">2nd Position</span>
+                <tr class="boxed">
+                    <th scope="col"></th>
+                    <th scope="col" >U</th>
+                    <th scope="col" >C</th>
+                    <th scope="col" >A</th>
+                    <th scope="col" >G</th>
+                    <th scope="col"></th>
+                    <th scope="col" class="vertical2">3rd Position</th>
+                </tr>
+                <colgroup>
+                    <col span="1" class="boxed">
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col span="1" class="boxed">
+                </colgroup>
+                <tr id="table_row">
+                    <th row>U</th>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option selected>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option selected>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option selected>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option selected>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">U</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option selected>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option selected>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option selected>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option selected>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">C</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option selected>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option selected>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option selected>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">A</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option selected>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option selected>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option selected>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">G</th> 
+                </tr>
+                <tr>
+                    <th scope="row">C</th>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option selected>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option selected>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option selected>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon"id="select_codon"> 
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option selected>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">U</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option selected>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option selected>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option selected>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option selected>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">C</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option selected>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option selected>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option selected>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option selected>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">A</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option selected>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option selected>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option selected>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option selected>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">G</th> 
+                </tr>
+                <tr>
+                    <th scope="row">A</th>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option selected>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option selected>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option selected>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option selected>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">U</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option selected>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option selected>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option selected>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option selected>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">C</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option selected>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option selected>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option selected>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">A</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option selected>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option selected>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option selected>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">G</th> 
+                </tr>
+                <tr>
+                    <th scope="row">G</th>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option selected>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option selected>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option selected>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option selected>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">U</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option selected>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option selected>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option selected>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option selected>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">C</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option selected>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option selected>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option selected>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option selected>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">A</th> 
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option selected>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option selected>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option selected>Glu</option>
+                            <option>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select_codon" id="select_codon">
+                            <option>***</option>
+                            <option>Ala</option>
+                            <option>Arg</option>
+                            <option>Asn</option>
+                            <option>Asp</option>
+                            <option>Cys</option>
+                            <option>Gln</option>
+                            <option>Glu</option>
+                            <option selected>Gly</option>
+                            <option>His</option>
+                            <option>Ile</option>
+                            <option>Leu</option>
+                            <option>Lys</option>
+                            <option>Met</option>
+                            <option>Phe</option>
+                            <option>Pro</option>
+                            <option>Ser</option>
+                            <option>Thr</option>
+                            <option>Trp</option>
+                            <option>Tyr</option>
+                            <option>Val</option>
+                        </select>
+                    </td>
+                    <th scope="row">G</th> 
+                </tr>
+            </table>
+            </div>
+    </div>
+        </div>
+    </body>
+</html>

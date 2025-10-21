@@ -1,0 +1,162 @@
+object ImageExportForm: TImageExportForm
+  Left = 1025
+  Height = 188
+  Top = 397
+  Width = 368
+  BorderIcons = []
+  Caption = 'Image Export Options'
+  ClientHeight = 188
+  ClientWidth = 368
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnResize = FormResize
+  Position = poOwnerFormCenter
+  SessionProperties = 'FilenameEdit.Text;FormatListBox.ItemIndex'
+  LCLVersion = '2.2.6.0'
+  object Label1: TLabel
+    Left = 16
+    Height = 15
+    Top = 79
+    Width = 48
+    Caption = 'Filename'
+    ParentColor = False
+  end
+  object FilenameEdit: TEdit
+    Left = 16
+    Height = 23
+    Top = 101
+    Width = 309
+    TabOrder = 0
+  end
+  object BrowseBtn: TImage
+    Left = 328
+    Height = 19
+    Top = 105
+    Width = 18
+    OnClick = GetFilenameActionExecute
+    OnMouseEnter = BrowseBtnMouseEnter
+    OnMouseLeave = BrowseBtnMouseLeave
+    Picture.Data = {
+      1754506F727461626C654E6574776F726B477261706869639900000089504E47
+      0D0A1A0A0000000D494844520000001200000012080600000056CE8E57000000
+      6049444154789C636018DE407EEE9CF540FC1F0B7E4FAA41FB7118440CEEA796
+      41FB910D3200620732B101CC90066A60060ABC84824106DDA78241F7F1453D29
+      783D2C8C2835081C460E5430C801649002150C528025014A02FC3EE599745003
+      009DC3B11B422D70BA0000000049454E44AE426082
+    }
+    Proportional = True
+    Stretch = True
+  end
+  object Label2: TLabel
+    Left = 0
+    Height = 15
+    Top = 0
+    Width = 368
+    Align = alTop
+    Caption = '     Tree Image Format'
+    ParentColor = False
+  end
+  object FormatListBox: TComboBox
+    Left = 16
+    Height = 23
+    Top = 23
+    Width = 309
+    ItemHeight = 15
+    ItemIndex = 1
+    Items.Strings = (
+      'BMP (Windows Bitmap)'
+      'PDF (Portable Document Format)'
+      'PNG (Portable Network Graphic)'
+      'SVG (Scalable Vector Graphic)'
+      'TIFF (Tagged Image File Format)'
+      'EMF (Enhanced Meta File)'
+    )
+    OnChange = FormatListBoxSelectionChanged
+    TabOrder = 1
+    Text = 'PDF (Portable Document Format)'
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 39
+    Top = 149
+    Width = 368
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 39
+    ClientWidth = 368
+    TabOrder = 2
+    object ToolBar1: TToolBar
+      Left = 64
+      Height = 30
+      Top = 0
+      Width = 239
+      Align = alNone
+      AutoSize = True
+      ButtonHeight = 30
+      ButtonWidth = 115
+      Caption = 'ToolBar1'
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      HotImages = ImageForm.DlgButtonsHover
+      Images = ImageForm.DlgButtons
+      TabOrder = 0
+      object ToolButton1: TToolButton
+        Left = 1
+        Top = 0
+        Action = CancelAction
+      end
+      object ToolButton2: TToolButton
+        Left = 120
+        Top = 0
+        Action = SaveAction
+      end
+    end
+  end
+  object SaveDialog: TSaveDialog
+    Left = 280
+    Top = 48
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 8
+    Top = 56
+    object GetFilenameAction: TAction
+      Caption = '&Save As...'
+      Hint = 'Specify a file location and name'
+      ImageIndex = 45
+      OnExecute = GetFilenameActionExecute
+      ShortCut = 49235
+    end
+    object SaveAction: TAction
+      Caption = '&Export'
+      ImageIndex = 5
+      OnExecute = SaveActionExecute
+      ShortCut = 16467
+    end
+    object CancelAction: TAction
+      Caption = 'CancelAction'
+      ImageIndex = 0
+      OnExecute = CancelActionExecute
+      ShortCut = 27
+    end
+  end
+  object BrowseImages: TImageList
+    Height = 18
+    Width = 18
+    Left = 192
+    Top = 39
+    Bitmap = {
+      4C7A020000001200000012000000970000000000000078DAEDD4BD09C0201086
+      61378923388255EA8CE4062E90CC700B041CC5111CC1285C61A1E0CFD724E4E0
+      6D1FB81314E2BB735E1BA562A530E8B886D3930539AE70544A4FA6D830A02228
+      0F3208E0106837C3375F75B221018EE4B75FB9B517FFBC728EFDA654AC14061D
+      D7707AB220C7158E4AE9C9141B065404E54106011C02ED66F8E6AB4E3624C091
+      FCF62BB7FEF47FF80057775DA6
+    }
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    Left = 123
+    Top = 67
+  end
+end

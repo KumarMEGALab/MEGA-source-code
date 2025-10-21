@@ -1,0 +1,614 @@
+object SubtreeDlg: TSubtreeDlg
+  Left = 770
+  Height = 460
+  Top = 233
+  Width = 346
+  BorderIcons = []
+  Caption = 'Subtree Drawing Options'
+  ClientHeight = 460
+  ClientWidth = 346
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  LCLVersion = '2.0.2.0'
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 385
+    Top = 0
+    Width = 346
+    ActivePage = ImageTabSheet
+    Align = alClient
+    TabIndex = 2
+    TabOrder = 0
+    TabPosition = tpLeft
+    object SubtreeTabSheet: TTabSheet
+      Caption = 'Property'
+      ClientHeight = 377
+      ClientWidth = 315
+      object Panel2: TPanel
+        Left = 0
+        Height = 69
+        Top = 2
+        Width = 334
+        BevelOuter = bvNone
+        ClientHeight = 69
+        ClientWidth = 334
+        TabOrder = 0
+        object NameEditBx: TEdit
+          Left = 8
+          Height = 23
+          Top = 32
+          Width = 231
+          TabOrder = 0
+        end
+        object Label1: TLabel
+          Left = 8
+          Height = 15
+          Top = 8
+          Width = 79
+          Caption = 'Name/Caption'
+          ParentColor = False
+        end
+        object CaptionFontBtn: TBitBtn
+          Left = 250
+          Height = 28
+          Top = 32
+          Width = 75
+          Caption = '&Font'
+          OnClick = CaptionFontBtnClick
+          TabOrder = 1
+        end
+      end
+      object Panel5: TPanel
+        Left = 0
+        Height = 109
+        Top = 75
+        Width = 334
+        BevelOuter = bvNone
+        ClientHeight = 109
+        ClientWidth = 334
+        TabOrder = 1
+        object Label2: TLabel
+          Left = 8
+          Height = 15
+          Top = 8
+          Width = 114
+          Caption = 'Node/Subtree Marker'
+          ParentColor = False
+        end
+        object Label3: TLabel
+          Left = 208
+          Height = 15
+          Top = 43
+          Width = 29
+          Caption = 'Color'
+          ParentColor = False
+        end
+        object Label4: TLabel
+          Left = 24
+          Height = 15
+          Top = 43
+          Width = 32
+          Caption = 'Shape'
+          ParentColor = False
+        end
+        object MarkerShapeCmbBx: TComboBox
+          Left = 72
+          Height = 23
+          Top = 40
+          Width = 100
+          ItemHeight = 15
+          Items.Strings = (
+            'none'
+            ''
+            ''
+            ''
+            ''
+            ''
+            ''
+            ''
+            ''
+            ''
+          )
+          OnDrawItem = MarkerShapeCmbBxDrawItem
+          Style = csDropDownList
+          TabOrder = 0
+        end
+        object MarkerColorCmbBx: TColorButton
+          Left = 250
+          Height = 28
+          Top = 40
+          Width = 75
+          BorderWidth = 2
+          ButtonColorSize = 16
+          ButtonColor = clBlack
+        end
+        object OverwriteMarkerCkBx: TCheckBox
+          Left = 16
+          Height = 19
+          Top = 80
+          Width = 145
+          Caption = 'Apply to Taxon Markers'
+          TabOrder = 1
+        end
+      end
+      object Panel6: TPanel
+        Left = 0
+        Height = 161
+        Top = 187
+        Width = 334
+        BevelOuter = bvNone
+        ClientHeight = 161
+        ClientWidth = 334
+        TabOrder = 2
+        object Label5: TLabel
+          Left = 8
+          Height = 15
+          Top = 9
+          Width = 62
+          Caption = 'Branch Line'
+          ParentColor = False
+        end
+        object Label6: TLabel
+          Left = 23
+          Height = 15
+          Top = 42
+          Width = 27
+          Caption = 'Lines'
+          ParentColor = False
+        end
+        object Label7: TLabel
+          Left = 16
+          Height = 15
+          Top = 84
+          Width = 32
+          Caption = 'Width'
+          ParentColor = False
+        end
+        object Label8: TLabel
+          Left = 24
+          Height = 15
+          Top = 127
+          Width = 25
+          Caption = 'Style'
+          ParentColor = False
+        end
+        object Label9: TLabel
+          Left = 207
+          Height = 15
+          Top = 42
+          Width = 29
+          Caption = 'Color'
+          ParentColor = False
+        end
+        object BranchOptionCmbBx: TComboBox
+          Left = 64
+          Height = 23
+          Top = 40
+          Width = 128
+          ItemHeight = 15
+          Items.Strings = (
+            'Full Branch'
+            'Half Branch'
+            'No Branch'
+            'BranchOnly'
+          )
+          OnDrawItem = BranchOptionCmbBxDrawItem
+          Style = csDropDownList
+          TabOrder = 0
+        end
+        object BranchWidthCmbBx: TComboBox
+          Left = 64
+          Height = 23
+          Top = 82
+          Width = 261
+          ItemHeight = 15
+          Items.Strings = (
+            '  Min'
+            '  1 pt'
+            '  2 pt'
+            '  3 pt'
+            '  4 pt'
+            '  5 pt'
+            '  6 pt'
+            '  8 pt'
+            '10 pt'
+          )
+          OnChange = BranchWidthCmbBxChange
+          OnDrawItem = BranchWidthCmbBxDrawItem
+          Style = csDropDownList
+          TabOrder = 1
+        end
+        object BranchStyleCmbBx: TComboBox
+          Left = 64
+          Height = 23
+          Top = 124
+          Width = 261
+          ItemHeight = 15
+          Items.Strings = (
+            'Solid'
+            'Dash'
+            'Dot'
+          )
+          OnChange = BranchStyleCmbBxChange
+          OnDrawItem = BranchStyleCmbBxDrawItem
+          Style = csDropDownList
+          TabOrder = 2
+        end
+        object ColorCmbBx: TColorButton
+          Left = 250
+          Height = 28
+          Top = 40
+          Width = 75
+          BorderWidth = 2
+          ButtonColorSize = 16
+          ButtonColor = clBlack
+        end
+      end
+    end
+    object CaptionTabSheet: TTabSheet
+      Caption = 'Display'
+      ClientHeight = 377
+      ClientWidth = 315
+      object ShowCaptionCBx: TCheckBox
+        Left = 13
+        Height = 19
+        Top = 11
+        Width = 103
+        Caption = 'Display Caption'
+        TabOrder = 0
+      end
+      object VertAlignCBx: TCheckBox
+        Left = 198
+        Height = 19
+        Top = 13
+        Width = 99
+        Caption = 'Align Vertically'
+        TabOrder = 1
+      end
+      object Panel7: TPanel
+        Left = 2
+        Height = 113
+        Top = 44
+        Width = 331
+        BevelOuter = bvNone
+        ClientHeight = 113
+        ClientWidth = 331
+        TabOrder = 2
+        object ShowBracketCBx: TCheckBox
+          Left = 11
+          Height = 19
+          Top = 7
+          Width = 100
+          Caption = 'Display Bracket'
+          TabOrder = 0
+        end
+        object BracketStyleCmbBx: TComboBox
+          Left = 50
+          Height = 23
+          Top = 39
+          Width = 135
+          ItemHeight = 15
+          ItemIndex = 0
+          Items.Strings = (
+            'Square'
+            'Line'
+            'None'
+          )
+          OnDrawItem = BracketStyleCmbBxDrawItem
+          Style = csDropDownList
+          TabOrder = 1
+          Text = 'Square'
+        end
+        object BracketWidthSEdit: TSpinEdit
+          Left = 96
+          Height = 23
+          Top = 76
+          Width = 50
+          MaxValue = 10
+          MinValue = 1
+          TabOrder = 2
+          Value = 1
+        end
+        object BracketColorCmbBx: TColorButton
+          Left = 250
+          Height = 27
+          Top = 40
+          Width = 75
+          BorderWidth = 2
+          ButtonColorSize = 16
+          ButtonColor = clBlack
+        end
+        object Label10: TLabel
+          Left = 208
+          Height = 15
+          Top = 40
+          Width = 29
+          Caption = 'Color'
+          ParentColor = False
+        end
+        object Label11: TLabel
+          Left = 11
+          Height = 15
+          Top = 40
+          Width = 25
+          Caption = 'Style'
+          ParentColor = False
+        end
+        object Label12: TLabel
+          Left = 153
+          Height = 15
+          Top = 78
+          Width = 30
+          Caption = 'Pixels'
+          ParentColor = False
+        end
+        object Label13: TLabel
+          Left = 11
+          Height = 15
+          Top = 78
+          Width = 57
+          Caption = 'Line Width'
+          ParentColor = False
+        end
+      end
+      object ShowTaxonNameCkBx: TCheckBox
+        Left = 13
+        Height = 19
+        Top = 164
+        Width = 133
+        Caption = 'Display Taxon Names'
+        TabOrder = 3
+      end
+      object ShowNodeMarkerCkBx: TCheckBox
+        Left = 13
+        Height = 19
+        Top = 190
+        Width = 135
+        Caption = 'Display Node Markers'
+        TabOrder = 4
+      end
+      object ShowTaxonMarkerCkBx: TCheckBox
+        Left = 13
+        Height = 19
+        Top = 217
+        Width = 138
+        Caption = 'Display Taxon Markers'
+        TabOrder = 5
+      end
+      object NamesFontBtn: TBitBtn
+        Left = 216
+        Height = 30
+        Top = 169
+        Width = 75
+        Caption = '&Font'
+        OnClick = NamesFontBtnClick
+        TabOrder = 6
+      end
+      object Panel8: TPanel
+        Left = 2
+        Height = 104
+        Top = 246
+        Width = 331
+        BevelOuter = bvNone
+        ClientHeight = 104
+        ClientWidth = 331
+        TabOrder = 7
+        object CompressSubtreeCBx: TCheckBox
+          Left = 11
+          Height = 19
+          Top = 7
+          Width = 116
+          Caption = 'Compress Subtree'
+          TabOrder = 0
+        end
+        object FillStyleCmbBx: TComboBox
+          Left = 96
+          Height = 23
+          Top = 71
+          Width = 133
+          ItemHeight = 15
+          Items.Strings = (
+            ''
+            ''
+            ''
+            ''
+            ''
+            ''
+            ''
+            ''
+          )
+          OnDrawItem = FillStyleCmbBxDrawItem
+          Style = csDropDownList
+          TabOrder = 1
+        end
+        object Label14: TLabel
+          Left = 11
+          Height = 15
+          Top = 40
+          Width = 63
+          Caption = 'Vertical Unit'
+          ParentColor = False
+        end
+        object Label15: TLabel
+          Left = 22
+          Height = 15
+          Top = 75
+          Width = 56
+          Caption = 'Fill Pattern'
+          ParentColor = False
+        end
+        object Label16: TLabel
+          Left = 239
+          Height = 15
+          Top = 75
+          Width = 66
+          Caption = 'Pixels/Taxon'
+          ParentColor = False
+        end
+        object CompressedSizeSEdit: TSpinEdit
+          Left = 96
+          Height = 23
+          Top = 37
+          Width = 50
+          MaxValue = 10
+          TabOrder = 2
+        end
+      end
+    end
+    object ImageTabSheet: TTabSheet
+      Caption = 'Image'
+      ClientHeight = 377
+      ClientWidth = 315
+      object Panel3: TPanel
+        Left = 151
+        Height = 50
+        Top = 168
+        Width = 170
+        Caption = 'Panel3'
+        TabOrder = 0
+      end
+      object ShowImageCkBx: TCheckBox
+        Left = 8
+        Height = 19
+        Top = 10
+        Width = 94
+        Caption = 'Display Image'
+        TabOrder = 1
+      end
+      object ImagePositionCBx: TComboBox
+        Left = 128
+        Height = 23
+        Top = 8
+        Width = 167
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'After Text'
+          'Before Text'
+          'Above Text'
+          'Below Text'
+        )
+        Style = csDropDownList
+        TabOrder = 2
+        Text = 'After Text'
+      end
+      object Image: TImage
+        Left = 55
+        Height = 225
+        Top = 56
+        Width = 225
+        Proportional = True
+        Stretch = True
+      end
+      object ImageLoadBtn: TButton
+        Left = 16
+        Height = 25
+        Top = 296
+        Width = 75
+        Caption = '&Load'
+        OnClick = ImageLoadBtnClick
+        TabOrder = 3
+      end
+      object ImageClearBtn: TButton
+        Left = 122
+        Height = 25
+        Top = 296
+        Width = 75
+        Caption = '&Clear'
+        OnClick = ImageClearBtnClick
+        TabOrder = 4
+      end
+      object ImageExportBtn: TButton
+        Left = 228
+        Height = 25
+        Top = 296
+        Width = 75
+        Caption = '&Export'
+        OnClick = ImageExportBtnClick
+        TabOrder = 5
+      end
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 38
+    Top = 422
+    Width = 346
+    Align = alBottom
+    ClientHeight = 38
+    ClientWidth = 346
+    TabOrder = 1
+    object HelpBtn: TBitBtn
+      Left = 24
+      Height = 30
+      Top = 4
+      Width = 75
+      DefaultCaption = True
+      Kind = bkHelp
+      TabOrder = 0
+    end
+    object CancelBtn: TBitBtn
+      Left = 136
+      Height = 30
+      Top = 4
+      Width = 75
+      Cancel = True
+      DefaultCaption = True
+      Kind = bkCancel
+      ModalResult = 2
+      TabOrder = 1
+    end
+    object OkBtn: TBitBtn
+      Left = 248
+      Height = 30
+      Top = 4
+      Width = 75
+      Default = True
+      DefaultCaption = True
+      Kind = bkOK
+      ModalResult = 1
+      TabOrder = 2
+    end
+  end
+  object MainPanel: TPanel
+    Left = 0
+    Height = 37
+    Top = 385
+    Width = 346
+    Align = alBottom
+    ClientHeight = 37
+    ClientWidth = 346
+    TabOrder = 2
+    object ClearCkBx: TCheckBox
+      Left = 16
+      Height = 19
+      Top = 6
+      Width = 141
+      Caption = 'Overwrite Downstream'
+      TabOrder = 0
+    end
+    object DefaultCkBx: TCheckBox
+      Left = 238
+      Height = 19
+      Top = 6
+      Width = 58
+      Caption = 'Default'
+      TabOrder = 1
+    end
+  end
+  object SaveImageDlg: TSavePictureDialog
+    left = 168
+    top = 80
+  end
+  object OpenImageDlg: TOpenPictureDialog
+    left = 184
+    top = 96
+  end
+  object FontDlg: TFontDialog
+    MinFontSize = 0
+    MaxFontSize = 0
+    left = 232
+    top = 144
+  end
+end

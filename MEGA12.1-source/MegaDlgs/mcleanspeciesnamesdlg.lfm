@@ -1,0 +1,169 @@
+object CleanSpNamesDlg: TCleanSpNamesDlg
+  Left = 761
+  Height = 307
+  Top = 319
+  Width = 396
+  Caption = 'Clean Species Names'
+  ClientHeight = 307
+  ClientWidth = 396
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Tahoma'
+  FormStyle = fsStayOnTop
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poOwnerFormCenter
+  SessionProperties = 'Height;MaxTokensCheckbox.Checked;MaxTokensEdit.Text;StripByRegexCheckBox.Checked;StripByRegexEdit.Text;StripByTextEdit.Text;StripNonAlphaNumericCheckBox.Checked;StripNumericTokensCheckbox.Checked;StripTextCheckBox.Checked;Width'
+  LCLVersion = '2.2.4.0'
+  object aLbl: TLabel
+    Left = 16
+    Height = 18
+    Top = 8
+    Width = 267
+    Caption = 'Remove Tokens in Species Names That:'
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 64
+    Top = 235
+    Width = 397
+    Caption = 'Notes:      '#10'    * tokens are delimited by whitespace     '#10'    * regex filter uses PCRE (Perl Compatible Regular Expressions)     '#10'    * text filter is case-sensitive'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 222
+    Height = 16
+    Top = 37
+    Width = 41
+    Caption = 'Tokens'
+    ParentColor = False
+  end
+  object Button1: TButton
+    Left = 254
+    Height = 25
+    Top = 203
+    Width = 75
+    Action = ApplyAction
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 87
+    Height = 25
+    Hint = 'Close this dialog and do nothing'
+    Top = 203
+    Width = 75
+    Caption = '&Done'
+    OnClick = Button2Click
+    TabOrder = 1
+  end
+  object StripNumericTokensCheckbox: TCheckBox
+    Left = 43
+    Height = 20
+    Top = 69
+    Width = 118
+    Caption = 'Contain &Numbers'
+    TabOrder = 2
+  end
+  object StripNonAlphaNumericCheckBox: TCheckBox
+    Left = 43
+    Height = 20
+    Hint = 'Remove tokens with any characters that are not alpha-numeric'
+    Top = 99
+    Width = 238
+    Caption = 'Contain Non-&Alphanumeric Characters'
+    TabOrder = 3
+  end
+  object StripTextCheckBox: TCheckBox
+    Left = 43
+    Height = 20
+    Top = 130
+    Width = 114
+    Caption = 'Contain the &Text'
+    TabOrder = 4
+  end
+  object StripByRegexCheckBox: TCheckBox
+    Left = 43
+    Height = 20
+    Top = 161
+    Width = 115
+    Caption = 'Match the Rege&x'
+    TabOrder = 5
+  end
+  object StripByTextEdit: TEdit
+    Left = 172
+    Height = 24
+    Top = 129
+    Width = 163
+    TabOrder = 6
+  end
+  object StripByRegexEdit: TEdit
+    Left = 172
+    Height = 24
+    Top = 159
+    Width = 163
+    TabOrder = 7
+  end
+  object Button3: TButton
+    Left = 170
+    Height = 25
+    Top = 203
+    Width = 75
+    Action = RevertAction
+    TabOrder = 8
+  end
+  object MaxTokensCheckbox: TCheckBox
+    Left = 43
+    Height = 20
+    Top = 37
+    Width = 119
+    Caption = 'Are Past the First'
+    TabOrder = 9
+  end
+  object MaxTokensEdit: TEdit
+    Left = 170
+    Height = 24
+    Top = 34
+    Width = 46
+    Alignment = taCenter
+    NumbersOnly = True
+    TabOrder = 10
+    Text = '2'
+  end
+  object ActionList1: TActionList
+    Images = ImageList1
+    Left = 336
+    Top = 96
+    object ApplyAction: TAction
+      Caption = '&Apply'
+      Hint = 'Apply the selected filters'
+      OnExecute = ApplyActionExecute
+    end
+    object DoneAction: TAction
+      Caption = '&Done'
+      Hint = 'Close this dialog and do nothing'
+      OnExecute = DoneActionExecute
+    end
+    object RevertAction: TAction
+      Caption = '&Revert'
+      Hint = 'Revert all changes'
+      OnExecute = RevertActionExecute
+      ShortCut = 16474
+    end
+  end
+  object ImageList1: TImageList
+    Left = 272
+    Top = 32
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    IniSection = 'TCleanSpNamesDlg'
+    Left = 192
+    Top = 72
+  end
+end

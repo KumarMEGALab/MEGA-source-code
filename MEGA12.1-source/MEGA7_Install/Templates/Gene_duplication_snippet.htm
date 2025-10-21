@@ -1,0 +1,16 @@
+
+		{if TTreeBox.IsGeneDups = True}	
+			{if TAnalysisInfo.InitialUsrOperation = dtdoGeneDupInference}
+				The evolutionary history shown is from a user-provided tree.			
+			{endif}
+			{if TAnalysisInfo.UsedSpeciesTree = True}
+				Gene duplications are inferred using the method described in [{TLegendGenerator.GeneDupsCitation:ExpandCitation}].		
+			{else}
+				Gene duplications are identified by searching for all branching points in the topology with at least one species that is present in both subtrees of the branching point.
+			{endif}		
+			{if TAnalysisInfo.GeneTreeRooted = False}
+			An unrooted gene tree was used for the analysis such that the search for duplication events was performed by finding the placement of the 
+			root on a branch or branches that produced the minimum number of duplication events.
+			{endif}
+			{TTreeBox.NumDupsBreakdown}			
+		{endif}

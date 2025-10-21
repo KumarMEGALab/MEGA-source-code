@@ -1,0 +1,165 @@
+object CalibrateClockDlg: TCalibrateClockDlg
+  Left = 737
+  Height = 232
+  Top = 242
+  Width = 365
+  BorderIcons = []
+  Caption = 'Calibrate Molecular Clock'
+  ClientHeight = 232
+  ClientWidth = 365
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnHelp = FormHelp
+  OnResize = FormResize
+  Position = poOwnerFormCenter
+  SessionProperties = 'DivTimeEdit.Text;EvoRateEdit.Text;Height;TimeUnitEdit.Text;Width'
+  LCLVersion = '2.2.6.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 41
+    Top = 191
+    Width = 365
+    Align = alClient
+    ClientHeight = 41
+    ClientWidth = 365
+    TabOrder = 0
+    object ToolBar1: TToolBar
+      Left = 5
+      Height = 30
+      Top = 5
+      Width = 358
+      Align = alNone
+      AutoSize = True
+      ButtonHeight = 30
+      ButtonWidth = 115
+      Caption = 'ToolBar1'
+      EdgeInner = esNone
+      EdgeOuter = esNone
+      HotImages = ImageForm.DlgButtonsHover
+      Images = ImageForm.DlgButtons
+      TabOrder = 0
+      object ToolButton1: TToolButton
+        Left = 1
+        Top = 0
+        Action = HelpAction
+      end
+      object ToolButton2: TToolButton
+        Left = 120
+        Top = 0
+        Action = CancelAction
+      end
+      object ToolButton3: TToolButton
+        Left = 239
+        Top = 0
+        Action = OkAction
+      end
+    end
+  end
+  object CalibrateByRateBox: TGroupBox
+    Left = 0
+    Height = 78
+    Top = 0
+    Width = 365
+    Align = alTop
+    Caption = 'Calibrate by Rate'
+    ClientHeight = 58
+    ClientWidth = 361
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 72
+      Height = 15
+      Top = 13
+      Width = 60
+      Caption = 'Global Rate'
+      ParentColor = False
+    end
+    object EvoRateEdit: TEdit
+      Left = 156
+      Height = 23
+      Top = 8
+      Width = 124
+      TabOrder = 0
+    end
+  end
+  object CalibrateByTimeBox: TGroupBox
+    Left = 0
+    Height = 113
+    Top = 78
+    Width = 365
+    Align = alTop
+    Caption = 'Calibrate by Time'
+    ClientHeight = 93
+    ClientWidth = 361
+    TabOrder = 2
+    object Label2: TLabel
+      Left = 48
+      Height = 15
+      Top = 32
+      Width = 88
+      Caption = 'Divergence Time'
+      ParentColor = False
+    end
+    object DivTimeEdit: TEdit
+      Left = 156
+      Height = 23
+      Top = 29
+      Width = 124
+      TabOrder = 0
+    end
+    object FocusedNodeLabel: TLabel
+      Left = 0
+      Height = 15
+      Top = 0
+      Width = 361
+      Align = alTop
+      Alignment = taCenter
+      Caption = 'For node #1'
+      ParentColor = False
+    end
+    object TimeUnitEdit: TEdit
+      Left = 156
+      Height = 23
+      Top = 63
+      Width = 124
+      TabOrder = 1
+    end
+    object Label3: TLabel
+      Left = 89
+      Height = 15
+      Top = 66
+      Width = 57
+      AutoSize = False
+      Caption = 'Time Unit'
+      ParentColor = False
+    end
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    IniSection = 'TCalibrateClockDlg'
+    Left = 40
+    Top = 24
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 264
+    Top = 49
+    object OkAction: TAction
+      Caption = 'OkAction'
+      ImageIndex = 5
+      OnExecute = OkBtnClick
+      ShortCut = 16467
+    end
+    object CancelAction: TAction
+      Caption = 'CancelAction'
+      ImageIndex = 0
+      OnExecute = CancelBtnClick
+      ShortCut = 27
+    end
+    object HelpAction: TAction
+      Caption = 'HelpAction'
+      ImageIndex = 8
+      OnExecute = HelpBtnClick
+      ShortCut = 112
+    end
+  end
+end

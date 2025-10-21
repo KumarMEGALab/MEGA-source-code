@@ -1,0 +1,45 @@
+<HTML>
+<HEAD><STYLE> {TLegendGenerator.Style}</STYLE>
+<TITLE>Estimate Selection for each Codon (HyPhy)</TITLE>
+</HEAD>
+
+<BODY>
+
+  <span class="figureTitle">
+    Maximum Likelihood analysis of natural selection codon-by-codon
+  <span>
+
+  <div class="note">
+     NOTE.--For each codon, estimates of the numbers of inferred synonymous (s)
+       and nonsynonymous (n) substitutions are presented along with the numbers
+       of sites that are estimated to be synonymous (S) and nonsyonymous (N).
+       These estimates are produced using the joint Maximum Likelihood
+       reconstructions of ancestral states under a Muse-Gaut model [{TLegendGenerator.MuseGautCitation:ExpandCitation}]
+       of codon substitution and {TLegendGenerator.ModelName} model [{TDistPack.MethodCitation:ExpandCitation}]
+       of nucleotide substitution.
+
+       {TLegendGenerator.TreeUsedString}
+
+       The test statistic d<sub>N</sub> - d<sub>S</sub> is used for detecting
+       codons that have undergone positive selection, where dS is the number of
+       synonymous substitutions per site (s/S) and d<sub>N</sub> is the number
+       of nonsynonymous substitutions per site (n/N).
+
+       A positive value for the test statistic indicates an overabundance of
+       nonsynonymous substitutions. In this case, the probability of rejecting
+       the null hypothesis of neutral evolution (P-value) is calculated
+       [{TLegendGenerator.Kosakovsky:ExpandCitation}, {TLegendGenerator.SuzukiHyPhy:ExpandCitation}].
+       Values of P less than 0.05 are considered significant at a 5% level and are highlighted.
+
+       Normalized d<sub>N</sub> - d<sub>S</sub> for the test statistic is
+       obtained using the total number of substitutions in the tree (measured
+       in expected substitutions per site). It is useful for making comparisons across data sets.
+
+        Maximum Likelihood computations of dN and dS were conducted using HyPhy software package         [{TLegendGenerator.HyphyCitation:ExpandCitation}]
+
+        {IncludeExternalFile=Data_Subset_Template.htm}
+
+</div>
+<br> <br>
+</body>
+</html>

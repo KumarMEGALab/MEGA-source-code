@@ -1,0 +1,13 @@
+ 		A timetree inferred using the strict-clock method
+		{if TTreeViewForm.IsMLStr = 'true'}
+		and the {TAnalysisInfo.DistModelName} model [{TDistPack.MethodCitation:ExpandCitation}]. 
+		{else}
+		 and estimates of branch lengths inferred using the {TTreePack.TreeMethodName} method [{TTreePack.TreeMethodCitation:ExpandCitation}].
+		{endif}
+		
+		{if TTreeViewForm.CalibrateModeStr = 'ccmEvoRate'}
+			A user-provide global clock rate ({TLegendGenerator.clockRate}) was used to compute divergence times throughout the tree.
+		{else}
+			A user-provided divergence time ({TLegendGenerator.divTime} for node {TLegendGenerator.calibratedNode}) was used to derive a global clock rate for computing divergence times throughout the tree.
+		{endif}
+		

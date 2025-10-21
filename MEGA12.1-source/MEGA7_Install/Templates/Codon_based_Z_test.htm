@@ -1,0 +1,126 @@
+<HTML>
+<HEAD>
+        <TITLE>{TDisplayMatrixDlg.Caption:ExtractCaptionInfo}</TITLE>
+<style type="text/css">
+        {TLegendGenerator.Style}
+</style>
+</HEAD>
+<BODY>
+<!-- BEGIN TITLE -->
+<span class="figureTitle">
+
+<i><u>Table</u></i>.  Codon-based Test
+{if TDistPack.DistComponent = gdNeutralEvolTest}
+  of Neutrality
+{elseif TDistPack.DistComponent = gdPosSelTest}
+  of Positive Selection
+{elseif TDistPack.DistComponent = gdPurifySelTest}
+  of Purifying Selection
+{endif}
+ for analysis {TAnalysisInfo.DistComputationTypeShortCaption}.
+
+</span><br>
+<!-- END TITLE -->
+
+<!-- BEGIN CONTENT -->
+<div id ="content">
+
+&#32 The probability of rejecting the null hypothesis of strict-neutrality
+{if TDistPack.DistModel = gdPropDist}
+	&#32(p<sub>N</sub> = p<sub>S</sub>)
+{else}
+	&#32(d<sub>N</sub> = d<sub>S</sub>)
+{endif}
+
+{if TDistPack.DistComponent = gdPosSelTest}
+	&#32in favor of the alternative hypothesis 
+	{if TDistPack.DistModel = gdPropDist}
+		&#32(p<sub>N</sub> > p<sub>S</sub>)
+	{else}
+		&#32(d<sub>N</sub> > d<sub>S</sub>)
+	{endif}
+{elseif TDistPack.DistComponent = gdPurifySelTest}
+	&#32in favor of the alternative hypothesis         
+	{if TDistPack.DistModel = gdPropDist}
+		&#32(p<sub>N</sub> < p<sub>S</sub>)
+	{else}
+		&#32(d<sub>N</sub> < d<sub>S</sub>)
+	{endif}
+{endif} 
+
+{if TDistPack.ComputationType = gdPairwise}
+	{if TD_DisplayMatrix.IsDataLowerLeft = True}
+		&#32(below diagonal)
+	{else}
+		&#32(above diagonal)
+    {endif}
+{else}
+	&#32(in the <b>Prob</b> column)
+{endif}
+
+&#32 is shown.
+
+&#32 Values of <i>P</i> less than 0.05 are considered significant at the 5% level and are highlighted.
+&#32 The test statistic
+&#32{if TDistPack.DistModel = gdPropDist}
+	{if TDistPack.DistComponent = gdPurifySelTest}
+		&#32(p<sub>S</sub> - p<sub>N</sub>)
+	{else}
+		&#32(p<sub>N</sub> - p<sub>S</sub>)
+	{endif}
+{else}
+	{if TDistPack.DistComponent = gdPurifySelTest}
+		&#32(d<sub>S</sub> - d<sub>N</sub>)
+	{else}
+		&#32(d<sub>N</sub> - d<sub>S</sub>)
+	{endif}
+{endif}
+&#32is shown
+
+{if TDistPack.ComputationType = gdPairwise}
+	{if TD_DisplayMatrix.IsDataLowerLeft = True}
+                        &#32above
+                {else}
+                        &#32below
+                {endif}	
+		&#32the diagonal.
+        {else}
+              &#32in the <b>Stat</b> column.
+        {endif}
+
+        {if TDistPack.DistModel = gdPropDist}
+                &#32 p<sub>S</sub> and p<sub>N</sub> are the numbers of synonymous and nonsynonymous differences, respectively.
+        {else}
+                &#32 d<sub>S</sub> and d<sub>N</sub> are the numbers of synonymous and nonsynonymous substitutions per site, respectively.
+        {endif}
+
+The variance of the difference was computed using the 
+{if TDistPack.VarType = gdBootstrapVar}
+	&#32bootstrap method ({TDistPack.BootReps} replicates).
+{elseif TDistPack.VarType = gdAnalyticalVar}
+	&#32analytical method.
+{endif}
+
+&#32 Analyses were conducted
+{if TAnalysisInfo.DistModelName ! ''}
+	&#32using the {TAnalysisInfo.DistModelName} method [{TDistPack.MethodCitation:ExpandCitation}].
+{endif}
+
+{if TAnalysisInfo.DistGammaParaCaption ! ''}
+	&#32 {TAnalysisInfo.DistGammaParaCaption} (shape parameter =  {TDistPack.GammaParameter}).
+{endif}
+
+{if TAnalysisInfo.DistHeteroPatternCaption ! ''}
+	&#32 {TAnalysisInfo.DistHeteroPatternCaption} [{TLegendGenerator.HeteroPatternDistCitation:ExpandCitation}].
+{endif}
+
+
+ {IncludeExternalFile=Data_Subset_Template.htm}
+
+{if TD_DisplayMatrix.HasInvalidData = True}
+	&#32 The presence of n/c in the results denotes cases in which it was not possible to estimate evolutionary distances.
+{endif}
+</div>
+<br/><br/>
+</body>
+</html>

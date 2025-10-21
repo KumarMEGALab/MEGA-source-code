@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+	<TITLE>Neutral Evolutionary Probabilities (EP)</TITLE>
+<style type="text/css">
+	{TLegendGenerator.Style}
+</style>
+</HEAD>
+<BODY>
+<SPAN class="figureTitle"> 
+Inferred Evolutionary Probabilities of {if TAnalysisInfo.isAminoAcid = True} amino acid {else} nucleotide {endif} states for "{TLegendGenerator.TaxonName}"
+</span>
+<br>
+<div id ="content">
+	Evolutionary probabilities were inferred using the Liu <i>et al.</i> [{TLegendGenerator.EpMethodCitation:ExpandCitation}] EP method as modified by Patel and Kumar [{TLegendGenerator.EpMethodCitation2:ExpandCitation}]. 
+	The user-specified tree topology was analyzed
+	by using the {TTreePack.TreeMethodName} method
+	and the {TAnalysisInfo.DistModelName} model [{TDistPack.MethodCitation:ExpandCitation}].
+	{if TLegendGenerator.GammaPara = 'N/A'}
+
+	{else}
+		A discrete Gamma distribution was used to model evolutionary rate differences
+		among sites ({TLegendGenerator.NoOfGCats} categories (+<i>G</i>)).
+	{endif}
+
+	{if TLegendGenerator.PropOfInvariant = 'N/A'}
+	{else}
+		The rate variation model allowed for some sites to be evolutionarily
+		invariable ([+<i>I</i>]).
+	{endif}
+	
+	The evolutionary time depths used in the EP calculation were obtained {if TAnalysisInfo.KeepUserTreeTimes = True} from the user-provided tree. {else} using the Reltime [{TLegendGenerator.ReltimeCitation2:ExpandCitation}] method.{endif}
+	{IncludeExternalFile=Data_Subset_Template.htm}
+
+</div>
+<br/>
+</BODY>
+</HTML>

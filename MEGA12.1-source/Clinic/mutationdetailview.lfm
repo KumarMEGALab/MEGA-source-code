@@ -1,0 +1,103 @@
+object MutationDetailViewForm: TMutationDetailViewForm
+  Left = 753
+  Height = 443
+  Top = 173
+  Width = 328
+  Caption = 'MutationDetailViewForm'
+  ClientHeight = 443
+  ClientWidth = 328
+  Color = clWhite
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnResize = FormResize
+  OnShow = FormShow
+  SessionProperties = 'Height;Width'
+  LCLVersion = '2.0.2.0'
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 42
+    Top = 0
+    Width = 328
+    ButtonHeight = 40
+    ButtonWidth = 150
+    Caption = 'ToolBar1'
+    Color = clWhite
+    DisabledImages = MegaForm.DisabledIcons
+    Images = MegaForm.NewIcons
+    ParentColor = False
+    ShowCaptions = True
+    TabOrder = 0
+    object AlignButton: TToolButton
+      Left = 1
+      Top = 2
+      Action = GetAlignmentAction
+    end
+    object AncestorsButton: TToolButton
+      Left = 156
+      Top = 2
+      Caption = 'Explore &Ancestors'
+      DropdownMenu = PopupMenu1
+      ImageIndex = 182
+      Style = tbsDropDown
+    end
+    object ToolButton3: TToolButton
+      Left = 151
+      Height = 40
+      Top = 2
+      Caption = 'ToolButton3'
+      Style = tbsDivider
+    end
+  end
+  object DetailsDrawGrid: TDrawGrid
+    Left = 62
+    Height = 100
+    Top = 210
+    Width = 200
+    ColCount = 4
+    DefaultDrawing = False
+    ExtendedSelect = False
+    GridLineWidth = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goSmoothScroll]
+    RowCount = 1
+    TabOrder = 1
+    OnDrawCell = DetailsDrawGridDrawCell
+    OnSelectCell = DetailsDrawGridSelectCell
+  end
+  object ActionList1: TActionList
+    Images = MegaForm.NewIcons
+    left = 188
+    top = 85
+    object AncMLAction: TAction
+      Caption = 'Infer Ancestral Seqs (ML)'
+      ImageIndex = 29
+      OnExecute = AncMLActionExecute
+    end
+    object AncParsimonyAction: TAction
+      Caption = 'Infer Ancestral Seqs (MP)'
+      ImageIndex = 8
+      OnExecute = AncParsimonyActionExecute
+    end
+    object GetAlignmentAction: TAction
+      Caption = '&Explore Alignment'
+      Hint = 'View 46 species sequence alignment for the selected gene'
+      ImageIndex = 24
+      OnExecute = GetAlignmentActionExecute
+    end
+  end
+  object PopupMenu1: TPopupMenu
+    left = 132
+    top = 158
+    object MenuItem1: TMenuItem
+      Action = AncParsimonyAction
+    end
+    object MenuItem2: TMenuItem
+      Action = AncMLAction
+    end
+  end
+  object IniPropStorage1: TIniPropStorage
+    StoredValues = <>
+    IniSection = 'TMutationDetailViewForm'
+    left = 122
+    top = 71
+  end
+end

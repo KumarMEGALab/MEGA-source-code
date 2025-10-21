@@ -1,0 +1,91 @@
+object GroupNamesEditor: TGroupNamesEditor
+  Left = 651
+  Height = 372
+  Top = 308
+  Width = 257
+  BorderIcons = []
+  Caption = 'M12: Group Names Editor'
+  ClientHeight = 372
+  ClientWidth = 257
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnResize = FormResize
+  Position = poOwnerFormCenter
+  LCLVersion = '2.2.4.0'
+  object GroupEdit: TLabeledEdit
+    Left = 11
+    Height = 23
+    Top = 24
+    Width = 233
+    EditLabel.Height = 15
+    EditLabel.Width = 233
+    EditLabel.Caption = 'Group Name'
+    EditLabel.ParentColor = False
+    TabOrder = 0
+  end
+  object ToolBar1: TToolBar
+    Left = 9
+    Height = 30
+    Top = 333
+    Width = 239
+    Align = alNone
+    Anchors = [akLeft, akBottom]
+    AutoSize = True
+    ButtonHeight = 30
+    ButtonWidth = 115
+    Caption = 'ToolBar1'
+    EdgeInner = esNone
+    EdgeOuter = esNone
+    HotImages = ImageForm.DlgButtonsHover
+    Images = ImageForm.DlgButtons
+    TabOrder = 1
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 0
+      Action = CancelAction
+    end
+    object ToolButton2: TToolButton
+      Left = 120
+      Top = 0
+      Action = SaveAction
+    end
+  end
+  object NamesListBox: TListBox
+    Left = 11
+    Height = 216
+    Top = 106
+    Width = 233
+    ItemHeight = 0
+    OnDblClick = NamesListBoxDblClick
+    TabOrder = 2
+  end
+  object FilterEdit: TLabeledEdit
+    Left = 11
+    Height = 23
+    Top = 80
+    Width = 233
+    EditLabel.Height = 15
+    EditLabel.Width = 233
+    EditLabel.Caption = 'Filter'
+    EditLabel.ParentColor = False
+    TabOrder = 3
+  end
+  object ActionList1: TActionList
+    Images = ImageForm.DlgButtons
+    Left = 309
+    Top = 179
+    object SaveAction: TAction
+      Caption = '&Save'
+      Hint = 'Save changes and close this window'
+      ImageIndex = 5
+      OnExecute = SaveActionExecute
+      ShortCut = 16467
+    end
+    object CancelAction: TAction
+      Caption = '&Cancel'
+      ImageIndex = 0
+      OnExecute = CancelActionExecute
+      ShortCut = 27
+    end
+  end
+end

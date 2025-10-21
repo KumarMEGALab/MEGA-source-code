@@ -1,0 +1,332 @@
+object RuntimeProgressDlg: TRuntimeProgressDlg
+  Left = 341
+  Height = 413
+  Top = 194
+  Width = 410
+  BorderIcons = [biMinimize]
+  Caption = 'Progress'
+  ClientHeight = 413
+  ClientWidth = 410
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnHide = FormHide
+  OnResize = FormResize
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.2.6.0'
+  object ProgressBar1: TProgressBar
+    Left = 328
+    Height = 20
+    Top = 232
+    Width = 100
+    TabOrder = 0
+    Visible = False
+  end
+  object StopBtn: TSpeedButton
+    Left = 56
+    Height = 22
+    Top = 264
+    Width = 23
+    Visible = False
+    OnClick = StopBtnClick
+  end
+  object GaugePanel: TPanel
+    Left = 0
+    Height = 114
+    Top = 0
+    Width = 410
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 114
+    ClientWidth = 410
+    TabOrder = 1
+    object Panel1: TPanel
+      Left = 0
+      Height = 51
+      Top = 63
+      Width = 410
+      Align = alBottom
+      BevelOuter = bvNone
+      ClientHeight = 51
+      ClientWidth = 410
+      TabOrder = 0
+      object PauseBitBtn: TBitBtn
+        Left = 183
+        Height = 30
+        Top = 16
+        Width = 75
+        Caption = '&Pause'
+        Glyph.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF0000000000733B03A1994E03CC994E03CC733B03A600000000733B03A6994E
+          03CC994E03CC733B03A300000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF009F5408009F5408CC5146BCFF5146BCFF9F5408CC9F5408009F5408CC5146
+          BCFF5146BCFF9F5408CC783F0600FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00A65B0D00A65B0DCC5146BCFF5146BCFFA65B0DCCA65B0D00A65B0DCC5146
+          BCFF5146BCFFA65B0DCCA65B0D00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00AF641400AF6414CC5146BCFF5146BCFFAF6414CCAF641400AF6414CC5146
+          BCFF5146BCFFAF6414CCAF641400FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00B96E1B00B96E1BCC5146BCFF5146BCFFB96E1BCCB96E1B00B96E1BCC5146
+          BCFF5146BCFFB96E1BCCB96E1B00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00C27722005146BCCC5146BCFF5146BCFF5146BCCCC27722005146BCCC5146
+          BCFF5146BCFF5146BCCCC2772200FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00CC8129005146BCCC5146BCFF5146BCFF5146BCCCCC8129005146BCCC5146
+          BCFF5146BCFF5146BCCCCC812900FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00D58A30005146BCCC5146BCFF5146BCFF5146BCCCD58A30005146BCCC5146
+          BCFF5146BCFF5146BCCCD58A3000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00DD9236005146BCCC5146BCFF5146BCFF5146BCCCDD9236005146BCCC5146
+          BCFF5146BCFF5146BCCCDD923600FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00E4993B005146BCCC5146BCFF5146BCFF5146BCCCE4993B005146BCCC5146
+          BCFF5146BCFF5146BCCCE4993B00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00E89D3E005146BC995146BCCC5146BCCC5146BC99E89D3E005146BC995146
+          BCCC5146BCCC5146BC99E89D3E00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+        }
+        ModalResult = 11
+        OnClick = PauseBitBtnClick
+        TabOrder = 0
+        Visible = False
+      end
+      object ShowDetailsToggle: TToggleBox
+        Left = 16
+        Height = 30
+        Top = 16
+        Width = 75
+        Caption = 'Details'
+        Checked = True
+        OnClick = ShowAnalysisOptsItemClick
+        State = cbChecked
+        TabOrder = 1
+      end
+      object KeepOnTopChBox: TCheckBox
+        Left = 16
+        Height = 19
+        Top = -3
+        Width = 86
+        Caption = 'Stay in Front'
+        Checked = True
+        OnChange = KeepOnTopChBoxChange
+        State = cbChecked
+        TabOrder = 2
+      end
+      object StopBitBtn: TBitBtn
+        Left = 288
+        Height = 30
+        Top = 16
+        Width = 75
+        Cancel = True
+        Caption = '&Stop'
+        Kind = bkCancel
+        OnClick = StopBtnClick
+        TabOrder = 3
+      end
+    end
+    object ProgressScrollBox: TScrollBox
+      Left = 0
+      Height = 63
+      Top = 0
+      Width = 410
+      HorzScrollBar.Page = 386
+      VertScrollBar.Page = 50
+      Align = alClient
+      BorderStyle = bsNone
+      ClientHeight = 63
+      ClientWidth = 410
+      TabOrder = 1
+      object Panel2: TPanel
+        Left = 0
+        Height = 50
+        Top = 0
+        Width = 410
+        Align = alTop
+        BevelOuter = bvNone
+        ClientHeight = 50
+        ClientWidth = 410
+        TabOrder = 0
+        object GaugeRzLabel: TLabel
+          Left = 11
+          Height = 15
+          Top = 10
+          Width = 45
+          Caption = 'Progress'
+          ParentColor = False
+        end
+        object PercentGauge: TProgressBar
+          Left = 87
+          Height = 20
+          Top = 10
+          Width = 299
+          Position = 40
+          Smooth = True
+          TabOrder = 0
+        end
+      end
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 390
+    Width = 410
+    Panels = <>
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 276
+    Top = 114
+    Width = 410
+    ActivePage = CommandLinePage
+    Align = alClient
+    TabIndex = 2
+    TabOrder = 3
+    object StatusOptionsPage: TTabSheet
+      Caption = 'Run Status'
+      ClientHeight = 248
+      ClientWidth = 402
+      object RunStatusPanel: TPanel
+        Left = 0
+        Height = 248
+        Top = 0
+        Width = 402
+        Align = alClient
+        BevelOuter = bvNone
+        Caption = 'RunStatusPanel'
+        ClientHeight = 248
+        ClientWidth = 402
+        TabOrder = 0
+        object RunStatusStrGrid: TStringGrid
+          Left = 0
+          Height = 248
+          Top = 0
+          Width = 402
+          Align = alClient
+          ColCount = 2
+          FixedRows = 0
+          Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goSmoothScroll, goFixedColSizing]
+          RowCount = 1
+          TabOrder = 0
+        end
+      end
+    end
+    object AnalysisOptionsPage: TTabSheet
+      Caption = 'Analysis Options'
+      ClientHeight = 248
+      ClientWidth = 402
+      object AnalysisOptionsPanel: TPanel
+        Left = 0
+        Height = 248
+        Top = 0
+        Width = 402
+        Align = alClient
+        BevelOuter = bvNone
+        Caption = 'AnalysisOptionsPanel'
+        ClientHeight = 248
+        ClientWidth = 402
+        TabOrder = 0
+        object AnalysisOptionsDisplay: TDrawGrid
+          Left = 0
+          Height = 248
+          Top = 0
+          Width = 402
+          Align = alClient
+          BorderStyle = bsNone
+          ColCount = 2
+          DefaultDrawing = False
+          ExtendedSelect = False
+          FixedRows = 0
+          Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goSmoothScroll, goFixedColSizing]
+          TabOrder = 0
+          OnDrawCell = AnalysisOptionsDisplayDrawCell
+          OnSelectCell = AnalysisOptionsDisplaySelectCell
+        end
+      end
+    end
+    object CommandLinePage: TTabSheet
+      Caption = 'Command Line Output'
+      ClientHeight = 248
+      ClientWidth = 402
+      object CmdLineOut: TMemo
+        Left = 0
+        Height = 233
+        Top = 15
+        Width = 402
+        Align = alClient
+        BorderStyle = bsNone
+        ReadOnly = True
+        ScrollBars = ssAutoBoth
+        TabOrder = 0
+        WordWrap = False
+      end
+      object StdOutLabel: TLabel
+        Left = 0
+        Height = 15
+        Top = 0
+        Width = 402
+        Align = alTop
+        Alignment = taCenter
+        Caption = 'Stdout:'
+        Color = clWhite
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        Transparent = False
+      end
+    end
+  end
+  object ImageList1: TImageList
+    Left = 493
+    Top = 110
+    Bitmap = {
+      4C7A020000001000000010000000030200000000000078DACD945F48536118C6
+      07C2B064F44F44F04250418202AF0A12DC8DDE89A0842043442888A088BA6851
+      1076A1E845EAF46203FF24E29C480C6B6EAED4209282BE222ABB58AE66533474
+      620A2A4C7A3AEF69DF87C7DE23E1D53EF8C1CBC379CEDDEF0160411AB0DC5B66
+      F9D967F76888141EB38CEB2F784A098158377E471E826E957DEF32645C3FEA3A
+      4788E46C2BB65F3941B7CA3E361B32AE3FDB564288EDB7F7F12B781574CB6C75
+      FA266243752AE3FAA2E934213667EE605EFB966E9945471B203ACA55C6F55FDE
+      2E2044FC69233E74D941B7CCE67CB5868CEB87AFE71162F94915A23D6741B7CC
+      1647CB0D19D7F75FCA26C446F03C12C3B9A05B66EB63670C19D7F73A6C84D87D
+      5680A4DF0ABA65961CCF31645CBFFF62262130950F4C9C00DD2A9B380E8C1FD1
+      33A7DDCAF6E9DD2ACD18F054650842BBBDA9CCBB271BA4CCACFFBF0F69E21CD2
+      D7FD83F867030CEE7F6D37A2792FC13717BB01D2F3DD2F6DD8797DD794E4A716
+      7603A4E73BEF1F60237C4D91085CC1D2E346FC18A9476CD88195C91BEC0648CF
+      B7DEDC4362ECB2EEFF677725DE7556FCF53E4544FB07B701D2F3B517DAFFDD15
+      BAEB1C91A11A760394FB816ADD7333E23E3BBB01CAFDD005DD7333D6FDC5EC06
+      28F79F17E99E9B1238C96E80F27CBA10089FD2FD47E898860D0866691CD5FD47
+      D0C66E40CAF347D2F383A08DD8EFF0615EBAB8F7077CBAF958
+    }
+  end
+  object StatusUpdateTimer: TTimer
+    Enabled = False
+    OnTimer = StatusUpdateTimerTimer
+    Left = 329
+    Top = 190
+  end
+  object Copy2: TPopupMenu
+    Left = 329
+    Top = 280
+    object Copy1: TMenuItem
+      Caption = '&Copy Selected'
+    end
+    object ScrollWithStatusUpdates1: TMenuItem
+      Caption = 'Scroll With Status Updates'
+    end
+  end
+  object RuntimeTimer: TTimer
+    OnTimer = RuntimeTimerTimer
+    Left = 113
+    Top = 171
+  end
+end
